@@ -4,6 +4,17 @@ Histórico de criação, atualização e desenvolvimento da plataforma. Cada ver
 
 ---
 
+## [v7.7] — Auditoria e Limpeza de Repositório
+
+Uma sessão dedicada exclusivamente à auditoria de arquivos na raiz do projeto e higienização estrutural, visando garantir que apenas o código-fonte, recursos e configurações estritamente pertinentes ao "Universidade Log" permaneçam no repositório.
+
+### Remoção de Agentes Externos
+
+- **Exclusão do Arquivo `install.ps1`**: Identificou-se a presença indevida de um script PowerShell (`install.ps1`), pertencente ao agente de IA externo "OhMyGoat". Como este script é um executável de provisionamento local de máquina e não possui correlação com o ecossistema, compilação ou hospedagem do Universidade Log, ele foi sumariamente deletado.
+- **Verificação de Escopo**: Realizada varredura completa nas pastas ocultas (`.github/`, `.vscode/`), no `package.json` e nos arquivos de build (`vercel.json`, `netlify.toml`). Confirmou-se que não restam resquícios de fluxos de CI/CD, dependências de pacotes ou configurações atreladas ao referido agente. O projeto encontra-se 100% limpo e focado em sua regra de negócio original.
+
+---
+
 ## [v7.6] — Redesign B2C, Menu Off-Canvas "Duolingo", Animações Globais e Auditoria .env
 
 Uma sessão focada puramente em elevar o "Fit and Finish" (polimento final) e a experiência em dispositivos móveis, trazendo paradigmas reais de Web Apps modernos para o site.
