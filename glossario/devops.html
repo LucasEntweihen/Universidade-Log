@@ -1,357 +1,385 @@
 <!DOCTYPE html>
 
 <html lang="pt-BR">
+
 <head>
-<meta charset="utf-8"/>
-<link href="../assets/icons/brand/favicon.svg" rel="icon" type="image/svg+xml"/>
-<link href="../assets/icons/brand/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
-<link href="../assets/icons/brand/apple-touch-icon.png" rel="apple-touch-icon"/>
-<link href="../manifest.json" rel="manifest"/>
-<meta content="#9D25FF" name="theme-color"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
-<meta content="default-src 'self'; img-src 'self' data: https://images.unsplash.com; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests" http-equiv="Content-Security-Policy"/>
-<meta content="strict-origin-when-cross-origin" name="referrer">
-<title>Glossário: navio.log</title>
-<meta name="description" content="Glossário ilustrado do curso de DevOps (Docker &amp; Kubernetes), em formato de livro: termos explicados de forma simples, com exemplos." />
-<meta name="robots" content="index, follow, max-image-preview:large" />
-<link rel="canonical" href="https://universidade-log.vercel.app/glossario/devops.html" />
-<meta property="og:type" content="website" />
-<meta property="og:locale" content="pt_BR" />
-<meta property="og:url" content="https://universidade-log.vercel.app/glossario/devops.html" />
-<meta property="og:site_name" content="Universidade Log" />
-<meta property="og:title" content="Glossário: navio.log" />
-<meta property="og:description" content="Glossário ilustrado do curso de DevOps (Docker &amp; Kubernetes), em formato de livro: termos explicados de forma simples, com exemplos." />
-<meta property="og:image" content="https://universidade-log.vercel.app/assets/characters/baba-grogue.png" />
-<meta property="og:image:alt" content="Capitão Baba Grogue, mascote do curso de DevOps" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Glossário: navio.log" />
-<meta name="twitter:description" content="Glossário ilustrado do curso de DevOps (Docker &amp; Kubernetes), em formato de livro: termos explicados de forma simples, com exemplos." />
-<meta name="twitter:image" content="https://universidade-log.vercel.app/assets/characters/baba-grogue.png" />
-<script>(function(){try{var t=localStorage.getItem('studyhub_theme_v1');if(t && t!=='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&amp;family=Playwrite+US+Modern:wght@100..400&amp;family=Lilex:wght@400;500;600;700&amp;family=Playfair+Display:wght@600;700&amp;family=Lora:ital@0;1&amp;display=swap" rel="stylesheet"/>
-<link href="../assets/css/theme.css" rel="stylesheet"/>
-<link href="../assets/css/space-theme.css" rel="stylesheet"/>
-<link href="../assets/css/icons.css" rel="stylesheet"/>
-<link href="../assets/css/flipbook.css" rel="stylesheet">
-<link href="../assets/css/games.css" rel="stylesheet"/>
-</link></meta></meta></head>
-<body class="course-devops"><a href="#main-content" class="skip-link">Pular para o conteúdo</a><div aria-hidden="true" class="space-planet-photo"></div>
-<div class="fb-topbar">
-<div class="brand-mini"><img alt="" class="om om-sm" src="../assets/icons/content/whale.svg"/> <span>navio.log</span></div>
-<div class="fb-topnav">
-<a href="../index.html"><svg class="ic-mono" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3 3 10.5V21h5.5v-6h7v6H21V10.5L12 3Z"></path></svg> universidade log</a>
-<a href="../cursos/devops.html">↩ voltar pro curso</a>
-<div data-chrome-widget="theme"></div><div data-chrome-widget="a11y"></div>
-</div></div>
-<main class="fb-stage" id="main-content">
-<div class="fb-heading">
-<div class="fb-eyebrow">glossário interativo</div>
-<h1>navio.log</h1>
-<p>Todo termo novo que você aprendeu em Git, GitHub, Docker, Kubernetes e AWS, catalogado como um dicionário de bordo.</p>
-</div>
-<div class="fb-cover" id="fbCover" onclick="__fbOpen()" style="--cover-a:#1B3A5C;--cover-b:#0D1F33;">
-<div class="fb-spine"></div>
-<img alt="Capitão Baba Grogue" class="fb-cover-mascot" src="../assets/characters/baba-grogue.png"/>
-<h2>Glossário de DevOps</h2>
-<p>50 termos, organizados como um dicionário de verdade: capa, sumário e páginas que viram.</p>
-<button class="fb-open-btn"><svg class="ic-mono" fill="currentColor" viewBox="0 0 24 24"><path d="M3 5.6c2.4-1 5.3-1 8 .5v13.3c-2.7-1.5-5.6-1.5-8-.5V5.6Z" opacity=".55"></path><path d="M21 5.6c-2.4-1-5.3-1-8 .5v13.3c2.7-1.5 5.6-1.5 8-.5V5.6Z"></path><rect height="1.1" opacity=".8" rx=".55" width="4.8" x="4.6" y="8"></rect><rect height="1.1" opacity=".8" rx=".55" width="4.8" x="4.6" y="10.6"></rect></svg> Abrir o livro</button>
-</div>
-<div class="fb-book-wrap" id="fbRoot">
-<div class="fb-book">
-<div class="fb-page fb-page-left"><div class="fb-page-content"></div><div class="fb-page-number"></div></div>
-<div class="fb-spine-shadow"></div>
-<div class="fb-page fb-page-right"><div class="fb-page-content"></div><div class="fb-page-number"></div></div>
-</div>
-<div class="fb-controls">
-<button class="fb-nav-btn" id="fbPrevBtn" onclick="__fbPrev()">← Página anterior</button>
-<span class="fb-progress" id="fbProgress"></span>
-<button class="fb-nav-btn" id="fbNextBtn" onclick="__fbNext()">Próxima página →</button>
-</div>
-<div class="fb-search-row">
-<input class="fb-search" onkeydown="if(event.key==='Enter')__fbSearch(this.value)" placeholder="Buscar um termo... (ex: Kubernetes)"/>
-<button class="fb-close-btn" onclick="document.getElementById('fbCover').style.display='flex';document.querySelector('.fb-book-wrap').classList.remove('open');"><img alt="" class="om om-sm" src="../assets/icons/content/x-mark.svg"/> Fechar livro</button>
-</div>
-</div>
-<div class="fb-mascot-note">
-<img alt="Capitão Baba Grogue" src="../assets/characters/baba-grogue.png"/>
-<div>
-<div class="m-name">Capitão Baba Grogue</div>
-<p>Um bom capitão nunca decora vocabulário, ele guarda um dicionário de bordo pra consultar sempre que precisa. Esse aqui é o seu.</p>
-</div>
-</div>
-<div class="fb-game-section">
-<div class="fb-game-heading"><img alt="" class="om om-sm" src="../assets/icons/content/game-controller.svg"/> Pratique o que acabou de ler</div>
-<p class="fb-game-sub">O mesmo jogo da memória que aparece no curso, só que aqui com termos direto do glossário.</p>
-<div class="game-card memory-game" data-pairs='[{"term": "Automation (Automação)", "def": "Um dos 4 pilares do CAMS: automatizar o máximo possível de processos, da concepção à remoção de gargalos."}, {"term": "Conflito de Merge", "def": "Situação em que duas branches alteraram a mesma parte de um arquivo de formas diferentes, exigindo resolução manual antes do merge."}, {"term": "Dockerfile", "def": "Script de texto com instruções passo a passo de como o Docker deve construir uma imagem."}, {"term": "kubectl", "def": "A ferramenta de linha de comando usada pra interagir com um cluster Kubernetes: o meio de dar ordens ao cluster."}, {"term": "Merge (Pull Request)", "def": "Ação final de um Pull Request aprovado: integra as mudanças propostas na branch principal."}, {"term": "ReplicaSet", "def": "Objeto do Kubernetes cuja única missão é garantir que o número de Pods definido continue correto, clonando novos quando algum some."}]' id="fbMemGame">
-<div class="game-title"><img alt="" class="om om-sm" src="../assets/icons/content/brain.svg"/> Jogo da memória: DevOps</div>
-<div class="memory-grid"></div>
-<button class="game-reset-btn" onclick="initMemoryGame('fbMemGame')">Embaralhar de novo</button>
-</div>
-</div>
-</main>
-<script>
-  window.GLOSSARY = {
-    courseTitle: "navio.log",
-    courseIcon: '<img class="om om-sm" src="../assets/icons/content/whale.svg" alt="">',
-    terms: [
-  {
-    "term": "AWS (Amazon Web Services)",
-    "mod": "mód. 09",
-    "def": "Provedor de nuvem que oferece computação, armazenamento e outros serviços sob demanda, com pagamento conforme o uso."
-  },
-  {
-    "term": "Automation (Automação)",
-    "mod": "mód. 01",
-    "def": "Um dos 4 pilares do CAMS: automatizar o máximo possível de processos, da concepção à remoção de gargalos."
-  },
-  {
-    "term": "Branch (Ramificação)",
-    "mod": "mód. 02",
-    "def": "Uma linha de desenvolvimento isolada dentro de um repositório Git, usada pra construir uma funcionalidade sem afetar o código principal."
-  },
-  {
-    "term": "CAMS",
-    "mod": "mód. 01",
-    "def": "Framework que resume a cultura DevOps em 4 pilares: Culture, Automation, Measurement e Sharing."
-  },
-  {
-    "term": "CI/CD",
-    "mod": "mód. 10",
-    "def": "Integração Contínua (Continuous Integration) e Entrega/Implantação Contínua (Continuous Delivery/Deployment): o fluxo automático do commit até a produção."
-  },
-  {
-    "term": "Cluster",
-    "mod": "mód. 07",
-    "def": "Um conjunto de máquinas (nós) que juntas formam o ambiente onde o Kubernetes roda e gerencia containers."
-  },
-  {
-    "term": "CMD",
-    "mod": "mód. 06",
-    "def": "Instrução de um Dockerfile que define o comando executado quando o container é iniciado (diferente de RUN, que roda durante a construção da imagem)."
-  },
-  {
-    "term": "Commit",
-    "mod": "mód. 02",
-    "def": "Um checkpoint no histórico do Git: um snapshot registrado do estado do projeto, com uma mensagem explicativa."
-  },
-  {
-    "term": "Conflito de Merge",
-    "mod": "mód. 02",
-    "def": "Situação em que duas branches alteraram a mesma parte de um arquivo de formas diferentes, exigindo resolução manual antes do merge."
-  },
-  {
-    "term": "Container",
-    "mod": "mód. 05",
-    "def": "A instância ativa e em execução de uma imagem Docker: leve, isolada e descartável."
-  },
-  {
-    "term": "CULTURE (Cultura)",
-    "mod": "mód. 01",
-    "def": "Primeiro pilar do CAMS: destruir silos organizacionais e priorizar interação constante entre times."
-  },
-  {
-    "term": "Deployment",
-    "mod": "mód. 07",
-    "def": "Objeto do Kubernetes que gerencia o plano de implantação: diz ao ReplicaSet quantas réplicas manter e como atualizar sem downtime."
-  },
-  {
-    "term": "Docker",
-    "mod": "mód. 05",
-    "def": "Plataforma open source que empacota, executa e distribui aplicações em containers isolados e portáveis."
-  },
-  {
-    "term": "Docker Compose",
-    "mod": "mód. 06",
-    "def": "Ferramenta que orquestra múltiplos containers Docker a partir de um único arquivo declarativo (docker-compose.yml)."
-  },
-  {
-    "term": "Docker Daemon",
-    "mod": "mód. 05",
-    "def": "O serviço em segundo plano (server) que executa o trabalho pesado de criar, rodar e gerenciar containers."
-  },
-  {
-    "term": "Docker Registry",
-    "mod": "mód. 05",
-    "def": "Repositório centralizado (como o Docker Hub) onde imagens são publicadas, armazenadas e baixadas."
-  },
-  {
-    "term": "Dockerfile",
-    "mod": "mód. 05",
-    "def": "Script de texto com instruções passo a passo de como o Docker deve construir uma imagem."
-  },
-  {
-    "term": "EC2 (Elastic Compute Cloud)",
-    "mod": "mód. 09",
-    "def": "Serviço da AWS que fornece servidores virtuais sob demanda."
-  },
-  {
-    "term": "EKS (Elastic Kubernetes Service)",
-    "mod": "mód. 09",
-    "def": "Kubernetes gerenciado pela AWS, rodando na escala de um provedor de nuvem."
-  },
-  {
-    "term": "Elasticidade",
-    "mod": "mód. 09",
-    "def": "Capacidade de recursos de nuvem crescerem ou encolherem automaticamente conforme a demanda muda."
-  },
-  {
-    "term": "Git",
-    "mod": "mód. 02",
-    "def": "Sistema de controle de versão distribuído, usado pra registrar e gerenciar mudanças em projetos de software."
-  },
-  {
-    "term": "GitHub",
-    "mod": "mód. 03",
-    "def": "Plataforma web que hospeda repositórios Git e facilita colaboração: revisão de código, gerenciamento de projeto e mais."
-  },
-  {
-    "term": "IAM (Identity and Access Management)",
-    "mod": "mód. 09",
-    "def": "Serviço da AWS que controla quem pode acessar quais recursos, através de usuários, papéis (roles) e permissões."
-  },
-  {
-    "term": "IaC (Infrastructure as Code)",
-    "mod": "mód. 04",
-    "def": "Prática de definir e provisionar infraestrutura através de arquivos de configuração versionáveis, em vez de configuração manual."
-  },
-  {
-    "term": "Imagem (Docker)",
-    "mod": "mód. 05",
-    "def": "O molde imutável e somente-leitura gerado a partir de um Dockerfile: contém código, runtimes e dependências empacotados."
-  },
-  {
-    "term": "Lambda",
-    "mod": "mód. 09",
-    "def": "Serviço serverless da AWS que executa código sob demanda, sem gerenciamento de servidor: cobrança só pelo tempo de execução."
-  },
-  {
-    "term": "Laço de Reconciliação",
-    "mod": "mód. 07",
-    "def": "Ciclo automático do Kubernetes que compara o estado desejado (YAML) com o estado real do cluster e age sozinho pra corrigir diferenças."
-  },
-  {
-    "term": "Measurement (Medição)",
-    "mod": "mód. 01",
-    "def": "Pilar do CAMS: coletar dados e métricas pra criar loops de feedback em todas as fases do processo."
-  },
-  {
-    "term": "Merge",
-    "mod": "mód. 02",
-    "def": "O processo de combinar as mudanças de uma branch em outra, como integrar uma feature de volta na main."
-  },
-  {
-    "term": "Modelo Declarativo",
-    "mod": "mód. 04",
-    "def": "Abordagem em que você descreve o estado desejado de um sistema (não os passos), e a ferramenta se encarrega de alcançá-lo."
-  },
-  {
-    "term": "Namespace / Kernel Compartilhado",
-    "mod": "mód. 05",
-    "def": "Mecanismo do Linux que isola processos, rede e sistema de arquivos, permitindo que containers rodem isolados sem duplicar o SO inteiro."
-  },
-  {
-    "term": "kubectl",
-    "mod": "mód. 08",
-    "def": "A ferramenta de linha de comando usada pra interagir com um cluster Kubernetes: o meio de dar ordens ao cluster."
-  },
-  {
-    "term": "Kubernetes (K8S)",
-    "mod": "mód. 07",
-    "def": "Orquestrador de containers open source; a palavra vem do grego e significa 'Timoneiro': gerencia onde e quantas cópias de cada container rodam."
-  },
-  {
-    "term": "Manifesto YAML",
-    "mod": "mód. 07",
-    "def": "Arquivo declarativo (formato YAML) que descreve o estado desejado de recursos do Kubernetes, como um Deployment."
-  },
-  {
-    "term": "Menor Privilégio",
-    "mod": "mód. 09",
-    "def": "Princípio de segurança: cada usuário ou serviço deve ter apenas as permissões estritamente necessárias pro seu trabalho."
-  },
-  {
-    "term": "Merge (Pull Request)",
-    "mod": "mód. 03",
-    "def": "Ação final de um Pull Request aprovado: integra as mudanças propostas na branch principal."
-  },
-  {
-    "term": "Pilares Obrigatórios (DevOps)",
-    "mod": "mód. 01",
-    "def": "Colaboração Dev/Ops, CI/CD, Agile, Gerenciamento de Configuração, infraestrutura escalável e monitoramento."
-  },
-  {
-    "term": "Pipeline",
-    "mod": "mód. 10",
-    "def": "A sequência automatizada de etapas (build, testes, deploy) que o código percorre do commit até a produção."
-  },
-  {
-    "term": "Pod",
-    "mod": "mód. 07",
-    "def": "A menor unidade implantável do Kubernetes: uma 'cabine' onde roda um ou mais containers."
-  },
-  {
-    "term": "Pull Request (PR)",
-    "mod": "mód. 03",
-    "def": "Um pedido de aprovação no GitHub pra integrar mudanças de código, com revisão de pares antes do merge."
-  },
-  {
-    "term": "RDS (Relational Database Service)",
-    "mod": "mód. 09",
-    "def": "Serviço da AWS de bancos de dados relacionais gerenciados, com backups automáticos."
-  },
-  {
-    "term": "Repositório",
-    "mod": "mód. 02",
-    "def": "A pasta versionada por Git, iniciada com git init, que guarda todo o histórico do projeto na pasta oculta .git."
-  },
-  {
-    "term": "ReplicaSet",
-    "mod": "mód. 07",
-    "def": "Objeto do Kubernetes cuja única missão é garantir que o número de Pods definido continue correto, clonando novos quando algum some."
-  },
-  {
-    "term": "RUN",
-    "mod": "mód. 06",
-    "def": "Instrução de um Dockerfile que executa um comando durante a construção da imagem (apenas uma vez, no build)."
-  },
-  {
-    "term": "S3 (Simple Storage Service)",
-    "mod": "mód. 09",
-    "def": "Serviço da AWS de armazenamento de objetos (arquivos, imagens, backups) altamente durável."
-  },
-  {
-    "term": "Sharing (Compartilhamento)",
-    "mod": "mód. 01",
-    "def": "Pilar do CAMS: pessoas cooperam e colaboram por um objetivo comum, sem esconder conhecimento."
-  },
-  {
-    "term": "Silos",
-    "mod": "mód. 01",
-    "def": "Times ou departamentos isolados; o DevOps busca destruí-los pra melhorar comunicação e velocidade de entrega."
-  },
-  {
-    "term": "Staging Area",
-    "mod": "mód. 02",
-    "def": "Área intermediária (index) do Git onde arquivos são organizados e preparados antes de um commit ser finalizado."
-  },
-  {
-    "term": "VPC (Virtual Private Cloud)",
-    "mod": "mód. 09",
-    "def": "Rede isolada e privada dentro da nuvem da AWS, com sub-redes e regras de firewall próprias."
-  },
-  {
-    "term": "Volume (Docker)",
-    "mod": "mód. 06",
-    "def": "Espaço de armazenamento gerenciado pelo Docker que persiste dados mesmo após o container ser removido."
-  }
-]
-  };
-</script>
-<script defer src="../assets/js/flipbook.js"></script>
-<script defer src="../assets/js/games.js"></script>
-<script defer src="../assets/js/chrome-widgets.js"></script>
-<script defer src="../assets/js/theme-picker.js"></script>
-<script defer src="../assets/js/accessibility.js"></script>
+    <meta charset="utf-8" />
+    <link href="../assets/icons/brand/favicon.svg" rel="icon" type="image/svg+xml" />
+    <link href="../assets/icons/brand/favicon-32.png" rel="icon" sizes="32x32" type="image/png" />
+    <link href="../assets/icons/brand/apple-touch-icon.png" rel="apple-touch-icon" />
+    <link href="../manifest.json" rel="manifest" />
+    <meta content="#9D25FF" name="theme-color" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="default-src 'self'; img-src 'self' data: https://images.unsplash.com; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests" http-equiv="Content-Security-Policy" />
+    <meta content="strict-origin-when-cross-origin" name="referrer">
+    <title>Glossário: navio.log</title>
+    <meta name="description" content="Glossário ilustrado do curso de DevOps (Docker &amp; Kubernetes), em formato de livro: termos explicados de forma simples, com exemplos." />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://universidade-log.vercel.app/glossario/devops.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:url" content="https://universidade-log.vercel.app/glossario/devops.html" />
+    <meta property="og:site_name" content="Universidade Log" />
+    <meta property="og:title" content="Glossário: navio.log" />
+    <meta property="og:description" content="Glossário ilustrado do curso de DevOps (Docker &amp; Kubernetes), em formato de livro: termos explicados de forma simples, com exemplos." />
+    <meta property="og:image" content="https://universidade-log.vercel.app/assets/characters/baba-grogue.png" />
+    <meta property="og:image:alt" content="Capitão Baba Grogue, mascote do curso de DevOps" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Glossário: navio.log" />
+    <meta name="twitter:description" content="Glossário ilustrado do curso de DevOps (Docker &amp; Kubernetes), em formato de livro: termos explicados de forma simples, com exemplos." />
+    <meta name="twitter:image" content="https://universidade-log.vercel.app/assets/characters/baba-grogue.png" />
+    <script>
+        (function() {
+            try {
+                var t = localStorage.getItem('studyhub_theme_v1');
+                if (t && t !== 'light') document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {}
+        })();
+    </script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&amp;family=Playwrite+US+Modern:wght@100..400&amp;family=Lilex:wght@400;500;600;700&amp;family=Playfair+Display:wght@600;700&amp;family=Lora:ital@0;1&amp;display=swap" rel="stylesheet" />
+    <link href="../assets/css/theme.css" rel="stylesheet" />
+    <link href="../assets/css/space-theme.css" rel="stylesheet" />
+    <link href="../assets/css/icons.css" rel="stylesheet" />
+    <link href="../assets/css/flipbook.css" rel="stylesheet">
+    <link href="../assets/css/games.css" rel="stylesheet" />
+    </link>
+    </meta>
+    </meta>
+</head>
+
+<body class="course-devops"><a href="#main-content" class="skip-link">Pular para o conteúdo</a>
+    <div aria-hidden="true" class="space-planet-photo"></div>
+    <div class="fb-topbar">
+        <div class="brand-mini"><img alt="" class="om om-sm" src="../assets/icons/content/whale.svg" /> <span>navio.log</span></div>
+        <div class="fb-topnav">
+            <a href="../index.html"><svg class="ic-mono" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 3 3 10.5V21h5.5v-6h7v6H21V10.5L12 3Z"></path>
+                </svg> universidade log</a>
+            <a href="../cursos/devops.html">↩ voltar pro curso</a>
+            <div data-chrome-widget="theme"></div>
+            <div data-chrome-widget="a11y"></div>
+        </div>
+    </div>
+    <main class="fb-stage" id="main-content">
+        <div class="fb-heading">
+            <div class="fb-eyebrow">glossário interativo</div>
+            <h1>navio.log</h1>
+            <p>Todo termo novo que você aprendeu em Git, GitHub, Docker, Kubernetes e AWS, catalogado como um dicionário de bordo.</p>
+        </div>
+        <div class="fb-cover" id="fbCover" onclick="__fbOpen()" style="--cover-a:#1B3A5C;--cover-b:#0D1F33;">
+            <div class="fb-spine"></div>
+            <img alt="Capitão Baba Grogue" class="fb-cover-mascot" src="../assets/characters/baba-grogue.png" />
+            <h2>Glossário de DevOps</h2>
+            <p>50 termos, organizados como um dicionário de verdade: capa, sumário e páginas que viram.</p>
+            <button class="fb-open-btn"><svg class="ic-mono" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M3 5.6c2.4-1 5.3-1 8 .5v13.3c-2.7-1.5-5.6-1.5-8-.5V5.6Z" opacity=".55"></path>
+                    <path d="M21 5.6c-2.4-1-5.3-1-8 .5v13.3c2.7-1.5 5.6-1.5 8-.5V5.6Z"></path>
+                    <rect height="1.1" opacity=".8" rx=".55" width="4.8" x="4.6" y="8"></rect>
+                    <rect height="1.1" opacity=".8" rx=".55" width="4.8" x="4.6" y="10.6"></rect>
+                </svg> Abrir o livro</button>
+        </div>
+        <div class="fb-book-wrap" id="fbRoot">
+            <div class="fb-book">
+                <div class="fb-page fb-page-left">
+                    <div class="fb-page-content"></div>
+                    <div class="fb-page-number"></div>
+                </div>
+                <div class="fb-spine-shadow"></div>
+                <div class="fb-page fb-page-right">
+                    <div class="fb-page-content"></div>
+                    <div class="fb-page-number"></div>
+                </div>
+            </div>
+            <div class="fb-controls">
+                <button class="fb-nav-btn" id="fbPrevBtn" onclick="__fbPrev()">← Página anterior</button>
+                <span class="fb-progress" id="fbProgress"></span>
+                <button class="fb-nav-btn" id="fbNextBtn" onclick="__fbNext()">Próxima página →</button>
+            </div>
+            <div class="fb-search-row">
+                <input class="fb-search" onkeydown="if(event.key==='Enter')__fbSearch(this.value)" placeholder="Buscar um termo... (ex: Kubernetes)" />
+                <button class="fb-close-btn" onclick="document.getElementById('fbCover').style.display='flex';document.querySelector('.fb-book-wrap').classList.remove('open');"><img alt="" class="om om-sm" src="../assets/icons/content/x-mark.svg" /> Fechar livro</button>
+            </div>
+        </div>
+        <div class="fb-mascot-note">
+            <img alt="Capitão Baba Grogue" src="../assets/characters/baba-grogue.png" />
+            <div>
+                <div class="m-name">Capitão Baba Grogue</div>
+                <p>Um bom capitão nunca decora vocabulário, ele guarda um dicionário de bordo pra consultar sempre que precisa. Esse aqui é o seu.</p>
+            </div>
+        </div>
+        <div class="fb-game-section">
+            <div class="fb-game-heading"><img alt="" class="om om-sm" src="../assets/icons/content/game-controller.svg" /> Pratique o que acabou de ler</div>
+            <p class="fb-game-sub">O mesmo jogo da memória que aparece no curso, só que aqui com termos direto do glossário.</p>
+            <div class="game-card memory-game" data-pairs='[{"term": "Automation (Automação)", "def": "Um dos 4 pilares do CAMS: automatizar o máximo possível de processos, da concepção à remoção de gargalos."}, {"term": "Conflito de Merge", "def": "Situação em que duas branches alteraram a mesma parte de um arquivo de formas diferentes, exigindo resolução manual antes do merge."}, {"term": "Dockerfile", "def": "Script de texto com instruções passo a passo de como o Docker deve construir uma imagem."}, {"term": "kubectl", "def": "A ferramenta de linha de comando usada pra interagir com um cluster Kubernetes: o meio de dar ordens ao cluster."}, {"term": "Merge (Pull Request)", "def": "Ação final de um Pull Request aprovado: integra as mudanças propostas na branch principal."}, {"term": "ReplicaSet", "def": "Objeto do Kubernetes cuja única missão é garantir que o número de Pods definido continue correto, clonando novos quando algum some."}]' id="fbMemGame">
+                <div class="game-title"><img alt="" class="om om-sm" src="../assets/icons/content/brain.svg" /> Jogo da memória: DevOps</div>
+                <div class="memory-grid"></div>
+                <button class="game-reset-btn" onclick="initMemoryGame('fbMemGame')">Embaralhar de novo</button>
+            </div>
+        </div>
+    </main>
+    <script>
+        window.GLOSSARY = {
+            courseTitle: "navio.log",
+            courseIcon: '<img class="om om-sm" src="../assets/icons/content/whale.svg" alt="">',
+            terms: [{
+                    "term": "AWS (Amazon Web Services)",
+                    "mod": "mód. 09",
+                    "def": "Provedor de nuvem que oferece computação, armazenamento e outros serviços sob demanda, com pagamento conforme o uso."
+                },
+                {
+                    "term": "Automation (Automação)",
+                    "mod": "mód. 01",
+                    "def": "Um dos 4 pilares do CAMS: automatizar o máximo possível de processos, da concepção à remoção de gargalos."
+                },
+                {
+                    "term": "Branch (Ramificação)",
+                    "mod": "mód. 02",
+                    "def": "Uma linha de desenvolvimento isolada dentro de um repositório Git, usada pra construir uma funcionalidade sem afetar o código principal."
+                },
+                {
+                    "term": "CAMS",
+                    "mod": "mód. 01",
+                    "def": "Framework que resume a cultura DevOps em 4 pilares: Culture, Automation, Measurement e Sharing."
+                },
+                {
+                    "term": "CI/CD",
+                    "mod": "mód. 10",
+                    "def": "Integração Contínua (Continuous Integration) e Entrega/Implantação Contínua (Continuous Delivery/Deployment): o fluxo automático do commit até a produção."
+                },
+                {
+                    "term": "Cluster",
+                    "mod": "mód. 07",
+                    "def": "Um conjunto de máquinas (nós) que juntas formam o ambiente onde o Kubernetes roda e gerencia containers."
+                },
+                {
+                    "term": "CMD",
+                    "mod": "mód. 06",
+                    "def": "Instrução de um Dockerfile que define o comando executado quando o container é iniciado (diferente de RUN, que roda durante a construção da imagem)."
+                },
+                {
+                    "term": "Commit",
+                    "mod": "mód. 02",
+                    "def": "Um checkpoint no histórico do Git: um snapshot registrado do estado do projeto, com uma mensagem explicativa."
+                },
+                {
+                    "term": "Conflito de Merge",
+                    "mod": "mód. 02",
+                    "def": "Situação em que duas branches alteraram a mesma parte de um arquivo de formas diferentes, exigindo resolução manual antes do merge."
+                },
+                {
+                    "term": "Container",
+                    "mod": "mód. 05",
+                    "def": "A instância ativa e em execução de uma imagem Docker: leve, isolada e descartável."
+                },
+                {
+                    "term": "CULTURE (Cultura)",
+                    "mod": "mód. 01",
+                    "def": "Primeiro pilar do CAMS: destruir silos organizacionais e priorizar interação constante entre times."
+                },
+                {
+                    "term": "Deployment",
+                    "mod": "mód. 07",
+                    "def": "Objeto do Kubernetes que gerencia o plano de implantação: diz ao ReplicaSet quantas réplicas manter e como atualizar sem downtime."
+                },
+                {
+                    "term": "Docker",
+                    "mod": "mód. 05",
+                    "def": "Plataforma open source que empacota, executa e distribui aplicações em containers isolados e portáveis."
+                },
+                {
+                    "term": "Docker Compose",
+                    "mod": "mód. 06",
+                    "def": "Ferramenta que orquestra múltiplos containers Docker a partir de um único arquivo declarativo (docker-compose.yml)."
+                },
+                {
+                    "term": "Docker Daemon",
+                    "mod": "mód. 05",
+                    "def": "O serviço em segundo plano (server) que executa o trabalho pesado de criar, rodar e gerenciar containers."
+                },
+                {
+                    "term": "Docker Registry",
+                    "mod": "mód. 05",
+                    "def": "Repositório centralizado (como o Docker Hub) onde imagens são publicadas, armazenadas e baixadas."
+                },
+                {
+                    "term": "Dockerfile",
+                    "mod": "mód. 05",
+                    "def": "Script de texto com instruções passo a passo de como o Docker deve construir uma imagem."
+                },
+                {
+                    "term": "EC2 (Elastic Compute Cloud)",
+                    "mod": "mód. 09",
+                    "def": "Serviço da AWS que fornece servidores virtuais sob demanda."
+                },
+                {
+                    "term": "EKS (Elastic Kubernetes Service)",
+                    "mod": "mód. 09",
+                    "def": "Kubernetes gerenciado pela AWS, rodando na escala de um provedor de nuvem."
+                },
+                {
+                    "term": "Elasticidade",
+                    "mod": "mód. 09",
+                    "def": "Capacidade de recursos de nuvem crescerem ou encolherem automaticamente conforme a demanda muda."
+                },
+                {
+                    "term": "Git",
+                    "mod": "mód. 02",
+                    "def": "Sistema de controle de versão distribuído, usado pra registrar e gerenciar mudanças em projetos de software."
+                },
+                {
+                    "term": "GitHub",
+                    "mod": "mód. 03",
+                    "def": "Plataforma web que hospeda repositórios Git e facilita colaboração: revisão de código, gerenciamento de projeto e mais."
+                },
+                {
+                    "term": "IAM (Identity and Access Management)",
+                    "mod": "mód. 09",
+                    "def": "Serviço da AWS que controla quem pode acessar quais recursos, através de usuários, papéis (roles) e permissões."
+                },
+                {
+                    "term": "IaC (Infrastructure as Code)",
+                    "mod": "mód. 04",
+                    "def": "Prática de definir e provisionar infraestrutura através de arquivos de configuração versionáveis, em vez de configuração manual."
+                },
+                {
+                    "term": "Imagem (Docker)",
+                    "mod": "mód. 05",
+                    "def": "O molde imutável e somente-leitura gerado a partir de um Dockerfile: contém código, runtimes e dependências empacotados."
+                },
+                {
+                    "term": "Lambda",
+                    "mod": "mód. 09",
+                    "def": "Serviço serverless da AWS que executa código sob demanda, sem gerenciamento de servidor: cobrança só pelo tempo de execução."
+                },
+                {
+                    "term": "Laço de Reconciliação",
+                    "mod": "mód. 07",
+                    "def": "Ciclo automático do Kubernetes que compara o estado desejado (YAML) com o estado real do cluster e age sozinho pra corrigir diferenças."
+                },
+                {
+                    "term": "Measurement (Medição)",
+                    "mod": "mód. 01",
+                    "def": "Pilar do CAMS: coletar dados e métricas pra criar loops de feedback em todas as fases do processo."
+                },
+                {
+                    "term": "Merge",
+                    "mod": "mód. 02",
+                    "def": "O processo de combinar as mudanças de uma branch em outra, como integrar uma feature de volta na main."
+                },
+                {
+                    "term": "Modelo Declarativo",
+                    "mod": "mód. 04",
+                    "def": "Abordagem em que você descreve o estado desejado de um sistema (não os passos), e a ferramenta se encarrega de alcançá-lo."
+                },
+                {
+                    "term": "Namespace / Kernel Compartilhado",
+                    "mod": "mód. 05",
+                    "def": "Mecanismo do Linux que isola processos, rede e sistema de arquivos, permitindo que containers rodem isolados sem duplicar o SO inteiro."
+                },
+                {
+                    "term": "kubectl",
+                    "mod": "mód. 08",
+                    "def": "A ferramenta de linha de comando usada pra interagir com um cluster Kubernetes: o meio de dar ordens ao cluster."
+                },
+                {
+                    "term": "Kubernetes (K8S)",
+                    "mod": "mód. 07",
+                    "def": "Orquestrador de containers open source; a palavra vem do grego e significa 'Timoneiro': gerencia onde e quantas cópias de cada container rodam."
+                },
+                {
+                    "term": "Manifesto YAML",
+                    "mod": "mód. 07",
+                    "def": "Arquivo declarativo (formato YAML) que descreve o estado desejado de recursos do Kubernetes, como um Deployment."
+                },
+                {
+                    "term": "Menor Privilégio",
+                    "mod": "mód. 09",
+                    "def": "Princípio de segurança: cada usuário ou serviço deve ter apenas as permissões estritamente necessárias pro seu trabalho."
+                },
+                {
+                    "term": "Merge (Pull Request)",
+                    "mod": "mód. 03",
+                    "def": "Ação final de um Pull Request aprovado: integra as mudanças propostas na branch principal."
+                },
+                {
+                    "term": "Pilares Obrigatórios (DevOps)",
+                    "mod": "mód. 01",
+                    "def": "Colaboração Dev/Ops, CI/CD, Agile, Gerenciamento de Configuração, infraestrutura escalável e monitoramento."
+                },
+                {
+                    "term": "Pipeline",
+                    "mod": "mód. 10",
+                    "def": "A sequência automatizada de etapas (build, testes, deploy) que o código percorre do commit até a produção."
+                },
+                {
+                    "term": "Pod",
+                    "mod": "mód. 07",
+                    "def": "A menor unidade implantável do Kubernetes: uma 'cabine' onde roda um ou mais containers."
+                },
+                {
+                    "term": "Pull Request (PR)",
+                    "mod": "mód. 03",
+                    "def": "Um pedido de aprovação no GitHub pra integrar mudanças de código, com revisão de pares antes do merge."
+                },
+                {
+                    "term": "RDS (Relational Database Service)",
+                    "mod": "mód. 09",
+                    "def": "Serviço da AWS de bancos de dados relacionais gerenciados, com backups automáticos."
+                },
+                {
+                    "term": "Repositório",
+                    "mod": "mód. 02",
+                    "def": "A pasta versionada por Git, iniciada com git init, que guarda todo o histórico do projeto na pasta oculta .git."
+                },
+                {
+                    "term": "ReplicaSet",
+                    "mod": "mód. 07",
+                    "def": "Objeto do Kubernetes cuja única missão é garantir que o número de Pods definido continue correto, clonando novos quando algum some."
+                },
+                {
+                    "term": "RUN",
+                    "mod": "mód. 06",
+                    "def": "Instrução de um Dockerfile que executa um comando durante a construção da imagem (apenas uma vez, no build)."
+                },
+                {
+                    "term": "S3 (Simple Storage Service)",
+                    "mod": "mód. 09",
+                    "def": "Serviço da AWS de armazenamento de objetos (arquivos, imagens, backups) altamente durável."
+                },
+                {
+                    "term": "Sharing (Compartilhamento)",
+                    "mod": "mód. 01",
+                    "def": "Pilar do CAMS: pessoas cooperam e colaboram por um objetivo comum, sem esconder conhecimento."
+                },
+                {
+                    "term": "Silos",
+                    "mod": "mód. 01",
+                    "def": "Times ou departamentos isolados; o DevOps busca destruí-los pra melhorar comunicação e velocidade de entrega."
+                },
+                {
+                    "term": "Staging Area",
+                    "mod": "mód. 02",
+                    "def": "Área intermediária (index) do Git onde arquivos são organizados e preparados antes de um commit ser finalizado."
+                },
+                {
+                    "term": "VPC (Virtual Private Cloud)",
+                    "mod": "mód. 09",
+                    "def": "Rede isolada e privada dentro da nuvem da AWS, com sub-redes e regras de firewall próprias."
+                },
+                {
+                    "term": "Volume (Docker)",
+                    "mod": "mód. 06",
+                    "def": "Espaço de armazenamento gerenciado pelo Docker que persiste dados mesmo após o container ser removido."
+                }
+            ]
+        };
+    </script>
+    <script defer src="../assets/js/flipbook.js"></script>
+    <script defer src="../assets/js/games.js"></script>
+    <script defer src="../assets/js/chrome-widgets.js"></script>
+    <script defer src="../assets/js/theme-picker.js"></script>
+    <script defer src="../assets/js/accessibility.js"></script>
 </body>
+
 </html>

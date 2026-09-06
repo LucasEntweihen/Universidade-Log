@@ -1,1743 +1,1153 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="assets/icons/brand/favicon.svg"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="assets/icons/brand/favicon-32.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      href="assets/icons/brand/apple-touch-icon.png"
-    />
+    <link rel="icon" type="image/svg+xml" href="assets/icons/brand/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/brand/favicon-32.png" />
+    <link rel="apple-touch-icon" href="assets/icons/brand/apple-touch-icon.png" />
     <link rel="manifest" href="manifest.json" />
     <meta name="theme-color" content="#9D25FF" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="default-src 'self'; img-src 'self' data: https://images.unsplash.com; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests"
-    />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://images.unsplash.com; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <title>
-      Universidade Log: curso de IA Generativa, Android, DevOps e Trigonometria
-      gamificado
+        Universidade Log: curso de IA Generativa, Android, DevOps e Trigonometria
+        gamificado
     </title>
-    <meta
-      name="description"
-      content="Aprenda IA Generativa, Android (Kotlin), DevOps (Docker &amp; Kubernetes) e Trigonometria numa plataforma gamificada e gratuita: trilha visual, XP, conquistas e glossário-livro. Sem conta, sem anúncio, progresso salvo no navegador."
-    />
-    <meta
-      name="keywords"
-      content="curso ia generativa, aprender langgraph, curso de android gratis, aprender kotlin, curso devops docker kubernetes, curso de trigonometria online, plataforma de estudo gamificada, estudar programação gamificado, curso online autodidata"
-    />
+    <meta name="description" content="Aprenda IA Generativa, Android (Kotlin), DevOps (Docker &amp; Kubernetes) e Trigonometria numa plataforma gamificada e gratuita: trilha visual, XP, conquistas e glossário-livro. Sem conta, sem anúncio, progresso salvo no navegador." />
+    <meta name="keywords" content="curso ia generativa, aprender langgraph, curso de android gratis, aprender kotlin, curso devops docker kubernetes, curso de trigonometria online, plataforma de estudo gamificada, estudar programação gamificado, curso online autodidata" />
     <meta name="author" content="Universidade Log" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <link rel="canonical" href="https://universidade-log.vercel.app/" />
-    <link
-      rel="alternate"
-      hreflang="pt-BR"
-      href="https://universidade-log.vercel.app/"
-    />
+    <link rel="alternate" hreflang="pt-BR" href="https://universidade-log.vercel.app/" />
 
     <!-- Open Graph / Facebook, WhatsApp, LinkedIn -->
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="pt_BR" />
     <meta property="og:url" content="https://universidade-log.vercel.app/" />
     <meta property="og:site_name" content="Universidade Log" />
-    <meta
-      property="og:title"
-      content="Universidade Log: aprenda de verdade, no seu ritmo"
-    />
-    <meta
-      property="og:description"
-      content="IA Generativa, Android, DevOps e Trigonometria numa trilha gamificada com XP, conquistas e uma tripulação inteira torcendo por você. Grátis, sem conta, sem anúncio."
-    />
-    <meta
-      property="og:image"
-      content="https://universidade-log.vercel.app/assets/characters/navio-tripulacao.png"
-    />
-    <meta
-      property="og:image:alt"
-      content="A tripulação do Universidade Log a bordo do navio de containers"
-    />
+    <meta property="og:title" content="Universidade Log: aprenda de verdade, no seu ritmo" />
+    <meta property="og:description" content="IA Generativa, Android, DevOps e Trigonometria numa trilha gamificada com XP, conquistas e uma tripulação inteira torcendo por você. Grátis, sem conta, sem anúncio." />
+    <meta property="og:image" content="https://universidade-log.vercel.app/assets/characters/navio-tripulacao.png" />
+    <meta property="og:image:alt" content="A tripulação do Universidade Log a bordo do navio de containers" />
 
     <!-- Twitter / X Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="Universidade Log: aprenda de verdade, no seu ritmo"
-    />
-    <meta
-      name="twitter:description"
-      content="IA Generativa, Android, DevOps e Trigonometria numa trilha gamificada com XP, conquistas e uma tripulação inteira torcendo por você."
-    />
-    <meta
-      name="twitter:image"
-      content="https://universidade-log.vercel.app/assets/characters/navio-tripulacao.png"
-    />
+    <meta name="twitter:title" content="Universidade Log: aprenda de verdade, no seu ritmo" />
+    <meta name="twitter:description" content="IA Generativa, Android, DevOps e Trigonometria numa trilha gamificada com XP, conquistas e uma tripulação inteira torcendo por você." />
+    <meta name="twitter:image" content="https://universidade-log.vercel.app/assets/characters/navio-tripulacao.png" />
 
     <!-- Dados estruturados: ajudam o Google a entender o site como um catálogo de cursos -->
     <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "EducationalOrganization",
-        "name": "Universidade Log",
-        "url": "https://universidade-log.vercel.app/",
-        "description": "Plataforma pessoal de estudo gamificada com cursos de IA Generativa, Android, DevOps e Trigonometria.",
-        "sameAs": [],
-        "hasCourse": [
-          {
-            "@type": "Course",
-            "name": "IA Generativa Aplicada",
-            "description": "Prompt, parâmetros de geração, arquitetura de agentes com LangGraph e guardrails de segurança.",
-            "url": "https://universidade-log.vercel.app/cursos/ia.html",
-            "provider": { "@type": "Organization", "name": "Universidade Log" },
-            "isAccessibleForFree": true
-          },
-          {
-            "@type": "Course",
-            "name": "Desenvolvimento Android",
-            "description": "Kotlin, Jetpack Compose, arquitetura MVVM e publicação na Play Store.",
-            "url": "https://universidade-log.vercel.app/cursos/android.html",
-            "provider": { "@type": "Organization", "name": "Universidade Log" },
-            "isAccessibleForFree": true
-          },
-          {
-            "@type": "Course",
-            "name": "DevOps: Docker, Kubernetes & AWS",
-            "description": "Cultura DevOps, Git & GitHub, containers, Kubernetes na prática e fundamentos de AWS.",
-            "url": "https://universidade-log.vercel.app/cursos/devops.html",
-            "provider": { "@type": "Organization", "name": "Universidade Log" },
-            "isAccessibleForFree": true
-          },
-          {
-            "@type": "Course",
-            "name": "Trigomante: A Jornada do Círculo",
-            "description": "Trigonometria e Razão Áurea numa aventura de fantasia medieval.",
-            "url": "https://universidade-log.vercel.app/cursos/trigomante.html",
-            "provider": { "@type": "Organization", "name": "Universidade Log" },
-            "isAccessibleForFree": true
-          }
-        ]
-      }
+        {
+            "@context": "https://schema.org",
+            "@type": "EducationalOrganization",
+            "name": "Universidade Log",
+            "url": "https://universidade-log.vercel.app/",
+            "description": "Plataforma pessoal de estudo gamificada com cursos de IA Generativa, Android, DevOps e Trigonometria.",
+            "sameAs": [],
+            "hasCourse": [{
+                    "@type": "Course",
+                    "name": "IA Generativa Aplicada",
+                    "description": "Prompt, parâmetros de geração, arquitetura de agentes com LangGraph e guardrails de segurança.",
+                    "url": "https://universidade-log.vercel.app/cursos/ia.html",
+                    "provider": {
+                        "@type": "Organization",
+                        "name": "Universidade Log"
+                    },
+                    "isAccessibleForFree": true
+                },
+                {
+                    "@type": "Course",
+                    "name": "Desenvolvimento Android",
+                    "description": "Kotlin, Jetpack Compose, arquitetura MVVM e publicação na Play Store.",
+                    "url": "https://universidade-log.vercel.app/cursos/android.html",
+                    "provider": {
+                        "@type": "Organization",
+                        "name": "Universidade Log"
+                    },
+                    "isAccessibleForFree": true
+                },
+                {
+                    "@type": "Course",
+                    "name": "DevOps: Docker, Kubernetes & AWS",
+                    "description": "Cultura DevOps, Git & GitHub, containers, Kubernetes na prática e fundamentos de AWS.",
+                    "url": "https://universidade-log.vercel.app/cursos/devops.html",
+                    "provider": {
+                        "@type": "Organization",
+                        "name": "Universidade Log"
+                    },
+                    "isAccessibleForFree": true
+                },
+                {
+                    "@type": "Course",
+                    "name": "Trigomante: A Jornada do Círculo",
+                    "description": "Trigonometria e Razão Áurea numa aventura de fantasia medieval.",
+                    "url": "https://universidade-log.vercel.app/cursos/trigomante.html",
+                    "provider": {
+                        "@type": "Organization",
+                        "name": "Universidade Log"
+                    },
+                    "isAccessibleForFree": true
+                }
+            ]
+        }
     </script>
     <script>
-      (function () {
-        try {
-          var t = localStorage.getItem("studyhub_theme_v1");
-          if (t && t !== "light")
-            document.documentElement.setAttribute("data-theme", t);
-        } catch (e) {}
-      })();
+        (function() {
+            try {
+                var t = localStorage.getItem("studyhub_theme_v1");
+                if (t && t !== "light")
+                    document.documentElement.setAttribute("data-theme", t);
+            } catch (e) {}
+        })();
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&family=Playwrite+US+Modern:wght@100..400&family=Lilex:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&family=Playwrite+US+Modern:wght@100..400&family=Lilex:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="assets/css/theme.css" />
     <link rel="stylesheet" href="assets/css/space-theme.css" />
     <link rel="stylesheet" href="assets/css/icons.css" />
     <link rel="stylesheet" href="assets/css/theme-fx.css" />
     <link rel="stylesheet" href="assets/css/landing.css" />
-  </head>
+</head>
 
-  <body>
+<body>
     <a href="#main-content" class="skip-link">Pular para o conteúdo</a>
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
-      <defs>
-        <filter id="protanopia">
-          <feColorMatrix
-            type="matrix"
-            values="0.567, 0.433, 0, 0, 0, 0.558, 0.442, 0, 0, 0, 0, 0.242, 0.758, 0, 0, 0, 0, 0, 1, 0"
-          />
-        </filter>
-        <filter id="deuteranopia">
-          <feColorMatrix
-            type="matrix"
-            values="0.625, 0.375, 0, 0, 0, 0.7, 0.3, 0, 0, 0, 0, 0.3, 0.7, 0, 0, 0, 0, 0, 1, 0"
-          />
-        </filter>
-        <filter id="tritanopia">
-          <feColorMatrix
-            type="matrix"
-            values="0.95, 0.05, 0, 0, 0, 0, 0.433, 0.567, 0, 0, 0, 0, 0.475, 0.525, 0, 0, 0, 0, 0, 1, 0"
-          />
-        </filter>
-      </defs>
+        <defs>
+            <filter id="protanopia">
+                <feColorMatrix type="matrix" values="0.567, 0.433, 0, 0, 0, 0.558, 0.442, 0, 0, 0, 0, 0.242, 0.758, 0, 0, 0, 0, 0, 1, 0" />
+            </filter>
+            <filter id="deuteranopia">
+                <feColorMatrix type="matrix" values="0.625, 0.375, 0, 0, 0, 0.7, 0.3, 0, 0, 0, 0, 0.3, 0.7, 0, 0, 0, 0, 0, 1, 0" />
+            </filter>
+            <filter id="tritanopia">
+                <feColorMatrix type="matrix" values="0.95, 0.05, 0, 0, 0, 0, 0.433, 0.567, 0, 0, 0, 0, 0.475, 0.525, 0, 0, 0, 0, 0, 1, 0" />
+            </filter>
+        </defs>
     </svg>
-    <div
-      id="lp-loader"
-      class="lp-loader"
-      role="status"
-      aria-label="Carregando Universidade Log"
-    >
-      <div class="lp-loader-content">
-        <div class="lp-loader-mark">
-          <img
-            src="assets/characters/byte.png"
-            alt=""
-            width="72"
-            height="78"
-            loading="lazy"
-          />
+    <div id="lp-loader" class="lp-loader" role="status" aria-label="Carregando Universidade Log">
+        <div class="lp-loader-content">
+            <div class="lp-loader-mark">
+                <img src="assets/characters/byte.png" alt="" width="72" height="78" loading="lazy" />
+            </div>
+            <div class="lp-loader-details">
+                <div class="lp-loader-bar">
+                    <div class="lp-loader-fill"></div>
+                </div>
+                <div class="lp-loader-text">iniciando o sistema...</div>
+            </div>
         </div>
-        <div class="lp-loader-details">
-          <div class="lp-loader-bar"><div class="lp-loader-fill"></div></div>
-          <div class="lp-loader-text">iniciando o sistema...</div>
-        </div>
-      </div>
     </div>
     <script>
-      // Tela de carregamento: agora com delay proposital para exibição
-      // da barra de progresso (mínimo de ~2.8s antes de sumir).
-      (function () {
-        var loader = document.getElementById("lp-loader");
-        if (!loader) return;
-        var hidden = false;
-        function hide() {
-          if (hidden) return;
-          hidden = true;
-          loader.classList.add("lp-loader--hide");
-          setTimeout(function () {
-            if (loader.parentNode) loader.parentNode.removeChild(loader);
-          }, 500);
-        }
+        // Tela de carregamento: agora com delay proposital para exibição
+        // da barra de progresso (mínimo de ~2.8s antes de sumir).
+        (function() {
+            var loader = document.getElementById("lp-loader");
+            if (!loader) return;
+            var hidden = false;
 
-        var loadFired = false;
-        var minTimePassed = false;
+            function hide() {
+                if (hidden) return;
+                hidden = true;
+                loader.classList.add("lp-loader--hide");
+                setTimeout(function() {
+                    if (loader.parentNode) loader.parentNode.removeChild(loader);
+                }, 500);
+            }
 
-        function checkDone() {
-          if (loadFired && minTimePassed) hide();
-        }
+            var loadFired = false;
+            var minTimePassed = false;
 
-        setTimeout(function () {
-          minTimePassed = true;
-          checkDone();
-        }, 2800);
+            function checkDone() {
+                if (loadFired && minTimePassed) hide();
+            }
 
-        function onReady() {
-          loadFired = true;
-          checkDone();
-        }
+            setTimeout(function() {
+                minTimePassed = true;
+                checkDone();
+            }, 2800);
 
-        if (document.readyState === "complete") onReady();
-        else window.addEventListener("load", onReady);
+            function onReady() {
+                loadFired = true;
+                checkDone();
+            }
 
-        setTimeout(hide, 8000); // rede de segurança
-      })();
+            if (document.readyState === "complete") onReady();
+            else window.addEventListener("load", onReady);
+
+            setTimeout(hide, 8000); // rede de segurança
+        })();
     </script>
 
     <div class="lp-bg-anim" aria-hidden="true">
-      <div class="lp-chart-grid"></div>
-      <div class="lp-glow"></div>
-      <div class="lp-grain"></div>
-      <div class="lp-top-light" aria-hidden="true"></div>
-      <div class="lp-bubbles">
-        <span></span><span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span><span></span>
-      </div>
+        <div class="lp-chart-grid"></div>
+        <div class="lp-glow"></div>
+        <div class="lp-grain"></div>
+        <div class="lp-top-light" aria-hidden="true"></div>
+        <div class="lp-bubbles">
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+        </div>
     </div>
 
     <div class="lp-topbar">
-      <a
-        class="lp-logo"
-        href="index.html"
-        aria-label="Universidade Log — página inicial"
-        ><img
-          class="lp-logo-lockup"
-          src="assets/icons/brand/logo-lockup.svg"
-          alt="Universidade Log"
-      /></a>
-      <button
-        class="mobile-menu-btn"
-        aria-label="Abrir menu"
-        aria-expanded="false"
-        onclick="
+        <a class="lp-logo" href="index.html" aria-label="Universidade Log — página inicial"><img class="lp-logo-lockup" src="assets/icons/brand/logo-lockup.svg" alt="Universidade Log" /></a>
+        <button class="mobile-menu-btn" aria-label="Abrir menu" aria-expanded="false" onclick="
           this.setAttribute(
             'aria-expanded',
             this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true',
           );
           document.getElementById('lpNavLinks').classList.toggle('open');
-        "
-      >
-        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
-          <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z" />
-        </svg>
-      </button>
-      <div class="lp-nav-links" id="lpNavLinks">
-        <a
-          href="cursos.html"
-          onclick="
+        ">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z" />
+            </svg>
+        </button>
+        <div class="lp-nav-links" id="lpNavLinks">
+            <a href="cursos.html" onclick="
             document.getElementById('lpNavLinks').classList.remove('open')
-          "
-          ><span class="nl-ic"
-            ><img
-              class="om om-sm"
-              src="assets/icons/content/graduation-cap.svg"
-              alt="" /></span
-          >cursos</a
-        >
-        <a
-          href="#sobre"
-          data-section="sobre"
-          onclick="
+          "><span class="nl-ic"><img class="om om-sm" src="assets/icons/content/graduation-cap.svg" alt="" /></span>cursos</a>
+            <a href="#sobre" data-section="sobre" onclick="
             document.getElementById('lpNavLinks').classList.remove('open')
-          "
-          ><span class="nl-ic"
-            ><svg class="ic-mono sm" viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M12 2c.5 4.3 2 6.7 6 7.5-4 .8-5.5 3.2-6 7.5-.5-4.3-2-6.7-6-7.5 4-.8 5.5-3.2 6-7.5Z"
-              />
-              <path
-                d="M19 14c.2 1.8.8 2.8 2.5 3.2-1.7.4-2.3 1.4-2.5 3.2-.2-1.8-.8-2.8-2.5-3.2 1.7-.4 2.3-1.4 2.5-3.2Z"
-              /></svg></span
-          >sobre</a
-        >
-        <a
-          href="#paleta"
-          data-section="paleta"
-          onclick="
+          "><span class="nl-ic"><svg class="ic-mono sm" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2c.5 4.3 2 6.7 6 7.5-4 .8-5.5 3.2-6 7.5-.5-4.3-2-6.7-6-7.5 4-.8 5.5-3.2 6-7.5Z" />
+                        <path d="M19 14c.2 1.8.8 2.8 2.5 3.2-1.7.4-2.3 1.4-2.5 3.2-.2-1.8-.8-2.8-2.5-3.2 1.7-.4 2.3-1.4 2.5-3.2Z" />
+                    </svg></span>sobre</a>
+            <a href="#paleta" data-section="paleta" onclick="
             document.getElementById('lpNavLinks').classList.remove('open')
-          "
-          ><span class="nl-ic"
-            ><img
-              class="om om-sm"
-              src="assets/icons/content/palette.svg"
-              alt="" /></span
-          >paleta</a
-        >
-        <a
-          href="#equipe"
-          data-section="equipe"
-          onclick="
+          "><span class="nl-ic"><img class="om om-sm" src="assets/icons/content/palette.svg" alt="" /></span>paleta</a>
+            <a href="#equipe" data-section="equipe" onclick="
             document.getElementById('lpNavLinks').classList.remove('open')
-          "
-          ><span class="nl-ic"
-            ><img
-              class="om om-sm"
-              src="assets/icons/content/ship.svg"
-              alt="" /></span
-          >equipe</a
-        >
-        <a
-          href="#faq"
-          data-section="faq"
-          onclick="
+          "><span class="nl-ic"><img class="om om-sm" src="assets/icons/content/ship.svg" alt="" /></span>equipe</a>
+            <a href="#faq" data-section="faq" onclick="
             document.getElementById('lpNavLinks').classList.remove('open')
-          "
-          ><span class="nl-ic"
-            ><svg class="ic-mono sm" viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"
-              /></svg></span
-          >faq</a
-        >
-      </div>
-      <div class="theme-toggle-row">
-        <div data-chrome-widget="theme"></div>
-        <div data-chrome-widget="a11y"></div>
-      </div>
+          "><span class="nl-ic"><svg class="ic-mono sm" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z" />
+                    </svg></span>faq</a>
+        </div>
+        <div class="theme-toggle-row">
+            <div data-chrome-widget="theme"></div>
+            <div data-chrome-widget="a11y"></div>
+        </div>
     </div>
     <div class="content-wrapper">
-      <!-- ================= HERO ================= -->
-      <main id="main-content">
-        <section class="lp-hero">
-          <div class="lp-hero-text">
-            <span class="lp-tag">gamificado · multi-curso · no seu ritmo</span>
-            <h1>
-              Aprenda de verdade:
-              <span class="accent"
-                >com XP, conquistas e uma tripulação inteira</span
-              >
-              torcendo por você
-            </h1>
-            <p class="lead">
-              Universidade Log é a sua plataforma pessoal de estudo. Cada curso
-              vira uma trilha visual com missões, quizzes e minijogos: e um
-              elenco de personagens que te acompanha do primeiro módulo até a
-              conquista final. Sem prova decisiva, sem prazo apertado: só
-              progresso real, salvo automaticamente no seu navegador, pronto pra
-              retomar sempre que você voltar.
-            </p>
-          </div>
-          <div class="lp-hero-art">
-            <div class="lp-hero-seal">
-              <strong>4</strong><span>cursos<br />completos</span>
-            </div>
-            <div class="byte-ground" aria-hidden="true"></div>
-            <img
-              src="assets/characters/byte.png"
-              alt="Byte, a lontra mascote do Universidade Log, acenando e segurando um laptop com um coração pixelado na tela"
-            />
-          </div>
-        </section>
+        <!-- ================= HERO ================= -->
+        <main id="main-content">
+            <section class="lp-hero">
+                <div class="lp-hero-text">
+                    <span class="lp-tag">gamificado · multi-curso · no seu ritmo</span>
+                    <h1>
+                        Aprenda de verdade:
+                        <span class="accent">com XP, conquistas e uma tripulação inteira</span>
+                        torcendo por você
+                    </h1>
+                    <p class="lead">
+                        Universidade Log é a sua plataforma pessoal de estudo. Cada curso
+                        vira uma trilha visual com missões, quizzes e minijogos: e um
+                        elenco de personagens que te acompanha do primeiro módulo até a
+                        conquista final. Sem prova decisiva, sem prazo apertado: só
+                        progresso real, salvo automaticamente no seu navegador, pronto pra
+                        retomar sempre que você voltar.
+                    </p>
+                </div>
+                <div class="lp-hero-art">
+                    <div class="lp-hero-seal">
+                        <strong>4</strong><span>cursos<br />completos</span>
+                    </div>
+                    <div class="byte-ground" aria-hidden="true"></div>
+                    <img src="assets/characters/byte.png" alt="Byte, a lontra mascote do Universidade Log, acenando e segurando um laptop com um coração pixelado na tela" />
+                </div>
+            </section>
 
-        <div class="lp-stat-strip">
-          <div class="lp-stat">
-            <div class="n">4</div>
-            <div class="l">cursos completos</div>
-          </div>
-          <div class="lp-stat">
-            <div class="n">35</div>
-            <div class="l">módulos ao todo</div>
-          </div>
-          <div class="lp-stat">
-            <div class="n">12</div>
-            <div class="l">temas de cores</div>
-          </div>
-          <div class="lp-stat">
-            <div class="n">4</div>
-            <div class="l">glossários-livro</div>
-          </div>
-        </div>
+            <div class="lp-stat-strip">
+                <div class="lp-stat">
+                    <div class="n">4</div>
+                    <div class="l">cursos completos</div>
+                </div>
+                <div class="lp-stat">
+                    <div class="n">35</div>
+                    <div class="l">módulos ao todo</div>
+                </div>
+                <div class="lp-stat">
+                    <div class="n">12</div>
+                    <div class="l">temas de cores</div>
+                </div>
+                <div class="lp-stat">
+                    <div class="n">4</div>
+                    <div class="l">glossários-livro</div>
+                </div>
+            </div>
 
-        <!-- ================= SOBRE ================= -->
-        <section class="lp-section reveal" id="sobre">
-          <div class="lp-section-head">
-            <div>
-              <h2>O que é o Universidade Log</h2>
-              <p class="section-sub">
-                Um lugar só seu pra estudar sem enrolação: sem anúncio, sem
-                distração, sem ninguém comparando seu progresso com o de outra
-                pessoa. Cada curso foi desenhado como uma jornada, não como uma
-                lista de leitura.
-              </p>
-            </div>
-            <span class="lp-note"
-              >escrito pra ser usado sozinho, no seu tempo</span
-            >
-          </div>
-          <div class="wire"></div>
-          <div class="feat-grid reveal-stagger">
-            <div class="feat-card r-item">
-              <span class="f-num">01</span>
-              <div class="f-icon">
-                <img
-                  class="om om-sm"
-                  src="assets/icons/content/compass.svg"
-                  alt=""
-                />
-              </div>
-              <h3>Trilha visual, não lista</h3>
-              <p>
-                Cada curso é um caminho em zigue-zague com módulos numerados:
-                você sempre sabe onde está e o que vem a seguir, sem se perder
-                num sumário gigante.
-              </p>
-            </div>
-            <div class="feat-card r-item">
-              <span class="f-num">02</span>
-              <div class="f-icon">
-                <img
-                  class="om om-sm"
-                  src="assets/icons/content/star.svg"
-                  alt=""
-                />
-              </div>
-              <h3>XP, níveis e conquistas</h3>
-              <p>
-                Toda tarefa marcada, quiz acertado ou sessão de foco concluída
-                rende experiência de verdade. Suba de nível, desbloqueie badges
-                e sinta o progresso acontecer.
-              </p>
-            </div>
-            <div class="feat-card r-item">
-              <span class="f-num">03</span>
-              <div class="f-icon">
-                <svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor">
-                  <path
-                    d="M5.5 3h11A1.5 1.5 0 0 1 18 4.5v16.2a.5.5 0 0 1-.74.44L12 18.5l-5.26 2.64a.5.5 0 0 1-.74-.44V4.5A1.5 1.5 0 0 1 5.5 3Z"
-                  />
-                  <rect
-                    x="8"
-                    y="7"
-                    width="6.5"
-                    height="1.3"
-                    rx=".65"
-                    fill="#fff"
-                    opacity=".7"
-                  />
-                  <rect
-                    x="8"
-                    y="10"
-                    width="6.5"
-                    height="1.3"
-                    rx=".65"
-                    fill="#fff"
-                    opacity=".7"
-                  />
-                </svg>
-              </div>
-              <h3>Glossário em formato de livro</h3>
-              <p>
-                Cada curso guarda um dicionário interativo com efeito de página
-                virando de verdade: todo termo novo que você aprendeu,
-                organizado como um livro físico.
-              </p>
-            </div>
-          </div>
-        </section>
+            <!-- ================= SOBRE ================= -->
+            <section class="lp-section reveal" id="sobre">
+                <div class="lp-section-head">
+                    <div>
+                        <h2>O que é o Universidade Log</h2>
+                        <p class="section-sub">
+                            Um lugar só seu pra estudar sem enrolação: sem anúncio, sem
+                            distração, sem ninguém comparando seu progresso com o de outra
+                            pessoa. Cada curso foi desenhado como uma jornada, não como uma
+                            lista de leitura.
+                        </p>
+                    </div>
+                    <span class="lp-note">escrito pra ser usado sozinho, no seu tempo</span>
+                </div>
+                <div class="wire"></div>
+                <div class="feat-grid reveal-stagger">
+                    <div class="feat-card r-item">
+                        <span class="f-num">01</span>
+                        <div class="f-icon">
+                            <img class="om om-sm" src="assets/icons/content/compass.svg" alt="" />
+                        </div>
+                        <h3>Trilha visual, não lista</h3>
+                        <p>
+                            Cada curso é um caminho em zigue-zague com módulos numerados:
+                            você sempre sabe onde está e o que vem a seguir, sem se perder
+                            num sumário gigante.
+                        </p>
+                    </div>
+                    <div class="feat-card r-item">
+                        <span class="f-num">02</span>
+                        <div class="f-icon">
+                            <img class="om om-sm" src="assets/icons/content/star.svg" alt="" />
+                        </div>
+                        <h3>XP, níveis e conquistas</h3>
+                        <p>
+                            Toda tarefa marcada, quiz acertado ou sessão de foco concluída
+                            rende experiência de verdade. Suba de nível, desbloqueie badges
+                            e sinta o progresso acontecer.
+                        </p>
+                    </div>
+                    <div class="feat-card r-item">
+                        <span class="f-num">03</span>
+                        <div class="f-icon">
+                            <svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M5.5 3h11A1.5 1.5 0 0 1 18 4.5v16.2a.5.5 0 0 1-.74.44L12 18.5l-5.26 2.64a.5.5 0 0 1-.74-.44V4.5A1.5 1.5 0 0 1 5.5 3Z" />
+                                <rect x="8" y="7" width="6.5" height="1.3" rx=".65" fill="#fff" opacity=".7" />
+                                <rect x="8" y="10" width="6.5" height="1.3" rx=".65" fill="#fff" opacity=".7" />
+                            </svg>
+                        </div>
+                        <h3>Glossário em formato de livro</h3>
+                        <p>
+                            Cada curso guarda um dicionário interativo com efeito de página
+                            virando de verdade: todo termo novo que você aprendeu,
+                            organizado como um livro físico.
+                        </p>
+                    </div>
+                </div>
+            </section>
 
-        <!-- ================= CURSOS ================= -->
-        <section class="lp-section reveal" id="cursos">
-          <div class="lp-section-head">
-            <div>
-              <h2>Escolha sua trilha</h2>
-              <p class="section-sub">
-                Quatro cursos completos, cada um com seu próprio elenco de
-                personagens, minijogos e ritmo. Agora com página própria, com
-                mais espaço pra cada um.
-              </p>
-            </div>
-            <span class="lp-note"
-              >quatro entradas no diário, quatro rotas diferentes</span
-            >
-          </div>
-          <div class="wire"></div>
+            <!-- ================= CURSOS ================= -->
+            <section class="lp-section reveal" id="cursos">
+                <div class="lp-section-head">
+                    <div>
+                        <h2>Escolha sua trilha</h2>
+                        <p class="section-sub">
+                            Quatro cursos completos, cada um com seu próprio elenco de
+                            personagens, minijogos e ritmo. Agora com página própria, com
+                            mais espaço pra cada um.
+                        </p>
+                    </div>
+                    <span class="lp-note">quatro entradas no diário, quatro rotas diferentes</span>
+                </div>
+                <div class="wire"></div>
 
-          <div class="cursos-teaser-grid">
-            <a class="cursos-teaser-card" href="cursos/ia.html">
-              <img
-                src="assets/characters/fly.png"
-                alt=""
-                loading="lazy"
-                loading="lazy"
-              />
-              <div>
-                <h3>IA Generativa Aplicada</h3>
-                <p>Prompt, agentes com LangGraph e guardrails de segurança.</p>
-              </div>
-            </a>
-            <a class="cursos-teaser-card" href="cursos/android.html">
-              <img
-                src="assets/characters/byte.png"
-                alt=""
-                loading="lazy"
-                loading="lazy"
-              />
-              <div>
-                <h3>Desenvolvimento Android</h3>
-                <p>Kotlin, Compose e publicação de verdade na Play Store.</p>
-              </div>
-            </a>
-            <a class="cursos-teaser-card" href="cursos/devops.html">
-              <img
-                src="assets/characters/baba-grogue.png"
-                alt=""
-                loading="lazy"
-                loading="lazy"
-              />
-              <div>
-                <h3>DevOps: Docker, Kubernetes &amp; AWS</h3>
-                <p>Git, containers, orquestração e fundamentos de nuvem.</p>
-              </div>
-            </a>
-            <a class="cursos-teaser-card" href="cursos/trigomante.html">
-              <img
-                src="assets/characters/mago.png"
-                alt=""
-                loading="lazy"
-                loading="lazy"
-              />
-              <div>
-                <h3>Trigomante</h3>
-                <p>Trigonometria e Razão Áurea numa aventura de fantasia.</p>
-              </div>
-            </a>
-          </div>
+                <div class="cursos-teaser-grid">
+                    <a class="cursos-teaser-card" href="cursos/ia.html">
+                        <img src="assets/characters/fly.png" alt="" loading="lazy" loading="lazy" />
+                        <div>
+                            <h3>IA Generativa Aplicada</h3>
+                            <p>Prompt, agentes com LangGraph e guardrails de segurança.</p>
+                        </div>
+                    </a>
+                    <a class="cursos-teaser-card" href="cursos/android.html">
+                        <img src="assets/characters/byte.png" alt="" loading="lazy" loading="lazy" />
+                        <div>
+                            <h3>Desenvolvimento Android</h3>
+                            <p>Kotlin, Compose e publicação de verdade na Play Store.</p>
+                        </div>
+                    </a>
+                    <a class="cursos-teaser-card" href="cursos/devops.html">
+                        <img src="assets/characters/baba-grogue.png" alt="" loading="lazy" loading="lazy" />
+                        <div>
+                            <h3>DevOps: Docker, Kubernetes &amp; AWS</h3>
+                            <p>Git, containers, orquestração e fundamentos de nuvem.</p>
+                        </div>
+                    </a>
+                    <a class="cursos-teaser-card" href="cursos/trigomante.html">
+                        <img src="assets/characters/mago.png" alt="" loading="lazy" loading="lazy" />
+                        <div>
+                            <h3>Trigomante</h3>
+                            <p>Trigonometria e Razão Áurea numa aventura de fantasia.</p>
+                        </div>
+                    </a>
+                </div>
 
-          <div class="cursos-teaser-cta">
-            <a href="cursos.html" class="lp-btn primary"
-              >Ver os 4 cursos completos, com tudo que cada um ensina →</a
-            >
-          </div>
-        </section>
+                <div class="cursos-teaser-cta">
+                    <a href="cursos.html" class="lp-btn primary">Ver os 4 cursos completos, com tudo que cada um ensina →</a>
+                </div>
+            </section>
 
-        <!-- ================= FAQ ================= -->
-        <section class="lp-section reveal" id="faq">
-          <div class="lp-section-head">
-            <div>
-              <h2>Perguntas antes de começar</h2>
-              <p class="section-sub">
-                As dúvidas que mais chegam antes da primeira entrada no diário.
-              </p>
-            </div>
-            <span class="lp-note">sem letra miúda, sem pegadinha</span>
-          </div>
-          <div class="wire"></div>
-          <div class="faq-layout">
-            <div class="faq-list">
-              <details class="faq-item" open>
-                <summary>
-                  Preciso criar conta ou informar e-mail?<span class="faq-plus"
-                    >+</span
-                  >
-                </summary>
-                <p class="faq-a">
-                  Não. Não existe cadastro, login nem coleta de e-mail em lugar
-                  nenhum do site — nem pra "salvar seu progresso na nuvem", nem
-                  pra newsletter. Você abre uma página de curso e já está
-                  estudando; o site não sabe nem precisa saber quem você é.
+            <!-- ================= FAQ ================= -->
+            <section class="lp-section reveal" id="faq">
+                <div class="lp-section-head">
+                    <div>
+                        <h2>Perguntas antes de começar</h2>
+                        <p class="section-sub">
+                            As dúvidas que mais chegam antes da primeira entrada no diário.
+                        </p>
+                    </div>
+                    <span class="lp-note">sem letra miúda, sem pegadinha</span>
+                </div>
+                <div class="wire"></div>
+                <div class="faq-layout">
+                    <div class="faq-list">
+                        <details class="faq-item" open>
+                            <summary>
+                                Preciso criar conta ou informar e-mail?<span class="faq-plus">+</span>
+                            </summary>
+                            <p class="faq-a">
+                                Não. Não existe cadastro, login nem coleta de e-mail em lugar
+                                nenhum do site — nem pra "salvar seu progresso na nuvem", nem
+                                pra newsletter. Você abre uma página de curso e já está
+                                estudando; o site não sabe nem precisa saber quem você é.
+                            </p>
+                        </details>
+                        <details class="faq-item">
+                            <summary>
+                                Onde fica salvo o meu progresso?<span class="faq-plus">+</span>
+                            </summary>
+                            <p class="faq-a">
+                                No seu próprio navegador, via <code>localStorage</code>. Nada
+                                é enviado pra nenhum servidor: se você limpar os dados do
+                                navegador, usar aba anônima ou trocar de aparelho, o progresso
+                                não te acompanha (e é por isso que a gente não promete
+                                sincronização entre dispositivos). Se quiser, dá pra
+                                exportar/reiniciar o progresso de cada curso individualmente
+                                pela barra lateral.
+                            </p>
+                        </details>
+                        <details class="faq-item">
+                            <summary>
+                                É gratuito mesmo, sem pegadinha?<span class="faq-plus">+</span>
+                            </summary>
+                            <p class="faq-a">
+                                Sim. Sem plano pago, sem anúncio, sem "aula 1 grátis e o resto
+                                trancado", sem período de teste que vira cobrança. Os quatro
+                                cursos completos, os glossários e os minijogos estão todos
+                                abertos, do primeiro ao último módulo.
+                            </p>
+                        </details>
+                        <details class="faq-item">
+                            <summary>
+                                Funciona bem no celular?<span class="faq-plus">+</span>
+                            </summary>
+                            <p class="faq-a">
+                                Funciona: o layout é responsivo em todas as páginas, dos
+                                cursos aos minijogos e glossários. Os menus viram versões
+                                compactas em telas pequenas, e o progresso salvo no navegador
+                                do celular funciona do mesmo jeito que no computador (só não é
+                                o mesmo progresso entre os dois — cada navegador guarda o
+                                seu).
+                            </p>
+                        </details>
+                        <details class="faq-item">
+                            <summary>
+                                Posso zerar meu progresso e recomeçar um curso?<span class="faq-plus">+</span>
+                            </summary>
+                            <p class="faq-a">
+                                Sim, cada curso tem um botão de reiniciar progresso na barra
+                                lateral. É instantâneo e só apaga os dados daquele curso
+                                específico, no seu navegador — os outros cursos continuam do
+                                jeito que estavam.
+                            </p>
+                        </details>
+                        <details class="faq-item">
+                            <summary>
+                                O site é acessível pra quem usa leitor de tela, tem baixa
+                                visão ou daltonismo?<span class="faq-plus">+</span>
+                            </summary>
+                            <p class="faq-a">
+                                Essa é uma prioridade, não um extra: existe uma aba inteira de
+                                <strong>Acessibilidade</strong> (o ícone de acessibilidade no
+                                menu) com modos pra daltonismo, aumento de fonte pra quem tem
+                                dificuldade de leitura e um modo otimizado pra leitor de tela.
+                                Toda imagem do site tem texto alternativo (<code>alt</code>),
+                                e a navegação inteira funciona só com teclado.
+                            </p>
+                        </details>
+                        <details class="faq-item">
+                            <summary>
+                                Os temas de cor mudam só a aparência, ou fazem mais alguma
+                                coisa?<span class="faq-plus">+</span>
+                            </summary>
+                            <p class="faq-a">
+                                Os temas da aba <strong>Paleta</strong> são só estética —
+                                troque à vontade, quantas vezes quiser, sem afetar seu
+                                progresso. Já os modos da aba
+                                <strong>Acessibilidade</strong> mudam comportamento de verdade
+                                (tamanho de fonte, contraste, filtro de daltonismo, leitura em
+                                voz alta). Os dois funcionam juntos e ficam salvos
+                                separadamente.
+                            </p>
+                        </details>
+                        <details class="faq-item">
+                            <summary>
+                                Encontrei um bug ou tenho uma sugestão de curso — pra onde eu
+                                mando?<span class="faq-plus">+</span>
+                            </summary>
+                            <p class="faq-a">
+                                Direto pro
+                                <a href="https://github.com/LucasEntweihen" target="_blank" rel="noopener noreferrer">GitHub do criador do projeto</a>. É mantido por uma pessoa só, então nem toda sugestão vira
+                                realidade rápido, mas toda uma é lida.
+                            </p>
+                        </details>
+                        <details class="faq-item">
+                            <summary>
+                                Por que não tem certificado ao final do curso?<span class="faq-plus">+</span>
+                            </summary>
+                            <p class="faq-a">
+                                Porque o site não verifica identidade nem aplica prova com
+                                vigilância — sem conta, não tem como emitir um certificado que
+                                signifique alguma coisa pra quem for validar depois. O foco
+                                aqui é o conhecimento em si (e o XP, os badges e a sensação de
+                                progresso ficam como recompensa dentro do próprio site).
+                            </p>
+                        </details>
+                    </div>
+                    <aside class="faq-aside">
+                        <img src="assets/characters/byte.png" alt="Byte, lontra mascote do site, acenando" loading="lazy" />
+                        <p class="faq-aside-quote">
+                            "Testei cada resposta aqui igual testo cada botão do site:
+                            clicando de verdade, não só imaginando."
+                        </p>
+                        <span class="faq-aside-credit">— Byte, sua lontra guia</span>
+                    </aside>
+                </div>
+            </section>
+
+            <!-- ================= PALETA ================= -->
+            <section class="lp-section reveal" id="paleta">
+                <h2>Sua cara, suas cores</h2>
+                <p class="section-sub">
+                    12 temas em 6 famílias: cada uma com um par claro e um par noite. O
+                    tema é o mesmo em qualquer curso e fica salvo automaticamente.
+                    Clique num quadrado pra testar agora mesmo.
                 </p>
-              </details>
-              <details class="faq-item">
-                <summary>
-                  Onde fica salvo o meu progresso?<span class="faq-plus"
-                    >+</span
-                  >
-                </summary>
-                <p class="faq-a">
-                  No seu próprio navegador, via <code>localStorage</code>. Nada
-                  é enviado pra nenhum servidor: se você limpar os dados do
-                  navegador, usar aba anônima ou trocar de aparelho, o progresso
-                  não te acompanha (e é por isso que a gente não promete
-                  sincronização entre dispositivos). Se quiser, dá pra
-                  exportar/reiniciar o progresso de cada curso individualmente
-                  pela barra lateral.
-                </p>
-              </details>
-              <details class="faq-item">
-                <summary>
-                  É gratuito mesmo, sem pegadinha?<span class="faq-plus"
-                    >+</span
-                  >
-                </summary>
-                <p class="faq-a">
-                  Sim. Sem plano pago, sem anúncio, sem "aula 1 grátis e o resto
-                  trancado", sem período de teste que vira cobrança. Os quatro
-                  cursos completos, os glossários e os minijogos estão todos
-                  abertos, do primeiro ao último módulo.
-                </p>
-              </details>
-              <details class="faq-item">
-                <summary>
-                  Funciona bem no celular?<span class="faq-plus">+</span>
-                </summary>
-                <p class="faq-a">
-                  Funciona: o layout é responsivo em todas as páginas, dos
-                  cursos aos minijogos e glossários. Os menus viram versões
-                  compactas em telas pequenas, e o progresso salvo no navegador
-                  do celular funciona do mesmo jeito que no computador (só não é
-                  o mesmo progresso entre os dois — cada navegador guarda o
-                  seu).
-                </p>
-              </details>
-              <details class="faq-item">
-                <summary>
-                  Posso zerar meu progresso e recomeçar um curso?<span
-                    class="faq-plus"
-                    >+</span
-                  >
-                </summary>
-                <p class="faq-a">
-                  Sim, cada curso tem um botão de reiniciar progresso na barra
-                  lateral. É instantâneo e só apaga os dados daquele curso
-                  específico, no seu navegador — os outros cursos continuam do
-                  jeito que estavam.
-                </p>
-              </details>
-              <details class="faq-item">
-                <summary>
-                  O site é acessível pra quem usa leitor de tela, tem baixa
-                  visão ou daltonismo?<span class="faq-plus">+</span>
-                </summary>
-                <p class="faq-a">
-                  Essa é uma prioridade, não um extra: existe uma aba inteira de
-                  <strong>Acessibilidade</strong> (o ícone de acessibilidade no
-                  menu) com modos pra daltonismo, aumento de fonte pra quem tem
-                  dificuldade de leitura e um modo otimizado pra leitor de tela.
-                  Toda imagem do site tem texto alternativo (<code>alt</code>),
-                  e a navegação inteira funciona só com teclado.
-                </p>
-              </details>
-              <details class="faq-item">
-                <summary>
-                  Os temas de cor mudam só a aparência, ou fazem mais alguma
-                  coisa?<span class="faq-plus">+</span>
-                </summary>
-                <p class="faq-a">
-                  Os temas da aba <strong>Paleta</strong> são só estética —
-                  troque à vontade, quantas vezes quiser, sem afetar seu
-                  progresso. Já os modos da aba
-                  <strong>Acessibilidade</strong> mudam comportamento de verdade
-                  (tamanho de fonte, contraste, filtro de daltonismo, leitura em
-                  voz alta). Os dois funcionam juntos e ficam salvos
-                  separadamente.
-                </p>
-              </details>
-              <details class="faq-item">
-                <summary>
-                  Encontrei um bug ou tenho uma sugestão de curso — pra onde eu
-                  mando?<span class="faq-plus">+</span>
-                </summary>
-                <p class="faq-a">
-                  Direto pro
-                  <a
-                    href="https://github.com/LucasEntweihen"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >GitHub do criador do projeto</a
-                  >. É mantido por uma pessoa só, então nem toda sugestão vira
-                  realidade rápido, mas toda uma é lida.
-                </p>
-              </details>
-              <details class="faq-item">
-                <summary>
-                  Por que não tem certificado ao final do curso?<span
-                    class="faq-plus"
-                    >+</span
-                  >
-                </summary>
-                <p class="faq-a">
-                  Porque o site não verifica identidade nem aplica prova com
-                  vigilância — sem conta, não tem como emitir um certificado que
-                  signifique alguma coisa pra quem for validar depois. O foco
-                  aqui é o conhecimento em si (e o XP, os badges e a sensação de
-                  progresso ficam como recompensa dentro do próprio site).
-                </p>
-              </details>
-            </div>
-            <aside class="faq-aside">
-              <img
-                src="assets/characters/byte.png"
-                alt="Byte, lontra mascote do site, acenando"
-                loading="lazy"
-              />
-              <p class="faq-aside-quote">
-                "Testei cada resposta aqui igual testo cada botão do site:
-                clicando de verdade, não só imaginando."
-              </p>
-              <span class="faq-aside-credit">— Byte, sua lontra guia</span>
-            </aside>
-          </div>
-        </section>
+                <div class="wire"></div>
+                <div class="palette-grid">
+                    <div class="palette-family">
+                        <div class="pf-name">
+                            <img class="om om-sm" src="assets/icons/content/herb.svg" alt="" />
+                            Neutro
+                        </div>
+                        <div class="pf-swatches">
+                            <div class="pf-swatch pf-l-light" data-theme="light" onclick="setTheme('light')">
+                                claro
+                            </div>
+                            <div class="pf-swatch pf-l-dark" data-theme="dark" onclick="setTheme('dark')">
+                                noite
+                            </div>
+                        </div>
+                    </div>
+                    <div class="palette-family">
+                        <div class="pf-name">
+                            <img class="om om-sm" src="assets/icons/content/droplet.svg" alt="" />
+                            Azul
+                        </div>
+                        <div class="pf-swatches">
+                            <div class="pf-swatch pf-blue" data-theme="blue" onclick="setTheme('blue')">
+                                claro
+                            </div>
+                            <div class="pf-swatch pf-blue-dark" data-theme="blue-dark" onclick="setTheme('blue-dark')">
+                                noite
+                            </div>
+                        </div>
+                    </div>
+                    <div class="palette-family">
+                        <div class="pf-name">
+                            <img class="om om-sm" src="assets/icons/content/tree.svg" alt="" />
+                            Verde
+                        </div>
+                        <div class="pf-swatches">
+                            <div class="pf-swatch pf-green" data-theme="green" onclick="setTheme('green')">
+                                claro
+                            </div>
+                            <div class="pf-swatch pf-green-dark" data-theme="green-dark" onclick="setTheme('green-dark')">
+                                noite
+                            </div>
+                        </div>
+                    </div>
+                    <div class="palette-family">
+                        <div class="pf-name">
+                            <img class="om om-sm" src="assets/icons/content/crystal-ball.svg" alt="" />
+                            Roxo
+                        </div>
+                        <div class="pf-swatches">
+                            <div class="pf-swatch pf-purple" data-theme="purple" onclick="setTheme('purple')">
+                                claro
+                            </div>
+                            <div class="pf-swatch pf-purple-dark" data-theme="purple-dark" onclick="setTheme('purple-dark')">
+                                noite
+                            </div>
+                        </div>
+                    </div>
+                    <div class="palette-family">
+                        <div class="pf-name">
+                            <img class="om om-sm" src="assets/icons/content/pirate-flag.svg" alt="" />‍<img class="om om-sm" src="assets/icons/content/skull-crossbones.svg" alt="" />
+                            Âmbar
+                        </div>
+                        <div class="pf-swatches">
+                            <div class="pf-swatch pf-amber" data-theme="amber" onclick="setTheme('amber')">
+                                claro
+                            </div>
+                            <div class="pf-swatch pf-amber-dark" data-theme="amber-dark" onclick="setTheme('amber-dark')">
+                                noite
+                            </div>
+                        </div>
+                    </div>
+                    <div class="palette-family">
+                        <div class="pf-name">
+                            <img class="om om-sm" src="assets/icons/content/blossom.svg" alt="" />
+                            Rosa
+                        </div>
+                        <div class="pf-swatches">
+                            <div class="pf-swatch pf-rose" data-theme="rose" onclick="setTheme('rose')">
+                                claro
+                            </div>
+                            <div class="pf-swatch pf-rose-dark" data-theme="rose-dark" onclick="setTheme('rose-dark')">
+                                noite
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-        <!-- ================= PALETA ================= -->
-        <section class="lp-section reveal" id="paleta">
-          <h2>Sua cara, suas cores</h2>
-          <p class="section-sub">
-            12 temas em 6 famílias: cada uma com um par claro e um par noite. O
-            tema é o mesmo em qualquer curso e fica salvo automaticamente.
-            Clique num quadrado pra testar agora mesmo.
-          </p>
-          <div class="wire"></div>
-          <div class="palette-grid">
-            <div class="palette-family">
-              <div class="pf-name">
-                <img
-                  class="om om-sm"
-                  src="assets/icons/content/herb.svg"
-                  alt=""
-                />
-                Neutro
-              </div>
-              <div class="pf-swatches">
-                <div
-                  class="pf-swatch pf-l-light"
-                  data-theme="light"
-                  onclick="setTheme('light')"
-                >
-                  claro
-                </div>
-                <div
-                  class="pf-swatch pf-l-dark"
-                  data-theme="dark"
-                  onclick="setTheme('dark')"
-                >
-                  noite
-                </div>
-              </div>
-            </div>
-            <div class="palette-family">
-              <div class="pf-name">
-                <img
-                  class="om om-sm"
-                  src="assets/icons/content/droplet.svg"
-                  alt=""
-                />
-                Azul
-              </div>
-              <div class="pf-swatches">
-                <div
-                  class="pf-swatch pf-blue"
-                  data-theme="blue"
-                  onclick="setTheme('blue')"
-                >
-                  claro
-                </div>
-                <div
-                  class="pf-swatch pf-blue-dark"
-                  data-theme="blue-dark"
-                  onclick="setTheme('blue-dark')"
-                >
-                  noite
-                </div>
-              </div>
-            </div>
-            <div class="palette-family">
-              <div class="pf-name">
-                <img
-                  class="om om-sm"
-                  src="assets/icons/content/tree.svg"
-                  alt=""
-                />
-                Verde
-              </div>
-              <div class="pf-swatches">
-                <div
-                  class="pf-swatch pf-green"
-                  data-theme="green"
-                  onclick="setTheme('green')"
-                >
-                  claro
-                </div>
-                <div
-                  class="pf-swatch pf-green-dark"
-                  data-theme="green-dark"
-                  onclick="setTheme('green-dark')"
-                >
-                  noite
-                </div>
-              </div>
-            </div>
-            <div class="palette-family">
-              <div class="pf-name">
-                <img
-                  class="om om-sm"
-                  src="assets/icons/content/crystal-ball.svg"
-                  alt=""
-                />
-                Roxo
-              </div>
-              <div class="pf-swatches">
-                <div
-                  class="pf-swatch pf-purple"
-                  data-theme="purple"
-                  onclick="setTheme('purple')"
-                >
-                  claro
-                </div>
-                <div
-                  class="pf-swatch pf-purple-dark"
-                  data-theme="purple-dark"
-                  onclick="setTheme('purple-dark')"
-                >
-                  noite
-                </div>
-              </div>
-            </div>
-            <div class="palette-family">
-              <div class="pf-name">
-                <img
-                  class="om om-sm"
-                  src="assets/icons/content/pirate-flag.svg"
-                  alt=""
-                />‍<img
-                  class="om om-sm"
-                  src="assets/icons/content/skull-crossbones.svg"
-                  alt=""
-                />
-                Âmbar
-              </div>
-              <div class="pf-swatches">
-                <div
-                  class="pf-swatch pf-amber"
-                  data-theme="amber"
-                  onclick="setTheme('amber')"
-                >
-                  claro
-                </div>
-                <div
-                  class="pf-swatch pf-amber-dark"
-                  data-theme="amber-dark"
-                  onclick="setTheme('amber-dark')"
-                >
-                  noite
-                </div>
-              </div>
-            </div>
-            <div class="palette-family">
-              <div class="pf-name">
-                <img
-                  class="om om-sm"
-                  src="assets/icons/content/blossom.svg"
-                  alt=""
-                />
-                Rosa
-              </div>
-              <div class="pf-swatches">
-                <div
-                  class="pf-swatch pf-rose"
-                  data-theme="rose"
-                  onclick="setTheme('rose')"
-                >
-                  claro
-                </div>
-                <div
-                  class="pf-swatch pf-rose-dark"
-                  data-theme="rose-dark"
-                  onclick="setTheme('rose-dark')"
-                >
-                  noite
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+            <!-- ================= EQUIPE ================= -->
+            <section class="lp-section reveal" id="equipe">
+                <h2>A equipe</h2>
+                <p class="section-sub">
+                    20 personagens espalhados pelos cursos: cada um com sua própria
+                    idade, origem e personalidade, prontos pra explicar, discordar e
+                    comemorar junto com você.
+                </p>
+                <div class="wire"></div>
 
-        <!-- ================= EQUIPE ================= -->
-        <section class="lp-section reveal" id="equipe">
-          <h2>A equipe</h2>
-          <p class="section-sub">
-            20 personagens espalhados pelos cursos: cada um com sua própria
-            idade, origem e personalidade, prontos pra explicar, discordar e
-            comemorar junto com você.
-          </p>
-          <div class="wire"></div>
+                <div class="crew-filters" role="group" aria-label="Filtrar personagens por grupo">
+                    <button class="crew-filter active" type="button" data-reset="true">
+                        Todos
+                    </button>
+                    <button class="crew-filter" type="button" data-target="crew-card-baba-grogue">
+                        Piratas DevOps
+                    </button>
+                    <button class="crew-filter" type="button" data-target="crew-card-byte">
+                        Mobile &amp; IA
+                    </button>
+                    <button class="crew-filter" type="button" data-target="crew-card-mago">
+                        Trigomante
+                    </button>
+                    <button class="crew-filter" type="button" data-target="crew-card-jade">
+                        Corpo docente
+                    </button>
+                </div>
 
-          <div
-            class="crew-filters"
-            role="group"
-            aria-label="Filtrar personagens por grupo"
-          >
-            <button class="crew-filter active" type="button" data-reset="true">
-              Todos
-            </button>
-            <button
-              class="crew-filter"
-              type="button"
-              data-target="crew-card-baba-grogue"
-            >
-              Piratas DevOps
-            </button>
-            <button
-              class="crew-filter"
-              type="button"
-              data-target="crew-card-byte"
-            >
-              Mobile &amp; IA
-            </button>
-            <button
-              class="crew-filter"
-              type="button"
-              data-target="crew-card-mago"
-            >
-              Trigomante
-            </button>
-            <button
-              class="crew-filter"
-              type="button"
-              data-target="crew-card-jade"
-            >
-              Corpo docente
-            </button>
-          </div>
+                <div class="crew-carousel-wrap">
+                    <button class="crew-arrow crew-arrow-prev" type="button" aria-label="Rolar para o personagem anterior" data-dir="-1">
+                        ‹
+                    </button>
+                    <div class="crew-carousel" id="crewCarousel" tabindex="0" role="region" aria-label="Carrossel com os 20 personagens do Universidade Log">
+                        <div class="mascot-chip" data-group="crew-devops" id="crew-card-baba-grogue">
+                            <span class="m-group-tag">Piratas DevOps</span>
+                            <img src="assets/characters/baba-grogue.png" alt="Capitão Baba Grogue" loading="lazy" />
+                            <div class="m-name">Capitão Baba Grogue</div>
+                            <div class="m-role">
+                                Guia do curso de DevOps · especialista em Kubernetes
+                            </div>
+                            <div class="m-bio">
+                                52 anos, bêbado e preguiçoso, mas gênio quando o assunto é
+                                cluster.
+                            </div>
+                        </div>
+                        <div class="mascot-chip" data-group="crew-devops">
+                            <span class="m-group-tag">Piratas DevOps</span>
+                            <img src="assets/characters/octocat.png" alt="Octocat" loading="lazy" />
+                            <div class="m-name">Octocat</div>
+                            <div class="m-role">Especialista em Git &amp; GitHub</div>
+                            <div class="m-bio">
+                                Alienígena estabanado por fora, esperto por dentro.
+                            </div>
+                        </div>
+                        <div class="mascot-chip" data-group="crew-devops">
+                            <span class="m-group-tag">Piratas DevOps</span>
+                            <img src="assets/characters/ama-zz-on.png" alt="Ama-zz-on" loading="lazy" />
+                            <div class="m-name">Ama-zz-on</div>
+                            <div class="m-role">Guia do módulo de AWS</div>
+                            <div class="m-bio">
+                                Robô alienígena de 312 anos: inocente, alegre e dedicado.
+                            </div>
+                        </div>
 
-          <div class="crew-carousel-wrap">
-            <button
-              class="crew-arrow crew-arrow-prev"
-              type="button"
-              aria-label="Rolar para o personagem anterior"
-              data-dir="-1"
-            >
-              ‹
-            </button>
-            <div
-              class="crew-carousel"
-              id="crewCarousel"
-              tabindex="0"
-              role="region"
-              aria-label="Carrossel com os 20 personagens do Universidade Log"
-            >
-              <div
-                class="mascot-chip"
-                data-group="crew-devops"
-                id="crew-card-baba-grogue"
-              >
-                <span class="m-group-tag">Piratas DevOps</span>
-                <img
-                  src="assets/characters/baba-grogue.png"
-                  alt="Capitão Baba Grogue"
-                  loading="lazy"
-                />
-                <div class="m-name">Capitão Baba Grogue</div>
-                <div class="m-role">
-                  Guia do curso de DevOps · especialista em Kubernetes
-                </div>
-                <div class="m-bio">
-                  52 anos, bêbado e preguiçoso, mas gênio quando o assunto é
-                  cluster.
-                </div>
-              </div>
-              <div class="mascot-chip" data-group="crew-devops">
-                <span class="m-group-tag">Piratas DevOps</span>
-                <img
-                  src="assets/characters/octocat.png"
-                  alt="Octocat"
-                  loading="lazy"
-                />
-                <div class="m-name">Octocat</div>
-                <div class="m-role">Especialista em Git &amp; GitHub</div>
-                <div class="m-bio">
-                  Alienígena estabanado por fora, esperto por dentro.
-                </div>
-              </div>
-              <div class="mascot-chip" data-group="crew-devops">
-                <span class="m-group-tag">Piratas DevOps</span>
-                <img
-                  src="assets/characters/ama-zz-on.png"
-                  alt="Ama-zz-on"
-                  loading="lazy"
-                />
-                <div class="m-name">Ama-zz-on</div>
-                <div class="m-role">Guia do módulo de AWS</div>
-                <div class="m-bio">
-                  Robô alienígena de 312 anos: inocente, alegre e dedicado.
-                </div>
-              </div>
+                        <div class="mascot-chip" data-group="crew-mobile" id="crew-card-byte">
+                            <span class="m-group-tag">Mobile &amp; IA</span>
+                            <img src="assets/characters/byte.png" alt="Byte" loading="lazy" />
+                            <div class="m-name">Byte</div>
+                            <div class="m-role">Mascote dos cursos de Android e IA</div>
+                            <div class="m-bio">
+                                Lontra estudante: bobo, alegre e sempre dedicado a aprender
+                                junto.
+                            </div>
+                        </div>
+                        <div class="mascot-chip" data-group="crew-mobile">
+                            <span class="m-group-tag">Mobile &amp; IA</span>
+                            <img src="assets/characters/chud.png" alt="Chud" loading="lazy" />
+                            <div class="m-name">Chud</div>
+                            <div class="m-role">O aluno que busca atalho</div>
+                            <div class="m-bio">
+                                Esperto e dedicado, mas a preguiça sempre sugere o caminho
+                                curto.
+                            </div>
+                        </div>
+                        <div class="mascot-chip" data-group="crew-mobile">
+                            <span class="m-group-tag">Mobile &amp; IA</span>
+                            <img src="assets/characters/fly.png" alt="Fly" loading="lazy" />
+                            <div class="m-name">Fly</div>
+                            <div class="m-role">Professor do curso de IA Generativa</div>
+                            <div class="m-bio">
+                                Cabeça de mosca, raciocínio afiadíssimo: lógico e dedicado.
+                            </div>
+                        </div>
+                        <div class="mascot-chip" data-group="crew-mobile">
+                            <span class="m-group-tag">Mobile &amp; IA</span>
+                            <img src="assets/characters/gnome.png" alt="Gnomo" loading="lazy" />
+                            <div class="m-name">Gnomo</div>
+                            <div class="m-role">Professor do curso de Android</div>
+                            <div class="m-bio">
+                                39 anos, esperto, mas com preguiça de explicar a mesma coisa
+                                duas vezes.
+                            </div>
+                        </div>
+                        <div class="mascot-chip" data-group="crew-mobile">
+                            <span class="m-group-tag">Mobile &amp; IA</span>
+                            <img src="assets/characters/kira.png" alt="Kira" loading="lazy" />
+                            <div class="m-name">Kira</div>
+                            <div class="m-role">Estudante de IA &amp; Banco de Dados</div>
+                            <div class="m-bio">
+                                17 anos, proativa e elétrica: focada, curiosa e altamente
+                                habilidosa.
+                            </div>
+                        </div>
+                        <div class="mascot-chip" data-group="crew-mobile">
+                            <span class="m-group-tag">Mobile &amp; IA</span>
+                            <img src="assets/characters/rex.png" alt="Rex" loading="lazy" />
+                            <div class="m-name">Rex</div>
+                            <div class="m-role">Estudante de FastAPI &amp; Python</div>
+                            <div class="m-bio">
+                                26 anos, inventivo e caótico: entusiasmado, brilhante e
+                                aventureiro.
+                            </div>
+                        </div>
+                        <div class="mascot-chip" data-group="crew-mobile">
+                            <span class="m-group-tag">Mobile &amp; IA</span>
+                            <img src="assets/characters/grilo.png" alt="Grilo" loading="lazy" />
+                            <div class="m-name">Grilo</div>
+                            <div class="m-role">Professor de IA &amp; Git</div>
+                            <div class="m-bio">
+                                45 anos, descolado e tranquilo: amigável, observador e sempre
+                                na paz.
+                            </div>
+                        </div>
 
-              <div
-                class="mascot-chip"
-                data-group="crew-mobile"
-                id="crew-card-byte"
-              >
-                <span class="m-group-tag">Mobile &amp; IA</span>
-                <img
-                  src="assets/characters/byte.png"
-                  alt="Byte"
-                  loading="lazy"
-                />
-                <div class="m-name">Byte</div>
-                <div class="m-role">Mascote dos cursos de Android e IA</div>
-                <div class="m-bio">
-                  Lontra estudante: bobo, alegre e sempre dedicado a aprender
-                  junto.
-                </div>
-              </div>
-              <div class="mascot-chip" data-group="crew-mobile">
-                <span class="m-group-tag">Mobile &amp; IA</span>
-                <img
-                  src="assets/characters/chud.png"
-                  alt="Chud"
-                  loading="lazy"
-                />
-                <div class="m-name">Chud</div>
-                <div class="m-role">O aluno que busca atalho</div>
-                <div class="m-bio">
-                  Esperto e dedicado, mas a preguiça sempre sugere o caminho
-                  curto.
-                </div>
-              </div>
-              <div class="mascot-chip" data-group="crew-mobile">
-                <span class="m-group-tag">Mobile &amp; IA</span>
-                <img src="assets/characters/fly.png" alt="Fly" loading="lazy" />
-                <div class="m-name">Fly</div>
-                <div class="m-role">Professor do curso de IA Generativa</div>
-                <div class="m-bio">
-                  Cabeça de mosca, raciocínio afiadíssimo: lógico e dedicado.
-                </div>
-              </div>
-              <div class="mascot-chip" data-group="crew-mobile">
-                <span class="m-group-tag">Mobile &amp; IA</span>
-                <img
-                  src="assets/characters/gnome.png"
-                  alt="Gnomo"
-                  loading="lazy"
-                />
-                <div class="m-name">Gnomo</div>
-                <div class="m-role">Professor do curso de Android</div>
-                <div class="m-bio">
-                  39 anos, esperto, mas com preguiça de explicar a mesma coisa
-                  duas vezes.
-                </div>
-              </div>
-              <div class="mascot-chip" data-group="crew-mobile">
-                <span class="m-group-tag">Mobile &amp; IA</span>
-                <img
-                  src="assets/characters/kira.png"
-                  alt="Kira"
-                  loading="lazy"
-                />
-                <div class="m-name">Kira</div>
-                <div class="m-role">Estudante de IA &amp; Banco de Dados</div>
-                <div class="m-bio">
-                  17 anos, proativa e elétrica: focada, curiosa e altamente
-                  habilidosa.
-                </div>
-              </div>
-              <div class="mascot-chip" data-group="crew-mobile">
-                <span class="m-group-tag">Mobile &amp; IA</span>
-                <img src="assets/characters/rex.png" alt="Rex" loading="lazy" />
-                <div class="m-name">Rex</div>
-                <div class="m-role">Estudante de FastAPI &amp; Python</div>
-                <div class="m-bio">
-                  26 anos, inventivo e caótico: entusiasmado, brilhante e
-                  aventureiro.
-                </div>
-              </div>
-              <div class="mascot-chip" data-group="crew-mobile">
-                <span class="m-group-tag">Mobile &amp; IA</span>
-                <img
-                  src="assets/characters/grilo.png"
-                  alt="Grilo"
-                  loading="lazy"
-                />
-                <div class="m-name">Grilo</div>
-                <div class="m-role">Professor de IA &amp; Git</div>
-                <div class="m-bio">
-                  45 anos, descolado e tranquilo: amigável, observador e sempre
-                  na paz.
-                </div>
-              </div>
+                        <div class="mascot-chip" data-group="crew-trigomante" id="crew-card-mago">
+                            <span class="m-group-tag">Trigomante</span>
+                            <img src="assets/characters/mago.png" alt="Mago" loading="lazy" />
+                            <div class="m-name">Mago</div>
+                            <div class="m-role">Guia geral do Trigomante</div>
+                            <div class="m-bio">
+                                200 anos de idade, lógico e ganancioso: sempre atrás do atalho
+                                mágico.
+                            </div>
+                        </div>
+                        <div class="mascot-chip" data-group="crew-trigomante">
+                            <span class="m-group-tag">Trigomante</span>
+                            <img src="assets/characters/bispo.png" alt="Bispo" loading="lazy" />
+                            <div class="m-name">Bispo</div>
+                            <div class="m-role">Guardião dos ângulos e do círculo</div>
+                            <div class="m-bio">
+                                78 anos vindos do Vaticano: devoto, paciente, estudioso.
+                            </div>
+                        </div>
+                        <div class="mascot-chip" data-group="crew-trigomante">
+                            <span class="m-group-tag">Trigomante</span>
+                            <img src="assets/characters/lisete.png" alt="Lisete" loading="lazy" />
+                            <div class="m-name">Lisete</div>
+                            <div class="m-role">A professora rigorosa</div>
+                            <div class="m-bio">
+                                68 anos de matemática: cautelosa e didática. Nada escapa dela.
+                            </div>
+                        </div>
+                        <div class="mascot-chip" data-group="crew-trigomante">
+                            <span class="m-group-tag">Trigomante</span>
+                            <img src="assets/characters/uruk.png" alt="Uruk" loading="lazy" />
+                            <div class="m-name">Uruk</div>
+                            <div class="m-role">O grande desafio final</div>
+                            <div class="m-bio">
+                                150 anos, chefão da lógica: esperto e implicante em doses
+                                iguais.
+                            </div>
+                        </div>
+                        <div class="mascot-chip" data-group="crew-trigomante">
+                            <span class="m-group-tag">Trigomante</span>
+                            <img src="assets/characters/byte-morto.png" alt="Byte Morto" loading="lazy" />
+                            <div class="m-name">Byte Morto</div>
+                            <div class="m-role">Escudeiro esquelético de Uruk</div>
+                            <div class="m-bio">
+                                Nasceu "aos -12 anos" (é uma longa história): dedicado até os
+                                ossos.
+                            </div>
+                        </div>
 
-              <div
-                class="mascot-chip"
-                data-group="crew-trigomante"
-                id="crew-card-mago"
-              >
-                <span class="m-group-tag">Trigomante</span>
-                <img
-                  src="assets/characters/mago.png"
-                  alt="Mago"
-                  loading="lazy"
-                />
-                <div class="m-name">Mago</div>
-                <div class="m-role">Guia geral do Trigomante</div>
-                <div class="m-bio">
-                  200 anos de idade, lógico e ganancioso: sempre atrás do atalho
-                  mágico.
+                        <div class="mascot-chip" data-group="crew-docente" id="crew-card-jade">
+                            <span class="m-group-tag">Corpo docente</span>
+                            <img src="assets/characters/jade.png" alt="Jade" loading="lazy" />
+                            <div class="m-name">Jade</div>
+                            <div class="m-role">Professora em todos os cursos</div>
+                            <div class="m-bio">
+                                Esperta, implicante e imponente: sempre com a última palavra.
+                            </div>
+                        </div>
+                        <div class="mascot-chip" data-group="crew-docente">
+                            <span class="m-group-tag">Corpo docente</span>
+                            <img src="assets/characters/laura.png" alt="Laura" loading="lazy" />
+                            <div class="m-name">Laura</div>
+                            <div class="m-role">Professora em todos os cursos</div>
+                            <div class="m-bio">
+                                Entediada até o código quebrar de verdade: aí ela se anima.
+                            </div>
+                        </div>
+                        <div class="mascot-chip" data-group="crew-docente">
+                            <span class="m-group-tag">Corpo docente</span>
+                            <img src="assets/characters/moss.png" alt="Moss" loading="lazy" />
+                            <div class="m-name">Moss</div>
+                            <div class="m-role">Especialista em banco de dados</div>
+                            <div class="m-bio">
+                                24 anos, fofa e paciente, mas implicante com dado
+                                desorganizado.
+                            </div>
+                        </div>
+                        <div class="mascot-chip" data-group="crew-docente">
+                            <span class="m-group-tag">Corpo docente</span>
+                            <img src="assets/characters/professor-cogno.png" alt="Prof. Cogno" loading="lazy" />
+                            <div class="m-name">Prof. Cogno</div>
+                            <div class="m-role">
+                                Professor Sábio de IA &amp; Banco de Dados
+                            </div>
+                            <div class="m-bio">
+                                142 anos, excêntrico e sábio: falante, paciente e extremamente
+                                didático.
+                            </div>
+                        </div>
+                        <div class="mascot-chip" data-group="crew-docente">
+                            <span class="m-group-tag">Corpo docente</span>
+                            <img src="assets/characters/datacent.png" alt="Datacent" loading="lazy" />
+                            <div class="m-name">Datacent</div>
+                            <div class="m-role">Assistente de Infraestrutura &amp; IA</div>
+                            <div class="m-bio">
+                                4 anos, robô metódico de datacenter: alegre, incansável e
+                                leal.
+                            </div>
+                        </div>
+                    </div>
+                    <button class="crew-arrow crew-arrow-next" type="button" aria-label="Rolar para o próximo personagem" data-dir="1">
+                        ›
+                    </button>
                 </div>
-              </div>
-              <div class="mascot-chip" data-group="crew-trigomante">
-                <span class="m-group-tag">Trigomante</span>
-                <img
-                  src="assets/characters/bispo.png"
-                  alt="Bispo"
-                  loading="lazy"
-                />
-                <div class="m-name">Bispo</div>
-                <div class="m-role">Guardião dos ângulos e do círculo</div>
-                <div class="m-bio">
-                  78 anos vindos do Vaticano: devoto, paciente, estudioso.
-                </div>
-              </div>
-              <div class="mascot-chip" data-group="crew-trigomante">
-                <span class="m-group-tag">Trigomante</span>
-                <img
-                  src="assets/characters/lisete.png"
-                  alt="Lisete"
-                  loading="lazy"
-                />
-                <div class="m-name">Lisete</div>
-                <div class="m-role">A professora rigorosa</div>
-                <div class="m-bio">
-                  68 anos de matemática: cautelosa e didática. Nada escapa dela.
-                </div>
-              </div>
-              <div class="mascot-chip" data-group="crew-trigomante">
-                <span class="m-group-tag">Trigomante</span>
-                <img
-                  src="assets/characters/uruk.png"
-                  alt="Uruk"
-                  loading="lazy"
-                />
-                <div class="m-name">Uruk</div>
-                <div class="m-role">O grande desafio final</div>
-                <div class="m-bio">
-                  150 anos, chefão da lógica: esperto e implicante em doses
-                  iguais.
-                </div>
-              </div>
-              <div class="mascot-chip" data-group="crew-trigomante">
-                <span class="m-group-tag">Trigomante</span>
-                <img
-                  src="assets/characters/byte-morto.png"
-                  alt="Byte Morto"
-                  loading="lazy"
-                />
-                <div class="m-name">Byte Morto</div>
-                <div class="m-role">Escudeiro esquelético de Uruk</div>
-                <div class="m-bio">
-                  Nasceu "aos -12 anos" (é uma longa história): dedicado até os
-                  ossos.
-                </div>
-              </div>
+            </section>
 
-              <div
-                class="mascot-chip"
-                data-group="crew-docente"
-                id="crew-card-jade"
-              >
-                <span class="m-group-tag">Corpo docente</span>
-                <img
-                  src="assets/characters/jade.png"
-                  alt="Jade"
-                  loading="lazy"
-                />
-                <div class="m-name">Jade</div>
-                <div class="m-role">Professora em todos os cursos</div>
-                <div class="m-bio">
-                  Esperta, implicante e imponente: sempre com a última palavra.
-                </div>
-              </div>
-              <div class="mascot-chip" data-group="crew-docente">
-                <span class="m-group-tag">Corpo docente</span>
-                <img
-                  src="assets/characters/laura.png"
-                  alt="Laura"
-                  loading="lazy"
-                />
-                <div class="m-name">Laura</div>
-                <div class="m-role">Professora em todos os cursos</div>
-                <div class="m-bio">
-                  Entediada até o código quebrar de verdade: aí ela se anima.
-                </div>
-              </div>
-              <div class="mascot-chip" data-group="crew-docente">
-                <span class="m-group-tag">Corpo docente</span>
-                <img
-                  src="assets/characters/moss.png"
-                  alt="Moss"
-                  loading="lazy"
-                />
-                <div class="m-name">Moss</div>
-                <div class="m-role">Especialista em banco de dados</div>
-                <div class="m-bio">
-                  24 anos, fofa e paciente, mas implicante com dado
-                  desorganizado.
-                </div>
-              </div>
-              <div class="mascot-chip" data-group="crew-docente">
-                <span class="m-group-tag">Corpo docente</span>
-                <img
-                  src="assets/characters/professor-cogno.png"
-                  alt="Prof. Cogno"
-                  loading="lazy"
-                />
-                <div class="m-name">Prof. Cogno</div>
-                <div class="m-role">
-                  Professor Sábio de IA &amp; Banco de Dados
-                </div>
-                <div class="m-bio">
-                  142 anos, excêntrico e sábio: falante, paciente e extremamente
-                  didático.
-                </div>
-              </div>
-              <div class="mascot-chip" data-group="crew-docente">
-                <span class="m-group-tag">Corpo docente</span>
-                <img
-                  src="assets/characters/datacent.png"
-                  alt="Datacent"
-                  loading="lazy"
-                />
-                <div class="m-name">Datacent</div>
-                <div class="m-role">Assistente de Infraestrutura &amp; IA</div>
-                <div class="m-bio">
-                  4 anos, robô metódico de datacenter: alegre, incansável e
-                  leal.
-                </div>
-              </div>
-            </div>
-            <button
-              class="crew-arrow crew-arrow-next"
-              type="button"
-              aria-label="Rolar para o próximo personagem"
-              data-dir="1"
-            >
-              ›
-            </button>
-          </div>
-        </section>
-
-        <!-- ================= CONFIANÇA / SEGURANÇA ================= -->
-        <section
-          class="lp-section reveal"
-          id="confianca"
-          style="padding-top: 0"
-        >
-          <div class="lp-trust-strip">
-            <div class="lp-trust-item">
-              <svg
-                class="ic-mono"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                width="20"
-                height="20"
-              >
-                <path
-                  d="M12 2 4 5v6c0 5.2 3.4 9.9 8 11 4.6-1.1 8-5.8 8-11V5l-8-3Zm0 2.2 6 2.2v4.6c0 4.1-2.6 8-6 9-3.4-1-6-4.9-6-9V6.4l6-2.2Z"
-                />
-                <path
-                  d="M10.8 15.4 8 12.6l1.4-1.4 1.4 1.4 4.2-4.2 1.4 1.4-5.6 5.6Z"
-                  fill="var(--panel)"
-                />
-              </svg>
-              <div>
-                <strong>Sem coleta de dados</strong
-                ><span
-                  >Não pedimos e-mail, CPF nem nenhum dado pessoal em nenhuma
-                  página do site.</span
-                >
-              </div>
-            </div>
-            <div class="lp-trust-item">
-              <svg
-                class="ic-mono"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                width="20"
-                height="20"
-              >
-                <path
-                  d="M4 12a8 8 0 1 1 8 8"
-                  stroke="currentColor"
-                  stroke-width="1.8"
-                  fill="none"
-                />
-                <path
-                  d="M4 12v-4h4"
-                  stroke="currentColor"
-                  stroke-width="1.8"
-                  fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-              <div>
-                <strong>Progresso 100% local</strong
-                ><span
-                  >Tudo fica salvo no <code>localStorage</code> do seu
-                  navegador. Nada trafega pra nenhum servidor nosso.</span
-                >
-              </div>
-            </div>
-            <div class="lp-trust-item">
-              <svg
-                class="ic-mono"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                width="20"
-                height="20"
-              >
-                <path
-                  d="M12 8v5m0 3h.01M4.6 19h14.8c1.1 0 1.8-1.2 1.2-2.2L13.2 4.8c-.5-.9-1.9-.9-2.4 0L3.4 16.8C2.8 17.8 3.5 19 4.6 19Z"
-                  stroke="currentColor"
-                  stroke-width="1.7"
-                  fill="none"
-                  stroke-linejoin="round"
-                />
-              </svg>
-              <div>
-                <strong>Sem rastreadores</strong
-                ><span
-                  >Nenhum script de analytics, pixel de anúncio ou cookie de
-                  terceiro é carregado.</span
-                >
-              </div>
-            </div>
-            <div class="lp-trust-item">
-              <svg
-                class="ic-mono"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                width="20"
-                height="20"
-              >
-                <path
-                  d="M4 6h16M4 12h16M4 18h10"
-                  stroke="currentColor"
-                  stroke-width="1.8"
-                  stroke-linecap="round"
-                />
-              </svg>
-              <div>
-                <strong>LGPD em mente</strong
-                ><span
-                  >Leia como tratamos (ou melhor, não tratamos) dados na
-                  <a
-                    href="privacidade.html"
-                    style="
+            <!-- ================= CONFIANÇA / SEGURANÇA ================= -->
+            <section class="lp-section reveal" id="confianca" style="padding-top: 0">
+                <div class="lp-trust-strip">
+                    <div class="lp-trust-item">
+                        <svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                            <path d="M12 2 4 5v6c0 5.2 3.4 9.9 8 11 4.6-1.1 8-5.8 8-11V5l-8-3Zm0 2.2 6 2.2v4.6c0 4.1-2.6 8-6 9-3.4-1-6-4.9-6-9V6.4l6-2.2Z" />
+                            <path d="M10.8 15.4 8 12.6l1.4-1.4 1.4 1.4 4.2-4.2 1.4 1.4-5.6 5.6Z" fill="var(--panel)" />
+                        </svg>
+                        <div>
+                            <strong>Sem coleta de dados</strong><span>Não pedimos e-mail, CPF nem nenhum dado pessoal em nenhuma
+                                página do site.</span>
+                        </div>
+                    </div>
+                    <div class="lp-trust-item">
+                        <svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                            <path d="M4 12a8 8 0 1 1 8 8" stroke="currentColor" stroke-width="1.8" fill="none" />
+                            <path d="M4 12v-4h4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <div>
+                            <strong>Progresso 100% local</strong><span>Tudo fica salvo no <code>localStorage</code> do seu
+                                navegador. Nada trafega pra nenhum servidor nosso.</span>
+                        </div>
+                    </div>
+                    <div class="lp-trust-item">
+                        <svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                            <path d="M12 8v5m0 3h.01M4.6 19h14.8c1.1 0 1.8-1.2 1.2-2.2L13.2 4.8c-.5-.9-1.9-.9-2.4 0L3.4 16.8C2.8 17.8 3.5 19 4.6 19Z" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linejoin="round" />
+                        </svg>
+                        <div>
+                            <strong>Sem rastreadores</strong><span>Nenhum script de analytics, pixel de anúncio ou cookie de
+                                terceiro é carregado.</span>
+                        </div>
+                    </div>
+                    <div class="lp-trust-item">
+                        <svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                            <path d="M4 6h16M4 12h16M4 18h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                        </svg>
+                        <div>
+                            <strong>LGPD em mente</strong><span>Leia como tratamos (ou melhor, não tratamos) dados na
+                                <a href="privacidade.html" style="
                       color: var(--mint-dim);
                       border-bottom: 1px dashed var(--mint-dim);
-                    "
-                    >Política de Privacidade</a
-                  >.</span
-                >
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
-      <footer class="lp-footer">
-        <div class="lp-footer-wave" aria-hidden="true">
-          <svg viewBox="0 0 1200 60" preserveAspectRatio="none">
-            <path
-              d="M0 30 Q 150 0 300 30 T 600 30 T 900 30 T 1200 30 V60 H0 Z"
-            ></path>
-          </svg>
-        </div>
-        <div class="lp-footer-inner">
-          <div class="lf-brand">
-            <div class="lf-logo">
-              <img
-                class="brand-mark"
-                src="assets/icons/brand/favicon.svg"
-                width="20"
-                height="20"
-                alt=""
-              />
-              Universidade Log
-            </div>
-            <p>
-              Sua plataforma pessoal de estudo gamificada. Progresso salvo
-              direto no seu navegador: sem conta, sem anúncio, sem gente
-              comparando o seu ritmo com o de ninguém.
-            </p>
-          </div>
-          <div class="lf-col">
-            <h4>
-              <span class="lf-ic"
-                ><img
-                  class="om om-sm"
-                  src="assets/icons/content/graduation-cap.svg"
-                  alt="" /></span
-              >Cursos
-            </h4>
-            <div class="lf-links">
-              <a href="cursos/ia.html"
-                ><img
-                  class="om om-sm"
-                  src="assets/icons/content/brain.svg"
-                  alt=""
-                />
-                IA Generativa</a
-              >
-              <a href="cursos/android.html"
-                ><img
-                  class="om om-sm"
-                  src="assets/icons/content/robot.svg"
-                  alt=""
-                />
-                Android</a
-              >
-              <a href="cursos/devops.html"
-                ><img
-                  class="om om-sm"
-                  src="assets/icons/content/whale.svg"
-                  alt=""
-                />
-                DevOps</a
-              >
-              <a href="cursos/trigomante.html"
-                ><img
-                  class="om om-sm"
-                  src="assets/icons/content/triangle-ruler.svg"
-                  alt=""
-                />
-                Trigomante</a
-              >
-            </div>
-          </div>
-          <div class="lf-col">
-            <h4>
-              <span class="lf-ic"
-                ><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor">
-                  <path
-                    d="M5.5 3h11A1.5 1.5 0 0 1 18 4.5v16.2a.5.5 0 0 1-.74.44L12 18.5l-5.26 2.64a.5.5 0 0 1-.74-.44V4.5A1.5 1.5 0 0 1 5.5 3Z"
-                  />
-                  <rect
-                    x="8"
-                    y="7"
-                    width="6.5"
-                    height="1.3"
-                    rx=".65"
-                    fill="#fff"
-                    opacity=".7"
-                  />
-                  <rect
-                    x="8"
-                    y="10"
-                    width="6.5"
-                    height="1.3"
-                    rx=".65"
-                    fill="#fff"
-                    opacity=".7"
-                  /></svg></span
-              >Glossários
-            </h4>
-            <div class="lf-links">
-              <a href="glossario/android.html"
-                ><img
-                  class="om om-sm"
-                  src="assets/icons/content/robot.svg"
-                  alt=""
-                />
-                Android</a
-              >
-              <a href="glossario/ia.html"
-                ><img
-                  class="om om-sm"
-                  src="assets/icons/content/brain.svg"
-                  alt=""
-                />
-                IA Generativa</a
-              >
-              <a href="glossario/devops.html"
-                ><img
-                  class="om om-sm"
-                  src="assets/icons/content/whale.svg"
-                  alt=""
-                />
-                DevOps</a
-              >
-              <a href="glossario/trigomante.html"
-                ><img
-                  class="om om-sm"
-                  src="assets/icons/content/triangle-ruler.svg"
-                  alt=""
-                />
-                Trigomante</a
-              >
-            </div>
-          </div>
-          <div class="lf-col">
-            <h4>
-              <span class="lf-ic"
-                ><img
-                  class="om om-sm"
-                  src="assets/icons/content/ship.svg"
-                  alt="" /></span
-              >Navegação
-            </h4>
-            <div class="lf-links">
-              <a href="#sobre"
-                ><svg
-                  class="ic-mono sm"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
-                  <path
-                    d="M12 2c.5 4.3 2 6.7 6 7.5-4 .8-5.5 3.2-6 7.5-.5-4.3-2-6.7-6-7.5 4-.8 5.5-3.2 6-7.5Z"
-                  />
-                  <path
-                    d="M19 14c.2 1.8.8 2.8 2.5 3.2-1.7.4-2.3 1.4-2.5 3.2-.2-1.8-.8-2.8-2.5-3.2 1.7-.4 2.3-1.4 2.5-3.2Z"
-                  />
+                    ">Política de Privacidade</a>.</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="lp-footer">
+            <div class="lp-footer-wave" aria-hidden="true">
+                <svg viewBox="0 0 1200 60" preserveAspectRatio="none">
+                    <path d="M0 30 Q 150 0 300 30 T 600 30 T 900 30 T 1200 30 V60 H0 Z"></path>
                 </svg>
-                Sobre o projeto</a
-              >
-              <a href="#paleta"
-                ><img
-                  class="om om-sm"
-                  src="assets/icons/content/palette.svg"
-                  alt=""
-                />
-                Paleta de cores</a
-              >
-              <a href="#equipe"
-                ><img
-                  class="om om-sm"
-                  src="assets/icons/content/handshake.svg"
-                  alt=""
-                />
-                A equipe</a
-              >
             </div>
-          </div>
-          <div class="lf-col lf-legal">
-            <h4>
-              <span class="lf-ic"
-                ><svg
-                  class="ic-mono"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  width="16"
-                  height="16"
-                >
-                  <path
-                    d="M12 2 4 5v6c0 5.2 3.4 9.9 8 11 4.6-1.1 8-5.8 8-11V5l-8-3Z"
-                  /></svg></span
-              >Legal
-            </h4>
-            <div class="lf-links">
-              <a href="privacidade.html">Política de Privacidade</a>
-              <a href="termos.html">Termos de Uso</a>
-              <a href="/.well-known/security.txt">security.txt</a>
+            <div class="lp-footer-inner">
+                <div class="lf-brand">
+                    <div class="lf-logo">
+                        <img class="brand-mark" src="assets/icons/brand/favicon.svg" width="20" height="20" alt="" />
+                        Universidade Log
+                    </div>
+                    <p>
+                        Sua plataforma pessoal de estudo gamificada. Progresso salvo
+                        direto no seu navegador: sem conta, sem anúncio, sem gente
+                        comparando o seu ritmo com o de ninguém.
+                    </p>
+                </div>
+                <div class="lf-col">
+                    <h4>
+                        <span class="lf-ic"><img class="om om-sm" src="assets/icons/content/graduation-cap.svg" alt="" /></span>Cursos
+                    </h4>
+                    <div class="lf-links">
+                        <a href="cursos/ia.html"><img class="om om-sm" src="assets/icons/content/brain.svg" alt="" />
+                            IA Generativa</a>
+                        <a href="cursos/android.html"><img class="om om-sm" src="assets/icons/content/robot.svg" alt="" />
+                            Android</a>
+                        <a href="cursos/devops.html"><img class="om om-sm" src="assets/icons/content/whale.svg" alt="" />
+                            DevOps</a>
+                        <a href="cursos/trigomante.html"><img class="om om-sm" src="assets/icons/content/triangle-ruler.svg" alt="" />
+                            Trigomante</a>
+                    </div>
+                </div>
+                <div class="lf-col">
+                    <h4>
+                        <span class="lf-ic"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M5.5 3h11A1.5 1.5 0 0 1 18 4.5v16.2a.5.5 0 0 1-.74.44L12 18.5l-5.26 2.64a.5.5 0 0 1-.74-.44V4.5A1.5 1.5 0 0 1 5.5 3Z" />
+                                <rect x="8" y="7" width="6.5" height="1.3" rx=".65" fill="#fff" opacity=".7" />
+                                <rect x="8" y="10" width="6.5" height="1.3" rx=".65" fill="#fff" opacity=".7" />
+                            </svg></span>Glossários
+                    </h4>
+                    <div class="lf-links">
+                        <a href="glossario/android.html"><img class="om om-sm" src="assets/icons/content/robot.svg" alt="" />
+                            Android</a>
+                        <a href="glossario/ia.html"><img class="om om-sm" src="assets/icons/content/brain.svg" alt="" />
+                            IA Generativa</a>
+                        <a href="glossario/devops.html"><img class="om om-sm" src="assets/icons/content/whale.svg" alt="" />
+                            DevOps</a>
+                        <a href="glossario/trigomante.html"><img class="om om-sm" src="assets/icons/content/triangle-ruler.svg" alt="" />
+                            Trigomante</a>
+                    </div>
+                </div>
+                <div class="lf-col">
+                    <h4>
+                        <span class="lf-ic"><img class="om om-sm" src="assets/icons/content/ship.svg" alt="" /></span>Navegação
+                    </h4>
+                    <div class="lf-links">
+                        <a href="#sobre"><svg class="ic-mono sm" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2c.5 4.3 2 6.7 6 7.5-4 .8-5.5 3.2-6 7.5-.5-4.3-2-6.7-6-7.5 4-.8 5.5-3.2 6-7.5Z" />
+                                <path d="M19 14c.2 1.8.8 2.8 2.5 3.2-1.7.4-2.3 1.4-2.5 3.2-.2-1.8-.8-2.8-2.5-3.2 1.7-.4 2.3-1.4 2.5-3.2Z" />
+                            </svg>
+                            Sobre o projeto</a>
+                        <a href="#paleta"><img class="om om-sm" src="assets/icons/content/palette.svg" alt="" />
+                            Paleta de cores</a>
+                        <a href="#equipe"><img class="om om-sm" src="assets/icons/content/handshake.svg" alt="" />
+                            A equipe</a>
+                    </div>
+                </div>
+                <div class="lf-col lf-legal">
+                    <h4>
+                        <span class="lf-ic"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                                <path d="M12 2 4 5v6c0 5.2 3.4 9.9 8 11 4.6-1.1 8-5.8 8-11V5l-8-3Z" />
+                            </svg></span>Legal
+                    </h4>
+                    <div class="lf-links">
+                        <a href="privacidade.html">Política de Privacidade</a>
+                        <a href="termos.html">Termos de Uso</a>
+                        <a href="/.well-known/security.txt">security.txt</a>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-        <div class="lp-footer-bottom">
-          <span
-            >Feito pra estudar sem pressa, no seu ritmo — por
-            <a
-              class="lf-github"
-              href="https://github.com/LucasEntweihen"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Perfil de Lucas Entweihen no GitHub (abre em nova aba)"
-              ><svg
-                class="ic-mono sm"
-                viewBox="0 0 16 16"
-                fill="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  d="M8 0C3.58 0 0 3.64 0 8.13c0 3.6 2.29 6.65 5.47 7.72.4.08.55-.18.55-.4 0-.2-.01-.86-.01-1.56-2.01.38-2.53-.5-2.7-.96-.09-.24-.48-.96-.82-1.16-.28-.15-.68-.53-.01-.54.63-.01 1.08.59 1.23.83.72 1.469 1.87 1.06 2.33.8.07-.55.28-.79.5-.97-1.78-.2-3.64-.9-3.64-4.01 0-.88.31-1.61.82-2.17-.08-.2-.36-1.03.08-2.15 0 0 .67-.22 2.2.83.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.06 2.2-.83 2.2-.83.44 1.12.16 1.95.08 2.15.51.56.82 1.28.82 2.17 0 3.12-1.87 3.81-3.65 4.01.29.25.54.75.54 1.5 0 1.09-.01 1.96-.01 2.23 0 .22.15.48.55.4A8.13 8.13 0 0 0 16 8.13C16 3.64 12.42 0 8 0Z"
-                /></svg
-              >@LucasEntweihen</a
-            >
-          </span>
-          <span class="lf-modules"
-            >navio.log · android.log · agente.log · trigomante.log</span
-          >
-        </div>
-      </footer>
+            <div class="lp-footer-bottom">
+                <span>Feito pra estudar sem pressa, no seu ritmo — por
+                    <a class="lf-github" href="https://github.com/LucasEntweihen" target="_blank" rel="noopener noreferrer" aria-label="Perfil de Lucas Entweihen no GitHub (abre em nova aba)"><svg class="ic-mono sm" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                            <path d="M8 0C3.58 0 0 3.64 0 8.13c0 3.6 2.29 6.65 5.47 7.72.4.08.55-.18.55-.4 0-.2-.01-.86-.01-1.56-2.01.38-2.53-.5-2.7-.96-.09-.24-.48-.96-.82-1.16-.28-.15-.68-.53-.01-.54.63-.01 1.08.59 1.23.83.72 1.469 1.87 1.06 2.33.8.07-.55.28-.79.5-.97-1.78-.2-3.64-.9-3.64-4.01 0-.88.31-1.61.82-2.17-.08-.2-.36-1.03.08-2.15 0 0 .67-.22 2.2.83.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.06 2.2-.83 2.2-.83.44 1.12.16 1.95.08 2.15.51.56.82 1.28.82 2.17 0 3.12-1.87 3.81-3.65 4.01.29.25.54.75.54 1.5 0 1.09-.01 1.96-.01 2.23 0 .22.15.48.55.4A8.13 8.13 0 0 0 16 8.13C16 3.64 12.42 0 8 0Z" />
+                        </svg>@LucasEntweihen</a>
+                </span>
+                <span class="lf-modules">navio.log · android.log · agente.log · trigomante.log</span>
+            </div>
+        </footer>
     </div>
 
     <script>
-      // setTheme, toggleThemePopover e o estado inicial dos swatches
-      // agora vivem só em assets/js/theme-picker.js (carregado abaixo)
-      // — havia uma cópia inline aqui, só pra esta página, que também
-      // divergia da versão compartilhada usada nas outras 17 páginas.
+        // setTheme, toggleThemePopover e o estado inicial dos swatches
+        // agora vivem só em assets/js/theme-picker.js (carregado abaixo)
+        // — havia uma cópia inline aqui, só pra esta página, que também
+        // divergia da versão compartilhada usada nas outras 17 páginas.
 
-      // Mostra o nível salvo de cada curso, e troca o CTA pra "Continuar
-      // estudando" quando já existe progresso salvo naquele curso.
-      (function () {
-        var map = {
-          "lvl-android": ["android_log_level_v1", "cta-android"],
-          "lvl-ia": ["curso_ia_level_v1", "cta-ia"],
-          "lvl-devops": ["curso_devops_level_v1", "cta-devops"],
-          "lvl-trigomante": ["curso_trigomante_level_v1", "cta-trigomante"],
-        };
-        Object.keys(map).forEach(function (id) {
-          var key = map[id][0],
-            ctaId = map[id][1];
-          var lv = localStorage.getItem(key);
-          var el = document.getElementById(id);
-          var cta = document.getElementById(ctaId);
-          if (lv && el) {
-            el.textContent = "Nível " + lv;
-            el.setAttribute("data-has-progress", "1");
-          }
-          if (lv && cta) cta.textContent = "Continuar estudando →";
-        });
-      })();
-
-      // Revela seções e cards com um leve fade-up conforme a pessoa rola
-      // a página, em vez de tudo aparecer estático de uma vez.
-      (function () {
-        if (
-          window.matchMedia &&
-          window.matchMedia("(prefers-reduced-motion: reduce)").matches
-        )
-          return;
-        var targets = document.querySelectorAll(".reveal, .reveal-stagger");
-        if (!targets.length || !("IntersectionObserver" in window)) return;
-        var io = new IntersectionObserver(
-          function (entries) {
-            entries.forEach(function (entry) {
-              if (entry.isIntersecting) {
-                entry.target.classList.add("in-view");
-                io.unobserve(entry.target);
-              }
+        // Mostra o nível salvo de cada curso, e troca o CTA pra "Continuar
+        // estudando" quando já existe progresso salvo naquele curso.
+        (function() {
+            var map = {
+                "lvl-android": ["android_log_level_v1", "cta-android"],
+                "lvl-ia": ["curso_ia_level_v1", "cta-ia"],
+                "lvl-devops": ["curso_devops_level_v1", "cta-devops"],
+                "lvl-trigomante": ["curso_trigomante_level_v1", "cta-trigomante"],
+            };
+            Object.keys(map).forEach(function(id) {
+                var key = map[id][0],
+                    ctaId = map[id][1];
+                var lv = localStorage.getItem(key);
+                var el = document.getElementById(id);
+                var cta = document.getElementById(ctaId);
+                if (lv && el) {
+                    el.textContent = "Nível " + lv;
+                    el.setAttribute("data-has-progress", "1");
+                }
+                if (lv && cta) cta.textContent = "Continuar estudando →";
             });
-          },
-          { threshold: 0.02, rootMargin: "0px 0px -2% 0px" },
-        );
-        targets.forEach(function (t) {
-          io.observe(t);
-        });
-      })();
+        })();
 
-      // Brilho no header: destaca o link da seção visível no momento.
-      (function () {
-        var links = Array.prototype.slice.call(
-          document.querySelectorAll("#lpNavLinks a"),
-        );
-        var sections = links
-          .map(function (a) {
-            return document.getElementById(a.dataset.section);
-          })
-          .filter(Boolean);
-        if (!sections.length) return;
-
-        function setActive(id) {
-          links.forEach(function (a) {
-            var isActive = a.dataset.section === id;
-            if (isActive && !a.classList.contains("active")) {
-              a.classList.add("active");
-            } else if (!isActive) {
-              a.classList.remove("active");
-            }
-          });
-        }
-
-        var observer = new IntersectionObserver(
-          function (entries) {
-            var visible = entries
-              .filter(function (e) {
-                return e.isIntersecting;
-              })
-              .sort(function (a, b) {
-                return b.intersectionRatio - a.intersectionRatio;
-              });
-            if (visible.length) setActive(visible[0].target.id);
-          },
-          {
-            rootMargin: "-35% 0px -50% 0px",
-            threshold: [0, 0.1, 0.25, 0.5, 0.75, 1],
-          },
-        );
-
-        sections.forEach(function (s) {
-          observer.observe(s);
-        });
-      })();
-
-      // Carrossel de personagens ("equipe"): setas rolam por um
-      // cartão e meio de cada vez; os filtros dão scroll suave até
-      // o primeiro card do grupo (ou volta ao início, no "Todos").
-      (function () {
-        var track = document.getElementById("crewCarousel");
-        if (!track) return;
-        var arrows = document.querySelectorAll(".crew-arrow");
-        var filters = document.querySelectorAll(".crew-filter");
-
-        arrows.forEach(function (btn) {
-          btn.addEventListener("click", function () {
-            var dir = Number(btn.dataset.dir || 1);
-            track.scrollBy({ left: dir * 260, behavior: "smooth" });
-          });
-        });
-
-        filters.forEach(function (btn) {
-          btn.addEventListener("click", function () {
-            filters.forEach(function (f) {
-              f.classList.remove("active");
+        // Revela seções e cards com um leve fade-up conforme a pessoa rola
+        // a página, em vez de tudo aparecer estático de uma vez.
+        (function() {
+            if (
+                window.matchMedia &&
+                window.matchMedia("(prefers-reduced-motion: reduce)").matches
+            )
+                return;
+            var targets = document.querySelectorAll(".reveal, .reveal-stagger");
+            if (!targets.length || !("IntersectionObserver" in window)) return;
+            var io = new IntersectionObserver(
+                function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("in-view");
+                            io.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.02,
+                    rootMargin: "0px 0px -2% 0px"
+                },
+            );
+            targets.forEach(function(t) {
+                io.observe(t);
             });
-            btn.classList.add("active");
-            if (btn.dataset.reset) {
-              track.scrollTo({ left: 0, behavior: "smooth" });
-              return;
+        })();
+
+        // Brilho no header: destaca o link da seção visível no momento.
+        (function() {
+            var links = Array.prototype.slice.call(
+                document.querySelectorAll("#lpNavLinks a"),
+            );
+            var sections = links
+                .map(function(a) {
+                    return document.getElementById(a.dataset.section);
+                })
+                .filter(Boolean);
+            if (!sections.length) return;
+
+            function setActive(id) {
+                links.forEach(function(a) {
+                    var isActive = a.dataset.section === id;
+                    if (isActive && !a.classList.contains("active")) {
+                        a.classList.add("active");
+                    } else if (!isActive) {
+                        a.classList.remove("active");
+                    }
+                });
             }
-            var target = document.getElementById(btn.dataset.target);
-            if (target) {
-              track.scrollTo({
-                left: target.offsetLeft - track.offsetLeft - 6,
-                behavior: "smooth",
-              });
-            }
-          });
-        });
-      })();
+
+            var observer = new IntersectionObserver(
+                function(entries) {
+                    var visible = entries
+                        .filter(function(e) {
+                            return e.isIntersecting;
+                        })
+                        .sort(function(a, b) {
+                            return b.intersectionRatio - a.intersectionRatio;
+                        });
+                    if (visible.length) setActive(visible[0].target.id);
+                }, {
+                    rootMargin: "-35% 0px -50% 0px",
+                    threshold: [0, 0.1, 0.25, 0.5, 0.75, 1],
+                },
+            );
+
+            sections.forEach(function(s) {
+                observer.observe(s);
+            });
+        })();
+
+        // Carrossel de personagens ("equipe"): setas rolam por um
+        // cartão e meio de cada vez; os filtros dão scroll suave até
+        // o primeiro card do grupo (ou volta ao início, no "Todos").
+        (function() {
+            var track = document.getElementById("crewCarousel");
+            if (!track) return;
+            var arrows = document.querySelectorAll(".crew-arrow");
+            var filters = document.querySelectorAll(".crew-filter");
+
+            arrows.forEach(function(btn) {
+                btn.addEventListener("click", function() {
+                    var dir = Number(btn.dataset.dir || 1);
+                    track.scrollBy({
+                        left: dir * 260,
+                        behavior: "smooth"
+                    });
+                });
+            });
+
+            filters.forEach(function(btn) {
+                btn.addEventListener("click", function() {
+                    filters.forEach(function(f) {
+                        f.classList.remove("active");
+                    });
+                    btn.classList.add("active");
+                    if (btn.dataset.reset) {
+                        track.scrollTo({
+                            left: 0,
+                            behavior: "smooth"
+                        });
+                        return;
+                    }
+                    var target = document.getElementById(btn.dataset.target);
+                    if (target) {
+                        track.scrollTo({
+                            left: target.offsetLeft - track.offsetLeft - 6,
+                            behavior: "smooth",
+                        });
+                    }
+                });
+            });
+        })();
     </script>
 
     <script defer src="assets/js/chrome-widgets.js"></script>
@@ -1748,11 +1158,12 @@
     <script defer src="assets/js/games.js"></script>
     <div id="cvd-overlay-container" style="display: none"></div>
     <script>
-      fetch("assets/accessibility/cvd-filters.svg")
-        .then((response) => response.text())
-        .then((svgData) => {
-          document.getElementById("cvd-overlay-container").innerHTML = svgData;
-        });
+        fetch("assets/accessibility/cvd-filters.svg")
+            .then((response) => response.text())
+            .then((svgData) => {
+                document.getElementById("cvd-overlay-container").innerHTML = svgData;
+            });
     </script>
-  </body>
+</body>
+
 </html>

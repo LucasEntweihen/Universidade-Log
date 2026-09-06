@@ -1,1054 +1,870 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="../assets/icons/brand/favicon.svg"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="../assets/icons/brand/favicon-32.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      href="../assets/icons/brand/apple-touch-icon.png"
-    />
+    <link rel="icon" type="image/svg+xml" href="../assets/icons/brand/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/brand/favicon-32.png" />
+    <link rel="apple-touch-icon" href="../assets/icons/brand/apple-touch-icon.png" />
     <link rel="manifest" href="../manifest.json" />
     <meta name="theme-color" content="#9D25FF" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="default-src 'self'; img-src 'self' data: https://images.unsplash.com; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests"
-    />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://images.unsplash.com; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <title>Biblioteca de Referências: navio.log</title>
-    <meta
-      name="description"
-      content="Referências e leituras recomendadas do curso de DevOps (Docker &amp; Kubernetes) da Universidade Log."
-    />
+    <meta name="description" content="Referências e leituras recomendadas do curso de DevOps (Docker &amp; Kubernetes) da Universidade Log." />
     <meta name="robots" content="index, follow, max-image-preview:large" />
-    <link
-      rel="canonical"
-      href="https://universidade-log.vercel.app/cursos/devops-referencias.html"
-    />
+    <link rel="canonical" href="https://universidade-log.vercel.app/cursos/devops-referencias.html" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="pt_BR" />
-    <meta
-      property="og:url"
-      content="https://universidade-log.vercel.app/cursos/devops-referencias.html"
-    />
+    <meta property="og:url" content="https://universidade-log.vercel.app/cursos/devops-referencias.html" />
     <meta property="og:site_name" content="Universidade Log" />
     <meta property="og:title" content="Referências: navio.log" />
-    <meta
-      property="og:description"
-      content="Referências e leituras recomendadas do curso de DevOps (Docker &amp; Kubernetes) da Universidade Log."
-    />
-    <meta
-      property="og:image"
-      content="https://universidade-log.vercel.app/assets/characters/baba-grogue.png"
-    />
-    <meta
-      property="og:image:alt"
-      content="Capitão Baba Grogue, mascote do curso de DevOps"
-    />
+    <meta property="og:description" content="Referências e leituras recomendadas do curso de DevOps (Docker &amp; Kubernetes) da Universidade Log." />
+    <meta property="og:image" content="https://universidade-log.vercel.app/assets/characters/baba-grogue.png" />
+    <meta property="og:image:alt" content="Capitão Baba Grogue, mascote do curso de DevOps" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Referências: navio.log" />
-    <meta
-      name="twitter:description"
-      content="Referências e leituras recomendadas do curso de DevOps (Docker &amp; Kubernetes) da Universidade Log."
-    />
-    <meta
-      name="twitter:image"
-      content="https://universidade-log.vercel.app/assets/characters/baba-grogue.png"
-    />
+    <meta name="twitter:description" content="Referências e leituras recomendadas do curso de DevOps (Docker &amp; Kubernetes) da Universidade Log." />
+    <meta name="twitter:image" content="https://universidade-log.vercel.app/assets/characters/baba-grogue.png" />
     <script>
-      (function () {
-        try {
-          var t = localStorage.getItem("studyhub_theme_v1");
-          if (t && t !== "light")
-            document.documentElement.setAttribute("data-theme", t);
-        } catch (e) {}
-      })();
+        (function() {
+            try {
+                var t = localStorage.getItem("studyhub_theme_v1");
+                if (t && t !== "light")
+                    document.documentElement.setAttribute("data-theme", t);
+            } catch (e) {}
+        })();
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&family=Playwrite+US+Modern:wght@100..400&family=Lilex:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&family=Playwrite+US+Modern:wght@100..400&family=Lilex:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../assets/css/theme.css" />
     <link rel="stylesheet" href="../assets/css/space-theme.css" />
     <link rel="stylesheet" href="../assets/css/icons.css" />
     <link rel="stylesheet" href="../assets/css/theme-fx.css" />
     <style>
-      [data-theme="dark"] .hero-photo {
-        filter: saturate(0.92) brightness(0.82);
-      }
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-      html {
-        scroll-behavior: smooth;
-      }
-      body {
-        background:
-          radial-gradient(
-            ellipse 900px 500px at 8% -8%,
-            rgba(255, 169, 22, 0.1),
-            transparent
-          ),
-          radial-gradient(
-            ellipse 800px 600px at 100% 15%,
-            rgba(63, 163, 77, 0.08),
-            transparent
-          ),
-          var(--bg);
-        color: var(--text);
-        font-family: var(--font-body);
-        line-height: 1.6;
-        transition:
-          background-color 0.35s ease,
-          color 0.35s ease;
-        padding-bottom: 60px;
-      }
-      a {
-        color: inherit;
-      }
-      html {
-        scrollbar-width: thin;
-        scrollbar-color: var(--mint-dim) transparent;
-      }
-      html::-webkit-scrollbar {
-        width: 8px;
-      }
-      html::-webkit-scrollbar-track {
-        background: transparent;
-      }
-      html::-webkit-scrollbar-thumb {
-        background-color: var(--mint-dim);
-        border-radius: 20px;
-        border: 2px solid var(--bg);
-        background-clip: padding-box;
-      }
-      html::-webkit-scrollbar-thumb:hover {
-        background-color: var(--mint);
-      }
-      .topbar {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 12px;
-        padding: 20px 6vw;
-        border-bottom: 1px solid var(--line);
-        background: var(--panel);
-        transition:
-          background-color 0.35s ease,
-          border-color 0.35s ease;
-      }
-      .brand-mini .logo {
-        font-family: var(--font-display);
-        font-weight: 700;
-        font-size: 1.1rem;
-        color: #21252a;
-      }
-      .topnav {
-        display: flex;
-        gap: 10px;
-        align-items: center;
-        flex-wrap: wrap;
-      }
-      .topnav a {
-        font-size: 0.8rem;
-        text-decoration: none;
-        color: var(--text-dim);
-        background: var(--panel-2);
-        border: 1px solid var(--line);
-        border-radius: 20px;
-        padding: 7px 14px;
-        transition: all 0.15s ease;
-      }
-      .topnav a:hover {
-        border-color: var(--mint);
-        color: var(--mint-dim);
-      }
+        [data-theme="dark"] .hero-photo {
+            filter: saturate(0.92) brightness(0.82);
+        }
 
-      main {
-        max-width: 880px;
-        width: 100%;
-        margin: 0 auto;
-        padding: 0 6vw;
-      }
-      .hero-photo-wrap {
-        position: relative;
-        width: 100%;
-        height: 400px;
-        overflow: hidden;
-        border-radius: var(--radius);
-        margin: 28px 0 6px;
-        box-shadow: var(--shadow-soft);
-        border: 1px solid var(--line);
-      }
-      .hero-photo-wrap::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        pointer-events: none;
-        background: linear-gradient(
-          180deg,
-          rgba(0, 0, 0, 0) 55%,
-          rgba(0, 0, 0, 0.22) 100%
-        );
-      }
-      .hero-photo {
-        position: absolute;
-        top: -18%;
-        left: 0;
-        width: 100%;
-        height: 136%;
-        object-fit: cover;
-        margin: 0;
-        border-radius: 0;
-        box-shadow: none;
-        border: none;
-        display: block;
-        will-change: transform;
-      }
-      .hero-credit {
-        font-size: 0.68rem;
-        color: var(--text-dim);
-        text-align: right;
-        margin-bottom: 10px;
-      }
-      .hero-credit a {
-        text-decoration: none;
-        border-bottom: 1px dotted var(--line);
-      }
-      .char-cameo {
-        display: block;
-        filter: drop-shadow(0 10px 14px rgba(43, 46, 42, 0.18));
-        animation: charFloat 4.5s ease-in-out infinite;
-      }
-      @keyframes charFloat {
-        0%,
-        100% {
-          transform: translateY(0) rotate(0);
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
-        50% {
-          transform: translateY(-11px) rotate(-1.5deg);
+
+        html {
+            scroll-behavior: smooth;
         }
-      }
-      .char-wrap {
-        display: flex;
-        align-items: flex-end;
-        gap: 18px;
-        margin: 22px 0;
-      }
-      .char-wrap .char-bubble {
-        flex: 1;
-        background: var(--panel);
-        border: 2px solid var(--line);
-        border-bottom-width: 4px;
-        border-radius: 16px;
-        padding: 16px 20px;
-        position: relative;
-        box-shadow: var(--shadow-soft);
-      }
-      .char-wrap .char-bubble .char-name {
-        font-family: var(--font-display);
-        font-weight: 700;
-        color: var(--mint-dim);
-        font-size: 0.8rem;
-        margin-bottom: 4px;
-      }
-      .char-wrap .char-bubble p {
-        margin: 0;
-        font-size: 0.88rem;
-      }
-      @media (max-width: 700px) {
-        .char-wrap {
-          flex-direction: column;
-          align-items: center;
-          text-align: center;
+
+        body {
+            background:
+                radial-gradient(ellipse 900px 500px at 8% -8%,
+                    rgba(255, 169, 22, 0.1),
+                    transparent),
+                radial-gradient(ellipse 800px 600px at 100% 15%,
+                    rgba(63, 163, 77, 0.08),
+                    transparent),
+                var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            transition:
+                background-color 0.35s ease,
+                color 0.35s ease;
+            padding-bottom: 60px;
         }
-        .char-wrap .char-bubble::after,
-        .char-wrap .char-bubble::before {
-          display: none;
+
+        a {
+            color: inherit;
         }
-        .char-wrap img.char-cameo {
-          width: 100px !important;
+
+        html {
+            scrollbar-width: thin;
+            scrollbar-color: var(--mint-dim) transparent;
         }
-      }
-      @media (prefers-reduced-motion: reduce) {
-        .char-cameo {
-          animation: none;
+
+        html::-webkit-scrollbar {
+            width: 8px;
         }
-      }
-      @media (max-width: 640px) {
-        h1 {
-          font-size: 1.5rem;
+
+        html::-webkit-scrollbar-track {
+            background: transparent;
         }
-        .subtitle {
-          font-size: 0.88rem;
+
+        html::-webkit-scrollbar-thumb {
+            background-color: var(--mint-dim);
+            border-radius: 20px;
+            border: 2px solid var(--bg);
+            background-clip: padding-box;
         }
+
+        html::-webkit-scrollbar-thumb:hover {
+            background-color: var(--mint);
+        }
+
+        .topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding: 20px 6vw;
+            border-bottom: 1px solid var(--line);
+            background: var(--panel);
+            transition:
+                background-color 0.35s ease,
+                border-color 0.35s ease;
+        }
+
+        .brand-mini .logo {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #21252a;
+        }
+
+        .topnav {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .topnav a {
+            font-size: 0.8rem;
+            text-decoration: none;
+            color: var(--text-dim);
+            background: var(--panel-2);
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            padding: 7px 14px;
+            transition: all 0.15s ease;
+        }
+
+        .topnav a:hover {
+            border-color: var(--mint);
+            color: var(--mint-dim);
+        }
+
         main {
-          padding-left: 5vw;
-          padding-right: 5vw;
+            max-width: 880px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 6vw;
         }
+
         .hero-photo-wrap {
-          height: 220px;
+            position: relative;
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            border-radius: var(--radius);
+            margin: 28px 0 6px;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid var(--line);
         }
-        .mod-photo-wrap {
-          height: 190px;
+
+        .hero-photo-wrap::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background: linear-gradient(180deg,
+                    rgba(0, 0, 0, 0) 55%,
+                    rgba(0, 0, 0, 0.22) 100%);
         }
-        .topbar {
-          padding: 14px 5vw;
+
+        .hero-photo {
+            position: absolute;
+            top: -18%;
+            left: 0;
+            width: 100%;
+            height: 136%;
+            object-fit: cover;
+            margin: 0;
+            border-radius: 0;
+            box-shadow: none;
+            border: none;
+            display: block;
+            will-change: transform;
         }
-      }
 
-      h1 {
-        font-family: var(--font-display);
-        font-size: 2rem;
-        color: #21252a;
-        font-weight: 700;
-        margin-top: 22px;
-      }
-      .subtitle {
-        color: var(--text-dim);
-        max-width: 60ch;
-        margin-top: 8px;
-        font-size: 1rem;
-      }
-
-      .wire {
-        height: 14px;
-        margin: 26px 0;
-        opacity: 0.8;
-        animation: wireflow 5s linear infinite;
-        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='14' viewBox='0 0 24 14'><path d='M0 7 Q 6 0 12 7 T 24 7' stroke='%237C9473' stroke-opacity='0.55' stroke-width='1.4' fill='none' stroke-dasharray='2 3'/></svg>");
-        background-repeat: repeat-x;
-        background-size: 24px 14px;
-      }
-      @keyframes wireflow {
-        from {
-          background-position: 0 0;
+        .hero-credit {
+            font-size: 0.68rem;
+            color: var(--text-dim);
+            text-align: right;
+            margin-bottom: 10px;
         }
-        to {
-          background-position: 48px 0;
+
+        .hero-credit a {
+            text-decoration: none;
+            border-bottom: 1px dotted var(--line);
         }
-      }
 
-      h2.mod-title {
-        font-family: var(--font-display);
-        font-size: 1.3rem;
-        color: #21252a;
-        font-weight: 700;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin-bottom: 4px;
-      }
-      h2.mod-title svg {
-        width: 26px;
-        height: 26px;
-        color: var(--mint);
-        flex-shrink: 0;
-      }
-      .mod-eyebrow {
-        font-family: var(--font-mono);
-        font-size: 0.7rem;
-        color: var(--mint-dim);
-        letter-spacing: 0.05em;
-        margin-bottom: 4px;
-      }
-
-      .link-card {
-        display: block;
-        background: var(--panel);
-        border: 2px solid var(--line);
-        border-bottom-width: 4px;
-        border-radius: 14px;
-        padding: 16px 18px;
-        margin-bottom: 12px;
-        text-decoration: none;
-        box-shadow: var(--shadow-soft);
-        transition:
-          transform 0.18s ease,
-          box-shadow 0.18s ease,
-          border-color 0.18s ease;
-      }
-      .link-card:hover {
-        transform: translateY(-2px);
-        border-color: var(--mint-dim);
-      }
-      .link-card .lc-title {
-        font-family: var(--font-display);
-        font-weight: 600;
-        color: #21252a;
-        font-size: 0.94rem;
-      }
-      .link-card .lc-source {
-        font-family: var(--font-mono);
-        font-size: 0.68rem;
-        color: var(--mint-dim);
-        margin: 3px 0 6px;
-      }
-      .link-card .lc-desc {
-        font-size: 0.83rem;
-        color: var(--text-dim);
-      }
-
-      .module-block {
-        margin: 38px 0 30px;
-      }
-
-      footer {
-        max-width: 880px;
-        margin: 40px auto 0;
-        padding: 20px 6vw 0;
-        border-top: 1px solid var(--line-soft);
-        font-size: 0.74rem;
-        color: var(--text-dim);
-      }
-      .theme-picker-inline {
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        gap: 6px;
-        max-width: 184px;
-      }
-      .theme-swatch {
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        cursor: pointer;
-        border: 2px solid var(--line);
-        transition: transform 0.15s ease;
-      }
-      .theme-swatch:hover {
-        transform: scale(1.18);
-      }
-      .theme-swatch.active {
-        border-color: var(--text);
-      }
-      .swatch-light {
-        background: linear-gradient(135deg, #ffffff 50%, #9d25ff 50%);
-      }
-      .swatch-dark {
-        background: linear-gradient(135deg, #131f24 50%, #4fcb5c 50%);
-      }
-      .swatch-blue {
-        background: linear-gradient(135deg, #eff5fb 50%, #2f86d6 50%);
-      }
-      .swatch-blue-dark {
-        background: linear-gradient(135deg, #0a1826 50%, #4fa3f5 50%);
-      }
-      .swatch-green {
-        background: linear-gradient(135deg, #effaf1 50%, #2e9a54 50%);
-      }
-      .swatch-green-dark {
-        background: linear-gradient(135deg, #0b1b12 50%, #4fcb6e 50%);
-      }
-      .swatch-purple {
-        background: linear-gradient(135deg, #f6f0fb 50%, #8b5ce0 50%);
-      }
-      .swatch-purple-dark {
-        background: linear-gradient(135deg, #160e22 50%, #b27fee 50%);
-      }
-      .swatch-amber {
-        background: linear-gradient(135deg, #fbf3e7 50%, #d97e2c 50%);
-      }
-      .swatch-amber-dark {
-        background: linear-gradient(135deg, #211407 50%, #f0a94e 50%);
-      }
-      .swatch-rose {
-        background: linear-gradient(135deg, #fbf0f3 50%, #d6567f 50%);
-      }
-      .swatch-rose-dark {
-        background: linear-gradient(135deg, #210d16 50%, #f0759e 50%);
-      }
-
-      .mobile-menu-btn {
-        display: none;
-        background: transparent;
-        border: none;
-        color: var(--text);
-        cursor: pointer;
-        padding: 8px;
-        border-radius: 8px;
-      }
-      .mobile-menu-btn:hover {
-        background: var(--panel-2);
-      }
-      @media (max-width: 860px) {
-        .topbar {
-          grid-template-columns: auto auto auto !important;
-          display: grid !important;
-          padding: 12px 16px !important;
+        .char-cameo {
+            display: block;
+            filter: drop-shadow(0 10px 14px rgba(43, 46, 42, 0.18));
+            animation: charFloat 4.5s ease-in-out infinite;
         }
+
+        @keyframes charFloat {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0);
+            }
+
+            50% {
+                transform: translateY(-11px) rotate(-1.5deg);
+            }
+        }
+
+        .char-wrap {
+            display: flex;
+            align-items: flex-end;
+            gap: 18px;
+            margin: 22px 0;
+        }
+
+        .char-wrap .char-bubble {
+            flex: 1;
+            background: var(--panel);
+            border: 2px solid var(--line);
+            border-bottom-width: 4px;
+            border-radius: 16px;
+            padding: 16px 20px;
+            position: relative;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .char-wrap .char-bubble .char-name {
+            font-family: var(--font-display);
+            font-weight: 700;
+            color: var(--mint-dim);
+            font-size: 0.8rem;
+            margin-bottom: 4px;
+        }
+
+        .char-wrap .char-bubble p {
+            margin: 0;
+            font-size: 0.88rem;
+        }
+
+        @media (max-width: 700px) {
+            .char-wrap {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .char-wrap .char-bubble::after,
+            .char-wrap .char-bubble::before {
+                display: none;
+            }
+
+            .char-wrap img.char-cameo {
+                width: 100px !important;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .char-cameo {
+                animation: none;
+            }
+        }
+
+        @media (max-width: 640px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .subtitle {
+                font-size: 0.88rem;
+            }
+
+            main {
+                padding-left: 5vw;
+                padding-right: 5vw;
+            }
+
+            .hero-photo-wrap {
+                height: 220px;
+            }
+
+            .mod-photo-wrap {
+                height: 190px;
+            }
+
+            .topbar {
+                padding: 14px 5vw;
+            }
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            color: #21252a;
+            font-weight: 700;
+            margin-top: 22px;
+        }
+
+        .subtitle {
+            color: var(--text-dim);
+            max-width: 60ch;
+            margin-top: 8px;
+            font-size: 1rem;
+        }
+
+        .wire {
+            height: 14px;
+            margin: 26px 0;
+            opacity: 0.8;
+            animation: wireflow 5s linear infinite;
+            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='14' viewBox='0 0 24 14'><path d='M0 7 Q 6 0 12 7 T 24 7' stroke='%237C9473' stroke-opacity='0.55' stroke-width='1.4' fill='none' stroke-dasharray='2 3'/></svg>");
+            background-repeat: repeat-x;
+            background-size: 24px 14px;
+        }
+
+        @keyframes wireflow {
+            from {
+                background-position: 0 0;
+            }
+
+            to {
+                background-position: 48px 0;
+            }
+        }
+
+        h2.mod-title {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            color: #21252a;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 4px;
+        }
+
+        h2.mod-title svg {
+            width: 26px;
+            height: 26px;
+            color: var(--mint);
+            flex-shrink: 0;
+        }
+
+        .mod-eyebrow {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--mint-dim);
+            letter-spacing: 0.05em;
+            margin-bottom: 4px;
+        }
+
+        .link-card {
+            display: block;
+            background: var(--panel);
+            border: 2px solid var(--line);
+            border-bottom-width: 4px;
+            border-radius: 14px;
+            padding: 16px 18px;
+            margin-bottom: 12px;
+            text-decoration: none;
+            box-shadow: var(--shadow-soft);
+            transition:
+                transform 0.18s ease,
+                box-shadow 0.18s ease,
+                border-color 0.18s ease;
+        }
+
+        .link-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--mint-dim);
+        }
+
+        .link-card .lc-title {
+            font-family: var(--font-display);
+            font-weight: 600;
+            color: #21252a;
+            font-size: 0.94rem;
+        }
+
+        .link-card .lc-source {
+            font-family: var(--font-mono);
+            font-size: 0.68rem;
+            color: var(--mint-dim);
+            margin: 3px 0 6px;
+        }
+
+        .link-card .lc-desc {
+            font-size: 0.83rem;
+            color: var(--text-dim);
+        }
+
+        .module-block {
+            margin: 38px 0 30px;
+        }
+
+        footer {
+            max-width: 880px;
+            margin: 40px auto 0;
+            padding: 20px 6vw 0;
+            border-top: 1px solid var(--line-soft);
+            font-size: 0.74rem;
+            color: var(--text-dim);
+        }
+
+        .theme-picker-inline {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 6px;
+            max-width: 184px;
+        }
+
+        .theme-swatch {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid var(--line);
+            transition: transform 0.15s ease;
+        }
+
+        .theme-swatch:hover {
+            transform: scale(1.18);
+        }
+
+        .theme-swatch.active {
+            border-color: var(--text);
+        }
+
+        .swatch-light {
+            background: linear-gradient(135deg, #ffffff 50%, #9d25ff 50%);
+        }
+
+        .swatch-dark {
+            background: linear-gradient(135deg, #131f24 50%, #4fcb5c 50%);
+        }
+
+        .swatch-blue {
+            background: linear-gradient(135deg, #eff5fb 50%, #2f86d6 50%);
+        }
+
+        .swatch-blue-dark {
+            background: linear-gradient(135deg, #0a1826 50%, #4fa3f5 50%);
+        }
+
+        .swatch-green {
+            background: linear-gradient(135deg, #effaf1 50%, #2e9a54 50%);
+        }
+
+        .swatch-green-dark {
+            background: linear-gradient(135deg, #0b1b12 50%, #4fcb6e 50%);
+        }
+
+        .swatch-purple {
+            background: linear-gradient(135deg, #f6f0fb 50%, #8b5ce0 50%);
+        }
+
+        .swatch-purple-dark {
+            background: linear-gradient(135deg, #160e22 50%, #b27fee 50%);
+        }
+
+        .swatch-amber {
+            background: linear-gradient(135deg, #fbf3e7 50%, #d97e2c 50%);
+        }
+
+        .swatch-amber-dark {
+            background: linear-gradient(135deg, #211407 50%, #f0a94e 50%);
+        }
+
+        .swatch-rose {
+            background: linear-gradient(135deg, #fbf0f3 50%, #d6567f 50%);
+        }
+
+        .swatch-rose-dark {
+            background: linear-gradient(135deg, #210d16 50%, #f0759e 50%);
+        }
+
         .mobile-menu-btn {
-          display: flex;
-          align-items: center;
-          justify-content: center;
+            display: none;
+            background: transparent;
+            border: none;
+            color: var(--text);
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 8px;
         }
-        .topbar .topnav {
-          display: none;
-          grid-column: 1 / -1;
-          grid-row: 2;
-          justify-self: center;
-          margin-top: 14px;
-          flex-direction: column;
-          align-items: stretch;
-          width: 100%;
-          background: var(--panel);
-          border-radius: 16px;
-          padding: 8px;
-          border: 1px solid var(--line);
-          box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
-          animation: menuDrop 0.25s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+
+        .mobile-menu-btn:hover {
+            background: var(--panel-2);
         }
-        .topbar .topnav.open {
-          display: flex;
+
+        @media (max-width: 860px) {
+            .topbar {
+                grid-template-columns: auto auto auto !important;
+                display: grid !important;
+                padding: 12px 16px !important;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .topbar .topnav {
+                display: none;
+                grid-column: 1 / -1;
+                grid-row: 2;
+                justify-self: center;
+                margin-top: 14px;
+                flex-direction: column;
+                align-items: stretch;
+                width: 100%;
+                background: var(--panel);
+                border-radius: 16px;
+                padding: 8px;
+                border: 1px solid var(--line);
+                box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+                animation: menuDrop 0.25s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+            }
+
+            .topbar .topnav.open {
+                display: flex;
+            }
+
+            .topbar .topnav a {
+                justify-content: center;
+                padding: 12px;
+            }
         }
-        .topbar .topnav a {
-          justify-content: center;
-          padding: 12px;
+
+        @keyframes menuDrop {
+            from {
+                opacity: 0;
+                transform: translateY(-10px) scale(0.98);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
         }
-      }
-      @keyframes menuDrop {
-        from {
-          opacity: 0;
-          transform: translateY(-10px) scale(0.98);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0) scale(1);
-        }
-      }
     </style>
     <link rel="stylesheet" href="../assets/css/course-themes.css" />
-  </head>
-  <body class="course-devops">
+</head>
+
+<body class="course-devops">
     <a href="#main-content" class="skip-link">Pular para o conteúdo</a>
     <div class="space-planet-photo" aria-hidden="true"></div>
 
     <div class="topbar">
-      <div class="brand-mini">
-        <img class="om om-sm" src="../assets/icons/content/whale.svg" alt="" />
-        <span class="logo">navio.log</span>
-      </div>
-      <div class="topnav">
-        <a href="../index.html"
-          ><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 3 3 10.5V21h5.5v-6h7v6H21V10.5L12 3Z" />
-          </svg>
-          universidade log</a
-        >
-        <a href="../glossario/devops.html"
-          ><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor">
-            <path
-              d="M5.5 3h11A1.5 1.5 0 0 1 18 4.5v16.2a.5.5 0 0 1-.74.44L12 18.5l-5.26 2.64a.5.5 0 0 1-.74-.44V4.5A1.5 1.5 0 0 1 5.5 3Z"
-            />
-            <rect
-              x="8"
-              y="7"
-              width="6.5"
-              height="1.3"
-              rx=".65"
-              fill="#fff"
-              opacity=".7"
-            />
-            <rect
-              x="8"
-              y="10"
-              width="6.5"
-              height="1.3"
-              rx=".65"
-              fill="#fff"
-              opacity=".7"
-            />
-          </svg>
-          glossário</a
-        >
-        <a href="devops.html"
-          ><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor">
-            <path
-              d="M3 5.6c2.4-1 5.3-1 8 .5v13.3c-2.7-1.5-5.6-1.5-8-.5V5.6Z"
-              opacity=".55"
-            />
-            <path
-              d="M21 5.6c-2.4-1-5.3-1-8 .5v13.3c2.7-1.5 5.6-1.5 8-.5V5.6Z"
-            />
-            <rect
-              x="4.6"
-              y="8"
-              width="4.8"
-              height="1.1"
-              rx=".55"
-              opacity=".8"
-            />
-            <rect
-              x="4.6"
-              y="10.6"
-              width="4.8"
-              height="1.1"
-              rx=".55"
-              opacity=".8"
-            />
-          </svg>
-          guia de estudo</a
-        >
-        <a href="devops-material.html"
-          ><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor">
-            <path
-              d="M3 5.6c2.4-1 5.3-1 8 .5v13.3c-2.7-1.5-5.6-1.5-8-.5V5.6Z"
-              opacity=".55"
-            />
-            <path
-              d="M21 5.6c-2.4-1-5.3-1-8 .5v13.3c2.7-1.5 5.6-1.5 8-.5V5.6Z"
-            />
-            <rect
-              x="4.6"
-              y="8"
-              width="4.8"
-              height="1.1"
-              rx=".55"
-              opacity=".8"
-            />
-            <rect
-              x="4.6"
-              y="10.6"
-              width="4.8"
-              height="1.1"
-              rx=".55"
-              opacity=".8"
-            />
-          </svg>
-          aprofundamento</a
-        >
-        <a href="devops-projeto.html"
-          ><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor">
-            <path
-              d="M12 2.2c2.6 1.7 4.2 4.6 4.2 8.3 0 2-.5 3.9-1.4 5.6h-5.6c-.9-1.7-1.4-3.6-1.4-5.6 0-3.7 1.6-6.6 4.2-8.3Z"
-            />
-            <circle cx="12" cy="9.6" r="1.7" fill="#fff" opacity=".85" />
-            <path d="M8.2 15.3 5 17.4l.9-3.9 2.3-.6v1.8Z" opacity=".6" />
-            <path d="M15.8 15.3l3.2 2.1-.9-3.9-2.3-.6v1.8Z" opacity=".6" />
-            <path d="M10 17.1h4l-.7 3.1a1.6 1.6 0 0 1-2.6 0L10 17.1Z" />
-          </svg>
-          projeto prático</a
-        >
-        <a href="devops-diario.html"
-          ><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M4 4h16v13l-8 4-8-4V4Z" />
-          </svg>
-          diário de bordo</a
-        >
-        <div data-chrome-widget="theme"></div>
-        <div data-chrome-widget="a11y"></div>
-      </div>
+        <div class="brand-mini">
+            <img class="om om-sm" src="../assets/icons/content/whale.svg" alt="" />
+            <span class="logo">navio.log</span>
+        </div>
+        <div class="topnav">
+            <a href="../index.html"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 3 3 10.5V21h5.5v-6h7v6H21V10.5L12 3Z" />
+                </svg>
+                universidade log</a>
+            <a href="../glossario/devops.html"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M5.5 3h11A1.5 1.5 0 0 1 18 4.5v16.2a.5.5 0 0 1-.74.44L12 18.5l-5.26 2.64a.5.5 0 0 1-.74-.44V4.5A1.5 1.5 0 0 1 5.5 3Z" />
+                    <rect x="8" y="7" width="6.5" height="1.3" rx=".65" fill="#fff" opacity=".7" />
+                    <rect x="8" y="10" width="6.5" height="1.3" rx=".65" fill="#fff" opacity=".7" />
+                </svg>
+                glossário</a>
+            <a href="devops.html"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M3 5.6c2.4-1 5.3-1 8 .5v13.3c-2.7-1.5-5.6-1.5-8-.5V5.6Z" opacity=".55" />
+                    <path d="M21 5.6c-2.4-1-5.3-1-8 .5v13.3c2.7-1.5 5.6-1.5 8-.5V5.6Z" />
+                    <rect x="4.6" y="8" width="4.8" height="1.1" rx=".55" opacity=".8" />
+                    <rect x="4.6" y="10.6" width="4.8" height="1.1" rx=".55" opacity=".8" />
+                </svg>
+                guia de estudo</a>
+            <a href="devops-material.html"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M3 5.6c2.4-1 5.3-1 8 .5v13.3c-2.7-1.5-5.6-1.5-8-.5V5.6Z" opacity=".55" />
+                    <path d="M21 5.6c-2.4-1-5.3-1-8 .5v13.3c2.7-1.5 5.6-1.5 8-.5V5.6Z" />
+                    <rect x="4.6" y="8" width="4.8" height="1.1" rx=".55" opacity=".8" />
+                    <rect x="4.6" y="10.6" width="4.8" height="1.1" rx=".55" opacity=".8" />
+                </svg>
+                aprofundamento</a>
+            <a href="devops-projeto.html"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2.2c2.6 1.7 4.2 4.6 4.2 8.3 0 2-.5 3.9-1.4 5.6h-5.6c-.9-1.7-1.4-3.6-1.4-5.6 0-3.7 1.6-6.6 4.2-8.3Z" />
+                    <circle cx="12" cy="9.6" r="1.7" fill="#fff" opacity=".85" />
+                    <path d="M8.2 15.3 5 17.4l.9-3.9 2.3-.6v1.8Z" opacity=".6" />
+                    <path d="M15.8 15.3l3.2 2.1-.9-3.9-2.3-.6v1.8Z" opacity=".6" />
+                    <path d="M10 17.1h4l-.7 3.1a1.6 1.6 0 0 1-2.6 0L10 17.1Z" />
+                </svg>
+                projeto prático</a>
+            <a href="devops-diario.html"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M4 4h16v13l-8 4-8-4V4Z" />
+                </svg>
+                diário de bordo</a>
+            <div data-chrome-widget="theme"></div>
+            <div data-chrome-widget="a11y"></div>
+        </div>
     </div>
     <main id="main-content">
-      <h1>
-        <svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor">
-          <path
-            d="M9.17 14.83a1 1 0 0 1 0-1.41l4.24-4.25a1 1 0 1 1 1.41 1.42l-4.24 4.24a1 1 0 0 1-1.41 0Z"
-          />
-          <path
-            d="M11 6.4l1.6-1.6a4.5 4.5 0 1 1 6.37 6.36l-2.1 2.1a1 1 0 0 1-1.42-1.41l2.1-2.1a2.5 2.5 0 1 0-3.54-3.54L12.4 7.8A1 1 0 1 1 11 6.4Z"
-          />
-          <path
-            d="M13 17.6l-1.6 1.6a4.5 4.5 0 1 1-6.37-6.36l2.1-2.1a1 1 0 0 1 1.42 1.41l-2.1 2.1a2.5 2.5 0 1 0 3.54 3.54l1.6-1.6a1 1 0 1 1 1.4 1.41Z"
-          />
-        </svg>
-        Biblioteca de Referências: DevOps
-      </h1>
-      <p class="subtitle">
-        Fontes reais e oficiais sobre Git, GitHub, Docker, Kubernetes e AWS:
-        organizadas pelos módulos do curso.
-      </p>
+        <h1>
+            <svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M9.17 14.83a1 1 0 0 1 0-1.41l4.24-4.25a1 1 0 1 1 1.41 1.42l-4.24 4.24a1 1 0 0 1-1.41 0Z" />
+                <path d="M11 6.4l1.6-1.6a4.5 4.5 0 1 1 6.37 6.36l-2.1 2.1a1 1 0 0 1-1.42-1.41l2.1-2.1a2.5 2.5 0 1 0-3.54-3.54L12.4 7.8A1 1 0 1 1 11 6.4Z" />
+                <path d="M13 17.6l-1.6 1.6a4.5 4.5 0 1 1-6.37-6.36l2.1-2.1a1 1 0 0 1 1.42 1.41l-2.1 2.1a2.5 2.5 0 1 0 3.54 3.54l1.6-1.6a1 1 0 1 1 1.4 1.41Z" />
+            </svg>
+            Biblioteca de Referências: DevOps
+        </h1>
+        <p class="subtitle">
+            Fontes reais e oficiais sobre Git, GitHub, Docker, Kubernetes e AWS:
+            organizadas pelos módulos do curso.
+        </p>
 
-      <div class="hero-photo-wrap">
-        <img
-          class="hero-photo"
-          src="https://images.unsplash.com/photo-1760479099643-b37a52e7c094?auto=format&fit=crop&w=1600&q=70"
-          alt="Trilha na floresta com luz atravessando a névoa"
-        />
-      </div>
-      <p class="hero-credit">Foto: Ingmar em Unsplash</p>
-
-      <div class="char-wrap">
-        <img
-          class="char-cameo"
-          src="../assets/characters/ama-zz-on.png"
-          alt="Ama-zz-on"
-          style="width: 130px; flex-shrink: 0"
-        />
-        <div class="char-bubble">
-          <div class="char-name">Ama-zz-on</div>
-          <p>
-            Reuni os links oficiais organizados por módulo, sem enrolação.
-            Documentação real, direto da fonte.
-            <img
-              class="om om-sm"
-              src="../assets/icons/content/robot.svg"
-              alt=""
-            />
-          </p>
+        <div class="hero-photo-wrap">
+            <img class="hero-photo" src="https://images.unsplash.com/photo-1760479099643-b37a52e7c094?auto=format&fit=crop&w=1600&q=70" alt="Trilha na floresta com luz atravessando a névoa" />
         </div>
-      </div>
-      <div class="module-block">
-        <div class="mod-eyebrow">MÓDULO 01</div>
-        <h2 class="mod-title">
-          <img
-            class="om om-sm"
-            src="../assets/icons/content/compass.svg"
-            alt=""
-          />
-          Cultura DevOps &amp; CAMS
-        </h2>
-        <div class="wire tight" style="margin: 12px 0 18px"></div>
+        <p class="hero-credit">Foto: Ingmar em Unsplash</p>
 
-        <a
-          class="link-card"
-          href="https://www.redhat.com/en/topics/devops"
-          target="_blank"
-          rel="noopener"
-        >
-          <div class="lc-title">O que é DevOps?</div>
-          <div class="lc-source">redhat.com</div>
-          <div class="lc-desc">
-            Explicação oficial da Red Hat sobre a cultura e as práticas DevOps:
-            a fonte citada no material original do curso.
-          </div>
-        </a>
-      </div>
+        <div class="char-wrap">
+            <img class="char-cameo" src="../assets/characters/ama-zz-on.png" alt="Ama-zz-on" style="width: 130px; flex-shrink: 0" />
+            <div class="char-bubble">
+                <div class="char-name">Ama-zz-on</div>
+                <p>
+                    Reuni os links oficiais organizados por módulo, sem enrolação.
+                    Documentação real, direto da fonte.
+                    <img class="om om-sm" src="../assets/icons/content/robot.svg" alt="" />
+                </p>
+            </div>
+        </div>
+        <div class="module-block">
+            <div class="mod-eyebrow">MÓDULO 01</div>
+            <h2 class="mod-title">
+                <img class="om om-sm" src="../assets/icons/content/compass.svg" alt="" />
+                Cultura DevOps &amp; CAMS
+            </h2>
+            <div class="wire tight" style="margin: 12px 0 18px"></div>
 
-      <div class="module-block">
-        <div class="mod-eyebrow">MÓDULO 02</div>
-        <h2 class="mod-title">
-          <img class="om om-sm" src="../assets/icons/content/herb.svg" alt="" />
-          Git: Fundamentos
-        </h2>
-        <div class="wire tight" style="margin: 12px 0 18px"></div>
+            <a class="link-card" href="https://www.redhat.com/en/topics/devops" target="_blank" rel="noopener">
+                <div class="lc-title">O que é DevOps?</div>
+                <div class="lc-source">redhat.com</div>
+                <div class="lc-desc">
+                    Explicação oficial da Red Hat sobre a cultura e as práticas DevOps:
+                    a fonte citada no material original do curso.
+                </div>
+            </a>
+        </div>
 
-        <a
-          class="link-card"
-          href="https://git-scm.com/doc"
-          target="_blank"
-          rel="noopener"
-        >
-          <div class="lc-title">Documentação oficial do Git</div>
-          <div class="lc-source">git-scm.com</div>
-          <div class="lc-desc">
-            Referência completa de comandos, além do Pro Git Book gratuito,
-            disponível também em português.
-          </div>
-        </a>
-        <a
-          class="link-card"
-          href="https://git-scm.com/book/pt-br/v2"
-          target="_blank"
-          rel="noopener"
-        >
-          <div class="lc-title">Pro Git Book (pt-BR)</div>
-          <div class="lc-source">git-scm.com</div>
-          <div class="lc-desc">
-            O livro oficial e gratuito sobre Git, traduzido: da staging area a
-            rebase avançado.
-          </div>
-        </a>
-      </div>
+        <div class="module-block">
+            <div class="mod-eyebrow">MÓDULO 02</div>
+            <h2 class="mod-title">
+                <img class="om om-sm" src="../assets/icons/content/herb.svg" alt="" />
+                Git: Fundamentos
+            </h2>
+            <div class="wire tight" style="margin: 12px 0 18px"></div>
 
-      <div class="module-block">
-        <div class="mod-eyebrow">MÓDULO 03</div>
-        <h2 class="mod-title">
-          <img
-            class="om om-sm"
-            src="../assets/icons/content/handshake.svg"
-            alt=""
-          />
-          GitHub: Colaboração &amp; PR
-        </h2>
-        <div class="wire tight" style="margin: 12px 0 18px"></div>
+            <a class="link-card" href="https://git-scm.com/doc" target="_blank" rel="noopener">
+                <div class="lc-title">Documentação oficial do Git</div>
+                <div class="lc-source">git-scm.com</div>
+                <div class="lc-desc">
+                    Referência completa de comandos, além do Pro Git Book gratuito,
+                    disponível também em português.
+                </div>
+            </a>
+            <a class="link-card" href="https://git-scm.com/book/pt-br/v2" target="_blank" rel="noopener">
+                <div class="lc-title">Pro Git Book (pt-BR)</div>
+                <div class="lc-source">git-scm.com</div>
+                <div class="lc-desc">
+                    O livro oficial e gratuito sobre Git, traduzido: da staging area a
+                    rebase avançado.
+                </div>
+            </a>
+        </div>
 
-        <a
-          class="link-card"
-          href="https://docs.github.com/pt/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests"
-          target="_blank"
-          rel="noopener"
-        >
-          <div class="lc-title">Sobre Pull Requests</div>
-          <div class="lc-source">docs.github.com</div>
-          <div class="lc-desc">
-            A documentação oficial do GitHub sobre como PRs funcionam, revisão e
-            merge.
-          </div>
-        </a>
-        <a
-          class="link-card"
-          href="https://docs.github.com/pt/get-started"
-          target="_blank"
-          rel="noopener"
-        >
-          <div class="lc-title">Primeiros passos no GitHub</div>
-          <div class="lc-source">docs.github.com</div>
-          <div class="lc-desc">
-            Guia oficial de introdução à plataforma, repositórios e colaboração.
-          </div>
-        </a>
-      </div>
+        <div class="module-block">
+            <div class="mod-eyebrow">MÓDULO 03</div>
+            <h2 class="mod-title">
+                <img class="om om-sm" src="../assets/icons/content/handshake.svg" alt="" />
+                GitHub: Colaboração &amp; PR
+            </h2>
+            <div class="wire tight" style="margin: 12px 0 18px"></div>
 
-      <div class="module-block">
-        <div class="mod-eyebrow">MÓDULO 04</div>
-        <h2 class="mod-title">
-          <img
-            class="om om-sm"
-            src="../assets/icons/content/crane.svg"
-            alt=""
-          />
-          Infraestrutura como Código
-        </h2>
-        <div class="wire tight" style="margin: 12px 0 18px"></div>
+            <a class="link-card" href="https://docs.github.com/pt/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests" target="_blank" rel="noopener">
+                <div class="lc-title">Sobre Pull Requests</div>
+                <div class="lc-source">docs.github.com</div>
+                <div class="lc-desc">
+                    A documentação oficial do GitHub sobre como PRs funcionam, revisão e
+                    merge.
+                </div>
+            </a>
+            <a class="link-card" href="https://docs.github.com/pt/get-started" target="_blank" rel="noopener">
+                <div class="lc-title">Primeiros passos no GitHub</div>
+                <div class="lc-source">docs.github.com</div>
+                <div class="lc-desc">
+                    Guia oficial de introdução à plataforma, repositórios e colaboração.
+                </div>
+            </a>
+        </div>
 
-        <a
-          class="link-card"
-          href="https://developer.hashicorp.com/vagrant/docs"
-          target="_blank"
-          rel="noopener"
-        >
-          <div class="lc-title">Documentação do Vagrant</div>
-          <div class="lc-source">developer.hashicorp.com</div>
-          <div class="lc-desc">
-            Referência oficial da ferramenta de virtualização completa citada no
-            material do curso.
-          </div>
-        </a>
-        <a
-          class="link-card"
-          href="https://aws.amazon.com/what-is/iac/"
-          target="_blank"
-          rel="noopener"
-        >
-          <div class="lc-title">O que é Infraestrutura como Código?</div>
-          <div class="lc-source">aws.amazon.com</div>
-          <div class="lc-desc">
-            Introdução oficial da AWS ao conceito de IaC e seus benefícios.
-          </div>
-        </a>
-      </div>
+        <div class="module-block">
+            <div class="mod-eyebrow">MÓDULO 04</div>
+            <h2 class="mod-title">
+                <img class="om om-sm" src="../assets/icons/content/crane.svg" alt="" />
+                Infraestrutura como Código
+            </h2>
+            <div class="wire tight" style="margin: 12px 0 18px"></div>
 
-      <div class="module-block">
-        <div class="mod-eyebrow">MÓDULO 05 · 06</div>
-        <h2 class="mod-title">
-          <img class="om om-sm" src="../assets/icons/content/box.svg" alt="" />
-          Docker: Imagens, Containers &amp; Compose
-        </h2>
-        <div class="wire tight" style="margin: 12px 0 18px"></div>
+            <a class="link-card" href="https://developer.hashicorp.com/vagrant/docs" target="_blank" rel="noopener">
+                <div class="lc-title">Documentação do Vagrant</div>
+                <div class="lc-source">developer.hashicorp.com</div>
+                <div class="lc-desc">
+                    Referência oficial da ferramenta de virtualização completa citada no
+                    material do curso.
+                </div>
+            </a>
+            <a class="link-card" href="https://aws.amazon.com/what-is/iac/" target="_blank" rel="noopener">
+                <div class="lc-title">O que é Infraestrutura como Código?</div>
+                <div class="lc-source">aws.amazon.com</div>
+                <div class="lc-desc">
+                    Introdução oficial da AWS ao conceito de IaC e seus benefícios.
+                </div>
+            </a>
+        </div>
 
-        <a
-          class="link-card"
-          href="https://docs.docker.com/get-started/docker-overview/"
-          target="_blank"
-          rel="noopener"
-        >
-          <div class="lc-title">Docker overview</div>
-          <div class="lc-source">docs.docker.com</div>
-          <div class="lc-desc">
-            Visão geral oficial da arquitetura Cliente-Servidor, imagens e
-            containers.
-          </div>
-        </a>
-        <a
-          class="link-card"
-          href="https://docs.docker.com/reference/dockerfile/"
-          target="_blank"
-          rel="noopener"
-        >
-          <div class="lc-title">Dockerfile reference</div>
-          <div class="lc-source">docs.docker.com</div>
-          <div class="lc-desc">
-            Referência completa de todas as instruções que podem ser usadas num
-            Dockerfile.
-          </div>
-        </a>
-        <a
-          class="link-card"
-          href="https://docs.docker.com/compose/"
-          target="_blank"
-          rel="noopener"
-        >
-          <div class="lc-title">Docker Compose overview</div>
-          <div class="lc-source">docs.docker.com</div>
-          <div class="lc-desc">
-            Documentação oficial do Compose: múltiplos serviços, volumes e
-            redes.
-          </div>
-        </a>
-      </div>
+        <div class="module-block">
+            <div class="mod-eyebrow">MÓDULO 05 · 06</div>
+            <h2 class="mod-title">
+                <img class="om om-sm" src="../assets/icons/content/box.svg" alt="" />
+                Docker: Imagens, Containers &amp; Compose
+            </h2>
+            <div class="wire tight" style="margin: 12px 0 18px"></div>
 
-      <div class="module-block">
-        <div class="mod-eyebrow">MÓDULO 07 · 08</div>
-        <h2 class="mod-title">
-          <img
-            class="om om-sm"
-            src="../assets/icons/content/anchor.svg"
-            alt=""
-          />
-          Kubernetes: Conceitos &amp; kubectl
-        </h2>
-        <div class="wire tight" style="margin: 12px 0 18px"></div>
+            <a class="link-card" href="https://docs.docker.com/get-started/docker-overview/" target="_blank" rel="noopener">
+                <div class="lc-title">Docker overview</div>
+                <div class="lc-source">docs.docker.com</div>
+                <div class="lc-desc">
+                    Visão geral oficial da arquitetura Cliente-Servidor, imagens e
+                    containers.
+                </div>
+            </a>
+            <a class="link-card" href="https://docs.docker.com/reference/dockerfile/" target="_blank" rel="noopener">
+                <div class="lc-title">Dockerfile reference</div>
+                <div class="lc-source">docs.docker.com</div>
+                <div class="lc-desc">
+                    Referência completa de todas as instruções que podem ser usadas num
+                    Dockerfile.
+                </div>
+            </a>
+            <a class="link-card" href="https://docs.docker.com/compose/" target="_blank" rel="noopener">
+                <div class="lc-title">Docker Compose overview</div>
+                <div class="lc-source">docs.docker.com</div>
+                <div class="lc-desc">
+                    Documentação oficial do Compose: múltiplos serviços, volumes e
+                    redes.
+                </div>
+            </a>
+        </div>
 
-        <a
-          class="link-card"
-          href="https://kubernetes.io/docs/concepts/overview/"
-          target="_blank"
-          rel="noopener"
-        >
-          <div class="lc-title">Visão geral do Kubernetes</div>
-          <div class="lc-source">kubernetes.io</div>
-          <div class="lc-desc">
-            Documentação oficial: o ponto de partida pra entender toda a
-            arquitetura.
-          </div>
-        </a>
-        <a
-          class="link-card"
-          href="https://kubernetes.io/docs/concepts/workloads/pods/"
-          target="_blank"
-          rel="noopener"
-        >
-          <div class="lc-title">Pods</div>
-          <div class="lc-source">kubernetes.io</div>
-          <div class="lc-desc">
-            A menor unidade implantável do Kubernetes, explicada em detalhe.
-          </div>
-        </a>
-        <a
-          class="link-card"
-          href="https://kubernetes.io/docs/concepts/workloads/controllers/deployment/"
-          target="_blank"
-          rel="noopener"
-        >
-          <div class="lc-title">Deployments</div>
-          <div class="lc-source">kubernetes.io</div>
-          <div class="lc-desc">
-            Como Deployments gerenciam ReplicaSets e Rolling Updates.
-          </div>
-        </a>
-        <a
-          class="link-card"
-          href="https://kubernetes.io/docs/reference/kubectl/"
-          target="_blank"
-          rel="noopener"
-        >
-          <div class="lc-title">Referência do kubectl</div>
-          <div class="lc-source">kubernetes.io</div>
-          <div class="lc-desc">
-            Lista completa de comandos da CLI oficial do Kubernetes.
-          </div>
-        </a>
-      </div>
+        <div class="module-block">
+            <div class="mod-eyebrow">MÓDULO 07 · 08</div>
+            <h2 class="mod-title">
+                <img class="om om-sm" src="../assets/icons/content/anchor.svg" alt="" />
+                Kubernetes: Conceitos &amp; kubectl
+            </h2>
+            <div class="wire tight" style="margin: 12px 0 18px"></div>
 
-      <div class="module-block">
-        <div class="mod-eyebrow">MÓDULO 09</div>
-        <h2 class="mod-title">
-          <img
-            class="om om-sm"
-            src="../assets/icons/content/cloud.svg"
-            alt=""
-          />
-          AWS: Fundamentos de Cloud
-        </h2>
-        <div class="wire tight" style="margin: 12px 0 18px"></div>
+            <a class="link-card" href="https://kubernetes.io/docs/concepts/overview/" target="_blank" rel="noopener">
+                <div class="lc-title">Visão geral do Kubernetes</div>
+                <div class="lc-source">kubernetes.io</div>
+                <div class="lc-desc">
+                    Documentação oficial: o ponto de partida pra entender toda a
+                    arquitetura.
+                </div>
+            </a>
+            <a class="link-card" href="https://kubernetes.io/docs/concepts/workloads/pods/" target="_blank" rel="noopener">
+                <div class="lc-title">Pods</div>
+                <div class="lc-source">kubernetes.io</div>
+                <div class="lc-desc">
+                    A menor unidade implantável do Kubernetes, explicada em detalhe.
+                </div>
+            </a>
+            <a class="link-card" href="https://kubernetes.io/docs/concepts/workloads/controllers/deployment/" target="_blank" rel="noopener">
+                <div class="lc-title">Deployments</div>
+                <div class="lc-source">kubernetes.io</div>
+                <div class="lc-desc">
+                    Como Deployments gerenciam ReplicaSets e Rolling Updates.
+                </div>
+            </a>
+            <a class="link-card" href="https://kubernetes.io/docs/reference/kubectl/" target="_blank" rel="noopener">
+                <div class="lc-title">Referência do kubectl</div>
+                <div class="lc-source">kubernetes.io</div>
+                <div class="lc-desc">
+                    Lista completa de comandos da CLI oficial do Kubernetes.
+                </div>
+            </a>
+        </div>
 
-        <a
-          class="link-card"
-          href="https://aws.amazon.com/what-is-cloud-computing/"
-          target="_blank"
-          rel="noopener"
-        >
-          <div class="lc-title">O que é computação em nuvem?</div>
-          <div class="lc-source">aws.amazon.com</div>
-          <div class="lc-desc">
-            Introdução oficial da AWS aos conceitos fundamentais de cloud.
-          </div>
-        </a>
-        <a
-          class="link-card"
-          href="https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html"
-          target="_blank"
-          rel="noopener"
-        >
-          <div class="lc-title">O que é IAM?</div>
-          <div class="lc-source">docs.aws.amazon.com</div>
-          <div class="lc-desc">
-            Documentação oficial de identidade e controle de acesso: a base de
-            qualquer conta AWS segura.
-          </div>
-        </a>
-        <a
-          class="link-card"
-          href="https://docs.aws.amazon.com/eks/latest/userguide/what-is-eks.html"
-          target="_blank"
-          rel="noopener"
-        >
-          <div class="lc-title">O que é o Amazon EKS?</div>
-          <div class="lc-source">docs.aws.amazon.com</div>
-          <div class="lc-desc">
-            Kubernetes gerenciado pela AWS: o mesmo K8s do curso, rodando em
-            escala de produção.
-          </div>
-        </a>
-      </div>
+        <div class="module-block">
+            <div class="mod-eyebrow">MÓDULO 09</div>
+            <h2 class="mod-title">
+                <img class="om om-sm" src="../assets/icons/content/cloud.svg" alt="" />
+                AWS: Fundamentos de Cloud
+            </h2>
+            <div class="wire tight" style="margin: 12px 0 18px"></div>
 
-      <div class="module-block">
-        <div class="mod-eyebrow">MÓDULO 10</div>
-        <h2 class="mod-title">
-          <img
-            class="om om-sm"
-            src="../assets/icons/content/repeat.svg"
-            alt=""
-          />
-          CI/CD
-        </h2>
-        <div class="wire tight" style="margin: 12px 0 18px"></div>
+            <a class="link-card" href="https://aws.amazon.com/what-is-cloud-computing/" target="_blank" rel="noopener">
+                <div class="lc-title">O que é computação em nuvem?</div>
+                <div class="lc-source">aws.amazon.com</div>
+                <div class="lc-desc">
+                    Introdução oficial da AWS aos conceitos fundamentais de cloud.
+                </div>
+            </a>
+            <a class="link-card" href="https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html" target="_blank" rel="noopener">
+                <div class="lc-title">O que é IAM?</div>
+                <div class="lc-source">docs.aws.amazon.com</div>
+                <div class="lc-desc">
+                    Documentação oficial de identidade e controle de acesso: a base de
+                    qualquer conta AWS segura.
+                </div>
+            </a>
+            <a class="link-card" href="https://docs.aws.amazon.com/eks/latest/userguide/what-is-eks.html" target="_blank" rel="noopener">
+                <div class="lc-title">O que é o Amazon EKS?</div>
+                <div class="lc-source">docs.aws.amazon.com</div>
+                <div class="lc-desc">
+                    Kubernetes gerenciado pela AWS: o mesmo K8s do curso, rodando em
+                    escala de produção.
+                </div>
+            </a>
+        </div>
 
-        <a
-          class="link-card"
-          href="https://docs.github.com/pt/actions"
-          target="_blank"
-          rel="noopener"
-        >
-          <div class="lc-title">GitHub Actions</div>
-          <div class="lc-source">docs.github.com</div>
-          <div class="lc-desc">
-            Documentação oficial da ferramenta de CI/CD nativa do GitHub.
-          </div>
-        </a>
-        <a
-          class="link-card"
-          href="https://aws.amazon.com/devops/continuous-integration/"
-          target="_blank"
-          rel="noopener"
-        >
-          <div class="lc-title">O que é Integração Contínua?</div>
-          <div class="lc-source">aws.amazon.com</div>
-          <div class="lc-desc">
-            Explicação oficial da AWS sobre CI, com exemplos de pipeline.
-          </div>
-        </a>
-      </div>
+        <div class="module-block">
+            <div class="mod-eyebrow">MÓDULO 10</div>
+            <h2 class="mod-title">
+                <img class="om om-sm" src="../assets/icons/content/repeat.svg" alt="" />
+                CI/CD
+            </h2>
+            <div class="wire tight" style="margin: 12px 0 18px"></div>
 
-      <footer>
-        Links verificados no momento da criação desta página. Sites de terceiros
-        podem mudar: se algo quebrar, o próprio nome do artigo já é uma boa
-        busca.
-      </footer>
+            <a class="link-card" href="https://docs.github.com/pt/actions" target="_blank" rel="noopener">
+                <div class="lc-title">GitHub Actions</div>
+                <div class="lc-source">docs.github.com</div>
+                <div class="lc-desc">
+                    Documentação oficial da ferramenta de CI/CD nativa do GitHub.
+                </div>
+            </a>
+            <a class="link-card" href="https://aws.amazon.com/devops/continuous-integration/" target="_blank" rel="noopener">
+                <div class="lc-title">O que é Integração Contínua?</div>
+                <div class="lc-source">aws.amazon.com</div>
+                <div class="lc-desc">
+                    Explicação oficial da AWS sobre CI, com exemplos de pipeline.
+                </div>
+            </a>
+        </div>
+
+        <footer>
+            Links verificados no momento da criação desta página. Sites de terceiros
+            podem mudar: se algo quebrar, o próprio nome do artigo já é uma boa
+            busca.
+        </footer>
     </main>
 
     <script></script>
@@ -1056,5 +872,6 @@
     <script defer src="../assets/js/theme-picker.js"></script>
     <script defer src="../assets/js/accessibility.js"></script>
     <script defer src="../assets/js/theme-fx.js"></script>
-  </body>
+</body>
+
 </html>

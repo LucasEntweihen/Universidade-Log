@@ -1,1085 +1,979 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="../assets/icons/brand/favicon.svg"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="../assets/icons/brand/favicon-32.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      href="../assets/icons/brand/apple-touch-icon.png"
-    />
+    <link rel="icon" type="image/svg+xml" href="../assets/icons/brand/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/brand/favicon-32.png" />
+    <link rel="apple-touch-icon" href="../assets/icons/brand/apple-touch-icon.png" />
     <link rel="manifest" href="../manifest.json" />
     <meta name="theme-color" content="#9D25FF" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="default-src 'self'; img-src 'self' data: https://images.unsplash.com; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests"
-    />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://images.unsplash.com; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <title>Aprofundamento: navio.log</title>
-    <meta
-      name="description"
-      content="Aprofundamento por módulo do curso de DevOps (Docker &amp; Kubernetes): leituras extras de cada tópico da trilha."
-    />
+    <meta name="description" content="Aprofundamento por módulo do curso de DevOps (Docker &amp; Kubernetes): leituras extras de cada tópico da trilha." />
     <meta name="robots" content="index, follow, max-image-preview:large" />
-    <link
-      rel="canonical"
-      href="https://universidade-log.vercel.app/cursos/devops-material.html"
-    />
+    <link rel="canonical" href="https://universidade-log.vercel.app/cursos/devops-material.html" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="pt_BR" />
-    <meta
-      property="og:url"
-      content="https://universidade-log.vercel.app/cursos/devops-material.html"
-    />
+    <meta property="og:url" content="https://universidade-log.vercel.app/cursos/devops-material.html" />
     <meta property="og:site_name" content="Universidade Log" />
     <meta property="og:title" content="Aprofundamento: navio.log" />
-    <meta
-      property="og:description"
-      content="Aprofundamento por módulo do curso de DevOps (Docker &amp; Kubernetes): leituras extras de cada tópico da trilha."
-    />
-    <meta
-      property="og:image"
-      content="https://universidade-log.vercel.app/assets/characters/baba-grogue.png"
-    />
-    <meta
-      property="og:image:alt"
-      content="Capitão Baba Grogue, mascote do curso de DevOps"
-    />
+    <meta property="og:description" content="Aprofundamento por módulo do curso de DevOps (Docker &amp; Kubernetes): leituras extras de cada tópico da trilha." />
+    <meta property="og:image" content="https://universidade-log.vercel.app/assets/characters/baba-grogue.png" />
+    <meta property="og:image:alt" content="Capitão Baba Grogue, mascote do curso de DevOps" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Aprofundamento: navio.log" />
-    <meta
-      name="twitter:description"
-      content="Aprofundamento por módulo do curso de DevOps (Docker &amp; Kubernetes): leituras extras de cada tópico da trilha."
-    />
-    <meta
-      name="twitter:image"
-      content="https://universidade-log.vercel.app/assets/characters/baba-grogue.png"
-    />
+    <meta name="twitter:description" content="Aprofundamento por módulo do curso de DevOps (Docker &amp; Kubernetes): leituras extras de cada tópico da trilha." />
+    <meta name="twitter:image" content="https://universidade-log.vercel.app/assets/characters/baba-grogue.png" />
     <script>
-      (function () {
-        try {
-          var t = localStorage.getItem("studyhub_theme_v1");
-          if (t && t !== "light")
-            document.documentElement.setAttribute("data-theme", t);
-        } catch (e) {}
-      })();
+        (function() {
+            try {
+                var t = localStorage.getItem("studyhub_theme_v1");
+                if (t && t !== "light")
+                    document.documentElement.setAttribute("data-theme", t);
+            } catch (e) {}
+        })();
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&family=Playwrite+US+Modern:wght@100..400&family=Lilex:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&family=Playwrite+US+Modern:wght@100..400&family=Lilex:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../assets/css/theme.css" />
     <link rel="stylesheet" href="../assets/css/space-theme.css" />
     <link rel="stylesheet" href="../assets/css/icons.css" />
     <link rel="stylesheet" href="../assets/css/theme-fx.css" />
     <style>
-      [data-theme="dark"] .hero-photo,
-      [data-theme="dark"] .mod-photo {
-        filter: saturate(0.92) brightness(0.82);
-      }
-      [data-theme="dark"] code {
-        background: rgba(147, 181, 137, 0.12);
-        color: #e8c99a;
-      }
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-      html {
-        scroll-behavior: smooth;
-      }
-      body {
-        background:
-          radial-gradient(
-            ellipse 900px 500px at 8% -8%,
-            rgba(255, 169, 22, 0.1),
-            transparent
-          ),
-          radial-gradient(
-            ellipse 800px 600px at 100% 15%,
-            rgba(63, 163, 77, 0.08),
-            transparent
-          ),
-          var(--bg);
-        color: var(--text);
-        font-family: var(--font-body);
-        line-height: 1.68;
-        transition:
-          background-color 0.35s ease,
-          color 0.35s ease;
-        padding-bottom: 60px;
-      }
-      a {
-        color: var(--mint-dim);
-      }
-      html {
-        scrollbar-width: thin;
-        scrollbar-color: var(--mint-dim) transparent;
-      }
-      html::-webkit-scrollbar {
-        width: 8px;
-      }
-      html::-webkit-scrollbar-track {
-        background: transparent;
-      }
-      html::-webkit-scrollbar-thumb {
-        background-color: var(--mint-dim);
-        border-radius: 20px;
-        border: 2px solid var(--bg);
-        background-clip: padding-box;
-      }
-      html::-webkit-scrollbar-thumb:hover {
-        background-color: var(--mint);
-      }
-      .topbar {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 12px;
-        padding: 20px 6vw;
-        border-bottom: 1px solid var(--line);
-        background: var(--panel);
-        transition:
-          background-color 0.35s ease,
-          border-color 0.35s ease;
-      }
-      .brand-mini {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
-      .brand-mini .logo {
-        font-family: var(--font-display);
-        font-weight: 700;
-        font-size: 1.1rem;
-        color: #21252a;
-      }
-      .topnav {
-        display: flex;
-        gap: 10px;
-        align-items: center;
-        flex-wrap: wrap;
-      }
-      .topnav a {
-        font-size: 0.8rem;
-        text-decoration: none;
-        color: var(--text-dim);
-        background: var(--panel-2);
-        border: 1px solid var(--line);
-        border-radius: 20px;
-        padding: 7px 14px;
-        transition: all 0.15s ease;
-      }
-      .topnav a:hover {
-        border-color: var(--mint);
-        color: var(--mint-dim);
-      }
+        [data-theme="dark"] .hero-photo,
+        [data-theme="dark"] .mod-photo {
+            filter: saturate(0.92) brightness(0.82);
+        }
 
-      main {
-        max-width: 760px;
-        width: 100%;
-        margin: 0 auto;
-        padding: 0 6vw;
-      }
-      .hero-photo {
-        width: 100%;
-        height: 230px;
-        object-fit: cover;
-        border-radius: var(--radius);
-        margin: 28px 0 6px;
-        box-shadow: var(--shadow-soft);
-        border: 1px solid var(--line);
-        display: block;
-      }
-      .hero-credit {
-        font-size: 0.68rem;
-        color: var(--text-dim);
-        text-align: right;
-        margin-bottom: 10px;
-      }
-      .char-cameo {
-        display: block;
-        filter: drop-shadow(0 10px 14px rgba(43, 46, 42, 0.18));
-        animation: charFloat 4.5s ease-in-out infinite;
-      }
-      @keyframes charFloat {
-        0%,
-        100% {
-          transform: translateY(0) rotate(0);
+        [data-theme="dark"] code {
+            background: rgba(147, 181, 137, 0.12);
+            color: #e8c99a;
         }
-        50% {
-          transform: translateY(-11px) rotate(-1.5deg);
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
-      }
-      .char-wrap {
-        display: flex;
-        align-items: flex-end;
-        gap: 18px;
-        margin: 22px 0;
-      }
-      .char-wrap .char-bubble {
-        flex: 1;
-        background: var(--panel);
-        border: 2px solid var(--line);
-        border-bottom-width: 4px;
-        border-radius: 16px;
-        padding: 16px 20px;
-        position: relative;
-        box-shadow: var(--shadow-soft);
-      }
-      .char-wrap .char-bubble .char-name {
-        font-family: var(--font-display);
-        font-weight: 700;
-        color: var(--mint-dim);
-        font-size: 0.8rem;
-        margin-bottom: 4px;
-      }
-      .char-wrap .char-bubble p {
-        margin: 0;
-        font-size: 0.88rem;
-      }
-      @media (max-width: 700px) {
-        .char-wrap {
-          flex-direction: column;
-          align-items: center;
-          text-align: center;
+
+        html {
+            scroll-behavior: smooth;
         }
-        .char-wrap .char-bubble::after,
-        .char-wrap .char-bubble::before {
-          display: none;
+
+        body {
+            background:
+                radial-gradient(ellipse 900px 500px at 8% -8%,
+                    rgba(255, 169, 22, 0.1),
+                    transparent),
+                radial-gradient(ellipse 800px 600px at 100% 15%,
+                    rgba(63, 163, 77, 0.08),
+                    transparent),
+                var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            line-height: 1.68;
+            transition:
+                background-color 0.35s ease,
+                color 0.35s ease;
+            padding-bottom: 60px;
         }
-        .char-wrap img.char-cameo {
-          width: 100px !important;
+
+        a {
+            color: var(--mint-dim);
         }
-      }
-      @media (prefers-reduced-motion: reduce) {
-        .char-cameo {
-          animation: none;
+
+        html {
+            scrollbar-width: thin;
+            scrollbar-color: var(--mint-dim) transparent;
         }
-      }
-      @media (max-width: 640px) {
-        h1 {
-          font-size: 1.5rem;
+
+        html::-webkit-scrollbar {
+            width: 8px;
         }
-        .subtitle {
-          font-size: 0.88rem;
+
+        html::-webkit-scrollbar-track {
+            background: transparent;
         }
+
+        html::-webkit-scrollbar-thumb {
+            background-color: var(--mint-dim);
+            border-radius: 20px;
+            border: 2px solid var(--bg);
+            background-clip: padding-box;
+        }
+
+        html::-webkit-scrollbar-thumb:hover {
+            background-color: var(--mint);
+        }
+
+        .topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding: 20px 6vw;
+            border-bottom: 1px solid var(--line);
+            background: var(--panel);
+            transition:
+                background-color 0.35s ease,
+                border-color 0.35s ease;
+        }
+
+        .brand-mini {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .brand-mini .logo {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #21252a;
+        }
+
+        .topnav {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .topnav a {
+            font-size: 0.8rem;
+            text-decoration: none;
+            color: var(--text-dim);
+            background: var(--panel-2);
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            padding: 7px 14px;
+            transition: all 0.15s ease;
+        }
+
+        .topnav a:hover {
+            border-color: var(--mint);
+            color: var(--mint-dim);
+        }
+
         main {
-          padding-left: 5vw;
-          padding-right: 5vw;
+            max-width: 760px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 6vw;
         }
-        .hero-photo-wrap {
-          height: 220px;
+
+        .hero-photo {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            border-radius: var(--radius);
+            margin: 28px 0 6px;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid var(--line);
+            display: block;
         }
+
+        .hero-credit {
+            font-size: 0.68rem;
+            color: var(--text-dim);
+            text-align: right;
+            margin-bottom: 10px;
+        }
+
+        .char-cameo {
+            display: block;
+            filter: drop-shadow(0 10px 14px rgba(43, 46, 42, 0.18));
+            animation: charFloat 4.5s ease-in-out infinite;
+        }
+
+        @keyframes charFloat {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0);
+            }
+
+            50% {
+                transform: translateY(-11px) rotate(-1.5deg);
+            }
+        }
+
+        .char-wrap {
+            display: flex;
+            align-items: flex-end;
+            gap: 18px;
+            margin: 22px 0;
+        }
+
+        .char-wrap .char-bubble {
+            flex: 1;
+            background: var(--panel);
+            border: 2px solid var(--line);
+            border-bottom-width: 4px;
+            border-radius: 16px;
+            padding: 16px 20px;
+            position: relative;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .char-wrap .char-bubble .char-name {
+            font-family: var(--font-display);
+            font-weight: 700;
+            color: var(--mint-dim);
+            font-size: 0.8rem;
+            margin-bottom: 4px;
+        }
+
+        .char-wrap .char-bubble p {
+            margin: 0;
+            font-size: 0.88rem;
+        }
+
+        @media (max-width: 700px) {
+            .char-wrap {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .char-wrap .char-bubble::after,
+            .char-wrap .char-bubble::before {
+                display: none;
+            }
+
+            .char-wrap img.char-cameo {
+                width: 100px !important;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .char-cameo {
+                animation: none;
+            }
+        }
+
+        @media (max-width: 640px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .subtitle {
+                font-size: 0.88rem;
+            }
+
+            main {
+                padding-left: 5vw;
+                padding-right: 5vw;
+            }
+
+            .hero-photo-wrap {
+                height: 220px;
+            }
+
+            .mod-photo-wrap {
+                height: 240px;
+            }
+
+            .topbar {
+                padding: 14px 5vw;
+            }
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            color: #21252a;
+            font-weight: 700;
+            margin-top: 22px;
+        }
+
+        .subtitle {
+            color: var(--text-dim);
+            max-width: 60ch;
+            margin-top: 8px;
+            font-size: 1rem;
+        }
+
+        .toc {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 22px 0 6px;
+        }
+
+        .toc a {
+            font-size: 0.76rem;
+            text-decoration: none;
+            color: var(--mint-dim);
+            background: var(--panel-2);
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            padding: 6px 12px;
+        }
+
+        .wire {
+            height: 14px;
+            margin: 30px 0 24px;
+            opacity: 0.8;
+            animation: wireflow 5s linear infinite;
+            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='14' viewBox='0 0 24 14'><path d='M0 7 Q 6 0 12 7 T 24 7' stroke='%237C9473' stroke-opacity='0.55' stroke-width='1.4' fill='none' stroke-dasharray='2 3'/></svg>");
+            background-repeat: repeat-x;
+            background-size: 24px 14px;
+        }
+
+        @keyframes wireflow {
+            from {
+                background-position: 0 0;
+            }
+
+            to {
+                background-position: 48px 0;
+            }
+        }
+
+        article.module {
+            margin-bottom: 44px;
+            scroll-margin-top: 24px;
+        }
+
+        .mod-eyebrow {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--mint-dim);
+            letter-spacing: 0.05em;
+            margin-bottom: 6px;
+        }
+
+        h2.mod-title {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: #21252a;
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2.mod-title svg {
+            width: 26px;
+            height: 26px;
+            color: var(--mint);
+            flex-shrink: 0;
+        }
+
         .mod-photo-wrap {
-          height: 240px;
+            position: relative;
+            width: 100%;
+            height: 420px;
+            overflow: hidden;
+            border-radius: 12px;
+            margin: 14px 0 6px;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid var(--line);
         }
-        .topbar {
-          padding: 14px 5vw;
+
+        .mod-photo-wrap::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background: linear-gradient(180deg,
+                    rgba(0, 0, 0, 0) 55%,
+                    rgba(0, 0, 0, 0.2) 100%);
         }
-      }
 
-      h1 {
-        font-family: var(--font-display);
-        font-size: 2rem;
-        color: #21252a;
-        font-weight: 700;
-        margin-top: 22px;
-      }
-      .subtitle {
-        color: var(--text-dim);
-        max-width: 60ch;
-        margin-top: 8px;
-        font-size: 1rem;
-      }
-
-      .toc {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        margin: 22px 0 6px;
-      }
-      .toc a {
-        font-size: 0.76rem;
-        text-decoration: none;
-        color: var(--mint-dim);
-        background: var(--panel-2);
-        border: 1px solid var(--line);
-        border-radius: 20px;
-        padding: 6px 12px;
-      }
-
-      .wire {
-        height: 14px;
-        margin: 30px 0 24px;
-        opacity: 0.8;
-        animation: wireflow 5s linear infinite;
-        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='14' viewBox='0 0 24 14'><path d='M0 7 Q 6 0 12 7 T 24 7' stroke='%237C9473' stroke-opacity='0.55' stroke-width='1.4' fill='none' stroke-dasharray='2 3'/></svg>");
-        background-repeat: repeat-x;
-        background-size: 24px 14px;
-      }
-      @keyframes wireflow {
-        from {
-          background-position: 0 0;
+        .mod-photo {
+            position: absolute;
+            top: -16%;
+            left: 0;
+            width: 100%;
+            height: 132%;
+            object-fit: cover;
+            margin: 0;
+            border-radius: 0;
+            box-shadow: none;
+            border: none;
+            display: block;
+            will-change: transform;
         }
-        to {
-          background-position: 48px 0;
+
+        .mod-photo-credit {
+            font-size: 0.66rem;
+            color: var(--text-dim);
+            text-align: right;
+            margin-bottom: 16px;
         }
-      }
 
-      article.module {
-        margin-bottom: 44px;
-        scroll-margin-top: 24px;
-      }
-      .mod-eyebrow {
-        font-family: var(--font-mono);
-        font-size: 0.7rem;
-        color: var(--mint-dim);
-        letter-spacing: 0.05em;
-        margin-bottom: 6px;
-      }
-      h2.mod-title {
-        font-family: var(--font-display);
-        font-size: 1.5rem;
-        color: #21252a;
-        font-weight: 700;
-        margin-bottom: 10px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
-      h2.mod-title svg {
-        width: 26px;
-        height: 26px;
-        color: var(--mint);
-        flex-shrink: 0;
-      }
-      .mod-photo-wrap {
-        position: relative;
-        width: 100%;
-        height: 420px;
-        overflow: hidden;
-        border-radius: 12px;
-        margin: 14px 0 6px;
-        box-shadow: var(--shadow-soft);
-        border: 1px solid var(--line);
-      }
-      .mod-photo-wrap::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        pointer-events: none;
-        background: linear-gradient(
-          180deg,
-          rgba(0, 0, 0, 0) 55%,
-          rgba(0, 0, 0, 0.2) 100%
-        );
-      }
-      .mod-photo {
-        position: absolute;
-        top: -16%;
-        left: 0;
-        width: 100%;
-        height: 132%;
-        object-fit: cover;
-        margin: 0;
-        border-radius: 0;
-        box-shadow: none;
-        border: none;
-        display: block;
-        will-change: transform;
-      }
-      .mod-photo-credit {
-        font-size: 0.66rem;
-        color: var(--text-dim);
-        text-align: right;
-        margin-bottom: 16px;
-      }
-
-      article.module p {
-        font-size: 0.95rem;
-        margin-bottom: 14px;
-      }
-      article.module strong {
-        color: #21252a;
-      }
-      code {
-        font-family: var(--font-mono);
-        font-size: 0.85em;
-        color: #8a5a34;
-        background: rgba(63, 163, 77, 0.12);
-        padding: 2px 6px;
-        border-radius: 5px;
-      }
-
-      .callout {
-        background: var(--panel);
-        border: 1px solid var(--line);
-        border-left: 4px solid var(--mint);
-        border-radius: 10px;
-        padding: 14px 18px;
-        margin: 18px 0;
-        box-shadow: var(--shadow-soft);
-      }
-      .callout.warn {
-        border-left-color: var(--amber);
-      }
-      .callout .c-label {
-        font-family: var(--font-display);
-        font-weight: 700;
-        font-size: 0.8rem;
-        color: #21252a;
-        margin-bottom: 4px;
-      }
-      .callout p {
-        font-size: 0.86rem;
-        margin-bottom: 0;
-      }
-
-      .sources {
-        font-size: 0.78rem;
-        color: var(--text-dim);
-        margin-top: 12px;
-      }
-      .sources a {
-        display: inline-block;
-        margin-right: 12px;
-      }
-
-      footer {
-        max-width: 760px;
-        margin: 40px auto 0;
-        padding: 20px 6vw 0;
-        border-top: 1px solid var(--line-soft);
-        font-size: 0.74rem;
-        color: var(--text-dim);
-      }
-      .theme-picker-inline {
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        gap: 6px;
-        max-width: 184px;
-      }
-      .theme-swatch {
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        cursor: pointer;
-        border: 2px solid var(--line);
-        transition: transform 0.15s ease;
-      }
-      .theme-swatch:hover {
-        transform: scale(1.18);
-      }
-      .theme-swatch.active {
-        border-color: var(--text);
-      }
-      .swatch-light {
-        background: linear-gradient(135deg, #ffffff 50%, #9d25ff 50%);
-      }
-      .swatch-dark {
-        background: linear-gradient(135deg, #131f24 50%, #4fcb5c 50%);
-      }
-      .swatch-blue {
-        background: linear-gradient(135deg, #eff5fb 50%, #2f86d6 50%);
-      }
-      .swatch-blue-dark {
-        background: linear-gradient(135deg, #0a1826 50%, #4fa3f5 50%);
-      }
-      .swatch-green {
-        background: linear-gradient(135deg, #effaf1 50%, #2e9a54 50%);
-      }
-      .swatch-green-dark {
-        background: linear-gradient(135deg, #0b1b12 50%, #4fcb6e 50%);
-      }
-      .swatch-purple {
-        background: linear-gradient(135deg, #f6f0fb 50%, #8b5ce0 50%);
-      }
-      .swatch-purple-dark {
-        background: linear-gradient(135deg, #160e22 50%, #b27fee 50%);
-      }
-      .swatch-amber {
-        background: linear-gradient(135deg, #fbf3e7 50%, #d97e2c 50%);
-      }
-      .swatch-amber-dark {
-        background: linear-gradient(135deg, #211407 50%, #f0a94e 50%);
-      }
-      .swatch-rose {
-        background: linear-gradient(135deg, #fbf0f3 50%, #d6567f 50%);
-      }
-      .swatch-rose-dark {
-        background: linear-gradient(135deg, #210d16 50%, #f0759e 50%);
-      }
-
-      .mobile-menu-btn {
-        display: none;
-        background: transparent;
-        border: none;
-        color: var(--text);
-        cursor: pointer;
-        padding: 8px;
-        border-radius: 8px;
-      }
-      .mobile-menu-btn:hover {
-        background: var(--panel-2);
-      }
-      @media (max-width: 860px) {
-        .topbar {
-          grid-template-columns: auto auto auto !important;
-          display: grid !important;
-          padding: 12px 16px !important;
+        article.module p {
+            font-size: 0.95rem;
+            margin-bottom: 14px;
         }
+
+        article.module strong {
+            color: #21252a;
+        }
+
+        code {
+            font-family: var(--font-mono);
+            font-size: 0.85em;
+            color: #8a5a34;
+            background: rgba(63, 163, 77, 0.12);
+            padding: 2px 6px;
+            border-radius: 5px;
+        }
+
+        .callout {
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-left: 4px solid var(--mint);
+            border-radius: 10px;
+            padding: 14px 18px;
+            margin: 18px 0;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .callout.warn {
+            border-left-color: var(--amber);
+        }
+
+        .callout .c-label {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 0.8rem;
+            color: #21252a;
+            margin-bottom: 4px;
+        }
+
+        .callout p {
+            font-size: 0.86rem;
+            margin-bottom: 0;
+        }
+
+        .sources {
+            font-size: 0.78rem;
+            color: var(--text-dim);
+            margin-top: 12px;
+        }
+
+        .sources a {
+            display: inline-block;
+            margin-right: 12px;
+        }
+
+        footer {
+            max-width: 760px;
+            margin: 40px auto 0;
+            padding: 20px 6vw 0;
+            border-top: 1px solid var(--line-soft);
+            font-size: 0.74rem;
+            color: var(--text-dim);
+        }
+
+        .theme-picker-inline {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 6px;
+            max-width: 184px;
+        }
+
+        .theme-swatch {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid var(--line);
+            transition: transform 0.15s ease;
+        }
+
+        .theme-swatch:hover {
+            transform: scale(1.18);
+        }
+
+        .theme-swatch.active {
+            border-color: var(--text);
+        }
+
+        .swatch-light {
+            background: linear-gradient(135deg, #ffffff 50%, #9d25ff 50%);
+        }
+
+        .swatch-dark {
+            background: linear-gradient(135deg, #131f24 50%, #4fcb5c 50%);
+        }
+
+        .swatch-blue {
+            background: linear-gradient(135deg, #eff5fb 50%, #2f86d6 50%);
+        }
+
+        .swatch-blue-dark {
+            background: linear-gradient(135deg, #0a1826 50%, #4fa3f5 50%);
+        }
+
+        .swatch-green {
+            background: linear-gradient(135deg, #effaf1 50%, #2e9a54 50%);
+        }
+
+        .swatch-green-dark {
+            background: linear-gradient(135deg, #0b1b12 50%, #4fcb6e 50%);
+        }
+
+        .swatch-purple {
+            background: linear-gradient(135deg, #f6f0fb 50%, #8b5ce0 50%);
+        }
+
+        .swatch-purple-dark {
+            background: linear-gradient(135deg, #160e22 50%, #b27fee 50%);
+        }
+
+        .swatch-amber {
+            background: linear-gradient(135deg, #fbf3e7 50%, #d97e2c 50%);
+        }
+
+        .swatch-amber-dark {
+            background: linear-gradient(135deg, #211407 50%, #f0a94e 50%);
+        }
+
+        .swatch-rose {
+            background: linear-gradient(135deg, #fbf0f3 50%, #d6567f 50%);
+        }
+
+        .swatch-rose-dark {
+            background: linear-gradient(135deg, #210d16 50%, #f0759e 50%);
+        }
+
         .mobile-menu-btn {
-          display: flex;
-          align-items: center;
-          justify-content: center;
+            display: none;
+            background: transparent;
+            border: none;
+            color: var(--text);
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 8px;
         }
-        .topbar .topnav {
-          display: none;
-          grid-column: 1 / -1;
-          grid-row: 2;
-          justify-self: center;
-          margin-top: 14px;
-          flex-direction: column;
-          align-items: stretch;
-          width: 100%;
-          background: var(--panel);
-          border-radius: 16px;
-          padding: 8px;
-          border: 1px solid var(--line);
-          box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
-          animation: menuDrop 0.25s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+
+        .mobile-menu-btn:hover {
+            background: var(--panel-2);
         }
-        .topbar .topnav.open {
-          display: flex;
+
+        @media (max-width: 860px) {
+            .topbar {
+                grid-template-columns: auto auto auto !important;
+                display: grid !important;
+                padding: 12px 16px !important;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .topbar .topnav {
+                display: none;
+                grid-column: 1 / -1;
+                grid-row: 2;
+                justify-self: center;
+                margin-top: 14px;
+                flex-direction: column;
+                align-items: stretch;
+                width: 100%;
+                background: var(--panel);
+                border-radius: 16px;
+                padding: 8px;
+                border: 1px solid var(--line);
+                box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+                animation: menuDrop 0.25s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+            }
+
+            .topbar .topnav.open {
+                display: flex;
+            }
+
+            .topbar .topnav a {
+                justify-content: center;
+                padding: 12px;
+            }
         }
-        .topbar .topnav a {
-          justify-content: center;
-          padding: 12px;
+
+        @keyframes menuDrop {
+            from {
+                opacity: 0;
+                transform: translateY(-10px) scale(0.98);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
         }
-      }
-      @keyframes menuDrop {
-        from {
-          opacity: 0;
-          transform: translateY(-10px) scale(0.98);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0) scale(1);
-        }
-      }
     </style>
     <link rel="stylesheet" href="../assets/css/course-themes.css" />
-  </head>
-  <body class="course-devops">
+</head>
+
+<body class="course-devops">
     <a href="#main-content" class="skip-link">Pular para o conteúdo</a>
     <div class="space-planet-photo" aria-hidden="true"></div>
 
     <div class="topbar">
-      <div class="brand-mini">
-        <img class="om om-sm" src="../assets/icons/content/whale.svg" alt="" />
-        <span class="logo">navio.log</span>
-      </div>
-      <div class="topnav">
-        <a href="../index.html"
-          ><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 3 3 10.5V21h5.5v-6h7v6H21V10.5L12 3Z" />
-          </svg>
-          universidade log</a
-        >
-        <a href="../glossario/devops.html"
-          ><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor">
-            <path
-              d="M5.5 3h11A1.5 1.5 0 0 1 18 4.5v16.2a.5.5 0 0 1-.74.44L12 18.5l-5.26 2.64a.5.5 0 0 1-.74-.44V4.5A1.5 1.5 0 0 1 5.5 3Z"
-            />
-            <rect
-              x="8"
-              y="7"
-              width="6.5"
-              height="1.3"
-              rx=".65"
-              fill="#fff"
-              opacity=".7"
-            />
-            <rect
-              x="8"
-              y="10"
-              width="6.5"
-              height="1.3"
-              rx=".65"
-              fill="#fff"
-              opacity=".7"
-            />
-          </svg>
-          glossário</a
-        >
-        <a href="devops.html"
-          ><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor">
-            <path
-              d="M3 5.6c2.4-1 5.3-1 8 .5v13.3c-2.7-1.5-5.6-1.5-8-.5V5.6Z"
-              opacity=".55"
-            />
-            <path
-              d="M21 5.6c-2.4-1-5.3-1-8 .5v13.3c2.7-1.5 5.6-1.5 8-.5V5.6Z"
-            />
-            <rect
-              x="4.6"
-              y="8"
-              width="4.8"
-              height="1.1"
-              rx=".55"
-              opacity=".8"
-            />
-            <rect
-              x="4.6"
-              y="10.6"
-              width="4.8"
-              height="1.1"
-              rx=".55"
-              opacity=".8"
-            />
-          </svg>
-          guia de estudo</a
-        >
-        <a href="devops-referencias.html"
-          ><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor">
-            <path
-              d="M9.17 14.83a1 1 0 0 1 0-1.41l4.24-4.25a1 1 0 1 1 1.41 1.42l-4.24 4.24a1 1 0 0 1-1.41 0Z"
-            />
-            <path
-              d="M11 6.4l1.6-1.6a4.5 4.5 0 1 1 6.37 6.36l-2.1 2.1a1 1 0 0 1-1.42-1.41l2.1-2.1a2.5 2.5 0 1 0-3.54-3.54L12.4 7.8A1 1 0 1 1 11 6.4Z"
-            />
-            <path
-              d="M13 17.6l-1.6 1.6a4.5 4.5 0 1 1-6.37-6.36l2.1-2.1a1 1 0 0 1 1.42 1.41l-2.1 2.1a2.5 2.5 0 1 0 3.54 3.54l1.6-1.6a1 1 0 1 1 1.4 1.41Z"
-            />
-          </svg>
-          referências</a
-        >
-        <a href="devops-projeto.html"
-          ><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor">
-            <path
-              d="M12 2.2c2.6 1.7 4.2 4.6 4.2 8.3 0 2-.5 3.9-1.4 5.6h-5.6c-.9-1.7-1.4-3.6-1.4-5.6 0-3.7 1.6-6.6 4.2-8.3Z"
-            />
-            <circle cx="12" cy="9.6" r="1.7" fill="#fff" opacity=".85" />
-            <path d="M8.2 15.3 5 17.4l.9-3.9 2.3-.6v1.8Z" opacity=".6" />
-            <path d="M15.8 15.3l3.2 2.1-.9-3.9-2.3-.6v1.8Z" opacity=".6" />
-            <path d="M10 17.1h4l-.7 3.1a1.6 1.6 0 0 1-2.6 0L10 17.1Z" />
-          </svg>
-          projeto prático</a
-        >
-        <a href="devops-diario.html"
-          ><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M4 4h16v13l-8 4-8-4V4Z" />
-          </svg>
-          diário de bordo</a
-        >
-        <div data-chrome-widget="theme"></div>
-        <div data-chrome-widget="a11y"></div>
-      </div>
+        <div class="brand-mini">
+            <img class="om om-sm" src="../assets/icons/content/whale.svg" alt="" />
+            <span class="logo">navio.log</span>
+        </div>
+        <div class="topnav">
+            <a href="../index.html"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 3 3 10.5V21h5.5v-6h7v6H21V10.5L12 3Z" />
+                </svg>
+                universidade log</a>
+            <a href="../glossario/devops.html"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M5.5 3h11A1.5 1.5 0 0 1 18 4.5v16.2a.5.5 0 0 1-.74.44L12 18.5l-5.26 2.64a.5.5 0 0 1-.74-.44V4.5A1.5 1.5 0 0 1 5.5 3Z" />
+                    <rect x="8" y="7" width="6.5" height="1.3" rx=".65" fill="#fff" opacity=".7" />
+                    <rect x="8" y="10" width="6.5" height="1.3" rx=".65" fill="#fff" opacity=".7" />
+                </svg>
+                glossário</a>
+            <a href="devops.html"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M3 5.6c2.4-1 5.3-1 8 .5v13.3c-2.7-1.5-5.6-1.5-8-.5V5.6Z" opacity=".55" />
+                    <path d="M21 5.6c-2.4-1-5.3-1-8 .5v13.3c2.7-1.5 5.6-1.5 8-.5V5.6Z" />
+                    <rect x="4.6" y="8" width="4.8" height="1.1" rx=".55" opacity=".8" />
+                    <rect x="4.6" y="10.6" width="4.8" height="1.1" rx=".55" opacity=".8" />
+                </svg>
+                guia de estudo</a>
+            <a href="devops-referencias.html"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M9.17 14.83a1 1 0 0 1 0-1.41l4.24-4.25a1 1 0 1 1 1.41 1.42l-4.24 4.24a1 1 0 0 1-1.41 0Z" />
+                    <path d="M11 6.4l1.6-1.6a4.5 4.5 0 1 1 6.37 6.36l-2.1 2.1a1 1 0 0 1-1.42-1.41l2.1-2.1a2.5 2.5 0 1 0-3.54-3.54L12.4 7.8A1 1 0 1 1 11 6.4Z" />
+                    <path d="M13 17.6l-1.6 1.6a4.5 4.5 0 1 1-6.37-6.36l2.1-2.1a1 1 0 0 1 1.42 1.41l-2.1 2.1a2.5 2.5 0 1 0 3.54 3.54l1.6-1.6a1 1 0 1 1 1.4 1.41Z" />
+                </svg>
+                referências</a>
+            <a href="devops-projeto.html"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2.2c2.6 1.7 4.2 4.6 4.2 8.3 0 2-.5 3.9-1.4 5.6h-5.6c-.9-1.7-1.4-3.6-1.4-5.6 0-3.7 1.6-6.6 4.2-8.3Z" />
+                    <circle cx="12" cy="9.6" r="1.7" fill="#fff" opacity=".85" />
+                    <path d="M8.2 15.3 5 17.4l.9-3.9 2.3-.6v1.8Z" opacity=".6" />
+                    <path d="M15.8 15.3l3.2 2.1-.9-3.9-2.3-.6v1.8Z" opacity=".6" />
+                    <path d="M10 17.1h4l-.7 3.1a1.6 1.6 0 0 1-2.6 0L10 17.1Z" />
+                </svg>
+                projeto prático</a>
+            <a href="devops-diario.html"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M4 4h16v13l-8 4-8-4V4Z" />
+                </svg>
+                diário de bordo</a>
+            <div data-chrome-widget="theme"></div>
+            <div data-chrome-widget="a11y"></div>
+        </div>
     </div>
 
     <main id="main-content">
-      <h1>
-        <svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor">
-          <path
-            d="M3 5.6c2.4-1 5.3-1 8 .5v13.3c-2.7-1.5-5.6-1.5-8-.5V5.6Z"
-            opacity=".55"
-          />
-          <path d="M21 5.6c-2.4-1-5.3-1-8 .5v13.3c2.7-1.5 5.6-1.5 8-.5V5.6Z" />
-          <rect x="4.6" y="8" width="4.8" height="1.1" rx=".55" opacity=".8" />
-          <rect
-            x="4.6"
-            y="10.6"
-            width="4.8"
-            height="1.1"
-            rx=".55"
-            opacity=".8"
-          />
-        </svg>
-        Aprofundamento por módulo
-      </h1>
-      <p class="subtitle">
-        Leituras um pouco mais longas sobre cultura DevOps, Git internals,
-        containers e Kubernetes: pra quem já passou pelos microtutoriais e quer
-        entender o "porquê" por trás de cada comando.
-      </p>
-
-      <div class="char-wrap">
-        <img
-          class="char-cameo"
-          src="../assets/characters/baba-grogue.png"
-          alt="Capitão Baba Grogue"
-          style="width: 130px; flex-shrink: 0"
-        />
-        <div class="char-bubble">
-          <div class="char-name">Capitão Baba Grogue</div>
-          <p>
-            Comando de verdade não é decorar sintaxe de comando. É entender por
-            que o sistema se comporta do jeito que se comporta. Vamos fundo.
-          </p>
-        </div>
-      </div>
-
-      <div class="toc">
-        <a href="#mod1">01 Cultura &amp; CAMS</a>
-        <a href="#mod2">02 Git internals</a>
-        <a href="#mod3">03 Pull Requests</a>
-        <a href="#mod4">04 Containers vs VMs</a>
-        <a href="#mod5">05 Reconciliação</a>
-        <a href="#mod6">06 IAM &amp; AWS</a>
-      </div>
-
-      <div class="wire"></div>
-
-      <article class="module" id="mod1">
-        <div class="mod-eyebrow">MÓDULO 01</div>
-        <h2 class="mod-title">
-          Por que "cultura" é a palavra certa, e não "processo"
-        </h2>
-        <div class="mod-photo-wrap">
-          <img
-            class="mod-photo"
-            src="https://images.unsplash.com/photo-1716847214624-1e8787d98b6c?auto=format&fit=crop&w=1200&q=68"
-            alt="Pequena cabana aconchegante em meio à floresta"
-          />
-        </div>
-        <p class="mod-photo-credit">Foto: Peter Thomas em Unsplash</p>
-
-        <p>
-          É tentador tratar DevOps como um checklist de processo: "implementamos
-          CI/CD, logo somos DevOps". Mas o framework CAMS foi desenhado
-          propositalmente com "Culture" na primeira letra, não por acaso
-          alfabético. Automação sem cultura de colaboração vira só um monte de
-          scripts que ninguém entende além de quem escreveu. Um pipeline de
-          CI/CD brilhante não conserta um time onde Dev joga código "pronto" por
-          cima do muro pro Ops descobrir os problemas sozinho, em produção, à
-          uma da manhã.
+        <h1>
+            <svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M3 5.6c2.4-1 5.3-1 8 .5v13.3c-2.7-1.5-5.6-1.5-8-.5V5.6Z" opacity=".55" />
+                <path d="M21 5.6c-2.4-1-5.3-1-8 .5v13.3c2.7-1.5 5.6-1.5 8-.5V5.6Z" />
+                <rect x="4.6" y="8" width="4.8" height="1.1" rx=".55" opacity=".8" />
+                <rect x="4.6" y="10.6" width="4.8" height="1.1" rx=".55" opacity=".8" />
+            </svg>
+            Aprofundamento por módulo
+        </h1>
+        <p class="subtitle">
+            Leituras um pouco mais longas sobre cultura DevOps, Git internals,
+            containers e Kubernetes: pra quem já passou pelos microtutoriais e quer
+            entender o "porquê" por trás de cada comando.
         </p>
 
-        <p>
-          É por isso que destruir <strong>silos</strong> vem antes de qualquer
-          ferramenta na lista de prioridades. Um silo não é só uma estrutura
-          organizacional: é um padrão de comunicação. Times em silo otimizam pra
-          métricas locais ("meu código passou nos testes") em vez de métricas de
-          sistema ("o usuário final teve uma boa experiência"). O CAMS ataca
-          isso de frente: cultura de empatia primeiro, automação depois, mas
-          nunca sem medição: porque sem métricas, ninguém sabe se a colaboração
-          está realmente funcionando.
-        </p>
-
-        <div class="callout">
-          <div class="c-label">
-            <img
-              class="om om-sm"
-              src="../assets/icons/content/herb.svg"
-              alt=""
-            />
-            Um jeito prático de perceber silo
-          </div>
-          <p>
-            Se a resposta pra "por que esse bug chegou em produção?" é sempre
-            "não era meu módulo", existe um silo ali: não importa quantas
-            ferramentas de automação o time usa.
-          </p>
+        <div class="char-wrap">
+            <img class="char-cameo" src="../assets/characters/baba-grogue.png" alt="Capitão Baba Grogue" style="width: 130px; flex-shrink: 0" />
+            <div class="char-bubble">
+                <div class="char-name">Capitão Baba Grogue</div>
+                <p>
+                    Comando de verdade não é decorar sintaxe de comando. É entender por
+                    que o sistema se comporta do jeito que se comporta. Vamos fundo.
+                </p>
+            </div>
         </div>
 
-        <p class="sources">
-          Fontes:
-          <a
-            href="https://www.redhat.com/en/topics/devops"
-            target="_blank"
-            rel="noopener"
-            >O que é DevOps: Red Hat</a
-          >
-        </p>
-      </article>
-
-      <div class="wire"></div>
-
-      <article class="module" id="mod2">
-        <div class="mod-eyebrow">MÓDULO 02</div>
-        <h2 class="mod-title">
-          Um commit não é um "salvar". É uma fotografia imutável.
-        </h2>
-        <div class="mod-photo-wrap">
-          <img
-            class="mod-photo"
-            src="https://images.unsplash.com/photo-1746937807433-05748b80caf4?auto=format&fit=crop&w=1200&q=68"
-            alt="Colinas envoltas em névoa dourada ao amanhecer"
-          />
-        </div>
-        <p class="mod-photo-credit">Foto: Nastia Petruk em Unsplash</p>
-
-        <p>
-          Internamente, o Git não guarda "diferenças" entre versões de arquivo
-          do jeito que muita gente imagina: ele guarda
-          <strong>snapshots</strong>. Cada commit aponta pra um estado completo
-          da árvore de arquivos naquele instante, mais um ponteiro pro commit
-          anterior (ou vários, no caso de um merge). É por isso que navegar pelo
-          histórico do Git é rápido: não é preciso reconstruir uma sequência de
-          patches, cada commit já é uma foto completa e independente.
-        </p>
-
-        <p>
-          A <strong>Staging Area</strong> existe justamente pra dar controle
-          fino sobre o que entra em cada fotografia. Você pode ter editado três
-          arquivos, mas só querer registrar as mudanças de um deles nesse
-          commit: <code>git add arquivo.js</code> escolhe exatamente isso,
-          deixando os outros dois de fora do snapshot até você decidir
-          incluí-los.
-        </p>
-
-        <div class="callout warn">
-          <div class="c-label">
-            <img
-              class="om om-sm"
-              src="../assets/icons/content/warning.svg"
-              alt=""
-            />
-            Commit não é backup
-          </div>
-          <p>
-            Arquivos que nunca foram adicionados ao staging (com
-            <code>git add</code>) não fazem parte de nenhum commit: não existe
-            rede de segurança pra eles até você explicitamente decidir
-            versioná-los.
-          </p>
+        <div class="toc">
+            <a href="#mod1">01 Cultura &amp; CAMS</a>
+            <a href="#mod2">02 Git internals</a>
+            <a href="#mod3">03 Pull Requests</a>
+            <a href="#mod4">04 Containers vs VMs</a>
+            <a href="#mod5">05 Reconciliação</a>
+            <a href="#mod6">06 IAM &amp; AWS</a>
         </div>
 
-        <p class="sources">
-          Fontes:
-          <a
-            href="https://git-scm.com/book/pt-br/v2"
-            target="_blank"
-            rel="noopener"
-            >Pro Git Book (pt-BR)</a
-          >
-        </p>
-      </article>
+        <div class="wire"></div>
 
-      <div class="wire"></div>
+        <article class="module" id="mod1">
+            <div class="mod-eyebrow">MÓDULO 01</div>
+            <h2 class="mod-title">
+                Por que "cultura" é a palavra certa, e não "processo"
+            </h2>
+            <div class="mod-photo-wrap">
+                <img class="mod-photo" src="https://images.unsplash.com/photo-1716847214624-1e8787d98b6c?auto=format&fit=crop&w=1200&q=68" alt="Pequena cabana aconchegante em meio à floresta" />
+            </div>
+            <p class="mod-photo-credit">Foto: Peter Thomas em Unsplash</p>
 
-      <article class="module" id="mod3">
-        <div class="mod-eyebrow">MÓDULO 03</div>
-        <h2 class="mod-title">
-          Um bom Pull Request é uma carta, não um dump de código
-        </h2>
-        <div class="mod-photo-wrap">
-          <img
-            class="mod-photo"
-            src="https://images.unsplash.com/photo-1755643842005-460e3a030102?auto=format&fit=crop&w=1200&q=68"
-            alt="Reflexo das montanhas em lago calmo ao nascer do sol"
-          />
-        </div>
-        <p class="mod-photo-credit">Foto: Emma Swoboda em Unsplash</p>
+            <p>
+                É tentador tratar DevOps como um checklist de processo: "implementamos
+                CI/CD, logo somos DevOps". Mas o framework CAMS foi desenhado
+                propositalmente com "Culture" na primeira letra, não por acaso
+                alfabético. Automação sem cultura de colaboração vira só um monte de
+                scripts que ninguém entende além de quem escreveu. Um pipeline de
+                CI/CD brilhante não conserta um time onde Dev joga código "pronto" por
+                cima do muro pro Ops descobrir os problemas sozinho, em produção, à
+                uma da manhã.
+            </p>
 
-        <p>
-          Um PR sem descrição, com título "fix", força quem revisa a reconstruir
-          sozinho todo o raciocínio por trás da mudança lendo linha por linha de
-          diff. Um bom PR conta uma história: <strong>o que</strong> mudou,
-          <strong>por que</strong> mudou, e <strong>como testar</strong> que
-          funcionou. Isso não é burocracia: é a diferença entre uma revisão de 5
-          minutos e uma de 40.
-        </p>
+            <p>
+                É por isso que destruir <strong>silos</strong> vem antes de qualquer
+                ferramenta na lista de prioridades. Um silo não é só uma estrutura
+                organizacional: é um padrão de comunicação. Times em silo otimizam pra
+                métricas locais ("meu código passou nos testes") em vez de métricas de
+                sistema ("o usuário final teve uma boa experiência"). O CAMS ataca
+                isso de frente: cultura de empatia primeiro, automação depois, mas
+                nunca sem medição: porque sem métricas, ninguém sabe se a colaboração
+                está realmente funcionando.
+            </p>
 
-        <p>
-          Vale lembrar também que revisão de código é bidirecional: quem revisa
-          não está caçando erro pra provar que é melhor, está protegendo o
-          sistema como um todo. E quem recebe a revisão não deveria levar
-          comentários pro lado pessoal: código não é extensão de identidade, é
-          um artefato que o time inteiro é dono em conjunto.
-        </p>
+            <div class="callout">
+                <div class="c-label">
+                    <img class="om om-sm" src="../assets/icons/content/herb.svg" alt="" />
+                    Um jeito prático de perceber silo
+                </div>
+                <p>
+                    Se a resposta pra "por que esse bug chegou em produção?" é sempre
+                    "não era meu módulo", existe um silo ali: não importa quantas
+                    ferramentas de automação o time usa.
+                </p>
+            </div>
 
-        <p class="sources">
-          Fontes:
-          <a
-            href="https://docs.github.com/pt/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests"
-            target="_blank"
-            rel="noopener"
-            >About pull requests: GitHub Docs</a
-          >
-        </p>
-      </article>
+            <p class="sources">
+                Fontes:
+                <a href="https://www.redhat.com/en/topics/devops" target="_blank" rel="noopener">O que é DevOps: Red Hat</a>
+            </p>
+        </article>
 
-      <div class="wire"></div>
+        <div class="wire"></div>
 
-      <article class="module" id="mod4">
-        <div class="mod-eyebrow">MÓDULO 04</div>
-        <h2 class="mod-title">
-          O motivo real de containers serem leves: o kernel compartilhado
-        </h2>
-        <div class="mod-photo-wrap">
-          <img
-            class="mod-photo"
-            src="https://images.unsplash.com/photo-1755690042574-49ff5c3bfe96?auto=format&fit=crop&w=1200&q=68"
-            alt="Prado com flores silvestres ao amanhecer"
-          />
-        </div>
-        <p class="mod-photo-credit">Foto: Nastia Petruk em Unsplash</p>
+        <article class="module" id="mod2">
+            <div class="mod-eyebrow">MÓDULO 02</div>
+            <h2 class="mod-title">
+                Um commit não é um "salvar". É uma fotografia imutável.
+            </h2>
+            <div class="mod-photo-wrap">
+                <img class="mod-photo" src="https://images.unsplash.com/photo-1746937807433-05748b80caf4?auto=format&fit=crop&w=1200&q=68" alt="Colinas envoltas em névoa dourada ao amanhecer" />
+            </div>
+            <p class="mod-photo-credit">Foto: Nastia Petruk em Unsplash</p>
 
-        <p>
-          A diferença entre VM e container não é "tamanho do arquivo": é
-          <strong>o que cada um virtualiza</strong>. Uma VM virtualiza hardware
-          inteiro: CPU, memória, disco, e roda um Sistema Operacional Convidado
-          completo por cima, com seu próprio kernel. Um container Docker usa
-          recursos do kernel Linux do próprio hospedeiro:
-          <em>namespaces</em> (isolamento de processos, rede, sistema de
-          arquivos) e <em>cgroups</em> (limites de CPU/memória): pra criar a
-          ilusão de isolamento sem duplicar o sistema operacional inteiro.
-        </p>
+            <p>
+                Internamente, o Git não guarda "diferenças" entre versões de arquivo
+                do jeito que muita gente imagina: ele guarda
+                <strong>snapshots</strong>. Cada commit aponta pra um estado completo
+                da árvore de arquivos naquele instante, mais um ponteiro pro commit
+                anterior (ou vários, no caso de um merge). É por isso que navegar pelo
+                histórico do Git é rápido: não é preciso reconstruir uma sequência de
+                patches, cada commit já é uma foto completa e independente.
+            </p>
 
-        <p>
-          É por isso que subir um container leva segundos e subir uma VM leva
-          minutos: o container não precisa passar pelo processo de boot de um SO
-          completo, ele só inicia o processo da aplicação diretamente, já
-          isolado pelo kernel compartilhado.
-        </p>
+            <p>
+                A <strong>Staging Area</strong> existe justamente pra dar controle
+                fino sobre o que entra em cada fotografia. Você pode ter editado três
+                arquivos, mas só querer registrar as mudanças de um deles nesse
+                commit: <code>git add arquivo.js</code> escolhe exatamente isso,
+                deixando os outros dois de fora do snapshot até você decidir
+                incluí-los.
+            </p>
 
-        <p class="sources">
-          Fontes:
-          <a
-            href="https://docs.docker.com/get-started/docker-overview/"
-            target="_blank"
-            rel="noopener"
-            >Docker overview: Docker Docs</a
-          >
-        </p>
-      </article>
+            <div class="callout warn">
+                <div class="c-label">
+                    <img class="om om-sm" src="../assets/icons/content/warning.svg" alt="" />
+                    Commit não é backup
+                </div>
+                <p>
+                    Arquivos que nunca foram adicionados ao staging (com
+                    <code>git add</code>) não fazem parte de nenhum commit: não existe
+                    rede de segurança pra eles até você explicitamente decidir
+                    versioná-los.
+                </p>
+            </div>
 
-      <div class="wire"></div>
+            <p class="sources">
+                Fontes:
+                <a href="https://git-scm.com/book/pt-br/v2" target="_blank" rel="noopener">Pro Git Book (pt-BR)</a>
+            </p>
+        </article>
 
-      <article class="module" id="mod5">
-        <div class="mod-eyebrow">MÓDULO 05</div>
-        <h2 class="mod-title">
-          O Laço de Reconciliação é um sistema de controle, não mágica
-        </h2>
-        <div class="mod-photo-wrap">
-          <img
-            class="mod-photo"
-            src="https://images.unsplash.com/photo-1759144897143-991d650b1668?auto=format&fit=crop&w=1200&q=68"
-            alt="Cabana iluminada sob céu estrelado"
-          />
-        </div>
-        <p class="mod-photo-credit">Foto: Sora Sagano em Unsplash</p>
+        <div class="wire"></div>
 
-        <p>
-          O comportamento "mate um Pod e outro nasce sozinho" parece mágica na
-          primeira vez que você vê, mas é engenharia de sistemas de controle
-          clássica: o Kubernetes roda, em loop contínuo, um
-          <strong>controller</strong> que compara o <em>estado desejado</em> (o
-          que está no seu YAML) com o <em>estado observado</em> (o que está
-          rodando de verdade no cluster agora). Toda vez que há diferença, ele
-          emite ações pra fechar essa diferença: criar um Pod, remover outro,
-          redistribuir carga.
-        </p>
+        <article class="module" id="mod3">
+            <div class="mod-eyebrow">MÓDULO 03</div>
+            <h2 class="mod-title">
+                Um bom Pull Request é uma carta, não um dump de código
+            </h2>
+            <div class="mod-photo-wrap">
+                <img class="mod-photo" src="https://images.unsplash.com/photo-1755643842005-460e3a030102?auto=format&fit=crop&w=1200&q=68" alt="Reflexo das montanhas em lago calmo ao nascer do sol" />
+            </div>
+            <p class="mod-photo-credit">Foto: Emma Swoboda em Unsplash</p>
 
-        <p>
-          Isso é exatamente o mesmo princípio de um termostato: ele não "sabe" a
-          temperatura ideal em algum sentido filosófico, ele só compara
-          continuamente "temperatura atual" com "temperatura configurada" e
-          liga/desliga o aquecedor até a diferença zerar. O Kubernetes faz isso
-          com Pods, réplicas, volumes e praticamente todo recurso que ele
-          gerencia.
-        </p>
+            <p>
+                Um PR sem descrição, com título "fix", força quem revisa a reconstruir
+                sozinho todo o raciocínio por trás da mudança lendo linha por linha de
+                diff. Um bom PR conta uma história: <strong>o que</strong> mudou,
+                <strong>por que</strong> mudou, e <strong>como testar</strong> que
+                funcionou. Isso não é burocracia: é a diferença entre uma revisão de 5
+                minutos e uma de 40.
+            </p>
 
-        <div class="callout">
-          <div class="c-label">
-            <img
-              class="om om-sm"
-              src="../assets/icons/content/herb.svg"
-              alt=""
-            />
-            Por que isso importa na prática
-          </div>
-          <p>
-            Entender que é um loop de comparação (não uma regra especial de
-            "recriar Pod morto") explica por que o Kubernetes também reage a
-            mudanças manuais indevidas: se alguém editar um recurso direto no
-            cluster sem passar pelo manifesto, o controller pode "corrigir" essa
-            edição de volta: porque, do ponto de vista dele, isso também é uma
-            divergência do estado desejado.
-          </p>
-        </div>
+            <p>
+                Vale lembrar também que revisão de código é bidirecional: quem revisa
+                não está caçando erro pra provar que é melhor, está protegendo o
+                sistema como um todo. E quem recebe a revisão não deveria levar
+                comentários pro lado pessoal: código não é extensão de identidade, é
+                um artefato que o time inteiro é dono em conjunto.
+            </p>
 
-        <p class="sources">
-          Fontes:
-          <a
-            href="https://kubernetes.io/docs/concepts/architecture/controller/"
-            target="_blank"
-            rel="noopener"
-            >Controllers: Kubernetes Docs</a
-          >
-        </p>
-      </article>
+            <p class="sources">
+                Fontes:
+                <a href="https://docs.github.com/pt/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests" target="_blank" rel="noopener">About pull requests: GitHub Docs</a>
+            </p>
+        </article>
 
-      <div class="wire"></div>
+        <div class="wire"></div>
 
-      <article class="module" id="mod6">
-        <div class="mod-eyebrow">MÓDULO 06</div>
-        <h2 class="mod-title">
-          Menor privilégio: a regra que evita o pior tipo de incidente
-        </h2>
-        <div class="mod-photo-wrap">
-          <img
-            class="mod-photo"
-            src="https://images.unsplash.com/photo-1760479099643-b37a52e7c094?auto=format&fit=crop&w=1200&q=68"
-            alt="Trilha na floresta com luz atravessando a névoa"
-          />
-        </div>
-        <p class="mod-photo-credit">Foto: Ingmar em Unsplash</p>
+        <article class="module" id="mod4">
+            <div class="mod-eyebrow">MÓDULO 04</div>
+            <h2 class="mod-title">
+                O motivo real de containers serem leves: o kernel compartilhado
+            </h2>
+            <div class="mod-photo-wrap">
+                <img class="mod-photo" src="https://images.unsplash.com/photo-1755690042574-49ff5c3bfe96?auto=format&fit=crop&w=1200&q=68" alt="Prado com flores silvestres ao amanhecer" />
+            </div>
+            <p class="mod-photo-credit">Foto: Nastia Petruk em Unsplash</p>
 
-        <p>
-          Uma parte enorme dos incidentes de segurança em nuvem não vem de
-          hackers sofisticados explorando zero-days: vem de credenciais com
-          permissão demais, vazadas ou mal configuradas. O
-          <strong>princípio do menor privilégio</strong> no IAM da AWS diz: cada
-          usuário, aplicação ou serviço recebe exatamente as permissões que
-          precisa pro seu trabalho, nem uma a mais.
-        </p>
+            <p>
+                A diferença entre VM e container não é "tamanho do arquivo": é
+                <strong>o que cada um virtualiza</strong>. Uma VM virtualiza hardware
+                inteiro: CPU, memória, disco, e roda um Sistema Operacional Convidado
+                completo por cima, com seu próprio kernel. Um container Docker usa
+                recursos do kernel Linux do próprio hospedeiro:
+                <em>namespaces</em> (isolamento de processos, rede, sistema de
+                arquivos) e <em>cgroups</em> (limites de CPU/memória): pra criar a
+                ilusão de isolamento sem duplicar o sistema operacional inteiro.
+            </p>
 
-        <p>
-          Na prática, isso significa preferir <em>roles</em> específicas (ex:
-          "essa Lambda só pode ler desse bucket S3 específico") em vez de
-          políticas amplas ("essa Lambda pode fazer qualquer coisa em S3"). É
-          mais trabalho de configuração inicial, mas transforma um vazamento de
-          credencial de "catástrofe total" em "incidente contido".
-        </p>
+            <p>
+                É por isso que subir um container leva segundos e subir uma VM leva
+                minutos: o container não precisa passar pelo processo de boot de um SO
+                completo, ele só inicia o processo da aplicação diretamente, já
+                isolado pelo kernel compartilhado.
+            </p>
 
-        <p class="sources">
-          Fontes:
-          <a
-            href="https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html"
-            target="_blank"
-            rel="noopener"
-            >O que é IAM: AWS Docs</a
-          >
-        </p>
-      </article>
+            <p class="sources">
+                Fontes:
+                <a href="https://docs.docker.com/get-started/docker-overview/" target="_blank" rel="noopener">Docker overview: Docker Docs</a>
+            </p>
+        </article>
 
-      <footer>
-        Conteúdo escrito com base nas fontes citadas em cada seção e no material
-        de aula "Briefing: The DevOps Knowledge Journey": não é tradução nem
-        cópia da documentação original, apenas uma leitura organizada dela. Para
-        o texto oficial completo, sempre vale abrir o link.
-      </footer>
+        <div class="wire"></div>
+
+        <article class="module" id="mod5">
+            <div class="mod-eyebrow">MÓDULO 05</div>
+            <h2 class="mod-title">
+                O Laço de Reconciliação é um sistema de controle, não mágica
+            </h2>
+            <div class="mod-photo-wrap">
+                <img class="mod-photo" src="https://images.unsplash.com/photo-1759144897143-991d650b1668?auto=format&fit=crop&w=1200&q=68" alt="Cabana iluminada sob céu estrelado" />
+            </div>
+            <p class="mod-photo-credit">Foto: Sora Sagano em Unsplash</p>
+
+            <p>
+                O comportamento "mate um Pod e outro nasce sozinho" parece mágica na
+                primeira vez que você vê, mas é engenharia de sistemas de controle
+                clássica: o Kubernetes roda, em loop contínuo, um
+                <strong>controller</strong> que compara o <em>estado desejado</em> (o
+                que está no seu YAML) com o <em>estado observado</em> (o que está
+                rodando de verdade no cluster agora). Toda vez que há diferença, ele
+                emite ações pra fechar essa diferença: criar um Pod, remover outro,
+                redistribuir carga.
+            </p>
+
+            <p>
+                Isso é exatamente o mesmo princípio de um termostato: ele não "sabe" a
+                temperatura ideal em algum sentido filosófico, ele só compara
+                continuamente "temperatura atual" com "temperatura configurada" e
+                liga/desliga o aquecedor até a diferença zerar. O Kubernetes faz isso
+                com Pods, réplicas, volumes e praticamente todo recurso que ele
+                gerencia.
+            </p>
+
+            <div class="callout">
+                <div class="c-label">
+                    <img class="om om-sm" src="../assets/icons/content/herb.svg" alt="" />
+                    Por que isso importa na prática
+                </div>
+                <p>
+                    Entender que é um loop de comparação (não uma regra especial de
+                    "recriar Pod morto") explica por que o Kubernetes também reage a
+                    mudanças manuais indevidas: se alguém editar um recurso direto no
+                    cluster sem passar pelo manifesto, o controller pode "corrigir" essa
+                    edição de volta: porque, do ponto de vista dele, isso também é uma
+                    divergência do estado desejado.
+                </p>
+            </div>
+
+            <p class="sources">
+                Fontes:
+                <a href="https://kubernetes.io/docs/concepts/architecture/controller/" target="_blank" rel="noopener">Controllers: Kubernetes Docs</a>
+            </p>
+        </article>
+
+        <div class="wire"></div>
+
+        <article class="module" id="mod6">
+            <div class="mod-eyebrow">MÓDULO 06</div>
+            <h2 class="mod-title">
+                Menor privilégio: a regra que evita o pior tipo de incidente
+            </h2>
+            <div class="mod-photo-wrap">
+                <img class="mod-photo" src="https://images.unsplash.com/photo-1760479099643-b37a52e7c094?auto=format&fit=crop&w=1200&q=68" alt="Trilha na floresta com luz atravessando a névoa" />
+            </div>
+            <p class="mod-photo-credit">Foto: Ingmar em Unsplash</p>
+
+            <p>
+                Uma parte enorme dos incidentes de segurança em nuvem não vem de
+                hackers sofisticados explorando zero-days: vem de credenciais com
+                permissão demais, vazadas ou mal configuradas. O
+                <strong>princípio do menor privilégio</strong> no IAM da AWS diz: cada
+                usuário, aplicação ou serviço recebe exatamente as permissões que
+                precisa pro seu trabalho, nem uma a mais.
+            </p>
+
+            <p>
+                Na prática, isso significa preferir <em>roles</em> específicas (ex:
+                "essa Lambda só pode ler desse bucket S3 específico") em vez de
+                políticas amplas ("essa Lambda pode fazer qualquer coisa em S3"). É
+                mais trabalho de configuração inicial, mas transforma um vazamento de
+                credencial de "catástrofe total" em "incidente contido".
+            </p>
+
+            <p class="sources">
+                Fontes:
+                <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html" target="_blank" rel="noopener">O que é IAM: AWS Docs</a>
+            </p>
+        </article>
+
+        <footer>
+            Conteúdo escrito com base nas fontes citadas em cada seção e no material
+            de aula "Briefing: The DevOps Knowledge Journey": não é tradução nem
+            cópia da documentação original, apenas uma leitura organizada dela. Para
+            o texto oficial completo, sempre vale abrir o link.
+        </footer>
     </main>
 
     <script defer src="../assets/js/chrome-widgets.js"></script>
     <script defer src="../assets/js/theme-picker.js"></script>
     <script defer src="../assets/js/accessibility.js"></script>
     <script defer src="../assets/js/theme-fx.js"></script>
-  </body>
+</body>
+
 </html>

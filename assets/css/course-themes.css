@@ -8,203 +8,227 @@
    per-course tint so photography feels like part of that course's
    world instead of generic stock art. */
 .hero-photo-wrap {
-  height: 560px;
+    height: 560px;
 }
+
 @media (max-width: 900px) {
-  .hero-photo-wrap {
-    height: 400px;
-  }
+    .hero-photo-wrap {
+        height: 400px;
+    }
 }
+
 @media (max-width: 640px) {
-  .hero-photo-wrap {
-    height: 280px;
-  }
+    .hero-photo-wrap {
+        height: 280px;
+    }
 }
 
 /* char-cameo mascots: bigger everywhere, no per-file edits needed */
 .char-cameo {
-  width: 158px !important;
+    width: 158px !important;
 }
+
 @media (max-width: 700px) {
-  .char-cameo {
-    width: 118px !important;
-  }
+    .char-cameo {
+        width: 118px !important;
+    }
 }
 
 /* ============================================================
    1) ANDROID — phone chrome, app-icon nav, activity-style transitions
    ============================================================ */
 .course-android .hero-photo-wrap {
-  border-color: #2baf6b;
+    border-color: #2baf6b;
 }
+
 .course-android .hero-photo-wrap::after {
-  background: linear-gradient(
-    180deg,
-    rgba(61, 220, 132, 0) 45%,
-    rgba(8, 22, 15, 0.38) 100%
-  );
+    background: linear-gradient(180deg,
+            rgba(61, 220, 132, 0) 45%,
+            rgba(8, 22, 15, 0.38) 100%);
 }
+
 .course-android .node-circle {
-  border-radius: 26%;
+    border-radius: 26%;
 }
+
 .course-android .path-node.is-current .node-circle {
-  border-color: #3ddc84;
-  background: rgba(61, 220, 132, 0.16);
+    border-color: #3ddc84;
+    background: rgba(61, 220, 132, 0.16);
 }
+
 .course-android .path-node.is-current .node-label {
-  color: #1f8f55;
+    color: #1f8f55;
 }
+
 [data-theme="dark"].course-android .path-node.is-current .node-label,
 .course-android[data-theme="dark"] .path-node.is-current .node-label {
-  color: #6be39c;
+    color: #6be39c;
 }
+
 .course-android .path-node.is-done .node-circle {
-  background: #3ddc84;
-  border-color: #2baf6b;
+    background: #3ddc84;
+    border-color: #2baf6b;
 }
 
 /* activity-style slide transition instead of the default fade */
 .course-android .content-section.active {
-  animation: androidSlideIn 0.38s cubic-bezier(0.22, 0.9, 0.32, 1);
+    animation: androidSlideIn 0.38s cubic-bezier(0.22, 0.9, 0.32, 1);
 }
+
 @keyframes androidSlideIn {
-  from {
-    opacity: 0;
-    transform: translateX(26px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateX(26px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
+
 @media (prefers-reduced-motion: reduce) {
-  .course-android .content-section.active {
-    animation: fadeIn 0.35s ease;
-  }
+    .course-android .content-section.active {
+        animation: fadeIn 0.35s ease;
+    }
 }
 
 /* phone bezel chrome: notch top bar + system nav bottom bar,
    framing the "screen" (main content column) like a device */
 .phone-chrome-top {
-  position: fixed;
-  top: 0;
-  left: 272px;
-  right: 0;
-  height: 26px;
-  z-index: 45;
-  background: linear-gradient(
-    180deg,
-    #0b0f12 0%,
-    rgba(11, 15, 18, 0.85) 80%,
-    rgba(11, 15, 18, 0) 100%
-  );
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 272px;
+    right: 0;
+    height: 26px;
+    z-index: 45;
+    background: linear-gradient(180deg,
+            #0b0f12 0%,
+            rgba(11, 15, 18, 0.85) 80%,
+            rgba(11, 15, 18, 0) 100%);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    pointer-events: none;
 }
+
 .phone-notch {
-  margin-top: 5px;
-  width: 110px;
-  height: 16px;
-  border-radius: 0 0 14px 14px;
-  background: #0b0f12;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
+    margin-top: 5px;
+    width: 110px;
+    height: 16px;
+    border-radius: 0 0 14px 14px;
+    background: #0b0f12;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
 }
+
 .phone-notch .cam-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #25303a;
-  box-shadow: 0 0 0 1px #384652 inset;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #25303a;
+    box-shadow: 0 0 0 1px #384652 inset;
 }
+
 .phone-notch .spk-line {
-  width: 26px;
-  height: 3px;
-  border-radius: 2px;
-  background: #25303a;
+    width: 26px;
+    height: 3px;
+    border-radius: 2px;
+    background: #25303a;
 }
 
 .phone-chrome-bottom {
-  position: fixed;
-  bottom: 0;
-  left: 272px;
-  right: 0;
-  height: 52px;
-  z-index: 45;
-  background: #0b0f12;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 64px;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+    position: fixed;
+    bottom: 0;
+    left: 272px;
+    right: 0;
+    height: 52px;
+    z-index: 45;
+    background: #0b0f12;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 64px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
+
 .phone-nav-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: #c7d0d6;
-  padding: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition:
-    opacity 0.12s ease,
-    transform 0.12s ease;
-  opacity: 0.8;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #c7d0d6;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition:
+        opacity 0.12s ease,
+        transform 0.12s ease;
+    opacity: 0.8;
 }
+
 .phone-nav-btn:hover {
-  opacity: 1;
-  transform: scale(1.12);
+    opacity: 1;
+    transform: scale(1.12);
 }
+
 .phone-nav-btn:active {
-  transform: scale(0.9);
+    transform: scale(0.9);
 }
+
 .phone-nav-btn svg {
-  width: 20px;
-  height: 20px;
+    width: 20px;
+    height: 20px;
 }
+
 .phone-nav-btn.nav-home svg {
-  width: 16px;
-  height: 16px;
+    width: 16px;
+    height: 16px;
 }
 
 .course-android main {
-  padding-bottom: 118px;
+    padding-bottom: 118px;
 }
+
 .course-android aside {
-  padding-bottom: 64px;
+    padding-bottom: 64px;
 }
+
 .course-android aside.nav-flash {
-  animation: asideFlash 0.7s ease;
+    animation: asideFlash 0.7s ease;
 }
+
 @keyframes asideFlash {
-  0%,
-  100% {
-    box-shadow: none;
-  }
-  35% {
-    box-shadow: inset 0 0 0 3px #3ddc84;
-  }
+
+    0%,
+    100% {
+        box-shadow: none;
+    }
+
+    35% {
+        box-shadow: inset 0 0 0 3px #3ddc84;
+    }
 }
+
 @media (max-width: 900px) {
-  .phone-chrome-top,
-  .phone-chrome-bottom {
-    left: 0;
-  }
+
+    .phone-chrome-top,
+    .phone-chrome-bottom {
+        left: 0;
+    }
 }
+
 @media (prefers-reduced-motion: reduce) {
-  .phone-nav-btn {
-    transition: none;
-  }
+    .phone-nav-btn {
+        transition: none;
+    }
 }
 
 /* app-icon flavored quick-tool chips */
 .course-android .more-link {
-  border-radius: 16px;
+    border-radius: 16px;
 }
 
 /* ============================================================
@@ -218,10 +242,10 @@
    generic starry-sky background slapped under everything.
    ============================================================ */
 .course-ia {
-  --ia-glow: #5ad1ff;
-  --ia-glow-dim: #3a9bc4;
-  --ia-nebula: #8b5cf6;
-  --ia-nebula-dim: #6d4fd1;
+    --ia-glow: #5ad1ff;
+    --ia-glow-dim: #3a9bc4;
+    --ia-nebula: #8b5cf6;
+    --ia-nebula-dim: #6d4fd1;
 }
 
 /* starfield: always on for this course (not gated behind the
@@ -233,129 +257,107 @@
    the course path below already carries the page's one motion
    beat, so the sky stays quiet. */
 body.course-ia::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  opacity: 0.55;
-  background-image:
-    radial-gradient(
-      1.6px 1.6px at 8% 12%,
-      color-mix(in srgb, var(--ia-glow) 75%, transparent),
-      transparent
-    ),
-    radial-gradient(
-      1.3px 1.3px at 22% 68%,
-      color-mix(in srgb, var(--ia-nebula) 70%, transparent),
-      transparent
-    ),
-    radial-gradient(
-      1.8px 1.8px at 38% 26%,
-      color-mix(in srgb, var(--ia-glow) 65%, transparent),
-      transparent
-    ),
-    radial-gradient(
-      1.2px 1.2px at 52% 82%,
-      color-mix(in srgb, var(--ia-nebula) 60%, transparent),
-      transparent
-    ),
-    radial-gradient(
-      1.6px 1.6px at 68% 14%,
-      color-mix(in srgb, var(--ia-glow) 70%, transparent),
-      transparent
-    ),
-    radial-gradient(
-      1.3px 1.3px at 79% 58%,
-      color-mix(in srgb, var(--ia-nebula) 65%, transparent),
-      transparent
-    ),
-    radial-gradient(
-      1.7px 1.7px at 91% 34%,
-      color-mix(in srgb, var(--ia-glow) 65%, transparent),
-      transparent
-    ),
-    radial-gradient(
-      1.3px 1.3px at 14% 90%,
-      color-mix(in srgb, var(--ia-nebula) 60%, transparent),
-      transparent
-    ),
-    radial-gradient(
-      1.5px 1.5px at 60% 46%,
-      color-mix(in srgb, var(--ia-glow) 60%, transparent),
-      transparent
-    ),
-    radial-gradient(
-      1.4px 1.4px at 85% 82%,
-      color-mix(in srgb, var(--ia-nebula) 60%, transparent),
-      transparent
-    );
-  background-repeat: no-repeat;
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.55;
+    background-image:
+        radial-gradient(1.6px 1.6px at 8% 12%,
+            color-mix(in srgb, var(--ia-glow) 75%, transparent),
+            transparent),
+        radial-gradient(1.3px 1.3px at 22% 68%,
+            color-mix(in srgb, var(--ia-nebula) 70%, transparent),
+            transparent),
+        radial-gradient(1.8px 1.8px at 38% 26%,
+            color-mix(in srgb, var(--ia-glow) 65%, transparent),
+            transparent),
+        radial-gradient(1.2px 1.2px at 52% 82%,
+            color-mix(in srgb, var(--ia-nebula) 60%, transparent),
+            transparent),
+        radial-gradient(1.6px 1.6px at 68% 14%,
+            color-mix(in srgb, var(--ia-glow) 70%, transparent),
+            transparent),
+        radial-gradient(1.3px 1.3px at 79% 58%,
+            color-mix(in srgb, var(--ia-nebula) 65%, transparent),
+            transparent),
+        radial-gradient(1.7px 1.7px at 91% 34%,
+            color-mix(in srgb, var(--ia-glow) 65%, transparent),
+            transparent),
+        radial-gradient(1.3px 1.3px at 14% 90%,
+            color-mix(in srgb, var(--ia-nebula) 60%, transparent),
+            transparent),
+        radial-gradient(1.5px 1.5px at 60% 46%,
+            color-mix(in srgb, var(--ia-glow) 60%, transparent),
+            transparent),
+        radial-gradient(1.4px 1.4px at 85% 82%,
+            color-mix(in srgb, var(--ia-nebula) 60%, transparent),
+            transparent);
+    background-repeat: no-repeat;
 }
+
 /* keep real content above the fixed starfield layer */
 .course-ia .topbar,
 .course-ia main,
 .course-ia aside {
-  position: relative;
-  z-index: 1;
+    position: relative;
+    z-index: 1;
 }
+
 .course-ia .topbar {
-  justify-content: center !important;
-  gap: 40px !important;
+    justify-content: center !important;
+    gap: 40px !important;
 }
+
 .course-ia main {
-  background:
-    radial-gradient(
-      ellipse 900px 500px at 15% 0%,
-      color-mix(in srgb, var(--ia-glow) 8%, transparent),
-      transparent 60%
-    ),
-    radial-gradient(
-      ellipse 700px 500px at 100% 30%,
-      color-mix(in srgb, var(--ia-nebula) 9%, transparent),
-      transparent 55%
-    );
+    background:
+        radial-gradient(ellipse 900px 500px at 15% 0%,
+            color-mix(in srgb, var(--ia-glow) 8%, transparent),
+            transparent 60%),
+        radial-gradient(ellipse 700px 500px at 100% 30%,
+            color-mix(in srgb, var(--ia-nebula) 9%, transparent),
+            transparent 55%);
 }
+
 .course-ia .hero-photo-wrap {
-  border-color: var(--ia-glow-dim);
+    border-color: var(--ia-glow-dim);
 }
+
 .course-ia .hero-photo-wrap::after {
-  background: linear-gradient(
-    180deg,
-    rgba(90, 209, 255, 0.04) 0%,
-    rgba(8, 12, 22, 0.42) 100%
-  );
+    background: linear-gradient(180deg,
+            rgba(90, 209, 255, 0.04) 0%,
+            rgba(8, 12, 22, 0.42) 100%);
 }
+
 /* cantos tipo mira/HUD de laboratório — não é "cara de IA genérica"
    (sem cérebro, sem robô, sem rede neural brilhando): é a mesma
    linguagem visual de viewfinder de câmera / HUD de equipamento
    técnico, mix-blend-mode:screen faz brilhar por cima da foto */
 .course-ia .hero-photo-wrap::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  background-image:
-    linear-gradient(
-      115deg,
-      transparent 40%,
-      rgba(90, 209, 255, 0.08) 48%,
-      transparent 56%
-    ),
-    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'><path d='M2 11V2H11' stroke='%235AD1FF' stroke-width='2.2' fill='none'/></svg>"),
-    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'><path d='M17 2H26V11' stroke='%235AD1FF' stroke-width='2.2' fill='none'/></svg>"),
-    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'><path d='M2 17V26H11' stroke='%235AD1FF' stroke-width='2.2' fill='none'/></svg>"),
-    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'><path d='M17 26H26V17' stroke='%235AD1FF' stroke-width='2.2' fill='none'/></svg>");
-  background-repeat: no-repeat;
-  background-position:
-    0 0,
-    16px 16px,
-    calc(100% - 16px) 16px,
-    16px calc(100% - 16px),
-    calc(100% - 16px) calc(100% - 16px);
-  mix-blend-mode: screen;
-  opacity: 0.85;
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background-image:
+        linear-gradient(115deg,
+            transparent 40%,
+            rgba(90, 209, 255, 0.08) 48%,
+            transparent 56%),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'><path d='M2 11V2H11' stroke='%235AD1FF' stroke-width='2.2' fill='none'/></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'><path d='M17 2H26V11' stroke='%235AD1FF' stroke-width='2.2' fill='none'/></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'><path d='M2 17V26H11' stroke='%235AD1FF' stroke-width='2.2' fill='none'/></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'><path d='M17 26H26V17' stroke='%235AD1FF' stroke-width='2.2' fill='none'/></svg>");
+    background-repeat: no-repeat;
+    background-position:
+        0 0,
+        16px 16px,
+        calc(100% - 16px) 16px,
+        16px calc(100% - 16px),
+        calc(100% - 16px) calc(100% - 16px);
+    mix-blend-mode: screen;
+    opacity: 0.85;
 }
 
 .course-ia .card,
@@ -365,60 +367,67 @@ body.course-ia::before {
 .course-ia .flip-card-face,
 .course-ia .lightning-card,
 .course-ia .char-bubble {
-  background: color-mix(in srgb, var(--panel) 84%, transparent);
-  -webkit-backdrop-filter: blur(10px) saturate(140%);
-  backdrop-filter: blur(10px) saturate(140%);
-  border-color: color-mix(in srgb, var(--ia-glow) 45%, var(--line));
-  box-shadow:
-    0 0 0 1px color-mix(in srgb, var(--ia-glow) 14%, transparent),
-    0 0 26px -10px color-mix(in srgb, var(--ia-nebula) 55%, transparent),
-    0 10px 28px rgba(0, 0, 0, 0.16);
+    background: color-mix(in srgb, var(--panel) 84%, transparent);
+    -webkit-backdrop-filter: blur(10px) saturate(140%);
+    backdrop-filter: blur(10px) saturate(140%);
+    border-color: color-mix(in srgb, var(--ia-glow) 45%, var(--line));
+    box-shadow:
+        0 0 0 1px color-mix(in srgb, var(--ia-glow) 14%, transparent),
+        0 0 26px -10px color-mix(in srgb, var(--ia-nebula) 55%, transparent),
+        0 10px 28px rgba(0, 0, 0, 0.16);
 }
+
 .course-ia .quiz-opt,
 .course-ia .tq-opt,
 .course-ia .lightning-opt,
 .course-ia .scr-slot {
-  background: color-mix(in srgb, var(--panel-2) 88%, transparent);
-  -webkit-backdrop-filter: blur(6px);
-  backdrop-filter: blur(6px);
+    background: color-mix(in srgb, var(--panel-2) 88%, transparent);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
 }
+
 .course-ia .quiz-opt:hover,
 .course-ia .lightning-opt:hover:not(:disabled),
 .course-ia .tq-opt:hover:not(:disabled) {
-  border-color: var(--ia-glow);
-  box-shadow: 0 0 0 1px color-mix(in srgb, var(--ia-glow) 30%, transparent);
+    border-color: var(--ia-glow);
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--ia-glow) 30%, transparent);
 }
 
 .course-ia h2,
 .course-ia h3 {
-  position: relative;
+    position: relative;
 }
+
 .course-ia h2::after {
-  content: "";
-  position: absolute;
-  left: 1px;
-  bottom: -7px;
-  height: 2px;
-  width: 64px;
-  background: linear-gradient(90deg, var(--ia-glow), transparent);
-  animation: iaScan 3.2s ease-in-out infinite;
+    content: "";
+    position: absolute;
+    left: 1px;
+    bottom: -7px;
+    height: 2px;
+    width: 64px;
+    background: linear-gradient(90deg, var(--ia-glow), transparent);
+    animation: iaScan 3.2s ease-in-out infinite;
 }
+
 @keyframes iaScan {
-  0%,
-  100% {
-    width: 56px;
-    opacity: 0.55;
-  }
-  50% {
-    width: 118px;
-    opacity: 1;
-  }
+
+    0%,
+    100% {
+        width: 56px;
+        opacity: 0.55;
+    }
+
+    50% {
+        width: 118px;
+        opacity: 1;
+    }
 }
+
 @media (prefers-reduced-motion: reduce) {
-  .course-ia h2::after {
-    animation: none;
-    width: 80px;
-  }
+    .course-ia h2::after {
+        animation: none;
+        width: 80px;
+    }
 }
 
 /* the course path as a constellation route: each module is a
@@ -426,125 +435,126 @@ body.course-ia::before {
    the path already IS a sequence), the current one gets a tilted
    orbit ring so "you are here" reads at a glance. */
 .course-ia .path-line {
-  background: repeating-linear-gradient(
-    color-mix(in srgb, var(--ia-glow-dim) 50%, var(--ia-nebula-dim)) 0 5px,
-    transparent 5px 12px
-  );
-  opacity: 0.6;
+    background: repeating-linear-gradient(color-mix(in srgb, var(--ia-glow-dim) 50%, var(--ia-nebula-dim)) 0 5px,
+            transparent 5px 12px);
+    opacity: 0.6;
 }
+
 .course-ia .node-circle {
-  background:
-    radial-gradient(
-      circle at 30% 26%,
-      rgba(255, 255, 255, 0.4),
-      transparent 42%
-    ),
-    radial-gradient(
-      circle at 66% 72%,
-      color-mix(in srgb, var(--ia-nebula) 30%, var(--panel-2)),
-      var(--panel) 75%
-    );
-  border-color: color-mix(in srgb, var(--ia-glow) 30%, var(--line));
+    background:
+        radial-gradient(circle at 30% 26%,
+            rgba(255, 255, 255, 0.4),
+            transparent 42%),
+        radial-gradient(circle at 66% 72%,
+            color-mix(in srgb, var(--ia-nebula) 30%, var(--panel-2)),
+            var(--panel) 75%);
+    border-color: color-mix(in srgb, var(--ia-glow) 30%, var(--line));
 }
+
 .course-ia .node-circle::before {
-  border-color: color-mix(in srgb, var(--ia-glow) 40%, var(--line));
+    border-color: color-mix(in srgb, var(--ia-glow) 40%, var(--line));
 }
 
 .course-ia .path-node.is-current .node-circle {
-  position: relative;
-  border-color: var(--ia-glow);
-  background:
-    radial-gradient(
-      circle at 30% 26%,
-      rgba(255, 255, 255, 0.55),
-      transparent 45%
-    ),
-    radial-gradient(circle at 62% 68%, var(--ia-glow), var(--ia-nebula) 78%);
-  animation: iaOrbitPulse 2.4s ease-in-out infinite;
+    position: relative;
+    border-color: var(--ia-glow);
+    background:
+        radial-gradient(circle at 30% 26%,
+            rgba(255, 255, 255, 0.55),
+            transparent 45%),
+        radial-gradient(circle at 62% 68%, var(--ia-glow), var(--ia-nebula) 78%);
+    animation: iaOrbitPulse 2.4s ease-in-out infinite;
 }
+
 .course-ia .path-node.is-current .node-circle::after {
-  content: "";
-  position: absolute;
-  inset: -7px;
-  border-radius: 50%;
-  pointer-events: none;
-  border: 1.5px solid color-mix(in srgb, var(--ia-glow) 55%, transparent);
-  transform: rotate(-24deg) scaleY(0.4);
+    content: "";
+    position: absolute;
+    inset: -7px;
+    border-radius: 50%;
+    pointer-events: none;
+    border: 1.5px solid color-mix(in srgb, var(--ia-glow) 55%, transparent);
+    transform: rotate(-24deg) scaleY(0.4);
 }
+
 @keyframes iaOrbitPulse {
-  0%,
-  100% {
-    box-shadow:
-      0 0 0 4px color-mix(in srgb, var(--ia-glow) 14%, transparent),
-      0 0 16px 1px color-mix(in srgb, var(--ia-glow) 45%, transparent);
-  }
-  50% {
-    box-shadow:
-      0 0 0 7px color-mix(in srgb, var(--ia-glow) 8%, transparent),
-      0 0 22px 3px color-mix(in srgb, var(--ia-glow) 55%, transparent);
-  }
+
+    0%,
+    100% {
+        box-shadow:
+            0 0 0 4px color-mix(in srgb, var(--ia-glow) 14%, transparent),
+            0 0 16px 1px color-mix(in srgb, var(--ia-glow) 45%, transparent);
+    }
+
+    50% {
+        box-shadow:
+            0 0 0 7px color-mix(in srgb, var(--ia-glow) 8%, transparent),
+            0 0 22px 3px color-mix(in srgb, var(--ia-glow) 55%, transparent);
+    }
 }
+
 @media (prefers-reduced-motion: reduce) {
-  .course-ia .path-node.is-current .node-circle {
-    animation: none;
-    box-shadow: 0 0 16px 1px color-mix(in srgb, var(--ia-glow) 45%, transparent);
-  }
+    .course-ia .path-node.is-current .node-circle {
+        animation: none;
+        box-shadow: 0 0 16px 1px color-mix(in srgb, var(--ia-glow) 45%, transparent);
+    }
 }
 
 .course-ia .path-node.is-done .node-circle {
-  background:
-    radial-gradient(
-      circle at 30% 26%,
-      rgba(255, 255, 255, 0.35),
-      transparent 45%
-    ),
-    color-mix(in srgb, var(--ia-glow-dim) 70%, var(--ia-nebula-dim));
-  border-color: var(--ia-glow-dim);
+    background:
+        radial-gradient(circle at 30% 26%,
+            rgba(255, 255, 255, 0.35),
+            transparent 45%),
+        color-mix(in srgb, var(--ia-glow-dim) 70%, var(--ia-nebula-dim));
+    border-color: var(--ia-glow-dim);
 }
+
 .course-ia .path-node.is-done .node-circle::before {
-  border-color: var(--ia-glow-dim);
-  background: color-mix(in srgb, var(--ia-glow-dim) 70%, var(--ia-nebula-dim));
+    border-color: var(--ia-glow-dim);
+    background: color-mix(in srgb, var(--ia-glow-dim) 70%, var(--ia-nebula-dim));
 }
 
 .course-ia .sidebar-hero {
-  position: relative;
+    position: relative;
 }
+
 .course-ia .sidebar-hero::after {
-  content: "";
-  position: absolute;
-  right: 14px;
-  top: 14px;
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--ia-glow), var(--ia-nebula));
-  box-shadow: 0 0 8px 2px color-mix(in srgb, var(--ia-glow) 55%, transparent);
-  animation: iaBlink 2.4s ease-in-out infinite;
+    content: "";
+    position: absolute;
+    right: 14px;
+    top: 14px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--ia-glow), var(--ia-nebula));
+    box-shadow: 0 0 8px 2px color-mix(in srgb, var(--ia-glow) 55%, transparent);
+    animation: iaBlink 2.4s ease-in-out infinite;
 }
+
 @keyframes iaBlink {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.35;
-  }
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.35;
+    }
 }
+
 .course-ia .mascot-bot {
-  filter: drop-shadow(
-      0 0 8px color-mix(in srgb, var(--ia-glow) 35%, transparent)
-    )
-    drop-shadow(0 0 14px color-mix(in srgb, var(--ia-nebula) 22%, transparent));
+    filter: drop-shadow(0 0 8px color-mix(in srgb, var(--ia-glow) 35%, transparent)) drop-shadow(0 0 14px color-mix(in srgb, var(--ia-nebula) 22%, transparent));
 }
 
 /* ============================================================
    3) DEVOPS — oceanic brutalist: hard edges, blue + sand yellow
    ============================================================ */
 .course-devops {
-  --sea: #1b4f72;
-  --sea-2: #2e86c1;
-  --sand: #e9c46a;
+    --sea: #1b4f72;
+    --sea-2: #2e86c1;
+    --sand: #e9c46a;
 }
+
 .course-devops .card,
 .course-devops .callout,
 .course-devops .game-card,
@@ -552,97 +562,105 @@ body.course-ia::before {
 .course-devops .flip-card-face,
 .course-devops .char-bubble,
 .course-devops .lightning-card {
-  border-radius: 0 !important;
-  border: 3px solid var(--heading) !important;
-  box-shadow: 6px 6px 0 0 var(--sea-2);
+    border-radius: 0 !important;
+    border: 3px solid var(--heading) !important;
+    box-shadow: 6px 6px 0 0 var(--sea-2);
 }
+
 .course-devops .lightning-card {
-  box-shadow: 6px 6px 0 0 var(--sand);
-  border-color: var(--sea) !important;
+    box-shadow: 6px 6px 0 0 var(--sand);
+    border-color: var(--sea) !important;
 }
+
 .course-devops .hero-photo-wrap {
-  border-radius: 0;
-  border: 3px solid var(--heading);
-  box-shadow: 8px 8px 0 0 var(--sea-2);
+    border-radius: 0;
+    border: 3px solid var(--heading);
+    box-shadow: 8px 8px 0 0 var(--sea-2);
 }
+
 .course-devops .hero-photo-wrap::after {
-  background: linear-gradient(
-    180deg,
-    rgba(46, 134, 193, 0.06) 0%,
-    rgba(10, 28, 42, 0.42) 100%
-  );
+    background: linear-gradient(180deg,
+            rgba(46, 134, 193, 0.06) 0%,
+            rgba(10, 28, 42, 0.42) 100%);
 }
+
 .course-devops .game-reset-btn,
 .course-devops .calc-solve-btn,
 .course-devops button.tf-btn,
 .course-devops .tq-opt {
-  border-radius: 4px !important;
+    border-radius: 4px !important;
 }
+
 .course-devops h2,
 .course-devops h3 {
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
 }
+
 .course-devops .eyebrow {
-  color: var(--sea-2);
-  font-weight: 700;
+    color: var(--sea-2);
+    font-weight: 700;
 }
 
 .course-devops .wire {
-  height: 16px;
-  border: none;
-  background: none;
-  margin: 22px 0;
-  opacity: 0.9;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='42' height='16' viewBox='0 0 42 16'><path d='M0 8 Q10.5 1 21 8 T42 8' stroke='%232E86C1' stroke-width='2.6' fill='none'/></svg>");
-  background-repeat: repeat-x;
-  background-size: 42px 16px;
-  background-position: center;
+    height: 16px;
+    border: none;
+    background: none;
+    margin: 22px 0;
+    opacity: 0.9;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='42' height='16' viewBox='0 0 42 16'><path d='M0 8 Q10.5 1 21 8 T42 8' stroke='%232E86C1' stroke-width='2.6' fill='none'/></svg>");
+    background-repeat: repeat-x;
+    background-size: 42px 16px;
+    background-position: center;
 }
+
 .course-devops .node-circle {
-  border-width: 4px;
-  border-color: var(--sea-2);
-  background: var(--panel);
+    border-width: 4px;
+    border-color: var(--sea-2);
+    background: var(--panel);
 }
+
 .course-devops .path-node.is-current .node-circle {
-  border-color: var(--sand);
-  background: color-mix(in srgb, var(--sand) 18%, var(--panel));
+    border-color: var(--sand);
+    background: color-mix(in srgb, var(--sand) 18%, var(--panel));
 }
+
 .course-devops .path-node.is-done .node-circle {
-  background: var(--sea-2);
-  border-color: var(--sea);
+    background: var(--sea-2);
+    border-color: var(--sea);
 }
+
 .course-devops .node-circle::before {
-  border-radius: 2px;
-  border-color: var(--sea-2);
+    border-radius: 2px;
+    border-color: var(--sea-2);
 }
 
 .course-devops .badge-link,
 .course-devops .quiz-opt {
-  border-radius: 4px;
+    border-radius: 4px;
 }
+
 .course-devops main {
-  background-image:
-    linear-gradient(180deg, rgba(46, 134, 193, 0.03) 0%, transparent 12%),
-    repeating-linear-gradient(
-      180deg,
-      transparent 0 38px,
-      rgba(46, 134, 193, 0.025) 38px 39px
-    );
+    background-image:
+        linear-gradient(180deg, rgba(46, 134, 193, 0.03) 0%, transparent 12%),
+        repeating-linear-gradient(180deg,
+            transparent 0 38px,
+            rgba(46, 134, 193, 0.025) 38px 39px);
 }
 
 /* ============================================================
    4) MATH (trigomante) — reinforce the existing RPG/fantasy look
    ============================================================ */
 .course-trigomante .hero-photo-wrap {
-  box-shadow:
-    0 0 0 4px var(--panel),
-    0 0 0 6px color-mix(in srgb, var(--amber) 55%, var(--line)),
-    var(--shadow-soft);
+    box-shadow:
+        0 0 0 4px var(--panel),
+        0 0 0 6px color-mix(in srgb, var(--amber) 55%, var(--line)),
+        var(--shadow-soft);
 }
+
 .course-trigomante .card,
 .course-trigomante .callout {
-  border-color: color-mix(in srgb, var(--amber) 22%, var(--line));
+    border-color: color-mix(in srgb, var(--amber) 22%, var(--line));
 }
 
 /* ============================================================
@@ -655,66 +673,71 @@ body.course-ia::before {
 
 /* mod-photo tint, mirroring hero-photo-wrap per course */
 .course-android .mod-photo-wrap {
-  border-color: #2baf6b;
+    border-color: #2baf6b;
 }
+
 .course-android .mod-photo-wrap::after {
-  background: linear-gradient(
-    180deg,
-    rgba(61, 220, 132, 0) 45%,
-    rgba(8, 22, 15, 0.36) 100%
-  );
+    background: linear-gradient(180deg,
+            rgba(61, 220, 132, 0) 45%,
+            rgba(8, 22, 15, 0.36) 100%);
 }
+
 .course-ia .mod-photo-wrap {
-  border-color: var(--ia-glow-dim, #3a9bc4);
+    border-color: var(--ia-glow-dim, #3a9bc4);
 }
+
 .course-ia .mod-photo-wrap::after {
-  background: linear-gradient(
-    180deg,
-    rgba(90, 209, 255, 0.04) 0%,
-    rgba(8, 12, 22, 0.4) 100%
-  );
+    background: linear-gradient(180deg,
+            rgba(90, 209, 255, 0.04) 0%,
+            rgba(8, 12, 22, 0.4) 100%);
 }
+
 .course-devops .mod-photo-wrap {
-  border-radius: 0;
-  border: 3px solid var(--heading);
-  box-shadow: 6px 6px 0 0 var(--sea-2, #2e86c1);
+    border-radius: 0;
+    border: 3px solid var(--heading);
+    box-shadow: 6px 6px 0 0 var(--sea-2, #2e86c1);
 }
+
 .course-devops .mod-photo-wrap::after {
-  background: linear-gradient(
-    180deg,
-    rgba(46, 134, 193, 0.06) 0%,
-    rgba(10, 28, 42, 0.4) 100%
-  );
+    background: linear-gradient(180deg,
+            rgba(46, 134, 193, 0.06) 0%,
+            rgba(10, 28, 42, 0.4) 100%);
 }
 
 /* topbar accent per course */
 .course-android .topbar {
-  border-bottom-color: #2baf6b;
-  box-shadow: 0 1px 0 0 rgba(61, 220, 132, 0.25);
+    border-bottom-color: #2baf6b;
+    box-shadow: 0 1px 0 0 rgba(61, 220, 132, 0.25);
 }
+
 .course-android .topnav a:hover {
-  border-color: #3ddc84;
-  color: #1f8f55;
+    border-color: #3ddc84;
+    color: #1f8f55;
 }
+
 .course-ia .topbar {
-  border-bottom-color: var(--ia-glow-dim, #3a9bc4);
-  background: color-mix(in srgb, var(--panel) 88%, transparent);
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
+    border-bottom-color: var(--ia-glow-dim, #3a9bc4);
+    background: color-mix(in srgb, var(--panel) 88%, transparent);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
 }
+
 .course-ia .topnav a:hover {
-  border-color: var(--ia-glow, #5ad1ff);
-  color: var(--ia-glow, #5ad1ff);
+    border-color: var(--ia-glow, #5ad1ff);
+    color: var(--ia-glow, #5ad1ff);
 }
+
 .course-devops .topbar {
-  border-bottom: 3px solid var(--heading);
+    border-bottom: 3px solid var(--heading);
 }
+
 .course-devops .topnav a {
-  border-radius: 4px;
+    border-radius: 4px;
 }
+
 .course-devops .topnav a:hover {
-  border-color: var(--sea-2, #2e86c1);
-  color: var(--sea-2, #2e86c1);
+    border-color: var(--sea-2, #2e86c1);
+    color: var(--sea-2, #2e86c1);
 }
 
 /* boxed content components: role-chip, step-card, link-card, pre */
@@ -722,62 +745,70 @@ body.course-ia::before {
 .course-ia .step-card,
 .course-ia .link-card,
 .course-ia pre {
-  background: color-mix(in srgb, var(--panel) 84%, transparent);
-  -webkit-backdrop-filter: blur(10px) saturate(140%);
-  backdrop-filter: blur(10px) saturate(140%);
-  border-color: color-mix(in srgb, var(--ia-glow, #5ad1ff) 28%, var(--line));
+    background: color-mix(in srgb, var(--panel) 84%, transparent);
+    -webkit-backdrop-filter: blur(10px) saturate(140%);
+    backdrop-filter: blur(10px) saturate(140%);
+    border-color: color-mix(in srgb, var(--ia-glow, #5ad1ff) 28%, var(--line));
 }
+
 .course-ia .link-card:hover {
-  border-color: var(--ia-glow, #5ad1ff);
-  box-shadow:
-    0 0 0 1px color-mix(in srgb, var(--ia-glow, #5ad1ff) 30%, transparent),
-    0 0 20px -8px color-mix(in srgb, var(--ia-nebula, #8b5cf6) 55%, transparent);
+    border-color: var(--ia-glow, #5ad1ff);
+    box-shadow:
+        0 0 0 1px color-mix(in srgb, var(--ia-glow, #5ad1ff) 30%, transparent),
+        0 0 20px -8px color-mix(in srgb, var(--ia-nebula, #8b5cf6) 55%, transparent);
 }
+
 .course-ia h1,
 .course-ia h2 {
-  position: relative;
+    position: relative;
 }
 
 .course-devops .role-chip,
 .course-devops .step-card,
 .course-devops .link-card,
 .course-devops pre {
-  border-radius: 4px !important;
-  border: 3px solid var(--heading) !important;
-  box-shadow: 5px 5px 0 0 var(--sea-2, #2e86c1);
+    border-radius: 4px !important;
+    border: 3px solid var(--heading) !important;
+    box-shadow: 5px 5px 0 0 var(--sea-2, #2e86c1);
 }
+
 .course-devops .link-card:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 7px 7px 0 0 var(--sand, #e9c46a);
-  border-color: var(--heading) !important;
+    transform: translate(-2px, -2px);
+    box-shadow: 7px 7px 0 0 var(--sand, #e9c46a);
+    border-color: var(--heading) !important;
 }
+
 .course-devops h1,
 .course-devops h2,
 .course-devops .mod-title {
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
 }
+
 .course-devops .step-card .s-num {
-  border-radius: 2px;
+    border-radius: 2px;
 }
 
 .course-android .role-chip {
-  border-radius: 16px;
+    border-radius: 16px;
 }
+
 .course-android .role-chip .r-icon svg {
-  color: #3ddc84;
+    color: #3ddc84;
 }
+
 .course-android .step-card .s-num {
-  border-radius: 26%;
-  border-color: #2baf6b;
-  color: #1f8f55;
+    border-radius: 26%;
+    border-color: #2baf6b;
+    color: #1f8f55;
 }
+
 .course-android .link-card:hover {
-  border-color: #3ddc84;
+    border-color: #3ddc84;
 }
 
 .course-trigomante .mod-photo-wrap {
-  box-shadow:
-    0 0 0 4px var(--panel),
-    0 0 0 6px color-mix(in srgb, var(--amber) 55%, var(--line));
+    box-shadow:
+        0 0 0 4px var(--panel),
+        0 0 0 6px color-mix(in srgb, var(--amber) 55%, var(--line));
 }

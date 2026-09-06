@@ -1,914 +1,523 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="assets/icons/brand/favicon.svg"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="assets/icons/brand/favicon-32.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      href="assets/icons/brand/apple-touch-icon.png"
-    />
+    <link rel="icon" type="image/svg+xml" href="assets/icons/brand/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/brand/favicon-32.png" />
+    <link rel="apple-touch-icon" href="assets/icons/brand/apple-touch-icon.png" />
     <link rel="manifest" href="manifest.json" />
     <meta name="theme-color" content="#9D25FF" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="default-src 'self'; img-src 'self' data: https://images.unsplash.com; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests"
-    />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://images.unsplash.com; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <title>
-      Cursos — Universidade Log: IA Generativa, Android, DevOps e Trigonometria
+        Cursos — Universidade Log: IA Generativa, Android, DevOps e Trigonometria
     </title>
-    <meta
-      name="description"
-      content="Os quatro cursos completos do Universidade Log: IA Generativa Aplicada, Desenvolvimento Android, DevOps (Docker, Kubernetes &amp; AWS) e Trigomante. Escolha uma trilha, veja o que cada uma ensina e comece agora, de graça."
-    />
-    <meta
-      name="keywords"
-      content="curso ia generativa, aprender langgraph, curso de android gratis, aprender kotlin, curso devops docker kubernetes, curso de trigonometria online, plataforma de estudo gamificada, estudar programação gamificado, curso online autodidata"
-    />
+    <meta name="description" content="Os quatro cursos completos do Universidade Log: IA Generativa Aplicada, Desenvolvimento Android, DevOps (Docker, Kubernetes &amp; AWS) e Trigomante. Escolha uma trilha, veja o que cada uma ensina e comece agora, de graça." />
+    <meta name="keywords" content="curso ia generativa, aprender langgraph, curso de android gratis, aprender kotlin, curso devops docker kubernetes, curso de trigonometria online, plataforma de estudo gamificada, estudar programação gamificado, curso online autodidata" />
     <meta name="author" content="Universidade Log" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <link rel="canonical" href="https://universidade-log.vercel.app/cursos.html" />
-    <link
-      rel="alternate"
-      hreflang="pt-BR"
-      href="https://universidade-log.vercel.app/cursos.html"
-    />
+    <link rel="alternate" hreflang="pt-BR" href="https://universidade-log.vercel.app/cursos.html" />
 
     <!-- Open Graph / Facebook, WhatsApp, LinkedIn -->
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="pt_BR" />
-    <meta
-      property="og:url"
-      content="https://universidade-log.vercel.app/cursos.html"
-    />
+    <meta property="og:url" content="https://universidade-log.vercel.app/cursos.html" />
     <meta property="og:site_name" content="Universidade Log" />
-    <meta
-      property="og:title"
-      content="Cursos do Universidade Log: escolha sua trilha"
-    />
-    <meta
-      property="og:description"
-      content="Quatro cursos completos e gratuitos: IA Generativa, Android, DevOps e Trigomante. Veja o que cada trilha ensina e comece agora."
-    />
-    <meta
-      property="og:image"
-      content="https://universidade-log.vercel.app/assets/characters/navio-tripulacao.png"
-    />
-    <meta
-      property="og:image:alt"
-      content="A tripulação do Universidade Log a bordo do navio de containers"
-    />
+    <meta property="og:title" content="Cursos do Universidade Log: escolha sua trilha" />
+    <meta property="og:description" content="Quatro cursos completos e gratuitos: IA Generativa, Android, DevOps e Trigomante. Veja o que cada trilha ensina e comece agora." />
+    <meta property="og:image" content="https://universidade-log.vercel.app/assets/characters/navio-tripulacao.png" />
+    <meta property="og:image:alt" content="A tripulação do Universidade Log a bordo do navio de containers" />
 
     <!-- Twitter / X Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="Cursos do Universidade Log: escolha sua trilha"
-    />
-    <meta
-      name="twitter:description"
-      content="IA Generativa, Android, DevOps e Trigonometria numa trilha gamificada com XP, conquistas e uma tripulação inteira torcendo por você."
-    />
-    <meta
-      name="twitter:image"
-      content="https://universidade-log.vercel.app/assets/characters/navio-tripulacao.png"
-    />
+    <meta name="twitter:title" content="Cursos do Universidade Log: escolha sua trilha" />
+    <meta name="twitter:description" content="IA Generativa, Android, DevOps e Trigonometria numa trilha gamificada com XP, conquistas e uma tripulação inteira torcendo por você." />
+    <meta name="twitter:image" content="https://universidade-log.vercel.app/assets/characters/navio-tripulacao.png" />
 
     <!-- Dados estruturados: ajudam o Google a entender o site como um catálogo de cursos -->
     <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "EducationalOrganization",
-        "name": "Universidade Log",
-        "url": "https://universidade-log.vercel.app/",
-        "description": "Plataforma pessoal de estudo gamificada com cursos de IA Generativa, Android, DevOps e Trigonometria.",
-        "sameAs": [],
-        "hasCourse": [
-          {
-            "@type": "Course",
-            "name": "Desenvolvimento Android",
-            "description": "Kotlin, Jetpack Compose, arquitetura MVVM e publicação na Play Store.",
-            "url": "https://universidade-log.vercel.app/cursos/android.html",
-            "provider": { "@type": "Organization", "name": "Universidade Log" },
-            "isAccessibleForFree": true
-          },
-          {
-            "@type": "Course",
-            "name": "IA Generativa Aplicada",
-            "description": "Prompt, parâmetros de geração, arquitetura de agentes com LangGraph e guardrails de segurança.",
-            "url": "https://universidade-log.vercel.app/cursos/ia.html",
-            "provider": { "@type": "Organization", "name": "Universidade Log" },
-            "isAccessibleForFree": true
-          },
-          {
-            "@type": "Course",
-            "name": "DevOps: Docker, Kubernetes & AWS",
-            "description": "Cultura DevOps, Git & GitHub, containers, Kubernetes na prática e fundamentos de AWS.",
-            "url": "https://universidade-log.vercel.app/cursos/devops.html",
-            "provider": { "@type": "Organization", "name": "Universidade Log" },
-            "isAccessibleForFree": true
-          },
-          {
-            "@type": "Course",
-            "name": "Trigomante: A Jornada do Círculo",
-            "description": "Trigonometria e Razão Áurea numa aventura de fantasia medieval.",
-            "url": "https://universidade-log.vercel.app/cursos/trigomante.html",
-            "provider": { "@type": "Organization", "name": "Universidade Log" },
-            "isAccessibleForFree": true
-          }
-        ]
-      }
+        {
+            "@context": "https://schema.org",
+            "@type": "EducationalOrganization",
+            "name": "Universidade Log",
+            "url": "https://universidade-log.vercel.app/",
+            "description": "Plataforma pessoal de estudo gamificada com cursos de IA Generativa, Android, DevOps e Trigonometria.",
+            "sameAs": [],
+            "hasCourse": [{
+                    "@type": "Course",
+                    "name": "Desenvolvimento Android",
+                    "description": "Kotlin, Jetpack Compose, arquitetura MVVM e publicação na Play Store.",
+                    "url": "https://universidade-log.vercel.app/cursos/android.html",
+                    "provider": {
+                        "@type": "Organization",
+                        "name": "Universidade Log"
+                    },
+                    "isAccessibleForFree": true
+                },
+                {
+                    "@type": "Course",
+                    "name": "IA Generativa Aplicada",
+                    "description": "Prompt, parâmetros de geração, arquitetura de agentes com LangGraph e guardrails de segurança.",
+                    "url": "https://universidade-log.vercel.app/cursos/ia.html",
+                    "provider": {
+                        "@type": "Organization",
+                        "name": "Universidade Log"
+                    },
+                    "isAccessibleForFree": true
+                },
+                {
+                    "@type": "Course",
+                    "name": "DevOps: Docker, Kubernetes & AWS",
+                    "description": "Cultura DevOps, Git & GitHub, containers, Kubernetes na prática e fundamentos de AWS.",
+                    "url": "https://universidade-log.vercel.app/cursos/devops.html",
+                    "provider": {
+                        "@type": "Organization",
+                        "name": "Universidade Log"
+                    },
+                    "isAccessibleForFree": true
+                },
+                {
+                    "@type": "Course",
+                    "name": "Trigomante: A Jornada do Círculo",
+                    "description": "Trigonometria e Razão Áurea numa aventura de fantasia medieval.",
+                    "url": "https://universidade-log.vercel.app/cursos/trigomante.html",
+                    "provider": {
+                        "@type": "Organization",
+                        "name": "Universidade Log"
+                    },
+                    "isAccessibleForFree": true
+                }
+            ]
+        }
     </script>
     <script>
-      (function () {
-        try {
-          var t = localStorage.getItem("studyhub_theme_v1");
-          if (t && t !== "light")
-            document.documentElement.setAttribute("data-theme", t);
-        } catch (e) {}
-      })();
+        (function() {
+            try {
+                var t = localStorage.getItem("studyhub_theme_v1");
+                if (t && t !== "light")
+                    document.documentElement.setAttribute("data-theme", t);
+            } catch (e) {}
+        })();
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&family=Playwrite+US+Modern:wght@100..400&family=Lilex:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&family=Playwrite+US+Modern:wght@100..400&family=Lilex:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="assets/css/theme.css" />
     <link rel="stylesheet" href="assets/css/space-theme.css" />
     <link rel="stylesheet" href="assets/css/icons.css" />
     <link rel="stylesheet" href="assets/css/landing.css" />
-  </head>
-  <body>
+</head>
+
+<body>
     <a href="#main-content" class="skip-link">Pular para o conteúdo</a>
-    <div
-      id="lp-loader"
-      class="lp-loader"
-      role="status"
-      aria-label="Carregando Universidade Log"
-    >
-      <div class="lp-loader-content">
-        <div class="lp-loader-mark">
-          <img src="assets/characters/byte.png" alt="" width="72" height="78" />
+    <div id="lp-loader" class="lp-loader" role="status" aria-label="Carregando Universidade Log">
+        <div class="lp-loader-content">
+            <div class="lp-loader-mark">
+                <img src="assets/characters/byte.png" alt="" width="72" height="78" />
+            </div>
+            <div class="lp-loader-details">
+                <div class="lp-loader-bar">
+                    <div class="lp-loader-fill"></div>
+                </div>
+                <div class="lp-loader-text">iniciando o sistema...</div>
+            </div>
         </div>
-        <div class="lp-loader-details">
-          <div class="lp-loader-bar"><div class="lp-loader-fill"></div></div>
-          <div class="lp-loader-text">iniciando o sistema...</div>
-        </div>
-      </div>
     </div>
     <script>
-      // Tela de carregamento: agora com delay proposital para exibição
-      // da barra de progresso (mínimo de ~2.8s antes de sumir).
-      (function () {
-        var loader = document.getElementById("lp-loader");
-        if (!loader) return;
-        var hidden = false;
-        function hide() {
-          if (hidden) return;
-          hidden = true;
-          loader.classList.add("lp-loader--hide");
-          setTimeout(function () {
-            if (loader.parentNode) loader.parentNode.removeChild(loader);
-          }, 500);
-        }
+        // Tela de carregamento: agora com delay proposital para exibição
+        // da barra de progresso (mínimo de ~2.8s antes de sumir).
+        (function() {
+            var loader = document.getElementById("lp-loader");
+            if (!loader) return;
+            var hidden = false;
 
-        var loadFired = false;
-        var minTimePassed = false;
+            function hide() {
+                if (hidden) return;
+                hidden = true;
+                loader.classList.add("lp-loader--hide");
+                setTimeout(function() {
+                    if (loader.parentNode) loader.parentNode.removeChild(loader);
+                }, 500);
+            }
 
-        function checkDone() {
-          if (loadFired && minTimePassed) hide();
-        }
+            var loadFired = false;
+            var minTimePassed = false;
 
-        setTimeout(function () {
-          minTimePassed = true;
-          checkDone();
-        }, 2800);
+            function checkDone() {
+                if (loadFired && minTimePassed) hide();
+            }
 
-        function onReady() {
-          loadFired = true;
-          checkDone();
-        }
+            setTimeout(function() {
+                minTimePassed = true;
+                checkDone();
+            }, 2800);
 
-        if (document.readyState === "complete") onReady();
-        else window.addEventListener("load", onReady);
+            function onReady() {
+                loadFired = true;
+                checkDone();
+            }
 
-        setTimeout(hide, 8000); // rede de segurança
-      })();
+            if (document.readyState === "complete") onReady();
+            else window.addEventListener("load", onReady);
+
+            setTimeout(hide, 8000); // rede de segurança
+        })();
     </script>
 
     <div class="lp-bg-anim" aria-hidden="true">
-      <div class="lp-chart-grid"></div>
-      <div class="lp-glow"></div>
-      <div class="lp-grain"></div>
-      <div class="lp-bubbles">
-        <span></span><span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span><span></span>
-      </div>
+        <div class="lp-chart-grid"></div>
+        <div class="lp-glow"></div>
+        <div class="lp-grain"></div>
+        <div class="lp-bubbles">
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+        </div>
     </div>
 
     <div class="lp-topbar">
-      <a
-        class="lp-logo"
-        href="index.html"
-        aria-label="Universidade Log — página inicial"
-        ><img
-          class="lp-logo-lockup"
-          src="assets/icons/brand/logo-lockup.svg"
-          alt="Universidade Log"
-      /></a>
-      <button
-        class="mobile-menu-btn"
-        aria-label="Abrir menu"
-        aria-expanded="false"
-        onclick="
+        <a class="lp-logo" href="index.html" aria-label="Universidade Log — página inicial"><img class="lp-logo-lockup" src="assets/icons/brand/logo-lockup.svg" alt="Universidade Log" /></a>
+        <button class="mobile-menu-btn" aria-label="Abrir menu" aria-expanded="false" onclick="
           this.setAttribute(
             'aria-expanded',
             this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true',
           );
           document.getElementById('lpNavLinks').classList.toggle('open');
-        "
-      >
-        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
-          <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z" />
-        </svg>
-      </button>
-      <div class="lp-nav-links" id="lpNavLinks">
-        <a
-          href="cursos.html"
-          class="active"
-          aria-current="page"
-          onclick="
+        ">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z" />
+            </svg>
+        </button>
+        <div class="lp-nav-links" id="lpNavLinks">
+            <a href="cursos.html" class="active" aria-current="page" onclick="
             document.getElementById('lpNavLinks').classList.remove('open')
-          "
-          ><span class="nl-ic"
-            ><img
-              class="om om-sm"
-              src="assets/icons/content/graduation-cap.svg"
-              alt="" /></span
-          >cursos</a
-        >
-        <a
-          href="index.html#sobre"
-          onclick="
+          "><span class="nl-ic"><img class="om om-sm" src="assets/icons/content/graduation-cap.svg" alt="" /></span>cursos</a>
+            <a href="index.html#sobre" onclick="
             document.getElementById('lpNavLinks').classList.remove('open')
-          "
-          ><span class="nl-ic"
-            ><svg class="ic-mono sm" viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M12 2c.5 4.3 2 6.7 6 7.5-4 .8-5.5 3.2-6 7.5-.5-4.3-2-6.7-6-7.5 4-.8 5.5-3.2 6-7.5Z"
-              />
-              <path
-                d="M19 14c.2 1.8.8 2.8 2.5 3.2-1.7.4-2.3 1.4-2.5 3.2-.2-1.8-.8-2.8-2.5-3.2 1.7-.4 2.3-1.4 2.5-3.2Z"
-              /></svg></span
-          >sobre</a
-        >
-        <a
-          href="index.html#paleta"
-          onclick="
+          "><span class="nl-ic"><svg class="ic-mono sm" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2c.5 4.3 2 6.7 6 7.5-4 .8-5.5 3.2-6 7.5-.5-4.3-2-6.7-6-7.5 4-.8 5.5-3.2 6-7.5Z" />
+                        <path d="M19 14c.2 1.8.8 2.8 2.5 3.2-1.7.4-2.3 1.4-2.5 3.2-.2-1.8-.8-2.8-2.5-3.2 1.7-.4 2.3-1.4 2.5-3.2Z" />
+                    </svg></span>sobre</a>
+            <a href="index.html#paleta" onclick="
             document.getElementById('lpNavLinks').classList.remove('open')
-          "
-          ><span class="nl-ic"
-            ><img
-              class="om om-sm"
-              src="assets/icons/content/palette.svg"
-              alt="" /></span
-          >paleta</a
-        >
-        <a
-          href="index.html#equipe"
-          onclick="
+          "><span class="nl-ic"><img class="om om-sm" src="assets/icons/content/palette.svg" alt="" /></span>paleta</a>
+            <a href="index.html#equipe" onclick="
             document.getElementById('lpNavLinks').classList.remove('open')
-          "
-          ><span class="nl-ic"
-            ><img
-              class="om om-sm"
-              src="assets/icons/content/ship.svg"
-              alt="" /></span
-          >equipe</a
-        >
-        <a
-          href="index.html#faq"
-          onclick="
+          "><span class="nl-ic"><img class="om om-sm" src="assets/icons/content/ship.svg" alt="" /></span>equipe</a>
+            <a href="index.html#faq" onclick="
             document.getElementById('lpNavLinks').classList.remove('open')
-          "
-          ><span class="nl-ic"
-            ><svg class="ic-mono sm" viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"
-              /></svg></span
-          >faq</a
-        >
-      </div>
-      <div class="theme-toggle-row">
-        <div data-chrome-widget="theme"></div>
-        <div data-chrome-widget="a11y"></div>
-      </div>
+          "><span class="nl-ic"><svg class="ic-mono sm" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z" />
+                    </svg></span>faq</a>
+        </div>
+        <div class="theme-toggle-row">
+            <div data-chrome-widget="theme"></div>
+            <div data-chrome-widget="a11y"></div>
+        </div>
     </div>
     <div class="content-wrapper">
-      <!-- ================= CURSOS (página própria) ================= -->
-      <main id="main-content">
-        <section
-          class="lp-section reveal"
-          id="topo-cursos"
-          style="padding-top: 38px"
-        >
-          <a href="index.html" class="cursos-back-link"
-            ><svg class="ic-mono sm" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M20 11H7.8l4.6-4.6L11 5l-7 7 7 7 1.4-1.4L7.8 13H20z" />
-            </svg>
-            Voltar pra página inicial</a
-          >
-          <div class="lp-section-head">
-            <div>
-              <h1>Escolha sua trilha</h1>
-              <p class="section-sub">
-                Quatro cursos completos, cada um com seu próprio elenco de
-                personagens, minijogos e ritmo. Comece por qualquer um: seu
-                progresso em cada curso fica salvo separadamente, direto no seu
-                navegador.
-              </p>
-            </div>
-            <span class="lp-note"
-              >quatro entradas no diário, quatro rotas diferentes</span
-            >
-          </div>
-          <div class="wire"></div>
-
-          <div class="course-list">
-            <div class="course-item ci-ia reveal-stagger">
-              <div class="ci-avatar-wrapper r-item">
-                <img
-                  src="assets/characters/fly.png"
-                  alt="Fly, o cientista de dados mascote do curso de IA"
-                  class="ci-avatar"
-                />
-                <div class="ci-level" id="lvl-ia">Nível 1</div>
-              </div>
-              <div class="ci-content r-item">
-                <div class="ci-eyebrow">Diário Nº 01 · agente.log</div>
-                <h3>IA Generativa Aplicada</h3>
-                <p class="ci-desc">
-                  Prompt, parâmetros de geração, arquitetura de agentes com
-                  LangGraph, memória persistente e guardrails de segurança.
-                </p>
-                <div class="ci-meta">
-                  <span class="ci-stat-chip"
-                    ><img
-                      class="om om-sm"
-                      src="assets/icons/content/map.svg"
-                      alt=""
-                    />
-                    7 módulos</span
-                  >
-                  <span class="ci-stat-chip"
-                    ><img
-                      class="om om-sm"
-                      src="assets/icons/content/puzzle.svg"
-                      alt=""
-                    />
-                    15 quizzes</span
-                  >
+        <!-- ================= CURSOS (página própria) ================= -->
+        <main id="main-content">
+            <section class="lp-section reveal" id="topo-cursos" style="padding-top: 38px">
+                <a href="index.html" class="cursos-back-link"><svg class="ic-mono sm" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20 11H7.8l4.6-4.6L11 5l-7 7 7 7 1.4-1.4L7.8 13H20z" />
+                    </svg>
+                    Voltar pra página inicial</a>
+                <div class="lp-section-head">
+                    <div>
+                        <h1>Escolha sua trilha</h1>
+                        <p class="section-sub">
+                            Quatro cursos completos, cada um com seu próprio elenco de
+                            personagens, minijogos e ritmo. Comece por qualquer um: seu
+                            progresso em cada curso fica salvo separadamente, direto no seu
+                            navegador.
+                        </p>
+                    </div>
+                    <span class="lp-note">quatro entradas no diário, quatro rotas diferentes</span>
                 </div>
-              </div>
-              <div class="ci-actions r-item">
-                <a href="cursos/ia.html" class="cc-btn primary" id="cta-ia"
-                  >Entrar no curso</a
-                >
-                <a href="glossario/ia.html" class="cc-btn secondary">
-                  <svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor">
-                    <path
-                      d="M5.5 3h11A1.5 1.5 0 0 1 18 4.5v16.2a.5.5 0 0 1-.74.44L12 18.5l-5.26 2.64a.5.5 0 0 1-.74-.44V4.5A1.5 1.5 0 0 1 5.5 3Z"
-                    />
-                    <rect
-                      x="8"
-                      y="7"
-                      width="6.5"
-                      height="1.3"
-                      rx=".65"
-                      fill="#fff"
-                      opacity=".7"
-                    />
-                    <rect
-                      x="8"
-                      y="10"
-                      width="6.5"
-                      height="1.3"
-                      rx=".65"
-                      fill="#fff"
-                      opacity=".7"
-                    />
-                  </svg>
-                  Glossário
-                </a>
-              </div>
-            </div>
+                <div class="wire"></div>
 
-            <div class="course-item ci-android reveal-stagger">
-              <div class="ci-avatar-wrapper r-item">
-                <img
-                  src="assets/characters/byte.png"
-                  alt="Byte, a lontra mascote do curso de Android"
-                  class="ci-avatar"
-                />
-                <div class="ci-level" id="lvl-android">Nível 1</div>
-              </div>
-              <div class="ci-content r-item">
-                <div class="ci-eyebrow">Diário Nº 02 · android.log</div>
-                <h3>Desenvolvimento Android</h3>
-                <p class="ci-desc">
-                  Kotlin, Jetpack Compose, arquitetura MVVM e publicação na Play
-                  Store: do primeiro "Hello World" ao app pronto pra produção.
-                </p>
-                <div class="ci-meta">
-                  <span class="ci-stat-chip"
-                    ><img
-                      class="om om-sm"
-                      src="assets/icons/content/map.svg"
-                      alt=""
-                    />
-                    11 módulos</span
-                  >
-                  <span class="ci-stat-chip"
-                    ><img
-                      class="om om-sm"
-                      src="assets/icons/content/puzzle.svg"
-                      alt=""
-                    />
-                    quizzes &amp; minijogos</span
-                  >
-                </div>
-              </div>
-              <div class="ci-actions r-item">
-                <a
-                  href="cursos/android.html"
-                  class="cc-btn primary"
-                  id="cta-android"
-                  >Entrar no curso</a
-                >
-                <a href="glossario/android.html" class="cc-btn secondary">
-                  <svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor">
-                    <path
-                      d="M5.5 3h11A1.5 1.5 0 0 1 18 4.5v16.2a.5.5 0 0 1-.74.44L12 18.5l-5.26 2.64a.5.5 0 0 1-.74-.44V4.5A1.5 1.5 0 0 1 5.5 3Z"
-                    />
-                    <rect
-                      x="8"
-                      y="7"
-                      width="6.5"
-                      height="1.3"
-                      rx=".65"
-                      fill="#fff"
-                      opacity=".7"
-                    />
-                    <rect
-                      x="8"
-                      y="10"
-                      width="6.5"
-                      height="1.3"
-                      rx=".65"
-                      fill="#fff"
-                      opacity=".7"
-                    />
-                  </svg>
-                  Glossário
-                </a>
-              </div>
-            </div>
+                <div class="course-list">
+                    <div class="course-item ci-ia reveal-stagger">
+                        <div class="ci-avatar-wrapper r-item">
+                            <img src="assets/characters/fly.png" alt="Fly, o cientista de dados mascote do curso de IA" class="ci-avatar" />
+                            <div class="ci-level" id="lvl-ia">Nível 1</div>
+                        </div>
+                        <div class="ci-content r-item">
+                            <div class="ci-eyebrow">Diário Nº 01 · agente.log</div>
+                            <h3>IA Generativa Aplicada</h3>
+                            <p class="ci-desc">
+                                Prompt, parâmetros de geração, arquitetura de agentes com
+                                LangGraph, memória persistente e guardrails de segurança.
+                            </p>
+                            <div class="ci-meta">
+                                <span class="ci-stat-chip"><img class="om om-sm" src="assets/icons/content/map.svg" alt="" />
+                                    7 módulos</span>
+                                <span class="ci-stat-chip"><img class="om om-sm" src="assets/icons/content/puzzle.svg" alt="" />
+                                    15 quizzes</span>
+                            </div>
+                        </div>
+                        <div class="ci-actions r-item">
+                            <a href="cursos/ia.html" class="cc-btn primary" id="cta-ia">Entrar no curso</a>
+                            <a href="glossario/ia.html" class="cc-btn secondary">
+                                <svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M5.5 3h11A1.5 1.5 0 0 1 18 4.5v16.2a.5.5 0 0 1-.74.44L12 18.5l-5.26 2.64a.5.5 0 0 1-.74-.44V4.5A1.5 1.5 0 0 1 5.5 3Z" />
+                                    <rect x="8" y="7" width="6.5" height="1.3" rx=".65" fill="#fff" opacity=".7" />
+                                    <rect x="8" y="10" width="6.5" height="1.3" rx=".65" fill="#fff" opacity=".7" />
+                                </svg>
+                                Glossário
+                            </a>
+                        </div>
+                    </div>
 
-            <div class="course-item ci-devops reveal-stagger">
-              <div class="ci-avatar-wrapper r-item">
-                <img
-                  src="assets/characters/baba-grogue.png"
-                  alt="Capitão Baba Grogue, mascote do curso de DevOps"
-                  class="ci-avatar"
-                />
-                <div class="ci-level" id="lvl-devops">Nível 1</div>
-              </div>
-              <div class="ci-content r-item">
-                <div class="ci-eyebrow">Diário Nº 03 · navio.log</div>
-                <h3>DevOps: Docker, Kubernetes &amp; AWS</h3>
-                <p class="ci-desc">
-                  Cultura DevOps, Git &amp; GitHub, containers, Kubernetes na
-                  prática e fundamentos de AWS: a rota completa do commit ao
-                  deploy.
-                </p>
-                <div class="ci-meta">
-                  <span class="ci-stat-chip"
-                    ><img
-                      class="om om-sm"
-                      src="assets/icons/content/map.svg"
-                      alt=""
-                    />
-                    11 módulos</span
-                  >
-                  <span class="ci-stat-chip"
-                    ><img
-                      class="om om-sm"
-                      src="assets/icons/content/puzzle.svg"
-                      alt=""
-                    />
-                    18 quizzes</span
-                  >
-                </div>
-              </div>
-              <div class="ci-actions r-item">
-                <a
-                  href="cursos/devops.html"
-                  class="cc-btn primary"
-                  id="cta-devops"
-                  >Entrar no curso</a
-                >
-                <a href="glossario/devops.html" class="cc-btn secondary">
-                  <svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor">
-                    <path
-                      d="M5.5 3h11A1.5 1.5 0 0 1 18 4.5v16.2a.5.5 0 0 1-.74.44L12 18.5l-5.26 2.64a.5.5 0 0 1-.74-.44V4.5A1.5 1.5 0 0 1 5.5 3Z"
-                    />
-                    <rect
-                      x="8"
-                      y="7"
-                      width="6.5"
-                      height="1.3"
-                      rx=".65"
-                      fill="#fff"
-                      opacity=".7"
-                    />
-                    <rect
-                      x="8"
-                      y="10"
-                      width="6.5"
-                      height="1.3"
-                      rx=".65"
-                      fill="#fff"
-                      opacity=".7"
-                    />
-                  </svg>
-                  Glossário
-                </a>
-              </div>
-            </div>
+                    <div class="course-item ci-android reveal-stagger">
+                        <div class="ci-avatar-wrapper r-item">
+                            <img src="assets/characters/byte.png" alt="Byte, a lontra mascote do curso de Android" class="ci-avatar" />
+                            <div class="ci-level" id="lvl-android">Nível 1</div>
+                        </div>
+                        <div class="ci-content r-item">
+                            <div class="ci-eyebrow">Diário Nº 02 · android.log</div>
+                            <h3>Desenvolvimento Android</h3>
+                            <p class="ci-desc">
+                                Kotlin, Jetpack Compose, arquitetura MVVM e publicação na Play
+                                Store: do primeiro "Hello World" ao app pronto pra produção.
+                            </p>
+                            <div class="ci-meta">
+                                <span class="ci-stat-chip"><img class="om om-sm" src="assets/icons/content/map.svg" alt="" />
+                                    11 módulos</span>
+                                <span class="ci-stat-chip"><img class="om om-sm" src="assets/icons/content/puzzle.svg" alt="" />
+                                    quizzes &amp; minijogos</span>
+                            </div>
+                        </div>
+                        <div class="ci-actions r-item">
+                            <a href="cursos/android.html" class="cc-btn primary" id="cta-android">Entrar no curso</a>
+                            <a href="glossario/android.html" class="cc-btn secondary">
+                                <svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M5.5 3h11A1.5 1.5 0 0 1 18 4.5v16.2a.5.5 0 0 1-.74.44L12 18.5l-5.26 2.64a.5.5 0 0 1-.74-.44V4.5A1.5 1.5 0 0 1 5.5 3Z" />
+                                    <rect x="8" y="7" width="6.5" height="1.3" rx=".65" fill="#fff" opacity=".7" />
+                                    <rect x="8" y="10" width="6.5" height="1.3" rx=".65" fill="#fff" opacity=".7" />
+                                </svg>
+                                Glossário
+                            </a>
+                        </div>
+                    </div>
 
-            <div class="course-item ci-trigomante reveal-stagger">
-              <div class="ci-avatar-wrapper r-item">
-                <img
-                  src="assets/characters/mago.png"
-                  alt="O Mago da Matemática, mascote do curso de Trigomante"
-                  class="ci-avatar"
-                />
-                <div class="ci-level" id="lvl-trigomante">Nível 1</div>
-              </div>
-              <div class="ci-content r-item">
-                <div class="ci-eyebrow">Diário Nº 04 · trigomante.log</div>
-                <h3>Trigomante: A Jornada do Círculo</h3>
-                <p class="ci-desc">
-                  Trigonometria e Razão Áurea numa aventura de fantasia
-                  medieval: ângulos, círculo trigonométrico, proporção áurea e
-                  enigmas contra um titã da lógica.
-                </p>
-                <div class="ci-meta">
-                  <span class="ci-stat-chip"
-                    ><img
-                      class="om om-sm"
-                      src="assets/icons/content/map.svg"
-                      alt=""
-                    />
-                    6 módulos</span
-                  >
-                  <span class="ci-stat-chip"
-                    ><img
-                      class="om om-sm"
-                      src="assets/icons/content/puzzle.svg"
-                      alt=""
-                    />
-                    14 quizzes</span
-                  >
+                    <div class="course-item ci-devops reveal-stagger">
+                        <div class="ci-avatar-wrapper r-item">
+                            <img src="assets/characters/baba-grogue.png" alt="Capitão Baba Grogue, mascote do curso de DevOps" class="ci-avatar" />
+                            <div class="ci-level" id="lvl-devops">Nível 1</div>
+                        </div>
+                        <div class="ci-content r-item">
+                            <div class="ci-eyebrow">Diário Nº 03 · navio.log</div>
+                            <h3>DevOps: Docker, Kubernetes &amp; AWS</h3>
+                            <p class="ci-desc">
+                                Cultura DevOps, Git &amp; GitHub, containers, Kubernetes na
+                                prática e fundamentos de AWS: a rota completa do commit ao
+                                deploy.
+                            </p>
+                            <div class="ci-meta">
+                                <span class="ci-stat-chip"><img class="om om-sm" src="assets/icons/content/map.svg" alt="" />
+                                    11 módulos</span>
+                                <span class="ci-stat-chip"><img class="om om-sm" src="assets/icons/content/puzzle.svg" alt="" />
+                                    18 quizzes</span>
+                            </div>
+                        </div>
+                        <div class="ci-actions r-item">
+                            <a href="cursos/devops.html" class="cc-btn primary" id="cta-devops">Entrar no curso</a>
+                            <a href="glossario/devops.html" class="cc-btn secondary">
+                                <svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M5.5 3h11A1.5 1.5 0 0 1 18 4.5v16.2a.5.5 0 0 1-.74.44L12 18.5l-5.26 2.64a.5.5 0 0 1-.74-.44V4.5A1.5 1.5 0 0 1 5.5 3Z" />
+                                    <rect x="8" y="7" width="6.5" height="1.3" rx=".65" fill="#fff" opacity=".7" />
+                                    <rect x="8" y="10" width="6.5" height="1.3" rx=".65" fill="#fff" opacity=".7" />
+                                </svg>
+                                Glossário
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="course-item ci-trigomante reveal-stagger">
+                        <div class="ci-avatar-wrapper r-item">
+                            <img src="assets/characters/mago.png" alt="O Mago da Matemática, mascote do curso de Trigomante" class="ci-avatar" />
+                            <div class="ci-level" id="lvl-trigomante">Nível 1</div>
+                        </div>
+                        <div class="ci-content r-item">
+                            <div class="ci-eyebrow">Diário Nº 04 · trigomante.log</div>
+                            <h3>Trigomante: A Jornada do Círculo</h3>
+                            <p class="ci-desc">
+                                Trigonometria e Razão Áurea numa aventura de fantasia
+                                medieval: ângulos, círculo trigonométrico, proporção áurea e
+                                enigmas contra um titã da lógica.
+                            </p>
+                            <div class="ci-meta">
+                                <span class="ci-stat-chip"><img class="om om-sm" src="assets/icons/content/map.svg" alt="" />
+                                    6 módulos</span>
+                                <span class="ci-stat-chip"><img class="om om-sm" src="assets/icons/content/puzzle.svg" alt="" />
+                                    14 quizzes</span>
+                            </div>
+                        </div>
+                        <div class="ci-actions r-item">
+                            <a href="cursos/trigomante.html" class="cc-btn primary" id="cta-trigomante">Entrar no curso</a>
+                            <a href="glossario/trigomante.html" class="cc-btn secondary">
+                                <svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M5.5 3h11A1.5 1.5 0 0 1 18 4.5v16.2a.5.5 0 0 1-.74.44L12 18.5l-5.26 2.64a.5.5 0 0 1-.74-.44V4.5A1.5 1.5 0 0 1 5.5 3Z" />
+                                    <rect x="8" y="7" width="6.5" height="1.3" rx=".65" fill="#fff" opacity=".7" />
+                                    <rect x="8" y="10" width="6.5" height="1.3" rx=".65" fill="#fff" opacity=".7" />
+                                </svg>
+                                Glossário
+                            </a>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="ci-actions r-item">
-                <a
-                  href="cursos/trigomante.html"
-                  class="cc-btn primary"
-                  id="cta-trigomante"
-                  >Entrar no curso</a
-                >
-                <a href="glossario/trigomante.html" class="cc-btn secondary">
-                  <svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor">
-                    <path
-                      d="M5.5 3h11A1.5 1.5 0 0 1 18 4.5v16.2a.5.5 0 0 1-.74.44L12 18.5l-5.26 2.64a.5.5 0 0 1-.74-.44V4.5A1.5 1.5 0 0 1 5.5 3Z"
-                    />
-                    <rect
-                      x="8"
-                      y="7"
-                      width="6.5"
-                      height="1.3"
-                      rx=".65"
-                      fill="#fff"
-                      opacity=".7"
-                    />
-                    <rect
-                      x="8"
-                      y="10"
-                      width="6.5"
-                      height="1.3"
-                      rx=".65"
-                      fill="#fff"
-                      opacity=".7"
-                    />
-                  </svg>
-                  Glossário
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
-      <footer class="lp-footer">
-        <div class="lp-footer-wave" aria-hidden="true">
-          <svg viewBox="0 0 1200 60" preserveAspectRatio="none">
-            <path
-              d="M0 30 Q 150 0 300 30 T 600 30 T 900 30 T 1200 30 V60 H0 Z"
-            ></path>
-          </svg>
-        </div>
-        <div class="lp-footer-inner">
-          <div class="lf-brand">
-            <div class="lf-logo">
-              <img
-                class="brand-mark"
-                src="assets/icons/brand/favicon.svg"
-                width="20"
-                height="20"
-                alt=""
-              />
-              Universidade Log
-            </div>
-            <p>
-              Sua plataforma pessoal de estudo gamificada. Progresso salvo
-              direto no seu navegador: sem conta, sem anúncio, sem gente
-              comparando o seu ritmo com o de ninguém.
-            </p>
-          </div>
-          <div class="lf-col">
-            <h4>
-              <span class="lf-ic"
-                ><img
-                  class="om om-sm"
-                  src="assets/icons/content/graduation-cap.svg"
-                  alt="" /></span
-              >Cursos
-            </h4>
-            <div class="lf-links">
-              <a href="cursos/ia.html"
-                ><img
-                  class="om om-sm"
-                  src="assets/icons/content/brain.svg"
-                  alt=""
-                />
-                IA Generativa</a
-              >
-              <a href="cursos/android.html"
-                ><img
-                  class="om om-sm"
-                  src="assets/icons/content/robot.svg"
-                  alt=""
-                />
-                Android</a
-              >
-              <a href="cursos/devops.html"
-                ><img
-                  class="om om-sm"
-                  src="assets/icons/content/whale.svg"
-                  alt=""
-                />
-                DevOps</a
-              >
-              <a href="cursos/trigomante.html"
-                ><img
-                  class="om om-sm"
-                  src="assets/icons/content/triangle-ruler.svg"
-                  alt=""
-                />
-                Trigomante</a
-              >
-            </div>
-          </div>
-          <div class="lf-col">
-            <h4>
-              <span class="lf-ic"
-                ><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor">
-                  <path
-                    d="M5.5 3h11A1.5 1.5 0 0 1 18 4.5v16.2a.5.5 0 0 1-.74.44L12 18.5l-5.26 2.64a.5.5 0 0 1-.74-.44V4.5A1.5 1.5 0 0 1 5.5 3Z"
-                  />
-                  <rect
-                    x="8"
-                    y="7"
-                    width="6.5"
-                    height="1.3"
-                    rx=".65"
-                    fill="#fff"
-                    opacity=".7"
-                  />
-                  <rect
-                    x="8"
-                    y="10"
-                    width="6.5"
-                    height="1.3"
-                    rx=".65"
-                    fill="#fff"
-                    opacity=".7"
-                  /></svg></span
-              >Glossários
-            </h4>
-            <div class="lf-links">
-              <a href="glossario/android.html"
-                ><img
-                  class="om om-sm"
-                  src="assets/icons/content/robot.svg"
-                  alt=""
-                />
-                Android</a
-              >
-              <a href="glossario/ia.html"
-                ><img
-                  class="om om-sm"
-                  src="assets/icons/content/brain.svg"
-                  alt=""
-                />
-                IA Generativa</a
-              >
-              <a href="glossario/devops.html"
-                ><img
-                  class="om om-sm"
-                  src="assets/icons/content/whale.svg"
-                  alt=""
-                />
-                DevOps</a
-              >
-              <a href="glossario/trigomante.html"
-                ><img
-                  class="om om-sm"
-                  src="assets/icons/content/triangle-ruler.svg"
-                  alt=""
-                />
-                Trigomante</a
-              >
-            </div>
-          </div>
-          <div class="lf-col">
-            <h4>
-              <span class="lf-ic"
-                ><img
-                  class="om om-sm"
-                  src="assets/icons/content/ship.svg"
-                  alt="" /></span
-              >Navegação
-            </h4>
-            <div class="lf-links">
-              <a href="index.html#sobre"
-                ><svg
-                  class="ic-mono sm"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
-                  <path
-                    d="M12 2c.5 4.3 2 6.7 6 7.5-4 .8-5.5 3.2-6 7.5-.5-4.3-2-6.7-6-7.5 4-.8 5.5-3.2 6-7.5Z"
-                  />
-                  <path
-                    d="M19 14c.2 1.8.8 2.8 2.5 3.2-1.7.4-2.3 1.4-2.5 3.2-.2-1.8-.8-2.8-2.5-3.2 1.7-.4 2.3-1.4 2.5-3.2Z"
-                  />
+            </section>
+        </main>
+        <footer class="lp-footer">
+            <div class="lp-footer-wave" aria-hidden="true">
+                <svg viewBox="0 0 1200 60" preserveAspectRatio="none">
+                    <path d="M0 30 Q 150 0 300 30 T 600 30 T 900 30 T 1200 30 V60 H0 Z"></path>
                 </svg>
-                Sobre o projeto</a
-              >
-              <a href="index.html#paleta"
-                ><img
-                  class="om om-sm"
-                  src="assets/icons/content/palette.svg"
-                  alt=""
-                />
-                Paleta de cores</a
-              >
-              <a href="index.html#equipe"
-                ><img
-                  class="om om-sm"
-                  src="assets/icons/content/handshake.svg"
-                  alt=""
-                />
-                A equipe</a
-              >
             </div>
-          </div>
-          <div class="lf-col lf-legal">
-            <h4>
-              <span class="lf-ic"
-                ><svg
-                  class="ic-mono"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  width="16"
-                  height="16"
-                >
-                  <path
-                    d="M12 2 4 5v6c0 5.2 3.4 9.9 8 11 4.6-1.1 8-5.8 8-11V5l-8-3Z"
-                  /></svg></span
-              >Legal
-            </h4>
-            <div class="lf-links">
-              <a href="privacidade.html">Política de Privacidade</a>
-              <a href="termos.html">Termos de Uso</a>
-              <a href="/.well-known/security.txt">security.txt</a>
+            <div class="lp-footer-inner">
+                <div class="lf-brand">
+                    <div class="lf-logo">
+                        <img class="brand-mark" src="assets/icons/brand/favicon.svg" width="20" height="20" alt="" />
+                        Universidade Log
+                    </div>
+                    <p>
+                        Sua plataforma pessoal de estudo gamificada. Progresso salvo
+                        direto no seu navegador: sem conta, sem anúncio, sem gente
+                        comparando o seu ritmo com o de ninguém.
+                    </p>
+                </div>
+                <div class="lf-col">
+                    <h4>
+                        <span class="lf-ic"><img class="om om-sm" src="assets/icons/content/graduation-cap.svg" alt="" /></span>Cursos
+                    </h4>
+                    <div class="lf-links">
+                        <a href="cursos/ia.html"><img class="om om-sm" src="assets/icons/content/brain.svg" alt="" />
+                            IA Generativa</a>
+                        <a href="cursos/android.html"><img class="om om-sm" src="assets/icons/content/robot.svg" alt="" />
+                            Android</a>
+                        <a href="cursos/devops.html"><img class="om om-sm" src="assets/icons/content/whale.svg" alt="" />
+                            DevOps</a>
+                        <a href="cursos/trigomante.html"><img class="om om-sm" src="assets/icons/content/triangle-ruler.svg" alt="" />
+                            Trigomante</a>
+                    </div>
+                </div>
+                <div class="lf-col">
+                    <h4>
+                        <span class="lf-ic"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M5.5 3h11A1.5 1.5 0 0 1 18 4.5v16.2a.5.5 0 0 1-.74.44L12 18.5l-5.26 2.64a.5.5 0 0 1-.74-.44V4.5A1.5 1.5 0 0 1 5.5 3Z" />
+                                <rect x="8" y="7" width="6.5" height="1.3" rx=".65" fill="#fff" opacity=".7" />
+                                <rect x="8" y="10" width="6.5" height="1.3" rx=".65" fill="#fff" opacity=".7" />
+                            </svg></span>Glossários
+                    </h4>
+                    <div class="lf-links">
+                        <a href="glossario/android.html"><img class="om om-sm" src="assets/icons/content/robot.svg" alt="" />
+                            Android</a>
+                        <a href="glossario/ia.html"><img class="om om-sm" src="assets/icons/content/brain.svg" alt="" />
+                            IA Generativa</a>
+                        <a href="glossario/devops.html"><img class="om om-sm" src="assets/icons/content/whale.svg" alt="" />
+                            DevOps</a>
+                        <a href="glossario/trigomante.html"><img class="om om-sm" src="assets/icons/content/triangle-ruler.svg" alt="" />
+                            Trigomante</a>
+                    </div>
+                </div>
+                <div class="lf-col">
+                    <h4>
+                        <span class="lf-ic"><img class="om om-sm" src="assets/icons/content/ship.svg" alt="" /></span>Navegação
+                    </h4>
+                    <div class="lf-links">
+                        <a href="index.html#sobre"><svg class="ic-mono sm" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2c.5 4.3 2 6.7 6 7.5-4 .8-5.5 3.2-6 7.5-.5-4.3-2-6.7-6-7.5 4-.8 5.5-3.2 6-7.5Z" />
+                                <path d="M19 14c.2 1.8.8 2.8 2.5 3.2-1.7.4-2.3 1.4-2.5 3.2-.2-1.8-.8-2.8-2.5-3.2 1.7-.4 2.3-1.4 2.5-3.2Z" />
+                            </svg>
+                            Sobre o projeto</a>
+                        <a href="index.html#paleta"><img class="om om-sm" src="assets/icons/content/palette.svg" alt="" />
+                            Paleta de cores</a>
+                        <a href="index.html#equipe"><img class="om om-sm" src="assets/icons/content/handshake.svg" alt="" />
+                            A equipe</a>
+                    </div>
+                </div>
+                <div class="lf-col lf-legal">
+                    <h4>
+                        <span class="lf-ic"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                                <path d="M12 2 4 5v6c0 5.2 3.4 9.9 8 11 4.6-1.1 8-5.8 8-11V5l-8-3Z" />
+                            </svg></span>Legal
+                    </h4>
+                    <div class="lf-links">
+                        <a href="privacidade.html">Política de Privacidade</a>
+                        <a href="termos.html">Termos de Uso</a>
+                        <a href="/.well-known/security.txt">security.txt</a>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-        <div class="lp-footer-bottom">
-          <span
-            >Feito pra estudar sem pressa, no seu ritmo — por
-            <a
-              class="lf-github"
-              href="https://github.com/LucasEntweihen"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Perfil de Lucas Entweihen no GitHub (abre em nova aba)"
-              ><svg
-                class="ic-mono sm"
-                viewBox="0 0 16 16"
-                fill="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  d="M8 0C3.58 0 0 3.64 0 8.13c0 3.6 2.29 6.65 5.47 7.72.4.08.55-.18.55-.4 0-.2-.01-.86-.01-1.56-2.01.38-2.53-.5-2.7-.96-.09-.24-.48-.96-.82-1.16-.28-.15-.68-.53-.01-.54.63-.01 1.08.59 1.23.83.72 1.469 1.87 1.06 2.33.8.07-.55.28-.79.5-.97-1.78-.2-3.64-.9-3.64-4.01 0-.88.31-1.61.82-2.17-.08-.2-.36-1.03.08-2.15 0 0 .67-.22 2.2.83.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.06 2.2-.83 2.2-.83.44 1.12.16 1.95.08 2.15.51.56.82 1.28.82 2.17 0 3.12-1.87 3.81-3.65 4.01.29.25.54.75.54 1.5 0 1.09-.01 1.96-.01 2.23 0 .22.15.48.55.4A8.13 8.13 0 0 0 16 8.13C16 3.64 12.42 0 8 0Z"
-                /></svg
-              >@LucasEntweihen</a
-            >
-          </span>
-          <span class="lf-modules"
-            >navio.log · android.log · agente.log · trigomante.log</span
-          >
-        </div>
-      </footer>
+            <div class="lp-footer-bottom">
+                <span>Feito pra estudar sem pressa, no seu ritmo — por
+                    <a class="lf-github" href="https://github.com/LucasEntweihen" target="_blank" rel="noopener noreferrer" aria-label="Perfil de Lucas Entweihen no GitHub (abre em nova aba)"><svg class="ic-mono sm" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                            <path d="M8 0C3.58 0 0 3.64 0 8.13c0 3.6 2.29 6.65 5.47 7.72.4.08.55-.18.55-.4 0-.2-.01-.86-.01-1.56-2.01.38-2.53-.5-2.7-.96-.09-.24-.48-.96-.82-1.16-.28-.15-.68-.53-.01-.54.63-.01 1.08.59 1.23.83.72 1.469 1.87 1.06 2.33.8.07-.55.28-.79.5-.97-1.78-.2-3.64-.9-3.64-4.01 0-.88.31-1.61.82-2.17-.08-.2-.36-1.03.08-2.15 0 0 .67-.22 2.2.83.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.06 2.2-.83 2.2-.83.44 1.12.16 1.95.08 2.15.51.56.82 1.28.82 2.17 0 3.12-1.87 3.81-3.65 4.01.29.25.54.75.54 1.5 0 1.09-.01 1.96-.01 2.23 0 .22.15.48.55.4A8.13 8.13 0 0 0 16 8.13C16 3.64 12.42 0 8 0Z" />
+                        </svg>@LucasEntweihen</a>
+                </span>
+                <span class="lf-modules">navio.log · android.log · agente.log · trigomante.log</span>
+            </div>
+        </footer>
     </div>
     <script>
-      // setTheme, toggleThemePopover e o estado inicial dos swatches
-      // agora vivem só em assets/js/theme-picker.js (carregado abaixo)
-      // — havia uma cópia inline aqui, só pra esta página, que também
-      // divergia da versão compartilhada usada nas outras 17 páginas.
+        // setTheme, toggleThemePopover e o estado inicial dos swatches
+        // agora vivem só em assets/js/theme-picker.js (carregado abaixo)
+        // — havia uma cópia inline aqui, só pra esta página, que também
+        // divergia da versão compartilhada usada nas outras 17 páginas.
 
-      // Mostra o nível salvo de cada curso, e troca o CTA pra "Continuar
-      // estudando" quando já existe progresso salvo naquele curso.
-      (function () {
-        var map = {
-          "lvl-android": ["android_log_level_v1", "cta-android"],
-          "lvl-ia": ["curso_ia_level_v1", "cta-ia"],
-          "lvl-devops": ["curso_devops_level_v1", "cta-devops"],
-          "lvl-trigomante": ["curso_trigomante_level_v1", "cta-trigomante"],
-        };
-        Object.keys(map).forEach(function (id) {
-          var key = map[id][0],
-            ctaId = map[id][1];
-          var lv = localStorage.getItem(key);
-          var el = document.getElementById(id);
-          var cta = document.getElementById(ctaId);
-          if (lv && el) {
-            el.textContent = "Nível " + lv;
-            el.setAttribute("data-has-progress", "1");
-          }
-          if (lv && cta) cta.textContent = "Continuar estudando →";
-        });
-      })();
-
-      // Revela seções e cards com um leve fade-up conforme a pessoa rola
-      // a página, em vez de tudo aparecer estático de uma vez.
-      (function () {
-        if (
-          window.matchMedia &&
-          window.matchMedia("(prefers-reduced-motion: reduce)").matches
-        )
-          return;
-        var targets = document.querySelectorAll(".reveal, .reveal-stagger");
-        if (!targets.length || !("IntersectionObserver" in window)) return;
-        var io = new IntersectionObserver(
-          function (entries) {
-            entries.forEach(function (entry) {
-              if (entry.isIntersecting) {
-                entry.target.classList.add("in-view");
-                io.unobserve(entry.target);
-              }
+        // Mostra o nível salvo de cada curso, e troca o CTA pra "Continuar
+        // estudando" quando já existe progresso salvo naquele curso.
+        (function() {
+            var map = {
+                "lvl-android": ["android_log_level_v1", "cta-android"],
+                "lvl-ia": ["curso_ia_level_v1", "cta-ia"],
+                "lvl-devops": ["curso_devops_level_v1", "cta-devops"],
+                "lvl-trigomante": ["curso_trigomante_level_v1", "cta-trigomante"],
+            };
+            Object.keys(map).forEach(function(id) {
+                var key = map[id][0],
+                    ctaId = map[id][1];
+                var lv = localStorage.getItem(key);
+                var el = document.getElementById(id);
+                var cta = document.getElementById(ctaId);
+                if (lv && el) {
+                    el.textContent = "Nível " + lv;
+                    el.setAttribute("data-has-progress", "1");
+                }
+                if (lv && cta) cta.textContent = "Continuar estudando →";
             });
-          },
-          { threshold: 0.02, rootMargin: "0px 0px -2% 0px" },
-        );
-        targets.forEach(function (t) {
-          io.observe(t);
-        });
-      })();
+        })();
+
+        // Revela seções e cards com um leve fade-up conforme a pessoa rola
+        // a página, em vez de tudo aparecer estático de uma vez.
+        (function() {
+            if (
+                window.matchMedia &&
+                window.matchMedia("(prefers-reduced-motion: reduce)").matches
+            )
+                return;
+            var targets = document.querySelectorAll(".reveal, .reveal-stagger");
+            if (!targets.length || !("IntersectionObserver" in window)) return;
+            var io = new IntersectionObserver(
+                function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("in-view");
+                            io.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.02,
+                    rootMargin: "0px 0px -2% 0px"
+                },
+            );
+            targets.forEach(function(t) {
+                io.observe(t);
+            });
+        })();
     </script>
     <script defer src="assets/js/chrome-widgets.js"></script>
     <script defer src="assets/js/theme-picker.js"></script>
@@ -916,11 +525,12 @@
 
     <div id="cvd-overlay-container" style="display: none"></div>
     <script>
-      fetch("assets/accessibility/cvd-filters.svg")
-        .then((response) => response.text())
-        .then((svgData) => {
-          document.getElementById("cvd-overlay-container").innerHTML = svgData;
-        });
+        fetch("assets/accessibility/cvd-filters.svg")
+            .then((response) => response.text())
+            .then((svgData) => {
+                document.getElementById("cvd-overlay-container").innerHTML = svgData;
+            });
     </script>
-  </body>
+</body>
+
 </html>

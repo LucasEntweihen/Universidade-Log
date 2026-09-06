@@ -1,389 +1,821 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-<meta charset="UTF-8">
-<link rel="icon" type="image/svg+xml" href="../assets/icons/brand/favicon.svg" />
-<link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/brand/favicon-32.png" />
-<link rel="apple-touch-icon" href="../assets/icons/brand/apple-touch-icon.png" />
-<link rel="manifest" href="../manifest.json" />
-<meta name="theme-color" content="#9D25FF" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://images.unsplash.com; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests" />
-<meta name="referrer" content="strict-origin-when-cross-origin" />
-<title>Aprofundamento: android.log</title>
-<meta name="description" content="Aprofundamento por módulo do curso de Android (Kotlin): leituras extras e explicações mais longas de cada tópico da trilha." />
-<meta name="robots" content="index, follow, max-image-preview:large" />
-<link rel="canonical" href="https://universidade-log.vercel.app/cursos/android-material.html" />
-<meta property="og:type" content="website" />
-<meta property="og:locale" content="pt_BR" />
-<meta property="og:url" content="https://universidade-log.vercel.app/cursos/android-material.html" />
-<meta property="og:site_name" content="Universidade Log" />
-<meta property="og:title" content="Aprofundamento: android.log" />
-<meta property="og:description" content="Aprofundamento por módulo do curso de Android (Kotlin): leituras extras e explicações mais longas de cada tópico da trilha." />
-<meta property="og:image" content="https://universidade-log.vercel.app/assets/characters/byte.png" />
-<meta property="og:image:alt" content="Byte, o mascote do curso de Android" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Aprofundamento: android.log" />
-<meta name="twitter:description" content="Aprofundamento por módulo do curso de Android (Kotlin): leituras extras e explicações mais longas de cada tópico da trilha." />
-<meta name="twitter:image" content="https://universidade-log.vercel.app/assets/characters/byte.png" />
-<script>(function(){try{var t=localStorage.getItem('studyhub_theme_v1');if(t && t!=='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&family=Playwrite+US+Modern:wght@100..400&family=Lilex:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/theme.css">
-<link rel="stylesheet" href="../assets/css/space-theme.css">
-<link rel="stylesheet" href="../assets/css/icons.css" />
-<link rel="stylesheet" href="../assets/css/theme-fx.css" />
-<style>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="../assets/icons/brand/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/brand/favicon-32.png" />
+    <link rel="apple-touch-icon" href="../assets/icons/brand/apple-touch-icon.png" />
+    <link rel="manifest" href="../manifest.json" />
+    <meta name="theme-color" content="#9D25FF" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://images.unsplash.com; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <title>Aprofundamento: android.log</title>
+    <meta name="description" content="Aprofundamento por módulo do curso de Android (Kotlin): leituras extras e explicações mais longas de cada tópico da trilha." />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://universidade-log.vercel.app/cursos/android-material.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:url" content="https://universidade-log.vercel.app/cursos/android-material.html" />
+    <meta property="og:site_name" content="Universidade Log" />
+    <meta property="og:title" content="Aprofundamento: android.log" />
+    <meta property="og:description" content="Aprofundamento por módulo do curso de Android (Kotlin): leituras extras e explicações mais longas de cada tópico da trilha." />
+    <meta property="og:image" content="https://universidade-log.vercel.app/assets/characters/byte.png" />
+    <meta property="og:image:alt" content="Byte, o mascote do curso de Android" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Aprofundamento: android.log" />
+    <meta name="twitter:description" content="Aprofundamento por módulo do curso de Android (Kotlin): leituras extras e explicações mais longas de cada tópico da trilha." />
+    <meta name="twitter:image" content="https://universidade-log.vercel.app/assets/characters/byte.png" />
+    <script>
+        (function() {
+            try {
+                var t = localStorage.getItem('studyhub_theme_v1');
+                if (t && t !== 'light') document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {}
+        })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&family=Playwrite+US+Modern:wght@100..400&family=Lilex:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/theme.css">
+    <link rel="stylesheet" href="../assets/css/space-theme.css">
+    <link rel="stylesheet" href="../assets/css/icons.css" />
+    <link rel="stylesheet" href="../assets/css/theme-fx.css" />
+    <style>
+        [data-theme="dark"] .hero-photo,
+        [data-theme="dark"] .mod-photo {
+            filter: saturate(.92) brightness(.82);
+        }
+
+        [data-theme="dark"] code {
+            background: rgba(147, 181, 137, .12);
+            color: #E8C99A;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: radial-gradient(ellipse 900px 500px at 8% -8%, rgba(255, 169, 22, .10), transparent),
+                radial-gradient(ellipse 800px 600px at 100% 15%, rgba(63, 163, 77, .08), transparent), var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            line-height: 1.68;
+            transition: background-color .35s ease, color .35s ease;
+            padding-bottom: 60px;
+        }
+
+        a {
+            color: var(--mint-dim);
+        }
+
+        html {
+            scrollbar-width: thin;
+            scrollbar-color: var(--mint-dim) transparent;
+        }
+
+        html::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        html::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        html::-webkit-scrollbar-thumb {
+            background-color: var(--mint-dim);
+            border-radius: 20px;
+            border: 2px solid var(--bg);
+            background-clip: padding-box;
+        }
+
+        html::-webkit-scrollbar-thumb:hover {
+            background-color: var(--mint);
+        }
+
+        .topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding: 20px 6vw;
+            border-bottom: 1px solid var(--line);
+            background: var(--panel);
+            transition: background-color .35s ease, border-color .35s ease;
+        }
+
+        .brand-mini {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .brand-mini .logo {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #21252A;
+        }
+
+        .topnav {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .topnav a {
+            font-size: .8rem;
+            text-decoration: none;
+            color: var(--text-dim);
+            background: var(--panel-2);
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            padding: 7px 14px;
+            transition: all .15s ease;
+        }
+
+        .topnav a:hover {
+            border-color: var(--mint);
+            color: var(--mint-dim);
+        }
 
 
-  [data-theme="dark"] .hero-photo,[data-theme="dark"] .mod-photo{filter:saturate(.92) brightness(.82);}
-  [data-theme="dark"] code{background:rgba(147,181,137,.12);color:#E8C99A;}
-  *{box-sizing:border-box;margin:0;padding:0;}
-  html{scroll-behavior:smooth;}
-  body{
-    background:radial-gradient(ellipse 900px 500px at 8% -8%, rgba(255,169,22,.10), transparent),
-      radial-gradient(ellipse 800px 600px at 100% 15%, rgba(63,163,77,.08), transparent), var(--bg);
-    color:var(--text); font-family:var(--font-body); line-height:1.68;
-    transition:background-color .35s ease,color .35s ease;
-    padding-bottom:60px;
-  }
-  a{color:var(--mint-dim);}
-  html{
-    scrollbar-width:thin;
-    scrollbar-color:var(--mint-dim) transparent;
-  }
-  html::-webkit-scrollbar{width:8px;}
-  html::-webkit-scrollbar-track{background:transparent;}
-  html::-webkit-scrollbar-thumb{
-    background-color:var(--mint-dim);border-radius:20px;border:2px solid var(--bg);background-clip:padding-box;
-  }
-  html::-webkit-scrollbar-thumb:hover{background-color:var(--mint);}
-  .topbar{
-    display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;
-    padding:20px 6vw;border-bottom:1px solid var(--line);background:var(--panel);
-    transition:background-color .35s ease,border-color .35s ease;
-  }
-  .brand-mini{display:flex;align-items:center;gap:10px;}
-  .brand-mini .logo{font-family:var(--font-display);font-weight:700;font-size:1.1rem;color:#21252A;}
-  .topnav{display:flex;gap:10px;align-items:center;flex-wrap:wrap;}
-  .topnav a{
-    font-size:.8rem;text-decoration:none;color:var(--text-dim);background:var(--panel-2);
-    border:1px solid var(--line);border-radius:20px;padding:7px 14px;transition:all .15s ease;
-  }
-  .topnav a:hover{border-color:var(--mint);color:var(--mint-dim);}
 
+        main {
+            max-width: 760px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 6vw;
+        }
 
+        .hero-photo {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            border-radius: var(--radius);
+            margin: 28px 0 6px;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid var(--line);
+            display: block;
+        }
 
-  main{max-width:760px;width:100%;margin:0 auto;padding:0 6vw;}
-  .hero-photo{
-    width:100%;height:230px;object-fit:cover;border-radius:var(--radius);
-    margin:28px 0 6px;box-shadow:var(--shadow-soft);border:1px solid var(--line);display:block;
-  }
-  .hero-credit{font-size:.68rem;color:var(--text-dim);text-align:right;margin-bottom:10px;}
-  .char-cameo{display:block;filter:drop-shadow(0 10px 14px rgba(43,46,42,.18));animation:charFloat 4.5s ease-in-out infinite;}
-  @keyframes charFloat{0%,100%{transform:translateY(0) rotate(0);}50%{transform:translateY(-11px) rotate(-1.5deg);}}
-  .char-wrap{display:flex;align-items:flex-end;gap:18px;margin:22px 0;}
-  .char-wrap .char-bubble{
-    flex:1;background:var(--panel);border:2px solid var(--line);border-bottom-width:4px;border-radius:16px;
-    padding:16px 20px;position:relative;box-shadow:var(--shadow-soft);
-  }
-  .char-wrap .char-bubble .char-name{font-family:var(--font-display);font-weight:700;color:var(--mint-dim);font-size:.8rem;margin-bottom:4px;}
-  .char-wrap .char-bubble p{margin:0;font-size:.88rem;}
-  @media(max-width:700px){.char-wrap{flex-direction:column;align-items:center;text-align:center;}
-    .char-wrap .char-bubble::after,.char-wrap .char-bubble::before{display:none;}
-    .char-wrap img.char-cameo{width:100px !important;}}
-  @media(prefers-reduced-motion:reduce){.char-cameo{animation:none;}}
-  @media(max-width:640px){
-    h1{font-size:1.5rem;}
-    .subtitle{font-size:.88rem;}
-    main{padding-left:5vw;padding-right:5vw;}
-    .hero-photo-wrap{height:220px;}
-    .mod-photo-wrap{height:240px;}
-    .topbar{padding:14px 5vw;}
-  }
+        .hero-credit {
+            font-size: .68rem;
+            color: var(--text-dim);
+            text-align: right;
+            margin-bottom: 10px;
+        }
 
-  h1{font-family:var(--font-display);font-size:2rem;color:#21252A;font-weight:700;margin-top:22px;}
-  .subtitle{color:var(--text-dim);max-width:60ch;margin-top:8px;font-size:1rem;}
+        .char-cameo {
+            display: block;
+            filter: drop-shadow(0 10px 14px rgba(43, 46, 42, .18));
+            animation: charFloat 4.5s ease-in-out infinite;
+        }
 
-  .toc{
-    display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 6px;
-  }
-  .toc a{
-    font-size:.76rem;text-decoration:none;color:var(--mint-dim);background:var(--panel-2);
-    border:1px solid var(--line);border-radius:20px;padding:6px 12px;
-  }
+        @keyframes charFloat {
 
-  .wire{
-    height:14px;margin:30px 0 24px;opacity:.8;animation:wireflow 5s linear infinite;
-    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='14' viewBox='0 0 24 14'><path d='M0 7 Q 6 0 12 7 T 24 7' stroke='%237C9473' stroke-opacity='0.55' stroke-width='1.4' fill='none' stroke-dasharray='2 3'/></svg>");
-    background-repeat:repeat-x;background-size:24px 14px;
-  }
-  @keyframes wireflow{from{background-position:0 0;}to{background-position:48px 0;}}
+            0%,
+            100% {
+                transform: translateY(0) rotate(0);
+            }
 
-  article.module{margin-bottom:44px;scroll-margin-top:24px;}
-  .mod-eyebrow{font-family:var(--font-mono);font-size:.7rem;color:var(--mint-dim);letter-spacing:.05em;margin-bottom:6px;}
-  h2.mod-title{font-family:var(--font-display);font-size:1.5rem;color:#21252A;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:10px;}
-  h2.mod-title svg{width:26px;height:26px;color:var(--mint);flex-shrink:0;}
-  .mod-photo-wrap{
-    position:relative;width:100%;height:420px;overflow:hidden;border-radius:12px;margin:14px 0 6px;
-    box-shadow:var(--shadow-soft);border:1px solid var(--line);
-  }
-  .mod-photo-wrap::after{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,0,0,.2) 100%);}
-  .mod-photo{
-    position:absolute;top:-16%;left:0;width:100%;height:132%;object-fit:cover;
-    margin:0;border-radius:0;box-shadow:none;border:none;display:block;will-change:transform;
-  }
-  .mod-photo-credit{font-size:.66rem;color:var(--text-dim);text-align:right;margin-bottom:16px;}
+            50% {
+                transform: translateY(-11px) rotate(-1.5deg);
+            }
+        }
 
-  article.module p{font-size:.95rem;margin-bottom:14px;}
-  article.module strong{color:#21252A;}
-  code{font-family:var(--font-mono);font-size:.85em;color:#8A5A34;background:rgba(63,163,77,.12);padding:2px 6px;border-radius:5px;}
+        .char-wrap {
+            display: flex;
+            align-items: flex-end;
+            gap: 18px;
+            margin: 22px 0;
+        }
 
-  .callout{
-    background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--mint);
-    border-radius:10px;padding:14px 18px;margin:18px 0;box-shadow:var(--shadow-soft);
-  }
-  .callout.warn{border-left-color:var(--amber);}
-  .callout .c-label{font-family:var(--font-display);font-weight:700;font-size:.8rem;color:#21252A;margin-bottom:4px;}
-  .callout p{font-size:.86rem;margin-bottom:0;}
+        .char-wrap .char-bubble {
+            flex: 1;
+            background: var(--panel);
+            border: 2px solid var(--line);
+            border-bottom-width: 4px;
+            border-radius: 16px;
+            padding: 16px 20px;
+            position: relative;
+            box-shadow: var(--shadow-soft);
+        }
 
-  .sources{font-size:.78rem;color:var(--text-dim);margin-top:12px;}
-  .sources a{display:inline-block;margin-right:12px;}
+        .char-wrap .char-bubble .char-name {
+            font-family: var(--font-display);
+            font-weight: 700;
+            color: var(--mint-dim);
+            font-size: .8rem;
+            margin-bottom: 4px;
+        }
 
-  footer{
-    max-width:760px;margin:40px auto 0;padding:20px 6vw 0;border-top:1px solid var(--line-soft);
-    font-size:.74rem;color:var(--text-dim);
-  }
-  .theme-picker-inline{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;max-width:184px;}
-  .theme-swatch{
-    width:20px;height:20px;border-radius:50%;cursor:pointer;border:2px solid var(--line);
-    transition:transform .15s ease;
-  }
-  .theme-swatch:hover{transform:scale(1.18);}
-  .theme-swatch.active{border-color:var(--text);}
-  .swatch-light{background:linear-gradient(135deg,#FFFFFF 50%,#9D25FF 50%);}
-  .swatch-dark{background:linear-gradient(135deg,#131F24 50%,#4FCB5C 50%);}
-  .swatch-blue{background:linear-gradient(135deg,#EFF5FB 50%,#2F86D6 50%);}
-  .swatch-blue-dark{background:linear-gradient(135deg,#0A1826 50%,#4FA3F5 50%);}
-  .swatch-green{background:linear-gradient(135deg,#EFFAF1 50%,#2E9A54 50%);}
-  .swatch-green-dark{background:linear-gradient(135deg,#0B1B12 50%,#4FCB6E 50%);}
-  .swatch-purple{background:linear-gradient(135deg,#F6F0FB 50%,#8B5CE0 50%);}
-  .swatch-purple-dark{background:linear-gradient(135deg,#160E22 50%,#B27FEE 50%);}
-  .swatch-amber{background:linear-gradient(135deg,#FBF3E7 50%,#D97E2C 50%);}
-  .swatch-amber-dark{background:linear-gradient(135deg,#211407 50%,#F0A94E 50%);}
-  .swatch-rose{background:linear-gradient(135deg,#FBF0F3 50%,#D6567F 50%);}
-  .swatch-rose-dark{background:linear-gradient(135deg,#210D16 50%,#F0759E 50%);}
+        .char-wrap .char-bubble p {
+            margin: 0;
+            font-size: .88rem;
+        }
 
-  .mobile-menu-btn {
-    display: none; background: transparent; border: none; color: var(--text); cursor: pointer; padding: 8px; border-radius: 8px;
-  }
-  .mobile-menu-btn:hover { background: var(--panel-2); }
-  @media (max-width: 860px) {
-    .topbar {
-      grid-template-columns: auto auto auto !important;
-      display: grid !important;
-      padding: 12px 16px !important;
-    }
-    .mobile-menu-btn { display: flex; align-items: center; justify-content: center; }
-    .topbar .topnav {
-      display: none;
-      grid-column: 1 / -1;
-      grid-row: 2;
-      justify-self: center;
-      margin-top: 14px;
-      flex-direction: column;
-      align-items: stretch;
-      width: 100%;
-      background: var(--panel);
-      border-radius: 16px;
-      padding: 8px;
-      border: 1px solid var(--line);
-      box-shadow: 0 10px 24px rgba(0,0,0,0.1);
-      animation: menuDrop 0.25s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-    }
-    .topbar .topnav.open {
-      display: flex;
-    }
-    .topbar .topnav a { justify-content: center; padding: 12px; }
-  }
-  @keyframes menuDrop {
-    from { opacity: 0; transform: translateY(-10px) scale(0.98); }
-    to { opacity: 1; transform: translateY(0) scale(1); }
-  }
-</style>
-<link rel="stylesheet" href="../assets/css/course-themes.css">
+        @media(max-width:700px) {
+            .char-wrap {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .char-wrap .char-bubble::after,
+            .char-wrap .char-bubble::before {
+                display: none;
+            }
+
+            .char-wrap img.char-cameo {
+                width: 100px !important;
+            }
+        }
+
+        @media(prefers-reduced-motion:reduce) {
+            .char-cameo {
+                animation: none;
+            }
+        }
+
+        @media(max-width:640px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .subtitle {
+                font-size: .88rem;
+            }
+
+            main {
+                padding-left: 5vw;
+                padding-right: 5vw;
+            }
+
+            .hero-photo-wrap {
+                height: 220px;
+            }
+
+            .mod-photo-wrap {
+                height: 240px;
+            }
+
+            .topbar {
+                padding: 14px 5vw;
+            }
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            color: #21252A;
+            font-weight: 700;
+            margin-top: 22px;
+        }
+
+        .subtitle {
+            color: var(--text-dim);
+            max-width: 60ch;
+            margin-top: 8px;
+            font-size: 1rem;
+        }
+
+        .toc {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 22px 0 6px;
+        }
+
+        .toc a {
+            font-size: .76rem;
+            text-decoration: none;
+            color: var(--mint-dim);
+            background: var(--panel-2);
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            padding: 6px 12px;
+        }
+
+        .wire {
+            height: 14px;
+            margin: 30px 0 24px;
+            opacity: .8;
+            animation: wireflow 5s linear infinite;
+            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='14' viewBox='0 0 24 14'><path d='M0 7 Q 6 0 12 7 T 24 7' stroke='%237C9473' stroke-opacity='0.55' stroke-width='1.4' fill='none' stroke-dasharray='2 3'/></svg>");
+            background-repeat: repeat-x;
+            background-size: 24px 14px;
+        }
+
+        @keyframes wireflow {
+            from {
+                background-position: 0 0;
+            }
+
+            to {
+                background-position: 48px 0;
+            }
+        }
+
+        article.module {
+            margin-bottom: 44px;
+            scroll-margin-top: 24px;
+        }
+
+        .mod-eyebrow {
+            font-family: var(--font-mono);
+            font-size: .7rem;
+            color: var(--mint-dim);
+            letter-spacing: .05em;
+            margin-bottom: 6px;
+        }
+
+        h2.mod-title {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: #21252A;
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2.mod-title svg {
+            width: 26px;
+            height: 26px;
+            color: var(--mint);
+            flex-shrink: 0;
+        }
+
+        .mod-photo-wrap {
+            position: relative;
+            width: 100%;
+            height: 420px;
+            overflow: hidden;
+            border-radius: 12px;
+            margin: 14px 0 6px;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid var(--line);
+        }
+
+        .mod-photo-wrap::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, .2) 100%);
+        }
+
+        .mod-photo {
+            position: absolute;
+            top: -16%;
+            left: 0;
+            width: 100%;
+            height: 132%;
+            object-fit: cover;
+            margin: 0;
+            border-radius: 0;
+            box-shadow: none;
+            border: none;
+            display: block;
+            will-change: transform;
+        }
+
+        .mod-photo-credit {
+            font-size: .66rem;
+            color: var(--text-dim);
+            text-align: right;
+            margin-bottom: 16px;
+        }
+
+        article.module p {
+            font-size: .95rem;
+            margin-bottom: 14px;
+        }
+
+        article.module strong {
+            color: #21252A;
+        }
+
+        code {
+            font-family: var(--font-mono);
+            font-size: .85em;
+            color: #8A5A34;
+            background: rgba(63, 163, 77, .12);
+            padding: 2px 6px;
+            border-radius: 5px;
+        }
+
+        .callout {
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-left: 4px solid var(--mint);
+            border-radius: 10px;
+            padding: 14px 18px;
+            margin: 18px 0;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .callout.warn {
+            border-left-color: var(--amber);
+        }
+
+        .callout .c-label {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: .8rem;
+            color: #21252A;
+            margin-bottom: 4px;
+        }
+
+        .callout p {
+            font-size: .86rem;
+            margin-bottom: 0;
+        }
+
+        .sources {
+            font-size: .78rem;
+            color: var(--text-dim);
+            margin-top: 12px;
+        }
+
+        .sources a {
+            display: inline-block;
+            margin-right: 12px;
+        }
+
+        footer {
+            max-width: 760px;
+            margin: 40px auto 0;
+            padding: 20px 6vw 0;
+            border-top: 1px solid var(--line-soft);
+            font-size: .74rem;
+            color: var(--text-dim);
+        }
+
+        .theme-picker-inline {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 6px;
+            max-width: 184px;
+        }
+
+        .theme-swatch {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid var(--line);
+            transition: transform .15s ease;
+        }
+
+        .theme-swatch:hover {
+            transform: scale(1.18);
+        }
+
+        .theme-swatch.active {
+            border-color: var(--text);
+        }
+
+        .swatch-light {
+            background: linear-gradient(135deg, #FFFFFF 50%, #9D25FF 50%);
+        }
+
+        .swatch-dark {
+            background: linear-gradient(135deg, #131F24 50%, #4FCB5C 50%);
+        }
+
+        .swatch-blue {
+            background: linear-gradient(135deg, #EFF5FB 50%, #2F86D6 50%);
+        }
+
+        .swatch-blue-dark {
+            background: linear-gradient(135deg, #0A1826 50%, #4FA3F5 50%);
+        }
+
+        .swatch-green {
+            background: linear-gradient(135deg, #EFFAF1 50%, #2E9A54 50%);
+        }
+
+        .swatch-green-dark {
+            background: linear-gradient(135deg, #0B1B12 50%, #4FCB6E 50%);
+        }
+
+        .swatch-purple {
+            background: linear-gradient(135deg, #F6F0FB 50%, #8B5CE0 50%);
+        }
+
+        .swatch-purple-dark {
+            background: linear-gradient(135deg, #160E22 50%, #B27FEE 50%);
+        }
+
+        .swatch-amber {
+            background: linear-gradient(135deg, #FBF3E7 50%, #D97E2C 50%);
+        }
+
+        .swatch-amber-dark {
+            background: linear-gradient(135deg, #211407 50%, #F0A94E 50%);
+        }
+
+        .swatch-rose {
+            background: linear-gradient(135deg, #FBF0F3 50%, #D6567F 50%);
+        }
+
+        .swatch-rose-dark {
+            background: linear-gradient(135deg, #210D16 50%, #F0759E 50%);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: transparent;
+            border: none;
+            color: var(--text);
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 8px;
+        }
+
+        .mobile-menu-btn:hover {
+            background: var(--panel-2);
+        }
+
+        @media (max-width: 860px) {
+            .topbar {
+                grid-template-columns: auto auto auto !important;
+                display: grid !important;
+                padding: 12px 16px !important;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .topbar .topnav {
+                display: none;
+                grid-column: 1 / -1;
+                grid-row: 2;
+                justify-self: center;
+                margin-top: 14px;
+                flex-direction: column;
+                align-items: stretch;
+                width: 100%;
+                background: var(--panel);
+                border-radius: 16px;
+                padding: 8px;
+                border: 1px solid var(--line);
+                box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+                animation: menuDrop 0.25s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+            }
+
+            .topbar .topnav.open {
+                display: flex;
+            }
+
+            .topbar .topnav a {
+                justify-content: center;
+                padding: 12px;
+            }
+        }
+
+        @keyframes menuDrop {
+            from {
+                opacity: 0;
+                transform: translateY(-10px) scale(0.98);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="../assets/css/course-themes.css">
 </head>
-<body class="course-android"><a href="#main-content" class="skip-link">Pular para o conteúdo</a><div class="space-planet-photo" aria-hidden="true"></div>
 
-<div class="topbar">
-  <div class="brand-mini"><img class="om om-sm" src="../assets/icons/content/seedling.svg" alt=""> <span class="logo">android.log</span></div>
-  <div class="topnav">
-    <a href="../index.html"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3 3 10.5V21h5.5v-6h7v6H21V10.5L12 3Z"/></svg> universidade log</a>
-    <a href="../glossario/android.html"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor"><path d="M5.5 3h11A1.5 1.5 0 0 1 18 4.5v16.2a.5.5 0 0 1-.74.44L12 18.5l-5.26 2.64a.5.5 0 0 1-.74-.44V4.5A1.5 1.5 0 0 1 5.5 3Z"/><rect x="8" y="7" width="6.5" height="1.3" rx=".65" fill="#fff" opacity=".7"/><rect x="8" y="10" width="6.5" height="1.3" rx=".65" fill="#fff" opacity=".7"/></svg> glossário</a>
-    <a href="android.html"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor"><path d="M3 5.6c2.4-1 5.3-1 8 .5v13.3c-2.7-1.5-5.6-1.5-8-.5V5.6Z" opacity=".55"/><path d="M21 5.6c-2.4-1-5.3-1-8 .5v13.3c2.7-1.5 5.6-1.5 8-.5V5.6Z"/><rect x="4.6" y="8" width="4.8" height="1.1" rx=".55" opacity=".8"/><rect x="4.6" y="10.6" width="4.8" height="1.1" rx=".55" opacity=".8"/></svg> guia de estudo</a>
-    <a href="android-referencias.html"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor"><path d="M9.17 14.83a1 1 0 0 1 0-1.41l4.24-4.25a1 1 0 1 1 1.41 1.42l-4.24 4.24a1 1 0 0 1-1.41 0Z"/><path d="M11 6.4l1.6-1.6a4.5 4.5 0 1 1 6.37 6.36l-2.1 2.1a1 1 0 0 1-1.42-1.41l2.1-2.1a2.5 2.5 0 1 0-3.54-3.54L12.4 7.8A1 1 0 1 1 11 6.4Z"/><path d="M13 17.6l-1.6 1.6a4.5 4.5 0 1 1-6.37-6.36l2.1-2.1a1 1 0 0 1 1.42 1.41l-2.1 2.1a2.5 2.5 0 1 0 3.54 3.54l1.6-1.6a1 1 0 1 1 1.4 1.41Z"/></svg> referências</a>
-    <a href="android-projeto.html"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c2.6 1.7 4.2 4.6 4.2 8.3 0 2-.5 3.9-1.4 5.6h-5.6c-.9-1.7-1.4-3.6-1.4-5.6 0-3.7 1.6-6.6 4.2-8.3Z"/><circle cx="12" cy="9.6" r="1.7" fill="#fff" opacity=".85"/><path d="M8.2 15.3 5 17.4l.9-3.9 2.3-.6v1.8Z" opacity=".6"/><path d="M15.8 15.3l3.2 2.1-.9-3.9-2.3-.6v1.8Z" opacity=".6"/><path d="M10 17.1h4l-.7 3.1a1.6 1.6 0 0 1-2.6 0L10 17.1Z"/></svg> projeto prático</a>
-    <div data-chrome-widget="theme"></div><div data-chrome-widget="a11y"></div>
+<body class="course-android"><a href="#main-content" class="skip-link">Pular para o conteúdo</a>
+    <div class="space-planet-photo" aria-hidden="true"></div>
 
-<main id="main-content">
-  <h1><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor"><path d="M3 5.6c2.4-1 5.3-1 8 .5v13.3c-2.7-1.5-5.6-1.5-8-.5V5.6Z" opacity=".55"/><path d="M21 5.6c-2.4-1-5.3-1-8 .5v13.3c2.7-1.5 5.6-1.5 8-.5V5.6Z"/><rect x="4.6" y="8" width="4.8" height="1.1" rx=".55" opacity=".8"/><rect x="4.6" y="10.6" width="4.8" height="1.1" rx=".55" opacity=".8"/></svg> Aprofundamento por módulo</h1>
-  <p class="subtitle">Leituras um pouco mais longas pra quem já passou pelos microtutoriais e quer entender o "porquê" por trás de cada prática. Escrito em cima da documentação oficial, com link direto pra fonte no fim de cada parte.</p>
+    <div class="topbar">
+        <div class="brand-mini"><img class="om om-sm" src="../assets/icons/content/seedling.svg" alt=""> <span class="logo">android.log</span></div>
+        <div class="topnav">
+            <a href="../index.html"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 3 3 10.5V21h5.5v-6h7v6H21V10.5L12 3Z" />
+                </svg> universidade log</a>
+            <a href="../glossario/android.html"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M5.5 3h11A1.5 1.5 0 0 1 18 4.5v16.2a.5.5 0 0 1-.74.44L12 18.5l-5.26 2.64a.5.5 0 0 1-.74-.44V4.5A1.5 1.5 0 0 1 5.5 3Z" />
+                    <rect x="8" y="7" width="6.5" height="1.3" rx=".65" fill="#fff" opacity=".7" />
+                    <rect x="8" y="10" width="6.5" height="1.3" rx=".65" fill="#fff" opacity=".7" />
+                </svg> glossário</a>
+            <a href="android.html"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M3 5.6c2.4-1 5.3-1 8 .5v13.3c-2.7-1.5-5.6-1.5-8-.5V5.6Z" opacity=".55" />
+                    <path d="M21 5.6c-2.4-1-5.3-1-8 .5v13.3c2.7-1.5 5.6-1.5 8-.5V5.6Z" />
+                    <rect x="4.6" y="8" width="4.8" height="1.1" rx=".55" opacity=".8" />
+                    <rect x="4.6" y="10.6" width="4.8" height="1.1" rx=".55" opacity=".8" />
+                </svg> guia de estudo</a>
+            <a href="android-referencias.html"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M9.17 14.83a1 1 0 0 1 0-1.41l4.24-4.25a1 1 0 1 1 1.41 1.42l-4.24 4.24a1 1 0 0 1-1.41 0Z" />
+                    <path d="M11 6.4l1.6-1.6a4.5 4.5 0 1 1 6.37 6.36l-2.1 2.1a1 1 0 0 1-1.42-1.41l2.1-2.1a2.5 2.5 0 1 0-3.54-3.54L12.4 7.8A1 1 0 1 1 11 6.4Z" />
+                    <path d="M13 17.6l-1.6 1.6a4.5 4.5 0 1 1-6.37-6.36l2.1-2.1a1 1 0 0 1 1.42 1.41l-2.1 2.1a2.5 2.5 0 1 0 3.54 3.54l1.6-1.6a1 1 0 1 1 1.4 1.41Z" />
+                </svg> referências</a>
+            <a href="android-projeto.html"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2.2c2.6 1.7 4.2 4.6 4.2 8.3 0 2-.5 3.9-1.4 5.6h-5.6c-.9-1.7-1.4-3.6-1.4-5.6 0-3.7 1.6-6.6 4.2-8.3Z" />
+                    <circle cx="12" cy="9.6" r="1.7" fill="#fff" opacity=".85" />
+                    <path d="M8.2 15.3 5 17.4l.9-3.9 2.3-.6v1.8Z" opacity=".6" />
+                    <path d="M15.8 15.3l3.2 2.1-.9-3.9-2.3-.6v1.8Z" opacity=".6" />
+                    <path d="M10 17.1h4l-.7 3.1a1.6 1.6 0 0 1-2.6 0L10 17.1Z" />
+                </svg> projeto prático</a>
+            <div data-chrome-widget="theme"></div>
+            <div data-chrome-widget="a11y"></div>
 
-  <div class="char-wrap">
-    <img class="char-cameo" src="../assets/characters/laura.png" alt="Laura, a programadora VR" style="width:120px;flex-shrink:0;">
-    <div class="char-bubble">
-      <div class="char-name">Laura</div>
-      <p>Funciona. Não é bonito. Mas funciona: e entender o porquê por trás é o que separa copiar código de saber o que ele faz.</p>
-    </div>
-  </div>
+            <main id="main-content">
+                <h1><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M3 5.6c2.4-1 5.3-1 8 .5v13.3c-2.7-1.5-5.6-1.5-8-.5V5.6Z" opacity=".55" />
+                        <path d="M21 5.6c-2.4-1-5.3-1-8 .5v13.3c2.7-1.5 5.6-1.5 8-.5V5.6Z" />
+                        <rect x="4.6" y="8" width="4.8" height="1.1" rx=".55" opacity=".8" />
+                        <rect x="4.6" y="10.6" width="4.8" height="1.1" rx=".55" opacity=".8" />
+                    </svg> Aprofundamento por módulo</h1>
+                <p class="subtitle">Leituras um pouco mais longas pra quem já passou pelos microtutoriais e quer entender o "porquê" por trás de cada prática. Escrito em cima da documentação oficial, com link direto pra fonte no fim de cada parte.</p>
 
-  <div class="toc">
-    <a href="#mod0">00 Fundamentos</a>
-    <a href="#mod1">01 Densidade de tela</a>
-    <a href="#mod2">02 Temas</a>
-    <a href="#mod3">03 MVVM &amp; API</a>
-    <a href="#mod3b">03b RecyclerView</a>
-    <a href="#mod4">04 Segurança</a>
-  </div>
+                <div class="char-wrap">
+                    <img class="char-cameo" src="../assets/characters/laura.png" alt="Laura, a programadora VR" style="width:120px;flex-shrink:0;">
+                    <div class="char-bubble">
+                        <div class="char-name">Laura</div>
+                        <p>Funciona. Não é bonito. Mas funciona: e entender o porquê por trás é o que separa copiar código de saber o que ele faz.</p>
+                    </div>
+                </div>
 
-  <div class="wire"></div>
+                <div class="toc">
+                    <a href="#mod0">00 Fundamentos</a>
+                    <a href="#mod1">01 Densidade de tela</a>
+                    <a href="#mod2">02 Temas</a>
+                    <a href="#mod3">03 MVVM &amp; API</a>
+                    <a href="#mod3b">03b RecyclerView</a>
+                    <a href="#mod4">04 Segurança</a>
+                </div>
 
-  <article class="module" id="mod0">
-    <div class="mod-eyebrow">FUNDAMENTOS</div>
-    <h2 class="mod-title"><svg class="ri" viewBox="0 0 24 24" fill="currentColor"><path d="M18.364 17.364L12 23.7279L5.63604 17.364C2.12132 13.8492 2.12132 8.15076 5.63604 4.63604C9.15076 1.12132 14.8492 1.12132 18.364 4.63604C21.8787 8.15076 21.8787 13.8492 18.364 17.364ZM12 13C13.1046 13 14 12.1046 14 11C14 9.89543 13.1046 9 12 9C10.8954 9 10 9.89543 10 11C10 12.1046 10.8954 13 12 13Z"></path></svg><span>O ciclo de vida não é burocracia: é proteção</span></h2>
-    <div class="mod-photo-wrap"><img class="mod-photo" src="https://images.unsplash.com/photo-1716847214624-1e8787d98b6c?auto=format&fit=crop&w=1200&q=68" alt="Pequena cabana aconchegante em meio à floresta"></div>
-    <p class="mod-photo-credit">Foto: Peter Thomas em Unsplash</p>
+                <div class="wire"></div>
 
-    <p>É tentador tratar <code>onPause</code>, <code>onStop</code> e <code>onDestroy</code> como cerimônia obrigatória do Android. Na prática, eles existem porque o sistema pode <strong>matar o processo do seu app a qualquer momento</strong> em segundo plano pra liberar memória: sem avisar, sem pedir licença. O que estiver salvo até <code>onPause</code> sobrevive; o que não estiver, se perde.</p>
+                <article class="module" id="mod0">
+                    <div class="mod-eyebrow">FUNDAMENTOS</div>
+                    <h2 class="mod-title"><svg class="ri" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18.364 17.364L12 23.7279L5.63604 17.364C2.12132 13.8492 2.12132 8.15076 5.63604 4.63604C9.15076 1.12132 14.8492 1.12132 18.364 4.63604C21.8787 8.15076 21.8787 13.8492 18.364 17.364ZM12 13C13.1046 13 14 12.1046 14 11C14 9.89543 13.1046 9 12 9C10.8954 9 10 9.89543 10 11C10 12.1046 10.8954 13 12 13Z"></path>
+                        </svg><span>O ciclo de vida não é burocracia: é proteção</span></h2>
+                    <div class="mod-photo-wrap"><img class="mod-photo" src="https://images.unsplash.com/photo-1716847214624-1e8787d98b6c?auto=format&fit=crop&w=1200&q=68" alt="Pequena cabana aconchegante em meio à floresta"></div>
+                    <p class="mod-photo-credit">Foto: Peter Thomas em Unsplash</p>
 
-    <p>Isso muda a forma de pensar sobre Intents também. Um Intent <strong>explícito</strong> (você nomeia a Activity exata) é previsível e rápido. Um Intent <strong>implícito</strong> (você descreve a ação: "compartilhar texto", "abrir link") delega ao sistema decidir qual app responde, e se mais de um puder, o usuário escolhe. É basicamente uma forma de acoplamento fraco entre apps diferentes no mesmo aparelho.</p>
+                    <p>É tentador tratar <code>onPause</code>, <code>onStop</code> e <code>onDestroy</code> como cerimônia obrigatória do Android. Na prática, eles existem porque o sistema pode <strong>matar o processo do seu app a qualquer momento</strong> em segundo plano pra liberar memória: sem avisar, sem pedir licença. O que estiver salvo até <code>onPause</code> sobrevive; o que não estiver, se perde.</p>
 
-    <div class="callout">
-      <div class="c-label"><img class="om om-sm" src="../assets/icons/content/herb.svg" alt=""> Um detalhe que evita bug silencioso</div>
-      <p>O <code>Bundle</code> que acompanha um Intent tem limite de tamanho: é pensado pra IDs, textos curtos e flags, não pra listas grandes ou bitmaps. Ultrapassar esse limite gera uma <code>TransactionTooLargeException</code>, que só aparece em certos aparelhos, tornando o bug difícil de reproduzir em desenvolvimento.</p>
-    </div>
+                    <p>Isso muda a forma de pensar sobre Intents também. Um Intent <strong>explícito</strong> (você nomeia a Activity exata) é previsível e rápido. Um Intent <strong>implícito</strong> (você descreve a ação: "compartilhar texto", "abrir link") delega ao sistema decidir qual app responde, e se mais de um puder, o usuário escolhe. É basicamente uma forma de acoplamento fraco entre apps diferentes no mesmo aparelho.</p>
 
-    <p class="sources">Fontes: <a href="https://developer.android.com/guide/components/activities/activity-lifecycle" target="_blank" rel="noopener">The activity lifecycle</a><a href="https://developer.android.com/guide/components/intents-filters" target="_blank" rel="noopener">Intents and Intent Filters</a></p>
-  </article>
+                    <div class="callout">
+                        <div class="c-label"><img class="om om-sm" src="../assets/icons/content/herb.svg" alt=""> Um detalhe que evita bug silencioso</div>
+                        <p>O <code>Bundle</code> que acompanha um Intent tem limite de tamanho: é pensado pra IDs, textos curtos e flags, não pra listas grandes ou bitmaps. Ultrapassar esse limite gera uma <code>TransactionTooLargeException</code>, que só aparece em certos aparelhos, tornando o bug difícil de reproduzir em desenvolvimento.</p>
+                    </div>
 
-  <div class="wire"></div>
+                    <p class="sources">Fontes: <a href="https://developer.android.com/guide/components/activities/activity-lifecycle" target="_blank" rel="noopener">The activity lifecycle</a><a href="https://developer.android.com/guide/components/intents-filters" target="_blank" rel="noopener">Intents and Intent Filters</a></p>
+                </article>
 
-  <article class="module" id="mod1">
-    <div class="mod-eyebrow">MÓDULO 01</div>
-    <h2 class="mod-title"><svg class="ri" viewBox="0 0 24 24" fill="currentColor"><path d="M6.75 2.5C9.09721 2.5 11 4.40279 11 6.75V11H6.75C4.40279 11 2.5 9.09721 2.5 6.75C2.5 4.40279 4.40279 2.5 6.75 2.5ZM6.75 13H11V17.25C11 19.5972 9.09721 21.5 6.75 21.5C4.40279 21.5 2.5 19.5972 2.5 17.25C2.5 14.9028 4.40279 13 6.75 13ZM17.25 2.5C19.5972 2.5 21.5 4.40279 21.5 6.75C21.5 9.09721 19.5972 11 17.25 11H13V6.75C13 4.40279 14.9028 2.5 17.25 2.5ZM13 13H17.25C19.5972 13 21.5 14.9028 21.5 17.25C21.5 19.5972 19.5972 21.5 17.25 21.5C14.9028 21.5 13 19.5972 13 17.25V13Z"></path></svg><span>Densidade de tela, sem mistério</span></h2>
-    <div class="mod-photo-wrap"><img class="mod-photo" src="https://images.unsplash.com/photo-1760479099643-b37a52e7c094?auto=format&fit=crop&w=1200&q=68" alt="Caminho na floresta com luz atravessando a névoa"></div>
-    <p class="mod-photo-credit">Foto: Ingmar em Unsplash</p>
+                <div class="wire"></div>
 
-    <p>A fórmula por trás do dp é simples: <code>px = dp × (dpi / 160)</code>. Isso significa que numa tela de 240 dpi, 1 dp equivale a 1,5 pixel físico: e é exatamente essa conversão automática que impede um botão de parecer enorme num aparelho e minúsculo em outro. O Android trata 160 dpi como densidade de referência (a antiga categoria "mdpi"), e todas as outras densidades (hdpi, xhdpi, xxhdpi, xxxhdpi) escalam a partir dela.</p>
+                <article class="module" id="mod1">
+                    <div class="mod-eyebrow">MÓDULO 01</div>
+                    <h2 class="mod-title"><svg class="ri" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M6.75 2.5C9.09721 2.5 11 4.40279 11 6.75V11H6.75C4.40279 11 2.5 9.09721 2.5 6.75C2.5 4.40279 4.40279 2.5 6.75 2.5ZM6.75 13H11V17.25C11 19.5972 9.09721 21.5 6.75 21.5C4.40279 21.5 2.5 19.5972 2.5 17.25C2.5 14.9028 4.40279 13 6.75 13ZM17.25 2.5C19.5972 2.5 21.5 4.40279 21.5 6.75C21.5 9.09721 19.5972 11 17.25 11H13V6.75C13 4.40279 14.9028 2.5 17.25 2.5ZM13 13H17.25C19.5972 13 21.5 14.9028 21.5 17.25C21.5 19.5972 19.5972 21.5 17.25 21.5C14.9028 21.5 13 19.5972 13 17.25V13Z"></path>
+                        </svg><span>Densidade de tela, sem mistério</span></h2>
+                    <div class="mod-photo-wrap"><img class="mod-photo" src="https://images.unsplash.com/photo-1760479099643-b37a52e7c094?auto=format&fit=crop&w=1200&q=68" alt="Caminho na floresta com luz atravessando a névoa"></div>
+                    <p class="mod-photo-credit">Foto: Ingmar em Unsplash</p>
 
-    <p>Vale reforçar um detalhe que passa despercebido: se o app manipula bitmaps diretamente ou responde a gestos contando pixels cruzados pelo dedo, é preciso converter esses valores para dp antes de fazer a lógica: trabalhar direto em px nesses casos reintroduz o mesmo problema de inconsistência entre aparelhos que o dp existe pra resolver.</p>
+                    <p>A fórmula por trás do dp é simples: <code>px = dp × (dpi / 160)</code>. Isso significa que numa tela de 240 dpi, 1 dp equivale a 1,5 pixel físico: e é exatamente essa conversão automática que impede um botão de parecer enorme num aparelho e minúsculo em outro. O Android trata 160 dpi como densidade de referência (a antiga categoria "mdpi"), e todas as outras densidades (hdpi, xhdpi, xxhdpi, xxxhdpi) escalam a partir dela.</p>
 
-    <div class="callout">
-      <div class="c-label"><img class="om om-sm" src="../assets/icons/content/herb.svg" alt=""> Por que ConstraintLayout compensa o esforço</div>
-      <p>Layouts aninhados (LinearLayout dentro de LinearLayout dentro de RelativeLayout...) forçam o sistema a medir a árvore de views várias vezes. O ConstraintLayout resolve isso com uma hierarquia plana: cada view se ancora diretamente em constraints, guidelines ou barriers, sem depender de containers intermediários. Isso tende a reduzir profundidade de hierarquia e o tempo de medição/layout em telas complexas.</p>
-    </div>
+                    <p>Vale reforçar um detalhe que passa despercebido: se o app manipula bitmaps diretamente ou responde a gestos contando pixels cruzados pelo dedo, é preciso converter esses valores para dp antes de fazer a lógica: trabalhar direto em px nesses casos reintroduz o mesmo problema de inconsistência entre aparelhos que o dp existe pra resolver.</p>
 
-    <p>Um recurso que poucos exploram no começo: <strong>barriers</strong>. Uma barrier se posiciona dinamicamente com base no maior (ou menor) entre dois ou mais elementos: útil quando você não sabe de antemão qual view vai ter o texto mais longo, e quer que outras views se alinhem a ela de qualquer forma.</p>
+                    <div class="callout">
+                        <div class="c-label"><img class="om om-sm" src="../assets/icons/content/herb.svg" alt=""> Por que ConstraintLayout compensa o esforço</div>
+                        <p>Layouts aninhados (LinearLayout dentro de LinearLayout dentro de RelativeLayout...) forçam o sistema a medir a árvore de views várias vezes. O ConstraintLayout resolve isso com uma hierarquia plana: cada view se ancora diretamente em constraints, guidelines ou barriers, sem depender de containers intermediários. Isso tende a reduzir profundidade de hierarquia e o tempo de medição/layout em telas complexas.</p>
+                    </div>
 
-    <p class="sources">Fontes: <a href="https://developer.android.com/training/multiscreen/screendensities" target="_blank" rel="noopener">Support different pixel densities</a><a href="https://developer.android.com/develop/ui/views/layout/constraint-layout" target="_blank" rel="noopener">Build a responsive UI with ConstraintLayout</a></p>
-  </article>
+                    <p>Um recurso que poucos exploram no começo: <strong>barriers</strong>. Uma barrier se posiciona dinamicamente com base no maior (ou menor) entre dois ou mais elementos: útil quando você não sabe de antemão qual view vai ter o texto mais longo, e quer que outras views se alinhem a ela de qualquer forma.</p>
 
-  <div class="wire"></div>
+                    <p class="sources">Fontes: <a href="https://developer.android.com/training/multiscreen/screendensities" target="_blank" rel="noopener">Support different pixel densities</a><a href="https://developer.android.com/develop/ui/views/layout/constraint-layout" target="_blank" rel="noopener">Build a responsive UI with ConstraintLayout</a></p>
+                </article>
 
-  <article class="module" id="mod2">
-    <div class="mod-eyebrow">MÓDULO 02</div>
-    <h2 class="mod-title"><svg class="ri" viewBox="0 0 24 24" fill="currentColor"><path d="M15.2459 14H8.75407L7.15407 18H5L11 3H13L19 18H16.8459L15.2459 14ZM14.4459 12L12 5.88516L9.55407 12H14.4459ZM3 20H21V22H3V20Z"></path></svg><span>Por que "tema" e "estilo" não são a mesma coisa</span></h2>
-    <div class="mod-photo-wrap"><img class="mod-photo" src="https://images.unsplash.com/photo-1755690042574-49ff5c3bfe96?auto=format&fit=crop&w=1200&q=68" alt="Prado com flores silvestres ao amanhecer"></div>
-    <p class="mod-photo-credit">Foto: Nastia Petruk em Unsplash</p>
+                <div class="wire"></div>
 
-    <p>Um <strong>style</strong> define atributos para um tipo específico de view: por exemplo, "todo botão primário usa esta fonte e este padding". Um <strong>theme</strong> vai além: define um conjunto de recursos nomeados semanticamente (como <code>colorPrimary</code>) que podem ser referenciados por qualquer style, layout ou widget do app inteiro, quando aplicado via <code>android:theme</code> numa Activity ou no elemento <code>&lt;application&gt;</code> do Manifest.</p>
+                <article class="module" id="mod2">
+                    <div class="mod-eyebrow">MÓDULO 02</div>
+                    <h2 class="mod-title"><svg class="ri" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M15.2459 14H8.75407L7.15407 18H5L11 3H13L19 18H16.8459L15.2459 14ZM14.4459 12L12 5.88516L9.55407 12H14.4459ZM3 20H21V22H3V20Z"></path>
+                        </svg><span>Por que "tema" e "estilo" não são a mesma coisa</span></h2>
+                    <div class="mod-photo-wrap"><img class="mod-photo" src="https://images.unsplash.com/photo-1755690042574-49ff5c3bfe96?auto=format&fit=crop&w=1200&q=68" alt="Prado com flores silvestres ao amanhecer"></div>
+                    <p class="mod-photo-credit">Foto: Nastia Petruk em Unsplash</p>
 
-    <p>A ideia de dar nomes semânticos aos recursos (em vez de usar valores fixos) é o que torna o dark mode possível sem reescrever nenhum layout. O app troca só a definição de <code>colorPrimary</code> ou <code>windowBackground</code> por trás do nome; a estrutura dos styles continua igual. É praticamente o mesmo princípio de variáveis CSS custom properties na web.</p>
+                    <p>Um <strong>style</strong> define atributos para um tipo específico de view: por exemplo, "todo botão primário usa esta fonte e este padding". Um <strong>theme</strong> vai além: define um conjunto de recursos nomeados semanticamente (como <code>colorPrimary</code>) que podem ser referenciados por qualquer style, layout ou widget do app inteiro, quando aplicado via <code>android:theme</code> numa Activity ou no elemento <code>&lt;application&gt;</code> do Manifest.</p>
 
-    <div class="callout">
-      <div class="c-label"><img class="om om-sm" src="../assets/icons/content/herb.svg" alt=""> Escopo importa</div>
-      <p>Se você aplica um style diretamente a um <code>ViewGroup</code> (um container), os filhos <strong>não herdam</strong> essas propriedades automaticamente: só a própria view recebe o style. Para que o efeito se propague para todas as views dentro de uma Activity, é preciso aplicá-lo como tema, não como style pontual.</p>
-    </div>
+                    <p>A ideia de dar nomes semânticos aos recursos (em vez de usar valores fixos) é o que torna o dark mode possível sem reescrever nenhum layout. O app troca só a definição de <code>colorPrimary</code> ou <code>windowBackground</code> por trás do nome; a estrutura dos styles continua igual. É praticamente o mesmo princípio de variáveis CSS custom properties na web.</p>
 
-    <p class="sources">Fontes: <a href="https://developer.android.com/develop/ui/views/theming/themes" target="_blank" rel="noopener">Styles and themes</a><a href="https://developer.android.com/design/ui/mobile/guides/styles/themes" target="_blank" rel="noopener">Themes (Material)</a></p>
-  </article>
+                    <div class="callout">
+                        <div class="c-label"><img class="om om-sm" src="../assets/icons/content/herb.svg" alt=""> Escopo importa</div>
+                        <p>Se você aplica um style diretamente a um <code>ViewGroup</code> (um container), os filhos <strong>não herdam</strong> essas propriedades automaticamente: só a própria view recebe o style. Para que o efeito se propague para todas as views dentro de uma Activity, é preciso aplicá-lo como tema, não como style pontual.</p>
+                    </div>
 
-  <div class="wire"></div>
+                    <p class="sources">Fontes: <a href="https://developer.android.com/develop/ui/views/theming/themes" target="_blank" rel="noopener">Styles and themes</a><a href="https://developer.android.com/design/ui/mobile/guides/styles/themes" target="_blank" rel="noopener">Themes (Material)</a></p>
+                </article>
 
-  <article class="module" id="mod3">
-    <div class="mod-eyebrow">MÓDULO 03</div>
-    <h2 class="mod-title"><svg class="ri" viewBox="0 0 24 24" fill="currentColor"><path d="M21 17C21 19.2091 19.2091 21 17 21C14.7909 21 13 19.2091 13 17C13 14.7909 14.7909 13 17 13C19.2091 13 21 14.7909 21 17ZM11 7C11 9.20914 9.20914 11 7 11C4.79086 11 3 9.20914 3 7C3 4.79086 4.79086 3 7 3C9.20914 3 11 4.79086 11 7ZM21 7C21 9.20914 19.2091 11 17 11C16.2584 11 15.5634 10.7972 14.9678 10.4453L10.4453 14.9678C10.7972 15.5634 11 16.2584 11 17C11 19.2091 9.20914 21 7 21C4.79086 21 3 19.2091 3 17C3 14.7909 4.79086 13 7 13C7.74116 13 8.43593 13.2022 9.03125 13.5537L13.5537 9.03125C13.2022 8.43593 13 7.74116 13 7C13 4.79086 14.7909 3 17 3C19.2091 3 21 4.79086 21 7Z"></path></svg><span>MVVM na prática: e uma pegadinha da Translation API</span></h2>
-    <div class="mod-photo-wrap"><img class="mod-photo" src="https://images.unsplash.com/photo-1755643842005-460e3a030102?auto=format&fit=crop&w=1200&q=68" alt="Reflexo das montanhas em lago calmo ao nascer do sol"></div>
-    <p class="mod-photo-credit">Foto: Emma Swoboda em Unsplash</p>
+                <div class="wire"></div>
 
-    <p>Na documentação oficial de arquitetura do Google, o ViewModel é descrito como um <strong>state holder</strong>: ele deve viver pelo mesmo tempo que a UI que representa. Isso é o que garante que ele sobreviva a uma rotação de tela: a Activity é recriada, mas o ViewModel associado a ela continua o mesmo objeto na memória, então nenhuma chamada de rede precisa ser refeita nem nenhum dado se perde.</p>
+                <article class="module" id="mod3">
+                    <div class="mod-eyebrow">MÓDULO 03</div>
+                    <h2 class="mod-title"><svg class="ri" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M21 17C21 19.2091 19.2091 21 17 21C14.7909 21 13 19.2091 13 17C13 14.7909 14.7909 13 17 13C19.2091 13 21 14.7909 21 17ZM11 7C11 9.20914 9.20914 11 7 11C4.79086 11 3 9.20914 3 7C3 4.79086 4.79086 3 7 3C9.20914 3 11 4.79086 11 7ZM21 7C21 9.20914 19.2091 11 17 11C16.2584 11 15.5634 10.7972 14.9678 10.4453L10.4453 14.9678C10.7972 15.5634 11 16.2584 11 17C11 19.2091 9.20914 21 7 21C4.79086 21 3 19.2091 3 17C3 14.7909 4.79086 13 7 13C7.74116 13 8.43593 13.2022 9.03125 13.5537L13.5537 9.03125C13.2022 8.43593 13 7.74116 13 7C13 4.79086 14.7909 3 17 3C19.2091 3 21 4.79086 21 7Z"></path>
+                        </svg><span>MVVM na prática: e uma pegadinha da Translation API</span></h2>
+                    <div class="mod-photo-wrap"><img class="mod-photo" src="https://images.unsplash.com/photo-1755643842005-460e3a030102?auto=format&fit=crop&w=1200&q=68" alt="Reflexo das montanhas em lago calmo ao nascer do sol"></div>
+                    <p class="mod-photo-credit">Foto: Emma Swoboda em Unsplash</p>
 
-    <p>O Repository entra como <strong>fonte única de verdade</strong>: ele decide se os dados vêm da rede, de um cache local ou de um banco, e expõe isso de forma unificada. A ViewModel nunca deveria saber se por trás existe Retrofit, um banco Room ou os dois: ela só observa o que o Repository expõe.</p>
+                    <p>Na documentação oficial de arquitetura do Google, o ViewModel é descrito como um <strong>state holder</strong>: ele deve viver pelo mesmo tempo que a UI que representa. Isso é o que garante que ele sobreviva a uma rotação de tela: a Activity é recriada, mas o ViewModel associado a ela continua o mesmo objeto na memória, então nenhuma chamada de rede precisa ser refeita nem nenhum dado se perde.</p>
 
-    <div class="callout warn">
-      <div class="c-label"><img class="om om-sm" src="../assets/icons/content/warning.svg" alt=""> Detalhe que derruba muita gente</div>
-      <p>A Cloud Translation API tem duas versões: a <strong>Basic (v2)</strong>, que aceita autenticação simples por API key (a que o guia usa) e a <strong>Advanced (v3)</strong>, que exige OAuth2 ou Application Default Credentials e <em>não aceita</em> API key. Se você trocar de versão sem perceber essa diferença, a autenticação simplesmente para de funcionar.</p>
-    </div>
+                    <p>O Repository entra como <strong>fonte única de verdade</strong>: ele decide se os dados vêm da rede, de um cache local ou de um banco, e expõe isso de forma unificada. A ViewModel nunca deveria saber se por trás existe Retrofit, um banco Room ou os dois: ela só observa o que o Repository expõe.</p>
 
-    <p>Vale notar também que Retrofit não faz chamadas HTTP diretamente: ele transforma uma interface Kotlin/Java anotada (com <code>@GET</code>, <code>@POST</code> etc.) em um objeto chamável, delegando o transporte real para o OkHttp por baixo.</p>
+                    <div class="callout warn">
+                        <div class="c-label"><img class="om om-sm" src="../assets/icons/content/warning.svg" alt=""> Detalhe que derruba muita gente</div>
+                        <p>A Cloud Translation API tem duas versões: a <strong>Basic (v2)</strong>, que aceita autenticação simples por API key (a que o guia usa) e a <strong>Advanced (v3)</strong>, que exige OAuth2 ou Application Default Credentials e <em>não aceita</em> API key. Se você trocar de versão sem perceber essa diferença, a autenticação simplesmente para de funcionar.</p>
+                    </div>
 
-    <p class="sources">Fontes: <a href="https://developer.android.com/topic/architecture/recommendations" target="_blank" rel="noopener">Recommendations for Android architecture</a><a href="https://cloud.google.com/translate/docs/authentication" target="_blank" rel="noopener">Authenticate to Cloud Translation</a><a href="https://square.github.io/retrofit/" target="_blank" rel="noopener">Retrofit</a></p>
-  </article>
+                    <p>Vale notar também que Retrofit não faz chamadas HTTP diretamente: ele transforma uma interface Kotlin/Java anotada (com <code>@GET</code>, <code>@POST</code> etc.) em um objeto chamável, delegando o transporte real para o OkHttp por baixo.</p>
 
-  <div class="wire"></div>
+                    <p class="sources">Fontes: <a href="https://developer.android.com/topic/architecture/recommendations" target="_blank" rel="noopener">Recommendations for Android architecture</a><a href="https://cloud.google.com/translate/docs/authentication" target="_blank" rel="noopener">Authenticate to Cloud Translation</a><a href="https://square.github.io/retrofit/" target="_blank" rel="noopener">Retrofit</a></p>
+                </article>
 
-  <article class="module" id="mod3b">
-    <div class="mod-eyebrow">MÓDULO 03b</div>
-    <h2 class="mod-title"><svg class="ri" viewBox="0 0 24 24" fill="currentColor"><path d="M12.8589 2H11.1411C9.12721 2 8.04724 2.27848 7.06946 2.8014C6.09169 3.32432 5.32432 4.09169 4.8014 5.06946C4.27848 6.04724 4 7.12721 4 9.14111V14.8589C4 16.8728 4.27848 17.9528 4.8014 18.9305C5.32432 19.9083 6.09169 20.6757 7.06946 21.1986C8.04724 21.7215 9.12721 22 11.1411 22H12.8589C14.8728 22 15.9528 21.7215 16.9305 21.1986C17.9083 20.6757 18.6757 19.9083 19.1986 18.9305C19.7215 17.9528 20 16.8728 20 14.8589V9.14111C20 7.12721 19.7215 6.04724 19.1986 5.06946C18.6757 4.09169 17.9083 3.32432 16.9305 2.8014C15.9528 2.27848 14.8728 2 12.8589 2ZM11 11V6H13V11H11ZM7.75781 13.758L9.17203 12.3438L12.0005 15.1722L14.8289 12.3438L16.2431 13.758L12.0005 18.0006L7.75781 13.758Z"></path></svg><span>DiffUtil: o algoritmo que anima só o que mudou</span></h2>
-    <div class="mod-photo-wrap"><img class="mod-photo" src="https://images.unsplash.com/photo-1760479099643-b37a52e7c094?auto=format&fit=crop&w=1200&q=68" alt="Trilha na floresta se estendendo ao longe"></div>
-    <p class="mod-photo-credit">Foto: Ingmar em Unsplash</p>
+                <div class="wire"></div>
 
-    <p>Antes do <code>DiffUtil</code>, atualizar uma lista significava chamar <code>notifyDataSetChanged()</code>: que redesenha absolutamente tudo, mesmo que só um item tenha mudado. O <code>DiffUtil</code> usa uma variação do algoritmo de diff do Myers (o mesmo princípio por trás de <code>git diff</code>) pra comparar a lista antiga com a nova e calcular o menor conjunto de inserções, remoções e atualizações necessário.</p>
+                <article class="module" id="mod3b">
+                    <div class="mod-eyebrow">MÓDULO 03b</div>
+                    <h2 class="mod-title"><svg class="ri" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12.8589 2H11.1411C9.12721 2 8.04724 2.27848 7.06946 2.8014C6.09169 3.32432 5.32432 4.09169 4.8014 5.06946C4.27848 6.04724 4 7.12721 4 9.14111V14.8589C4 16.8728 4.27848 17.9528 4.8014 18.9305C5.32432 19.9083 6.09169 20.6757 7.06946 21.1986C8.04724 21.7215 9.12721 22 11.1411 22H12.8589C14.8728 22 15.9528 21.7215 16.9305 21.1986C17.9083 20.6757 18.6757 19.9083 19.1986 18.9305C19.7215 17.9528 20 16.8728 20 14.8589V9.14111C20 7.12721 19.7215 6.04724 19.1986 5.06946C18.6757 4.09169 17.9083 3.32432 16.9305 2.8014C15.9528 2.27848 14.8728 2 12.8589 2ZM11 11V6H13V11H11ZM7.75781 13.758L9.17203 12.3438L12.0005 15.1722L14.8289 12.3438L16.2431 13.758L12.0005 18.0006L7.75781 13.758Z"></path>
+                        </svg><span>DiffUtil: o algoritmo que anima só o que mudou</span></h2>
+                    <div class="mod-photo-wrap"><img class="mod-photo" src="https://images.unsplash.com/photo-1760479099643-b37a52e7c094?auto=format&fit=crop&w=1200&q=68" alt="Trilha na floresta se estendendo ao longe"></div>
+                    <p class="mod-photo-credit">Foto: Ingmar em Unsplash</p>
 
-    <p>O <code>ListAdapter</code> já embute essa lógica: basta estender a classe e chamar <code>submitList()</code> a cada nova versão dos dados. Por baixo, ele roda o cálculo de diff numa thread de background, então nem trava a UI durante listas grandes.</p>
+                    <p>Antes do <code>DiffUtil</code>, atualizar uma lista significava chamar <code>notifyDataSetChanged()</code>: que redesenha absolutamente tudo, mesmo que só um item tenha mudado. O <code>DiffUtil</code> usa uma variação do algoritmo de diff do Myers (o mesmo princípio por trás de <code>git diff</code>) pra comparar a lista antiga com a nova e calcular o menor conjunto de inserções, remoções e atualizações necessário.</p>
 
-    <div class="callout">
-      <div class="c-label"><img class="om om-sm" src="../assets/icons/content/herb.svg" alt=""> Um cuidado com cliques</div>
-      <p>O listener de clique deve ser configurado dentro de <code>bind()</code> (chamado toda vez que o ViewHolder é reciclado para um novo item) nunca em <code>onCreateViewHolder()</code>, que roda só quando uma célula nova é criada do zero. Colocar o listener no lugar errado é a causa mais comum de "cliquei no item 3 mas a ação foi do item 8" em listas Android.</p>
-    </div>
+                    <p>O <code>ListAdapter</code> já embute essa lógica: basta estender a classe e chamar <code>submitList()</code> a cada nova versão dos dados. Por baixo, ele roda o cálculo de diff numa thread de background, então nem trava a UI durante listas grandes.</p>
 
-    <p class="sources">Fontes: <a href="https://developer.android.com/develop/ui/views/layout/recyclerview" target="_blank" rel="noopener">Create dynamic lists with RecyclerView</a></p>
-  </article>
+                    <div class="callout">
+                        <div class="c-label"><img class="om om-sm" src="../assets/icons/content/herb.svg" alt=""> Um cuidado com cliques</div>
+                        <p>O listener de clique deve ser configurado dentro de <code>bind()</code> (chamado toda vez que o ViewHolder é reciclado para um novo item) nunca em <code>onCreateViewHolder()</code>, que roda só quando uma célula nova é criada do zero. Colocar o listener no lugar errado é a causa mais comum de "cliquei no item 3 mas a ação foi do item 8" em listas Android.</p>
+                    </div>
 
-  <div class="wire"></div>
+                    <p class="sources">Fontes: <a href="https://developer.android.com/develop/ui/views/layout/recyclerview" target="_blank" rel="noopener">Create dynamic lists with RecyclerView</a></p>
+                </article>
 
-  <article class="module" id="mod4">
-    <div class="mod-eyebrow">MÓDULO 04</div>
-    <h2 class="mod-title"><svg class="ri" viewBox="0 0 24 24" fill="currentColor"><path d="M16 2L21 7V21.0082C21 21.556 20.5551 22 20.0066 22H3.9934C3.44476 22 3 21.5447 3 21.0082V2.9918C3 2.44405 3.44495 2 3.9934 2H16ZM15 11V10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10V11H8V16H16V11H15ZM13 11H11V10C11 9.44772 11.4477 9 12 9C12.5523 9 13 9.44772 13 10V11Z"></path></svg><span>Segurança de credenciais: o que o local.properties não resolve sozinho</span></h2>
-    <div class="mod-photo-wrap"><img class="mod-photo" src="https://images.unsplash.com/photo-1759144897143-991d650b1668?auto=format&fit=crop&w=1200&q=68" alt="Cabana iluminada sob céu estrelado"></div>
-    <p class="mod-photo-credit">Foto: Sora Sagano em Unsplash</p>
+                <div class="wire"></div>
 
-    <p>Guardar a chave em <code>local.properties</code> e lê-la via <code>buildConfigField</code> resolve um problema real: a chave para de aparecer em texto puro no código-fonte versionado. Mas vale ter os pés no chão sobre o que isso <strong>não</strong> resolve: um APK publicado pode ser descompilado, e uma chave embutida no <code>BuildConfig</code> ainda é recuperável por quem sabe procurar. É proteção contra vazamento acidental no Git, não contra engenharia reversa deliberada.</p>
+                <article class="module" id="mod4">
+                    <div class="mod-eyebrow">MÓDULO 04</div>
+                    <h2 class="mod-title"><svg class="ri" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M16 2L21 7V21.0082C21 21.556 20.5551 22 20.0066 22H3.9934C3.44476 22 3 21.5447 3 21.0082V2.9918C3 2.44405 3.44495 2 3.9934 2H16ZM15 11V10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10V11H8V16H16V11H15ZM13 11H11V10C11 9.44772 11.4477 9 12 9C12.5523 9 13 9.44772 13 10V11Z"></path>
+                        </svg><span>Segurança de credenciais: o que o local.properties não resolve sozinho</span></h2>
+                    <div class="mod-photo-wrap"><img class="mod-photo" src="https://images.unsplash.com/photo-1759144897143-991d650b1668?auto=format&fit=crop&w=1200&q=68" alt="Cabana iluminada sob céu estrelado"></div>
+                    <p class="mod-photo-credit">Foto: Sora Sagano em Unsplash</p>
 
-    <p>Por isso o Google recomenda uma segunda camada: <strong>restringir a própria chave</strong> no console do Cloud, associando-a ao nome do pacote do app e à impressão digital SHA-1 do certificado de assinatura. Mesmo que alguém extraia a chave do APK, ela só funciona nesse app específico.</p>
+                    <p>Guardar a chave em <code>local.properties</code> e lê-la via <code>buildConfigField</code> resolve um problema real: a chave para de aparecer em texto puro no código-fonte versionado. Mas vale ter os pés no chão sobre o que isso <strong>não</strong> resolve: um APK publicado pode ser descompilado, e uma chave embutida no <code>BuildConfig</code> ainda é recuperável por quem sabe procurar. É proteção contra vazamento acidental no Git, não contra engenharia reversa deliberada.</p>
 
-    <div class="callout">
-      <div class="c-label"><img class="om om-sm" src="../assets/icons/content/herb.svg" alt=""> O que a OWASP chama de M1</div>
-      <p>No Mobile Top 10 da OWASP, "uso impróprio de credenciais" (chaves fixas no código, segredos mal armazenados) aparece como uma das categorias mais recorrentes de vulnerabilidade em apps móveis: não é um detalhe menor, é um dos riscos mais comuns na prática.</p>
-    </div>
+                    <p>Por isso o Google recomenda uma segunda camada: <strong>restringir a própria chave</strong> no console do Cloud, associando-a ao nome do pacote do app e à impressão digital SHA-1 do certificado de assinatura. Mesmo que alguém extraia a chave do APK, ela só funciona nesse app específico.</p>
 
-    <p>Para segredos realmente sensíveis (não só uma chave de API com cota limitada, mas credenciais de produção), times mais maduros costumam ir além do <code>local.properties</code>: variáveis de ambiente injetadas em CI/CD, ou até criptografia do valor antes de embuti-lo no binário. O ponto de partida do guia: <code>local.properties</code> + <code>.gitignore</code>: já cobre o erro mais comum e mais caro: a chave commitada por acidente.</p>
+                    <div class="callout">
+                        <div class="c-label"><img class="om om-sm" src="../assets/icons/content/herb.svg" alt=""> O que a OWASP chama de M1</div>
+                        <p>No Mobile Top 10 da OWASP, "uso impróprio de credenciais" (chaves fixas no código, segredos mal armazenados) aparece como uma das categorias mais recorrentes de vulnerabilidade em apps móveis: não é um detalhe menor, é um dos riscos mais comuns na prática.</p>
+                    </div>
 
-    <p>A camada de rede merece o mesmo cuidado: usar <code>HttpsURLConnection</code> ou uma lib que já valida certificado (Retrofit/OkHttp fazem isso por padrão) evita boa parte dos ataques de interceptação. E do lado do binário, ativar <code>minifyEnabled true</code> liga o R8, que renomeia classes e métodos para nomes curtos: não impede engenharia reversa por completo, mas eleva bastante o custo de quem tentar.</p>
+                    <p>Para segredos realmente sensíveis (não só uma chave de API com cota limitada, mas credenciais de produção), times mais maduros costumam ir além do <code>local.properties</code>: variáveis de ambiente injetadas em CI/CD, ou até criptografia do valor antes de embuti-lo no binário. O ponto de partida do guia: <code>local.properties</code> + <code>.gitignore</code>: já cobre o erro mais comum e mais caro: a chave commitada por acidente.</p>
 
-    <p class="sources">Fontes: <a href="https://cloud.google.com/docs/authentication/api-keys" target="_blank" rel="noopener">Manage API keys</a><a href="https://owasp.org/www-project-mobile-top-10/" target="_blank" rel="noopener">OWASP Mobile Top 10</a><a href="https://infinum.com/blog/secrets-android-projects/" target="_blank" rel="noopener">Keeping Secrets Safe in Android Projects</a><a href="https://developer.android.com/privacy-and-security/security-ssl" target="_blank" rel="noopener">Security with network protocols</a><a href="https://developer.android.com/topic/performance/app-optimization/enable-app-optimization" target="_blank" rel="noopener">Enable app optimization with R8</a></p>
-  </article>
+                    <p>A camada de rede merece o mesmo cuidado: usar <code>HttpsURLConnection</code> ou uma lib que já valida certificado (Retrofit/OkHttp fazem isso por padrão) evita boa parte dos ataques de interceptação. E do lado do binário, ativar <code>minifyEnabled true</code> liga o R8, que renomeia classes e métodos para nomes curtos: não impede engenharia reversa por completo, mas eleva bastante o custo de quem tentar.</p>
 
-  <footer>
-    Conteúdo escrito com base nas fontes citadas em cada seção: não é tradução nem cópia da documentação original, apenas uma leitura organizada dela. Para o texto oficial completo, sempre vale abrir o link.
-  </footer>
-</main>
+                    <p class="sources">Fontes: <a href="https://cloud.google.com/docs/authentication/api-keys" target="_blank" rel="noopener">Manage API keys</a><a href="https://owasp.org/www-project-mobile-top-10/" target="_blank" rel="noopener">OWASP Mobile Top 10</a><a href="https://infinum.com/blog/secrets-android-projects/" target="_blank" rel="noopener">Keeping Secrets Safe in Android Projects</a><a href="https://developer.android.com/privacy-and-security/security-ssl" target="_blank" rel="noopener">Security with network protocols</a><a href="https://developer.android.com/topic/performance/app-optimization/enable-app-optimization" target="_blank" rel="noopener">Enable app optimization with R8</a></p>
+                </article>
 
-<script>
-  </script>
-    <script defer src="../assets/js/chrome-widgets.js"></script>
-    <script defer src="../assets/js/theme-picker.js"></script>
-<script defer src="../assets/js/accessibility.js"></script>
-    <script defer src="../assets/js/theme-fx.js"></script>
+                <footer>
+                    Conteúdo escrito com base nas fontes citadas em cada seção: não é tradução nem cópia da documentação original, apenas uma leitura organizada dela. Para o texto oficial completo, sempre vale abrir o link.
+                </footer>
+            </main>
+
+            <script>
+            </script>
+            <script defer src="../assets/js/chrome-widgets.js"></script>
+            <script defer src="../assets/js/theme-picker.js"></script>
+            <script defer src="../assets/js/accessibility.js"></script>
+            <script defer src="../assets/js/theme-fx.js"></script>
 </body>
+
 </html>
