@@ -1,6 +1,4 @@
 {
-  "_comment_404": "Página de erro 404: nenhuma rota extra é necessária. Pra um site estático (sem framework), a Vercel emite automaticamente o 404.html da pasta publicada quando nenhuma outra rota bate — confirmado na documentação oficial (vercel.com/kb/guide/custom-404-page). 403.html e 500.html ficam prontos como modelo pro dia em que existir algum backend/API real; hoje, sendo estático, nada do servidor gera esses códigos sozinho.",
-  "_comment_hsts": "Sem Strict-Transport-Security aqui de propósito: a Vercel já adiciona esse cabeçalho automaticamente em todo domínio (confirmado na documentação oficial de segurança/encryption da Vercel) — max-age=63072000 com preload em *.vercel.app, e max-age=63072000 em domínio próprio. Diferente do X-Frame-Options/CSP/Permissions-Policy abaixo, que a Vercel confirma NÃO adicionar por padrão (por isso esses seguem explícitos aqui).",
   "headers": [
     {
       "source": "/(.*)",
