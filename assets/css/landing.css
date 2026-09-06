@@ -375,40 +375,30 @@ body {
 
 /* .content-wrapper { filter: none; } -- removido pois impedia a aplicação do filtro de daltonismo */
 
-/* ---------- tela de carregamento inicial ----------
-   Curta e discreta: some assim que a página está pronta, ou depois
-   de no máximo ~1s se algo demorar. Nunca trava a navegação. */
+/* ---------- tela de carregamento inicial ---------- */
 .lp-loader {
     position: fixed;
-    inset: 0;
-    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
     background: var(--bg);
+    z-index: 99999;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    transition:
-        opacity 0.4s ease,
-        visibility 0.4s;
+    gap: 20px;
+    overflow: hidden; /* Garante que a tela de loading NUNCA tenha scroll */
+    transition: opacity 0.4s ease, visibility 0.4s;
 }
 
 .lp-loader::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at center,
-            color-mix(in srgb, var(--mint) 8%, transparent) 0%,
-            transparent 60%);
+    background: radial-gradient(circle at center, color-mix(in srgb, var(--mint) 8%, transparent) 0%, transparent 60%);
     pointer-events: none;
-}
-
-.lp-loader-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 24px;
-    z-index: 1;
 }
 
 .lp-loader-mark {
@@ -426,30 +416,16 @@ body {
 }
 
 @keyframes loaderBob {
-    0% {
-        transform: translateY(3px);
-    }
-
-    100% {
-        transform: translateY(-6px);
-    }
-}
-
-.lp-loader-details {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 14px;
-    width: 260px;
+    0% { transform: translateY(3px); }
+    100% { transform: translateY(-6px); }
 }
 
 .lp-loader-bar {
-    width: 100%;
-    height: 3px;
+    width: 200px;
+    height: 4px;
     border-radius: 4px;
     background: color-mix(in srgb, var(--panel-2) 50%, transparent);
     overflow: hidden;
-    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .lp-loader-fill {
@@ -457,53 +433,31 @@ body {
     height: 100%;
     border-radius: 4px;
     background: var(--mint);
-    box-shadow:
-        0 0 12px var(--mint),
-        0 0 24px color-mix(in srgb, var(--mint) 60%, transparent);
+    box-shadow: 0 0 12px var(--mint), 0 0 24px color-mix(in srgb, var(--mint) 60%, transparent);
     animation: loaderProgress 2.8s cubic-bezier(0.65, 0, 0.35, 1) forwards;
 }
 
 @keyframes loaderProgress {
-    0% {
-        width: 0%;
-    }
-
-    20% {
-        width: 15%;
-    }
-
-    60% {
-        width: 70%;
-    }
-
-    90% {
-        width: 95%;
-    }
-
-    100% {
-        width: 100%;
-    }
+    0% { width: 0%; }
+    20% { width: 15%; }
+    60% { width: 70%; }
+    90% { width: 95%; }
+    100% { width: 100%; }
 }
 
 .lp-loader-text {
     font-family: var(--font-mono);
     font-size: 0.75rem;
     color: var(--text-dim);
-    letter-spacing: 0.05em;
     text-transform: uppercase;
+    letter-spacing: 0.1em;
     animation: pulseText 1.5s ease-in-out infinite alternate;
 }
 
 @keyframes pulseText {
-    0% {
-        opacity: 0.5;
-    }
-
-    100% {
-        opacity: 1;
-    }
+    0% { opacity: 0.5; }
+    100% { opacity: 1; }
 }
-
 .lp-loader.lp-loader--hide {
     opacity: 0;
     pointer-events: none;

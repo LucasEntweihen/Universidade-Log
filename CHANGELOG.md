@@ -577,3 +577,6 @@ Ponto de partida: site já existente, enviado pelo usuário em formato `.zip`, c
 - Duas rodadas de upload de imagem foram necessárias: a primeira tentativa de anexar as imagens dos personagens (Baba Grogue, Octocat, Ama-zz-on, navio) e os arquivos-fonte do site (`.zip`, `AGAWS.md`) não persistiu no sistema de arquivos do assistente; o usuário reenviou os arquivos e o trabalho prosseguiu normalmente a partir daí.
 - Todo o conteúdo técnico do curso de DevOps foi extraído e sintetizado a partir de fontes reais fornecidas pelo usuário (documento de síntese técnica sobre DevOps/Git/Docker, PDF de laboratório de Kubernetes, slides de aula) — nenhum comando, conceito ou definição técnica foi inventado.
 - Este arquivo é mantido manualmente a cada rodada de mudanças relevantes no projeto.
+
+### Fixed
+- **UI:** Tela de carregamento totalmente reformulada para ocupar exatamente 100% da tela (sem bordas extras) e com trava explícita de rolagem (scroll) para evitar quebras visuais em telas menores ou dispositivos móveis.

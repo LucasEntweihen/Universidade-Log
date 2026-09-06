@@ -113,18 +113,14 @@
 <body>
     <a href="#main-content" class="skip-link">Pular para o conteúdo</a>
     <div id="lp-loader" class="lp-loader" role="status" aria-label="Carregando Universidade Log">
-        <div class="lp-loader-content">
-            <div class="lp-loader-mark">
-                <img src="assets/characters/byte.png" alt="" width="72" height="78" />
-            </div>
-            <div class="lp-loader-details">
-                <div class="lp-loader-bar">
-                    <div class="lp-loader-fill"></div>
-                </div>
-                <div class="lp-loader-text">iniciando o sistema...</div>
-            </div>
-        </div>
+    <div class="lp-loader-mark">
+        <img src="assets/characters/byte.png" alt="" width="72" height="78" loading="eager" />
     </div>
+    <div class="lp-loader-bar">
+        <div class="lp-loader-fill"></div>
+    </div>
+    <div class="lp-loader-text">iniciando o sistema...</div>
+</div>
     <script>
         // Tela de carregamento: agora com delay proposital para exibição
         // da barra de progresso (mínimo de ~2.8s antes de sumir).
@@ -132,11 +128,13 @@
             var loader = document.getElementById("lp-loader");
             if (!loader) return;
             var hidden = false;
+            document.body.style.overflow = 'hidden';
 
             function hide() {
                 if (hidden) return;
                 hidden = true;
                 loader.classList.add("lp-loader--hide");
+                    document.body.style.overflow = "";
                 setTimeout(function() {
                     if (loader.parentNode) loader.parentNode.removeChild(loader);
                 }, 500);
