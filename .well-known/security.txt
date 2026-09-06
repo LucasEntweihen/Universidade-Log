@@ -1,0 +1,4 @@
+Contact: mailto:SUBSTITUA-PELO-SEU-EMAIL-DE-CONTATO@universidadelog.com.br
+Expires: 2027-08-31T23:59:00.000Z
+Preferred-Languages: pt-BR, en
+Canonical: https://universidadelog.com.br/.well-known/security.txt

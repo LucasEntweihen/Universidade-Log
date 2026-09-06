@@ -1,0 +1,1556 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="../assets/icons/brand/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/brand/favicon-32.png" />
+<link rel="apple-touch-icon" href="../assets/icons/brand/apple-touch-icon.png" />
+<link rel="manifest" href="../manifest.json" />
+<meta name="theme-color" content="#9D25FF" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://images.unsplash.com; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests" />
+<meta name="referrer" content="strict-origin-when-cross-origin" />
+<title>android.log: Guia de Estudos Android</title>
+<meta name="description" content="Guia de estudos completo do curso de Android (Kotlin) da Universidade Log: trilha gamificada com XP, conquistas, minigames e mascotes. Grátis, sem conta." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://universidadelog.com.br/cursos/android.html" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:url" content="https://universidadelog.com.br/cursos/android.html" />
+<meta property="og:site_name" content="Universidade Log" />
+<meta property="og:title" content="android.log: Guia de Estudos Android" />
+<meta property="og:description" content="Guia de estudos completo do curso de Android (Kotlin) da Universidade Log: trilha gamificada com XP, conquistas, minigames e mascotes. Grátis, sem conta." />
+<meta property="og:image" content="https://universidadelog.com.br/assets/characters/byte.png" />
+<meta property="og:image:alt" content="Byte, o mascote do curso de Android" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="android.log: Guia de Estudos Android" />
+<meta name="twitter:description" content="Guia de estudos completo do curso de Android (Kotlin) da Universidade Log: trilha gamificada com XP, conquistas, minigames e mascotes. Grátis, sem conta." />
+<meta name="twitter:image" content="https://universidadelog.com.br/assets/characters/byte.png" />
+<script>(function(){try{var t=localStorage.getItem('studyhub_theme_v1');if(t && t!=='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&family=Playwrite+US+Modern:wght@100..400&family=Lilex:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/theme.css">
+<link rel="stylesheet" href="../assets/css/space-theme.css">
+<link rel="stylesheet" href="../assets/css/icons.css" />
+<link rel="stylesheet" href="../assets/css/theme-fx.css" />
+<link rel="stylesheet" href="../assets/css/site.css">
+<link rel="stylesheet" href="../assets/css/games.css">
+<script>
+  window.COURSE = {
+    totalModules: 11,
+    prefix: 'android'
+  };
+</script>
+</head>
+<body class="course-android"><a href="#main-content" class="skip-link">Pular para o conteúdo</a><div class="space-planet-photo" aria-hidden="true"></div>
+
+<div class="mobile-course-topbar" aria-hidden="true">
+  <div class="mct-brand"><img src="../assets/icons/content/seedling.svg" class="om om-sm"> <span>android.log</span></div>
+  <button class="mobile-menu-btn" aria-label="Abrir menu" aria-expanded="false" onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true'); document.querySelector('aside').classList.toggle('open');">
+    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+      <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/>
+    </svg>
+  </button>
+</div>
+
+
+<div class="phone-chrome-top" aria-hidden="true">
+  <div class="phone-notch"><span class="cam-dot"></span><span class="spk-line"></span></div>
+</div>
+<div class="phone-chrome-bottom">
+  <button type="button" class="phone-nav-btn nav-back" title="Voltar" aria-label="Voltar" onclick="history.length>1 ? history.back() : switchTab(0)">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 4 7 12l8 8"/></svg>
+  </button>
+  <button type="button" class="phone-nav-btn nav-home" title="Início" aria-label="Ir para a página inicial" onclick="window.location.href='../index.html'">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><circle cx="12" cy="12" r="8"/></svg>
+  </button>
+  <button type="button" class="phone-nav-btn nav-recents" title="Módulos" aria-label="Ver todos os módulos" onclick="const a=document.querySelector('aside'); if(a) a.classList.toggle('open');">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="5" y="5" width="14" height="14" rx="2"/></svg>
+  </button>
+</div>
+
+<aside>
+  <div class="sidebar-hero"><img class="char-cameo" src="../assets/characters/byte.png" alt="Byte, a lontra mascote do site, acenando"></div>
+  <div class="brand">
+    <span class="tag"><img class="om om-sm" src="../assets/icons/content/seedling.svg" alt=""> seu ritmo, seu progresso</span>
+    <h1>android.log</h1>
+    <p>Layouts, temas, arquitetura e segurança: cresça um pouco a cada dia, sem pressa</p>
+  </div>
+  <div class="theme-toggle">
+<div data-chrome-widget="theme"></div><div data-chrome-widget="a11y"></div>
+  <nav id="navList" class="path-nav">
+    <div class="path-line"></div>
+    <button class="path-node pos-l" onclick="switchTab(0)" data-idx="0" title="Fundamentos & Navegação">
+      <span class="node-circle" id="node-6"><span class="node-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.364 17.364L12 23.7279L5.63604 17.364C2.12132 13.8492 2.12132 8.15076 5.63604 4.63604C9.15076 1.12132 14.8492 1.12132 18.364 4.63604C21.8787 8.15076 21.8787 13.8492 18.364 17.364ZM12 13C13.1046 13 14 12.1046 14 11C14 9.89543 13.1046 9 12 9C10.8954 9 10 9.89543 10 11C10 12.1046 10.8954 13 12 13Z"></path></svg></span><span class="node-lock"><svg class="ic-mono sm" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a4.5 4.5 0 0 0-4.5 4.5V8H6.75A1.75 1.75 0 0 0 5 9.75v9.5C5 20.216 5.784 21 6.75 21h10.5c.966 0 1.75-.784 1.75-1.75v-9.5A1.75 1.75 0 0 0 17.25 8H16.5V6.5A4.5 4.5 0 0 0 12 2Zm0 2c1.38 0 2.5 1.12 2.5 2.5V8h-5V6.5C9.5 5.12 10.62 4 12 4Zm0 9.25a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5Z"/></svg></span><span class="node-check">✓</span></span>
+      <span class="node-label">01 · Fundamentos</span>
+    </button>
+    <button class="path-node pos-r" onclick="switchTab(1)" data-idx="1" title="UI & View Binding">
+      <span class="node-circle" id="node-7"><span class="node-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.3638 15.5355L16.9496 14.1213L18.3638 12.7071C20.3164 10.7545 20.3164 7.58866 18.3638 5.63604C16.4112 3.68341 13.2453 3.68341 11.2927 5.63604L9.87849 7.05025L8.46428 5.63604L9.87849 4.22182C12.6122 1.48815 17.0443 1.48815 19.778 4.22182C22.5117 6.95549 22.5117 11.3876 19.778 14.1213L18.3638 15.5355ZM15.5353 18.364L14.1211 19.7782C11.3875 22.5118 6.95531 22.5118 4.22164 19.7782C1.48797 17.0445 1.48797 12.6123 4.22164 9.87868L5.63585 8.46446L7.05007 9.87868L5.63585 11.2929C3.68323 13.2455 3.68323 16.4113 5.63585 18.364C7.58847 20.3166 10.7543 20.3166 12.7069 18.364L14.1211 16.9497L15.5353 18.364ZM14.8282 7.75736L16.2425 9.17157L9.17139 16.2426L7.75717 14.8284L14.8282 7.75736Z"></path></svg></span><span class="node-lock"><svg class="ic-mono sm" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a4.5 4.5 0 0 0-4.5 4.5V8H6.75A1.75 1.75 0 0 0 5 9.75v9.5C5 20.216 5.784 21 6.75 21h10.5c.966 0 1.75-.784 1.75-1.75v-9.5A1.75 1.75 0 0 0 17.25 8H16.5V6.5A4.5 4.5 0 0 0 12 2Zm0 2c1.38 0 2.5 1.12 2.5 2.5V8h-5V6.5C9.5 5.12 10.62 4 12 4Zm0 9.25a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5Z"/></svg></span><span class="node-check">✓</span></span>
+      <span class="node-label">02 · UI &amp; Binding</span>
+    </button>
+    <button class="path-node pos-l" onclick="switchTab(2)" data-idx="2" title="Layouts & Densidade">
+      <span class="node-circle" id="node-1"><span class="node-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.75 2.5C9.09721 2.5 11 4.40279 11 6.75V11H6.75C4.40279 11 2.5 9.09721 2.5 6.75C2.5 4.40279 4.40279 2.5 6.75 2.5ZM6.75 13H11V17.25C11 19.5972 9.09721 21.5 6.75 21.5C4.40279 21.5 2.5 19.5972 2.5 17.25C2.5 14.9028 4.40279 13 6.75 13ZM17.25 2.5C19.5972 2.5 21.5 4.40279 21.5 6.75C21.5 9.09721 19.5972 11 17.25 11H13V6.75C13 4.40279 14.9028 2.5 17.25 2.5ZM13 13H17.25C19.5972 13 21.5 14.9028 21.5 17.25C21.5 19.5972 19.5972 21.5 17.25 21.5C14.9028 21.5 13 19.5972 13 17.25V13Z"></path></svg></span><span class="node-lock"><svg class="ic-mono sm" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a4.5 4.5 0 0 0-4.5 4.5V8H6.75A1.75 1.75 0 0 0 5 9.75v9.5C5 20.216 5.784 21 6.75 21h10.5c.966 0 1.75-.784 1.75-1.75v-9.5A1.75 1.75 0 0 0 17.25 8H16.5V6.5A4.5 4.5 0 0 0 12 2Zm0 2c1.38 0 2.5 1.12 2.5 2.5V8h-5V6.5C9.5 5.12 10.62 4 12 4Zm0 9.25a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5Z"/></svg></span><span class="node-check">✓</span></span>
+      <span class="node-label">03 · Layouts</span>
+    </button>
+    <button class="path-node pos-r" onclick="switchTab(3)" data-idx="3" title="Temas & Design System">
+      <span class="node-circle" id="node-2"><span class="node-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.2459 14H8.75407L7.15407 18H5L11 3H13L19 18H16.8459L15.2459 14ZM14.4459 12L12 5.88516L9.55407 12H14.4459ZM3 20H21V22H3V20Z"></path></svg></span><span class="node-lock"><svg class="ic-mono sm" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a4.5 4.5 0 0 0-4.5 4.5V8H6.75A1.75 1.75 0 0 0 5 9.75v9.5C5 20.216 5.784 21 6.75 21h10.5c.966 0 1.75-.784 1.75-1.75v-9.5A1.75 1.75 0 0 0 17.25 8H16.5V6.5A4.5 4.5 0 0 0 12 2Zm0 2c1.38 0 2.5 1.12 2.5 2.5V8h-5V6.5C9.5 5.12 10.62 4 12 4Zm0 9.25a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5Z"/></svg></span><span class="node-check">✓</span></span>
+      <span class="node-label">04 · Temas</span>
+    </button>
+    <button class="path-node pos-l" onclick="switchTab(4)" data-idx="4" title="RecyclerView">
+      <span class="node-circle" id="node-8"><span class="node-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.8589 2H11.1411C9.12721 2 8.04724 2.27848 7.06946 2.8014C6.09169 3.32432 5.32432 4.09169 4.8014 5.06946C4.27848 6.04724 4 7.12721 4 9.14111V14.8589C4 16.8728 4.27848 17.9528 4.8014 18.9305C5.32432 19.9083 6.09169 20.6757 7.06946 21.1986C8.04724 21.7215 9.12721 22 11.1411 22H12.8589C14.8728 22 15.9528 21.7215 16.9305 21.1986C17.9083 20.6757 18.6757 19.9083 19.1986 18.9305C19.7215 17.9528 20 16.8728 20 14.8589V9.14111C20 7.12721 19.7215 6.04724 19.1986 5.06946C18.6757 4.09169 17.9083 3.32432 16.9305 2.8014C15.9528 2.27848 14.8728 2 12.8589 2ZM11 11V6H13V11H11ZM7.75781 13.758L9.17203 12.3438L12.0005 15.1722L14.8289 12.3438L16.2431 13.758L12.0005 18.0006L7.75781 13.758Z"></path></svg></span><span class="node-lock"><svg class="ic-mono sm" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a4.5 4.5 0 0 0-4.5 4.5V8H6.75A1.75 1.75 0 0 0 5 9.75v9.5C5 20.216 5.784 21 6.75 21h10.5c.966 0 1.75-.784 1.75-1.75v-9.5A1.75 1.75 0 0 0 17.25 8H16.5V6.5A4.5 4.5 0 0 0 12 2Zm0 2c1.38 0 2.5 1.12 2.5 2.5V8h-5V6.5C9.5 5.12 10.62 4 12 4Zm0 9.25a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5Z"/></svg></span><span class="node-check">✓</span></span>
+      <span class="node-label">05 · RecyclerView</span>
+    </button>
+    <button class="path-node pos-r" onclick="switchTab(5)" data-idx="5" title="MVVM, Web & Cloud API">
+      <span class="node-circle" id="node-3"><span class="node-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 17C21 19.2091 19.2091 21 17 21C14.7909 21 13 19.2091 13 17C13 14.7909 14.7909 13 17 13C19.2091 13 21 14.7909 21 17ZM11 7C11 9.20914 9.20914 11 7 11C4.79086 11 3 9.20914 3 7C3 4.79086 4.79086 3 7 3C9.20914 3 11 4.79086 11 7ZM21 7C21 9.20914 19.2091 11 17 11C16.2584 11 15.5634 10.7972 14.9678 10.4453L10.4453 14.9678C10.7972 15.5634 11 16.2584 11 17C11 19.2091 9.20914 21 7 21C4.79086 21 3 19.2091 3 17C3 14.7909 4.79086 13 7 13C7.74116 13 8.43593 13.2022 9.03125 13.5537L13.5537 9.03125C13.2022 8.43593 13 7.74116 13 7C13 4.79086 14.7909 3 17 3C19.2091 3 21 4.79086 21 7Z"></path></svg></span><span class="node-lock"><svg class="ic-mono sm" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a4.5 4.5 0 0 0-4.5 4.5V8H6.75A1.75 1.75 0 0 0 5 9.75v9.5C5 20.216 5.784 21 6.75 21h10.5c.966 0 1.75-.784 1.75-1.75v-9.5A1.75 1.75 0 0 0 17.25 8H16.5V6.5A4.5 4.5 0 0 0 12 2Zm0 2c1.38 0 2.5 1.12 2.5 2.5V8h-5V6.5C9.5 5.12 10.62 4 12 4Zm0 9.25a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5Z"/></svg></span><span class="node-check">✓</span></span>
+      <span class="node-label">06 · MVVM &amp; API</span>
+    </button>
+    <button class="path-node pos-l" onclick="switchTab(6)" data-idx="6" title="Fragments & Modularização">
+      <span class="node-circle" id="node-9"><span class="node-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 4C8 2.34315 9.34315 1 11 1C12.6569 1 14 2.34315 14 4C14 4.35064 13.9398 4.68722 13.8293 5H20C20.5523 5 21 5.44772 21 6V9.12602C21 9.43517 20.857 9.72694 20.6127 9.91635C20.3683 10.1058 20.0501 10.1715 19.7507 10.0945C19.5119 10.033 19.2605 10 19 10C17.3431 10 16 11.3431 16 13C16 14.6569 17.3431 16 19 16C19.2605 16 19.5119 15.967 19.7507 15.9055C20.0501 15.8285 20.3683 15.8942 20.6127 16.0836C20.857 16.2731 21 16.5648 21 16.874V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V6C3 5.44772 3.44772 5 4 5H8.17071C8.06015 4.68722 8 4.35064 8 4Z"></path></svg></span><span class="node-lock"><svg class="ic-mono sm" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a4.5 4.5 0 0 0-4.5 4.5V8H6.75A1.75 1.75 0 0 0 5 9.75v9.5C5 20.216 5.784 21 6.75 21h10.5c.966 0 1.75-.784 1.75-1.75v-9.5A1.75 1.75 0 0 0 17.25 8H16.5V6.5A4.5 4.5 0 0 0 12 2Zm0 2c1.38 0 2.5 1.12 2.5 2.5V8h-5V6.5C9.5 5.12 10.62 4 12 4Zm0 9.25a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5Z"/></svg></span><span class="node-check">✓</span></span>
+      <span class="node-label">07 · Fragments</span>
+    </button>
+    <button class="path-node pos-r" onclick="switchTab(7)" data-idx="7" title="Segurança Mobile">
+      <span class="node-circle" id="node-4"><span class="node-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 2L21 7V21.0082C21 21.556 20.5551 22 20.0066 22H3.9934C3.44476 22 3 21.5447 3 21.0082V2.9918C3 2.44405 3.44495 2 3.9934 2H16ZM15 11V10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10V11H8V16H16V11H15ZM13 11H11V10C11 9.44772 11.4477 9 12 9C12.5523 9 13 9.44772 13 10V11Z"></path></svg></span><span class="node-lock"><svg class="ic-mono sm" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a4.5 4.5 0 0 0-4.5 4.5V8H6.75A1.75 1.75 0 0 0 5 9.75v9.5C5 20.216 5.784 21 6.75 21h10.5c.966 0 1.75-.784 1.75-1.75v-9.5A1.75 1.75 0 0 0 17.25 8H16.5V6.5A4.5 4.5 0 0 0 12 2Zm0 2c1.38 0 2.5 1.12 2.5 2.5V8h-5V6.5C9.5 5.12 10.62 4 12 4Zm0 9.25a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5Z"/></svg></span><span class="node-check">✓</span></span>
+      <span class="node-label">08 · Segurança</span>
+    </button>
+    <button class="path-node pos-l" onclick="switchTab(8)" data-idx="8" title="Ferramentas & Extras">
+      <span class="node-circle" id="node-10"><span class="node-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3ZM12 15V17H18V15H12ZM8.41421 12L5.58579 14.8284L7 16.2426L11.2426 12L7 7.75736L5.58579 9.17157L8.41421 12Z"></path></svg></span><span class="node-lock"><svg class="ic-mono sm" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a4.5 4.5 0 0 0-4.5 4.5V8H6.75A1.75 1.75 0 0 0 5 9.75v9.5C5 20.216 5.784 21 6.75 21h10.5c.966 0 1.75-.784 1.75-1.75v-9.5A1.75 1.75 0 0 0 17.25 8H16.5V6.5A4.5 4.5 0 0 0 12 2Zm0 2c1.38 0 2.5 1.12 2.5 2.5V8h-5V6.5C9.5 5.12 10.62 4 12 4Zm0 9.25a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5Z"/></svg></span><span class="node-check">✓</span></span>
+      <span class="node-label">09 · Ferramentas</span>
+    </button>
+    <button class="path-node pos-r" onclick="switchTab(9)" data-idx="9" title="Projeto Prático">
+      <span class="node-circle" id="node-11"><span class="node-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 4C20.3137 4 23 6.68629 23 10V14C23 17.3137 20.3137 20 17 20H7C3.68629 20 1 17.3137 1 14V10C1 6.68629 3.68629 4 7 4H17ZM10 9H8V11H6V13H7.999L8 15H10L9.999 13H12V11H10V9ZM18 13H16V15H18V13ZM16 9H14V11H16V9Z"></path></svg></span><span class="node-lock"><svg class="ic-mono sm" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a4.5 4.5 0 0 0-4.5 4.5V8H6.75A1.75 1.75 0 0 0 5 9.75v9.5C5 20.216 5.784 21 6.75 21h10.5c.966 0 1.75-.784 1.75-1.75v-9.5A1.75 1.75 0 0 0 17.25 8H16.5V6.5A4.5 4.5 0 0 0 12 2Zm0 2c1.38 0 2.5 1.12 2.5 2.5V8h-5V6.5C9.5 5.12 10.62 4 12 4Zm0 9.25a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5Z"/></svg></span><span class="node-check">✓</span></span>
+      <span class="node-label">10 · Projeto</span>
+    </button>
+    <button class="path-node pos-l" onclick="switchTab(10)" data-idx="10" title="Revisão Geral">
+      <span class="node-circle" id="node-5"><span class="node-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12ZM20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12ZM12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18Z"></path></svg></span><span class="node-lock"><svg class="ic-mono sm" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a4.5 4.5 0 0 0-4.5 4.5V8H6.75A1.75 1.75 0 0 0 5 9.75v9.5C5 20.216 5.784 21 6.75 21h10.5c.966 0 1.75-.784 1.75-1.75v-9.5A1.75 1.75 0 0 0 17.25 8H16.5V6.5A4.5 4.5 0 0 0 12 2Zm0 2c1.38 0 2.5 1.12 2.5 2.5V8h-5V6.5C9.5 5.12 10.62 4 12 4Zm0 9.25a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5Z"/></svg></span><span class="node-check">✓</span></span>
+      <span class="node-label">11 · Revisão</span>
+    </button>
+  </nav>
+  <div class="gamify-panel">
+    <div class="level-row">
+      <div class="level-badge" id="levelBadge">1</div>
+      <div class="level-info">
+        <div class="lv-title" id="levelTitle">Estagiário de Layouts</div>
+        <div class="lv-xp" id="levelXp">0 / 90 XP</div>
+      </div>
+    </div>
+    <div class="xp-bar"><div class="xp-fill" id="xpFill"></div></div>
+    <div class="hearts-row" id="heartsRow"></div>
+    <div class="streak-row"><span class="streak-flame"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor"><path d="M12.75 2.25c.2 2.9-.62 5-2.3 6.86-.55.6-1.15 1.14-1.72 1.75-1.9 2-2.98 4.36-2.23 7.2A7.5 7.5 0 0 0 19.5 15c0-3.86-2.55-6.1-4.53-8.35-1-1.13-1.9-2.5-2.22-4.4Zm.4 14.9a2.65 2.65 0 0 1-3.53-.4c-.8-.98-.68-2.16-.02-3.07.28.55.68 1 1.2 1.3.02-1.1.42-1.98 1.15-2.75.28 1.5 1.05 2.4 2.02 3.28.6.55.9 1.3.7 2.05a2.2 2.2 0 0 1-1.52 1.6Z"/></svg></span> <span id="streakText">0 dia de estudo seguido</span></div>
+    <button class="badge-link" onclick="switchTab(10)"><img class="om om-sm" src="../assets/icons/content/medal.svg" alt=""> <span id="badgeCount">0/16</span> conquistas desbloqueadas</button>
+
+    <div class="focus-widget">
+      <div class="focus-label"><img class="focus-byte" src="../assets/characters/byte.png" alt="">Sessão de foco</div>
+      <div class="focus-display" id="focusDisplay">25:00</div>
+      <div class="focus-controls">
+        <button class="focus-btn primary" id="focusStartBtn" onclick="toggleFocus()">Iniciar</button>
+        <button class="focus-btn" onclick="resetFocus()">Zerar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="tracker">
+    <div class="tracker-row"><span>tarefas concluídas</span><span id="pct">0%</span></div>
+    <div class="track-bar"><div class="track-fill" id="fill"></div></div>
+    <button class="reset-btn" onclick="resetProgress()"><img class="om om-sm" src="../assets/icons/washer.svg" alt=""> começar do zero</button>
+  </div>
+
+  <div class="more-pages">
+    <a href="android-apps.html" class="more-link" style="background:linear-gradient(90deg,rgba(61,220,132,.14),transparent);"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg> Central de Apps</a>
+    <a href="../index.html" class="more-link"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3 3 10.5V21h5.5v-6h7v6H21V10.5L12 3Z"/></svg> Voltar pra Universidade Log</a>
+    <a href="ia.html" class="more-link"><img class="om om-sm" src="../assets/icons/content/brain.svg" alt=""> Trocar pro curso de IA</a>
+    <a href="devops.html" class="more-link"><img class="om om-sm" src="../assets/icons/content/whale.svg" alt=""> Trocar pro curso de DevOps</a>
+    <a href="trigomante.html" class="more-link"><img class="om om-sm" src="../assets/icons/content/triangle-ruler.svg" alt=""> Trocar pro curso de Trigomante</a>
+    <a href="../glossario/android.html" class="more-link"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor"><path d="M5.5 3h11A1.5 1.5 0 0 1 18 4.5v16.2a.5.5 0 0 1-.74.44L12 18.5l-5.26 2.64a.5.5 0 0 1-.74-.44V4.5A1.5 1.5 0 0 1 5.5 3Z"/><rect x="8" y="7" width="6.5" height="1.3" rx=".65" fill="#fff" opacity=".7"/><rect x="8" y="10" width="6.5" height="1.3" rx=".65" fill="#fff" opacity=".7"/></svg> Glossário do curso</a>
+    <a href="android-projeto.html" class="more-link"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c2.6 1.7 4.2 4.6 4.2 8.3 0 2-.5 3.9-1.4 5.6h-5.6c-.9-1.7-1.4-3.6-1.4-5.6 0-3.7 1.6-6.6 4.2-8.3Z"/><circle cx="12" cy="9.6" r="1.7" fill="#fff" opacity=".85"/><path d="M8.2 15.3 5 17.4l.9-3.9 2.3-.6v1.8Z" opacity=".6"/><path d="M15.8 15.3l3.2 2.1-.9-3.9-2.3-.6v1.8Z" opacity=".6"/><path d="M10 17.1h4l-.7 3.1a1.6 1.6 0 0 1-2.6 0L10 17.1Z"/></svg> Projeto Prático completo</a>
+    <a href="android-material.html" class="more-link"><svg class="ri" viewBox="0 0 24 24" fill="currentColor"><path d="M20 22H4C3.44772 22 3 21.5523 3 21V8H21V21C21 21.5523 20.5523 22 20 22ZM21 6H3V3C3 2.44772 3.44772 2 4 2H20C20.5523 2 21 2.44772 21 3V6ZM7 11V15H11V11H7ZM7 17V19H17V17H7ZM13 12V14H17V12H13Z"></path></svg> Aprofundamento por módulo</a>
+    <a href="android-referencias.html" class="more-link"><svg class="ri" viewBox="0 0 24 24" fill="currentColor"><path d="M18.3638 15.5355L16.9496 14.1213L18.3638 12.7071C20.3164 10.7545 20.3164 7.58866 18.3638 5.63604C16.4112 3.68341 13.2453 3.68341 11.2927 5.63604L9.87849 7.05025L8.46428 5.63604L9.87849 4.22182C12.6122 1.48815 17.0443 1.48815 19.778 4.22182C22.5117 6.95549 22.5117 11.3876 19.778 14.1213L18.3638 15.5355ZM15.5353 18.364L14.1211 19.7782C11.3875 22.5118 6.95531 22.5118 4.22164 19.7782C1.48797 17.0445 1.48797 12.6123 4.22164 9.87868L5.63585 8.46446L7.05007 9.87868L5.63585 11.2929C3.68323 13.2455 3.68323 16.4113 5.63585 18.364C7.58847 20.3166 10.7543 20.3166 12.7069 18.364L14.1211 16.9497L15.5353 18.364ZM14.8282 7.75736L16.2425 9.17157L9.17139 16.2426L7.75717 14.8284L14.8282 7.75736Z"></path></svg> Biblioteca de referências</a>
+  </div>
+</aside>
+
+<main id="main-content">
+
+  <!-- ================= MODULE 06 (Fundamentos) ================= -->
+  <section class="content-section active" id="sec-5" data-mod="6">
+    <div class="eyebrow">Módulo 01 / 11</div>
+    <h2>Fundamentos &amp; Navegação</h2>
+    <p class="subtitle">Antes de desenhar telas bonitas, vale entender como o Android as gerencia por baixo dos panos: e como elas conversam entre si.</p>
+    <div class="hero-photo-wrap"><img class="hero-photo" src="https://images.unsplash.com/photo-1716847214624-1e8787d98b6c?auto=format&fit=crop&w=1600&q=70" alt="Pequena cabana aconchegante em meio à floresta"></div>
+    <p class="hero-credit">Foto: <a href="https://unsplash.com/@visualsbying" target="_blank" rel="noopener">Peter Thomas</a> em Unsplash</p>
+
+    <div class="char-wrap">
+      <img class="char-cameo" src="../assets/characters/gnome.png" alt="Gnomo, o desenvolvedor web" style="width:130px;flex-shrink:0;">
+      <div class="char-bubble">
+        <div class="char-name">Gnomo</div>
+        <p>Bem-vindo à trilha! Vamos começar pelo que sustenta tudo o resto: como uma tela nasce, vive e é destruída. Estrutura é tudo.</p>
+      </div>
+    </div>
+
+    <div class="wire"></div>
+
+    <div class="card">
+      <h3><span class="ic"><img class="om om-sm" src="../assets/icons/content/refresh.svg" alt=""></span> O ciclo de vida de uma Activity</h3>
+      <p>Uma Activity nunca é "aberta e fechada" de forma simples: ela transita por estados que o próprio sistema controla: <code>onCreate → onStart → onResume → onPause → onStop → onDestroy</code>. Entender esses callbacks é o que evita vazamento de memória, perda de dados numa rotação de tela e crashes ao voltar de segundo plano.</p>
+      <pre><code><span class="k">override fun</span> onPause() {
+    <span class="k">super</span>.onPause()
+    <span class="cm">// salve aqui o que não pode se perder: o sistema pode matar o processo a qualquer momento depois disso</span>
+}</code></pre>
+    </div>
+
+    <div class="grid2">
+      <div class="card">
+        <h3><span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M2 5.5V3.9934C2 3.44476 2.45531 3 2.9918 3H21.0082C21.556 3 22 3.44495 22 3.9934V20.0066C22 20.5552 21.5447 21 21.0082 21H2.9918C2.44405 21 2 20.5551 2 20.0066V19H20V7.3L12 14.5L2 5.5ZM0 10H5V12H0V10ZM0 15H8V17H0V15Z"></path></svg></span> Intents: o mensageiro do Android</h3>
+        <p>Um <code>Intent</code> descreve uma ação a ser realizada: abrir outra tela, compartilhar um texto, disparar a câmera. Pode ser <strong>explícito</strong> (você diz exatamente qual Activity abrir) ou <strong>implícito</strong> (você descreve a ação e o sistema escolhe o app capaz de atendê-la).</p>
+        <pre><code><span class="k">val</span> intent = Intent(<span class="k">this</span>, DetalheActivity::<span class="k">class</span>.java)
+intent.putExtra(<span class="s">"id_produto"</span>, 42)
+startActivity(intent)</code></pre>
+      </div>
+      <div class="card">
+        <h3><span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 10H21V20.0044C21 20.5543 20.5551 21 20.0066 21H3.9934C3.44476 21 3 20.5552 3 20.0044V10ZM9 12V14H15V12H9ZM2 3.99981C2 3.44763 2.45531 3 2.9918 3H21.0082C21.556 3 22 3.44372 22 3.99981V8H2V3.99981Z"></path></svg></span> Bundle: a mochila de dados</h3>
+        <p>O <code>Bundle</code> é o contêiner que carrega pequenos dados dentro de um Intent, ou preserva o estado de uma tela durante <code>onSaveInstanceState</code>. Prefira tipos simples (String, Int, Parcelable): não é feito para objetos pesados.</p>
+        <pre><code><span class="k">val</span> id = intent.getIntExtra(<span class="s">"id_produto"</span>, -1)
+<span class="cm">// -1 é o valor padrão caso a chave não exista</span></code></pre>
+      </div>
+    </div>
+
+    <div class="flip-grid">
+      <div class="flipcard">
+        <input type="checkbox" id="f9" class="flip-trigger">
+        <label for="f9" class="flip-inner">
+          <div class="flip-face flip-front"><span class="fk">navegação</span><strong>Intent explícito</strong><p>Clique →</p></div>
+          <div class="flip-face flip-back"><p>Você nomeia a Activity/classe exata a abrir. Rápido, previsível, usado dentro do próprio app.</p></div>
+        </label>
+      </div>
+      <div class="flipcard">
+        <input type="checkbox" id="f10" class="flip-trigger">
+        <label for="f10" class="flip-inner">
+          <div class="flip-face flip-front"><span class="fk">navegação</span><strong>Intent implícito</strong><p>Clique →</p></div>
+          <div class="flip-face flip-back"><p>Você descreve a ação ("abrir link", "compartilhar"). O sistema decide qual app responde.</p></div>
+        </label>
+      </div>
+    </div>
+
+    <div class="quiz">
+      <div class="quiz-q"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm.9 14.9h-1.8v-1.8h1.8v1.8Zm1.86-6.9c-.4.5-.7.9-.9 1.4-.16.36-.24.7-.26 1.2h-1.7c.02-.7.16-1.24.44-1.76.28-.5.66-.96 1.14-1.42.34-.32.58-.6.74-.86.16-.28.24-.56.24-.9 0-.44-.14-.78-.42-1.04-.28-.26-.68-.4-1.18-.4-.5 0-.92.16-1.24.46-.32.3-.5.72-.54 1.24H7.4c.06-1.14.46-2.02 1.2-2.66.76-.64 1.72-.96 2.9-.96 1.24 0 2.22.32 2.94.96.72.62 1.08 1.44 1.08 2.44 0 .6-.14 1.1-.42 1.5-.24.36-.5.66-.84 1.02Z"/></svg> Quiz rápido: Qual callback do ciclo de vida é o lugar mais seguro pra salvar dados antes da Activity poder ser destruída pelo sistema?</div>
+      <label class="quiz-opt"><input type="radio" name="q6a" value="a"> onCreate</label>
+      <label class="quiz-opt"><input type="radio" name="q6a" value="b"> onPause</label>
+      <label class="quiz-opt"><input type="radio" name="q6a" value="c"> onResume</label>
+      <button class="quiz-btn" onclick="checkQuiz('q6a','b','fb6a')">Verificar</button>
+      <div class="quiz-fb" id="fb6a"></div>
+    </div>
+
+    <div class="quiz bughunt">
+      <div class="quiz-q"><img class="om om-md" src="../assets/icons/bug.svg" alt="bug"> Encontre o bug</div>
+      <pre><code><span class="k">class</span> MainActivity : AppCompatActivity() {
+    <span class="k">companion object</span> {
+        <span class="k">var</span> instanciaAtual: MainActivity? = <span class="k">null</span>
+    }
+    override fun onCreate(savedInstanceState: Bundle?) {
+        <span class="k">super</span>.onCreate(savedInstanceState)
+        instanciaAtual = <span class="k">this</span>
+    }
+}</code></pre>
+      <p style="font-size:.85rem;margin:0 0 10px;">Qual é o problema neste trecho?</p>
+      <label class="quiz-opt"><input type="radio" name="bug6" value="a"> Falta chamar setContentView antes de super.onCreate</label>
+      <label class="quiz-opt"><input type="radio" name="bug6" value="b"> A referência estática guarda a Activity na memória mesmo depois dela ser destruída: vazamento de memória (memory leak)</label>
+      <label class="quiz-opt"><input type="radio" name="bug6" value="c"> companion object não pode ter propriedades var</label>
+      <button class="quiz-btn" onclick="checkQuiz('bug6','b','fbbug6')">Verificar</button>
+      <div class="quiz-fb" id="fbbug6"></div>
+    </div>
+
+    <div class="callout warn">
+      <div class="c-label"><img class="om om-sm" src="../assets/icons/content/herb.svg" alt=""> Erro comum: guardar Context em variável estática</div>
+      <p>Uma <code>Activity</code> ou <code>View</code> presa numa variável <code>static</code>/<code>companion object</code> nunca é liberada pelo garbage collector, mesmo depois de destruída: é uma das causas mais comuns de <code>OutOfMemoryError</code> em apps que crescem. Se precisa de acesso global, use <code>applicationContext</code>, nunca a Activity inteira.</p>
+    </div>
+
+    <div class="checklist">
+      <div class="checklist-title"><img class="om" src="../assets/icons/code-editor.svg" alt="">Mão na massa</div>
+      <div class="c-item"><input type="checkbox" id="chk-22" data-mod="6" onchange="onCheck(this)"><label for="chk-22">Imprimir um log em cada callback do ciclo de vida e observar a ordem real ao girar a tela.</label></div>
+      <div class="c-item"><input type="checkbox" id="chk-23" data-mod="6" onchange="onCheck(this)"><label for="chk-23">Criar um Intent explícito que leva dados de uma tela pra outra via Bundle.</label></div>
+      <div class="c-item"><input type="checkbox" id="chk-24" data-mod="6" onchange="onCheck(this)"><label for="chk-24">Disparar um Intent implícito (ex: abrir um link no navegador) e ver o sistema escolher o app.</label></div>
+    </div>
+
+    <div class="game-card scramble-game" id="scrGameAndroid" data-words='[
+      {"word":"INTENT","hint":"Objeto de mensagem usado pra navegar entre telas ou disparar ações do sistema"},
+      {"word":"BUNDLE","hint":"Onde dados são guardados pra sobreviver a uma recriação de tela"},
+      {"word":"ONCREATE","hint":"Callback do ciclo de vida chamado na criação da Activity"},
+      {"word":"CONTEXT","hint":"Nunca deve ser guardado numa variável static: causa memory leak"}
+    ]'>
+      <div class="game-head">
+        <div class="game-title"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 14.5 8.5 21 9.3 16 13.9 17.5 20.5 12 17 6.5 20.5 8 13.9 3 9.3 9.5 8.5 12 2Z"></path></svg> Termos Embaralhados</div>
+        <div class="game-stats scr-status">Palavra 1/4</div>
+      </div>
+      <p style="font-size:.82rem;color:var(--text-dim);margin-bottom:6px;"><img class="om om-sm" src="../assets/icons/tap.svg" alt=""> Toque nas letras na ordem certa pra reconstruir o termo.</p>
+      <p class="scr-hint"></p>
+      <div class="scr-target"></div>
+      <div class="scr-pool"></div>
+      <div class="game-win-msg"><img class="om om-sm" src="../assets/icons/content/confetti.svg" alt=""> Todos os termos decifrados!</div>
+      <button class="game-reset-btn" onclick="initScrambleGame('scrGameAndroid')">Embaralhar de novo</button>
+    </div>
+
+  </section>
+
+  <!-- ================= MODULE 07 (UI & View Binding) ================= -->
+  <section class="content-section" id="sec-6" data-mod="7">
+    <div class="eyebrow">Módulo 02 / 11</div>
+    <h2>Componentes de UI &amp; View Binding</h2>
+    <p class="subtitle">Os blocos mais básicos de qualquer tela: e a forma moderna e seguindo de conectá-los ao código sem <code>findViewById</code>.</p>
+    <div class="hero-photo-wrap"><img class="hero-photo" src="https://images.unsplash.com/photo-1755690042574-49ff5c3bfe96?auto=format&fit=crop&w=1600&q=70" alt="Prado com flores silvestres ao amanhecer"></div>
+    <p class="hero-credit">Foto: <a href="https://unsplash.com/@mineral_of_demon" target="_blank" rel="noopener">Nastia Petruk</a> em Unsplash</p>
+    <div class="wire"></div>
+
+    <div class="card">
+      <h3><span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 4C8 2.34315 9.34315 1 11 1C12.6569 1 14 2.34315 14 4C14 4.35064 13.9398 4.68722 13.8293 5H20C20.5523 5 21 5.44772 21 6V9.12602C21 9.43517 20.857 9.72694 20.6127 9.91635C20.3683 10.1058 20.0501 10.1715 19.7507 10.0945C19.5119 10.033 19.2605 10 19 10C17.3431 10 16 11.3431 16 13C16 14.6569 17.3431 16 19 16C19.2605 16 19.5119 15.967 19.7507 15.9055C20.0501 15.8285 20.3683 15.8942 20.6127 16.0836C20.857 16.2731 21 16.5648 21 16.874V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V6C3 5.44772 3.44772 5 4 5H8.17071C8.06015 4.68722 8 4.35064 8 4Z"></path></svg></span> TextView, Button, ImageView</h3>
+      <p>São os três componentes que aparecem em praticamente toda tela Android: <code>TextView</code> exibe texto, <code>Button</code> captura cliques, <code>ImageView</code> exibe imagens locais ou baixadas. Simples isoladamente: o design entra em como você os combina dentro de um layout.</p>
+    </div>
+
+    <div class="card">
+      <h3><span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.3638 15.5355L16.9496 14.1213L18.3638 12.7071C20.3164 10.7545 20.3164 7.58866 18.3638 5.63604C16.4112 3.68341 13.2453 3.68341 11.2927 5.63604L9.87849 7.05025L8.46428 5.63604L9.87849 4.22182C12.6122 1.48815 17.0443 1.48815 19.778 4.22182C22.5117 6.95549 22.5117 11.3876 19.778 14.1213L18.3638 15.5355ZM15.5353 18.364L14.1211 19.7782C11.3875 22.5118 6.95531 22.5118 4.22164 19.7782C1.48797 17.0445 1.48797 12.6123 4.22164 9.87868L5.63585 8.46446L7.05007 9.87868L5.63585 11.2929C3.68323 13.2455 3.68323 16.4113 5.63585 18.364C7.58847 20.3166 10.7543 20.3166 12.7069 18.364L14.1211 16.9497L15.5353 18.364ZM14.8282 7.75736L16.2425 9.17157L9.17139 16.2426L7.75717 14.8284L14.8282 7.75736Z"></path></svg></span> View Binding: adeus, findViewById</h3>
+      <p>Antes, cada view exigia um <code>findViewById</code> manual: sujeito a erro de digitação no ID e sem checagem de tipo. Com View Binding ativado, o Android Studio gera uma classe <code>Binding</code> para cada XML, com uma referência direta e já tipada pra cada view com ID.</p>
+      <pre><code><span class="cm">// build.gradle</span>
+android { buildFeatures { viewBinding = <span class="k">true</span> } }
+
+<span class="cm">// na Activity</span>
+<span class="k">private lateinit var</span> binding: ActivityMainBinding
+override fun onCreate(savedInstanceState: Bundle?) {
+    <span class="k">super</span>.onCreate(savedInstanceState)
+    binding = ActivityMainBinding.inflate(layoutInflater)
+    setContentView(binding.root)
+    binding.meuBotao.setOnClickListener { <span class="cm">/* clique seguro, sem cast */</span> }
+}</code></pre>
+    </div>
+
+    <div class="card">
+      <h3><span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6C15.3137 6 18 8.68629 18 12C18 15.3137 15.3137 18 12 18ZM11 1H13V4H11V1ZM11 20H13V23H11V20ZM3.51472 4.92893L4.92893 3.51472L7.05025 5.63604L5.63604 7.05025L3.51472 4.92893ZM16.9497 18.364L18.364 16.9497L20.4853 19.0711L19.0711 20.4853L16.9497 18.364ZM19.0711 3.51472L20.4853 4.92893L18.364 7.05025L16.9497 5.63604L19.0711 3.51472ZM5.63604 16.9497L7.05025 18.364L4.92893 20.4853L3.51472 19.0711L5.63604 16.9497ZM23 11V13H20V11H23ZM4 11V13H1V11H4Z"></path></svg></span> Splash Screen</h3>
+      <p>A tela de abertura não deveria ser mais uma Activity com <code>Thread.sleep()</code>: a API moderna de Splash Screen exibe o ícone do app instantaneamente enquanto o processo ainda está sendo preparado, sem atrasar artificialmente a inicialização.</p>
+    </div>
+
+    <div class="flip-grid">
+      <div class="flipcard">
+        <input type="checkbox" id="f11" class="flip-trigger">
+        <label for="f11" class="flip-inner">
+          <div class="flip-face flip-front"><span class="fk">binding</span><strong>View Binding</strong><p>Clique →</p></div>
+          <div class="flip-face flip-back"><p>Gera uma classe por XML, referência direta e tipada. Simples, leve, sem expressões no layout.</p></div>
+        </label>
+      </div>
+      <div class="flipcard">
+        <input type="checkbox" id="f12" class="flip-trigger">
+        <label for="f12" class="flip-inner">
+          <div class="flip-face flip-front"><span class="fk">binding</span><strong>Data Binding</strong><p>Clique →</p></div>
+          <div class="flip-face flip-back"><p>Mais poderoso: permite expressões e binding de dados direto no XML: mas com build mais lento.</p></div>
+        </label>
+      </div>
+    </div>
+
+    <div class="quiz">
+      <div class="quiz-q"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm.9 14.9h-1.8v-1.8h1.8v1.8Zm1.86-6.9c-.4.5-.7.9-.9 1.4-.16.36-.24.7-.26 1.2h-1.7c.02-.7.16-1.24.44-1.76.28-.5.66-.96 1.14-1.42.34-.32.58-.6.74-.86.16-.28.24-.56.24-.9 0-.44-.14-.78-.42-1.04-.28-.26-.68-.4-1.18-.4-.5 0-.92.16-1.24.46-.32.3-.5.72-.54 1.24H7.4c.06-1.14.46-2.02 1.2-2.66.76-.64 1.72-.96 2.9-.96 1.24 0 2.22.32 2.94.96.72.62 1.08 1.44 1.08 2.44 0 .6-.14 1.1-.42 1.5-.24.36-.5.66-.84 1.02Z"/></svg> Quiz rápido: Qual a principal vantagem do View Binding sobre o findViewById tradicional?</div>
+      <label class="quiz-opt"><input type="radio" name="q7a" value="a"> É mais rápido de digitar</label>
+      <label class="quiz-opt"><input type="radio" name="q7a" value="b"> Segurança de tipo e nulidade checadas em tempo de compilação</label>
+      <label class="quiz-opt"><input type="radio" name="q7a" value="c"> Funciona sem precisar de XML</label>
+      <button class="quiz-btn" onclick="checkQuiz('q7a','b','fb7a')">Verificar</button>
+      <div class="quiz-fb" id="fb7a"></div>
+    </div>
+
+    <div class="quiz bughunt">
+      <div class="quiz-q"><img class="om om-md" src="../assets/icons/bug.svg" alt="bug"> Encontre o bug</div>
+      <pre><code><span class="k">class</span> DetalheFragment : Fragment(R.layout.<span class="t">fragment_detalhe</span>) {
+    <span class="k">private lateinit var</span> binding: FragmentDetalheBinding
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        binding = FragmentDetalheBinding.bind(view)
+    }
+}</code></pre>
+      <p style="font-size:.85rem;margin:0 0 10px;">Qual é o problema neste Fragment?</p>
+      <label class="quiz-opt"><input type="radio" name="bug7" value="a"> onViewCreated não existe em Fragment</label>
+      <label class="quiz-opt"><input type="radio" name="bug7" value="b"> O binding nunca é liberado: falta sobrescrever onDestroyView e limpar a referência, senão a View vaza na memória</label>
+      <label class="quiz-opt"><input type="radio" name="bug7" value="c"> bind() deveria ser inflate()</label>
+      <button class="quiz-btn" onclick="checkQuiz('bug7','b','fbbug7')">Verificar</button>
+      <div class="quiz-fb" id="fbbug7"></div>
+    </div>
+
+    <div class="callout warn">
+      <div class="c-label"><img class="om om-sm" src="../assets/icons/content/herb.svg" alt=""> Erro comum: esquecer de limpar o binding no Fragment</div>
+      <p>Diferente de uma Activity, a View de um Fragment pode ser destruída (<code>onDestroyView</code>) enquanto o Fragment em si continua vivo. Se o binding não for anulado nesse momento, a View antiga fica presa na memória. O padrão seguro usa uma propriedade nullable e limpa em <code>onDestroyView</code>.</p>
+    </div>
+
+    <div class="checklist">
+      <div class="checklist-title"><img class="om" src="../assets/icons/code-editor.svg" alt="">Mão na massa</div>
+      <div class="c-item"><input type="checkbox" id="chk-25" data-mod="7" onchange="onCheck(this)"><label for="chk-25">Ativar <code>viewBinding</code> no <code>build.gradle</code> de um módulo existente.</label></div>
+      <div class="c-item"><input type="checkbox" id="chk-26" data-mod="7" onchange="onCheck(this)"><label for="chk-26">Substituir todo <code>findViewById</code> de uma tela por referências via Binding.</label></div>
+      <div class="c-item"><input type="checkbox" id="chk-27" data-mod="7" onchange="onCheck(this)"><label for="chk-27">Implementar uma Splash Screen usando a API moderna, sem <code>Thread.sleep()</code>.</label></div>
+    </div>
+
+    <div class="game-card speedtf-game" id="tfGameAndroid" data-statements='[
+      {"text":"viewBinding elimina a necessidade de findViewById","isTrue":true},
+      {"text":"É seguro fazer Thread.sleep() pra simular uma Splash Screen","isTrue":false},
+      {"text":"A API moderna de Splash Screen evita travar a thread principal","isTrue":true},
+      {"text":"viewBinding gera uma classe de binding pra cada layout XML automaticamente","isTrue":true},
+      {"text":"findViewById é mais seguro em tipos que o viewBinding","isTrue":false},
+      {"text":"Um Custom Dialog pode ser construído combinando XML e Kotlin","isTrue":true}
+    ]'>
+      <div class="game-head">
+        <div class="game-title"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 3 14h7l-1 8 11-14h-7l0-6Z"></path></svg> Verdadeiro ou Falso Relâmpago</div>
+        <div class="game-stats tf-status">1/6 · acertos: 0</div>
+      </div>
+      <p style="font-size:.82rem;color:var(--text-dim);margin-bottom:14px;">Responda antes que o tempo acabe!</p>
+      <div class="tf-timerbar"><div class="tf-timerfill"></div></div>
+      <div class="tf-statement"></div>
+      <div class="tf-btns">
+        <button class="tf-btn tf-true" onclick="answerSpeedTF('tfGameAndroid', true)">Verdadeiro</button>
+        <button class="tf-btn tf-false" onclick="answerSpeedTF('tfGameAndroid', false)">Falso</button>
+      </div>
+      <div class="game-win-msg"><img class="om om-sm" src="../assets/icons/content/confetti.svg" alt=""> Rodada relâmpago concluída!</div>
+      <button class="game-reset-btn" onclick="resetSpeedTF('tfGameAndroid')">Jogar de novo</button>
+    </div>
+
+  </section>
+
+  <!-- ================= MODULE 01 ================= -->
+  <section class="content-section" id="sec-0" data-mod="1">
+    <div class="eyebrow">Módulo 03 / 11</div>
+    <h2>Layouts &amp; Densidade de Tela</h2>
+    <p class="subtitle">Construir hierarquias de visualização que se comportam bem em qualquer hardware: sem pixels fixos, sem surpresas.</p>
+    <div class="hero-photo-wrap"><img class="hero-photo" src="https://images.unsplash.com/photo-1760479099643-b37a52e7c094?auto=format&fit=crop&w=1600&q=70" alt="Trilha na floresta com luz solar filtrando pela névoa"></div>
+    <p class="hero-credit">Foto: <a href="https://unsplash.com/@visualsbying" target="_blank" rel="noopener">Ingmar</a> em Unsplash</p>
+    <div class="wire"></div>
+
+    <div class="flip-grid">
+      <div class="flipcard">
+        <input type="checkbox" id="f1" class="flip-trigger">
+        <label for="f1" class="flip-inner">
+          <div class="flip-face flip-front">
+            <span class="fk">layout_width</span>
+            <strong>wrap_content</strong>
+            <p>Clique para ver a diferença →</p>
+          </div>
+          <div class="flip-face flip-back">
+            <p>A View encolhe ou cresce estritamente até o tamanho exigido pelo <strong>conteúdo interno</strong>: nada de espaço sobrando.</p>
+          </div>
+        </label>
+      </div>
+      <div class="flipcard">
+        <input type="checkbox" id="f2" class="flip-trigger">
+        <label for="f2" class="flip-inner">
+          <div class="flip-face flip-front">
+            <span class="fk">layout_width</span>
+            <strong>match_parent</strong>
+            <p>Clique para ver a diferença →</p>
+          </div>
+          <div class="flip-face flip-back">
+            <p>A View assume o <strong>maior espaço permitido</strong> pelo grupo pai (<code>ViewParent</code>), ocupando toda a largura ou altura disponível.</p>
+          </div>
+        </label>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3><span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.75 2.5C9.09721 2.5 11 4.40279 11 6.75V11H6.75C4.40279 11 2.5 9.09721 2.5 6.75C2.5 4.40279 4.40279 2.5 6.75 2.5ZM6.75 13H11V17.25C11 19.5972 9.09721 21.5 6.75 21.5C4.40279 21.5 2.5 19.5972 2.5 17.25C2.5 14.9028 4.40279 13 6.75 13ZM17.25 2.5C19.5972 2.5 21.5 4.40279 21.5 6.75C21.5 9.09721 19.5972 11 17.25 11H13V6.75C13 4.40279 14.9028 2.5 17.25 2.5ZM13 13H17.25C19.5972 13 21.5 14.9028 21.5 17.25C21.5 19.5972 19.5972 21.5 17.25 21.5C14.9028 21.5 13 19.5972 13 17.25V13Z"></path></svg></span> DP vs. PX: por que isso importa</h3>
+      <p>A regra de ouro: <strong>1 DP = 1 PX numa tela de referência de 160 DPI</strong>. Em telas mais densas, o Android escala automaticamente os componentes para manter o mesmo tamanho <em>físico</em>: é isso que impede que seu botão fique minúsculo num celular caro e gigante num modelo de entrada.</p>
+      <div class="stat-row">
+        <div class="stat-chip"><div class="num">1x</div><div class="lbl">mdpi · 160 dpi (base)</div></div>
+        <div class="stat-chip"><div class="num">1.5x</div><div class="lbl">hdpi · 240 dpi</div></div>
+        <div class="stat-chip"><div class="num">2x</div><div class="lbl">xhdpi · 320 dpi</div></div>
+        <div class="stat-chip"><div class="num">3x</div><div class="lbl">xxhdpi · 480 dpi</div></div>
+      </div>
+      <p style="margin-top:10px;font-size:.8rem;color:var(--text-dim);">Dica: use <code>sp</code> (scale-independent pixels) só para texto: ele também respeita o tamanho de fonte que a pessoa configurou no aparelho.</p>
+    </div>
+
+    <div class="card" style="margin-top:18px;">
+      <h3><span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 17C21 19.2091 19.2091 21 17 21C14.7909 21 13 19.2091 13 17C13 14.7909 14.7909 13 17 13C19.2091 13 21 14.7909 21 17ZM11 7C11 9.20914 9.20914 11 7 11C4.79086 11 3 9.20914 3 7C3 4.79086 4.79086 3 7 3C9.20914 3 11 4.79086 11 7ZM21 7C21 9.20914 19.2091 11 17 11C16.2584 11 15.5634 10.7972 14.9678 10.4453L10.4453 14.9678C10.7972 15.5634 11 16.2584 11 17C11 19.2091 9.20914 21 7 21C4.79086 21 3 19.2091 3 17C3 14.7909 4.79086 13 7 13C7.74116 13 8.43593 13.2022 9.03125 13.5537L13.5537 9.03125C13.2022 8.43593 13 7.74116 13 7C13 4.79086 14.7909 3 17 3C19.2091 3 21 4.79086 21 7Z"></path></svg></span> ConstraintLayout: as linhas onduladas</h3>
+      <p>No editor visual do Android Studio, aquelas linhas onduladas <strong>não são só estética</strong>: representam as <em>constraints</em>: a elasticidade e a margem da conexão entre a View e o pai ou os componentes irmãos. É o que permite montar telas fluidas sem aninhar dezenas de layouts.</p>
+      <pre><code><span class="cm">&lt;!-- ancorando um botão nas quatro direções --&gt;</span>
+&lt;<span class="t">Button</span>
+    android:<span class="k">layout_width</span>=<span class="s">"wrap_content"</span>
+    android:<span class="k">layout_height</span>=<span class="s">"wrap_content"</span>
+    app:<span class="k">layout_constraintTop_toTopOf</span>=<span class="s">"parent"</span>
+    app:<span class="k">layout_constraintStart_toStartOf</span>=<span class="s">"parent"</span>
+    app:<span class="k">layout_constraintEnd_toEndOf</span>=<span class="s">"parent"</span>
+    app:<span class="k">layout_constraintBottom_toBottomOf</span>=<span class="s">"parent"</span> /&gt;</code></pre>
+    </div>
+
+    <div class="wire tight"></div>
+    <h3 style="margin-top:6px;">Outros tipos de layout (para reconhecer no mapa mental)</h3>
+    <table>
+      <thead><tr><th>Layout</th><th>Quando usar</th></tr></thead>
+      <tbody>
+        <tr><td><span class="badge">LinearLayout</span></td><td>Empilhar Views em uma única direção: linha ou coluna.</td></tr>
+        <tr><td><span class="badge">RelativeLayout</span></td><td>Posicionar Views relativas umas às outras (legado, hoje substituído por ConstraintLayout).</td></tr>
+        <tr><td><span class="badge">ConstraintLayout</span></td><td>Telas complexas e fluidas com hierarquia plana: o padrão atual.</td></tr>
+        <tr><td><span class="badge">ListView / GridView</span></td><td>Listas e grades simples: hoje majoritariamente substituídas por <code>RecyclerView</code>.</td></tr>
+        <tr><td><span class="badge">WebView</span></td><td>Renderizar conteúdo HTML/web embutido dentro do app.</td></tr>
+      </tbody>
+    </table>
+
+    <div class="quiz">
+      <div class="quiz-q"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm.9 14.9h-1.8v-1.8h1.8v1.8Zm1.86-6.9c-.4.5-.7.9-.9 1.4-.16.36-.24.7-.26 1.2h-1.7c.02-.7.16-1.24.44-1.76.28-.5.66-.96 1.14-1.42.34-.32.58-.6.74-.86.16-.28.24-.56.24-.9 0-.44-.14-.78-.42-1.04-.28-.26-.68-.4-1.18-.4-.5 0-.92.16-1.24.46-.32.3-.5.72-.54 1.24H7.4c.06-1.14.46-2.02 1.2-2.66.76-.64 1.72-.96 2.9-.96 1.24 0 2.22.32 2.94.96.72.62 1.08 1.44 1.08 2.44 0 .6-.14 1.1-.42 1.5-.24.36-.5.66-.84 1.02Z"/></svg> Quiz rápido: Numa tela de 320 DPI (xhdpi), 1 DP equivale a quantos PX?</div>
+      <label class="quiz-opt"><input type="radio" name="q1a" value="a"> 1 PX</label>
+      <label class="quiz-opt"><input type="radio" name="q1a" value="b"> 2 PX</label>
+      <label class="quiz-opt"><input type="radio" name="q1a" value="c"> 4 PX</label>
+      <button class="quiz-btn" onclick="checkQuiz('q1a','b','fb1a')">Verificar</button>
+      <div class="quiz-fb" id="fb1a"></div>
+    </div>
+
+    <div class="quiz bughunt">
+      <div class="quiz-q"><img class="om om-md" src="../assets/icons/bug.svg" alt="bug"> Encontre o bug</div>
+      <pre><code>&lt;<span class="t">LinearLayout</span>
+    android:<span class="k">orientation</span>=<span class="s">"horizontal"</span>
+    android:<span class="k">layout_width</span>=<span class="s">"match_parent"</span>
+    android:<span class="k">layout_height</span>=<span class="s">"wrap_content"</span>&gt;
+
+    &lt;<span class="t">TextView</span>
+        android:<span class="k">layout_width</span>=<span class="s">"wrap_content"</span>
+        android:<span class="k">layout_height</span>=<span class="s">"wrap_content"</span>
+        android:<span class="k">layout_weight</span>=<span class="s">"1"</span> /&gt;
+&lt;/<span class="t">LinearLayout</span>&gt;</code></pre>
+      <p style="font-size:.85rem;margin:0 0 10px;">Qual é o problema neste trecho?</p>
+      <label class="quiz-opt"><input type="radio" name="bug1" value="a"> LinearLayout não aceita layout_weight</label>
+      <label class="quiz-opt"><input type="radio" name="bug1" value="b"> Combinar layout_weight com wrap_content no eixo da orientação faz o sistema medir a view duas vezes: deveria ser 0dp</label>
+      <label class="quiz-opt"><input type="radio" name="bug1" value="c"> Falta declarar android:gravity</label>
+      <button class="quiz-btn" onclick="checkQuiz('bug1','b','fbbug1')">Verificar</button>
+      <div class="quiz-fb" id="fbbug1"></div>
+    </div>
+
+    <div class="callout warn">
+      <div class="c-label"><img class="om om-sm" src="../assets/icons/content/herb.svg" alt=""> Erro comum: weight sem 0dp</div>
+      <p>Quando se usa <code>layout_weight</code>, a largura (num LinearLayout horizontal) deveria ser <code>0dp</code>, não <code>wrap_content</code>. Com <code>wrap_content</code>, o sistema mede o conteúdo primeiro e só depois distribui o peso: um passo de medição extra e desnecessário em cada frame de layout.</p>
+    </div>
+
+    <div class="checklist">
+      <div class="checklist-title"><img class="om" src="../assets/icons/code-editor.svg" alt="">Mão na massa</div>
+      <div class="c-item"><input type="checkbox" id="chk-1" data-mod="1" onchange="onCheck(this)"><label for="chk-1">Substituir toda medida em <code>px</code> por <code>dp</code> (e <code>sp</code> na tipografia) num layout existente.</label></div>
+      <div class="c-item"><input type="checkbox" id="chk-2" data-mod="1" onchange="onCheck(this)"><label for="chk-2">Revisar um XML de layout e decidir conscientemente onde usar <code>wrap_content</code> vs <code>match_parent</code>.</label></div>
+      <div class="c-item"><input type="checkbox" id="chk-3" data-mod="1" onchange="onCheck(this)"><label for="chk-3">Ancorar bidimensionalmente (topo/base/início/fim) todos os nós de um <code>ConstraintLayout</code>.</label></div>
+      <div class="c-item"><input type="checkbox" id="chk-4" data-mod="1" onchange="onCheck(this)"><label for="chk-4">Testar a mesma tela em dois emuladores com densidades diferentes (ex: mdpi e xxhdpi).</label></div>
+    </div>
+  </section>
+
+  <!-- ================= MODULE 02 ================= -->
+  <section class="content-section" id="sec-1" data-mod="2">
+    <div class="eyebrow">Módulo 04 / 11</div>
+    <h2>Temas &amp; Design System</h2>
+    <p class="subtitle">Centralizar a identidade visual num único lugar em vez de espalhar estilo por dezenas de arquivos de layout.</p>
+    <div class="hero-photo-wrap"><img class="hero-photo" src="https://images.unsplash.com/photo-1755690042574-49ff5c3bfe96?auto=format&fit=crop&w=1600&q=70" alt="Prado com flores silvestres iluminado pela luz dourada do amanhecer"></div>
+    <p class="hero-credit">Foto: <a href="https://unsplash.com/@mineral_of_demon" target="_blank" rel="noopener">Nastia Petruk</a> em Unsplash</p>
+    <div class="wire"></div>
+
+    <div class="flip-grid">
+      <div class="flipcard">
+        <input type="checkbox" id="f3" class="flip-trigger">
+        <label for="f3" class="flip-inner">
+          <div class="flip-face flip-front"><span class="fk">escopo global</span><strong>Theme</strong><p>Clique para diferenciar →</p></div>
+          <div class="flip-face flip-back"><p>Aplicado a um <strong>Activity ou app inteiro</strong> via <code>AndroidManifest.xml</code>. Define a identidade visual geral.</p></div>
+        </label>
+      </div>
+      <div class="flipcard">
+        <input type="checkbox" id="f4" class="flip-trigger">
+        <label for="f4" class="flip-inner">
+          <div class="flip-face flip-front"><span class="fk">escopo local</span><strong>Style</strong><p>Clique para diferenciar →</p></div>
+          <div class="flip-face flip-back"><p>Aplicado a <strong>uma View específica</strong> via <code>style="@style/..."</code>, sobrescrevendo o tema global naquele ponto.</p></div>
+        </label>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3><span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.2459 14H8.75407L7.15407 18H5L11 3H13L19 18H16.8459L15.2459 14ZM14.4459 12L12 5.88516L9.55407 12H14.4459ZM3 20H21V22H3V20Z"></path></svg></span> Declarando um tema (<code>res/values/themes.xml</code>)</h3>
+      <p>Toda declaração precisa de um <code>name</code> exclusivo e, obrigatoriamente, de um <code>parent</code>: é a herança que evita reescrever tudo do zero.</p>
+      <pre><code><span class="cm">&lt;!-- herda a base sólida do AppCompat --&gt;</span>
+&lt;<span class="k">style</span> <span class="t">name</span>=<span class="s">"Theme.CustomApp"</span> <span class="t">parent</span>=<span class="s">"Theme.AppCompat.Light.NoActionBar"</span>&gt;
+    &lt;<span class="k">item</span> <span class="t">name</span>=<span class="s">"colorPrimary"</span>&gt;@color/brand_primary&lt;/<span class="k">item</span>&gt;
+    &lt;<span class="k">item</span> <span class="t">name</span>=<span class="s">"android:windowBackground"</span>&gt;@color/window_dark&lt;/<span class="k">item</span>&gt;
+&lt;/<span class="k">style</span>&gt;</code></pre>
+    </div>
+
+    <div class="grid2">
+      <div class="card">
+        <h3><span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14.8287 7.75737L9.1718 13.4142C8.78127 13.8047 8.78127 14.4379 9.1718 14.8284C9.56232 15.219 10.1955 15.219 10.586 14.8284L16.2429 9.17158C17.4144 8.00001 17.4144 6.10052 16.2429 4.92894C15.0713 3.75737 13.1718 3.75737 12.0002 4.92894L6.34337 10.5858C4.39075 12.5384 4.39075 15.7042 6.34337 17.6569C8.29599 19.6095 11.4618 19.6095 13.4144 17.6569L19.0713 12L20.4855 13.4142L14.8287 19.0711C12.095 21.8047 7.66283 21.8047 4.92916 19.0711C2.19549 16.3374 2.19549 11.9053 4.92916 9.17158L10.586 3.51473C12.5386 1.56211 15.7045 1.56211 17.6571 3.51473C19.6097 5.46735 19.6097 8.63317 17.6571 10.5858L12.0002 16.2427C10.8287 17.4142 8.92916 17.4142 7.75759 16.2427C6.58601 15.0711 6.58601 13.1716 7.75759 12L13.4144 6.34316L14.8287 7.75737Z"></path></svg></span> Vínculo no Manifest</h3>
+        <p>O tema só passa a valer quando é referenciado no <code>AndroidManifest.xml</code>:</p>
+        <pre><code>&lt;<span class="k">application</span>
+    android:<span class="t">theme</span>=<span class="s">"@style/Theme.CustomApp"</span>&gt;</code></pre>
+      </div>
+      <div class="card">
+        <h3><span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 10V14H19V10H13ZM11 10H5V14H11V10ZM13 19H19V16H13V19ZM11 19V16H5V19H11ZM13 5V8H19V5H13ZM11 5H5V8H11V5ZM4 3H20C20.5523 3 21 3.44772 21 4V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3Z"></path></svg></span> Shapes customizados</h3>
+        <p>Cantos arredondados e bordas em botões/dialogs pedem um XML de <code>&lt;shape&gt;</code> isolado, referenciado depois no tema:</p>
+        <pre><code>&lt;<span class="k">shape</span>&gt;
+  &lt;<span class="k">corners</span> android:<span class="t">radius</span>=<span class="s">"20dp"</span>/&gt;
+&lt;/<span class="k">shape</span>&gt;</code></pre>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3><span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7.29117 20.8242L2 22L3.17581 16.7088C2.42544 15.3056 2 13.7025 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C10.2975 22 8.6944 21.5746 7.29117 20.8242Z"></path></svg></span> Indo além: Custom Dialog</h3>
+      <p>O mesmo raciocínio de shape + tema se aplica a caixas de mensagem customizadas. Você define o fundo em XML (cantos arredondados, cor sólida) e, no código, infla esse layout dentro de um <code>Dialog</code>: útil pra telas de "Você venceu" / "Você perdeu" ou qualquer feedback que não deveria ser um AlertDialog genérico.</p>
+      <pre><code><span class="k">val</span> dialog = Dialog(<span class="k">this</span>)
+dialog.setContentView(R.layout.<span class="t">custom_dialog</span>)
+dialog.findViewById&lt;Button&gt;(R.id.<span class="t">btnOk</span>).setOnClickListener {
+    dialog.dismiss()
+}
+dialog.show()</code></pre>
+    </div>
+
+    <div class="quiz">
+      <div class="quiz-q"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm.9 14.9h-1.8v-1.8h1.8v1.8Zm1.86-6.9c-.4.5-.7.9-.9 1.4-.16.36-.24.7-.26 1.2h-1.7c.02-.7.16-1.24.44-1.76.28-.5.66-.96 1.14-1.42.34-.32.58-.6.74-.86.16-.28.24-.56.24-.9 0-.44-.14-.78-.42-1.04-.28-.26-.68-.4-1.18-.4-.5 0-.92.16-1.24.46-.32.3-.5.72-.54 1.24H7.4c.06-1.14.46-2.02 1.2-2.66.76-.64 1.72-.96 2.9-.96 1.24 0 2.22.32 2.94.96.72.62 1.08 1.44 1.08 2.44 0 .6-.14 1.1-.42 1.5-.24.36-.5.66-.84 1.02Z"/></svg> Quiz rápido: Todo <code>&lt;style&gt;</code> customizado deve obrigatoriamente declarar qual atributo?</div>
+      <label class="quiz-opt"><input type="radio" name="q2a" value="a"> name apenas</label>
+      <label class="quiz-opt"><input type="radio" name="q2a" value="b"> parent</label>
+      <label class="quiz-opt"><input type="radio" name="q2a" value="c"> android:theme</label>
+      <button class="quiz-btn" onclick="checkQuiz('q2a','b','fb2a')">Verificar</button>
+      <div class="quiz-fb" id="fb2a"></div>
+    </div>
+
+    <div class="quiz bughunt">
+      <div class="quiz-q"><img class="om om-md" src="../assets/icons/bug.svg" alt="bug"> Encontre o bug</div>
+      <pre><code>&lt;<span class="t">Button</span>
+    android:<span class="k">textColor</span>=<span class="s">"#FFFFFF"</span>
+    android:<span class="k">background</span>=<span class="s">"#3F51B5"</span> /&gt;</code></pre>
+      <p style="font-size:.85rem;margin:0 0 10px;">Qual é o problema neste trecho?</p>
+      <label class="quiz-opt"><input type="radio" name="bug2" value="a"> Button não aceita cor de fundo customizada</label>
+      <label class="quiz-opt"><input type="radio" name="bug2" value="b"> Cores fixas em hex ignoram o tema: o botão não muda no dark mode e fica inconsistente com o resto do app</label>
+      <label class="quiz-opt"><input type="radio" name="bug2" value="c"> Falta declarar android:elevation</label>
+      <button class="quiz-btn" onclick="checkQuiz('bug2','b','fbbug2')">Verificar</button>
+      <div class="quiz-fb" id="fbbug2"></div>
+    </div>
+
+    <div class="callout warn">
+      <div class="c-label"><img class="om om-sm" src="../assets/icons/content/herb.svg" alt=""> Erro comum: cor fixa em vez de atributo de tema</div>
+      <p>Usar <code>#FFFFFF</code> direto no XML "funciona", mas quebra o dark mode e a consistência visual. O caminho certo é referenciar um atributo do tema como <code>?attr/colorPrimary</code> ou um recurso semântico em <code>colors.xml</code>: aí a cor muda sozinha quando o tema muda.</p>
+    </div>
+
+    <div class="checklist">
+      <div class="checklist-title"><img class="om" src="../assets/icons/code-editor.svg" alt="">Mão na massa</div>
+      <div class="c-item"><input type="checkbox" id="chk-5" data-mod="2" onchange="onCheck(this)"><label for="chk-5">Centralizar a paleta de cores em <code>colors.xml</code> em vez de espalhar hex codes pelos layouts.</label></div>
+      <div class="c-item"><input type="checkbox" id="chk-6" data-mod="2" onchange="onCheck(this)"><label for="chk-6">Vincular o tema criado ao nó <code>&lt;application&gt;</code> do <code>AndroidManifest.xml</code>.</label></div>
+      <div class="c-item"><input type="checkbox" id="chk-7" data-mod="2" onchange="onCheck(this)"><label for="chk-7">Criar um arquivo de shape (ex: <code>custom_dialog_bg.xml</code>) com cantos arredondados e aplicá-lo a um dialog.</label></div>
+      <div class="c-item"><input type="checkbox" id="chk-8" data-mod="2" onchange="onCheck(this)"><label for="chk-8">Mover qualquer estilo repetido entre layouts para dentro de <code>themes.xml</code>.</label></div>
+      <div class="c-item"><input type="checkbox" id="chk-28" data-mod="2" onchange="onCheck(this)"><label for="chk-28">Construir um Custom Dialog completo (XML + Kotlin) para uma tela de resultado "Você venceu" / "Você perdeu".</label></div>
+    </div>
+
+    <div class="game-card sequence-game" id="seqGameAndroid" data-steps='["Centralizar as cores em colors.xml","Definir o estilo base herdando de um Material Theme em themes.xml","Aplicar o estilo aos componentes (botões, dialogs)","Vincular o tema ao nó &lt;application&gt; do AndroidManifest.xml"]'>
+      <div class="game-head">
+        <div class="game-title"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.8589 2H11.1411C9.12721 2 8.04724 2.27848 7.06946 2.8014C6.09169 3.32432 5.32432 4.09169 4.8014 5.06946C4.27848 6.04724 4 7.12721 4 9.14111V14.8589C4 16.8728 4.27848 17.9528 4.8014 18.9305C5.32432 19.9083 6.09169 20.6757 7.06946 21.1986C8.04724 21.7215 9.12721 22 11.1411 22H12.8589C14.8728 22 15.9528 21.7215 16.9305 21.1986C17.9083 20.6757 18.6757 19.9083 19.1986 18.9305C19.7215 17.9528 20 16.8728 20 14.8589V9.14111C20 7.12721 19.7215 6.04724 19.1986 5.06946C18.6757 4.09169 17.9083 3.32432 16.9305 2.8014C15.9528 2.27848 14.8728 2 12.8589 2ZM11 11V6H13V11H11ZM7.75781 13.758L9.17203 12.3438L12.0005 15.1722L14.8289 12.3438L16.2431 13.758L12.0005 18.0006L7.75781 13.758Z"></path></svg> Monte o tema na ordem certa</div>
+        <div class="game-stats"><span class="js-seq-status">0/4</span></div>
+      </div>
+      <p style="font-size:.82rem;color:var(--text-dim);margin-bottom:14px;">Coloque as etapas de criação de um tema custom na ordem certa.</p>
+      <div class="seq-answer"></div>
+      <div class="seq-pool"></div>
+      <div class="game-win-msg"><img class="om om-sm" src="../assets/icons/content/confetti.svg" alt=""> Sequência perfeita! Você entende o Design System de ponta a ponta.</div>
+      <button class="game-reset-btn" onclick="initSequenceGame('seqGameAndroid')">Embaralhar de novo</button>
+    </div>
+
+  </section>
+
+  <!-- ================= MODULE 08 (RecyclerView) ================= -->
+  <section class="content-section" id="sec-7" data-mod="8">
+    <div class="eyebrow">Módulo 05 / 11</div>
+    <h2>RecyclerView de Alta Performance</h2>
+    <p class="subtitle">A ferramenta certa pra qualquer lista: do feed mais simples ao catálogo com milhares de itens.</p>
+    <div class="hero-photo-wrap"><img class="hero-photo" src="https://images.unsplash.com/photo-1760479099643-b37a52e7c094?auto=format&fit=crop&w=1600&q=70" alt="Trilha na floresta se estendendo ao longe"></div>
+    <p class="hero-credit">Foto: <a href="https://unsplash.com/@visualsbying" target="_blank" rel="noopener">Ingmar</a> em Unsplash</p>
+    <div class="wire"></div>
+
+    <div class="card">
+      <h3><span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.8589 2H11.1411C9.12721 2 8.04724 2.27848 7.06946 2.8014C6.09169 3.32432 5.32432 4.09169 4.8014 5.06946C4.27848 6.04724 4 7.12721 4 9.14111V14.8589C4 16.8728 4.27848 17.9528 4.8014 18.9305C5.32432 19.9083 6.09169 20.6757 7.06946 21.1986C8.04724 21.7215 9.12721 22 11.1411 22H12.8589C14.8728 22 15.9528 21.7215 16.9305 21.1986C17.9083 20.6757 18.6757 19.9083 19.1986 18.9305C19.7215 17.9528 20 16.8728 20 14.8589V9.14111C20 7.12721 19.7215 6.04724 19.1986 5.06946C18.6757 4.09169 17.9083 3.32432 16.9305 2.8014C15.9528 2.27848 14.8728 2 12.8589 2ZM11 11V6H13V11H11ZM7.75781 13.758L9.17203 12.3438L12.0005 15.1722L14.8289 12.3438L16.2431 13.758L12.0005 18.0006L7.75781 13.758Z"></path></svg></span> Adapter + ViewHolder, a dupla essencial</h3>
+      <p>O <code>RecyclerView</code> não desenha mil views pra uma lista de mil itens: ele recicla um punhado de views visíveis na tela. O <code>ViewHolder</code> guarda as referências de cada célula, e o <code>Adapter</code> decide o que colocar nelas conforme o usuário rola a lista.</p>
+      <pre><code><span class="k">class</span> ItemViewHolder(<span class="k">val</span> binding: ItemProdutoBinding) :
+    RecyclerView.ViewHolder(binding.root)
+
+<span class="k">class</span> ProdutoAdapter(<span class="k">private val</span> itens: List&lt;Produto&gt;) :
+    RecyclerView.Adapter&lt;ItemViewHolder&gt;() {
+    override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
+        holder.binding.tvNome.text = itens[position].nome
+    }
+}</code></pre>
+    </div>
+
+    <div class="grid2">
+      <div class="card">
+        <h3><span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.9093 12.3603L17.0007 20.8537L14.1816 21.8798L11.0902 13.3864L6.91797 16.5422L8.4087 1.63318L19.134 12.0959L13.9093 12.3603Z"></path></svg></span> Cliques e swipe-to-delete</h3>
+        <p>Cliques são repassados via uma lambda no construtor do Adapter: nunca dentro de <code>onCreateViewHolder</code>, que só roda quando uma nova célula é criada, não a cada rebind. Deletar com gesto de swipe usa <code>ItemTouchHelper</code> anexado ao RecyclerView.</p>
+      </div>
+      <div class="card">
+        <h3><span class="ic"><img class="om om-sm" src="../assets/icons/content/lightning.svg" alt=""></span> ListAdapter + DiffUtil</h3>
+        <p><code>DiffUtil</code> compara a lista antiga com a nova e calcula o menor conjunto de mudanças: em vez de redesenhar tudo, anima só o que de fato mudou. O <code>ListAdapter</code> já embute isso: basta chamar <code>submitList()</code>.</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="c-label"><img class="om om-sm" src="../assets/icons/content/herb.svg" alt=""> Onde colocar o listener</div>
+      <p>Sempre dentro de <code>bind()</code>, não em <code>onCreateViewHolder</code>: o holder é reciclado, e um listener preso à posição errada é uma das causas mais comuns de "clique no item errado" em listas Android.</p>
+    </div>
+
+    <div class="flip-grid">
+      <div class="flipcard">
+        <input type="checkbox" id="f13" class="flip-trigger">
+        <label for="f13" class="flip-inner">
+          <div class="flip-face flip-front"><span class="fk">atualização</span><strong>notifyDataSetChanged()</strong><p>Clique →</p></div>
+          <div class="flip-face flip-back"><p>Redesenha a lista inteira, sem animação inteligente. Simples, mas caro em listas grandes.</p></div>
+        </label>
+      </div>
+      <div class="flipcard">
+        <input type="checkbox" id="f14" class="flip-trigger">
+        <label for="f14" class="flip-inner">
+          <div class="flip-face flip-front"><span class="fk">atualização</span><strong>DiffUtil</strong><p>Clique →</p></div>
+          <div class="flip-face flip-back"><p>Calcula exatamente o que mudou e anima só isso. Mais trabalho de CPU, resultado muito mais suave.</p></div>
+        </label>
+      </div>
+    </div>
+
+    <div class="quiz">
+      <div class="quiz-q"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm.9 14.9h-1.8v-1.8h1.8v1.8Zm1.86-6.9c-.4.5-.7.9-.9 1.4-.16.36-.24.7-.26 1.2h-1.7c.02-.7.16-1.24.44-1.76.28-.5.66-.96 1.14-1.42.34-.32.58-.6.74-.86.16-.28.24-.56.24-.9 0-.44-.14-.78-.42-1.04-.28-.26-.68-.4-1.18-.4-.5 0-.92.16-1.24.46-.32.3-.5.72-.54 1.24H7.4c.06-1.14.46-2.02 1.2-2.66.76-.64 1.72-.96 2.9-.96 1.24 0 2.22.32 2.94.96.72.62 1.08 1.44 1.08 2.44 0 .6-.14 1.1-.42 1.5-.24.36-.5.66-.84 1.02Z"/></svg> Quiz rápido: O que o DiffUtil evita que você precise chamar manualmente?</div>
+      <label class="quiz-opt"><input type="radio" name="q8a" value="a"> setOnClickListener</label>
+      <label class="quiz-opt"><input type="radio" name="q8a" value="b"> notifyDataSetChanged()</label>
+      <label class="quiz-opt"><input type="radio" name="q8a" value="c"> onBindViewHolder</label>
+      <button class="quiz-btn" onclick="checkQuiz('q8a','b','fb8a')">Verificar</button>
+      <div class="quiz-fb" id="fb8a"></div>
+    </div>
+
+    <div class="quiz bughunt">
+      <div class="quiz-q"><img class="om om-md" src="../assets/icons/bug.svg" alt="bug"> Encontre o bug</div>
+      <pre><code><span class="k">class</span> ProdutoAdapter(<span class="k">private val</span> itens: List&lt;Produto&gt;) :
+    RecyclerView.Adapter&lt;ItemViewHolder&gt;() {
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
+        <span class="k">val</span> binding = ItemProdutoBinding.inflate(LayoutInflater.from(parent.context), parent, <span class="k">false</span>)
+        <span class="k">return</span> ItemViewHolder(binding)
+    }
+    override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
+        holder.binding.tvNome.text = itens[position].nome
+    }
+}</code></pre>
+      <p style="font-size:.85rem;margin:0 0 10px;">Por que essa lista sempre aparece vazia na tela?</p>
+      <label class="quiz-opt"><input type="radio" name="bug8" value="a"> Falta sobrescrever getItemCount(): sem ele o RecyclerView assume que a lista tem 0 itens</label>
+      <label class="quiz-opt"><input type="radio" name="bug8" value="b"> onCreateViewHolder está incompleto</label>
+      <label class="quiz-opt"><input type="radio" name="bug8" value="c"> itens deveria ser MutableList</label>
+      <button class="quiz-btn" onclick="checkQuiz('bug8','a','fbbug8')">Verificar</button>
+      <div class="quiz-fb" id="fbbug8"></div>
+    </div>
+
+    <div class="checklist">
+      <div class="checklist-title"><img class="om" src="../assets/icons/code-editor.svg" alt="">Mão na massa</div>
+      <div class="c-item"><input type="checkbox" id="chk-29" data-mod="8" onchange="onCheck(this)"><label for="chk-29">Montar uma lista simples com Adapter + ViewHolder + LayoutManager.</label></div>
+      <div class="c-item"><input type="checkbox" id="chk-30" data-mod="8" onchange="onCheck(this)"><label for="chk-30">Adicionar clique em cada item, repassando o dado certo pra tela de detalhe.</label></div>
+      <div class="c-item"><input type="checkbox" id="chk-31" data-mod="8" onchange="onCheck(this)"><label for="chk-31">Implementar swipe-to-delete com <code>ItemTouchHelper</code>.</label></div>
+      <div class="c-item"><input type="checkbox" id="chk-32" data-mod="8" onchange="onCheck(this)"><label for="chk-32">Migrar o Adapter para <code>ListAdapter</code> + <code>DiffUtil</code> e comparar as animações.</label></div>
+    </div>
+
+    <div class="game-card timedquiz-game" id="tqGameAndroid" data-questions='[
+      {"q":"Qual combinação monta uma lista performática no RecyclerView?","options":["Adapter + ViewHolder + LayoutManager","Fragment + Intent + Bundle","Theme + Style + Shape"],"correct":0},
+      {"q":"O que ItemTouchHelper implementa numa lista?","options":["Paginação automática","Swipe-to-delete","Data binding"],"correct":1},
+      {"q":"Migrar de Adapter comum pra ListAdapter + DiffUtil melhora principalmente:","options":["O consumo de rede","As animações e performance ao atualizar itens","O tamanho do APK"],"correct":1},
+      {"q":"O ViewHolder existe pra:","options":["Guardar credenciais de rede","Evitar recriar views repetidamente durante o scroll","Substituir o LayoutManager"],"correct":1},
+      {"q":"Qual desses NÃO é papel do LayoutManager?","options":["Definir se a lista é vertical, horizontal ou em grade","Posicionar os itens na tela","Validar tokens de autenticação"],"correct":2}
+    ]'>
+      <div class="game-head">
+        <div class="game-title"><img class="om om-sm" src="../assets/icons/content/hourglass.svg" alt=""> Contra o Relógio</div>
+        <div class="game-stats tq-status">1/5 · pontos: 0</div>
+      </div>
+      <p style="font-size:.82rem;color:var(--text-dim);margin-bottom:14px;">Escolha rápido antes que o cronômetro zere!</p>
+      <div class="tq-timerbar"><div class="tq-timerfill"></div></div>
+      <div class="tq-question"></div>
+      <div class="tq-opts"></div>
+      <div class="game-win-msg"><img class="om om-sm" src="../assets/icons/content/confetti.svg" alt=""> Desafio contra o relógio concluído!</div>
+      <button class="game-reset-btn" onclick="resetTimedQuiz('tqGameAndroid')">Jogar de novo</button>
+    </div>
+
+  </section>
+
+  <!-- ================= MODULE 03 ================= -->
+  <section class="content-section" id="sec-2" data-mod="3">
+    <div class="eyebrow">Módulo 06 / 11</div>
+    <h2>Arquitetura MVVM &amp; Cloud Translation API</h2>
+    <p class="subtitle">Isolar a lógica de negócio da interface: e consumir um serviço externo sem bagunçar tudo.</p>
+    <div class="hero-photo-wrap"><img class="hero-photo" src="https://images.unsplash.com/photo-1755643842005-460e3a030102?auto=format&fit=crop&w=1600&q=70" alt="Reflexo das montanhas em um lago calmo ao nascer do sol"></div>
+    <p class="hero-credit">Foto: <a href="https://unsplash.com/@emmakphoto" target="_blank" rel="noopener">Emma Swoboda</a> em Unsplash</p>
+    <div class="wire"></div>
+
+    <table>
+      <thead><tr><th>Camada</th><th>Responsabilidade</th><th>Implementação típica</th></tr></thead>
+      <tbody>
+        <tr><td><span class="badge">View</span></td><td>Observa <code>LiveData</code>. Reage a mudanças sem lógica própria.</td><td><code>Activity</code> / <code>Fragment</code></td></tr>
+        <tr><td><span class="badge">ViewModel</span></td><td>Expõe dados já processados. Sobrevive a mudanças de configuração.</td><td><code>TranslateViewModel</code></td></tr>
+        <tr><td><span class="badge">Repository</span></td><td>Abstrai a fonte de dados (rede/DB). Isola a lógica de rede da ViewModel.</td><td><code>TranslateRepository</code></td></tr>
+        <tr><td><span class="badge">API Service</span></td><td>Define os endpoints. Padrão de indústria para REST.</td><td>Retrofit + OkHttp</td></tr>
+        <tr><td><span class="badge">Cloud</span></td><td>Processamento neural externo.</td><td>Google Cloud Translation API</td></tr>
+      </tbody>
+    </table>
+
+    <div class="card">
+      <h3><span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M0.689453 6.99659C3.78027 4.49704 7.71526 3 11.9999 3C16.2845 3 20.2195 4.49704 23.3104 6.99659L21.4253 9.33049C18.8496 7.24753 15.5704 6 11.9999 6C8.42937 6 5.15021 7.24753 2.57453 9.33049L0.689453 6.99659ZM3.83124 10.8864C6.0635 9.08119 8.90544 8 11.9999 8C15.0944 8 17.9363 9.08119 20.1686 10.8864L18.2835 13.2203C16.5664 11.8317 14.3803 11 11.9999 11C9.61954 11 7.43344 11.8317 5.71632 13.2203L3.83124 10.8864ZM6.97304 14.7763C8.34673 13.6653 10.0956 13 11.9999 13C13.9042 13 15.6531 13.6653 17.0268 14.7763L15.1417 17.1102C14.2831 16.4158 13.1901 16 11.9999 16C10.8097 16 9.71667 16.4158 8.85811 17.1102L6.97304 14.7763ZM10.1148 18.6661C10.63 18.2495 11.2858 18 11.9999 18C12.714 18 13.3698 18.2495 13.885 18.6661L11.9999 21L10.1148 18.6661Z"></path></svg></span> Endpoint da Cloud Translation API</h3>
+      <p>Requisição <strong>POST</strong>, autenticada por chave, com corpo em JSON:</p>
+      <pre><code>POST /language/translate/v2?key=API_KEY
+
+<span class="cm">// payload</span>
+{
+  <span class="s">"q"</span>: [<span class="s">"Hello World"</span>],
+  <span class="s">"target"</span>: <span class="s">"pt"</span>
+}</code></pre>
+      <div class="stat-row">
+        <div class="stat-chip"><div class="num">100+</div><div class="lbl">idiomas suportados</div></div>
+        <div class="stat-chip"><div class="num">&lt;200ms</div><div class="lbl">latência média</div></div>
+        <div class="stat-chip"><div class="num">NMT</div><div class="lbl">tradução neural</div></div>
+        <div class="stat-chip"><div class="num">500k</div><div class="lbl">caracteres grátis/mês</div></div>
+      </div>
+    </div>
+
+    <div class="grid2">
+      <div class="card">
+        <h3><span class="ic"><img class="om om-sm" src="../assets/icons/content/cyclone.svg" alt=""></span> Coroutines: a corrida sem travar a tela</h3>
+        <p>Uma chamada de rede na thread principal trava a UI e pode gerar um ANR. Coroutines resolvem isso com funções <em>suspend</em> que pausam sem bloquear a thread. No Android, prefira escopos que já respeitam o ciclo de vida: <code>viewModelScope</code> numa ViewModel, <code>lifecycleScope</code> numa Activity/Fragment.</p>
+        <pre><code>viewModelScope.launch {
+    <span class="k">val</span> resultado = repository.traduzir(texto)
+    _uiState.value = resultado
+}</code></pre>
+      </div>
+      <div class="card">
+        <h3><span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 10H4V19H20V10ZM3 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3ZM5 6V8H7V6H5ZM9 6V8H11V6H9ZM5 11H8V16H5V11Z"></path></svg></span> WebView: HTML dentro do app</h3>
+        <p>Quando uma tela precisa renderizar conteúdo web (uma política de privacidade, um checkout, um artigo), o <code>WebView</code> embute um navegador dentro do próprio app: sem precisar abrir o Chrome. Vale lembrar: JavaScript vem desabilitado por padrão, e precisa ser ligado explicitamente se a página depender dele.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3><span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3ZM12 15V17H18V15H12ZM8.41421 12L5.58579 14.8284L7 16.2426L11.2426 12L7 7.75736L5.58579 9.17157L8.41421 12Z"></path></svg></span> Configurando a API no Google Cloud Console</h3>
+      <div class="steps">
+        <div class="step"><div class="step-num"></div><div class="step-body"><strong>Criar um projeto</strong><p>Todo recurso do Google Cloud vive dentro de um projeto: é o contêiner que agrupa faturamento, permissões e APIs ativadas.</p></div></div>
+        <div class="step"><div class="step-num"></div><div class="step-body"><strong>Ativar a Cloud Translation API</strong><p>Na biblioteca de APIs do console, procure e ative o serviço antes de tentar chamá-lo: API não ativada retorna erro 403.</p></div></div>
+        <div class="step"><div class="step-num"></div><div class="step-body"><strong>Escolher a credencial certa</strong><p><strong>API Key</strong> é suficiente para acesso simples (a versão Basic/v2 usada neste guia). <strong>OAuth 2.0</strong> entra quando o app precisa agir em nome de um usuário ou acessar a versão Advanced/v3 da API.</p></div></div>
+      </div>
+    </div>
+
+    <div class="flip-grid">
+      <div class="flipcard">
+        <input type="checkbox" id="f15" class="flip-trigger">
+        <label for="f15" class="flip-inner">
+          <div class="flip-face flip-front"><span class="fk">camadas</span><strong>ViewModel</strong><p>Clique →</p></div>
+          <div class="flip-face flip-back"><p>Processa e guarda estado. Sobrevive à rotação de tela. Nunca guarda referência de View ou Activity.</p></div>
+        </label>
+      </div>
+      <div class="flipcard">
+        <input type="checkbox" id="f16" class="flip-trigger">
+        <label for="f16" class="flip-inner">
+          <div class="flip-face flip-front"><span class="fk">camadas</span><strong>Repository</strong><p>Clique →</p></div>
+          <div class="flip-face flip-back"><p>Fonte única de verdade. Decide se o dado vem da rede, cache ou banco: a ViewModel nem precisa saber.</p></div>
+        </label>
+      </div>
+    </div>
+
+    <div class="quiz">
+      <div class="quiz-q"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm.9 14.9h-1.8v-1.8h1.8v1.8Zm1.86-6.9c-.4.5-.7.9-.9 1.4-.16.36-.24.7-.26 1.2h-1.7c.02-.7.16-1.24.44-1.76.28-.5.66-.96 1.14-1.42.34-.32.58-.6.74-.86.16-.28.24-.56.24-.9 0-.44-.14-.78-.42-1.04-.28-.26-.68-.4-1.18-.4-.5 0-.92.16-1.24.46-.32.3-.5.72-.54 1.24H7.4c.06-1.14.46-2.02 1.2-2.66.76-.64 1.72-.96 2.9-.96 1.24 0 2.22.32 2.94.96.72.62 1.08 1.44 1.08 2.44 0 .6-.14 1.1-.42 1.5-.24.36-.5.66-.84 1.02Z"/></svg> Quiz rápido: Qual camada é responsável por isolar a lógica de rede da ViewModel?</div>
+      <label class="quiz-opt"><input type="radio" name="q3a" value="a"> View</label>
+      <label class="quiz-opt"><input type="radio" name="q3a" value="b"> Repository</label>
+      <label class="quiz-opt"><input type="radio" name="q3a" value="c"> API Service</label>
+      <button class="quiz-btn" onclick="checkQuiz('q3a','b','fb3a')">Verificar</button>
+      <div class="quiz-fb" id="fb3a"></div>
+    </div>
+
+    <div class="quiz bughunt">
+      <div class="quiz-q"><img class="om om-md" src="../assets/icons/bug.svg" alt="bug"> Encontre o bug</div>
+      <pre><code><span class="k">class</span> ListaViewModel(
+    <span class="k">private val</span> activity: MainActivity
+) : ViewModel() {
+    fun mostrarErro(msg: String) {
+        Toast.makeText(activity, msg, Toast.LENGTH_SHORT).show()
+    }
+}</code></pre>
+      <p style="font-size:.85rem;margin:0 0 10px;">Qual é o problema neste ViewModel?</p>
+      <label class="quiz-opt"><input type="radio" name="bug3" value="a"> ViewModel não pode ter construtor com parâmetros</label>
+      <label class="quiz-opt"><input type="radio" name="bug3" value="b"> Guardar uma Activity dentro do ViewModel causa vazamento: o ViewModel sobrevive à rotação, mas essa Activity específica não</label>
+      <label class="quiz-opt"><input type="radio" name="bug3" value="c"> Toast deveria ser um Snackbar</label>
+      <button class="quiz-btn" onclick="checkQuiz('bug3','b','fbbug3')">Verificar</button>
+      <div class="quiz-fb" id="fbbug3"></div>
+    </div>
+
+    <div class="checklist">
+      <div class="checklist-title"><img class="om" src="../assets/icons/code-editor.svg" alt="">Mão na massa</div>
+      <div class="c-item"><input type="checkbox" id="chk-9" data-mod="3" onchange="onCheck(this)"><label for="chk-9">Organizar o projeto em pacotes por camada: <code>view</code>, <code>viewmodel</code>, <code>repository</code>, <code>api</code>.</label></div>
+      <div class="c-item"><input type="checkbox" id="chk-10" data-mod="3" onchange="onCheck(this)"><label for="chk-10">Mapear a assinatura do endpoint numa interface Retrofit.</label></div>
+      <div class="c-item"><input type="checkbox" id="chk-11" data-mod="3" onchange="onCheck(this)"><label for="chk-11">Observar o resultado na View via <code>LiveData</code> ou <code>StateFlow</code>, sem lógica extra ali.</label></div>
+      <div class="c-item"><input type="checkbox" id="chk-12" data-mod="3" onchange="onCheck(this)"><label for="chk-12">Monitorar o uso de caracteres para não estourar o free tier de 500.000/mês.</label></div>
+      <div class="c-item"><input type="checkbox" id="chk-33" data-mod="3" onchange="onCheck(this)"><label for="chk-33">Trocar uma chamada de rede que trava a UI por uma versão com Coroutines.</label></div>
+      <div class="c-item"><input type="checkbox" id="chk-34" data-mod="3" onchange="onCheck(this)"><label for="chk-34">Embutir uma página simples num WebView dentro do app.</label></div>
+    </div>
+  </section>
+
+  <!-- ================= MODULE 04 ================= -->
+  <!-- ================= MODULE 09 (Fragments) ================= -->
+  <section class="content-section" id="sec-8" data-mod="9">
+    <div class="eyebrow">Módulo 07 / 11</div>
+    <h2>Fragments &amp; Modularização</h2>
+    <p class="subtitle">Telas reutilizáveis que se encaixam dentro de uma Activity: a peça que faltava pra layouts adaptáveis de verdade.</p>
+    <div class="hero-photo-wrap"><img class="hero-photo" src="https://images.unsplash.com/photo-1755643842005-460e3a030102?auto=format&fit=crop&w=1600&q=70" alt="Reflexo das montanhas em um lago calmo"></div>
+    <p class="hero-credit">Foto: <a href="https://unsplash.com/@emmakphoto" target="_blank" rel="noopener">Emma Swoboda</a> em Unsplash</p>
+
+    <div class="char-wrap">
+      <img class="char-cameo" src="../assets/characters/laura.png" alt="Laura, a programadora VR" style="width:130px;flex-shrink:0;">
+      <div class="char-bubble">
+        <div class="char-name">Laura</div>
+        <p>Sistemas sólidos crescem sem quebrar. Um Fragment mal isolado hoje é um bug de estado compartilhado amanhã. Modularize com intenção, não por hábito.</p>
+      </div>
+    </div>
+
+    <div class="wire"></div>
+
+    <div class="card">
+      <h3><span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 4C8 2.34315 9.34315 1 11 1C12.6569 1 14 2.34315 14 4C14 4.35064 13.9398 4.68722 13.8293 5H18C18.5523 5 19 5.44772 19 6V10.1707C19.3128 10.0602 19.6494 10 20 10C21.6569 10 23 11.3431 23 13C23 14.6569 21.6569 16 20 16C19.6494 16 19.3128 15.9398 19 15.8293V20C19 20.5523 18.5523 21 18 21H4C3.44772 21 3 20.5523 3 20V6C3 5.44772 3.44772 5 4 5H8.17071C8.06015 4.68722 8 4.35064 8 4Z"></path></svg></span> Um pedaço de UI com vida própria</h3>
+      <p>Um <code>Fragment</code> tem seu próprio ciclo de vida, mas vive hospedado dentro de uma Activity. Isso permite montar uma tela de tablet com duas colunas (lista + detalhe, cada uma um Fragment) e reaproveitar a coluna de detalhe sozinha no celular: mesma lógica, dois arranjos visuais.</p>
+      <pre><code><span class="k">class</span> DetalheFragment : Fragment(R.layout.<span class="t">fragment_detalhe</span>) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        <span class="k">super</span>.onViewCreated(view, savedInstanceState)
+        <span class="cm">// binding e lógica de UI aqui, não no construtor</span>
+    }
+}</code></pre>
+    </div>
+
+    <div class="callout">
+      <div class="c-label"><img class="om om-sm" src="../assets/icons/content/herb.svg" alt=""> Por que isso conversa com MVVM</div>
+      <p>Fragments costumam compartilhar uma ViewModel com a Activity que os hospeda (via <code>activityViewModels()</code>), o que permite dois Fragments irmãos (lista e detalhe) trocarem dados sem se conhecerem diretamente.</p>
+    </div>
+
+    <div class="flip-grid">
+      <div class="flipcard">
+        <input type="checkbox" id="f17" class="flip-trigger">
+        <label for="f17" class="flip-inner">
+          <div class="flip-face flip-front"><span class="fk">ViewModel</span><strong>viewModels()</strong><p>Clique →</p></div>
+          <div class="flip-face flip-back"><p>Cria uma ViewModel exclusiva daquele Fragment: não é compartilhada com ninguém.</p></div>
+        </label>
+      </div>
+      <div class="flipcard">
+        <input type="checkbox" id="f18" class="flip-trigger">
+        <label for="f18" class="flip-inner">
+          <div class="flip-face flip-front"><span class="fk">ViewModel</span><strong>activityViewModels()</strong><p>Clique →</p></div>
+          <div class="flip-face flip-back"><p>Reaproveita a ViewModel da Activity hospedeira: é assim que dois Fragments irmãos trocam dados.</p></div>
+        </label>
+      </div>
+    </div>
+
+    <div class="quiz">
+      <div class="quiz-q"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm.9 14.9h-1.8v-1.8h1.8v1.8Zm1.86-6.9c-.4.5-.7.9-.9 1.4-.16.36-.24.7-.26 1.2h-1.7c.02-.7.16-1.24.44-1.76.28-.5.66-.96 1.14-1.42.34-.32.58-.6.74-.86.16-.28.24-.56.24-.9 0-.44-.14-.78-.42-1.04-.28-.26-.68-.4-1.18-.4-.5 0-.92.16-1.24.46-.32.3-.5.72-.54 1.24H7.4c.06-1.14.46-2.02 1.2-2.66.76-.64 1.72-.96 2.9-.96 1.24 0 2.22.32 2.94.96.72.62 1.08 1.44 1.08 2.44 0 .6-.14 1.1-.42 1.5-.24.36-.5.66-.84 1.02Z"/></svg> Quiz rápido: Qual a principal vantagem de dividir uma tela complexa em Fragments?</div>
+      <label class="quiz-opt"><input type="radio" name="q9a" value="a"> O app fica mais rápido automaticamente</label>
+      <label class="quiz-opt"><input type="radio" name="q9a" value="b"> Reaproveitar e reorganizar pedaços de UI entre diferentes layouts de tela</label>
+      <label class="quiz-opt"><input type="radio" name="q9a" value="c"> Elimina a necessidade de Activities</label>
+      <button class="quiz-btn" onclick="checkQuiz('q9a','b','fb9a')">Verificar</button>
+      <div class="quiz-fb" id="fb9a"></div>
+    </div>
+
+    <div class="quiz bughunt">
+      <div class="quiz-q"><img class="om om-md" src="../assets/icons/bug.svg" alt="bug"> Encontre o bug</div>
+      <pre><code><span class="k">class</span> DetalheFragment(<span class="k">val</span> produtoId: Int) : Fragment() {
+    <span class="cm">// ...</span>
+}
+
+<span class="cm">// uso:</span>
+<span class="k">val</span> fragment = DetalheFragment(42)</code></pre>
+      <p style="font-size:.85rem;margin:0 0 10px;">Por que o produtoId some depois que o sistema recria o Fragment (ex: rotação de tela)?</p>
+      <label class="quiz-opt"><input type="radio" name="bug9" value="a"> Fragment não aceita parâmetros no nome da classe</label>
+      <label class="quiz-opt"><input type="radio" name="bug9" value="b"> O sistema recria Fragments com um construtor vazio: dados de construtor se perdem. O certo é usar arguments (Bundle) via um newInstance()</label>
+      <label class="quiz-opt"><input type="radio" name="bug9" value="c"> produtoId deveria ser var, não val</label>
+      <button class="quiz-btn" onclick="checkQuiz('bug9','b','fbbug9')">Verificar</button>
+      <div class="quiz-fb" id="fbbug9"></div>
+    </div>
+
+    <div class="checklist">
+      <div class="checklist-title"><img class="om" src="../assets/icons/code-editor.svg" alt="">Mão na massa</div>
+      <div class="c-item"><input type="checkbox" id="chk-35" data-mod="9" onchange="onCheck(this)"><label for="chk-35">Extrair uma tela existente para dentro de um Fragment hospedado por uma Activity.</label></div>
+      <div class="c-item"><input type="checkbox" id="chk-36" data-mod="9" onchange="onCheck(this)"><label for="chk-36">Compartilhar uma ViewModel entre dois Fragments irmãos.</label></div>
+      <div class="c-item"><input type="checkbox" id="chk-37" data-mod="9" onchange="onCheck(this)"><label for="chk-37">Montar um layout de duas colunas (lista + detalhe) usando dois Fragments lado a lado.</label></div>
+    </div>
+
+    <div class="game-card memory-game" id="memGameAndroid" data-pairs='[
+      {"term":"dp","def":"1 dp = 1 px a 160 dpi"},
+      {"term":"ViewModel","def":"Sobrevive à rotação de tela"},
+      {"term":"Repository","def":"Fonte única de verdade dos dados"},
+      {"term":"DiffUtil","def":"Anima só o que mudou na lista"},
+      {"term":"local.properties","def":"Onde a chave de API deve morar"},
+      {"term":"Fragment","def":"Tem ciclo de vida próprio dentro de uma Activity"}
+    ]'>
+      <div class="game-head">
+        <div class="game-title"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2ZM12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4ZM12 6C15.3137 6 18 8.68629 18 12H16C16 9.79086 14.2091 8 12 8V6Z"></path></svg> Jogo da Memória</div>
+        <div class="game-stats">Tentativas: <span class="js-mem-attempts">0</span></div>
+      </div>
+      <p style="font-size:.82rem;color:var(--text-dim);margin-bottom:14px;"><img class="om om-sm" src="../assets/icons/tap.svg" alt=""> Toque em duas cartas pra achar o termo e a definição que combinam.</p>
+      <div class="memory-grid"></div>
+      <div class="game-win-msg"><img class="om om-sm" src="../assets/icons/content/confetti.svg" alt=""> Todos os pares encontrados! Sua memória de conceitos tá afiada.</div>
+      <button class="game-reset-btn" onclick="initMemoryGame('memGameAndroid')">Embaralhar de novo</button>
+    </div>
+  </section>
+
+  <!-- ================= MODULE 04 ================= -->
+  <section class="content-section" id="sec-3" data-mod="4">
+    <div class="eyebrow">Módulo 08 / 11</div>
+    <h2>Segurança Mobile: Credenciais, Rede &amp; Código</h2>
+    <p class="subtitle">Sua API key é dinheiro andando por aí. Trate-a como tal: e vá além dela.</p>
+    <div class="hero-photo-wrap"><img class="hero-photo" src="https://images.unsplash.com/photo-1759144897143-991d650b1668?auto=format&fit=crop&w=1600&q=70" alt="Cabana de madeira iluminada sob um céu estrelado"></div>
+    <p class="hero-credit">Foto: <a href="https://unsplash.com/@sorasagano" target="_blank" rel="noopener">Sora Sagano</a> em Unsplash</p>
+    <div class="wire"></div>
+
+    <div class="card warn">
+      <h3><span class="ic"><img class="om om-sm" src="../assets/icons/content/warning.svg" alt=""></span> Diretriz crítica</h3>
+      <p>Uma API Key <strong>jamais</strong> deve residir num repositório Git: público ou privado. Exposta, ela permite uso malicioso por terceiros sob o faturamento do seu próprio projeto. Segundo o guia de análise de segurança da UFC (Gomes, 2017), a proteção de ativos críticos é prioridade zero em qualquer projeto que consuma APIs pagas.</p>
+    </div>
+
+    <h3 style="margin-top:24px;">Protocolo de armazenamento seguro</h3>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num"></div>
+        <div class="step-body">
+          <strong>Guarde a chave em <code>local.properties</code></strong>
+          <p><code>TRANSLATE_API_KEY=sua_chave_aqui</code>: esse arquivo não sobe pro Git por padrão nos projetos Android Studio.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num"></div>
+        <div class="step-body">
+          <strong>Leia e injete via <code>build.gradle</code></strong>
+          <p>Use o objeto <code>Properties</code> para ler o arquivo e gerar um <code>buildConfigField</code> em tempo de compilação.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num"></div>
+        <div class="step-body">
+          <strong>Consuma via <code>BuildConfig</code></strong>
+          <p><code>BuildConfig.TRANSLATE_API_KEY</code> no código: nunca a string crua espalhada por aí.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num"></div>
+        <div class="step-body">
+          <strong>Confirme o <code>.gitignore</code> antes do primeiro commit</strong>
+          <p>Garanta explicitamente a linha <code>local.properties</code> lá dentro: depois do primeiro push já é tarde.</p>
+        </div>
+      </div>
+    </div>
+
+    <pre><code><span class="cm">// build.gradle (Module)</span>
+buildConfigField(<span class="s">"String"</span>, <span class="s">"API_KEY"</span>, <span class="s">"\"${localProperties.getProperty('TRANSLATE_API_KEY')}\""</span>)</code></pre>
+
+    <div class="grid2">
+      <div class="card">
+        <h3><span class="ic"><img class="om om-sm" src="../assets/icons/content/shield.svg" alt=""></span> OWASP Top 10 Mobile</h3>
+        <p>Além de chaves expostas, a lista da OWASP cobre criptografia insuficiente, armazenamento inseguro de dados locais e comunicação de rede sem proteção: vale usá-la como checklist de revisão antes de publicar qualquer app.</p>
+      </div>
+      <div class="card">
+        <h3><span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 2L21 7V21.0082C21 21.556 20.5551 22 20.0066 22H3.9934C3.44476 22 3 21.5447 3 21.0082V2.9918C3 2.44405 3.44495 2 3.9934 2H16ZM15 11V10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10V11H8V16H16V11H15ZM13 11H11V10C11 9.44772 11.4477 9 12 9C12.5523 9 13 9.44772 13 10V11Z"></path></svg></span> SSL/TLS na prática</h3>
+        <p>Use sempre <code>HttpsURLConnection</code> ou bibliotecas que já validam certificado (Retrofit/OkHttp fazem isso por padrão). Para uma camada extra, <strong>certificate pinning</strong> trava o app pra aceitar só o certificado esperado do seu servidor.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3><span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M10.1305 15.8421L9.34268 18.7821L7.41083 18.2645L8.1983 15.3256C7.00919 14.8876 5.91661 14.2501 4.96116 13.4536L2.80783 15.6069L1.39362 14.1927L3.54695 12.0394C2.35581 10.6105 1.52014 8.8749 1.17578 6.96843L2.07634 6.80469C4.86882 8.81573 8.29618 10.0003 12.0002 10.0003C15.7043 10.0003 19.1316 8.81573 21.9241 6.80469L22.8247 6.96843C22.4803 8.8749 21.6446 10.6105 20.4535 12.0394L22.6068 14.1927L21.1926 15.6069L19.0393 13.4536C18.0838 14.2501 16.9912 14.8876 15.8021 15.3256L16.5896 18.2645L14.6578 18.7821L13.87 15.8421C13.2623 15.9461 12.6376 16.0003 12.0002 16.0003C11.3629 16.0003 10.7381 15.9461 10.1305 15.8421Z"></path></svg></span> Ofuscação de código com R8</h3>
+      <p>Mesmo com a chave fora do Git, um APK publicado pode ser descompilado. O R8 (padrão do Android Studio) reduz esse risco renomeando classes e métodos para nomes curtos e sem sentido, além de remover código morto. Ativa-se com uma linha no <code>build.gradle</code> de produção:</p>
+      <pre><code>buildTypes {
+    release {
+        minifyEnabled <span class="k">true</span>
+        shrinkResources <span class="k">true</span>
+    }
+}</code></pre>
+    </div>
+
+    <div class="flip-grid">
+      <div class="flipcard">
+        <input type="checkbox" id="f19" class="flip-trigger">
+        <label for="f19" class="flip-inner">
+          <div class="flip-face flip-front"><span class="fk">rede</span><strong>HTTP</strong><p>Clique →</p></div>
+          <div class="flip-face flip-back"><p>Dados trafegam em texto puro: qualquer um na mesma rede pode interceptar. Evite em produção.</p></div>
+        </label>
+      </div>
+      <div class="flipcard">
+        <input type="checkbox" id="f20" class="flip-trigger">
+        <label for="f20" class="flip-inner">
+          <div class="flip-face flip-front"><span class="fk">rede</span><strong>HTTPS (SSL/TLS)</strong><p>Clique →</p></div>
+          <div class="flip-face flip-back"><p>Criptografa o tráfego e valida o certificado do servidor. Retrofit/OkHttp já fazem isso por padrão.</p></div>
+        </label>
+      </div>
+    </div>
+
+    <div class="quiz">
+      <div class="quiz-q"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm.9 14.9h-1.8v-1.8h1.8v1.8Zm1.86-6.9c-.4.5-.7.9-.9 1.4-.16.36-.24.7-.26 1.2h-1.7c.02-.7.16-1.24.44-1.76.28-.5.66-.96 1.14-1.42.34-.32.58-.6.74-.86.16-.28.24-.56.24-.9 0-.44-.14-.78-.42-1.04-.28-.26-.68-.4-1.18-.4-.5 0-.92.16-1.24.46-.32.3-.5.72-.54 1.24H7.4c.06-1.14.46-2.02 1.2-2.66.76-.64 1.72-.96 2.9-.96 1.24 0 2.22.32 2.94.96.72.62 1.08 1.44 1.08 2.44 0 .6-.14 1.1-.42 1.5-.24.36-.5.66-.84 1.02Z"/></svg> Quiz rápido: Qual arquivo precisa estar no <code>.gitignore</code> antes do primeiro commit?</div>
+      <label class="quiz-opt"><input type="radio" name="q4a" value="a"> build.gradle</label>
+      <label class="quiz-opt"><input type="radio" name="q4a" value="b"> local.properties</label>
+      <label class="quiz-opt"><input type="radio" name="q4a" value="c"> AndroidManifest.xml</label>
+      <button class="quiz-btn" onclick="checkQuiz('q4a','b','fb4a')">Verificar</button>
+      <div class="quiz-fb" id="fb4a"></div>
+    </div>
+
+    <div class="quiz bughunt">
+      <div class="quiz-q"><img class="om om-md" src="../assets/icons/bug.svg" alt="bug"> Encontre o bug</div>
+      <pre><code><span class="k">fun</span> login(usuario: String, senha: String) {
+    Log.d(<span class="s">"AuthDebug"</span>, <span class="s">"tentando login com senha=$senha"</span>)
+    api.autenticar(usuario, senha)
+}</code></pre>
+      <p style="font-size:.85rem;margin:0 0 10px;">Qual é o problema neste trecho?</p>
+      <label class="quiz-opt"><input type="radio" name="bug4" value="a"> A senha aparece em texto puro no Logcat: visível em logs de crash e ferramentas de debug, mesmo sem tocar no Git</label>
+      <label class="quiz-opt"><input type="radio" name="bug4" value="b"> Log.d não existe no Android</label>
+      <label class="quiz-opt"><input type="radio" name="bug4" value="c"> A função deveria ser suspend</label>
+      <button class="quiz-btn" onclick="checkQuiz('bug4','a','fbbug4')">Verificar</button>
+      <div class="quiz-fb" id="fbbug4"></div>
+    </div>
+
+    <div class="checklist">
+      <div class="checklist-title"><img class="om" src="../assets/icons/code-editor.svg" alt="">Mão na massa</div>
+      <div class="c-item"><input type="checkbox" id="chk-13" data-mod="4" onchange="onCheck(this)"><label for="chk-13">Mover a chave privada para <code>local.properties</code>.</label></div>
+      <div class="c-item"><input type="checkbox" id="chk-14" data-mod="4" onchange="onCheck(this)"><label for="chk-14">Adicionar <code>local.properties</code> ao <code>.gitignore</code>: e conferir com <code>git status</code>.</label></div>
+      <div class="c-item"><input type="checkbox" id="chk-15" data-mod="4" onchange="onCheck(this)"><label for="chk-15">Trocar toda referência direta à string da chave por <code>BuildConfig.API_KEY</code>.</label></div>
+      <div class="c-item"><input type="checkbox" id="chk-16" data-mod="4" onchange="onCheck(this)"><label for="chk-16">Revogar/rotacionar qualquer chave que já tenha sido commitada por engano no histórico do Git.</label></div>
+      <div class="c-item"><input type="checkbox" id="chk-38" data-mod="4" onchange="onCheck(this)"><label for="chk-38">Passar a lista da OWASP Top 10 Mobile num app existente e marcar o que já está coberto.</label></div>
+      <div class="c-item"><input type="checkbox" id="chk-39" data-mod="4" onchange="onCheck(this)"><label for="chk-39">Ativar <code>minifyEnabled true</code> no build de release e confirmar que o app ainda funciona.</label></div>
+    </div>
+  </section>
+
+  <!-- ================= MODULE 05 ================= -->
+  <!-- ================= MODULE 10 (Ferramentas) ================= -->
+  <section class="content-section" id="sec-9" data-mod="10">
+    <div class="eyebrow">Módulo 09 / 11</div>
+    <h2>Ferramentas &amp; Extras</h2>
+    <p class="subtitle">O que fica em volta do código principal: nuvem, listas infinitas e a lupa pra quando algo dá errado.</p>
+    <div class="hero-photo-wrap"><img class="hero-photo" src="https://images.unsplash.com/photo-1746937807433-05748b80caf4?auto=format&fit=crop&w=1600&q=70" alt="Colinas envoltas em névoa dourada ao amanhecer"></div>
+    <p class="hero-credit">Foto: <a href="https://unsplash.com/@zetong" target="_blank" rel="noopener">Zetong Li</a> em Unsplash</p>
+
+    <div class="char-wrap">
+      <img class="char-cameo" src="../assets/characters/chud.png" alt="Chud, o usuário de IA" style="width:130px;flex-shrink:0;">
+      <div class="char-bubble">
+        <div class="char-name">Chud</div>
+        <p>"Melhor pedir pra IA...": Chud usa IA pra tudo e nunca entende o porquê. Não seja o Chud: use as ferramentas, mas entenda o que elas fazem por baixo.</p>
+      </div>
+    </div>
+
+    <div class="wire"></div>
+
+    <div class="grid2">
+      <div class="card">
+        <h3><span class="ic"><img class="om om-sm" src="../assets/icons/content/cloud.svg" alt=""></span> Firebase &amp; Cloudinary</h3>
+        <p><strong>Firebase</strong> cobre backend inteiro pra apps pequenos e médios: autenticação, banco em tempo real, storage, crash reporting. <strong>Cloudinary</strong> é mais especializado: upload, otimização e transformação de imagens/vídeos via URL, sem processar mídia no seu próprio servidor.</p>
+      </div>
+      <div class="card">
+        <h3><span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 22H4C3.44772 22 3 21.5523 3 21V8H21V21C21 21.5523 20.5523 22 20 22ZM21 6H3V3C3 2.44772 3.44772 2 4 2H20C20.5523 2 21 2.44772 21 3V6ZM7 11V15H11V11H7ZM7 17V19H17V17H7ZM13 12V14H17V12H13Z"></path></svg></span> Paging 3</h3>
+        <p>Pra listas realmente longas (milhares de itens), carregar tudo de uma vez é desperdício. A biblioteca Paging 3 busca só a "página" de dados que o usuário está prestes a ver, integrando direto com RecyclerView e Flow/LiveData.</p>
+      </div>
+    </div>
+
+    <div class="callout warn">
+      <div class="c-label" style="display:flex;align-items:center;gap:8px;"><img class="om om-md" src="../assets/icons/dodo.svg" alt="dodô">Não vire o Dodô da sua stack</div>
+      <p>O dodô foi extinto por não conseguir se adaptar rápido o suficiente a um ambiente que mudou. Dependência desatualizada, biblioteca sem manutenção, versão do SDK travada há dois anos: é assim que um projeto "morre" tecnicamente sem que ninguém perceba até ser tarde. Revisitar e atualizar dependências de vez em quando não é perfeccionismo, é sobrevivência.</p>
+    </div>
+
+    <div class="card">
+      <h3><span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2ZM12 7C11.4872 7 10.9925 7.07719 10.5269 7.21995C11.3954 7.61175 12 8.48527 12 9.5C12 10.8807 10.8807 12 9.5 12C8.48527 12 7.61175 11.3954 7.22057 10.5268C7.07719 10.9925 7 11.4872 7 12C7 14.7614 9.23858 17 12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7Z"></path></svg></span> Logcat: a lupa de todo dev Android</h3>
+      <p>Quando algo quebra, o Logcat é o primeiro lugar a olhar: um fluxo de mensagens do sistema e do seu próprio código, filtrável por tag e nível de severidade (Verbose, Debug, Info, Warn, Error).</p>
+      <pre><code>Log.d(<span class="s">"MinhaTag"</span>, <span class="s">"cheguei aqui com valor = $valor"</span>)
+Log.e(<span class="s">"MinhaTag"</span>, <span class="s">"deu ruim"</span>, excecao)</code></pre>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat-chip"><img class="om om-md" src="../assets/icons/barcode.svg" alt="" style="margin-bottom:4px;"><div class="lbl">Leitura de código de barras: ML Kit / CameraX</div></div>
+      <div class="stat-chip"><img class="om om-md" src="../assets/icons/sensor.svg" alt="" style="margin-bottom:4px;"><div class="lbl">Sensores do aparelho: SensorManager (acelerômetro, giroscópio, luz)</div></div>
+    </div>
+
+    <div class="flip-grid">
+      <div class="flipcard">
+        <input type="checkbox" id="f21" class="flip-trigger">
+        <label for="f21" class="flip-inner">
+          <div class="flip-face flip-front"><span class="fk">mídia</span><strong>Firebase Storage</strong><p>Clique →</p></div>
+          <div class="flip-face flip-back"><p>Armazenamento genérico de arquivos integrado ao resto do ecossistema Firebase (auth, banco, etc).</p></div>
+        </label>
+      </div>
+      <div class="flipcard">
+        <input type="checkbox" id="f22" class="flip-trigger">
+        <label for="f22" class="flip-inner">
+          <div class="flip-face flip-front"><span class="fk">mídia</span><strong>Cloudinary</strong><p>Clique →</p></div>
+          <div class="flip-face flip-back"><p>Especializado em imagem/vídeo: otimiza e transforma mídia via URL, sem processar no seu servidor.</p></div>
+        </label>
+      </div>
+    </div>
+
+    <div class="quiz">
+      <div class="quiz-q"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm.9 14.9h-1.8v-1.8h1.8v1.8Zm1.86-6.9c-.4.5-.7.9-.9 1.4-.16.36-.24.7-.26 1.2h-1.7c.02-.7.16-1.24.44-1.76.28-.5.66-.96 1.14-1.42.34-.32.58-.6.74-.86.16-.28.24-.56.24-.9 0-.44-.14-.78-.42-1.04-.28-.26-.68-.4-1.18-.4-.5 0-.92.16-1.24.46-.32.3-.5.72-.54 1.24H7.4c.06-1.14.46-2.02 1.2-2.66.76-.64 1.72-.96 2.9-.96 1.24 0 2.22.32 2.94.96.72.62 1.08 1.44 1.08 2.44 0 .6-.14 1.1-.42 1.5-.24.36-.5.66-.84 1.02Z"/></svg> Quiz rápido: Qual biblioteca resolve o problema de carregar milhares de itens de uma vez numa lista?</div>
+      <label class="quiz-opt"><input type="radio" name="q10a" value="a"> Paging 3</label>
+      <label class="quiz-opt"><input type="radio" name="q10a" value="b"> Logcat</label>
+      <label class="quiz-opt"><input type="radio" name="q10a" value="c"> Cloudinary</label>
+      <button class="quiz-btn" onclick="checkQuiz('q10a','a','fb10a')">Verificar</button>
+      <div class="quiz-fb" id="fb10a"></div>
+    </div>
+
+    <div class="quiz bughunt">
+      <div class="quiz-q"><img class="om om-md" src="../assets/icons/bug.svg" alt="bug"> Encontre o bug</div>
+      <pre><code><span class="k">class</span> ChatActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        <span class="k">super</span>.onCreate(savedInstanceState)
+        firebaseDb.child(<span class="s">"mensagens"</span>).addValueEventListener(meuListener)
+    }
+}</code></pre>
+      <p style="font-size:.85rem;margin:0 0 10px;">Qual é o problema neste trecho?</p>
+      <label class="quiz-opt"><input type="radio" name="bug10" value="a"> addValueEventListener não existe no Firebase</label>
+      <label class="quiz-opt"><input type="radio" name="bug10" value="b"> O listener nunca é removido (falta removeEventListener em onDestroy): continua escutando e consumindo rede mesmo com a tela fechada</label>
+      <label class="quiz-opt"><input type="radio" name="bug10" value="c"> Faltou chamar setContentView</label>
+      <button class="quiz-btn" onclick="checkQuiz('bug10','b','fbbug10')">Verificar</button>
+      <div class="quiz-fb" id="fbbug10"></div>
+    </div>
+
+    <div class="checklist">
+      <div class="checklist-title"><img class="om" src="../assets/icons/code-editor.svg" alt="">Mão na massa</div>
+      <div class="c-item"><input type="checkbox" id="chk-40" data-mod="10" onchange="onCheck(this)"><label for="chk-40">Configurar um projeto Firebase e conectar autenticação básica.</label></div>
+      <div class="c-item"><input type="checkbox" id="chk-41" data-mod="10" onchange="onCheck(this)"><label for="chk-41">Filtrar o Logcat por tag própria durante uma sessão de debug real.</label></div>
+      <div class="c-item"><input type="checkbox" id="chk-42" data-mod="10" onchange="onCheck(this)"><label for="chk-42">Ler a visão geral do Paging 3 e identificar se algum projeto seu se beneficiaria dele.</label></div>
+    </div>
+  </section>
+
+  <!-- ================= MODULE 11 (Projeto Prático) ================= -->
+  <section class="content-section" id="sec-10" data-mod="11">
+    <div class="eyebrow">Módulo 10 / 11</div>
+    <h2>Projeto Prático: Lista com Fotos</h2>
+    <p class="subtitle">Juntando tudo (Retrofit, Coroutines, ViewModel, RecyclerView e Glide) numa única lista funcionando de ponta a ponta.</p>
+    <div class="hero-photo-wrap"><img class="hero-photo" src="https://images.unsplash.com/photo-1759144897143-991d650b1668?auto=format&fit=crop&w=1600&q=70" alt="Cabana de madeira iluminada sob um céu estrelado"></div>
+    <p class="hero-credit">Foto: <a href="https://unsplash.com/@sorasagano" target="_blank" rel="noopener">Sora Sagano</a> em Unsplash</p>
+
+    <div class="char-wrap">
+      <img class="char-cameo" src="../assets/characters/jade.png" alt="Jade, que programa jogos" style="width:130px;flex-shrink:0;">
+      <div class="char-bubble">
+        <div class="char-name">Jade</div>
+        <p>Todo sistema complexo é só um quebra-cabeça interessante disfarçado. Bora montar essa lista peça por peça: sem pressa pra acertar de primeira.</p>
+      </div>
+    </div>
+
+    <div class="wire"></div>
+
+    <p>Uma forma simples de fixar quatro módulos de uma vez: pensar cada peça como um personagem com um papel único numa equipe de entrega.</p>
+
+    <div class="grid2">
+      <div class="card">
+        <h3><span class="ic"><img class="om om-sm" src="../assets/icons/content/scooter.svg" alt=""></span> Retrofit: o Motoboy</h3>
+        <p>Faz a requisição na internet rodando em segundo plano (com Coroutines), pra não congelar a tela do usuário enquanto os dados chegam.</p>
+      </div>
+      <div class="card">
+        <h3><span class="ic"><img class="om om-sm" src="../assets/icons/content/clipboard.svg" alt=""></span> ViewModel: o Gerente</h3>
+        <p>Recebe o JSON já transformado em dados, guarda em segurança e avisa a interface assim que a lista está pronta pra exibir.</p>
+      </div>
+      <div class="card">
+        <h3><span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 7L16 2H3.9934C3.44495 2 3 2.44405 3 2.9918V21.0082C3 21.5447 3.44476 22 3.9934 22H20.0066C20.5551 22 21 21.556 21 21.0082V7ZM11 9.5C11 10.3284 10.3284 11 9.5 11C8.67157 11 8 10.3284 8 9.5C8 8.67157 8.67157 8 9.5 8C10.3284 8 11 8.67157 11 9.5ZM17.5 17H8L13.5 10L17.5 17Z"></path></svg></span> Activity/Fragment: a Tela</h3>
+        <p>Fica só observando o ViewModel. Quando os dados chegam, repassa direto pro Adapter: sem lógica de negócio aqui.</p>
+      </div>
+      <div class="card">
+        <h3><span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.2459 14H8.75407L7.15407 18H5L11 3H13L19 18H16.8459L15.2459 14ZM14.4459 12L12 5.88516L9.55407 12H14.4459ZM3 20H21V22H3V20Z"></path></svg></span> Adapter + Glide: os Pintores</h3>
+        <p>O Adapter infla o layout de cada item da lista; o Glide baixa a imagem da URL e a exibe suavemente na célula, com cache automático.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3><span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.3638 15.5355L16.9496 14.1213L18.3638 12.7071C20.3164 10.7545 20.3164 7.58866 18.3638 5.63604C16.4112 3.68341 13.2453 3.68341 11.2927 5.63604L9.87849 7.05025L8.46428 5.63604L9.87849 4.22182C12.6122 1.48815 17.0443 1.48815 19.778 4.22182C22.5117 6.95549 22.5117 11.3876 19.778 14.1213L18.3638 15.5355ZM15.5353 18.364L14.1211 19.7782C11.3875 22.5118 6.95531 22.5118 4.22164 19.7782C1.48797 17.0445 1.48797 12.6123 4.22164 9.87868L5.63585 8.46446L7.05007 9.87868L5.63585 11.2929C3.68323 13.2455 3.68323 16.4113 5.63585 18.364C7.58847 20.3166 10.7543 20.3166 12.7069 18.364L14.1211 16.9497L15.5353 18.364ZM14.8282 7.75736L16.2425 9.17157L9.17139 16.2426L7.75717 14.8284L14.8282 7.75736Z"></path></svg></span> O fluxo completo, em ordem</h3>
+      <pre><code>Retrofit (busca) → ViewModel (processa) → Activity (observa) → Adapter+Glide (exibe)</code></pre>
+      <p style="margin-top:10px;">Quer o passo a passo completo com código Kotlin de cada camada? A página <strong>Projeto Prático</strong> tem o walkthrough inteiro, do zero até a lista rolando na tela.</p>
+      <a href="android-projeto.html" class="more-link" style="display:inline-block;margin-top:8px;"><img class="om om-sm" src="../assets/icons/content/rocket.svg" alt=""> Abrir o walkthrough completo</a>
+    </div>
+
+    <div class="flip-grid">
+      <div class="flipcard">
+        <input type="checkbox" id="f23" class="flip-trigger">
+        <label for="f23" class="flip-inner">
+          <div class="flip-face flip-front"><span class="fk">escopo</span><strong>viewModelScope</strong><p>Clique →</p></div>
+          <div class="flip-face flip-back"><p>Coroutine que morre automaticamente com a ViewModel: usada pro Gerente buscar e processar dados.</p></div>
+        </label>
+      </div>
+      <div class="flipcard">
+        <input type="checkbox" id="f24" class="flip-trigger">
+        <label for="f24" class="flip-inner">
+          <div class="flip-face flip-front"><span class="fk">lista</span><strong>ListAdapter</strong><p>Clique →</p></div>
+          <div class="flip-face flip-back"><p>Versão do Adapter com DiffUtil embutido: é o que os Pintores usam pra atualizar só o que mudou.</p></div>
+        </label>
+      </div>
+    </div>
+
+    <div class="quiz">
+      <div class="quiz-q"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm.9 14.9h-1.8v-1.8h1.8v1.8Zm1.86-6.9c-.4.5-.7.9-.9 1.4-.16.36-.24.7-.26 1.2h-1.7c.02-.7.16-1.24.44-1.76.28-.5.66-.96 1.14-1.42.34-.32.58-.6.74-.86.16-.28.24-.56.24-.9 0-.44-.14-.78-.42-1.04-.28-.26-.68-.4-1.18-.4-.5 0-.92.16-1.24.46-.32.3-.5.72-.54 1.24H7.4c.06-1.14.46-2.02 1.2-2.66.76-.64 1.72-.96 2.9-.96 1.24 0 2.22.32 2.94.96.72.62 1.08 1.44 1.08 2.44 0 .6-.14 1.1-.42 1.5-.24.36-.5.66-.84 1.02Z"/></svg> Quiz rápido: Na analogia da equipe de entrega, quem é responsável por baixar e exibir a imagem de cada item?</div>
+      <label class="quiz-opt"><input type="radio" name="q11a" value="a"> Retrofit</label>
+      <label class="quiz-opt"><input type="radio" name="q11a" value="b"> ViewModel</label>
+      <label class="quiz-opt"><input type="radio" name="q11a" value="c"> Adapter + Glide</label>
+      <button class="quiz-btn" onclick="checkQuiz('q11a','c','fb11a')">Verificar</button>
+      <div class="quiz-fb" id="fb11a"></div>
+    </div>
+
+    <div class="quiz bughunt">
+      <div class="quiz-q"><img class="om om-md" src="../assets/icons/bug.svg" alt="bug"> Encontre o bug</div>
+      <pre><code><span class="k">class</span> ItemAdapter : ListAdapter&lt;Item, VH&gt;(DiffCallback()) {
+    override fun onBindViewHolder(holder: VH, position: Int) {
+        <span class="k">val</span> item = getItem(position)
+        GlobalScope.launch {
+            <span class="k">val</span> resultado = api.buscarDetalhes(item.id)
+            holder.binding.tvDetalhe.text = resultado
+        }
+    }
+}</code></pre>
+      <p style="font-size:.85rem;margin:0 0 10px;">Qual é o problema neste Adapter?</p>
+      <label class="quiz-opt"><input type="radio" name="bug11" value="a"> O Adapter está fazendo o trabalho do Motoboy (chamada de API): isso deveria estar no Repository/ViewModel, não numa célula da lista sendo reciclada</label>
+      <label class="quiz-opt"><input type="radio" name="bug11" value="b"> ListAdapter não aceita DiffCallback customizado</label>
+      <label class="quiz-opt"><input type="radio" name="bug11" value="c"> onBindViewHolder não pode acessar holder.binding</label>
+      <button class="quiz-btn" onclick="checkQuiz('bug11','a','fbbug11')">Verificar</button>
+      <div class="quiz-fb" id="fbbug11"></div>
+    </div>
+
+    <div class="checklist">
+      <div class="checklist-title"><img class="om" src="../assets/icons/code-editor.svg" alt="">Mão na massa</div>
+      <div class="c-item"><input type="checkbox" id="chk-43" data-mod="11" onchange="onCheck(this)"><label for="chk-43">Montar a interface Retrofit que busca a lista de itens com foto.</label></div>
+      <div class="c-item"><input type="checkbox" id="chk-44" data-mod="11" onchange="onCheck(this)"><label for="chk-44">Expor o resultado via ViewModel usando Coroutines + LiveData/StateFlow.</label></div>
+      <div class="c-item"><input type="checkbox" id="chk-45" data-mod="11" onchange="onCheck(this)"><label for="chk-45">Ligar o Adapter à lista observada, com Glide carregando cada imagem.</label></div>
+      <div class="c-item"><input type="checkbox" id="chk-46" data-mod="11" onchange="onCheck(this)"><label for="chk-46">Rodar o app de ponta a ponta e ver a lista com fotos na tela.</label></div>
+    </div>
+  </section>
+
+  <!-- ================= MODULE 05 ================= -->
+  <section class="content-section" id="sec-4" data-mod="5">
+    <div class="eyebrow">Módulo 11 / 11</div>
+    <h2>Revisão Geral &amp; Projeto Prático</h2>
+    <p class="subtitle">Misturando os quatro módulos numa recapitulação rápida: e um projeto pra fixar tudo na prática.</p>
+    <div class="hero-photo-wrap"><img class="hero-photo" src="https://images.unsplash.com/photo-1746937807433-05748b80caf4?auto=format&fit=crop&w=1600&q=70" alt="Colinas envoltas em névoa dourada ao amanhecer"></div>
+    <p class="hero-credit">Foto: <a href="https://unsplash.com/@zetong" target="_blank" rel="noopener">Zetong Li</a> em Unsplash</p>
+    <div class="wire"></div>
+
+    <h3>Flashcards de revisão</h3>
+    <div class="flip-grid">
+      <div class="flipcard">
+        <input type="checkbox" id="f5" class="flip-trigger">
+        <label for="f5" class="flip-inner">
+          <div class="flip-face flip-front"><span class="fk">recap</span><strong>DP vs PX</strong><p>Clique →</p></div>
+          <div class="flip-face flip-back"><p>1 DP = 1 PX a 160 DPI. O sistema escala pra manter o tamanho físico constante em qualquer densidade.</p></div>
+        </label>
+      </div>
+      <div class="flipcard">
+        <input type="checkbox" id="f6" class="flip-trigger">
+        <label for="f6" class="flip-inner">
+          <div class="flip-face flip-front"><span class="fk">recap</span><strong>Theme vs Style</strong><p>Clique →</p></div>
+          <div class="flip-face flip-back"><p>Theme = escopo global (Manifest). Style = escopo local (uma View específica).</p></div>
+        </label>
+      </div>
+      <div class="flipcard">
+        <input type="checkbox" id="f7" class="flip-trigger">
+        <label for="f7" class="flip-inner">
+          <div class="flip-face flip-front"><span class="fk">recap</span><strong>View vs ViewModel</strong><p>Clique →</p></div>
+          <div class="flip-face flip-back"><p>View observa e reage. ViewModel processa e expõe dados: sobrevivendo à rotação de tela.</p></div>
+        </label>
+      </div>
+      <div class="flipcard">
+        <input type="checkbox" id="f8" class="flip-trigger">
+        <label for="f8" class="flip-inner">
+          <div class="flip-face flip-front"><span class="fk">recap</span><strong>local.properties</strong><p>Clique →</p></div>
+          <div class="flip-face flip-back"><p>Onde a chave mora, longe do Git. Chega ao código só como <code>BuildConfig.API_KEY</code>.</p></div>
+        </label>
+      </div>
+    </div>
+
+    <div class="quiz">
+      <div class="quiz-q"><img class="om om-sm" src="../assets/icons/content/brain.svg" alt=""> Revisão 1: As linhas onduladas do editor visual do ConstraintLayout representam:</div>
+      <label class="quiz-opt"><input type="radio" name="q5a" value="a"> Erros de renderização</label>
+      <label class="quiz-opt"><input type="radio" name="q5a" value="b"> Constraints: elasticidade e margem da conexão</label>
+      <label class="quiz-opt"><input type="radio" name="q5a" value="c"> Bordas de debug do Android Studio</label>
+      <button class="quiz-btn" onclick="checkQuiz('q5a','b','fb5a')">Verificar</button>
+      <div class="quiz-fb" id="fb5a"></div>
+    </div>
+
+    <div class="quiz">
+      <div class="quiz-q"><img class="om om-sm" src="../assets/icons/content/brain.svg" alt=""> Revisão 2: Na arquitetura MVVM, quem "sobrevive" a mudanças de configuração (como rotação de tela)?</div>
+      <label class="quiz-opt"><input type="radio" name="q5b" value="a"> A Activity</label>
+      <label class="quiz-opt"><input type="radio" name="q5b" value="b"> O ViewModel</label>
+      <label class="quiz-opt"><input type="radio" name="q5b" value="c"> O layout XML</label>
+      <button class="quiz-btn" onclick="checkQuiz('q5b','b','fb5b')">Verificar</button>
+      <div class="quiz-fb" id="fb5b"></div>
+    </div>
+
+    <div class="quiz bughunt">
+      <div class="quiz-q"><img class="om om-md" src="../assets/icons/bug.svg" alt="bug"> Desafio final: Encontre os dois bugs</div>
+      <pre><code><span class="k">class</span> PerfilFragment(<span class="k">val</span> usuarioId: Int) : Fragment() {
+    <span class="k">companion object</span> { <span class="k">var</span> ultimoAberto: PerfilFragment? = <span class="k">null</span> }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        ultimoAberto = <span class="k">this</span>
+        binding.tvNome.text = <span class="s">"Carregando..."</span>
+    }
+}</code></pre>
+      <p style="font-size:.85rem;margin:0 0 10px;">Esse Fragment mistura dois erros já vistos no guia. Qual dupla está correta?</p>
+      <label class="quiz-opt"><input type="radio" name="bugfinal" value="a"> Dado no construtor (some na recriação) + referência estática (vazamento de memória)</label>
+      <label class="quiz-opt"><input type="radio" name="bugfinal" value="b"> Falta de setContentView + import errado</label>
+      <label class="quiz-opt"><input type="radio" name="bugfinal" value="c"> binding não inicializado + texto sem string resource</label>
+      <button class="quiz-btn" onclick="checkQuiz('bugfinal','a','fbbugfinal')">Verificar</button>
+      <div class="quiz-fb" id="fbbugfinal"></div>
+    </div>
+
+
+
+    <div class="game-card dialogue-game" id="dlgGameAndroid" data-dialogue='{
+      "charA": {"name":"Chud", "img":"../assets/characters/chud.png"},
+      "charB": {"name":"Gnomo", "img":"../assets/characters/gnome.png"},
+      "rounds": [
+        {
+          "setup": "Chud tenta economizar caminho antes da prova.",
+          "lineA": "Professor, eu só preciso me preocupar com onCreate, né? O resto o Android resolve sozinho.",
+          "lineB": "Não, Chud. onPause, onStop e onDestroy também são seus: é lá que você libera recursos e evita vazamento de memória. Ignorar eles é pedir pra tela travar quando o usuário girar o aparelho.",
+          "question": "Qual visão do ciclo de vida está mais correta?",
+          "correct": "B",
+          "reactionCorrect": "Isso. onCreate → onStart → onResume → onPause → onStop → onDestroy: cada estado tem seu papel. Pular etapa é a receita clássica pra crash."
+        },
+        {
+          "lineA": "findViewById funciona, então pra que aprender ViewBinding? Trabalho extra à toa.",
+          "lineB": "O problema não é funcionar hoje. findViewById só falha em tempo de execução, quando o app já travou pro usuário. ViewBinding avisa erro de referência de view ainda em tempo de compilação.",
+          "question": "Qual argumento é o mais forte?",
+          "correct": "B",
+          "reactionCorrect": "Exato. Prevenir erro em tempo de compilação é sempre mais barato do que caçar crash em produção."
+        },
+        {
+          "setup": "Dessa vez é o professor que arrisca uma explicação rápida demais.",
+          "lineA": "O RecyclerView cria uma View nova pra cada item da lista, por isso é rápido.",
+          "lineB": "Acho que é o contrário, professor: o nome já entrega, \"recycler\". Ele reaproveita as Views que saíram da tela, em vez de criar uma nova pra cada item.",
+          "question": "Quem entendeu o mecanismo por trás do nome RecyclerView?",
+          "correct": "B",
+          "reactionCorrect": "Ha, acertei uma! É o ViewHolder que segura essas Views recicladas, prontas pra receber dado novo assim que reaparecem na tela."
+        },
+        {
+          "lineA": "Já que dá pra fazer chamada de API direto na Activity, pra que complicar com MVVM?",
+          "lineB": "Dá pra fazer, mas aí sua Activity vira uma bagunça impossível de testar. Com MVVM, o ViewModel guarda a lógica e sobrevive à rotação de tela; a Activity só exibe o que o ViewModel manda.",
+          "question": "Qual explica melhor o motivo real de usar MVVM?",
+          "correct": "B",
+          "reactionCorrect": "Isso mesmo. Separação não é frescura arquitetural: é o que permite testar sua lógica sem precisar nem abrir uma tela."
+        }
+      ]
+    }'>
+      <div class="game-head">
+        <div class="game-title"><img class="om om-sm" src="../assets/icons/content/speech-bubble.svg" alt=""> Quem explicou certo?</div>
+        <div class="game-stats"><span class="js-dlg-status">1/4</span></div>
+      </div>
+      <p style="font-size:.82rem;color:var(--text-dim);margin-bottom:14px;">Chud e o professor Gnomo discutem Android. Escute os dois lados e escolha quem está certo.</p>
+      <div class="dlg-stage"></div>
+      <div class="game-win-msg"><img class="om om-sm" src="../assets/icons/content/confetti.svg" alt=""> Debate concluído! Você pegou as diferenças que mais confundem iniciante.</div>
+    </div>
+
+    <div class="project-card">
+      <div class="eyebrow">Projeto sugerido</div>
+      <h3 style="margin-top:6px;"><span class="ic"><img class="om om-sm" src="../assets/icons/content/trophy.svg" alt=""></span> App de mensagens com feedback customizado</h3>
+      <p>Construa um app de mensagens simples que usa um <code>CustomDialog</code> para telas de <strong>"You Win"</strong> / <strong>"You Lose"</strong>, aplicando tudo que você viu aqui: tema centralizado em <code>themes.xml</code>, shape customizado com cantos arredondados, ConstraintLayout ancorado, e (se quiser ir além) uma chamada à Cloud Translation API pra traduzir a mensagem final, com a chave protegida em <code>local.properties</code>.</p>
+    </div>
+
+    <h3 style="margin-top:30px;">Conquistas</h3>
+    <p style="font-size:.85rem;color:var(--text-dim);margin-bottom:4px;">Desbloqueadas conforme você avança. Passe o cursor pra ver o que falta.</p>
+    <div class="badges-grid" id="badgesGrid">
+      <div class="badge-tile" data-badge="first_step"><div class="b-icon"><img class="om om-sm" src="../assets/icons/content/seedling.svg" alt=""></div><div class="b-name">Primeiro Passo</div><div class="b-desc">Marque sua primeira tarefa.</div></div>
+      <div class="badge-tile" data-badge="module6_master"><div class="b-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.364 17.364L12 23.7279L5.63604 17.364C2.12132 13.8492 2.12132 8.15076 5.63604 4.63604C9.15076 1.12132 14.8492 1.12132 18.364 4.63604C21.8787 8.15076 21.8787 13.8492 18.364 17.364ZM12 13C13.1046 13 14 12.1046 14 11C14 9.89543 13.1046 9 12 9C10.8954 9 10 9.89543 10 11C10 12.1046 10.8954 13 12 13Z"></path></svg></div><div class="b-name">Navegador</div><div class="b-desc">Complete o módulo de Fundamentos.</div></div>
+      <div class="badge-tile" data-badge="module7_master"><div class="b-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.3638 15.5355L16.9496 14.1213L18.3638 12.7071C20.3164 10.7545 20.3164 7.58866 18.3638 5.63604C16.4112 3.68341 13.2453 3.68341 11.2927 5.63604L9.87849 7.05025L8.46428 5.63604L9.87849 4.22182C12.6122 1.48815 17.0443 1.48815 19.778 4.22182C22.5117 6.95549 22.5117 11.3876 19.778 14.1213L18.3638 15.5355ZM15.5353 18.364L14.1211 19.7782C11.3875 22.5118 6.95531 22.5118 4.22164 19.7782C1.48797 17.0445 1.48797 12.6123 4.22164 9.87868L5.63585 8.46446L7.05007 9.87868L5.63585 11.2929C3.68323 13.2455 3.68323 16.4113 5.63585 18.364C7.58847 20.3166 10.7543 20.3166 12.7069 18.364L14.1211 16.9497L15.5353 18.364ZM14.8282 7.75736L16.2425 9.17157L9.17139 16.2426L7.75717 14.8284L14.8282 7.75736Z"></path></svg></div><div class="b-name">Mestre dos Binds</div><div class="b-desc">Complete o módulo de UI &amp; View Binding.</div></div>
+      <div class="badge-tile" data-badge="module1_master"><div class="b-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.75 2.5C9.09721 2.5 11 4.40279 11 6.75V11H6.75C4.40279 11 2.5 9.09721 2.5 6.75C2.5 4.40279 4.40279 2.5 6.75 2.5ZM6.75 13H11V17.25C11 19.5972 9.09721 21.5 6.75 21.5C4.40279 21.5 2.5 19.5972 2.5 17.25C2.5 14.9028 4.40279 13 6.75 13ZM17.25 2.5C19.5972 2.5 21.5 4.40279 21.5 6.75C21.5 9.09721 19.5972 11 17.25 11H13V6.75C13 4.40279 14.9028 2.5 17.25 2.5ZM13 13H17.25C19.5972 13 21.5 14.9028 21.5 17.25C21.5 19.5972 19.5972 21.5 17.25 21.5C14.9028 21.5 13 19.5972 13 17.25V13Z"></path></svg></div><div class="b-name">Mestre dos Layouts</div><div class="b-desc">Complete o módulo de Layouts.</div></div>
+      <div class="badge-tile" data-badge="module2_master"><div class="b-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.2459 14H8.75407L7.15407 18H5L11 3H13L19 18H16.8459L15.2459 14ZM14.4459 12L12 5.88516L9.55407 12H14.4459ZM3 20H21V22H3V20Z"></path></svg></div><div class="b-name">Mestre dos Temas</div><div class="b-desc">Complete o módulo de Temas.</div></div>
+      <div class="badge-tile" data-badge="module8_master"><div class="b-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.8589 2H11.1411C9.12721 2 8.04724 2.27848 7.06946 2.8014C6.09169 3.32432 5.32432 4.09169 4.8014 5.06946C4.27848 6.04724 4 7.12721 4 9.14111V14.8589C4 16.8728 4.27848 17.9528 4.8014 18.9305C5.32432 19.9083 6.09169 20.6757 7.06946 21.1986C8.04724 21.7215 9.12721 22 11.1411 22H12.8589C14.8728 22 15.9528 21.7215 16.9305 21.1986C17.9083 20.6757 18.6757 19.9083 19.1986 18.9305C19.7215 17.9528 20 16.8728 20 14.8589V9.14111C20 7.12721 19.7215 6.04724 19.1986 5.06946C18.6757 4.09169 17.9083 3.32432 16.9305 2.8014C15.9528 2.27848 14.8728 2 12.8589 2ZM11 11V6H13V11H11ZM7.75781 13.758L9.17203 12.3438L12.0005 15.1722L14.8289 12.3438L16.2431 13.758L12.0005 18.0006L7.75781 13.758Z"></path></svg></div><div class="b-name">Mestre das Listas</div><div class="b-desc">Complete o módulo de RecyclerView.</div></div>
+      <div class="badge-tile" data-badge="module3_master"><div class="b-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 4C8 2.34315 9.34315 1 11 1C12.6569 1 14 2.34315 14 4C14 4.35064 13.9398 4.68722 13.8293 5H18C18.5523 5 19 5.44772 19 6V10.1707C19.3128 10.0602 19.6494 10 20 10C21.6569 10 23 11.3431 23 13C23 14.6569 21.6569 16 20 16C19.6494 16 19.3128 15.9398 19 15.8293V20C19 20.5523 18.5523 21 18 21H4C3.44772 21 3 20.5523 3 20V6C3 5.44772 3.44772 5 4 5H8.17071C8.06015 4.68722 8 4.35064 8 4Z"></path></svg></div><div class="b-name">Arquiteto MVVM</div><div class="b-desc">Complete o módulo de MVVM &amp; Cloud API.</div></div>
+      <div class="badge-tile" data-badge="module9_master"><div class="b-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 4C8 2.34315 9.34315 1 11 1C12.6569 1 14 2.34315 14 4C14 4.35064 13.9398 4.68722 13.8293 5H20C20.5523 5 21 5.44772 21 6V9.12602C21 9.43517 20.857 9.72694 20.6127 9.91635C20.3683 10.1058 20.0501 10.1715 19.7507 10.0945C19.5119 10.033 19.2605 10 19 10C17.3431 10 16 11.3431 16 13C16 14.6569 17.3431 16 19 16C19.2605 16 19.5119 15.967 19.7507 15.9055C20.0501 15.8285 20.3683 15.8942 20.6127 16.0836C20.857 16.2731 21 16.5648 21 16.874V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V6C3 5.44772 3.44772 5 4 5H8.17071C8.06015 4.68722 8 4.35064 8 4Z"></path></svg></div><div class="b-name">Modularizador</div><div class="b-desc">Complete o módulo de Fragments.</div></div>
+      <div class="badge-tile" data-badge="module4_master"><div class="b-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 2L21 7V21.0082C21 21.556 20.5551 22 20.0066 22H3.9934C3.44476 22 3 21.5447 3 21.0082V2.9918C3 2.44405 3.44495 2 3.9934 2H16ZM15 11V10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10V11H8V16H16V11H15ZM13 11H11V10C11 9.44772 11.4477 9 12 9C12.5523 9 13 9.44772 13 10V11Z"></path></svg></div><div class="b-name">Guardião de Chaves</div><div class="b-desc">Complete o módulo de Segurança.</div></div>
+      <div class="badge-tile" data-badge="module10_master"><div class="b-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3ZM12 15V17H18V15H12ZM8.41421 12L5.58579 14.8284L7 16.2426L11.2426 12L7 7.75736L5.58579 9.17157L8.41421 12Z"></path></svg></div><div class="b-name">Faz-Tudo</div><div class="b-desc">Complete o módulo de Ferramentas.</div></div>
+      <div class="badge-tile" data-badge="module11_master"><div class="b-icon"><img class="om" src="../assets/icons/otter.svg" alt=""></div><div class="b-name">Entregador Master</div><div class="b-desc">Complete o Projeto Prático.</div></div>
+      <div class="badge-tile" data-badge="module5_master"><div class="b-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12ZM20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12ZM12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18Z"></path></svg></div><div class="b-name">Revisão Completa</div><div class="b-desc">Complete o módulo de Revisão.</div></div>
+      <div class="badge-tile" data-badge="quiz_perfect"><div class="b-icon"><img class="om om-sm" src="../assets/icons/content/target.svg" alt=""></div><div class="b-name">Quiz Perfeito</div><div class="b-desc">Acerte os 23 quizzes e desafios do guia.</div></div>
+      <div class="badge-tile" data-badge="streak_3"><div class="b-icon"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor"><path d="M12.75 2.25c.2 2.9-.62 5-2.3 6.86-.55.6-1.15 1.14-1.72 1.75-1.9 2-2.98 4.36-2.23 7.2A7.5 7.5 0 0 0 19.5 15c0-3.86-2.55-6.1-4.53-8.35-1-1.13-1.9-2.5-2.22-4.4Zm.4 14.9a2.65 2.65 0 0 1-3.53-.4c-.8-.98-.68-2.16-.02-3.07.28.55.68 1 1.2 1.3.02-1.1.42-1.98 1.15-2.75.28 1.5 1.05 2.4 2.02 3.28.6.55.9 1.3.7 2.05a2.2 2.2 0 0 1-1.52 1.6Z"/></svg></div><div class="b-name">Maratonista</div><div class="b-desc">3 dias seguidos de estudo.</div></div>
+      <div class="badge-tile" data-badge="focus_1"><div class="b-icon"><img class="om om-sm" src="../assets/icons/content/stopwatch.svg" alt=""></div><div class="b-name">Foco Total</div><div class="b-desc">Complete 1 sessão de foco.</div></div>
+      <div class="badge-tile" data-badge="dialogue_master"><div class="b-icon"><img class="om om-sm" src="../assets/icons/content/speech-bubble.svg" alt=""></div><div class="b-name">Bate-papo Concluído</div><div class="b-desc">Termine o debate entre Chud e o Gnomo.</div></div>
+      <div class="badge-tile" data-badge="completionist"><div class="b-icon"><img class="om om-sm" src="../assets/icons/content/crown.svg" alt=""></div><div class="b-name">Arquiteto de Soluções</div><div class="b-desc">100% do guia concluído.</div></div>
+    </div>
+
+    <div class="checklist">
+      <div class="checklist-title"><img class="om" src="../assets/icons/code-editor.svg" alt="">Autoavaliação final</div>
+      <div class="c-item"><input type="checkbox" id="chk-17" data-mod="5" onchange="onCheck(this)"><label for="chk-17">Consigo explicar a diferença entre <code>wrap_content</code> e <code>match_parent</code> sem consultar nada.</label></div>
+      <div class="c-item"><input type="checkbox" id="chk-18" data-mod="5" onchange="onCheck(this)"><label for="chk-18">Consigo montar um tema com herança e vinculá-lo no Manifest de cabeça.</label></div>
+      <div class="c-item"><input type="checkbox" id="chk-19" data-mod="5" onchange="onCheck(this)"><label for="chk-19">Sei nomear as 4 camadas do MVVM e o papel de cada uma.</label></div>
+      <div class="c-item"><input type="checkbox" id="chk-20" data-mod="5" onchange="onCheck(this)"><label for="chk-20">Sei o protocolo completo pra nunca vazar uma API key no Git.</label></div>
+      <div class="c-item"><input type="checkbox" id="chk-21" data-mod="5" onchange="onCheck(this)"><label for="chk-21">Construí (ou comecei) o projeto prático acima.</label></div>
+    </div>
+
+    <footer class="credits">
+      Conteúdo baseado na síntese técnica "Layouts, Temas e Segurança no Android" e no mapa mental gerado a partir do áudio de estudo. Referência citada: Gomes (2017), UFC: guia de análise de segurança de ativos.
+    </footer>
+  </section>
+
+</main>
+
+<div class="toast-container" id="toastContainer"></div>
+
+<div class="levelup-overlay" id="levelupOverlay">
+  <div class="levelup-card">
+    <img class="char-cameo" src="../assets/characters/byte.png" alt="Byte a lontra comemorando" style="width:120px;margin-bottom:6px;">
+    <div class="lv-eyebrow"><img class="om om-md" src="../assets/icons/confetti.svg" alt=""> VOCÊ CRESCEU</div>
+    <div class="lv-big" id="levelupNum">Nv. 2</div>
+    <div class="lv-sub" id="levelupTitle">Aprendiz ConstraintLayout</div>
+    <p>Sua plantinha está mais forte. Continue no seu ritmo: cada sessão conta.</p>
+    <button onclick="closeLevelUp()">Obrigado, bora continuar</button>
+  </div>
+</div>
+
+<div class="mascot-wrap">
+  <div class="mascot-bubble" id="mascotBubble"></div>
+  <svg class="mascot-bot" id="mascotBot" viewBox="0 0 64 70" onclick="mascotTip(true)" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="32" cy="66" rx="16" ry="3" fill="#4A4232" opacity=".12"/>
+    <path d="M19 46 L45 46 L41 65 L23 65 Z" fill="#C97B4A" stroke="#A85F38" stroke-width="1.5"/>
+    <rect x="16" y="41" width="32" height="8" rx="4" fill="#D9946A" stroke="#A85F38" stroke-width="1"/>
+    <ellipse cx="32" cy="42.5" rx="13" ry="3" fill="#5C4A35"/>
+    <text id="mascotStageEmoji" x="32" y="32" font-size="27" text-anchor="middle" dominant-baseline="middle"><img class="om om-sm" src="../assets/icons/content/seedling.svg" alt=""></text>
+  </svg>
+</div>
+
+<script>
+  window.COURSE = {
+    prefix: 'android_log',
+    totalModules: 11,
+    nodeOrder: [6,7,1,2,8,3,9,4,10,11,5],
+    totalQuizzes: 23,
+    levelTitles: [
+      'Estagiário de Layouts','Aprendiz ConstraintLayout','Dev Júnior Android',
+      'Arquiteto de Temas','Engenheiro MVVM','Guardião de Credenciais','Arquiteto de Soluções'
+    ],
+    completionistName: 'Arquiteto de Soluções',
+    mascotTips: [
+      'Sem pressa: cada tarefa marcada já é +10 XP. <img class="om om-sm" src="../assets/icons/content/seedling.svg" alt="">',
+      'Uma pausa de respiração também é produtiva, viu?',
+      'Constraint bem ancorada é constraint que não quebra.',
+      'Chave de API fica bem longe do Git. Sempre. <img class="om om-sm" src="../assets/icons/content/lock.svg" alt="">',
+      'Uma sessão de foco de 25min rende XP bônus: e um respiro.',
+      '1 DP = 1 PX a 160 DPI. Guardou? <img class="om om-sm" src="../assets/icons/content/smile.svg" alt="">',
+      'Theme é global, Style é local. Devagar que vai fundo.',
+      'Dá uma olhada nas suas conquistas lá no módulo 11.',
+      'ViewModel sobrevive à rotação de tela: você também vai sobreviver a esse módulo.',
+      'Progresso pequeno todo dia ainda é progresso. <img class="om om-sm" src="../assets/icons/content/herb.svg" alt="">',
+      'O Motoboy (Retrofit), o Gerente (ViewModel) e os Pintores (Adapter+Glide) agradecem sua atenção.',
+      'onPause() é a hora de salvar o que importa: o sistema pode levar o resto.'
+    ],
+    achModules: [
+      {mod:6, id:'module6_master', name:'Navegador', icon:'<img class="om om-sm" src="../assets/icons/content/compass.svg" alt="">'},
+      {mod:7, id:'module7_master', name:'Mestre dos Binds', icon:'<svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor"><path d="M9.17 14.83a1 1 0 0 1 0-1.41l4.24-4.25a1 1 0 1 1 1.41 1.42l-4.24 4.24a1 1 0 0 1-1.41 0Z"/><path d="M11 6.4l1.6-1.6a4.5 4.5 0 1 1 6.37 6.36l-2.1 2.1a1 1 0 0 1-1.42-1.41l2.1-2.1a2.5 2.5 0 1 0-3.54-3.54L12.4 7.8A1 1 0 1 1 11 6.4Z"/><path d="M13 17.6l-1.6 1.6a4.5 4.5 0 1 1-6.37-6.36l2.1-2.1a1 1 0 0 1 1.42 1.41l-2.1 2.1a2.5 2.5 0 1 0 3.54 3.54l1.6-1.6a1 1 0 1 1 1.4 1.41Z"/></svg>'},
+      {mod:1, id:'module1_master', name:'Mestre dos Layouts', icon:'<img class="om om-sm" src="../assets/icons/content/triangle-ruler.svg" alt="">'},
+      {mod:2, id:'module2_master', name:'Mestre dos Temas', icon:'<img class="om om-sm" src="../assets/icons/content/palette.svg" alt="">'},
+      {mod:8, id:'module8_master', name:'Mestre das Listas', icon:'<img class="om om-sm" src="../assets/icons/content/scroll.svg" alt="">'},
+      {mod:3, id:'module3_master', name:'Arquiteto MVVM', icon:'<img class="om om-sm" src="../assets/icons/content/puzzle.svg" alt="">'},
+      {mod:9, id:'module9_master', name:'Modularizador', icon:'<img class="om om-sm" src="../assets/icons/content/bricks.svg" alt="">'},
+      {mod:4, id:'module4_master', name:'Guardião de Chaves', icon:'<img class="om om-sm" src="../assets/icons/content/locked-key.svg" alt="">'},
+      {mod:10, id:'module10_master', name:'Faz-Tudo', icon:'<img class="om om-sm" src="../assets/icons/content/tools.svg" alt="">'},
+      {mod:11, id:'module11_master', name:'Entregador Master', icon:'<img class="om om-sm" src="../assets/icons/content/scooter.svg" alt="">'},
+      {mod:5, id:'module5_master', name:'Revisão Completa', icon:'<img class="om om-sm" src="../assets/icons/content/checkered-flag.svg" alt="">'}
+    ],
+    lightningChallenges: [
+      {id:'lc1', q:'Guardar uma Activity numa variável static/companion object causa...', options:['Melhora de performance','Vazamento de memória (memory leak)','Erro de compilação'], correct:1, explain:'Isso prende a Activity na memória mesmo depois de destruída.'},
+      {id:'lc2', q:'Qual unidade usar pra medidas de layout, no lugar de px?', options:['dp','em','pt'], correct:0, explain:'dp (density-independent pixels) se adapta à densidade de tela; sp é usado pra tipografia.'},
+      {id:'lc3', q:'O que substitui o findViewById de forma type-safe?', options:['viewBinding','Intent','LiveData'], correct:0, explain:'viewBinding gera uma classe de binding pra cada layout XML automaticamente.'},
+      {id:'lc4', q:'Onde a chave de API nunca deve ficar commitada?', options:['No histórico do Git','No local.properties (fora do Git)','No BuildConfig'], correct:0, explain:'local.properties deve estar no .gitignore, longe do histórico do Git.'},
+      {id:'lc5', q:'Qual das 4 camadas do MVVM observa o resultado via LiveData/StateFlow?', options:['Repository','API','View'], correct:2, explain:'A View observa o estado, sem lógica de negócio nela.'},
+      {id:'lc6', q:'Por que um Fragment recriado perde dados passados no construtor?', options:['O sistema recria com construtor vazio','Fragments não aceitam parâmetros','É um bug do Android'], correct:0, explain:'O certo é usar arguments (Bundle) via newInstance().'},
+      {id:'lc7', q:'ListAdapter + DiffUtil melhora principalmente:', options:['O consumo de bateria','Animações e performance ao atualizar a lista','O tamanho do APK'], correct:1, explain:'DiffUtil calcula só as diferenças entre listas, evitando redraw total.'},
+      {id:'lc8', q:'minifyEnabled true no build de release serve pra:', options:['Acelerar o Logcat','Reduzir e ofuscar o código no APK final','Ativar dark mode'], correct:1, explain:'Reduz o tamanho do app e dificulta engenharia reversa.'},
+      {id:'lc9', q:'activityViewModels() serve pra:', options:['Criar uma ViewModel exclusiva do Fragment','Compartilhar a ViewModel da Activity entre Fragments irmãos','Substituir o LayoutManager'], correct:1, explain:'É assim que dois Fragments irmãos trocam dados sem se conhecer.'},
+      {id:'lc10', q:'Qual API evita travar a thread principal numa tela de splash?', options:['Thread.sleep()','A API moderna de Splash Screen','setContentView() duplicado'], correct:1, explain:'Thread.sleep() trava a UI; a API moderna não.'}
+    ]
+  };
+</script>
+<script src="../assets/js/theme-fx.js"></script>
+<script src="../assets/js/engine.js"></script>
+<script src="../assets/js/games.js"></script>
+    <script src="../assets/js/chrome-widgets.js"></script>
+    <script src="../assets/js/theme-picker.js"></script>
+<script src="../assets/js/accessibility.js"></script>
+
+
+<script>
+  // Close mobile sidebar when a module is clicked
+  document.querySelectorAll('.path-node').forEach(node => {
+    node.addEventListener('click', () => {
+      const aside = document.querySelector('aside');
+      if (aside && aside.classList.contains('open')) {
+        aside.classList.remove('open');
+      }
+    });
+  });
+</script>
+</body>
+</html>
+

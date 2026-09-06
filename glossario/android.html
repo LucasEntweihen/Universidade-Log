@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<link href="../assets/icons/brand/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../assets/icons/brand/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="../assets/icons/brand/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="../manifest.json" rel="manifest"/>
+<meta content="#9D25FF" name="theme-color"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="default-src 'self'; img-src 'self' data: https://images.unsplash.com; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests" http-equiv="Content-Security-Policy"/>
+<meta content="strict-origin-when-cross-origin" name="referrer">
+<title>Glossário: android.log</title>
+<meta name="description" content="Glossário ilustrado do curso de Android (Kotlin), em formato de livro: termos explicados de forma simples, com exemplos." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://universidadelog.com.br/glossario/android.html" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:url" content="https://universidadelog.com.br/glossario/android.html" />
+<meta property="og:site_name" content="Universidade Log" />
+<meta property="og:title" content="Glossário: android.log" />
+<meta property="og:description" content="Glossário ilustrado do curso de Android (Kotlin), em formato de livro: termos explicados de forma simples, com exemplos." />
+<meta property="og:image" content="https://universidadelog.com.br/assets/characters/byte.png" />
+<meta property="og:image:alt" content="Byte, o mascote do curso de Android" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Glossário: android.log" />
+<meta name="twitter:description" content="Glossário ilustrado do curso de Android (Kotlin), em formato de livro: termos explicados de forma simples, com exemplos." />
+<meta name="twitter:image" content="https://universidadelog.com.br/assets/characters/byte.png" />
+<script>(function(){try{var t=localStorage.getItem('studyhub_theme_v1');if(t && t!=='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&amp;family=Playwrite+US+Modern:wght@100..400&amp;family=Lilex:wght@400;500;600;700&amp;family=Playfair+Display:wght@600;700&amp;family=Lora:ital@0;1&amp;display=swap" rel="stylesheet"/>
+<link href="../assets/css/theme.css" rel="stylesheet"/>
+<link href="../assets/css/space-theme.css" rel="stylesheet"/>
+<link href="../assets/css/icons.css" rel="stylesheet"/>
+<link href="../assets/css/flipbook.css" rel="stylesheet">
+<link href="../assets/css/games.css" rel="stylesheet"/>
+</link></meta></meta></head>
+<body class="course-android"><a href="#main-content" class="skip-link">Pular para o conteúdo</a><div aria-hidden="true" class="space-planet-photo"></div>
+<div class="fb-topbar">
+<div class="brand-mini"><img alt="" class="om om-sm" src="../assets/icons/content/robot.svg"/> <span>android.log</span></div>
+<div class="fb-topnav">
+<a href="../index.html"><svg class="ic-mono" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3 3 10.5V21h5.5v-6h7v6H21V10.5L12 3Z"></path></svg> universidade log</a>
+<a href="../cursos/android.html">↩ voltar pro curso</a>
+<div data-chrome-widget="theme"></div><div data-chrome-widget="a11y"></div>
+</div></div>
+<main class="fb-stage" id="main-content">
+<div class="fb-heading">
+<div class="fb-eyebrow">glossário interativo</div>
+<h1>android.log</h1>
+<p>Todo termo novo que você aprendeu em Kotlin, Jetpack e arquitetura Android, catalogado como um dicionário de verdade.</p>
+</div>
+<div class="fb-cover" id="fbCover" onclick="__fbOpen()" style="--cover-a:#274A2E;--cover-b:#122318;">
+<div class="fb-spine"></div>
+<img alt="Byte" class="fb-cover-mascot" src="../assets/characters/byte.png"/>
+<h2>Glossário de Android</h2>
+<p>30 termos, organizados como um dicionário de verdade: capa, sumário e páginas que viram.</p>
+<button class="fb-open-btn"><svg class="ic-mono" fill="currentColor" viewBox="0 0 24 24"><path d="M3 5.6c2.4-1 5.3-1 8 .5v13.3c-2.7-1.5-5.6-1.5-8-.5V5.6Z" opacity=".55"></path><path d="M21 5.6c-2.4-1-5.3-1-8 .5v13.3c2.7-1.5 5.6-1.5 8-.5V5.6Z"></path><rect height="1.1" opacity=".8" rx=".55" width="4.8" x="4.6" y="8"></rect><rect height="1.1" opacity=".8" rx=".55" width="4.8" x="4.6" y="10.6"></rect></svg> Abrir o livro</button>
+</div>
+<div class="fb-book-wrap" id="fbRoot">
+<div class="fb-book">
+<div class="fb-page fb-page-left"><div class="fb-page-content"></div><div class="fb-page-number"></div></div>
+<div class="fb-spine-shadow"></div>
+<div class="fb-page fb-page-right"><div class="fb-page-content"></div><div class="fb-page-number"></div></div>
+</div>
+<div class="fb-controls">
+<button class="fb-nav-btn" id="fbPrevBtn" onclick="__fbPrev()">← Página anterior</button>
+<span class="fb-progress" id="fbProgress"></span>
+<button class="fb-nav-btn" id="fbNextBtn" onclick="__fbNext()">Próxima página →</button>
+</div>
+<div class="fb-search-row">
+<input class="fb-search" onkeydown="if(event.key==='Enter')__fbSearch(this.value)" placeholder="Buscar um termo... (ex: ViewModel)"/>
+<button class="fb-close-btn" onclick="document.getElementById('fbCover').style.display='flex';document.querySelector('.fb-book-wrap').classList.remove('open');"><img alt="" class="om om-sm" src="../assets/icons/content/x-mark.svg"/> Fechar livro</button>
+</div>
+</div>
+<div class="fb-mascot-note">
+<img alt="Byte" src="../assets/characters/byte.png"/>
+<div>
+<div class="m-name">Byte</div>
+<p>Guardei aqui cada termo técnico que apareceu no curso. Sempre que esquecer o que é um ViewHolder, é só folhear até o V.</p>
+</div>
+</div>
+<div class="fb-game-section">
+<div class="fb-game-heading"><img alt="" class="om om-sm" src="../assets/icons/content/game-controller.svg"/> Pratique o que acabou de ler</div>
+<p class="fb-game-sub">O mesmo jogo da memória que aparece no curso, só que aqui com termos direto do glossário.</p>
+<div class="game-card memory-game" data-pairs='[{"term": "Activity", "def": "Componente do Android que representa uma tela única com a qual o usuário interage."}, {"term": "Cloudinary", "def": "Serviço de nuvem pra armazenamento, otimização e entrega de imagens e mídia, usado como alternativa/complemento ao Firebase."}, {"term": "Firebase", "def": "Plataforma do Google com serviços de backend prontos: autenticação, banco de dados em tempo real, armazenamento e mais."}, {"term": "Logcat", "def": "Ferramenta de log do Android Studio usada pra depurar o app em tempo real, filtrando mensagens por prioridade e tag."}, {"term": "Shape Drawable", "def": "Recurso XML que define formas geométricas customizadas (bordas arredondadas, gradientes) sem precisar de imagens."}, {"term": "Theme (res/values/themes.xml)", "def": "Conjunto de estilos globais (cores, tipografia) aplicados a todo o app, declarado em XML."}]' id="fbMemGame">
+<div class="game-title"><img alt="" class="om om-sm" src="../assets/icons/content/brain.svg"/> Jogo da memória: Android</div>
+<div class="memory-grid"></div>
+<button class="game-reset-btn" onclick="initMemoryGame('fbMemGame')">Embaralhar de novo</button>
+</div>
+</div>
+</main>
+<script>
+  window.GLOSSARY = {
+    courseTitle: "android.log",
+    courseIcon: '<img class="om om-sm" src="../assets/icons/content/robot.svg" alt="">',
+    terms: [
+  {
+    "term": "Activity",
+    "mod": "mód. 01",
+    "def": "Componente do Android que representa uma tela única com a qual o usuário interage."
+  },
+  {
+    "term": "Activity Lifecycle",
+    "mod": "mód. 01",
+    "def": "O ciclo de vida de uma Activity (onCreate, onStart, onResume, onPause, onStop, onDestroy) que define como ela se comporta ao aparecer, sair de foco ou fechar."
+  },
+  {
+    "term": "Adapter",
+    "mod": "mód. 03",
+    "def": "Ponte entre uma fonte de dados (lista, array) e um componente visual como o RecyclerView, decidindo como cada item é exibido."
+  },
+  {
+    "term": "AndroidManifest.xml",
+    "mod": "mód. 02",
+    "def": "Arquivo de configuração central do app, onde permissões, activities e componentes são declarados."
+  },
+  {
+    "term": "Bundle",
+    "mod": "mód. 01",
+    "def": "Estrutura de dados usada pra passar informações entre componentes do Android, como entre duas Activities via Intent."
+  },
+  {
+    "term": "Cloudinary",
+    "mod": "mód. 05",
+    "def": "Serviço de nuvem pra armazenamento, otimização e entrega de imagens e mídia, usado como alternativa/complemento ao Firebase."
+  },
+  {
+    "term": "ConstraintLayout",
+    "mod": "mód. 02",
+    "def": "Layout do Android que posiciona views através de restrições (constraints) relativas entre elas, permitindo interfaces flexíveis e responsivas."
+  },
+  {
+    "term": "Coroutine",
+    "mod": "mód. 04",
+    "def": "Mecanismo do Kotlin pra escrever código assíncrono de forma sequencial e legível, sem travar a thread principal da UI."
+  },
+  {
+    "term": "DiffUtil",
+    "mod": "mód. 03",
+    "def": "Utilitário que calcula a diferença entre duas listas e anima apenas os itens que mudaram num RecyclerView, em vez de redesenhar tudo."
+  },
+  {
+    "term": "DP (Density-independent Pixels)",
+    "mod": "mód. 02",
+    "def": "Unidade de medida do Android que se adapta à densidade de pixels da tela, garantindo tamanho visual consistente em diferentes aparelhos."
+  },
+  {
+    "term": "Firebase",
+    "mod": "mód. 05",
+    "def": "Plataforma do Google com serviços de backend prontos: autenticação, banco de dados em tempo real, armazenamento e mais."
+  },
+  {
+    "term": "Fragment",
+    "mod": "mód. 04",
+    "def": "Um pedaço de UI reutilizável com ciclo de vida próprio, que pode ser combinado dentro de uma Activity."
+  },
+  {
+    "term": "Glide",
+    "mod": "mód. 07",
+    "def": "Biblioteca de carregamento e cache de imagens pra Android, muito usada junto com Adapters de lista."
+  },
+  {
+    "term": "Intent",
+    "mod": "mód. 01",
+    "def": "Objeto de mensagem usado pra solicitar uma ação de outro componente do Android, como abrir uma nova tela ou compartilhar conteúdo."
+  },
+  {
+    "term": "ListAdapter",
+    "mod": "mód. 03",
+    "def": "Variante do Adapter que já vem integrada com DiffUtil, otimizando atualizações de lista automaticamente."
+  },
+  {
+    "term": "Logcat",
+    "mod": "mód. 07",
+    "def": "Ferramenta de log do Android Studio usada pra depurar o app em tempo real, filtrando mensagens por prioridade e tag."
+  },
+  {
+    "term": "Ofuscação (R8)",
+    "mod": "mód. 06",
+    "def": "Processo que renomeia e compacta código antes da publicação, dificultando engenharia reversa do app."
+  },
+  {
+    "term": "OWASP Top 10 Mobile",
+    "mod": "mód. 06",
+    "def": "Lista dos riscos de segurança mais críticos em aplicações mobile, mantida pela comunidade OWASP."
+  },
+  {
+    "term": "Paging 3",
+    "mod": "mód. 07",
+    "def": "Biblioteca do Jetpack que carrega grandes listas de dados em partes (páginas), melhorando performance e uso de memória."
+  },
+  {
+    "term": "Retrofit",
+    "mod": "mód. 08",
+    "def": "Biblioteca que transforma chamadas de API REST em interfaces Kotlin/Java simples de usar: o 'motoboy' que busca dados da internet."
+  },
+  {
+    "term": "Shape Drawable",
+    "mod": "mód. 02",
+    "def": "Recurso XML que define formas geométricas customizadas (bordas arredondadas, gradientes) sem precisar de imagens."
+  },
+  {
+    "term": "Splash Screen",
+    "mod": "mód. 01",
+    "def": "Tela inicial exibida brevemente enquanto o app carrega, geralmente com o logo ou identidade visual."
+  },
+  {
+    "term": "SSL/TLS",
+    "mod": "mód. 06",
+    "def": "Protocolos de criptografia que protegem dados em trânsito entre o app e o servidor."
+  },
+  {
+    "term": "Swipe-to-delete",
+    "mod": "mód. 03",
+    "def": "Padrão de interação onde deslizar um item de lista revela uma ação, geralmente exclusão."
+  },
+  {
+    "term": "TextView / Button / ImageView",
+    "mod": "mód. 01",
+    "def": "Componentes visuais básicos do Android pra exibir texto, botões clicáveis e imagens, respectivamente."
+  },
+  {
+    "term": "Theme (res/values/themes.xml)",
+    "mod": "mód. 02",
+    "def": "Conjunto de estilos globais (cores, tipografia) aplicados a todo o app, declarado em XML."
+  },
+  {
+    "term": "View Binding",
+    "mod": "mód. 01",
+    "def": "Recurso que gera referências type-safe às views de um layout automaticamente, eliminando a necessidade de findViewById."
+  },
+  {
+    "term": "ViewHolder",
+    "mod": "mód. 03",
+    "def": "Padrão que armazena referências de views de um item de lista, evitando buscas repetidas e melhorando performance do RecyclerView."
+  },
+  {
+    "term": "ViewModel",
+    "mod": "mód. 08",
+    "def": "Componente da arquitetura MVVM que guarda e gerencia dados relacionados à UI, sobrevivendo a mudanças de configuração como rotação de tela."
+  },
+  {
+    "term": "WebView",
+    "mod": "mód. 04",
+    "def": "Componente que renderiza conteúdo HTML/web diretamente dentro do app, como um navegador embutido."
+  }
+]
+  };
+</script>
+<script src="../assets/js/flipbook.js"></script>
+<script src="../assets/js/games.js"></script>
+<script src="../assets/js/chrome-widgets.js"></script>
+<script src="../assets/js/theme-picker.js"></script>
+<script src="../assets/js/accessibility.js"></script>
+</body>
+</html>

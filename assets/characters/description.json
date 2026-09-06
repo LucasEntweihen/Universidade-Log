@@ -1,0 +1,191 @@
+[
+    {
+        "nome": "ama-zz-on",
+        "idade": 312,
+        "origem": "extraterrestre",
+        "expertise": "AWS",
+        "personalidade": ["alegre", "bobo", "inocente", "inteligente", "dedicado"],
+        "afiliação": "piratas devops",
+        "curso": "devops"
+    },
+    {
+        "nome": "baba grogue",
+        "idade": 52,
+        "origem": "oceano profundo",
+        "expertise": "kubernetes",
+        "personalidade": ["bêbado", "alegre", "inteligente", "preguiçoso", "inconveniente", "ganancioso"],
+        "afiliação": "piratas devops",
+        "curso": "devops"
+    },
+    {
+        "nome": "bispo",
+        "idade": 78,
+        "origem": "vaticano",
+        "expertise": "trigonometria",
+        "personalidade": ["religioso", "devoto", "estudioso", "inteligente", "alegre", "paciente"],
+        "afiliação": "devoto da matemática",
+        "curso": "matemática"
+    },
+    {
+        "nome": "byte morto",
+        "idade": -12,
+        "origem": "terra fantaccia",
+        "expertise": "lógica",
+        "personalidade": ["bobo", "dedicado", "alegre"],
+        "afiliação": "mortos de uruk",
+        "curso": "matemática"
+    },
+    {
+        "nome": "byte",
+        "idade": 12,
+        "origem": "universidade de log",
+        "expertise": "estudar",
+        "personalidade": ["bobo", "dedicado", "alegre"],
+        "afiliação": "estudantes",
+        "curso": ["IA", "mobile"]
+    },
+    {
+        "nome": "chud",
+        "idade": 25,
+        "origem": "universidade de log",
+        "expertise": "estudar",
+        "personalidade": ["esperto", "dedicado", "alegre", "preguiçoso"],
+        "afiliação": "estudantes",
+        "curso": ["IA", "mobile"]
+    },
+    {
+        "nome": "fly",
+        "idade": 19,
+        "origem": "universidade de log",
+        "expertise": "dar aula",
+        "personalidade": ["inteligente", "dedicado", "lógico"],
+        "afiliação": "professores",
+        "curso": "IA"
+    },
+    {
+        "nome": "gnome",
+        "idade": 39,
+        "origem": "universidade de log",
+        "expertise": "dar aula",
+        "personalidade": ["esperto", "dedicado", "alegre", "preguiçoso"],
+        "afiliação": "professores",
+        "curso": "mobile"
+    },
+    {
+        "nome": "jade",
+        "idade": 27,
+        "origem": "universidade de log",
+        "expertise": "dar aula",
+        "personalidade": ["esperta", "implicante", "imponente", "irritante"],
+        "afiliação": "professores",
+        "curso": ["todos"]
+    },
+    {
+        "nome": "laura",
+        "idade": 26,
+        "origem": "universidade de log",
+        "expertise": "dar aula",
+        "personalidade": ["preguiçosa", "entediada", "inteligente"],
+        "afiliação": "professores",
+        "curso": ["todos"]
+    },
+    {
+        "nome": "lisete",
+        "idade": 68,
+        "origem": "universidade de log",
+        "expertise": "dar aula",
+        "personalidade": ["cautelosa", "inteligente", "imponente", "paciente", "didática"],
+        "afiliação": "professores",
+        "curso": "matemática"
+    },
+    {
+        "nome": "mago",
+        "idade": 200,
+        "origem": "terra fantaccia",
+        "expertise": ["trigonometria", "funções"],
+        "personalidade": ["esperto", "complexo", "implicante", "irritante", "cauteloso", "ganancioso", "lógico"],
+        "afiliação": "magos",
+        "curso": "matemática"
+    },
+    {
+        "nome": "moss",
+        "idade": 24,
+        "origem": "universidade de log",
+        "expertise": "banco de dados",
+        "personalidade": ["inteligente", "dedicada", "paciente", "implicante", "fofa"],
+        "afiliação": "professores",
+        "curso": ["todos", "banco de dados"]
+    },
+    {
+        "nome": "navio tripulação",
+        "idade": null,
+        "origem": "oceano profundo",
+        "expertise": ["docker", "kubernetes", "AWS", "github/git"],
+        "personalidade": ["preguiçoso", "bêbado", "bobo"],
+        "afiliação": "piratas devops",
+        "curso": "devops"
+    },
+    {
+        "nome": "octocat",
+        "idade": 12,
+        "origem": "extraterrestre",
+        "expertise": "github/git",
+        "personalidade": ["bobo", "alegre", "estabanado", "esperto"],
+        "afiliação": "piratas devops",
+        "curso": "devops"
+    },
+    {
+        "nome": "uruk",
+        "idade": 150,
+        "origem": "terra fantaccia",
+        "expertise": "lógica",
+        "personalidade": ["bobo", "implicante", "estabanado", "esperto", "irritante", "complexo", "preguiçoso"],
+        "afiliação": "uruk",
+        "curso": "matemática"
+    },
+    {
+        "nome": "Kira",
+        "idade": 17,
+        "origem": "universidade de log",
+        "afiliação": "estudantes",
+        "curso": ["IA", "banco de dados"],
+        "expertise": ["inteligência artificial", "backend", "banco de dados"],
+        "personalidade": ["habilidosa", "proativa", "curiosa", "elétrica", "focada"]
+    },
+    {
+        "nome": "Prof. Cogno",
+        "idade": 142,
+        "origem": "universidade de log",
+        "afiliação": "professores",
+        "curso": ["IA", "banco de dados"],
+        "expertise": ["inteligência artificial", "banco de dados"],
+        "personalidade": ["sábio","excêntrico","didático","falante","paciente"]
+    },
+    {
+        "nome": "datacent",
+        "idade": 4,
+        "origem": "extraterrestre",
+        "afiliação": "professores",
+        "curso": ["IA", "banco de dados"],
+        "expertise": ["inteligência artificial","banco de dados","AWS","infraestrutura"],
+        "personalidade": ["alegre","obediente","incansável","metódico","leal"]
+    },
+    {
+        "nome": "Grilo",
+        "idade": 45,
+        "origem": "universidade de log",
+        "afiliação": "professores",
+        "curso": "IA",
+        "expertise": ["inteligência artificial","banco de dados","github/git"],
+        "personalidade": ["descolado","tranquilo","preguiçoso","amigável","observador"]
+    },
+    {
+        "nome": "rex",
+        "idade": 26,
+        "origem": "extraterrestre",
+        "afiliação": "estudantes",
+        "curso": ["IA", "banco de dados"],
+        "expertise": ["FastAPI","Python","inteligência artificial","banco de dados"],
+        "personalidade": ["inventivo","caótico","entusiasmado","brilhante","aventureiro"]
+    }
+]

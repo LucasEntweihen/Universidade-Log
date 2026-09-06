@@ -1,0 +1,11 @@
+/* TEAM */
+Criador e desenvolvedor: Lucas
+Site: https://universidadelog.com.br
+
+/* SITE */
+Última atualização: 2026-09-05
+Stack: HTML5, CSS3, JavaScript (vanilla, sem frameworks)
+Progresso do usuário: 100% local, via localStorage do navegador
+Componentes: engine.js (gamificação), flipbook.js (glossários), games.js (minigames), theme-fx.js (parallax e animações por tema)
+Padrão: mobile-first, 13 temas de cor, sem contas, sem anúncios, sem rastreadores
+Build opcional: npm run build (minifica CSS/JS/HTML pra produção — ver README.md)

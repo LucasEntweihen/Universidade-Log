@@ -1,0 +1,22 @@
+# Normaliza fins de linha para LF no repositório, independente do SO
+# de quem estiver clonando (evita diffs gigantes por causa de CRLF).
+* text=auto eol=lf
+
+# Código-fonte: sempre texto, sempre LF
+*.html text eol=lf
+*.css  text eol=lf
+*.js   text eol=lf
+*.json text eol=lf
+*.xml  text eol=lf
+*.svg  text eol=lf
+*.md   text eol=lf
+*.txt  text eol=lf
+
+# Binários reais: sem normalização de fim de linha, sem diff de conteúdo
+*.png  binary
+*.ico  binary
+*.jpg  binary
+*.jpeg binary
+*.webp binary
+*.woff binary
+*.woff2 binary

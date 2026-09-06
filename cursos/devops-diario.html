@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Diário de Bordo · DevOps na Prática</title>
+<meta name="description" content="Diário de bordo do curso de DevOps: acompanhe seu progresso módulo a módulo, posto por posto da tripulação." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://universidadelog.com.br/cursos/devops-diario.html" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:url" content="https://universidadelog.com.br/cursos/devops-diario.html" />
+<meta property="og:site_name" content="Universidade Log" />
+<meta property="og:title" content="Diário de Bordo: navio.log" />
+<meta property="og:description" content="Diário de bordo do curso de DevOps: acompanhe seu progresso módulo a módulo, posto por posto da tripulação." />
+<meta property="og:image" content="https://universidadelog.com.br/assets/characters/baba-grogue.png" />
+<meta property="og:image:alt" content="Capitão Baba Grogue, mascote do curso de DevOps" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Diário de Bordo: navio.log" />
+<meta name="twitter:description" content="Diário de bordo do curso de DevOps: acompanhe seu progresso módulo a módulo, posto por posto da tripulação." />
+<meta name="twitter:image" content="https://universidadelog.com.br/assets/characters/baba-grogue.png" />
+<script>(function(){try{var t=localStorage.getItem('studyhub_theme_v1');if(t && t!=='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://images.unsplash.com; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests" />
+<meta name="referrer" content="strict-origin-when-cross-origin" />
+<link rel="icon" type="image/svg+xml" href="../assets/icons/brand/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/brand/favicon-32.png" />
+<link rel="apple-touch-icon" href="../assets/icons/brand/apple-touch-icon.png" />
+<link rel="manifest" href="../manifest.json" />
+<meta name="theme-color" content="#9D25FF" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&family=Playwrite+US+Modern:wght@100..400&family=Lilex:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/theme.css">
+<link rel="stylesheet" href="../assets/css/space-theme.css">
+<link rel="stylesheet" href="../assets/css/icons.css" />
+<link rel="stylesheet" href="../assets/css/theme-fx.css" />
+<link rel="stylesheet" href="../assets/css/course-themes.css">
+<style>
+*{box-sizing:border-box;}
+body{
+  margin:0; min-height:100vh; font-family:var(--font-body); color:var(--text);
+  background:radial-gradient(ellipse 900px 500px at 8% -8%, rgba(46,134,193,.14), transparent),
+             radial-gradient(ellipse 800px 600px at 100% 15%, rgba(233,196,106,.10), transparent),
+             var(--bg);
+  padding:0 0 80px;
+  transition:background-color .35s ease,color .35s ease;
+}
+.topbar{
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;
+  padding:20px 6vw;border-bottom:1px solid var(--line);background:var(--panel);
+  transition:background-color .35s ease,border-color .35s ease;
+}
+.brand-mini .logo{font-family:var(--font-display);font-weight:700;font-size:1.1rem;color:var(--heading);}
+.topnav{display:flex;gap:10px;align-items:center;flex-wrap:wrap;}
+.topnav a{
+  font-size:.8rem;text-decoration:none;color:var(--text-dim);background:var(--panel-2);
+  border:1px solid var(--line);border-radius:20px;padding:7px 14px;transition:all .15s ease;
+}
+.topnav a:hover{border-color:var(--mint);color:var(--mint-dim);}
+.wrap{ max-width:880px; margin:32px auto 0; padding:0 20px; }
+.back{ display:inline-flex; align-items:center; gap:6px; color:var(--sea-2, #2E86C1); text-decoration:none; font-weight:700; font-family:var(--font-display); font-size:.8rem; }
+.back:hover{ color:var(--mint); }
+h1{ font-family:var(--font-display); font-size:2.1rem; margin:16px 0 4px; text-transform:uppercase; letter-spacing:.02em; color:var(--heading); }
+.sub{ font-family:var(--font-mono); font-size:.82rem; color:var(--sea-2, #2E86C1); margin-bottom:10px; font-weight:700; }
+.wave-rule{
+  height:16px; margin:18px 0 30px;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='42' height='16' viewBox='0 0 42 16'><path d='M0 8 Q10.5 1 21 8 T42 8' stroke='%232E86C1' stroke-width='2.6' fill='none'/></svg>");
+  background-repeat:repeat-x; background-size:42px 16px;
+}
+
+.log-entry{
+  background:var(--panel); border:3px solid var(--heading); box-shadow:6px 6px 0 0 var(--sea-2, #2E86C1);
+  padding:20px 24px; margin-bottom:26px; position:relative;
+  transition:background-color .35s ease, border-color .35s ease;
+}
+.log-entry .stamp{
+  position:absolute; top:-14px; right:18px; background:var(--sand, #E9C46A); color:#0B2033; border:2px solid var(--heading);
+  padding:4px 12px; font-family:var(--font-mono); font-size:.68rem; font-weight:700; transform:rotate(3deg);
+}
+.log-entry h3{ font-family:var(--font-display); text-transform:uppercase; margin:0 0 8px; font-size:1.02rem; color:var(--heading); }
+.log-entry p{ font-size:.86rem; line-height:1.6; margin:0; color:var(--text); }
+
+.route{ display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:8px 0 34px; }
+.port{
+  background:var(--panel-2); color:var(--text); border:2px solid var(--line); padding:9px 14px;
+  font-family:var(--font-mono); font-size:.72rem; font-weight:700; border-radius:4px;
+}
+.port.alt{ background:var(--sea-2, #2E86C1); color:#FFFFFF; border-color:var(--heading); }
+.sail{ color:var(--text); font-size:1.1rem; padding:0 2px; }
+
+h2.section-title{ font-family:var(--font-display); text-transform:uppercase; font-size:1.15rem; border-bottom:3px solid var(--line); padding-bottom:6px; margin:36px 0 18px; color:var(--heading); }
+
+.crew-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:16px; }
+.crew-card{
+  display:block; text-align:left; width:100%; cursor:pointer; text-decoration:none;
+  background:var(--panel); border:3px solid var(--heading); box-shadow:5px 5px 0 0 var(--sand, #E9C46A);
+  padding:14px 16px; font:inherit; color:var(--text); transition:transform .15s ease, box-shadow .15s ease, background-color .35s ease;
+}
+.crew-card:hover{ transform:translate(-2px,-2px); box-shadow:7px 7px 0 0 var(--sand, #E9C46A); }
+.crew-card .n{ font-family:var(--font-mono); font-size:.66rem; color:var(--sea-2, #2E86C1); font-weight:700; }
+.crew-card .t{ font-family:var(--font-display); font-weight:700; font-size:.92rem; margin:3px 0 6px; color:var(--heading); }
+.crew-card .d{ font-size:.76rem; color:var(--text-dim); line-height:1.4; }
+
+footer.hint{ text-align:center; color:var(--text-dim); font-size:.76rem; margin-top:34px; }
+
+  .mobile-menu-btn {
+    display: none; background: transparent; border: none; color: var(--text); cursor: pointer; padding: 8px; border-radius: 8px;
+  }
+  .mobile-menu-btn:hover { background: var(--panel-2); }
+  @media (max-width: 860px) {
+    .topbar {
+      grid-template-columns: auto auto auto !important;
+      display: grid !important;
+      padding: 12px 16px !important;
+    }
+    .mobile-menu-btn { display: flex; align-items: center; justify-content: center; }
+    .topbar .topnav {
+      display: none;
+      grid-column: 1 / -1;
+      grid-row: 2;
+      justify-self: center;
+      margin-top: 14px;
+      flex-direction: column;
+      align-items: stretch;
+      width: 100%;
+      background: var(--panel);
+      border-radius: 16px;
+      padding: 8px;
+      border: 1px solid var(--line);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.1);
+      animation: menuDrop 0.25s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    }
+    .topbar .topnav.open {
+      display: flex;
+    }
+    .topbar .topnav a { justify-content: center; padding: 12px; }
+  }
+  @keyframes menuDrop {
+    from { opacity: 0; transform: translateY(-10px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+</style>
+</head>
+<body class="course-devops"><a href="#main-content" class="skip-link">Pular para o conteúdo</a><div class="space-planet-photo" aria-hidden="true"></div>
+<div class="topbar">
+  <div class="brand-mini"><img class="om om-sm" src="../assets/icons/content/whale.svg" alt=""> <span class="logo">navio.log</span></div>
+  <div class="topnav">
+    <a href="../index.html"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3 3 10.5V21h5.5v-6h7v6H21V10.5L12 3Z"/></svg> universidade log</a>
+    <a href="../glossario/devops.html"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor"><path d="M5.5 3h11A1.5 1.5 0 0 1 18 4.5v16.2a.5.5 0 0 1-.74.44L12 18.5l-5.26 2.64a.5.5 0 0 1-.74-.44V4.5A1.5 1.5 0 0 1 5.5 3Z"/><rect x="8" y="7" width="6.5" height="1.3" rx=".65" fill="#fff" opacity=".7"/><rect x="8" y="10" width="6.5" height="1.3" rx=".65" fill="#fff" opacity=".7"/></svg> glossário</a>
+    <a href="devops.html"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor"><path d="M3 5.6c2.4-1 5.3-1 8 .5v13.3c-2.7-1.5-5.6-1.5-8-.5V5.6Z" opacity=".55"/><path d="M21 5.6c-2.4-1-5.3-1-8 .5v13.3c2.7-1.5 5.6-1.5 8-.5V5.6Z"/><rect x="4.6" y="8" width="4.8" height="1.1" rx=".55" opacity=".8"/><rect x="4.6" y="10.6" width="4.8" height="1.1" rx=".55" opacity=".8"/></svg> guia de estudo</a>
+    <a href="devops-material.html"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor"><path d="M3 5.6c2.4-1 5.3-1 8 .5v13.3c-2.7-1.5-5.6-1.5-8-.5V5.6Z" opacity=".55"/><path d="M21 5.6c-2.4-1-5.3-1-8 .5v13.3c2.7-1.5 5.6-1.5 8-.5V5.6Z"/><rect x="4.6" y="8" width="4.8" height="1.1" rx=".55" opacity=".8"/><rect x="4.6" y="10.6" width="4.8" height="1.1" rx=".55" opacity=".8"/></svg> aprofundamento</a>
+    <a href="devops-referencias.html"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor"><path d="M9.17 14.83a1 1 0 0 1 0-1.41l4.24-4.25a1 1 0 1 1 1.41 1.42l-4.24 4.24a1 1 0 0 1-1.41 0Z"/><path d="M11 6.4l1.6-1.6a4.5 4.5 0 1 1 6.37 6.36l-2.1 2.1a1 1 0 0 1-1.42-1.41l2.1-2.1a2.5 2.5 0 1 0-3.54-3.54L12.4 7.8A1 1 0 1 1 11 6.4Z"/><path d="M13 17.6l-1.6 1.6a4.5 4.5 0 1 1-6.37-6.36l2.1-2.1a1 1 0 0 1 1.42 1.41l-2.1 2.1a2.5 2.5 0 1 0 3.54 3.54l1.6-1.6a1 1 0 1 1 1.4 1.41Z"/></svg> referências</a>
+    <a href="devops-projeto.html"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c2.6 1.7 4.2 4.6 4.2 8.3 0 2-.5 3.9-1.4 5.6h-5.6c-.9-1.7-1.4-3.6-1.4-5.6 0-3.7 1.6-6.6 4.2-8.3Z"/><circle cx="12" cy="9.6" r="1.7" fill="#fff" opacity=".85"/><path d="M8.2 15.3 5 17.4l.9-3.9 2.3-.6v1.8Z" opacity=".6"/><path d="M15.8 15.3l3.2 2.1-.9-3.9-2.3-.6v1.8Z" opacity=".6"/><path d="M10 17.1h4l-.7 3.1a1.6 1.6 0 0 1-2.6 0L10 17.1Z"/></svg> projeto prático</a>
+    <div data-chrome-widget="theme"></div><div data-chrome-widget="a11y"></div>
+  </div>
+</div>
+<main id="main-content">
+<div class="wrap">
+  <a class="back" href="devops.html">&larr; VOLTAR AO CONVÉS</a>
+  <h1>Diário de Bordo</h1>
+  <div class="sub">devops.log · registro da travessia</div>
+  <div class="wave-rule"></div>
+
+  <div class="log-entry">
+    <span class="stamp">DIA 1</span>
+    <h3>Zarpamos com CAMS</h3>
+    <p>Toda boa travessia começa com uma tripulação alinhada. Cultura, Automação, Medição e Compartilhamento (CAMS) são os quatro ventos que guiam o barco: sem eles, cada departamento rema pra um lado.</p>
+  </div>
+  <div class="log-entry">
+    <span class="stamp">DIA 2</span>
+    <h3>Cartas de navegação: Git &amp; GitHub</h3>
+    <p>O histórico de commits é o diário de bordo do próprio código: cada branch, uma rota alternativa; cada merge, um encontro de tripulações.</p>
+  </div>
+  <div class="log-entry">
+    <span class="stamp">DIA 3</span>
+    <h3>Containers: os porões do navio</h3>
+    <p>Docker empacota tudo que a aplicação precisa num porão isolado e leve. Kubernetes é o comandante que garante que o número certo de porões está sempre à tona, mesmo em tempestade.</p>
+  </div>
+
+  <h2 class="section-title">Rota da travessia</h2>
+  <div class="route">
+    <span class="port">CULTURA</span><span class="sail">⛵</span>
+    <span class="port alt">GIT</span><span class="sail">⛵</span>
+    <span class="port">CONTAINERS</span><span class="sail">⛵</span>
+    <span class="port alt">KUBERNETES</span><span class="sail">⛵</span>
+    <span class="port">NUVEM (AWS)</span><span class="sail">⛵</span>
+    <span class="port alt">CI/CD</span><span class="sail">🏝️</span>
+  </div>
+
+  <h2 class="section-title">Postos da tripulação (módulos)</h2>
+  <div class="crew-grid" id="modGrid"></div>
+</div>
+</main>
+<footer class="hint">Toque num posto pra assumir o módulo direto no curso.</footer>
+
+<script>
+const MODULES = [
+  {i:0, name:'Cultura & CAMS', desc:'Os quatro pilares do DevOps'},
+  {i:1, name:'Git', desc:'Controle de versão'},
+  {i:2, name:'GitHub & PR', desc:'Colaboração e revisão'},
+  {i:3, name:'IaC', desc:'Infraestrutura como código'},
+  {i:4, name:'Docker: Imagens', desc:'Containers isolados e leves'},
+  {i:5, name:'Dockerfile & Compose', desc:'Receita e orquestração local'},
+  {i:6, name:'Kubernetes: Conceitos', desc:'Pods, ReplicaSets, reconciliação'},
+  {i:7, name:'kubectl na Prática', desc:'Comandos do dia a dia'},
+  {i:8, name:'AWS: Fundamentos', desc:'IAM, elasticidade, nuvem'},
+  {i:9, name:'CI/CD & Projeto', desc:'Do commit ao deploy'},
+  {i:10, name:'Revisão Geral', desc:'Minijogos e desafio final'},
+];
+const TAB_KEY = 'curso_devops_tab_v1';
+const grid = document.getElementById('modGrid');
+MODULES.forEach(m => {
+  const btn = document.createElement('button');
+  btn.className = 'crew-card';
+  btn.innerHTML = `<div class="n">POSTO 0${m.i+1}</div><div class="t">${m.name}</div><div class="d">${m.desc}</div>`;
+  btn.onclick = () => { localStorage.setItem(TAB_KEY, m.i); window.location.href = 'devops.html'; };
+  grid.appendChild(btn);
+});
+</script>
+<script src="../assets/js/theme-fx.js"></script>
+<script src="../assets/js/chrome-widgets.js"></script>
+<script src="../assets/js/theme-picker.js"></script>
+<script src="../assets/js/accessibility.js"></script>
+</body>
+</html>

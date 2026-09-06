@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<link href="../assets/icons/brand/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../assets/icons/brand/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="../assets/icons/brand/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="../manifest.json" rel="manifest"/>
+<meta content="#9D25FF" name="theme-color"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="default-src 'self'; img-src 'self' data: https://images.unsplash.com; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests" http-equiv="Content-Security-Policy"/>
+<meta content="strict-origin-when-cross-origin" name="referrer">
+<title>trigomante.log: A Jornada do Círculo</title>
+<meta name="description" content="Guia de estudos completo do curso de Trigonometria da Universidade Log: trilha gamificada em estilo RPG, com XP, conquistas e mascotes. Grátis, sem conta." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://universidadelog.com.br/cursos/trigomante.html" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:url" content="https://universidadelog.com.br/cursos/trigomante.html" />
+<meta property="og:site_name" content="Universidade Log" />
+<meta property="og:title" content="trigomante.log: Guia de Estudos de Trigonometria" />
+<meta property="og:description" content="Guia de estudos completo do curso de Trigonometria da Universidade Log: trilha gamificada em estilo RPG, com XP, conquistas e mascotes. Grátis, sem conta." />
+<meta property="og:image" content="https://universidadelog.com.br/assets/characters/mago.png" />
+<meta property="og:image:alt" content="O Mago da Matemática, mascote do curso de Trigonometria" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="trigomante.log: Guia de Estudos de Trigonometria" />
+<meta name="twitter:description" content="Guia de estudos completo do curso de Trigonometria da Universidade Log: trilha gamificada em estilo RPG, com XP, conquistas e mascotes. Grátis, sem conta." />
+<meta name="twitter:image" content="https://universidadelog.com.br/assets/characters/mago.png" />
+<script>(function(){try{var t=localStorage.getItem('studyhub_theme_v1');if(t && t!=='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&amp;family=Playwrite+US+Modern:wght@100..400&amp;family=Lilex:wght@400;500;600;700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="../assets/css/theme.css" rel="stylesheet"/>
+<link href="../assets/css/space-theme.css" rel="stylesheet"/>
+<link href="../assets/css/icons.css" rel="stylesheet"/>
+<link rel="stylesheet" href="../assets/css/theme-fx.css" />
+<link href="../assets/css/site.css" rel="stylesheet">
+<link href="../assets/css/games.css" rel="stylesheet"/>
+<link href="../assets/css/calculator.css" rel="stylesheet"/>
+<link href="../assets/css/course-themes.css" rel="stylesheet"/>
+<script>
+  window.COURSE = {
+    totalModules: 7,
+    prefix: 'trigomante'
+  };
+</script>
+<style>
+  /* Toques de grimório medieval, só nesta página: nada aqui vaza pro resto do site. */
+  #sec-0 h2, #sec-1 h2, #sec-2 h2, #sec-3 h2, #sec-4 h2, #sec-5 h2, #sec-6 h2{ font-family:'Playfair Display',serif; letter-spacing:.01em; }
+  .calc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:14px 0;}
+  @media(max-width:600px){ .calc-grid{grid-template-columns:1fr;} }
+  .calc-grid label{display:flex;flex-direction:column;gap:4px;font-size:.82rem;color:var(--text-dim);font-weight:600;}
+  .calc-grid input,.calc-grid select{font-family:var(--font-body);font-size:.95rem;padding:8px 10px;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:var(--text);}
+  .calc-grid input:focus,.calc-grid select:focus{outline:2px solid var(--mint);outline-offset:1px;}
+  .brand h1{ font-family:'Playfair Display',serif; }
+  .boss-card{ display:flex; gap:16px; align-items:flex-start; }
+  .boss-card img{ width:108px; flex-shrink:0; filter:drop-shadow(0 10px 14px rgba(0,0,0,.25)); }
+  .boss-card h3{ margin-top:0; }
+  @media(max-width:600px){ .boss-card{flex-direction:column;align-items:center;text-align:center;} }
+  .spell-table th{ font-family:'Playfair Display',serif; }
+</style>
+</link></meta></meta></head>
+<body class="course-trigomante"><a href="#main-content" class="skip-link">Pular para o conteúdo</a><div aria-hidden="true" class="space-planet-photo"></div>
+
+<div class="mobile-course-topbar" aria-hidden="true">
+  <div class="mct-brand"><img src="../assets/icons/content/triangle-ruler.svg" class="om om-sm"> <span>trigomante.log</span></div>
+  <button class="mobile-menu-btn" aria-label="Abrir menu" aria-expanded="false" onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true'); document.querySelector('aside').classList.toggle('open');">
+    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+      <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/>
+    </svg>
+  </button>
+</div>
+
+<aside>
+<div class="sidebar-hero"><img alt="O Mago da Matemática, apoiado em seu cajado" class="char-cameo" src="../assets/characters/mago.png" style="width:100px;bottom:-6px;"/></div>
+<div class="brand">
+<span class="tag"><img alt="" class="om om-sm" src="../assets/icons/content/triangle-ruler.svg"/> sua magia, seu ritmo</span>
+<h1>trigomante.log</h1>
+<p>Trigonometria e a Razão Áurea como você nunca estudou: ângulos, círculos e proporções viram magia de verdade num reino medieval</p>
+</div>
+<div class="theme-toggle">
+<div data-chrome-widget="theme"></div><div data-chrome-widget="a11y"></div></div>
+<nav class="path-nav" id="navList">
+<div class="path-line"></div>
+<button class="path-node pos-l" data-idx="0" onclick="switchTab(0)" title="O Bosque dos Ângulos">
+<span class="node-circle" id="node-1"><span class="node-icon"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 3L21 21H3L12 3Z"></path><circle cx="6.6" cy="19" r="1.3"></circle></svg></span><span class="node-lock"><svg class="ic-mono sm" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2a4.5 4.5 0 0 0-4.5 4.5V8H6.75A1.75 1.75 0 0 0 5 9.75v9.5C5 20.216 5.784 21 6.75 21h10.5c.966 0 1.75-.784 1.75-1.75v-9.5A1.75 1.75 0 0 0 17.25 8H16.5V6.5A4.5 4.5 0 0 0 12 2Zm0 2c1.38 0 2.5 1.12 2.5 2.5V8h-5V6.5C9.5 5.12 10.62 4 12 4Zm0 9.25a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5Z"></path></svg></span><span class="node-check">✓</span></span>
+<span class="node-label">01 · Bosque dos Ângulos</span>
+</button>
+<button class="path-node pos-r" data-idx="1" onclick="switchTab(1)" title="O Círculo de Invocação">
+<span class="node-circle" id="node-2"><span class="node-icon"><svg fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4Z" fill-rule="evenodd"></path></svg></span><span class="node-lock"><svg class="ic-mono sm" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2a4.5 4.5 0 0 0-4.5 4.5V8H6.75A1.75 1.75 0 0 0 5 9.75v9.5C5 20.216 5.784 21 6.75 21h10.5c.966 0 1.75-.784 1.75-1.75v-9.5A1.75 1.75 0 0 0 17.25 8H16.5V6.5A4.5 4.5 0 0 0 12 2Zm0 2c1.38 0 2.5 1.12 2.5 2.5V8h-5V6.5C9.5 5.12 10.62 4 12 4Zm0 9.25a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5Z"></path></svg></span><span class="node-check">✓</span></span>
+<span class="node-label">02 · Círculo de Invocação</span>
+</button>
+<button class="path-node pos-l" data-idx="2" onclick="switchTab(2)" title="A Ordem dos Construtores">
+<span class="node-circle" id="node-3"><span class="node-icon"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M4 3H20V5H4V3ZM6 6H8V19H6V6ZM11 6H13V19H11V6ZM16 6H18V19H16V6ZM3 20H21V22H3V20Z"></path></svg></span><span class="node-lock"><svg class="ic-mono sm" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2a4.5 4.5 0 0 0-4.5 4.5V8H6.75A1.75 1.75 0 0 0 5 9.75v9.5C5 20.216 5.784 21 6.75 21h10.5c.966 0 1.75-.784 1.75-1.75v-9.5A1.75 1.75 0 0 0 17.25 8H16.5V6.5A4.5 4.5 0 0 0 12 2Zm0 2c1.38 0 2.5 1.12 2.5 2.5V8h-5V6.5C9.5 5.12 10.62 4 12 4Zm0 9.25a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5Z"></path></svg></span><span class="node-check">✓</span></span>
+<span class="node-label">03 · Ordem dos Construtores</span>
+</button>
+<button class="path-node pos-r" data-idx="3" onclick="switchTab(3)" title="O Enigma dos Guardiões do Tempo">
+<span class="node-circle" id="node-4"><span class="node-icon"><svg fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4Z" fill-rule="evenodd"></path><rect height="7" rx="1" width="2" x="11" y="6"></rect><rect height="2" rx="1" width="5" x="12" y="11"></rect></svg></span><span class="node-lock"><svg class="ic-mono sm" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2a4.5 4.5 0 0 0-4.5 4.5V8H6.75A1.75 1.75 0 0 0 5 9.75v9.5C5 20.216 5.784 21 6.75 21h10.5c.966 0 1.75-.784 1.75-1.75v-9.5A1.75 1.75 0 0 0 17.25 8H16.5V6.5A4.5 4.5 0 0 0 12 2Zm0 2c1.38 0 2.5 1.12 2.5 2.5V8h-5V6.5C9.5 5.12 10.62 4 12 4Zm0 9.25a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5Z"></path></svg></span><span class="node-check">✓</span></span>
+<span class="node-label">04 · Guardiões do Tempo</span>
+</button>
+<button class="path-node pos-l" data-idx="4" onclick="switchTab(4)" title="As Batalhas Práticas">
+<span class="node-circle" id="node-5"><span class="node-icon"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L20 5V11C20 16.2 16.6 20.3 12 22C7.4 20.3 4 16.2 4 11V5L12 2Z"></path></svg></span><span class="node-lock"><svg class="ic-mono sm" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2a4.5 4.5 0 0 0-4.5 4.5V8H6.75A1.75 1.75 0 0 0 5 9.75v9.5C5 20.216 5.784 21 6.75 21h10.5c.966 0 1.75-.784 1.75-1.75v-9.5A1.75 1.75 0 0 0 17.25 8H16.5V6.5A4.5 4.5 0 0 0 12 2Zm0 2c1.38 0 2.5 1.12 2.5 2.5V8h-5V6.5C9.5 5.12 10.62 4 12 4Zm0 9.25a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5Z"></path></svg></span><span class="node-check">✓</span></span>
+<span class="node-label">05 · Batalhas Práticas</span>
+</button>
+<button class="path-node pos-r" data-idx="5" onclick="switchTab(5)" title="O Reino das Funções">
+<span class="node-circle" id="node-6"><span class="node-icon"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M2 16c2-8 4-8 6 0s4 8 6 0 4-8 6 0v2c-2 8-4 8-6 0s-4-8-6 0-4 8-6 0v-2Z"></path></svg></span><span class="node-lock"><svg class="ic-mono sm" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2a4.5 4.5 0 0 0-4.5 4.5V8H6.75A1.75 1.75 0 0 0 5 9.75v9.5C5 20.216 5.784 21 6.75 21h10.5c.966 0 1.75-.784 1.75-1.75v-9.5A1.75 1.75 0 0 0 17.25 8H16.5V6.5A4.5 4.5 0 0 0 12 2Zm0 2c1.38 0 2.5 1.12 2.5 2.5V8h-5V6.5C9.5 5.12 10.62 4 12 4Zm0 9.25a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5Z"></path></svg></span><span class="node-check">✓</span></span>
+<span class="node-label">06 · Reino das Funções</span>
+</button>
+<button class="path-node pos-l" data-idx="6" onclick="switchTab(6)" title="Salão do Arquimago (Revisão)">
+<span class="node-circle" id="node-7"><span class="node-icon"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L14.9 8.6L22 9.3L16.7 14.1L18.2 21.2L12 17.6L5.8 21.2L7.3 14.1L2 9.3L9.1 8.6L12 2Z"></path></svg></span><span class="node-lock"><svg class="ic-mono sm" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2a4.5 4.5 0 0 0-4.5 4.5V8H6.75A1.75 1.75 0 0 0 5 9.75v9.5C5 20.216 5.784 21 6.75 21h10.5c.966 0 1.75-.784 1.75-1.75v-9.5A1.75 1.75 0 0 0 17.25 8H16.5V6.5A4.5 4.5 0 0 0 12 2Zm0 2c1.38 0 2.5 1.12 2.5 2.5V8h-5V6.5C9.5 5.12 10.62 4 12 4Zm0 9.25a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5Z"></path></svg></span><span class="node-check">✓</span></span>
+<span class="node-label">07 · Salão do Arquimago</span>
+</button>
+</nav>
+<div class="gamify-panel">
+<div class="level-row">
+<div class="level-badge" id="levelBadge">1</div>
+<div class="level-info">
+<div class="lv-title" id="levelTitle">Aprendiz do Bosque</div>
+<div class="lv-xp" id="levelXp">0 / 90 XP</div>
+</div>
+</div>
+<div class="xp-bar"><div class="xp-fill" id="xpFill"></div></div>
+<div class="hearts-row" id="heartsRow"></div>
+<div class="streak-row"><span class="streak-flame"><svg class="ic-mono" fill="currentColor" viewBox="0 0 24 24"><path d="M12.75 2.25c.2 2.9-.62 5-2.3 6.86-.55.6-1.15 1.14-1.72 1.75-1.9 2-2.98 4.36-2.23 7.2A7.5 7.5 0 0 0 19.5 15c0-3.86-2.55-6.1-4.53-8.35-1-1.13-1.9-2.5-2.22-4.4Zm.4 14.9a2.65 2.65 0 0 1-3.53-.4c-.8-.98-.68-2.16-.02-3.07.28.55.68 1 1.2 1.3.02-1.1.42-1.98 1.15-2.75.28 1.5 1.05 2.4 2.02 3.28.6.55.9 1.3.7 2.05a2.2 2.2 0 0 1-1.52 1.6Z"></path></svg></span> <span id="streakText">0 dia de estudo seguido</span></div>
+<button class="badge-link" onclick="switchTab(6)"><img alt="" class="om om-sm" src="../assets/icons/content/medal.svg"/> <span id="badgeCount">0/19</span> conquistas desbloqueadas</button>
+<div class="focus-widget">
+<div class="focus-label"><img alt="" class="focus-byte" src="../assets/characters/mago.png"/>Sessão de foco</div>
+<div class="focus-display" id="focusDisplay">25:00</div>
+<div class="focus-controls">
+<button class="focus-btn primary" id="focusStartBtn" onclick="toggleFocus()">Iniciar</button>
+<button class="focus-btn" onclick="resetFocus()">Zerar</button>
+</div>
+</div>
+</div>
+<div class="tracker">
+<div class="tracker-row"><span>tarefas concluídas</span><span id="pct">0%</span></div>
+<div class="track-bar"><div class="track-fill" id="fill"></div></div>
+<button class="reset-btn" onclick="resetProgress()"><img alt="" class="om om-sm" src="../assets/icons/washer.svg"/> começar do zero</button>
+</div>
+<div class="more-pages">
+<a class="more-link" href="trigomante-grimorio.html" style="background:linear-gradient(90deg,rgba(255,169,22,.16),transparent);"><svg class="ic-mono" fill="currentColor" viewBox="0 0 24 24"><path d="M5.5 3h11A1.5 1.5 0 0 1 18 4.5v16.2a.5.5 0 0 1-.74.44L12 18.5l-5.26 2.64a.5.5 0 0 1-.74-.44V4.5A1.5 1.5 0 0 1 5.5 3Z"></path></svg> Grimório (resumo ilustrado)</a>
+<a class="more-link" href="../index.html"><svg class="ic-mono" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3 3 10.5V21h5.5v-6h7v6H21V10.5L12 3Z"></path></svg> Voltar pra Universidade Log</a>
+<a class="more-link" href="android.html"><img alt="" class="om om-sm" src="../assets/icons/content/robot.svg"/> Trocar pro curso de Android</a>
+<a class="more-link" href="ia.html"><img alt="" class="om om-sm" src="../assets/icons/content/brain.svg"/> Trocar pro curso de IA</a>
+<a class="more-link" href="devops.html"><img alt="" class="om om-sm" src="../assets/icons/content/whale.svg"/> Trocar pro curso de DevOps</a>
+<a class="more-link" href="../glossario/trigomante.html"><svg class="ic-mono" fill="currentColor" viewBox="0 0 24 24"><path d="M5.5 3h11A1.5 1.5 0 0 1 18 4.5v16.2a.5.5 0 0 1-.74.44L12 18.5l-5.26 2.64a.5.5 0 0 1-.74-.44V4.5A1.5 1.5 0 0 1 5.5 3Z"></path><rect fill="#fff" height="1.3" opacity=".7" rx=".65" width="6.5" x="8" y="7"></rect><rect fill="#fff" height="1.3" opacity=".7" rx=".65" width="6.5" x="8" y="10"></rect></svg> Grimório de Termos (glossário)</a>
+<button class="more-link" onclick="toggleCalculator()" style="cursor:pointer;width:100%;font-family:var(--font-display);" type="button"><svg class="ic-mono" fill="currentColor" viewBox="0 0 24 24"><path d="M6 2h12a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1Zm1 2v5h10V4H7Zm1.5 7a1 1 0 1 0 0 2 1 1 0 0 0 0-2Zm3.5 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2Zm3.5 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2ZM8.5 14a1 1 0 1 0 0 2 1 1 0 0 0 0-2Zm3.5 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2Zm3.5 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2ZM8.5 17a1 1 0 1 0 0 2 1 1 0 0 0 0-2Zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2Zm-3.5 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2Z"></path></svg> Calculadora do Arquimago</button>
+</div>
+</aside>
+<button aria-label="Abrir calculadora do Arquimago" class="calc-fab" onclick="toggleCalculator()" title="Calculadora do Arquimago">
+<svg fill="currentColor" viewBox="0 0 24 24"><path d="M6 2h12a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1Zm1 2v5h10V4H7Zm1.5 7a1 1 0 1 0 0 2 1 1 0 0 0 0-2Zm3.5 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2Zm3.5 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2ZM8.5 14a1 1 0 1 0 0 2 1 1 0 0 0 0-2Zm3.5 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2Zm3.5 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2ZM8.5 17a1 1 0 1 0 0 2 1 1 0 0 0 0-2Zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2Zm-3.5 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2Z"></path></svg>
+</button>
+<div class="calc-overlay" id="calcOverlay">
+<div class="calc-panel">
+<div class="calc-panel-head">
+<h3>Calculadora do Arquimago</h3>
+<button aria-label="Fechar calculadora" class="calc-close" onclick="toggleCalculator()">×</button>
+</div>
+<div class="calc-tabs">
+<button class="calc-tab active" data-tab="sci" onclick="switchCalcTab('sci')">Científica</button>
+<button class="calc-tab" data-tab="tri" onclick="switchCalcTab('tri')">Triângulo</button>
+<button class="calc-tab" data-tab="phi" onclick="switchCalcTab('phi')">Razão Áurea</button>
+</div>
+<div class="calc-body" data-tab-panel="sci">
+<div class="calc-display" id="calcDisplay">0</div>
+<div class="calc-keys">
+<button class="calc-key fn" onclick="calcFn('sin')">sin</button>
+<button class="calc-key fn" onclick="calcFn('cos')">cos</button>
+<button class="calc-key fn" onclick="calcFn('tan')">tan</button>
+<button class="calc-key fn" id="calcDegBtn" onclick="calcToggleDeg(this)">DEG</button>
+<button class="calc-key fn" onclick="calcFn('sqrt')">√</button>
+<button class="calc-key op" onclick="calcPress('^')">xʸ</button>
+<button class="calc-key op" onclick="calcPress('(')">(</button>
+<button class="calc-key op" onclick="calcPress(')')">)</button>
+<button class="calc-key" onclick="calcPress('7')">7</button>
+<button class="calc-key" onclick="calcPress('8')">8</button>
+<button class="calc-key" onclick="calcPress('9')">9</button>
+<button class="calc-key op" onclick="calcPress('/')">÷</button>
+<button class="calc-key" onclick="calcPress('4')">4</button>
+<button class="calc-key" onclick="calcPress('5')">5</button>
+<button class="calc-key" onclick="calcPress('6')">6</button>
+<button class="calc-key op" onclick="calcPress('*')">×</button>
+<button class="calc-key" onclick="calcPress('1')">1</button>
+<button class="calc-key" onclick="calcPress('2')">2</button>
+<button class="calc-key" onclick="calcPress('3')">3</button>
+<button class="calc-key op" onclick="calcPress('-')">−</button>
+<button class="calc-key" onclick="calcPress('0')">0</button>
+<button class="calc-key" onclick="calcPress('.')">.</button>
+<button class="calc-key fn" onclick="calcPress('π')">π</button>
+<button class="calc-key op" onclick="calcPress('+')">+</button>
+<button class="calc-key" onclick="calcClear()">C</button>
+<button class="calc-key" onclick="calcDel()">⌫</button>
+<button class="calc-key eq" onclick="calcEquals()">=</button>
+</div>
+</div>
+<div class="calc-body" data-tab-panel="tri" hidden="">
+<div class="calc-field">
+<label for="triMode">O que você sabe?</label>
+<select id="triMode">
+<option value="angle-hyp">Ângulo α + hipotenusa</option>
+<option value="angle-opp">Ângulo α + cateto oposto</option>
+<option value="angle-adj">Ângulo α + cateto adjacente</option>
+<option value="opp-adj">Cateto oposto + cateto adjacente</option>
+<option value="hyp-opp">Hipotenusa + cateto oposto</option>
+</select>
+</div>
+<div class="calc-field">
+<label for="triVal1">Primeiro valor</label>
+<input id="triVal1" placeholder="ex: 30 (° se for ângulo)" step="any" type="number"/>
+</div>
+<div class="calc-field">
+<label for="triVal2">Segundo valor</label>
+<input id="triVal2" placeholder="ex: 10" step="any" type="number"/>
+</div>
+<button class="calc-solve-btn" onclick="calcSolveTriangle()">Resolver o triângulo</button>
+<div id="triResult"></div>
+</div>
+<div class="calc-body" data-tab-panel="phi" hidden="">
+<div class="calc-field">
+<label for="phiMode">Você tem...</label>
+<select id="phiMode">
+<option value="total">O segmento total</option>
+<option value="maior">A parte maior</option>
+<option value="menor">A parte menor</option>
+</select>
+</div>
+<div class="calc-field">
+<label for="phiVal">Valor conhecido</label>
+<input id="phiVal" placeholder="ex: 100" step="any" type="number"/>
+</div>
+<button class="calc-solve-btn" onclick="calcGoldenRatio()">Calcular a divisão áurea</button>
+<div id="phiResult"></div>
+</div>
+</div>
+</div>
+<main id="main-content">
+<!-- ================= MODULE 01 ================= -->
+<section class="content-section active" data-mod="1" id="sec-0">
+<div class="eyebrow">Módulo 01 / 07</div>
+<h2>O Bosque dos Ângulos</h2>
+<p class="subtitle">Bem-vindo ao Trigomante: A Jornada do Círculo. Antes de conjurar qualquer feitiço, todo aprendiz precisa dominar o alicerce de toda magia deste reino: razão, proporção e as primeiras relações entre ângulos e lados.</p>
+<div class="hero-photo-wrap"><img alt="Raios de sol atravessando a névoa em uma floresta densa" class="hero-photo" src="https://images.unsplash.com/photo-1759360383439-c3fdf352f1b6?auto=format&amp;fit=crop&amp;w=1600&amp;q=70"/></div>
+<p class="hero-credit">Foto: <a href="https://unsplash.com/@matdelpidio" rel="noopener" target="_blank">Mat Delpidio</a> em Unsplash</p>
+<div class="char-wrap">
+<img alt="O Bispo da Trigonometria, sorrindo e apontando pro alto" class="char-cameo" src="../assets/characters/bispo.png" style="width:120px;flex-shrink:0;"/>
+<div class="char-bubble">
+<div class="char-name">Bispo da Trigonometria</div>
+<p>Ora, ora, um novo aprendiz! A magia deste reino não nasce de palavras aleatórias: ela nasce da precisão de formas, ciclos e proporções sagradas. Antes de invocar qualquer círculo, você precisa entender a relação entre ângulos e lados. Vamos começar pelo início: razão e proporção.</p>
+</div>
+</div>
+<div class="wire"></div>
+<div class="card">
+<h3><span class="ic"><img alt="" class="om om-sm" src="../assets/icons/content/scales.svg"/></span> Razão e Proporção</h3>
+<p>Uma <strong>razão</strong> é a relação matemática entre dois valores de mesma grandeza, como 2/4: o primeiro termo é o <strong>antecedente</strong>, o segundo é o <strong>consequente</strong>. Uma <strong>proporção</strong> é a igualdade entre duas ou mais razões (A/B = C/D), gerando uma constante de proporcionalidade (K). Ela pode ser <strong>direta</strong> (as grandezas mudam no mesmo sentido, como 2/4 e 4/8) ou <strong>inversa</strong> (mudam em sentidos opostos, mantendo o produto constante).</p>
+</div>
+<div class="card">
+<h3><span class="ic"><img alt="" class="om om-sm" src="../assets/icons/content/scroll.svg"/></span> Magia Ancestral</h3>
+<p>Egípcios e babilônios já usavam proporções há 3000 a.C. para erguer templos e pirâmides, como registra o <strong>Papiro de Rhind</strong>. Por volta de 300 a.C., <strong>Euclides</strong> formalizou a teoria das proporções no Livro V de <em>Os Elementos</em>, integrando o trabalho de Eudoxo e resolvendo a "crise dos irracionais" que atormentava os pitagóricos: agora era possível comparar tanto números inteiros quanto grandezas incomensuráveis.</p>
+</div>
+<table class="spell-table">
+<thead><tr><th>Ângulo</th><th>Radianos</th><th>Seno</th><th>Cosseno</th><th>Tangente</th></tr></thead>
+<tbody>
+<tr><td>0°</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>30°</td><td>π/6</td><td>1/2</td><td>√3/2</td><td>√3/3</td></tr>
+<tr><td>45°</td><td>π/4</td><td>√2/2</td><td>√2/2</td><td>1</td></tr>
+<tr><td>60°</td><td>π/3</td><td>√3/2</td><td>1/2</td><td>√3</td></tr>
+<tr><td>90°</td><td>π/2</td><td>1</td><td>0</td><td>não definida</td></tr>
+</tbody>
+</table>
+<div class="callout">
+<div class="c-label"><img alt="" class="om om-sm" src="../assets/icons/content/crystal-ball.svg"/> A fórmula ancestral</div>
+<p><strong>π rad = 180°</strong>. Pra converter graus em radianos, multiplique por π/180. Pra converter radianos em graus, multiplique por 180/π. Guarde essa fórmula: ela é a chave de praticamente todo feitiço deste reino.</p>
+</div>
+<div class="card">
+<h3><span class="ic"><img alt="" class="om om-sm" src="../assets/icons/content/red-triangle.svg"/></span> As Três Razões Fundamentais</h3>
+<p>Num triângulo retângulo, pra um ângulo α: <strong>seno</strong> é o cateto oposto dividido pela hipotenusa; <strong>cosseno</strong> é o cateto adjacente dividido pela hipotenusa; <strong>tangente</strong> é o cateto oposto dividido pelo cateto adjacente (ou, de forma equivalente, sen α / cos α). Memorize os valores da tabela acima para 30°, 45° e 60°: eles reaparecem em praticamente toda missão do reino.</p>
+</div>
+<div class="flip-grid">
+<div class="flipcard">
+<input class="flip-trigger" id="f1" type="checkbox"/>
+<label class="flip-inner" for="f1">
+<div class="flip-face flip-front"><span class="fk">conversão</span><strong>Graus → Radianos</strong><p>Clique →</p></div>
+<div class="flip-face flip-back"><p>Multiplique o valor em graus por π/180. Exemplo: 90° × π/180 = π/2 rad.</p></div>
+</label>
+</div>
+<div class="flipcard">
+<input class="flip-trigger" id="f2" type="checkbox"/>
+<label class="flip-inner" for="f2">
+<div class="flip-face flip-front"><span class="fk">conversão</span><strong>Radianos → Graus</strong><p>Clique →</p></div>
+<div class="flip-face flip-back"><p>Multiplique o valor em radianos por 180/π. Exemplo: π/3 rad × 180/π = 60°.</p></div>
+</label>
+</div>
+</div>
+<div class="quiz">
+<div class="quiz-q"><svg class="ic-mono" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm.9 14.9h-1.8v-1.8h1.8v1.8Zm1.86-6.9c-.4.5-.7.9-.9 1.4-.16.36-.24.7-.26 1.2h-1.7c.02-.7.16-1.24.44-1.76.28-.5.66-.96 1.14-1.42.34-.32.58-.6.74-.86.16-.28.24-.56.24-.9 0-.44-.14-.78-.42-1.04-.28-.26-.68-.4-1.18-.4-.5 0-.92.16-1.24.46-.32.3-.5.72-.54 1.24H7.4c.06-1.14.46-2.02 1.2-2.66.76-.64 1.72-.96 2.9-.96 1.24 0 2.22.32 2.94.96.72.62 1.08 1.44 1.08 2.44 0 .6-.14 1.1-.42 1.5-.24.36-.5.66-.84 1.02Z"></path></svg> Quiz rápido: quanto vale π radianos em graus?</div>
+<label class="quiz-opt"><input name="q1a" type="radio" value="a"/> 90°</label>
+<label class="quiz-opt"><input name="q1a" type="radio" value="b"/> 180°</label>
+<label class="quiz-opt"><input name="q1a" type="radio" value="c"/> 360°</label>
+<button class="quiz-btn" onclick="checkQuiz('q1a','b','fb1a')">Verificar</button>
+<div class="quiz-fb" id="fb1a"></div>
+</div>
+<div class="quiz bughunt">
+<div class="quiz-q"><img alt="falha" class="om om-md" src="../assets/icons/bug.svg"/> Encontre a falha no feitiço</div>
+<pre><code><span class="cm">// Um aprendiz tenta calcular a tangente de 90°</span>
+tan(90°) = sen(90°) / cos(90°)
+tan(90°) = 1 / 0
+tan(90°) = <span class="k">0</span></code></pre>
+<p style="font-size:.85rem;margin:0 0 10px;">Qual é o problema neste feitiço?</p>
+<label class="quiz-opt"><input name="bug1" type="radio" value="a"/> A divisão por zero é indefinida: a tangente de 90° simplesmente não existe, não é igual a zero</label>
+<label class="quiz-opt"><input name="bug1" type="radio" value="b"/> O seno de 90° deveria ser 0, não 1</label>
+<label class="quiz-opt"><input name="bug1" type="radio" value="c"/> A fórmula da tangente está errada</label>
+<button class="quiz-btn" onclick="checkQuiz('bug1','a','fbbug1')">Verificar</button>
+<div class="quiz-fb" id="fbbug1"></div>
+</div>
+<div class="checklist">
+<div class="checklist-title"><img alt="" class="om" src="../assets/icons/scroll-v.svg"/>Pergaminho de missões</div>
+<div class="c-item"><input data-mod="1" id="chk-1" onchange="onCheck(this)" type="checkbox"/><label for="chk-1">Converter, de cabeça, 45°, 90° e 270° para radianos.</label></div>
+<div class="c-item"><input data-mod="1" id="chk-2" onchange="onCheck(this)" type="checkbox"/><label for="chk-2">Decorar a tabela de seno, cosseno e tangente de 30°, 45° e 60°.</label></div>
+<div class="c-item"><input data-mod="1" id="chk-3" onchange="onCheck(this)" type="checkbox"/><label for="chk-3">Explicar, com suas palavras, a diferença entre razão e proporção.</label></div>
+</div>
+<div class="game-card scramble-game" data-words='[
+      {"word":"RAZAO","hint":"Relação matemática entre dois valores de mesma grandeza"},
+      {"word":"RADIANO","hint":"Unidade angular em que π radianos equivalem a 180°"},
+      {"word":"TANGENTE","hint":"Cateto oposto dividido pelo cateto adjacente"},
+      {"word":"HIPOTENUSA","hint":"O maior lado do triângulo retângulo, oposto ao ângulo reto"}
+    ]' id="scrGameTrig">
+<div class="game-head">
+<div class="game-title"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2 14.5 8.5 21 9.3 16 13.9 17.5 20.5 12 17 6.5 20.5 8 13.9 3 9.3 9.5 8.5 12 2Z"></path></svg> Runas Embaralhadas</div>
+<div class="game-stats scr-status">Palavra 1/4</div>
+</div>
+<p style="font-size:.82rem;color:var(--text-dim);margin-bottom:6px;"><img alt="" class="om om-sm" src="../assets/icons/tap.svg"/> Toque nas runas na ordem certa pra reconstruir a palavra.</p>
+<p class="scr-hint"></p>
+<div class="scr-target"></div>
+<div class="scr-pool"></div>
+<div class="game-win-msg"><img alt="" class="om om-sm" src="../assets/icons/content/confetti.svg"/> Todas as runas decifradas! Vocabulário arcano dominado.</div>
+<button class="game-reset-btn" onclick="initScrambleGame('scrGameTrig')">Embaralhar de novo</button>
+</div>
+</section>
+<!-- ================= MODULE 02 ================= -->
+<section class="content-section" data-mod="2" id="sec-1">
+<div class="eyebrow">Módulo 02 / 07</div>
+<h2>O Círculo de Invocação</h2>
+<p class="subtitle">Toda magia de verdade acontece dentro de um círculo. Aqui você entra na arena de poder onde ângulos viram coordenadas e coordenadas viram feitiço.</p>
+<div class="hero-photo-wrap"><img alt="Vista aérea de um antigo círculo de pedras em um campo" class="hero-photo" src="https://images.unsplash.com/photo-1694085170773-3e702a528989?auto=format&amp;fit=crop&amp;w=1600&amp;q=70"/></div>
+<p class="hero-credit">Foto: <a href="https://unsplash.com/@johnnyboylee" rel="noopener" target="_blank">Johnny Briggs</a> em Unsplash</p>
+<div class="char-wrap">
+<img alt="O Bispo da Trigonometria, com o cajado em forma de círculo" class="char-cameo" src="../assets/characters/bispo.png" style="width:120px;flex-shrink:0;"/>
+<div class="char-bubble">
+<div class="char-name">Bispo da Trigonometria</div>
+<p>Reparou no meu cajado? Um círculo de raio exatamente 1, centrado na origem. É a arena de invocação: todo ponto sobre ela guarda um par de coordenadas mágicas. Sentido positivo é sempre anti-horário: nunca esqueça disso.</p>
+</div>
+</div>
+<div class="wire"></div>
+<div class="card">
+<h3><span class="ic"><img alt="" class="om om-sm" src="../assets/icons/content/circle-o.svg"/></span> A Circunferência Trigonométrica</h3>
+<p>É uma circunferência de <strong>raio 1</strong>, centrada na origem do plano cartesiano, com sentido positivo anti-horário. Pra qualquer ponto P correspondente a um arco de medida α: <strong>cos α</strong> é a abscissa (coordenada x) e <strong>sen α</strong> é a ordenada (coordenada y) do ponto. A tangente é definida como tg α = sen α / cos α, sempre que cos α ≠ 0.</p>
+</div>
+<div class="callout">
+<div class="c-label"><img alt="" class="om om-sm" src="../assets/icons/content/compass.svg"/> Relação Fundamental</div>
+<p><strong>sen²α + cos²α = 1</strong>. Essa relação vem direto do Teorema de Pitágoras aplicado ao triângulo formado dentro do círculo, e sustenta praticamente toda a magia trigonométrica do reino.</p>
+</div>
+<table class="spell-table">
+<thead><tr><th>Quadrante</th><th>Seno</th><th>Cosseno</th><th>Tangente</th></tr></thead>
+<tbody>
+<tr><td>1º (0° a 90°)</td><td>+</td><td>+</td><td>+</td></tr>
+<tr><td>2º (90° a 180°)</td><td>+</td><td>−</td><td>−</td></tr>
+<tr><td>3º (180° a 270°)</td><td>−</td><td>−</td><td>+</td></tr>
+<tr><td>4º (270° a 360°)</td><td>−</td><td>+</td><td>−</td></tr>
+</tbody>
+</table>
+<div class="card">
+<h3><span class="ic"><img alt="" class="om om-sm" src="../assets/icons/content/repeat.svg"/></span> Arcos Côngruos</h3>
+<p>Dois arcos são <strong>côngruos</strong> quando terminam no mesmo ponto do ciclo, diferindo apenas por um número inteiro de voltas completas: α + k·360° (ou α + 2kπ, com k ∈ ℤ). É assim que um Arquimago reduz um arco gigantesco (como 1300°) ou negativo (como −1200°) até sua primeira passagem positiva, dentro de uma única volta.</p>
+</div>
+<div class="flip-grid">
+<div class="flipcard">
+<input class="flip-trigger" id="f3" type="checkbox"/>
+<label class="flip-inner" for="f3">
+<div class="flip-face flip-front"><span class="fk">quadrante</span><strong>1º e 3º</strong><p>Clique →</p></div>
+<div class="flip-face flip-back"><p>No 1º, tudo é positivo. No 3º, seno e cosseno são negativos, mas a tangente (razão de dois negativos) volta a ser positiva.</p></div>
+</label>
+</div>
+<div class="flipcard">
+<input class="flip-trigger" id="f4" type="checkbox"/>
+<label class="flip-inner" for="f4">
+<div class="flip-face flip-front"><span class="fk">quadrante</span><strong>2º e 4º</strong><p>Clique →</p></div>
+<div class="flip-face flip-back"><p>No 2º, só o seno é positivo. No 4º, só o cosseno é positivo. A tangente é negativa nos dois.</p></div>
+</label>
+</div>
+</div>
+<div class="quiz">
+<div class="quiz-q"><svg class="ic-mono" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm.9 14.9h-1.8v-1.8h1.8v1.8Zm1.86-6.9c-.4.5-.7.9-.9 1.4-.16.36-.24.7-.26 1.2h-1.7c.02-.7.16-1.24.44-1.76.28-.5.66-.96 1.14-1.42.34-.32.58-.6.74-.86.16-.28.24-.56.24-.9 0-.44-.14-.78-.42-1.04-.28-.26-.68-.4-1.18-.4-.5 0-.92.16-1.24.46-.32.3-.5.72-.54 1.24H7.4c.06-1.14.46-2.02 1.2-2.66.76-.64 1.72-.96 2.9-.96 1.24 0 2.22.32 2.94.96.72.62 1.08 1.44 1.08 2.44 0 .6-.14 1.1-.42 1.5-.24.36-.5.66-.84 1.02Z"></path></svg> Quiz rápido: num ponto do 3º quadrante, quais são os sinais de seno e cosseno?</div>
+<label class="quiz-opt"><input name="q2a" type="radio" value="a"/> Seno positivo, cosseno negativo</label>
+<label class="quiz-opt"><input name="q2a" type="radio" value="b"/> Ambos positivos</label>
+<label class="quiz-opt"><input name="q2a" type="radio" value="c"/> Ambos negativos</label>
+<button class="quiz-btn" onclick="checkQuiz('q2a','c','fb2a')">Verificar</button>
+<div class="quiz-fb" id="fb2a"></div>
+</div>
+<div class="quiz bughunt">
+<div class="quiz-q"><img alt="falha" class="om om-md" src="../assets/icons/bug.svg"/> Encontre a falha no feitiço</div>
+<pre><code><span class="cm">// Um aprendiz apressado calcula sen²α + cos²α pra um ângulo qualquer</span>
+sen(60°) = √3/2
+cos(60°) = 1/2
+sen²(60°) + cos²(60°) = 3/4 + 1/4 = <span class="k">2</span></code></pre>
+<p style="font-size:.85rem;margin:0 0 10px;">Qual é o problema neste feitiço?</p>
+<label class="quiz-opt"><input name="bug2" type="radio" value="a"/> A relação fundamental sempre resulta em 1, não em 2: (√3/2)² + (1/2)² = 3/4 + 1/4 = 1</label>
+<label class="quiz-opt"><input name="bug2" type="radio" value="b"/> O valor de sen(60°) está errado</label>
+<label class="quiz-opt"><input name="bug2" type="radio" value="c"/> Não existe relação entre seno e cosseno</label>
+<button class="quiz-btn" onclick="checkQuiz('bug2','a','fbbug2')">Verificar</button>
+<div class="quiz-fb" id="fbbug2"></div>
+</div>
+<div class="checklist">
+<div class="checklist-title"><img alt="" class="om" src="../assets/icons/scroll-v.svg"/>Pergaminho de missões</div>
+<div class="c-item"><input data-mod="2" id="chk-4" onchange="onCheck(this)" type="checkbox"/><label for="chk-4">Desenhar o círculo trigonométrico e marcar os quatro quadrantes com seus sinais.</label></div>
+<div class="c-item"><input data-mod="2" id="chk-5" onchange="onCheck(this)" type="checkbox"/><label for="chk-5">Reduzir o arco de 1300° à sua primeira volta positiva.</label></div>
+<div class="c-item"><input data-mod="2" id="chk-6" onchange="onCheck(this)" type="checkbox"/><label for="chk-6">Verificar a relação sen²α + cos²α = 1 usando os valores de 45°.</label></div>
+</div>
+<div class="game-card sequence-game" data-steps='["Desenhar o triângulo retângulo e marcar o ângulo conhecido","Nomear cateto oposto, cateto adjacente e hipotenusa","Escolher seno, cosseno ou tangente conforme os dados disponíveis","Isolar a incógnita e calcular o resultado"]' id="seqGameTrig">
+<div class="game-head">
+<div class="game-title"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12.8589 2H11.1411C9.12721 2 8.04724 2.27848 7.06946 2.8014C6.09169 3.32432 5.32432 4.09169 4.8014 5.06946C4.27848 6.04724 4 7.12721 4 9.14111V14.8589C4 16.8728 4.27848 17.9528 4.8014 18.9305C5.32432 19.9083 6.09169 20.6757 7.06946 21.1986C8.04724 21.7215 9.12721 22 11.1411 22H12.8589C14.8728 22 15.9528 21.7215 16.9305 21.1986C17.9083 20.6757 18.6757 19.9083 19.1986 18.9305C19.7215 17.9528 20 16.8728 20 14.8589V9.14111C20 7.12721 19.7215 6.04724 19.1986 5.06946C18.6757 4.09169 17.9083 3.32432 16.9305 2.8014C15.9528 2.27848 14.8728 2 12.8589 2ZM11 11V6H13V11H11ZM7.75781 13.758L9.17203 12.3438L12.0005 15.1722L14.8289 12.3438L16.2431 13.758L12.0005 18.0006L7.75781 13.758Z"></path></svg> Ritual dos Passos</div>
+<div class="game-stats"><span class="js-seq-status">0/4</span></div>
+</div>
+<p style="font-size:.82rem;color:var(--text-dim);margin-bottom:14px;">Coloque na ordem certa o ritual pra resolver qualquer problema prático de trigonometria.</p>
+<div class="seq-answer"></div>
+<div class="seq-pool"></div>
+<div class="game-win-msg"><img alt="" class="om om-sm" src="../assets/icons/content/confetti.svg"/> Ritual perfeito! Você domina o método, não só as fórmulas.</div>
+<button class="game-reset-btn" onclick="initSequenceGame('seqGameTrig')">Embaralhar de novo</button>
+</div>
+</section>
+<!-- ================= MODULE 03 ================= -->
+<section class="content-section" data-mod="3" id="sec-2">
+<div class="eyebrow">Módulo 03 / 07</div>
+<h2>A Ordem dos Construtores</h2>
+<p class="subtitle">A magia mais antiga do reino não vive nos livros: vive nas conchas, nas flores e nas catedrais. Chegou a hora de aprender a Proporção Divina.</p>
+<div class="hero-photo-wrap"><img alt="Ruínas de pedra antigas em uma colina coberta de névoa" class="hero-photo" src="https://images.unsplash.com/photo-1766856661861-6c8e09bbea23?auto=format&amp;fit=crop&amp;w=1600&amp;q=70"/></div>
+<p class="hero-credit">Foto: <a href="https://unsplash.com/@marekpiwnicki" rel="noopener" target="_blank">Marek Piwnicki</a> em Unsplash</p>
+<div class="char-wrap">
+<img alt="O Mago da Matemática, segurando seu grimório aberto" class="char-cameo" src="../assets/characters/mago.png" style="width:120px;flex-shrink:0;"/>
+<div class="char-bubble">
+<div class="char-name">Mago da Matemática</div>
+<p>Ah, a Ordem dos Construtores. Aqui a magia não é sobre resolver: é sobre <em>projetar</em>. A harmonia que você sente ao olhar pra uma catedral, uma concha ou até um rosto bonito não é acaso: é geometria mensurável. Chamamos essa proporção de φ (phi).</p>
+</div>
+</div>
+<div class="wire"></div>
+<div class="card">
+<h3><span class="ic"><img alt="" class="om om-sm" src="../assets/icons/content/sparkles.svg"/></span> A Razão Áurea (φ)</h3>
+<p>A Proporção Áurea nasce quando dividimos um segmento em duas partes de modo que a razão entre a menor parte e a maior seja igual à razão entre a maior parte e o todo. O resultado é a constante <strong>φ ≈ 0,618</strong> (ou <strong>1,618</strong> para o seu inverso): considerada, desde a Antiguidade, a relação mais harmoniosa entre dois segmentos.</p>
+</div>
+<div class="card">
+<h3><span class="ic"><img alt="" class="om om-sm" src="../assets/icons/content/shell.svg"/></span> A Sequência de Fibonacci</h3>
+<p>Proposta por Leonardo de Pisa em 1202, a sequência de Fibonacci (1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144...) tem uma propriedade fascinante: a razão entre termos consecutivos se aproxima cada vez mais de φ conforme a sequência avança.</p>
+</div>
+<table class="spell-table">
+<thead><tr><th>Razão Fibonacci</th><th>Aproximação decimal</th></tr></thead>
+<tbody>
+<tr><td>13 / 21</td><td>0,619047...</td></tr>
+<tr><td>21 / 34</td><td>0,617647...</td></tr>
+<tr><td>34 / 55</td><td>0,618181...</td></tr>
+<tr><td>144 / 233</td><td>0,618025...</td></tr>
+</tbody>
+</table>
+<div class="flip-grid">
+<div class="flipcard">
+<input class="flip-trigger" id="f5" type="checkbox"/>
+<label class="flip-inner" for="f5">
+<div class="flip-face flip-front"><span class="fk">forma</span><strong>Retângulo de Ouro</strong><p>Clique →</p></div>
+<div class="flip-face flip-back"><p>Um retângulo cujos lados guardam a razão φ entre si. Ao remover um quadrado dele, sobra outro Retângulo de Ouro menor: pra sempre.</p></div>
+</label>
+</div>
+<div class="flipcard">
+<input class="flip-trigger" id="f6" type="checkbox"/>
+<label class="flip-inner" for="f6">
+<div class="flip-face flip-front"><span class="fk">forma</span><strong>Espiral de Ouro</strong><p>Clique →</p></div>
+<div class="flip-face flip-back"><p>Curva formada ao conectar os cantos dos quadrados de uma sequência infinita de Retângulos de Ouro. Aparece na concha do Nautilus.</p></div>
+</label>
+</div>
+<div class="flipcard">
+<input class="flip-trigger" id="f7" type="checkbox"/>
+<label class="flip-inner" for="f7">
+<div class="flip-face flip-front"><span class="fk">forma</span><strong>Pentagrama</strong><p>Clique →</p></div>
+<div class="flip-face flip-back"><p>Estrela de cinco pontas cujas diagonais se cruzam exatamente na razão áurea. Era o símbolo secreto dos pitagóricos.</p></div>
+</label>
+</div>
+</div>
+<div class="card">
+<h3><span class="ic"><img alt="" class="om om-sm" src="../assets/icons/content/classical-building.svg"/></span> Catedrais e Monumentos</h3>
+<p>A fachada do <strong>Partenon</strong> (Grécia, séc. V a.C.) se encaixa quase perfeitamente num Retângulo de Ouro. A <strong>Catedral de Notre Dame de Chartres</strong> usa "geometria sagrada" baseada no pentagrama para sustentar seus arcos ogivais e a altura gótica. Na era moderna, <strong>Le Corbusier</strong> usou retângulos áureos em Paris, a sede da <strong>ONU</strong> incorpora três retângulos áureos horizontais, e Leonardo da Vinci alinhou os traços da <strong>Mona Lisa</strong> com divisões áureas do rosto.</p>
+</div>
+<div class="card">
+<h3><span class="ic"><img alt="" class="om om-sm" src="../assets/icons/content/sunflower.svg"/></span> A Proporção na Natureza e no Corpo</h3>
+<p>Sementes de girassol e pétalas de margarida se organizam em espirais que seguem números de Fibonacci (como 21 e 34). A concha do <strong>Nautilus</strong> segue a Espiral de Ouro. No corpo humano, o umbigo marca o ponto áureo da altura total, as articulações dos dedos guardam a mesma proporção entre si, e a odontologia estética usa φ para posicionar os dentes frontais.</p>
+</div>
+<div class="callout">
+<div class="c-label"><img alt="" class="om om-sm" src="../assets/icons/content/musical-score.svg"/> Estudo de Caso: Sala São Paulo</div>
+<p>A antiga Estação Júlio Prestes foi restaurada em 1999 e hoje é sede da OSESP. Seu teto <strong>móvel</strong> ajusta volume e reverberação conforme o repertório, painéis de madeira e "skyline" difundem o som, e a planta do prédio pode ser sobreposta por uma Espiral de Ouro, alinhando funcionalidade acústica com harmonia geométrica.</p>
+</div>
+<div class="quiz">
+<div class="quiz-q"><svg class="ic-mono" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm.9 14.9h-1.8v-1.8h1.8v1.8Zm1.86-6.9c-.4.5-.7.9-.9 1.4-.16.36-.24.7-.26 1.2h-1.7c.02-.7.16-1.24.44-1.76.28-.5.66-.96 1.14-1.42.34-.32.58-.6.74-.86.16-.28.24-.56.24-.9 0-.44-.14-.78-.42-1.04-.28-.26-.68-.4-1.18-.4-.5 0-.92.16-1.24.46-.32.3-.5.72-.54 1.24H7.4c.06-1.14.46-2.02 1.2-2.66.76-.64 1.72-.96 2.9-.96 1.24 0 2.22.32 2.94.96.72.62 1.08 1.44 1.08 2.44 0 .6-.14 1.1-.42 1.5-.24.36-.5.66-.84 1.02Z"></path></svg> Quiz rápido: qual é o valor aproximado da Razão Áurea (φ) usada como referência de proporção?</div>
+<label class="quiz-opt"><input name="q3a" type="radio" value="a"/> 3,14</label>
+<label class="quiz-opt"><input name="q3a" type="radio" value="b"/> 1,618</label>
+<label class="quiz-opt"><input name="q3a" type="radio" value="c"/> 2,718</label>
+<button class="quiz-btn" onclick="checkQuiz('q3a','b','fb3a')">Verificar</button>
+<div class="quiz-fb" id="fb3a"></div>
+</div>
+<div class="quiz">
+<div class="quiz-q"><svg class="ic-mono" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm.9 14.9h-1.8v-1.8h1.8v1.8Zm1.86-6.9c-.4.5-.7.9-.9 1.4-.16.36-.24.7-.26 1.2h-1.7c.02-.7.16-1.24.44-1.76.28-.5.66-.96 1.14-1.42.34-.32.58-.6.74-.86.16-.28.24-.56.24-.9 0-.44-.14-.78-.42-1.04-.28-.26-.68-.4-1.18-.4-.5 0-.92.16-1.24.46-.32.3-.5.72-.54 1.24H7.4c.06-1.14.46-2.02 1.2-2.66.76-.64 1.72-.96 2.9-.96 1.24 0 2.22.32 2.94.96.72.62 1.08 1.44 1.08 2.44 0 .6-.14 1.1-.42 1.5-.24.36-.5.66-.84 1.02Z"></path></svg> Quiz rápido: quem formalizou a sequência que leva seu nome, em 1202?</div>
+<label class="quiz-opt"><input name="q3b" type="radio" value="a"/> Euclides</label>
+<label class="quiz-opt"><input name="q3b" type="radio" value="b"/> Pitágoras</label>
+<label class="quiz-opt"><input name="q3b" type="radio" value="c"/> Leonardo de Pisa (Fibonacci)</label>
+<button class="quiz-btn" onclick="checkQuiz('q3b','c','fb3b')">Verificar</button>
+<div class="quiz-fb" id="fb3b"></div>
+</div>
+<div class="checklist">
+<div class="checklist-title"><img alt="" class="om" src="../assets/icons/scroll-v.svg"/>Pergaminho de missões</div>
+<div class="c-item"><input data-mod="3" id="chk-7" onchange="onCheck(this)" type="checkbox"/><label for="chk-7">Calcular os 10 primeiros termos da sequência de Fibonacci de cabeça.</label></div>
+<div class="c-item"><input data-mod="3" id="chk-8" onchange="onCheck(this)" type="checkbox"/><label for="chk-8">Medir uma porta ou janela real e verificar se a proporção se aproxima de φ.</label></div>
+<div class="c-item"><input data-mod="3" id="chk-9" onchange="onCheck(this)" type="checkbox"/><label for="chk-9">Listar 3 exemplos de razão áurea na natureza, sem consultar o material.</label></div>
+</div>
+<div class="game-card speedtf-game" data-statements='[
+      {"text":"φ (phi) vale aproximadamente 1,618","isTrue":true},
+      {"text":"A sequência de Fibonacci foi criada por Pitágoras","isTrue":false},
+      {"text":"A razão entre termos consecutivos de Fibonacci se aproxima de φ","isTrue":true},
+      {"text":"O Partenon não guarda nenhuma relação com a razão áurea","isTrue":false},
+      {"text":"A concha do Nautilus segue a Espiral de Ouro","isTrue":true},
+      {"text":"As diagonais do pentagrama pitagórico se cruzam exatamente na razão áurea","isTrue":true}
+    ]' id="tfGameTrig">
+<div class="game-head">
+<div class="game-title"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M13 2 3 14h7l-1 8 11-14h-7l0-6Z"></path></svg> Verdadeiro ou Falso Relâmpago</div>
+<div class="game-stats tf-status">1/6 · acertos: 0</div>
+</div>
+<p style="font-size:.82rem;color:var(--text-dim);margin-bottom:14px;">Responda antes que a barra de mana zere!</p>
+<div class="tf-timerbar"><div class="tf-timerfill"></div></div>
+<div class="tf-statement"></div>
+<div class="tf-btns">
+<button class="tf-btn tf-true" onclick="answerSpeedTF('tfGameTrig', true)">Verdadeiro</button>
+<button class="tf-btn tf-false" onclick="answerSpeedTF('tfGameTrig', false)">Falso</button>
+</div>
+<div class="game-win-msg"><img alt="" class="om om-sm" src="../assets/icons/content/confetti.svg"/> Rodada relâmpago concluída!</div>
+<button class="game-reset-btn" onclick="resetSpeedTF('tfGameTrig')">Jogar de novo</button>
+</div>
+</section>
+<!-- ================= MODULE 04 ================= -->
+<section class="content-section" data-mod="4" id="sec-3">
+<div class="eyebrow">Módulo 04 / 07</div>
+<h2>O Enigma dos Guardiões do Tempo</h2>
+<p class="subtitle">Algo se move nas sombras da torre-relógio do reino. Antes de você seguir adiante, os Guardiões do Tempo exigem provas de que você entende movimento periódico.</p>
+<div class="hero-photo-wrap"><img alt="Céu estrelado sobre o silhueta de um pico de montanha" class="hero-photo" src="https://images.unsplash.com/photo-1768590238659-b401ffa9571e?auto=format&amp;fit=crop&amp;w=1600&amp;q=70"/></div>
+<p class="hero-credit">Foto: <a href="https://unsplash.com/@flo_raw" rel="noopener" target="_blank">Florian Schindler</a> em Unsplash</p>
+<div class="char-wrap">
+<img alt="Lisete, a professora de matemática, com os braços cruzados" class="char-cameo" src="../assets/characters/lisete.png" style="width:120px;flex-shrink:0;"/>
+<div class="char-bubble">
+<div class="char-name">Lisete</div>
+<p>Nada de facilitar. Movimento periódico é aquilo que se repete em intervalos iguais, como os ponteiros de um relógio. Se o movimento inverte de sentido regularmente, ele é oscilatório, como um pêndulo. E não pense que vou aceitar resposta chutada nos meus testes.</p>
+</div>
+</div>
+<div class="wire"></div>
+<div class="card">
+<h3><span class="ic"><img alt="" class="om om-sm" src="../assets/icons/content/wave.svg"/></span> Movimento Periódico e a Senoide</h3>
+<p>Um movimento periódico se repete em intervalos regulares. Se ele muda de sentido continuamente, chamamos de <strong>oscilatório</strong> ou vibratório. A função f(x) = sen x descreve esse comportamento: tem domínio nos reais, imagem limitada em [-1, 1], e seu gráfico é uma curva contínua e infinita chamada <strong>senoide</strong>.</p>
+</div>
+<div class="card">
+<h3><span class="ic"><img alt="" class="om om-sm" src="../assets/icons/content/clock.svg"/></span> O Ângulo dos Ponteiros</h3>
+<p>O ponteiro dos minutos percorre 360° em 60 minutos: 6° por minuto. O ponteiro das horas percorre 360° em 12 horas (720 minutos): 0,5° por minuto. Pra achar o ângulo entre eles num horário h:m, calcule a posição de cada ponteiro a partir do topo do relógio e subtraia. É por isso que o ponteiro das horas nunca fica parado exatamente sobre o número: ele também se move devagar entre uma hora e outra.</p>
+</div>
+<div class="boss-card card">
+<img alt="Uruk, o Titã da Lógica, acompanhado de seus esqueletos" src="../assets/characters/uruk.png"/>
+<div>
+<h3><span class="ic"><img alt="" class="om om-sm" src="../assets/icons/content/ogre.svg"/></span> Uma sombra desperta</h3>
+<p>Nas profundezas da torre, algo observa. Dizem que é <strong>Uruk, o Titã da Lógica</strong>: uma criatura antiga que não ataca com garras, mas com paradoxos e contas mal fechadas. Ele não quer te destruir. Ele quer testar se sua lógica resiste. O primeiro enigma dele é sobre ponteiros de relógio: "Se um relógio marca 9h30min, qual é o menor ângulo entre o ponteiro das horas e o dos minutos?"</p>
+</div>
+</div>
+<div class="callout">
+<div class="c-label"><img alt="" class="om om-sm" src="../assets/icons/content/puzzle.svg"/> Resolvendo o enigma</div>
+<p>Às 9h30min: o ponteiro dos minutos está em 30 × 6° = <strong>180°</strong>. O ponteiro das horas, que às 9h em ponto estaria em 270°, já andou metade do caminho até as 10h (30 minutos = meia hora), então soma 30 × 0,5° = 15°, ficando em 270° + 15° = <strong>285°</strong>. A diferença é 285° − 180° = <strong>105°</strong>. Esse é o menor ângulo entre os ponteiros.</p>
+</div>
+<div class="quiz">
+<div class="quiz-q"><img alt="" class="om om-sm" src="../assets/icons/content/brain.svg"/> Enigma do Titã: qual é o menor ângulo entre os ponteiros de um relógio marcando 9h30min?</div>
+<label class="quiz-opt"><input name="q4a" type="radio" value="a"/> 90°</label>
+<label class="quiz-opt"><input name="q4a" type="radio" value="b"/> 105°</label>
+<label class="quiz-opt"><input name="q4a" type="radio" value="c"/> 180°</label>
+<button class="quiz-btn" onclick="checkQuiz('q4a','b','fb4a')">Verificar</button>
+<div class="quiz-fb" id="fb4a"></div>
+</div>
+<div class="quiz bughunt">
+<div class="quiz-q"><img alt="falha" class="om om-md" src="../assets/icons/bug.svg"/> Encontre a falha no feitiço de Uruk</div>
+<pre><code><span class="cm">// Cálculo do ângulo às 4h00</span>
+ponteiro_minutos = <span class="k">0</span>° <span class="cm">// aponta pro 12</span>
+ponteiro_horas = <span class="k">4</span> × <span class="k">30</span>° = <span class="k">120</span>°
+ângulo = <span class="k">120</span>°</code></pre>
+<p style="font-size:.85rem;margin:0 0 10px;">O resultado até bate (às 4h00 em ponto o ângulo realmente é 120°), mas o método de Uruk esconde uma cilada. Qual é ela?</p>
+<label class="quiz-opt"><input name="bug4" type="radio" value="a"/> O ponteiro das horas só anda em saltos de 30° a cada hora fechada: esse cálculo esquece que, a qualquer minuto além do zero, ele já teria se movido 0,5° por minuto, e o resultado estaria errado</label>
+<label class="quiz-opt"><input name="bug4" type="radio" value="b"/> O ponteiro dos minutos deveria valer 90°, não 0°</label>
+<label class="quiz-opt"><input name="bug4" type="radio" value="c"/> Não existe erro nenhum em nenhuma situação</label>
+<button class="quiz-btn" onclick="checkQuiz('bug4','a','fbbug4')">Verificar</button>
+<div class="quiz-fb" id="fbbug4"></div>
+</div>
+<div class="checklist">
+<div class="checklist-title"><img alt="" class="om" src="../assets/icons/scroll-v.svg"/>Pergaminho de missões</div>
+<div class="c-item"><input data-mod="4" id="chk-10" onchange="onCheck(this)" type="checkbox"/><label for="chk-10">Calcular o ângulo entre os ponteiros às 4h20min.</label></div>
+<div class="c-item"><input data-mod="4" id="chk-11" onchange="onCheck(this)" type="checkbox"/><label for="chk-11">Explicar, com suas palavras, a diferença entre movimento periódico e oscilatório.</label></div>
+<div class="c-item"><input data-mod="4" id="chk-12" onchange="onCheck(this)" type="checkbox"/><label for="chk-12">Esboçar o gráfico da senoide de f(x) = sen x entre 0° e 360°.</label></div>
+</div>
+<div class="game-card timedquiz-game" data-questions='[
+      {"q":"Quantos graus o ponteiro dos minutos percorre por minuto?","options":["3°","6°","12°"],"correct":1},
+      {"q":"Quantos graus o ponteiro das horas percorre por minuto?","options":["0,5°","1°","5°"],"correct":0},
+      {"q":"Um movimento que se repete em intervalos regulares e iguais é chamado de:","options":["aleatório","periódico","assimétrico"],"correct":1},
+      {"q":"Qual é a imagem (conjunto de saídas) da função f(x) = sen x?","options":["[0, 1]","[-1, 1]","todos os reais"],"correct":1},
+      {"q":"Às 6h00 em ponto, qual é o ângulo entre os ponteiros do relógio?","options":["90°","180°","270°"],"correct":1}
+    ]' id="tqGameTrig">
+<div class="game-head">
+<div class="game-title"><img alt="" class="om om-sm" src="../assets/icons/content/hourglass.svg"/> Contra o Relógio dos Guardiões</div>
+<div class="game-stats tq-status">1/5 · pontos: 0</div>
+</div>
+<p style="font-size:.82rem;color:var(--text-dim);margin-bottom:14px;">Uruk cronometra cada resposta. Escolha rápido, antes que o tempo acabe!</p>
+<div class="tq-timerbar"><div class="tq-timerfill"></div></div>
+<div class="tq-question"></div>
+<div class="tq-opts"></div>
+<div class="game-win-msg"><img alt="" class="om om-sm" src="../assets/icons/content/confetti.svg"/> Desafio contra o relógio concluído!</div>
+<button class="game-reset-btn" onclick="resetTimedQuiz('tqGameTrig')">Jogar de novo</button>
+</div>
+</section>
+<!-- ================= MODULE 05 ================= -->
+<section class="content-section" data-mod="5" id="sec-4">
+<div class="eyebrow">Módulo 05 / 07</div>
+<h2>As Batalhas Práticas</h2>
+<p class="subtitle">Uruk aceita seu desafio de verdade: uma sequência de problemas reais, tirados do mundo além da torre, onde cada acerto é um golpe certeiro e cada erro custa uma vida.</p>
+<div class="hero-photo-wrap"><img alt="Ruínas de um castelo no topo de uma colina, acima da névoa ao amanhecer" class="hero-photo" src="https://images.unsplash.com/photo-1766859813732-20a127bb6023?auto=format&amp;fit=crop&amp;w=1600&amp;q=70"/></div>
+<p class="hero-credit">Foto: <a href="https://unsplash.com/@slotosch" rel="noopener" target="_blank">Andreas Slotosch</a> em Unsplash</p>
+<div class="char-wrap">
+<img alt="Lisete, a professora de matemática, supervisionando o campo de batalha" class="char-cameo" src="../assets/characters/lisete.png" style="width:120px;flex-shrink:0;"/>
+<div class="char-bubble">
+<div class="char-name">Lisete</div>
+<p>Eu vou avaliar cada resposta. Uruk pode até assustar com aquele bicho de estimação de osso dele, mas cálculo errado é cálculo errado, monstro ou não. Mostre o triângulo, nomeie os catetos, escolha a razão certa. Comece.</p>
+</div>
+</div>
+<div class="wire"></div>
+<div class="boss-card card">
+<img alt="Byte Morto, o esqueleto de lontra, minion de Uruk" src="../assets/characters/byte-morto.png"/>
+<div>
+<h3><span class="ic"><img alt="" class="om om-sm" src="../assets/icons/content/skull.svg"/></span> Byte Morto entra em campo</h3>
+<p>O bichinho de estimação de Uruk é uma versão esquelética e nada assustadora de uma lontra: <strong>Byte Morto</strong>. Ele late enigmas em vez de latidos. Cada problema abaixo é um golpe dele: resolva certo, e ele recua fazendo um showzinho de ossos.</p>
+</div>
+</div>
+<div class="card">
+<h3><span class="ic"><img alt="" class="om om-sm" src="../assets/icons/content/tower.svg"/></span> A Torre Inclinada</h3>
+<p>Uma torre de 60 m de altura projeta sua fachada lateral 1,80 m no chão. Pra estimar o ângulo de inclinação θ, usamos: sen θ ≈ projeção / altura = 1,80 / 60 = 0,03. Consultando uma tabela de senos, isso corresponde a um ângulo pequeno, de pouco mais de 1,7°: o suficiente pra deixar a torre visivelmente torta, sem derrubá-la.</p>
+</div>
+<div class="card">
+<h3><span class="ic"><img alt="" class="om om-sm" src="../assets/icons/content/mountain.svg"/></span> A Altura do Morro (Teodolito)</h3>
+<p>Dois pontos de observação, separados por 160 m, medem ângulos de 30° e 60° até o topo de um morro usando um teodolito de 1,5 m de altura. Montando dois triângulos retângulos que compartilham a mesma altura h e resolvendo o sistema com tangente, descobrimos h, e somamos os 1,5 m do próprio instrumento pra achar a altura real do morro.</p>
+</div>
+<div class="card">
+<h3><span class="ic"><img alt="" class="om om-sm" src="../assets/icons/content/balloon.svg"/></span> O Balão Atmosférico</h3>
+<p>Duas pessoas, em pontos diferentes no chão, avistam o mesmo balão sob ângulos de 30° e 60°. Como no problema do morro, isso monta um sistema de dois triângulos retângulos com a mesma altura: resolvendo as tangentes dos dois ângulos em função das distâncias conhecidas, chegamos à altura do balão.</p>
+</div>
+<div class="card">
+<h3><span class="ic"><img alt="" class="om om-sm" src="../assets/icons/content/coin.svg"/></span> A Partilha da Herança</h3>
+<p>Um terreno retangular de 3 km × 2 km esconde uma jazida de ouro em formato de um quarto de círculo, com raio de 1 km, num dos cantos. Pra dividir a herança de forma justa entre herdeiros, é preciso combinar área de retângulo, área de triângulo e <strong>área de setor circular</strong> (θ/360° × π × r²): geometria e trigonometria trabalhando juntas.</p>
+</div>
+<div class="card">
+<h3><span class="ic"><img alt="" class="om om-sm" src="../assets/icons/content/truck.svg"/></span> A Caçamba Basculante</h3>
+<p>Uma caçamba de caminhão gira sobre um eixo, com braço de 3 m de comprimento. Sabendo que cos α = 0,8, a relação fundamental nos dá sen α: como sen²α + cos²α = 1, então sen²α = 1 − 0,64 = 0,36, e sen α = 0,6. A altura máxima alcançada pela ponta da caçamba é 3 × 0,6 = <strong>1,8 m</strong>.</p>
+</div>
+<div class="quiz">
+<div class="quiz-q"><img alt="" class="om om-sm" src="../assets/icons/content/brain.svg"/> Golpe de Byte Morto: com cos α = 0,8 e um braço de 3 m, qual é a altura máxima alcançada pela caçamba?</div>
+<label class="quiz-opt"><input name="q5a" type="radio" value="a"/> 2,4 m</label>
+<label class="quiz-opt"><input name="q5a" type="radio" value="b"/> 1,8 m</label>
+<label class="quiz-opt"><input name="q5a" type="radio" value="c"/> 3,0 m</label>
+<button class="quiz-btn" onclick="checkQuiz('q5a','b','fb5a')">Verificar</button>
+<div class="quiz-fb" id="fb5a"></div>
+</div>
+<div class="quiz">
+<div class="quiz-q"><img alt="" class="om om-sm" src="../assets/icons/content/brain.svg"/> Golpe de Byte Morto: no problema da Torre Inclinada, qual razão trigonométrica relaciona a projeção lateral com a altura da torre?</div>
+<label class="quiz-opt"><input name="q5b" type="radio" value="a"/> Tangente</label>
+<label class="quiz-opt"><input name="q5b" type="radio" value="b"/> Cosseno</label>
+<label class="quiz-opt"><input name="q5b" type="radio" value="c"/> Seno</label>
+<button class="quiz-btn" onclick="checkQuiz('q5b','c','fb5b')">Verificar</button>
+<div class="quiz-fb" id="fb5b"></div>
+</div>
+<div class="quiz bughunt">
+<div class="quiz-q"><img alt="falha" class="om om-md" src="../assets/icons/bug.svg"/> Encontre a falha no feitiço final de Uruk</div>
+<pre><code><span class="cm">// Cálculo da altura do balão visto sob 30° e 60°</span>
+<span class="cm">// Uruk decide usar o mesmo ângulo pros dois observadores</span>
+tan(30°) = altura / distância_1
+tan(30°) = altura / distância_2</code></pre>
+<p style="font-size:.85rem;margin:0 0 10px;">Qual é o problema no feitiço de Uruk?</p>
+<label class="quiz-opt"><input name="bug5" type="radio" value="a"/> Cada observador vê o balão sob um ângulo diferente (30° e 60°): usar o mesmo ângulo pros dois ignora que eles estão em posições diferentes, e o sistema fica sem solução correta</label>
+<label class="quiz-opt"><input name="bug5" type="radio" value="b"/> Deveria ter usado seno em vez de tangente</label>
+<label class="quiz-opt"><input name="bug5" type="radio" value="c"/> Não há problema nenhum</label>
+<button class="quiz-btn" onclick="checkQuiz('bug5','a','fbbug5')">Verificar</button>
+<div class="quiz-fb" id="fbbug5"></div>
+</div>
+<div class="checklist">
+<div class="checklist-title"><img alt="" class="om" src="../assets/icons/scroll-v.svg"/>Pergaminho de missões</div>
+<div class="c-item"><input data-mod="5" id="chk-13" onchange="onCheck(this)" type="checkbox"/><label for="chk-13">Refazer o cálculo da Torre Inclinada com uma projeção de 3,60 m numa torre de 60 m.</label></div>
+<div class="c-item"><input data-mod="5" id="chk-14" onchange="onCheck(this)" type="checkbox"/><label for="chk-14">Montar (no papel) os dois triângulos do problema do morro com o teodolito.</label></div>
+<div class="c-item"><input data-mod="5" id="chk-15" onchange="onCheck(this)" type="checkbox"/><label for="chk-15">Calcular a altura máxima da caçamba se cos α fosse 0,6 em vez de 0,8.</label></div>
+</div>
+<div class="game-card memory-game" data-pairs='[
+      {"term":"φ (Razão Áurea)","def":"≈ 1,618: a proporção considerada esteticamente ideal"},
+      {"term":"Círculo Trigonométrico","def":"Circunferência de raio 1 centrada na origem"},
+      {"term":"Arcos Côngruos","def":"Arcos que terminam no mesmo ponto do ciclo, diferindo por voltas inteiras"},
+      {"term":"Sequência de Fibonacci","def":"1, 1, 2, 3, 5, 8, 13, 21... cuja razão entre termos tende a φ"},
+      {"term":"Sala São Paulo","def":"Antiga Estação Júlio Prestes, hoje sede acústica da OSESP"},
+      {"term":"Relação Fundamental","def":"sen²α + cos²α = 1"}
+    ]' id="memGameTrig">
+<div class="game-head">
+<div class="game-title"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2ZM12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4ZM12 6C15.3137 6 18 8.68629 18 12H16C16 9.79086 14.2091 8 12 8V6Z"></path></svg> Grimório de Termos</div>
+<div class="game-stats">Tentativas: <span class="js-mem-attempts">0</span></div>
+</div>
+<p style="font-size:.82rem;color:var(--text-dim);margin-bottom:14px;"><img alt="" class="om om-sm" src="../assets/icons/tap.svg"/> Toque em duas cartas pra achar o termo e a definição que combinam.</p>
+<div class="memory-grid"></div>
+<div class="game-win-msg"><img alt="" class="om om-sm" src="../assets/icons/content/confetti.svg"/> Todos os pares encontrados! Seu grimório mental está completo.</div>
+<button class="game-reset-btn" onclick="initMemoryGame('memGameTrig')">Embaralhar de novo</button>
+</div>
+</section>
+<!-- ================= MODULE 06 ================= -->
+<section class="content-section" data-mod="6" id="sec-5">
+<div class="eyebrow">Módulo 06 / 07</div>
+<h2>O Reino das Funções</h2>
+<p class="subtitle">Uruk emerge da sombra da torre pela última vez. Ele não quer mais enigmas de ponteiros: ele quer saber se você enxerga a estrutura por trás de toda a magia trigonométrica — o conceito de função.</p>
+<div class="hero-photo-wrap"><img alt="Escadaria em espiral de pedra dentro de uma torre" class="hero-photo" src="https://images.unsplash.com/photo-1683319568262-042757252e41?auto=format&amp;fit=crop&amp;w=1600&amp;q=70"/></div>
+<p class="hero-credit">Foto: <a href="https://unsplash.com/@idbronskiy" rel="noopener" target="_blank">Ilia Bronskiy</a> em Unsplash</p>
+<div class="char-wrap">
+<img alt="Uruk, o Titã da Lógica, diante de um portal circular" class="char-cameo" src="../assets/characters/uruk.png" style="width:120px;flex-shrink:0;"/>
+<div class="char-bubble">
+<div class="char-name">Uruk, o Titã da Lógica</div>
+<p>Byte Morto testou seus golpes. Agora eu testo sua mente. Toda razão trigonométrica que você decorou é, na verdade, uma <strong>função</strong>: uma máquina que transforma cada entrada em uma única saída. Se você entende a máquina, prevê qualquer padrão sem decorar nada. Prove.</p>
+</div>
+</div>
+<div class="wire"></div>
+<div class="card">
+<h3><span class="ic"><img alt="" class="om om-sm" src="../assets/icons/content/map.svg"/></span> O que é uma Função</h3>
+<p>Uma <strong>função</strong> f de A em B é uma relação que associa <strong>cada elemento</strong> de A (o <strong>domínio</strong>) a <strong>um único</strong> elemento de B (o <strong>contradomínio</strong>). O conjunto dos valores efetivamente alcançados é a <strong>imagem</strong>. Escrevemos f: A → B, x ↦ f(x). A regra pode ser uma fórmula, uma tabela ou até um desenho: o que importa é a garantia de que nenhuma entrada gera duas saídas diferentes.</p>
+</div>
+<div class="card">
+<h3><span class="ic"><img alt="" class="om om-sm" src="../assets/icons/content/target.svg"/></span> Domínio e Imagem das Funções Trigonométricas</h3>
+<p>Seno e cosseno são funções f: ℝ → [−1, 1]: aceitam qualquer número real e nunca saem do intervalo [−1, 1]. Já a tangente tem domínio restrito — ℝ menos os ângulos onde o cosseno se anula (90°, 270°, e seus côngruos) — mas sua imagem é todo o ℝ, sem limites. É por isso que sen x e cos x têm gráfico "achatado" entre -1 e 1, enquanto tg x dispara ao infinito perto de cada assíntota.</p>
+</div>
+<div class="card">
+<h3><span class="ic"><img alt="" class="om om-sm" src="../assets/icons/content/wave.svg"/></span> Transformando o Gráfico: Amplitude, Período e Fase</h3>
+<p>Toda função da forma f(x) = a · sen(bx + c) + d (ou cos, ou tg) é a mesma onda básica, só que ajustada por quatro alavancas: <strong>|a|</strong> é a amplitude (o quanto a curva sobe e desce a partir do centro); <strong>b</strong> comprime ou estica o período; <strong>c</strong> desliza a curva pra esquerda ou direita (fase); <strong>d</strong> empurra a curva inteira pra cima ou pra baixo, sem alterar seu formato nem seu período.</p>
+</div>
+<table class="spell-table">
+<thead><tr><th>Função</th><th>Período de f(bx)</th><th>Exemplo</th><th>Período do exemplo</th></tr></thead>
+<tbody>
+<tr><td>a·sen(bx)+d</td><td>2π / |b|</td><td>f(x) = 2 − sen(x)</td><td>2π</td></tr>
+<tr><td>a·cos(bx)+d</td><td>2π / |b|</td><td>f(x) = 3 cos(x/2)</td><td>4π</td></tr>
+<tr><td>a·tg(bx)+d</td><td>π / |b|</td><td>f(x) = 2 tg(x)</td><td>π</td></tr>
+</tbody>
+</table>
+<div class="callout">
+<div class="c-label"><img alt="" class="om om-sm" src="../assets/icons/content/sliders.svg"/> Somar constante não mexe no período</div>
+<p>Repare que f(x) = 5 + cos(x) tem exatamente o mesmo período de f(x) = cos(x): <strong>2π</strong>. O "+5" só desloca a curva pra cima, sem esticar nem comprimir o ciclo. Só quem mexe no período é o número que multiplica o x lá dentro do seno, cosseno ou tangente.</p>
+</div>
+<div class="card calc-card">
+<h3><span class="ic"><img alt="" class="om om-sm" src="../assets/icons/content/sliders.svg"/></span> Calculadora de Período e Amplitude</h3>
+<p>Ajuste os parâmetros de f(x) = a · [função](bx + c) + d e deixe o feitiço calcular sozinho.</p>
+<div class="calc-grid">
+<label>Função
+          <select id="cpFunc">
+<option value="sen">seno</option>
+<option value="cos">cosseno</option>
+<option value="tg">tangente</option>
+</select>
+</label>
+<label>a (amplitude)<input id="cpA" step="0.5" type="number" value="1"/></label>
+<label>b (multiplica x)<input id="cpB" step="0.5" type="number" value="1"/></label>
+<label>c (fase, em graus)<input id="cpC" step="1" type="number" value="0"/></label>
+<label>d (deslocamento vertical)<input id="cpD" step="0.5" type="number" value="0"/></label>
+</div>
+<button class="quiz-btn" onclick="calcPeriodo()">Conjurar cálculo</button>
+<div class="quiz-fb" id="cpResult"></div>
+</div>
+<div class="quiz">
+<div class="quiz-q"><img alt="" class="om om-sm" src="../assets/icons/content/brain.svg"/> Enigma de Uruk: qual é o período de f(x) = 3 cos(x/2)?</div>
+<label class="quiz-opt"><input name="q7a" type="radio" value="a"/> 2π</label>
+<label class="quiz-opt"><input name="q7a" type="radio" value="b"/> 4π</label>
+<label class="quiz-opt"><input name="q7a" type="radio" value="c"/> π/2</label>
+<button class="quiz-btn" onclick="checkQuiz('q7a','b','fb7a')">Verificar</button>
+<div class="quiz-fb" id="fb7a"></div>
+</div>
+<div class="quiz bughunt">
+<div class="quiz-q"><img alt="falha" class="om om-md" src="../assets/icons/bug.svg"/> Encontre a falha no feitiço de Uruk</div>
+<pre><code><span class="cm">// Cálculo do período de f(x) = 5 + cos(x)</span>
+período_base = <span class="k">2π</span> <span class="cm">// período do cosseno</span>
+como a função soma <span class="k">5</span>, Uruk conclui:
+período = <span class="k">2π + 5</span></code></pre>
+<p style="font-size:.85rem;margin:0 0 10px;">Qual é o problema no feitiço de Uruk?</p>
+<label class="quiz-opt"><input name="bug7" type="radio" value="a"/> Somar uma constante desloca o gráfico verticalmente, mas não muda o período: ele continua sendo 2π</label>
+<label class="quiz-opt"><input name="bug7" type="radio" value="b"/> O período do cosseno não é 2π</label>
+<label class="quiz-opt"><input name="bug7" type="radio" value="c"/> Não existe erro nenhum: o período realmente muda quando somamos uma constante</label>
+<button class="quiz-btn" onclick="checkQuiz('bug7','a','fbbug7')">Verificar</button>
+<div class="quiz-fb" id="fbbug7"></div>
+</div>
+<div class="card">
+<h3><span class="ic"><img alt="" class="om om-sm" src="../assets/icons/content/magnifying-glass.svg"/></span> Equações Trigonométricas</h3>
+<p>Resolver sen x = k significa achar todo ângulo cujo seno vale k. Como o seno se repete a cada volta, a resposta nunca é um único número: é uma <strong>família de soluções</strong>. Dentro de uma volta (0° a 360°), sen x = k tem até duas soluções — x₁ = arcsen(k) e x₂ = 180° − x₁. Pra generalizar pra qualquer volta, soma-se k·360° (k inteiro) a cada uma. O mesmo raciocínio vale pra cosseno (x₂ = −x₁) e pra tangente, que só repete a cada 180°.</p>
+</div>
+<div class="card calc-card">
+<h3><span class="ic"><img alt="" class="om om-sm" src="../assets/icons/content/crystal-ball.svg"/></span> Oráculo das Equações</h3>
+<p>Escolha a função e o valor de k: o Oráculo devolve os ângulos que resolvem a equação dentro de uma volta, mais a fórmula da solução geral.</p>
+<div class="calc-grid">
+<label>Função
+          <select id="orFunc">
+<option value="sen">sen x = k</option>
+<option value="cos">cos x = k</option>
+<option value="tg">tg x = k</option>
+</select>
+</label>
+<label>k<input id="orK" step="0.1" type="number" value="0.5"/></label>
+</div>
+<button class="quiz-btn" onclick="calcOraculo()">Consultar o Oráculo</button>
+<div class="quiz-fb" id="orResult"></div>
+</div>
+<div class="quiz">
+<div class="quiz-q"><img alt="" class="om om-sm" src="../assets/icons/content/brain.svg"/> Enigma de Uruk: resolvendo tg(3x) = 1, qual é a menor solução positiva de x?</div>
+<label class="quiz-opt"><input name="q7b" type="radio" value="a"/> π/12</label>
+<label class="quiz-opt"><input name="q7b" type="radio" value="b"/> π/4</label>
+<label class="quiz-opt"><input name="q7b" type="radio" value="c"/> π/3</label>
+<button class="quiz-btn" onclick="checkQuiz('q7b','a','fb7b')">Verificar</button>
+<div class="quiz-fb" id="fb7b"></div>
+</div>
+<div class="card">
+<h3><span class="ic"><img alt="" class="om om-sm" src="../assets/icons/content/scales.svg"/></span> Inequações Trigonométricas</h3>
+<p>Uma inequação como sen x ≥ −1/2 não pede um ângulo: pede um <strong>intervalo inteiro</strong> de ângulos. A tática é sempre a mesma: marque no círculo trigonométrico os pontos onde sen x = −1/2 (as "fronteiras"), depois observe qual arco entre elas satisfaz a desigualdade. Pra cos x e tg x o raciocínio é idêntico, só muda o eixo que você está lendo no círculo (x para cosseno, a reta tangente para tangente).</p>
+</div>
+<div class="card">
+<h3><span class="ic"><img alt="" class="om om-sm" src="../assets/icons/content/link.svg"/></span> Identidades: Amarrando as Pontas</h3>
+<p>Além de tg x = sen x / cos x, cotg x = cos x / sen x, sec x = 1/cos x e cosec x = 1/sen x, duas identidades derivam direto da relação fundamental sen²x + cos²x = 1: dividindo tudo por cos²x chegamos a <strong>1 + tg²x = sec²x</strong>; dividindo por sen²x chegamos a <strong>1 + cotg²x = cosec²x</strong>. Demonstrar uma identidade é provar, passo a passo, que o lado esquerdo se transforma no lado direito usando só essas definições.</p>
+</div>
+<div class="checklist">
+<div class="checklist-title"><img alt="" class="om" src="../assets/icons/scroll-v.svg"/>Pergaminho de missões</div>
+<div class="c-item"><input data-mod="6" id="chk-21" onchange="onCheck(this)" type="checkbox"/><label for="chk-21">Determinar o período de f(x) = 2 tg(x) e explicar por que ele é diferente do período de f(x) = 2 sen(x).</label></div>
+<div class="c-item"><input data-mod="6" id="chk-22" onchange="onCheck(this)" type="checkbox"/><label for="chk-22">Resolver a equação 2 sen²x = sen x para 0 ≤ x &lt; 360°.</label></div>
+<div class="c-item"><input data-mod="6" id="chk-23" onchange="onCheck(this)" type="checkbox"/><label for="chk-23">Resolver a inequação sen x ≥ −1/2 no intervalo 0 ≤ x ≤ 2π.</label></div>
+<div class="c-item"><input data-mod="6" id="chk-24" onchange="onCheck(this)" type="checkbox"/><label for="chk-24">Demonstrar a identidade tg x + cotg x = tg x · cosec² x.</label></div>
+</div>
+</section>
+<!-- ================= MODULE 07 ================= -->
+<section class="content-section" data-mod="7" id="sec-6">
+<div class="eyebrow">Módulo 07 / 07</div>
+<h2>Salão do Arquimago</h2>
+<p class="subtitle">A batalha terminou. Uruk baixa a guarda: ele nunca quis te destruir, só queria ter certeza de que sua lógica era sólida o bastante pra carregar o título de Arquimago.</p>
+<div class="hero-photo-wrap"><img alt="Estantes altas cheias de livros antigos em uma biblioteca" class="hero-photo" src="https://images.unsplash.com/photo-1770131748972-b1a08d57efbc?auto=format&amp;fit=crop&amp;w=1600&amp;q=70"/></div>
+<p class="hero-credit">Foto: <a href="https://unsplash.com/@ahmetyuksek" rel="noopener" target="_blank">Ahmet Yüksek</a> em Unsplash</p>
+<div class="char-wrap">
+<img alt="O Mago da Matemática, orgulhoso, com o grimório fechado" class="char-cameo" src="../assets/characters/mago.png" style="width:120px;flex-shrink:0;"/>
+<div class="char-bubble">
+<div class="char-name">Mago da Matemática</div>
+<p>Você atravessou o Bosque, dominou o Círculo, construiu com a Ordem, enfrentou os Guardiões do Tempo e venceu as Batalhas Práticas. Até Byte Morto já não parece tão assustador, não é? Chegou a hora de revisar tudo e reivindicar seu lugar no Salão do Arquimago.</p>
+</div>
+</div>
+<div class="wire"></div>
+<div class="quiz">
+<div class="quiz-q"><img alt="" class="om om-sm" src="../assets/icons/content/brain.svg"/> Revisão 1: qual fórmula converte graus em radianos?</div>
+<label class="quiz-opt"><input name="q6a" type="radio" value="a"/> Multiplicar por π/180</label>
+<label class="quiz-opt"><input name="q6a" type="radio" value="b"/> Multiplicar por 180/π</label>
+<label class="quiz-opt"><input name="q6a" type="radio" value="c"/> Dividir por 360</label>
+<button class="quiz-btn" onclick="checkQuiz('q6a','a','fb6a')">Verificar</button>
+<div class="quiz-fb" id="fb6a"></div>
+</div>
+<div class="quiz">
+<div class="quiz-q"><img alt="" class="om om-sm" src="../assets/icons/content/brain.svg"/> Revisão 2: quem restaurou e transformou a antiga Estação Júlio Prestes na Sala São Paulo, em 1999?</div>
+<label class="quiz-opt"><input name="q6b" type="radio" value="a"/> Um projeto que a converteu na sede da OSESP</label>
+<label class="quiz-opt"><input name="q6b" type="radio" value="b"/> Ela nunca foi restaurada</label>
+<label class="quiz-opt"><input name="q6b" type="radio" value="c"/> Foi demolida e reconstruída do zero em outro lugar</label>
+<button class="quiz-btn" onclick="checkQuiz('q6b','a','fb6b')">Verificar</button>
+<div class="quiz-fb" id="fb6b"></div>
+</div>
+<div class="quiz bughunt">
+<div class="quiz-q"><img alt="falha" class="om om-md" src="../assets/icons/bug.svg"/> Desafio final: encontre os dois problemas</div>
+<pre><code><span class="cm">// Um aprendiz apressado tenta calcular tudo de uma vez</span>
+ângulo = <span class="k">90</span>°
+tan(ângulo) = sen(ângulo) / cos(ângulo) = <span class="k">1</span> / <span class="k">0</span> = <span class="k">0</span>
+
+φ = <span class="k">3,14</span> <span class="cm">// razão áurea</span></code></pre>
+<p style="font-size:.85rem;margin:0 0 10px;">Esse trecho mistura dois erros já vistos na jornada. Qual dupla está correta?</p>
+<label class="quiz-opt"><input name="bugfinal" type="radio" value="a"/> tan(90°) não é igual a zero, é indefinida (divisão por zero); e φ não é 3,14 (esse é o valor de π), φ ≈ 1,618</label>
+<label class="quiz-opt"><input name="bugfinal" type="radio" value="b"/> O ângulo deveria ser 180°, e φ deveria ser 2,718</label>
+<label class="quiz-opt"><input name="bugfinal" type="radio" value="c"/> Não existe nenhum erro nesse trecho</label>
+<button class="quiz-btn" onclick="checkQuiz('bugfinal','a','fbbugfinal')">Verificar</button>
+<div class="quiz-fb" id="fbbugfinal"></div>
+</div>
+<div class="game-card dialogue-game" data-dialogue='{
+      "charA": {"name":"Byte Morto", "img":"../assets/characters/byte-morto.png"},
+      "charB": {"name":"Uruk", "img":"../assets/characters/uruk.png"},
+      "rounds": [
+        {
+          "setup": "Nas masmorras dos Mortos de Uruk, o pequeno Byte Morto tenta impressionar o chefe.",
+          "lineA": "Chefe Uruk, eu decorei: tangente é cateto adjacente sobre hipotenusa!",
+          "lineB": "Errou, ossinho. Isso aí é cosseno. Tangente é cateto oposto sobre cateto adjacente: ou, se preferir, seno dividido por cosseno.",
+          "question": "Quem lembrou certo da fórmula?",
+          "correct": "B",
+          "reactionCorrect": "Rá! Eu durmo estudando essas fórmulas há 150 anos, não vai ser um esqueleto de doze que vai me confundir."
+        },
+        {
+          "lineA": "Essa relação sen²α + cos²α = 1 só vale pra ângulo de 45°, pros outros muda.",
+          "lineB": "Não, chefe! Ela vale pra QUALQUER ângulo: vem direto do Teorema de Pitágoras aplicado dentro do círculo. É por isso que ela sustenta praticamente toda a trigonometria.",
+          "question": "Dessa vez, quem acertou?",
+          "correct": "B",
+          "reactionCorrect": "Consegui te corrigir, chefe! Aprendi vendo o Bispo explicar: é uma identidade, vale sempre."
+        },
+        {
+          "lineA": "No terceiro quadrante, seno e cosseno são os dois positivos.",
+          "lineB": "Errado. No terceiro quadrante os dois são negativos. Só a tangente, que é razão de dois negativos, volta a ficar positiva ali.",
+          "question": "Quem acertou os sinais do terceiro quadrante?",
+          "correct": "B",
+          "reactionCorrect": "Viu, ossinho? Decorar sinal de quadrante é tipo decorar rota de fuga de masmorra: erra uma vez e já era."
+        },
+        {
+          "setup": "Já nos portões do Salão do Arquimago, o papo vira história.",
+          "lineA": "Essa história de razão áurea é invenção moderna, não tem nada a ver com o pentagrama antigo.",
+          "lineB": "Tem sim, chefe! O pentagrama era o símbolo secreto dos pitagóricos: as diagonais da estrela se cruzam exatamente na proporção da razão áurea.",
+          "question": "Quem contou a história certa?",
+          "correct": "B",
+          "reactionCorrect": "Eu li isso três vezes pra não errar na sua frente, chefe!"
+        }
+      ]
+    }' id="dlgGameTrig">
+<div class="game-head">
+<div class="game-title"><img alt="" class="om om-sm" src="../assets/icons/content/speech-bubble.svg"/> Quem explicou certo?</div>
+<div class="game-stats"><span class="js-dlg-status">1/4</span></div>
+</div>
+<p style="font-size:.82rem;color:var(--text-dim);margin-bottom:14px;">Byte Morto tenta impressionar o chefe Uruk nas masmorras. Escolha quem está certo.</p>
+<div class="dlg-stage"></div>
+<div class="game-win-msg"><img alt="" class="om om-sm" src="../assets/icons/content/confetti.svg"/> Debate concluído! Seno, cosseno, identidade fundamental e razão áurea, tudo revisado.</div>
+</div>
+<div class="project-card">
+<div class="eyebrow">Missão final</div>
+<h3 style="margin-top:6px;"><span class="ic"><img alt="" class="om om-sm" src="../assets/icons/content/trophy.svg"/></span> O Compêndio do Arquimago</h3>
+<p>Escolha uma estrutura real perto de você (uma porta, uma janela, uma fachada) e verifique se as proporções dela se aproximam da razão áurea (largura/altura ≈ 1,618). Depois, escolha algo com inclinação visível ao seu redor (uma rampa, um telhado, uma escada) e estime seu ângulo usando seno, cosseno ou tangente. Registre os dois resultados: esse é o seu primeiro Compêndio do Arquimago.</p>
+</div>
+<h3 style="margin-top:30px;">Conquistas</h3>
+<p style="font-size:.85rem;color:var(--text-dim);margin-bottom:4px;">Desbloqueadas conforme você avança. Os selos do compasso premiam quem retorna em dias seguidos, na cadência de Fibonacci: 1, 2, 3, 5, 8 e 13 dias.</p>
+<div class="badges-grid" id="badgesGrid">
+<div class="badge-tile" data-badge="first_step"><div class="b-icon"><img alt="" class="om om-sm" src="../assets/icons/content/seedling.svg"/></div><div class="b-name">Primeiro Passo</div><div class="b-desc">Marque sua primeira tarefa.</div></div>
+<div class="badge-tile" data-badge="module1_master"><div class="b-icon"><img alt="" class="om om-sm" src="../assets/icons/content/triangle-ruler.svg"/></div><div class="b-name">Guardião dos Ângulos</div><div class="b-desc">Complete o módulo O Bosque dos Ângulos.</div></div>
+<div class="badge-tile" data-badge="module2_master"><div class="b-icon"><img alt="" class="om om-sm" src="../assets/icons/content/circle-o.svg"/></div><div class="b-name">Mestre do Círculo</div><div class="b-desc">Complete o módulo O Círculo de Invocação.</div></div>
+<div class="badge-tile" data-badge="module3_master"><div class="b-icon"><img alt="" class="om om-sm" src="../assets/icons/content/classical-building.svg"/></div><div class="b-name">Arquiteto Áureo</div><div class="b-desc">Complete o módulo A Ordem dos Construtores.</div></div>
+<div class="badge-tile" data-badge="module4_master"><div class="b-icon"><img alt="" class="om om-sm" src="../assets/icons/content/hourglass.svg"/></div><div class="b-name">Vigia do Tempo</div><div class="b-desc">Complete o módulo dos Guardiões do Tempo.</div></div>
+<div class="badge-tile" data-badge="module5_master"><div class="b-icon"><img alt="" class="om om-sm" src="../assets/icons/content/crossed-swords.svg"/></div><div class="b-name">Vencedor da Batalha</div><div class="b-desc">Complete o módulo das Batalhas Práticas.</div></div>
+<div class="badge-tile" data-badge="module6_master"><div class="b-icon"><img alt="" class="om om-sm" src="../assets/icons/content/wave.svg"/></div><div class="b-name">Guardião das Funções</div><div class="b-desc">Complete o módulo O Reino das Funções.</div></div>
+<div class="badge-tile" data-badge="module7_master"><div class="b-icon"><img alt="" class="om om-sm" src="../assets/icons/content/castle.svg"/></div><div class="b-name">Revisão Completa</div><div class="b-desc">Complete o módulo do Salão do Arquimago.</div></div>
+<div class="badge-tile" data-badge="quiz_perfect"><div class="b-icon"><img alt="" class="om om-sm" src="../assets/icons/content/target.svg"/></div><div class="b-name">Quiz Perfeito</div><div class="b-desc">Acerte todos os quizzes e desafios do curso.</div></div>
+<div class="badge-tile" data-badge="streak_3"><div class="b-icon"><svg class="ic-mono" fill="currentColor" viewBox="0 0 24 24"><path d="M12.75 2.25c.2 2.9-.62 5-2.3 6.86-.55.6-1.15 1.14-1.72 1.75-1.9 2-2.98 4.36-2.23 7.2A7.5 7.5 0 0 0 19.5 15c0-3.86-2.55-6.1-4.53-8.35-1-1.13-1.9-2.5-2.22-4.4Zm.4 14.9a2.65 2.65 0 0 1-3.53-.4c-.8-.98-.68-2.16-.02-3.07.28.55.68 1 1.2 1.3.02-1.1.42-1.98 1.15-2.75.28 1.5 1.05 2.4 2.02 3.28.6.55.9 1.3.7 2.05a2.2 2.2 0 0 1-1.52 1.6Z"></path></svg></div><div class="b-name">Maratonista</div><div class="b-desc">3 dias seguidos de estudo.</div></div>
+<div class="badge-tile" data-badge="fib_1"><div class="b-icon"><svg class="ic-mono" fill="currentColor" viewBox="0 0 24 24"><path d="M3 5.6c2.4-1 5.3-1 8 .5v13.3c-2.7-1.5-5.6-1.5-8-.5V5.6Z" opacity=".55"></path><path d="M21 5.6c-2.4-1-5.3-1-8 .5v13.3c2.7-1.5 5.6-1.5 8-.5V5.6Z"></path><rect height="1.1" opacity=".8" rx=".55" width="4.8" x="4.6" y="8"></rect><rect height="1.1" opacity=".8" rx=".55" width="4.8" x="4.6" y="10.6"></rect></svg></div><div class="b-name">Primeira Voz do Grimório</div><div class="b-desc">Selo do Compasso: 1 dia de estudo.</div></div>
+<div class="badge-tile" data-badge="fib_2"><div class="b-icon"><img alt="" class="om om-sm" src="../assets/icons/content/cyclone.svg"/></div><div class="b-name">Broto da Espiral</div><div class="b-desc">Selo do Compasso: 2 dias seguidos.</div></div>
+<div class="badge-tile" data-badge="fib_3"><div class="b-icon"><img alt="" class="om om-sm" src="../assets/icons/content/compass.svg"/></div><div class="b-name">Aprendiz do Compasso</div><div class="b-desc">Selo do Compasso: 3 dias seguidos.</div></div>
+<div class="badge-tile" data-badge="fib_5"><div class="b-icon"><img alt="" class="om om-sm" src="../assets/icons/content/sparkles.svg"/></div><div class="b-name">Guardião da Proporção</div><div class="b-desc">Selo do Compasso: 5 dias seguidos.</div></div>
+<div class="badge-tile" data-badge="fib_8"><div class="b-icon"><img alt="" class="om om-sm" src="../assets/icons/content/shell.svg"/></div><div class="b-name">Arquimago da Sequência</div><div class="b-desc">Selo do Compasso: 8 dias seguidos.</div></div>
+<div class="badge-tile" data-badge="fib_13"><div class="b-icon"><img alt="" class="om om-sm" src="../assets/icons/content/crown.svg"/></div><div class="b-name">Lenda de Fibonacci</div><div class="b-desc">Selo do Compasso: 13 dias seguidos.</div></div>
+<div class="badge-tile" data-badge="focus_1"><div class="b-icon"><img alt="" class="om om-sm" src="../assets/icons/content/stopwatch.svg"/></div><div class="b-name">Foco Total</div><div class="b-desc">Complete 1 sessão de foco.</div></div>
+<div class="badge-tile" data-badge="dialogue_master"><div class="b-icon"><img alt="" class="om om-sm" src="../assets/icons/content/speech-bubble.svg"/></div><div class="b-name">Bate-papo Concluído</div><div class="b-desc">Termine o debate entre Byte Morto e Uruk.</div></div>
+<div class="badge-tile" data-badge="completionist"><div class="b-icon"><img alt="" class="om om-sm" src="../assets/icons/content/trophy.svg"/></div><div class="b-name">Arquimago das Funções Periódicas</div><div class="b-desc">100% do curso concluído.</div></div>
+</div>
+<div class="checklist">
+<div class="checklist-title"><img alt="" class="om" src="../assets/icons/scroll-v.svg"/>Autoavaliação final</div>
+<div class="c-item"><input data-mod="7" id="chk-16" onchange="onCheck(this)" type="checkbox"/><label for="chk-16">Consigo converter graus em radianos (e vice-versa) sem consultar nada.</label></div>
+<div class="c-item"><input data-mod="7" id="chk-17" onchange="onCheck(this)" type="checkbox"/><label for="chk-17">Sei os sinais de seno, cosseno e tangente nos quatro quadrantes.</label></div>
+<div class="c-item"><input data-mod="7" id="chk-18" onchange="onCheck(this)" type="checkbox"/><label for="chk-18">Entendo o que é a Razão Áurea e reconheço onde ela aparece na natureza e na arquitetura.</label></div>
+<div class="c-item"><input data-mod="7" id="chk-19" onchange="onCheck(this)" type="checkbox"/><label for="chk-19">Sei montar um triângulo retângulo a partir de um problema prático e escolher a razão certa.</label></div>
+<div class="c-item"><input data-mod="7" id="chk-20" onchange="onCheck(this)" type="checkbox"/><label for="chk-20">Comecei (ou terminei) o Compêndio do Arquimago.</label></div>
+<div class="c-item"><input data-mod="7" id="chk-25" onchange="onCheck(this)" type="checkbox"/><label for="chk-25">Sei explicar, com minhas palavras, o que Uruk quis dizer com "toda razão trigonométrica é uma função".</label></div>
+</div>
+<footer class="credits">
+      Conteúdo baseado na síntese "Harmonic Proportions and Trigonometric Principles" e nas listas de exercícios práticos de trigonometria e funções trigonométricas correspondentes. Personagens: Mago da Matemática, Bispo da Trigonometria, Lisete, Uruk (o Titã da Lógica) e Byte Morto.
+    </footer>
+</section>
+</main>
+<div class="toast-container" id="toastContainer"></div>
+<div class="levelup-overlay" id="levelupOverlay">
+<div class="levelup-card">
+<img alt="O Mago da Matemática comemorando" class="char-cameo" src="../assets/characters/mago.png" style="width:120px;margin-bottom:6px;"/>
+<div class="lv-eyebrow"><img alt="" class="om om-md" src="../assets/icons/confetti.svg"/> VOCÊ EVOLUIU</div>
+<div class="lv-big" id="levelupNum">Nv. 2</div>
+<div class="lv-sub" id="levelupTitle">Mago do Triângulo Retângulo</div>
+<p>Sua magia está mais forte. Continue no seu ritmo: cada sessão conta.</p>
+<button onclick="closeLevelUp()">Obrigado, bora continuar</button>
+</div>
+</div>
+<div class="mascot-wrap">
+<div class="mascot-bubble" id="mascotBubble"></div>
+<svg class="mascot-bot" id="mascotBot" onclick="mascotTip(true)" viewBox="0 0 64 70" xmlns="http://www.w3.org/2000/svg">
+<ellipse cx="32" cy="66" fill="#4A4232" opacity=".12" rx="16" ry="3"></ellipse>
+<path d="M19 46 L45 46 L41 65 L23 65 Z" fill="#C97B4A" stroke="#A85F38" stroke-width="1.5"></path>
+<rect fill="#D9946A" height="8" rx="4" stroke="#A85F38" stroke-width="1" width="32" x="16" y="41"></rect>
+<ellipse cx="32" cy="42.5" fill="#5C4A35" rx="13" ry="3"></ellipse>
+<text dominant-baseline="middle" font-size="27" id="mascotStageEmoji" text-anchor="middle" x="32" y="32"><img alt="" class="om om-sm" src="../assets/icons/content/seedling.svg"/></text>
+</svg>
+</div>
+<script>
+  function calcPeriodo(){
+    var func = document.getElementById('cpFunc').value;
+    var a = parseFloat(document.getElementById('cpA').value);
+    var b = parseFloat(document.getElementById('cpB').value);
+    var c = parseFloat(document.getElementById('cpC').value) || 0;
+    var d = parseFloat(document.getElementById('cpD').value) || 0;
+    var fb = document.getElementById('cpResult');
+    if(isNaN(b) || b === 0){
+      fb.className = 'quiz-fb no';
+      fb.innerText = 'b não pode ser zero: sem esse número multiplicando x, não existe onda pra medir.';
+      return;
+    }
+    if(isNaN(a)) a = 1;
+    var baseCycle = (func === 'tg') ? Math.PI : 2*Math.PI;
+    var period = baseCycle / Math.abs(b);
+    var periodDeg = period * 180 / Math.PI;
+    var text = 'Período: ' + period.toFixed(3) + ' rad (≈ ' + periodDeg.toFixed(1) + '°).';
+    if(func === 'tg'){
+      text += ' Amplitude não se aplica à tangente: a imagem é sempre ℝ, sem limites.';
+    } else {
+      text += ' Amplitude: ' + Math.abs(a).toFixed(2) + '. Imagem: [' + (d-Math.abs(a)).toFixed(2) + ', ' + (d+Math.abs(a)).toFixed(2) + '].';
+    }
+    if(c) text += ' Deslocamento horizontal (fase): ' + c + '°.';
+    if(d) text += ' Deslocamento vertical: ' + d + '.';
+    fb.className = 'quiz-fb ok';
+    fb.innerText = text;
+    if(typeof mascotBounce === 'function') mascotBounce('Cálculo conjurado! Um bom Arquimago sempre confere o período antes de lançar o feitiço.');
+  }
+  window.calcPeriodo = calcPeriodo;
+
+  function calcOraculo(){
+    var func = document.getElementById('orFunc').value;
+    var k = parseFloat(document.getElementById('orK').value);
+    var fb = document.getElementById('orResult');
+    if(isNaN(k)){
+      fb.className = 'quiz-fb no';
+      fb.innerText = 'Digite um valor de k pra consultar o Oráculo.';
+      return;
+    }
+    if((func === 'sen' || func === 'cos') && (k < -1 || k > 1)){
+      fb.className = 'quiz-fb no';
+      fb.innerText = 'Para seno e cosseno, k precisa estar entre -1 e 1: fora desse intervalo não existe ângulo real que resolva a equação.';
+      return;
+    }
+    var deg, text;
+    if(func === 'sen'){
+      deg = Math.asin(k) * 180 / Math.PI;
+      var x2 = 180 - deg;
+      text = 'sen x = ' + k + ' → dentro de uma volta: x ≈ ' + deg.toFixed(1) + '° ou x ≈ ' + x2.toFixed(1) + '°. Solução geral: x = ' + deg.toFixed(1) + '° + k·360° ou x = ' + x2.toFixed(1) + '° + k·360°, k ∈ ℤ.';
+    } else if(func === 'cos'){
+      deg = Math.acos(k) * 180 / Math.PI;
+      var x2c = 360 - deg;
+      text = 'cos x = ' + k + ' → dentro de uma volta: x ≈ ' + deg.toFixed(1) + '° ou x ≈ ' + x2c.toFixed(1) + '°. Solução geral: x = ±' + deg.toFixed(1) + '° + k·360°, k ∈ ℤ.';
+    } else {
+      deg = Math.atan(k) * 180 / Math.PI;
+      var norm = ((deg % 360) + 360) % 360;
+      text = 'tg x = ' + k + ' → dentro de uma volta: x ≈ ' + norm.toFixed(1) + '° (e também ' + (norm+180).toFixed(1) + '°, já que a tangente se repete a cada meia volta). Solução geral: x = ' + deg.toFixed(1) + '° + k·180°, k ∈ ℤ.';
+    }
+    fb.className = 'quiz-fb ok';
+    fb.innerText = text;
+    if(typeof mascotBounce === 'function') mascotBounce('O Oráculo falou! Sempre confira se a solução respeita o intervalo pedido pelo problema.');
+  }
+  window.calcOraculo = calcOraculo;
+</script>
+<script>
+  window.COURSE = {
+    prefix: 'curso_trigomante',
+    totalModules: 7,
+    nodeOrder: [1,2,3,4,5,6,7],
+    totalQuizzes: 17,
+    levelTitles: [
+      'Aprendiz do Bosque','Mago do Triângulo Retângulo','Guardião do Círculo',
+      'Arquiteto da Proporção Áurea','Vigia dos Guardiões do Tempo','Cavaleiro das Batalhas Práticas',
+      'Arquimago das Funções Periódicas','Grão-Arquimago do Compasso','Lenda do Trigomante'
+    ],
+    completionistName: 'Arquimago das Funções Periódicas',
+    mascotTips: [
+      'Cada tarefa marcada rende +10 XP de mana estrutural. Sem pressa. <img class="om om-sm" src="../assets/icons/content/seedling.svg" alt="">',
+      'π radianos = 180°. Grave isso e metade da magia já é sua.',
+      'No 3º quadrante, seno e cosseno são ambos negativos: só a tangente sobra positiva.',
+      'φ ≈ 1,618. A proporção que a natureza desenha sozinha, do girassol ao Nautilus.',
+      'sen²α + cos²α = 1: essa relação sustenta o círculo inteiro.',
+      'Uma sessão de foco de 25min rende XP bônus: e ainda afasta o Titã da Lógica por um tempo.',
+      'Apareça em dias seguidos e desbloqueie os Selos do Compasso: 1, 2, 3, 5, 8 e 13 dias.',
+      'Errou um feitiço de cálculo? Perde 1 vida, não a batalha inteira. Revise e tenta de novo.',
+      'Dá uma olhada nas suas conquistas lá no Salão do Arquimago.',
+      'Uruk não é seu inimigo: ele só existe pra testar se sua lógica é sólida.',
+      'Progresso pequeno todo dia ainda é progresso. <img class="om om-sm" src="../assets/icons/content/moon.svg" alt="">',
+      'Uma função só é função se cada entrada tiver uma única saída: nem duas, nem nenhuma.',
+      'Somar uma constante move a curva pra cima ou pra baixo, mas nunca muda o período.'
+    ],
+    achModules: [
+      {mod:1, id:'module1_master', name:'Guardião dos Ângulos', icon:'<img class="om om-sm" src="../assets/icons/content/triangle-ruler.svg" alt="">'},
+      {mod:2, id:'module2_master', name:'Mestre do Círculo', icon:'<img class="om om-sm" src="../assets/icons/content/circle-o.svg" alt="">'},
+      {mod:3, id:'module3_master', name:'Arquiteto Áureo', icon:'<img class="om om-sm" src="../assets/icons/content/classical-building.svg" alt="">'},
+      {mod:4, id:'module4_master', name:'Vigia do Tempo', icon:'<img class="om om-sm" src="../assets/icons/content/hourglass.svg" alt="">'},
+      {mod:5, id:'module5_master', name:'Vencedor da Batalha', icon:'<img class="om om-sm" src="../assets/icons/content/crossed-swords.svg" alt="">'},
+      {mod:6, id:'module6_master', name:'Guardião das Funções', icon:'<img class="om om-sm" src="../assets/icons/content/wave.svg" alt="">'},
+      {mod:7, id:'module7_master', name:'Revisão Completa', icon:'<img class="om om-sm" src="../assets/icons/content/castle.svg" alt="">'}
+    ],
+    fibStreak: [
+      {days:1, id:'fib_1', name:'Primeira Voz do Grimório', icon:'<svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor"><path d="M3 5.6c2.4-1 5.3-1 8 .5v13.3c-2.7-1.5-5.6-1.5-8-.5V5.6Z" opacity=".55"/><path d="M21 5.6c-2.4-1-5.3-1-8 .5v13.3c2.7-1.5 5.6-1.5 8-.5V5.6Z"/><rect x="4.6" y="8" width="4.8" height="1.1" rx=".55" opacity=".8"/><rect x="4.6" y="10.6" width="4.8" height="1.1" rx=".55" opacity=".8"/></svg>'},
+      {days:2, id:'fib_2', name:'Broto da Espiral', icon:'<img class="om om-sm" src="../assets/icons/content/cyclone.svg" alt="">'},
+      {days:3, id:'fib_3', name:'Aprendiz do Compasso', icon:'<img class="om om-sm" src="../assets/icons/content/compass.svg" alt="">'},
+      {days:5, id:'fib_5', name:'Guardião da Proporção', icon:'<img class="om om-sm" src="../assets/icons/content/sparkles.svg" alt="">'},
+      {days:8, id:'fib_8', name:'Arquimago da Sequência', icon:'<img class="om om-sm" src="../assets/icons/content/shell.svg" alt="">'},
+      {days:13, id:'fib_13', name:'Lenda de Fibonacci', icon:'<img class="om om-sm" src="../assets/icons/content/crown.svg" alt="">'}
+    ],
+    lightningChallenges: [
+      {id:'lc1', q:'π radianos equivalem a quantos graus?', options:['90°','180°','360°'], correct:1, explain:'π rad = 180°: é a chave de toda conversão entre graus e radianos.'},
+      {id:'lc2', q:'Num triângulo retângulo, o que é o seno de um ângulo?', options:['Cateto adjacente ÷ hipotenusa','Cateto oposto ÷ hipotenusa','Cateto oposto ÷ cateto adjacente'], correct:1, explain:'Seno é sempre cateto oposto sobre hipotenusa.'},
+      {id:'lc3', q:'No 3º quadrante, quais são os sinais de seno e cosseno?', options:['Ambos positivos','Ambos negativos','Seno positivo, cosseno negativo'], correct:1, explain:'No 3º quadrante, só a tangente (razão de dois negativos) fica positiva.'},
+      {id:'lc4', q:'Qual é o valor aproximado de φ, a Razão Áurea?', options:['1,618','3,14','2,718'], correct:0, explain:'φ ≈ 1,618. π ≈ 3,14 e o número de Euler e ≈ 2,718: fáceis de confundir!'},
+      {id:'lc5', q:'A relação sen²α + cos²α = 1 vale para...', options:['Só ângulos de 45°','Só ângulos agudos','Qualquer ângulo'], correct:2, explain:'Ela vem do Teorema de Pitágoras aplicado dentro do círculo trigonométrico, e vale sempre.'},
+      {id:'lc6', q:'Quem formalizou a sequência de Fibonacci, em 1202?', options:['Euclides','Leonardo de Pisa','Pitágoras'], correct:1, explain:'Leonardo de Pisa, apelidado "Fibonacci", publicou a sequência no Liber Abaci.'},
+      {id:'lc7', q:'O ponteiro dos minutos de um relógio percorre quantos graus por minuto?', options:['3°','6°','12°'], correct:1, explain:'360° ÷ 60 minutos = 6° por minuto.'},
+      {id:'lc8', q:'A tangente de um ângulo é indefinida quando...', options:['O seno vale 0','O cosseno vale 0','A hipotenusa vale 1'], correct:1, explain:'tg α = sen α / cos α, e divisão por zero é indefinida.'},
+      {id:'lc9', q:'Dois arcos "côngruos" diferem entre si por...', options:['Um número inteiro de voltas completas','Sempre exatamente 90°','Sempre exatamente 180°'], correct:0, explain:'α + k·360° (ou α + 2kπ), com k inteiro: mesmo ponto do ciclo.'},
+      {id:'lc10', q:'A imagem da função f(x) = sen x é...', options:['Todos os reais','[-1, 1]','[0, 360]'], correct:1, explain:'O seno nunca passa de 1 nem fica abaixo de -1.'},
+      {id:'lc11', q:'Qual figura teve suas diagonais associadas à razão áurea pelos pitagóricos?', options:['Quadrado','Pentagrama','Hexágono'], correct:1, explain:'As diagonais do pentagrama se cruzam exatamente na proporção φ.'},
+      {id:'lc12', q:'Se cos α ≈ 0 e sen α ≈ 1, em qual ângulo notável você está?', options:['0°','90°','180°'], correct:1, explain:'Em 90°, o ponto do círculo trigonométrico está no topo: x=0 (cosseno), y=1 (seno).'}
+    ]
+  };
+</script>
+<script src="../assets/js/theme-fx.js"></script>
+<script src="../assets/js/engine.js"></script>
+<script src="../assets/js/games.js"></script>
+<script src="../assets/js/calculator.js"></script>
+<script src="../assets/js/chrome-widgets.js"></script>
+<script src="../assets/js/theme-picker.js"></script>
+<script src="../assets/js/accessibility.js"></script>
+
+<script>
+  // Close mobile sidebar when a module is clicked
+  document.querySelectorAll('.path-node').forEach(node => {
+    node.addEventListener('click', () => {
+      const aside = document.querySelector('aside');
+      if (aside && aside.classList.contains('open')) {
+        aside.classList.remove('open');
+      }
+    });
+  });
+</script>
+</body>
+</html>

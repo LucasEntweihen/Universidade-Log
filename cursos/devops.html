@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="../assets/icons/brand/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/brand/favicon-32.png" />
+<link rel="apple-touch-icon" href="../assets/icons/brand/apple-touch-icon.png" />
+<link rel="manifest" href="../manifest.json" />
+<meta name="theme-color" content="#9D25FF" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+  window.COURSE = {
+    totalModules: 11,
+    prefix: 'devops'
+  };
+</script>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://images.unsplash.com; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests" />
+<meta name="referrer" content="strict-origin-when-cross-origin" />
+<title>navio.log: Curso de DevOps (Docker, Kubernetes &amp; AWS)</title>
+<meta name="description" content="Guia de estudos completo do curso de DevOps (Docker &amp; Kubernetes) da Universidade Log: trilha gamificada com XP, conquistas e mascotes. Grátis, sem conta." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://universidadelog.com.br/cursos/devops.html" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:url" content="https://universidadelog.com.br/cursos/devops.html" />
+<meta property="og:site_name" content="Universidade Log" />
+<meta property="og:title" content="navio.log: Guia de Estudos DevOps" />
+<meta property="og:description" content="Guia de estudos completo do curso de DevOps (Docker &amp; Kubernetes) da Universidade Log: trilha gamificada com XP, conquistas e mascotes. Grátis, sem conta." />
+<meta property="og:image" content="https://universidadelog.com.br/assets/characters/baba-grogue.png" />
+<meta property="og:image:alt" content="Capitão Baba Grogue, mascote do curso de DevOps" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="navio.log: Guia de Estudos DevOps" />
+<meta name="twitter:description" content="Guia de estudos completo do curso de DevOps (Docker &amp; Kubernetes) da Universidade Log: trilha gamificada com XP, conquistas e mascotes. Grátis, sem conta." />
+<meta name="twitter:image" content="https://universidadelog.com.br/assets/characters/baba-grogue.png" />
+<script>(function(){try{var t=localStorage.getItem('studyhub_theme_v1');if(t && t!=='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&family=Playwrite+US+Modern:wght@100..400&family=Lilex:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/theme.css">
+<link rel="stylesheet" href="../assets/css/space-theme.css">
+<link rel="stylesheet" href="../assets/css/icons.css" />
+<link rel="stylesheet" href="../assets/css/theme-fx.css" />
+<link rel="stylesheet" href="../assets/css/site.css">
+<link rel="stylesheet" href="../assets/css/games.css">
+<link rel="stylesheet" href="../assets/css/course-themes.css">
+</head>
+<body class="course-devops"><a href="#main-content" class="skip-link">Pular para o conteúdo</a><div class="space-planet-photo" aria-hidden="true"></div>
+
+<div class="mobile-course-topbar" aria-hidden="true">
+  <div class="mct-brand"><img src="../assets/icons/content/whale.svg" class="om om-sm"> <span>navio.log</span></div>
+  <button class="mobile-menu-btn" aria-label="Abrir menu" aria-expanded="false" onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true'); document.querySelector('aside').classList.toggle('open');">
+    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+      <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/>
+    </svg>
+  </button>
+</div>
+
+
+<aside>
+  <div class="sidebar-hero"><img class="char-cameo" src="../assets/characters/baba-grogue.png" alt="Capitão Baba Grogue acenando" style="width:112px;bottom:-6px;"></div>
+  <div class="brand">
+    <span class="tag"><img class="om om-sm" src="../assets/icons/content/whale.svg" alt=""> seu ritmo, sua tripulação</span>
+    <h1>navio.log</h1>
+    <p>Git, GitHub, Docker, Kubernetes e AWS: a rota completa de DevOps, do primeiro commit ao deploy em produção</p>
+  </div>
+  <div class="theme-toggle">
+    <div data-chrome-widget="theme"></div><div data-chrome-widget="a11y"></div>
+  </div>
+  <nav id="navList" class="path-nav">
+    <div class="path-line"></div>
+    <button class="path-node pos-l" onclick="switchTab(0)" data-idx="0" title="Cultura DevOps & CAMS">
+      <span class="node-circle" id="node-1"><span class="node-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg></span><span class="node-lock"><svg class="ic-mono sm" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a4.5 4.5 0 0 0-4.5 4.5V8H6.75A1.75 1.75 0 0 0 5 9.75v9.5C5 20.216 5.784 21 6.75 21h10.5c.966 0 1.75-.784 1.75-1.75v-9.5A1.75 1.75 0 0 0 17.25 8H16.5V6.5A4.5 4.5 0 0 0 12 2Zm0 2c1.38 0 2.5 1.12 2.5 2.5V8h-5V6.5C9.5 5.12 10.62 4 12 4Zm0 9.25a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5Z"/></svg></span><span class="node-check">✓</span></span>
+      <span class="node-label">01 · Cultura & CAMS</span>
+    </button>
+    <button class="path-node pos-r" onclick="switchTab(1)" data-idx="1" title="Git: Controle de Versão">
+      <span class="node-circle" id="node-2"><span class="node-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.3638 15.5355L16.9496 14.1213L18.3638 12.7071C20.3164 10.7545 20.3164 7.58866 18.3638 5.63604C16.4112 3.68341 13.2453 3.68341 11.2927 5.63604L9.87849 7.05025L8.46428 5.63604L9.87849 4.22182C12.6122 1.48815 17.0443 1.48815 19.778 4.22182C22.5117 6.95549 22.5117 11.3876 19.778 14.1213L18.3638 15.5355ZM15.5353 18.364L14.1211 19.7782C11.3875 22.5118 6.95531 22.5118 4.22164 19.7782C1.48797 17.0445 1.48797 12.6123 4.22164 9.87868L5.63585 8.46446L7.05007 9.87868L5.63585 11.2929C3.68323 13.2455 3.68323 16.4113 5.63585 18.364C7.58847 20.3166 10.7543 20.3166 12.7069 18.364L14.1211 16.9497L15.5353 18.364ZM14.8282 7.75736L16.2425 9.17157L9.17139 16.2426L7.75718 14.8284L14.8282 7.75736Z"/></svg></span><span class="node-lock"><svg class="ic-mono sm" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a4.5 4.5 0 0 0-4.5 4.5V8H6.75A1.75 1.75 0 0 0 5 9.75v9.5C5 20.216 5.784 21 6.75 21h10.5c.966 0 1.75-.784 1.75-1.75v-9.5A1.75 1.75 0 0 0 17.25 8H16.5V6.5A4.5 4.5 0 0 0 12 2Zm0 2c1.38 0 2.5 1.12 2.5 2.5V8h-5V6.5C9.5 5.12 10.62 4 12 4Zm0 9.25a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5Z"/></svg></span><span class="node-check">✓</span></span>
+      <span class="node-label">02 · Git</span>
+    </button>
+    <button class="path-node pos-l" onclick="switchTab(2)" data-idx="2" title="GitHub: Colaboração & PR">
+      <span class="node-circle" id="node-3"><span class="node-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg></span><span class="node-lock"><svg class="ic-mono sm" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a4.5 4.5 0 0 0-4.5 4.5V8H6.75A1.75 1.75 0 0 0 5 9.75v9.5C5 20.216 5.784 21 6.75 21h10.5c.966 0 1.75-.784 1.75-1.75v-9.5A1.75 1.75 0 0 0 17.25 8H16.5V6.5A4.5 4.5 0 0 0 12 2Zm0 2c1.38 0 2.5 1.12 2.5 2.5V8h-5V6.5C9.5 5.12 10.62 4 12 4Zm0 9.25a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5Z"/></svg></span><span class="node-check">✓</span></span>
+      <span class="node-label">03 · GitHub & PR</span>
+    </button>
+    <button class="path-node pos-r" onclick="switchTab(3)" data-idx="3" title="IaC: Infraestrutura como Código">
+      <span class="node-circle" id="node-4"><span class="node-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.2459 14H8.75407L7.15407 18H5L11 3H13L19 18H16.8459L15.2459 14ZM14.4459 12L12 5.88516L9.55407 12H14.4459ZM3 20H21V22H3V20Z"></path></svg></span><span class="node-lock"><svg class="ic-mono sm" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a4.5 4.5 0 0 0-4.5 4.5V8H6.75A1.75 1.75 0 0 0 5 9.75v9.5C5 20.216 5.784 21 6.75 21h10.5c.966 0 1.75-.784 1.75-1.75v-9.5A1.75 1.75 0 0 0 17.25 8H16.5V6.5A4.5 4.5 0 0 0 12 2Zm0 2c1.38 0 2.5 1.12 2.5 2.5V8h-5V6.5C9.5 5.12 10.62 4 12 4Zm0 9.25a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5Z"/></svg></span><span class="node-check">✓</span></span>
+      <span class="node-label">04 · IaC</span>
+    </button>
+    <button class="path-node pos-l" onclick="switchTab(4)" data-idx="4" title="Docker: Imagens & Containers">
+      <span class="node-circle" id="node-5"><span class="node-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.8589 2H11.1411C9.12721 2 8.04724 2.27848 7.06946 2.8014C6.09169 3.32432 5.32432 4.09169 4.8014 5.06946C4.27848 6.04724 4 7.12721 4 9.14111V14.8589C4 16.8728 4.27848 17.9528 4.8014 18.9305C5.32432 19.9083 6.09169 20.6757 7.06946 21.1986C8.04724 21.7215 9.12721 22 11.1411 22H12.8589C14.8728 22 15.9528 21.7215 16.9305 21.1986C17.9083 20.6757 18.6757 19.9083 19.1986 18.9305C19.7215 17.9528 20 16.8728 20 14.8589V9.14111C20 7.12721 19.7215 6.04724 19.1986 5.06946C18.6757 4.09169 17.9083 3.32432 16.9305 2.8014C15.9528 2.27848 14.8728 2 12.8589 2ZM11 11V6H13V11H11ZM7.75781 13.758L9.17203 12.3438L12.0005 15.1722L14.8289 12.3438L16.2431 13.758L14.8289 15.1722L16.2431 16.5864L14.8289 18.0006L12.0005 15.1722L9.17203 18.0006L7.75781 16.5864L9.17203 15.1722L7.75781 13.758Z"/></svg></span><span class="node-lock"><svg class="ic-mono sm" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a4.5 4.5 0 0 0-4.5 4.5V8H6.75A1.75 1.75 0 0 0 5 9.75v9.5C5 20.216 5.784 21 6.75 21h10.5c.966 0 1.75-.784 1.75-1.75v-9.5A1.75 1.75 0 0 0 17.25 8H16.5V6.5A4.5 4.5 0 0 0 12 2Zm0 2c1.38 0 2.5 1.12 2.5 2.5V8h-5V6.5C9.5 5.12 10.62 4 12 4Zm0 9.25a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5Z"/></svg></span><span class="node-check">✓</span></span>
+      <span class="node-label">05 · Docker</span>
+    </button>
+    <button class="path-node pos-r" onclick="switchTab(5)" data-idx="5" title="Dockerfile & Docker Compose">
+      <span class="node-circle" id="node-6"><span class="node-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 17C21 19.2091 19.2091 21 17 21C14.7909 21 13 19.2091 13 17C13 14.7909 14.7909 13 17 13C19.2091 13 21 14.7909 21 17ZM11 7C11 9.20914 9.20914 11 7 11C4.79086 11 3 9.20914 3 7C3 4.79086 4.79086 3 7 3C9.20914 3 11 4.79086 11 7ZM21 7C21 9.20914 19.2091 11 17 11C16.2584 11 15.5634 10.7972 14.9678 10.4453L10.4453 14.9678C10.7972 15.5634 11 16.2584 11 17C11 19.2091 9.20914 21 7 21C4.79086 21 3 19.2091 3 17C3 14.7909 4.79086 13 7 13C7.74116 13 8.43593 13.2022 9.03125 13.5537L13.5537 9.03125C13.2022 8.43593 13 7.74116 13 7C13 4.79086 14.7909 3 17 3C19.2091 3 21 4.79086 21 7Z"></path></svg></span><span class="node-lock"><svg class="ic-mono sm" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a4.5 4.5 0 0 0-4.5 4.5V8H6.75A1.75 1.75 0 0 0 5 9.75v9.5C5 20.216 5.784 21 6.75 21h10.5c.966 0 1.75-.784 1.75-1.75v-9.5A1.75 1.75 0 0 0 17.25 8H16.5V6.5A4.5 4.5 0 0 0 12 2Zm0 2c1.38 0 2.5 1.12 2.5 2.5V8h-5V6.5C9.5 5.12 10.62 4 12 4Zm0 9.25a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5Z"/></svg></span><span class="node-check">✓</span></span>
+      <span class="node-label">06 · Compose</span>
+    </button>
+    <button class="path-node pos-l" onclick="switchTab(6)" data-idx="6" title="Kubernetes: Conceitos">
+      <span class="node-circle" id="node-7"><span class="node-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 4C8 2.34315 9.34315 1 11 1C12.6569 1 14 2.34315 14 4C14 4.35064 13.9398 4.68722 13.8293 5H20C20.5523 5 21 5.44772 21 6V9.12602C21 9.43517 20.857 9.72694 20.6127 9.91635C20.3683 10.1058 20.0501 10.1715 19.7507 10.0945C19.5119 10.033 19.2605 10 19 10C17.3431 10 16 11.3431 16 13C16 14.6569 17.3431 16 19 16C19.2605 16 19.5119 15.967 19.7507 15.9055C20.0501 15.8285 20.3683 15.8942 20.6127 16.0836C20.857 16.2731 21 16.5648 21 16.874V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V6C3 5.44772 3.44772 5 4 5H8.17071C8.06015 4.68722 8 4.35064 8 4Z"></path></svg></span><span class="node-lock"><svg class="ic-mono sm" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a4.5 4.5 0 0 0-4.5 4.5V8H6.75A1.75 1.75 0 0 0 5 9.75v9.5C5 20.216 5.784 21 6.75 21h10.5c.966 0 1.75-.784 1.75-1.75v-9.5A1.75 1.75 0 0 0 17.25 8H16.5V6.5A4.5 4.5 0 0 0 12 2Zm0 2c1.38 0 2.5 1.12 2.5 2.5V8h-5V6.5C9.5 5.12 10.62 4 12 4Zm0 9.25a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5Z"/></svg></span><span class="node-check">✓</span></span>
+      <span class="node-label">07 · K8s: Conceitos</span>
+    </button>
+    <button class="path-node pos-r" onclick="switchTab(7)" data-idx="7" title="Kubernetes na Prática (kubectl)">
+      <span class="node-circle" id="node-8"><span class="node-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 2L21 7V21.0082C21 21.556 20.5551 22 20.0066 22H3.9934C3.44476 22 3 21.5447 3 21.0082V2.9918C3 2.44405 3.44495 2 3.9934 2H16ZM15 11V10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10V11H8V16H16V11H15ZM13 11H11V10C11 9.44772 11.4477 9 12 9C12.5523 9 13 9.44772 13 10V11Z"></path></svg></span><span class="node-lock"><svg class="ic-mono sm" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a4.5 4.5 0 0 0-4.5 4.5V8H6.75A1.75 1.75 0 0 0 5 9.75v9.5C5 20.216 5.784 21 6.75 21h10.5c.966 0 1.75-.784 1.75-1.75v-9.5A1.75 1.75 0 0 0 17.25 8H16.5V6.5A4.5 4.5 0 0 0 12 2Zm0 2c1.38 0 2.5 1.12 2.5 2.5V8h-5V6.5C9.5 5.12 10.62 4 12 4Zm0 9.25a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5Z"/></svg></span><span class="node-check">✓</span></span>
+      <span class="node-label">08 · kubectl</span>
+    </button>
+    <button class="path-node pos-l" onclick="switchTab(8)" data-idx="8" title="AWS: Fundamentos de Cloud">
+      <span class="node-circle" id="node-9"><span class="node-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM19 18H6c-2.21 0-4-1.79-4-4 0-2.05 1.53-3.76 3.56-3.97l1.07-.11.5-.95C8.08 7.14 9.94 6 12 6c2.62 0 4.88 1.86 5.39 4.43l.3 1.5 1.53.11c1.56.1 2.78 1.41 2.78 2.96 0 1.65-1.35 3-3 3z"/></svg></span><span class="node-lock"><svg class="ic-mono sm" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a4.5 4.5 0 0 0-4.5 4.5V8H6.75A1.75 1.75 0 0 0 5 9.75v9.5C5 20.216 5.784 21 6.75 21h10.5c.966 0 1.75-.784 1.75-1.75v-9.5A1.75 1.75 0 0 0 17.25 8H16.5V6.5A4.5 4.5 0 0 0 12 2Zm0 2c1.38 0 2.5 1.12 2.5 2.5V8h-5V6.5C9.5 5.12 10.62 4 12 4Zm0 9.25a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5Z"/></svg></span><span class="node-check">✓</span></span>
+      <span class="node-label">09 · AWS</span>
+    </button>
+    <button class="path-node pos-r" onclick="switchTab(9)" data-idx="9" title="CI/CD & Projeto Prático">
+      <span class="node-circle" id="node-10"><span class="node-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/></svg></span><span class="node-lock"><svg class="ic-mono sm" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a4.5 4.5 0 0 0-4.5 4.5V8H6.75A1.75 1.75 0 0 0 5 9.75v9.5C5 20.216 5.784 21 6.75 21h10.5c.966 0 1.75-.784 1.75-1.75v-9.5A1.75 1.75 0 0 0 17.25 8H16.5V6.5A4.5 4.5 0 0 0 12 2Zm0 2c1.38 0 2.5 1.12 2.5 2.5V8h-5V6.5C9.5 5.12 10.62 4 12 4Zm0 9.25a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5Z"/></svg></span><span class="node-check">✓</span></span>
+      <span class="node-label">10 · CI/CD</span>
+    </button>
+    <button class="path-node pos-l" onclick="switchTab(10)" data-idx="10" title="Revisão Geral">
+      <span class="node-circle" id="node-11"><span class="node-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg></span><span class="node-lock"><svg class="ic-mono sm" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a4.5 4.5 0 0 0-4.5 4.5V8H6.75A1.75 1.75 0 0 0 5 9.75v9.5C5 20.216 5.784 21 6.75 21h10.5c.966 0 1.75-.784 1.75-1.75v-9.5A1.75 1.75 0 0 0 17.25 8H16.5V6.5A4.5 4.5 0 0 0 12 2Zm0 2c1.38 0 2.5 1.12 2.5 2.5V8h-5V6.5C9.5 5.12 10.62 4 12 4Zm0 9.25a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5Z"/></svg></span><span class="node-check">✓</span></span>
+      <span class="node-label">11 · Revisão</span>
+    </button>
+  </nav>
+  <div class="gamify-panel">
+    <div class="level-row">
+      <div class="level-badge" id="levelBadge">1</div>
+      <div class="level-info">
+        <div class="lv-title" id="levelTitle">Grumete de Convés</div>
+        <div class="lv-xp" id="levelXp">0 / 90 XP</div>
+      </div>
+    </div>
+    <div class="xp-bar"><div class="xp-fill" id="xpFill"></div></div>
+    <div class="hearts-row" id="heartsRow"></div>
+    <div class="streak-row"><span class="streak-flame"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor"><path d="M12.75 2.25c.2 2.9-.62 5-2.3 6.86-.55.6-1.15 1.14-1.72 1.75-1.9 2-2.98 4.36-2.23 7.2A7.5 7.5 0 0 0 19.5 15c0-3.86-2.55-6.1-4.53-8.35-1-1.13-1.9-2.5-2.22-4.4Zm.4 14.9a2.65 2.65 0 0 1-3.53-.4c-.8-.98-.68-2.16-.02-3.07.28.55.68 1 1.2 1.3.02-1.1.42-1.98 1.15-2.75.28 1.5 1.05 2.4 2.02 3.28.6.55.9 1.3.7 2.05a2.2 2.2 0 0 1-1.52 1.6Z"/></svg></span> <span id="streakText">0 dia de estudo seguido</span></div>
+    <button class="badge-link" onclick="switchTab(10)"><img class="om om-sm" src="../assets/icons/content/medal.svg" alt=""> <span id="badgeCount">0/16</span> conquistas desbloqueadas</button>
+
+    <div class="focus-widget">
+      <div class="focus-label"><img class="focus-byte" src="../assets/characters/baba-grogue.png" alt="">Sessão de foco</div>
+      <div class="focus-display" id="focusDisplay">25:00</div>
+      <div class="focus-controls">
+        <button class="focus-btn primary" id="focusStartBtn" onclick="toggleFocus()">Iniciar</button>
+        <button class="focus-btn" onclick="resetFocus()">Zerar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="tracker">
+    <div class="tracker-row"><span>tarefas concluídas</span><span id="pct">0%</span></div>
+    <div class="track-bar"><div class="track-fill" id="fill"></div></div>
+    <button class="reset-btn" onclick="resetProgress()"><img class="om om-sm" src="../assets/icons/washer.svg" alt=""> começar do zero</button>
+  </div>
+
+  <div class="more-pages">
+    <a href="devops-diario.html" class="more-link" style="background:linear-gradient(90deg,rgba(46,134,193,.16),transparent);"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h16v13l-8 4-8-4V4Z"/></svg> Diário de Bordo</a>
+    <a href="../index.html" class="more-link"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3 3 10.5V21h5.5v-6h7v6H21V10.5L12 3Z"/></svg> Voltar pra Universidade Log</a>
+    <a href="trigomante.html" class="more-link"><img class="om om-sm" src="../assets/icons/content/triangle-ruler.svg" alt=""> Trocar pro curso de Trigomante</a>
+    <a href="android.html" class="more-link"><img class="om om-sm" src="../assets/icons/content/robot.svg" alt=""> Trocar pro curso de Android</a>
+    <a href="ia.html" class="more-link"><img class="om om-sm" src="../assets/icons/content/brain.svg" alt=""> Trocar pro curso de IA</a>
+    <a href="../glossario/devops.html" class="more-link"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor"><path d="M5.5 3h11A1.5 1.5 0 0 1 18 4.5v16.2a.5.5 0 0 1-.74.44L12 18.5l-5.26 2.64a.5.5 0 0 1-.74-.44V4.5A1.5 1.5 0 0 1 5.5 3Z"/><rect x="8" y="7" width="6.5" height="1.3" rx=".65" fill="#fff" opacity=".7"/><rect x="8" y="10" width="6.5" height="1.3" rx=".65" fill="#fff" opacity=".7"/></svg> Glossário do curso</a>
+    <a href="devops-projeto.html" class="more-link"><img class="om om-sm" src="../assets/icons/content/whale.svg" alt=""> Projeto Prático completo</a>
+    <a href="devops-material.html" class="more-link"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor"><path d="M20 22H4C3.44772 22 3 21.5523 3 21V8H21V21C21 21.5523 20.5523 22 20 22ZM21 6H3V3C3 2.44772 3.44772 2 4 2H20C20.5523 2 21 2.44772 21 3V6ZM7 11V15H11V11H7ZM7 17V19H17V17H7ZM13 12V14H17V12H13Z"/></svg> Aprofundamento por módulo</a>
+    <a href="devops-referencias.html" class="more-link"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor"><path d="M9.17 14.83a1 1 0 0 1 0-1.41l4.24-4.25a1 1 0 1 1 1.41 1.42l-4.24 4.24a1 1 0 0 1-1.41 0Z"/><path d="M11 6.4l1.6-1.6a4.5 4.5 0 1 1 6.37 6.36l-2.1 2.1a1 1 0 0 1-1.42-1.41l2.1-2.1a2.5 2.5 0 1 0-3.54-3.54L12.4 7.8A1 1 0 1 1 11 6.4Z"/><path d="M13 17.6l-1.6 1.6a4.5 4.5 0 1 1-6.37-6.36l2.1-2.1a1 1 0 0 1 1.42 1.41l-2.1 2.1a2.5 2.5 0 1 0 3.54 3.54l1.6-1.6a1 1 0 1 1 1.4 1.41Z"/></svg> Biblioteca de Referências</a>
+  </div>
+</aside>
+
+<main id="main-content">
+
+  <!-- ================= MODULE 01 ================= -->
+  <section class="content-section active" id="sec-0" data-mod="1">
+    <div class="eyebrow">Módulo 01 / 11</div>
+    <h2>Cultura DevOps &amp; o Framework CAMS</h2>
+    <p class="subtitle">Antes do primeiro comando, o mais importante: DevOps não é uma ferramenta que você instala: é uma cultura que você pratica. Aqui começa a viagem, Grumete.</p>
+    <div class="hero-photo-wrap"><img class="hero-photo" src="https://images.unsplash.com/photo-1716847214624-1e8787d98b6c?auto=format&fit=crop&w=1600&q=70" alt="Foto de ambientação"></div>
+    <p class="hero-credit">Foto: <a href="https://unsplash.com/@visualsbying" target="_blank" rel="noopener">Peter Thomas</a> em Unsplash</p>
+
+    <div class="char-wrap">
+      <img class="char-cameo" src="../assets/characters/baba-grogue.png" alt="Capitão Baba Grogue" style="width:170px;flex-shrink:0;">
+      <div class="char-bubble">
+        <div class="char-name">Capitão Baba Grogue</div>
+        <p>Bem-vindo a bordo! Antes de tocar em qualquer terminal, você precisa entender uma coisa: eu não sou capitão de um navio de código. Sou capitão de uma <strong>tripulação</strong>. E tripulação boa não tem "time de Dev" brigando com "time de Ops": todo mundo rema pro mesmo lado.</p>
+      </div>
+    </div>
+
+    <div class="wire"></div>
+
+
+    <div class="card">
+      <h3><span class="ic"><img class="om om-sm" src="../assets/icons/content/anchor.svg" alt=""></span> O que DevOps NÃO é</h3>
+      <p>É tentador pensar em DevOps como "aquele conjunto de ferramentas": Docker, Kubernetes, Jenkins, AWS. Mas o material oficial é categórico: <strong>DevOps não é um framework, uma ferramenta específica, um produto único ou uma tecnologia isolada</strong>. É, fundamentalmente, uma <strong>cultura</strong>: uma combinação de filosofias, práticas e ferramentas que aumenta a capacidade de uma organização de entregar aplicações com velocidade e qualidade, encurtando o ciclo de vida do desenvolvimento de software.</p>
+    </div>
+
+    <div class="card">
+      <h3><span class="ic"><img class="om om-sm" src="../assets/icons/content/bricks.svg" alt=""></span> Os pilares obrigatórios</h3>
+      <p>Não existe DevOps de verdade sem esses seis pilares funcionando juntos:</p>
+      <ul>
+        <li><strong>Colaboração real</strong> entre times de Dev e Ops: nada de "joga por cima do muro".</li>
+        <li><strong>CI/CD</strong>: Integração Contínua e Entrega Contínua.</li>
+        <li><strong>Desenvolvimento ágil</strong> e ciclos de entrega rápidos.</li>
+        <li><strong>SCM</strong>: Gerenciamento de Configuração de Software (versionamento).</li>
+        <li><strong>Infraestrutura escalável e automatizada</strong>.</li>
+        <li><strong>Centralização de logs</strong> e monitoramento contínuo de dados e métricas.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3><span class="ic"><img class="om om-sm" src="../assets/icons/content/compass.svg" alt=""></span> CAMS: as 4 letras que sustentam o navio</h3>
+      <p>Criado por Damon Edwards e John Willis, o framework <strong>CAMS</strong> resume a cultura de empatia que o DevOps exige. É o mapa que todo capitão deveria pendurar na cabine:</p>
+      <table class="tbl">
+        <tr><th>Pilar</th><th>Objetivo</th></tr>
+        <tr><td><strong>Culture</strong> (Cultura)</td><td>Destruir silos; times se envolvem cedo e com frequência; interação é prioridade.</td></tr>
+        <tr><td><strong>Automation</strong> (Automação)</td><td>Automatizar o máximo possível, da concepção à remoção de gargalos.</td></tr>
+        <tr><td><strong>Measurement</strong> (Medição)</td><td>Coletar dados e métricas pra criar loops de feedback em todas as fases.</td></tr>
+        <tr><td><strong>Sharing</strong> (Compartilhamento)</td><td>Pessoas cooperam e colaboram por um objetivo comum, sem esconder conhecimento.</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3><span class="ic"><img class="om om-sm" src="../assets/icons/content/dynamite.svg" alt=""></span> Silos: o inimigo número 1</h3>
+      <p><strong>Silos</strong> são times ou departamentos isolados: o time de Dev que só entrega código "pronto" e o time de Ops que descobre problemas de infraestrutura só em produção, cada um numa ilha própria. O DevOps existe justamente pra <strong>destruir</strong> essa separação. Quando os silos caem, ninguém mais consegue dizer "não é meu problema": o navio inteiro afunda ou flutua junto.</p>
+    </div>
+
+    <div class="card">
+      <h3><span class="ic"><img class="om om-sm" src="../assets/icons/content/pirate-flag.svg" alt=""></span> Valores de bordo (Cultura Germinare)</h3>
+      <p>Além do CAMS, toda tripulação séria segue valores de comportamento. Os sete valores centrais que orientam como a equipe trabalha em conjunto:</p>
+      <div class="pill-row">
+        <span class="pill">Atitude de Dono</span>
+        <span class="pill">Determinação</span>
+        <span class="pill">Disciplina</span>
+        <span class="pill">Disponibilidade</span>
+        <span class="pill">Simplicidade</span>
+        <span class="pill">Franqueza</span>
+        <span class="pill">Humildade</span>
+      </div>
+      <p style="margin-top:12px;">E os comportamentos de risco: aqueles que nenhuma tripulação tolera: copiar atividades de outra pessoa, colar (plágio) em avaliações, e não participar de atividades em grupo. Isso vale tanto numa sala de aula quanto num time de produção.</p>
+    </div>
+    <div class="quiz">
+      <div class="quiz-q"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm.9 14.9h-1.8v-1.8h1.8v1.8Zm1.86-6.9c-.4.5-.7.9-.9 1.4-.16.36-.24.7-.26 1.2h-1.7c.02-.7.16-1.24.44-1.76.28-.5.66-.96 1.14-1.42.34-.32.58-.6.74-.86.16-.28.24-.56.24-.9 0-.44-.14-.78-.42-1.04-.28-.26-.68-.4-1.18-.4-.5 0-.92.16-1.24.46-.32.3-.5.72-.54 1.24H7.4c.06-1.14.46-2.02 1.2-2.66.76-.64 1.72-.96 2.9-.96 1.24 0 2.22.32 2.94.96.72.62 1.08 1.44 1.08 2.44 0 .6-.14 1.1-.42 1.5-.24.36-.5.66-.84 1.02Z"/></svg> Quiz rápido: Segundo o material, DevOps é fundamentalmente...</div>
+      <label class="quiz-opt"><input type="radio" name="q_dv1" value="a"> uma ferramenta específica de automação</label>
+      <label class="quiz-opt"><input type="radio" name="q_dv1" value="b"> uma cultura, apoiada por práticas e ferramentas</label>
+      <label class="quiz-opt"><input type="radio" name="q_dv1" value="c"> um produto único que substitui o Ops</label>
+      <button class="quiz-btn" onclick="checkQuiz('q_dv1','b','fb-q-1')">Verificar</button>
+      <div class="quiz-fb" id="fb-q-1"></div>
+    </div>
+
+    <div class="checklist">
+      <div class="checklist-title"><img class="om" src="../assets/icons/code-editor.svg" alt="">Mão na massa</div>
+      <div class="c-item"><input type="checkbox" id="chk-1" data-mod="1" onchange="onCheck(this)"><label for="chk-1">Sei explicar por que DevOps não é só um conjunto de ferramentas.</label></div>
+      <div class="c-item"><input type="checkbox" id="chk-2" data-mod="1" onchange="onCheck(this)"><label for="chk-2">Consigo listar as 4 letras do CAMS e o que cada uma significa.</label></div>
+      <div class="c-item"><input type="checkbox" id="chk-3" data-mod="1" onchange="onCheck(this)"><label for="chk-3">Entendo o que são silos e por que o DevOps busca destruí-los.</label></div>
+    </div>
+
+    <div class="game-card scramble-game" id="scrGameDevops" data-words='[
+      {"word":"CULTURA","hint":"Pilar do CAMS: destruir silos e fazer times interagirem cedo e com frequência"},
+      {"word":"AUTOMACAO","hint":"Pilar do CAMS: automatizar o máximo possível, da concepção à remoção de gargalos"},
+      {"word":"SILOS","hint":"Times ou departamentos isolados que o DevOps busca destruir"},
+      {"word":"COLABORACAO","hint":"Um dos seis pilares obrigatórios: trabalho real entre Dev e Ops"}
+    ]'>
+      <div class="game-head">
+        <div class="game-title"><img class="om om-sm" src="../assets/icons/content/anchor.svg" alt=""> Termos de Bordo Embaralhados</div>
+        <div class="game-stats scr-status">Palavra 1/4</div>
+      </div>
+      <p style="font-size:.82rem;color:var(--text-dim);margin-bottom:6px;"><img class="om om-sm" src="../assets/icons/tap.svg" alt=""> Toque nas letras na ordem certa pra reconstruir o termo.</p>
+      <p class="scr-hint"></p>
+      <div class="scr-target"></div>
+      <div class="scr-pool"></div>
+      <div class="game-win-msg"><img class="om om-sm" src="../assets/icons/content/confetti.svg" alt=""> Todos os termos decifrados!</div>
+      <button class="game-reset-btn" onclick="initScrambleGame('scrGameDevops')">Embaralhar de novo</button>
+    </div>
+
+  </section>
+
+  <!-- ================= MODULE 02 ================= -->
+  <section class="content-section" id="sec-1" data-mod="2">
+    <div class="eyebrow">Módulo 02 / 11</div>
+    <h2>Git: Controle de Versão Distribuído</h2>
+    <p class="subtitle">Todo commit é uma âncora lançada no fundo do mar: se algo der errado lá na frente, você sempre pode voltar pra ela.</p>
+    <div class="hero-photo-wrap"><img class="hero-photo" src="https://images.unsplash.com/photo-1746937807433-05748b80caf4?auto=format&fit=crop&w=1600&q=70" alt="Foto de ambientação"></div>
+    <p class="hero-credit">Foto: <a href="https://unsplash.com/@mineral_of_demon" target="_blank" rel="noopener">Nastia Petruk</a> em Unsplash</p>
+
+    <div class="char-wrap">
+      <img class="char-cameo" src="../assets/characters/octocat.png" alt="Octocat" style="width:150px;flex-shrink:0;">
+      <div class="char-bubble">
+        <div class="char-name">Octocat</div>
+        <p>Miau! Eu vivo dentro de repositórios. Cada vez que você digita <code>git add</code> e <code>git commit</code>, uma das minhas patinhas fica feliz. Bora aprender a versionar código igual gente grande?</p>
+      </div>
+    </div>
+
+    <div class="wire"></div>
+
+
+    <div class="card">
+      <h3><span class="ic"><img class="om om-sm" src="../assets/icons/content/herb.svg" alt=""></span> O que é o Git</h3>
+      <p>O <strong>Git</strong> é um sistema de controle de versão <strong>distribuído</strong> e de alta performance, usado pra registrar e gerenciar mudanças em projetos de software. Diferente de sistemas centralizados antigos, cada máquina com um clone do repositório tem o <strong>histórico completo</strong> do projeto: não existe um único ponto de falha.</p>
+    </div>
+
+    <div class="card">
+      <h3><span class="ic"><img class="om om-sm" src="../assets/icons/content/box.svg" alt=""></span> O Repositório e a Staging Area</h3>
+      <p>Um repositório é iniciado com <code>git init</code>, que cria uma pasta oculta <code>.git</code>: é ali que mora todo o histórico de versões do projeto. Entre "editei o arquivo" e "registrei essa mudança pra sempre" existe uma parada intermediária: a <strong>Staging Area</strong> (também chamada de <em>index</em>). É o convés onde a carga fica organizada antes de ser oficialmente despachada com um commit.</p>
+    </div>
+
+    <div class="card">
+      <h3><span class="ic"><img class="om om-sm" src="../assets/icons/content/anchor.svg" alt=""></span> Commits: as âncoras da sua história</h3>
+      <p>Um <strong>commit</strong> funciona como um checkpoint, um marco na história do projeto. Toda vez que você faz um commit, está dizendo: "esse é um estado que eu confio, posso voltar pra ele depois". Por isso commits devem ter mensagens curtas e explicativas: pense nelas como o diário de bordo do seu navio.</p>
+    </div>
+
+    <div class="card">
+      <h3><span class="ic"><img class="om om-sm" src="../assets/icons/content/scroll.svg" alt=""></span> Comandos essenciais</h3>
+      <table class="tbl">
+        <tr><th>Comando</th><th>Ação</th></tr>
+        <tr><td><code>git init</code></td><td>Inicializa um repositório Git local.</td></tr>
+        <tr><td><code>git add .</code></td><td>Adiciona todos os arquivos modificados à staging area.</td></tr>
+        <tr><td><code>git commit -m "msg"</code></td><td>Registra as mudanças no histórico do repositório.</td></tr>
+        <tr><td><code>git log</code></td><td>Mostra o histórico de commits, autores e datas.</td></tr>
+        <tr><td><code>git clone</code></td><td>Copia um repositório remoto pra um diretório local.</td></tr>
+        <tr><td><code>git push</code></td><td>Envia mudanças locais pro repositório remoto (GitHub).</td></tr>
+        <tr><td><code>git pull</code></td><td>Traz mudanças do repositório remoto pro seu local.</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3><span class="ic"><img class="om om-sm" src="../assets/icons/content/shuffle.svg" alt=""></span> Branches: navegando em paralelo</h3>
+      <p>Uma <strong>branch</strong> (ramificação) permite desenvolver uma funcionalidade isoladamente, sem bagunçar o código principal: como um bote separado explorando uma rota alternativa. Você cria uma com <code>git checkout -b nome-da-feature</code>. Quando a exploração dá certo, você faz o <strong>merge</strong>: integra as mudanças da branch de volta na branch principal (<code>main</code> ou <code>master</code>). Se duas branches mudaram a mesma linha do mesmo jeito diferente, o Git não adivinha sozinho: ele avisa um <strong>conflito</strong> e espera você decidir manualmente qual versão vale.</p>
+    </div>
+    <div class="quiz">
+      <div class="quiz-q"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm.9 14.9h-1.8v-1.8h1.8v1.8Zm1.86-6.9c-.4.5-.7.9-.9 1.4-.16.36-.24.7-.26 1.2h-1.7c.02-.7.16-1.24.44-1.76.28-.5.66-.96 1.14-1.42.34-.32.58-.6.74-.86.16-.28.24-.56.24-.9 0-.44-.14-.78-.42-1.04-.28-.26-.68-.4-1.18-.4-.5 0-.92.16-1.24.46-.32.3-.5.72-.54 1.24H7.4c.06-1.14.46-2.02 1.2-2.66.76-.64 1.72-.96 2.9-.96 1.24 0 2.22.32 2.94.96.72.62 1.08 1.44 1.08 2.44 0 .6-.14 1.1-.42 1.5-.24.36-.5.66-.84 1.02Z"/></svg> Quiz rápido: Pra que serve a Staging Area no Git?</div>
+      <label class="quiz-opt"><input type="radio" name="q_dv2" value="a"> É onde o código roda em produção</label>
+      <label class="quiz-opt"><input type="radio" name="q_dv2" value="b"> É a área intermediária onde mudanças são organizadas antes do commit</label>
+      <label class="quiz-opt"><input type="radio" name="q_dv2" value="c"> É o histórico de commits já finalizados</label>
+      <button class="quiz-btn" onclick="checkQuiz('q_dv2','b','fb-q-2')">Verificar</button>
+      <div class="quiz-fb" id="fb-q-2"></div>
+    </div>
+
+    <div class="quiz bughunt">
+      <div class="quiz-q"><img class="om om-md" src="../assets/icons/bug.svg" alt="bug"> Encontre o bug</div>
+      <pre><code>git init
+git commit -m "primeira versão"
+git add .</code></pre>
+      <p style="font-size:.85rem;margin:0 0 10px;">A ordem dos comandos está errada: qual é a sequência correta pra registrar uma mudança pela primeira vez?</p>
+      <label class="quiz-opt"><input type="radio" name="b_dv2" value="a"> init → add → commit</label>
+      <label class="quiz-opt"><input type="radio" name="b_dv2" value="b"> commit → add → init</label>
+      <label class="quiz-opt"><input type="radio" name="b_dv2" value="c"> A ordem não importa no Git</label>
+      <button class="quiz-btn" onclick="checkQuiz('b_dv2','a','fb-b-2')">Verificar</button>
+      <div class="quiz-fb" id="fb-b-2"></div>
+    </div>
+
+    <div class="checklist">
+      <div class="checklist-title"><img class="om" src="../assets/icons/code-editor.svg" alt="">Mão na massa</div>
+      <div class="c-item"><input type="checkbox" id="chk-4" data-mod="2" onchange="onCheck(this)"><label for="chk-4">Sei a diferença entre Staging Area e Commit.</label></div>
+      <div class="c-item"><input type="checkbox" id="chk-5" data-mod="2" onchange="onCheck(this)"><label for="chk-5">Consigo criar uma branch e fazer merge dela na main.</label></div>
+      <div class="c-item"><input type="checkbox" id="chk-6" data-mod="2" onchange="onCheck(this)"><label for="chk-6">Sei resolver (ou pelo menos reconhecer) um conflito de merge.</label></div>
+    </div>
+
+    <div class="game-card speedtf-game" id="tfGameDevops" data-statements='[
+      {"text":"O Git é um sistema de controle de versão centralizado","isTrue":false},
+      {"text":"A Staging Area é onde mudanças são organizadas antes do commit","isTrue":true},
+      {"text":"git init cria a pasta oculta .git com o histórico do projeto","isTrue":true},
+      {"text":"Uma branch permite desenvolver uma funcionalidade isoladamente","isTrue":true},
+      {"text":"Um merge nunca pode gerar conflito","isTrue":false},
+      {"text":"git push envia mudanças locais pro repositório remoto","isTrue":true}
+    ]'>
+      <div class="game-head">
+        <div class="game-title"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 3 14h7l-1 8 11-14h-7l0-6Z"></path></svg> Verdadeiro ou Falso Relâmpago</div>
+        <div class="game-stats tf-status">1/6 · acertos: 0</div>
+      </div>
+      <p style="font-size:.82rem;color:var(--text-dim);margin-bottom:14px;">Responda antes que o tempo acabe!</p>
+      <div class="tf-timerbar"><div class="tf-timerfill"></div></div>
+      <div class="tf-statement"></div>
+      <div class="tf-btns">
+        <button class="tf-btn tf-true" onclick="answerSpeedTF('tfGameDevops', true)">Verdadeiro</button>
+        <button class="tf-btn tf-false" onclick="answerSpeedTF('tfGameDevops', false)">Falso</button>
+      </div>
+      <div class="game-win-msg"><img class="om om-sm" src="../assets/icons/content/confetti.svg" alt=""> Rodada relâmpago concluída!</div>
+      <button class="game-reset-btn" onclick="resetSpeedTF('tfGameDevops')">Jogar de novo</button>
+    </div>
+
+  </section>
+
+  <!-- ================= MODULE 03 ================= -->
+  <section class="content-section" id="sec-2" data-mod="3">
+    <div class="eyebrow">Módulo 03 / 11</div>
+    <h2>GitHub: Colaboração &amp; Pull Requests</h2>
+    <p class="subtitle">Git guarda a história. GitHub é o porto onde a tripulação inteira se encontra pra revisar a carga antes de içar ela pro navio principal.</p>
+    <div class="hero-photo-wrap"><img class="hero-photo" src="https://images.unsplash.com/photo-1755643842005-460e3a030102?auto=format&fit=crop&w=1600&q=70" alt="Foto de ambientação"></div>
+    <p class="hero-credit">Foto: <a href="https://unsplash.com/@emmakphoto" target="_blank" rel="noopener">Emma Swoboda</a> em Unsplash</p>
+
+    <div class="char-wrap">
+      <img class="char-cameo" src="../assets/characters/octocat.png" alt="Octocat" style="width:150px;flex-shrink:0;">
+      <div class="char-bubble">
+        <div class="char-name">Octocat</div>
+        <p>Aqui é onde a mágica social acontece! Hospedar repositório é só o começo: code review, Pull Requests e Actions é onde o time inteiro trabalha junto de verdade.</p>
+      </div>
+    </div>
+
+    <div class="wire"></div>
+
+
+    <div class="card">
+      <h3><span class="ic"><img class="om om-sm" src="../assets/icons/content/globe.svg" alt=""></span> O que é o GitHub</h3>
+      <p>O <strong>GitHub</strong> é uma plataforma web que hospeda repositórios Git e facilita a interação da equipe: hospedagem de repositório, gerenciamento de projetos, revisão de código e até uma camada de rede social pra programadores. Ele também se integra com <strong>integração contínua</strong>, rodando testes e verificações automáticas assim que um novo código sobe.</p>
+    </div>
+
+    <div class="card">
+      <h3><span class="ic"><img class="om om-sm" src="../assets/icons/content/envelope.svg" alt=""></span> Pull Request: mais que um envio de código</h3>
+      <p>Um <strong>Pull Request (PR)</strong> não é só "mandei o código". É um <strong>pedido de aprovação</strong>: uma narrativa das mudanças feitas, esperando revisão de pares antes de qualquer coisa ser integrada de verdade.</p>
+      <ul>
+        <li><strong>Revisão</strong>: colegas comentam linha a linha na aba "Files changed".</li>
+        <li><strong>Iteração</strong>: você pode adicionar novos commits à mesma branch: o PR se atualiza automaticamente, sem precisar abrir um novo.</li>
+        <li><strong>Conclusão</strong>: uma vez aprovado, o botão "Merge pull request" integra o código de vez na branch principal.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3><span class="ic"><img class="om om-sm" src="../assets/icons/content/handshake.svg" alt=""></span> Por que revisão de código importa</h3>
+      <p>Trocar código sem revisão é como um marinheiro içar a vela sozinho, no escuro, sem avisar ninguém. Um PR bem escrito (com título claro, descrição do que mudou e por quê) economiza o tempo de todo mundo e evita que bugs silenciosos cheguem em produção. Revisão de código não é burocracia: é o mecanismo de <strong>compartilhamento</strong> (o "S" do CAMS) em ação.</p>
+    </div>
+
+    <div class="glossary-mini">
+      <h4>Vocabulário rápido</h4>
+      <p><strong>Merge</strong>: combinar mudanças de uma branch (ex: uma feature) em outra (ex: main).</p>
+      <p><strong>Silos</strong>: times isolados que o DevOps busca destruir pra melhorar comunicação e velocidade.</p>
+      <p><strong>Staging Area</strong>: terreno intermediário onde arquivos são organizados antes de um commit final.</p>
+    </div>
+    <div class="quiz">
+      <div class="quiz-q"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm.9 14.9h-1.8v-1.8h1.8v1.8Zm1.86-6.9c-.4.5-.7.9-.9 1.4-.16.36-.24.7-.26 1.2h-1.7c.02-.7.16-1.24.44-1.76.28-.5.66-.96 1.14-1.42.34-.32.58-.6.74-.86.16-.28.24-.56.24-.9 0-.44-.14-.78-.42-1.04-.28-.26-.68-.4-1.18-.4-.5 0-.92.16-1.24.46-.32.3-.5.72-.54 1.24H7.4c.06-1.14.46-2.02 1.2-2.66.76-.64 1.72-.96 2.9-.96 1.24 0 2.22.32 2.94.96.72.62 1.08 1.44 1.08 2.44 0 .6-.14 1.1-.42 1.5-.24.36-.5.66-.84 1.02Z"/></svg> Quiz rápido: O que acontece quando você adiciona um novo commit numa branch que já tem um Pull Request aberto?</div>
+      <label class="quiz-opt"><input type="radio" name="q_dv3" value="a"> O PR fecha automaticamente e precisa ser reaberto</label>
+      <label class="quiz-opt"><input type="radio" name="q_dv3" value="b"> O PR se atualiza sozinho com o novo commit</label>
+      <label class="quiz-opt"><input type="radio" name="q_dv3" value="c"> Nada: é preciso abrir um segundo PR</label>
+      <button class="quiz-btn" onclick="checkQuiz('q_dv3','b','fb-q-3')">Verificar</button>
+      <div class="quiz-fb" id="fb-q-3"></div>
+    </div>
+
+    <div class="quiz bughunt">
+      <div class="quiz-q"><img class="om om-md" src="../assets/icons/bug.svg" alt="bug"> Encontre o bug</div>
+      <pre><code># Alguém revisou seu PR e pediu uma mudança.
+# Você decide então fechar o PR e abrir um novo do zero
+# com o ajuste, ao invés de só commitar de novo na mesma branch.</code></pre>
+      <p style="font-size:.85rem;margin:0 0 10px;">Isso é o fluxo de trabalho correto num Pull Request?</p>
+      <label class="quiz-opt"><input type="radio" name="b_dv3" value="a"> Sim, sempre abra um PR novo pra cada ajuste pedido</label>
+      <label class="quiz-opt"><input type="radio" name="b_dv3" value="b"> Não: basta commitar na mesma branch, o PR já existente se atualiza sozinho</label>
+      <label class="quiz-opt"><input type="radio" name="b_dv3" value="c"> Sim, mas só se o revisor pedir explicitamente</label>
+      <button class="quiz-btn" onclick="checkQuiz('b_dv3','b','fb-b-3')">Verificar</button>
+      <div class="quiz-fb" id="fb-b-3"></div>
+    </div>
+
+    <div class="checklist">
+      <div class="checklist-title"><img class="om" src="../assets/icons/code-editor.svg" alt="">Mão na massa</div>
+      <div class="c-item"><input type="checkbox" id="chk-7" data-mod="3" onchange="onCheck(this)"><label for="chk-7">Sei o que diferencia um Pull Request de um simples push de código.</label></div>
+      <div class="c-item"><input type="checkbox" id="chk-8" data-mod="3" onchange="onCheck(this)"><label for="chk-8">Entendo o papel da revisão de código (code review) num time.</label></div>
+      <div class="c-item"><input type="checkbox" id="chk-9" data-mod="3" onchange="onCheck(this)"><label for="chk-9">Sei o que acontece quando aprovo e clico em 'Merge pull request'.</label></div>
+    </div>
+
+    <div class="game-card timedquiz-game" id="tqGameDevops" data-questions='[
+      {"q":"O que é um Pull Request?","options":["Um simples envio de código sem revisão","Um pedido de aprovação com revisão de pares","Um comando do terminal"],"correct":1},
+      {"q":"O que acontece quando você adiciona um commit a uma branch com PR aberto?","options":["O PR fecha e precisa reabrir","O PR se atualiza sozinho","Nada, é preciso criar um novo PR"],"correct":1},
+      {"q":"Code review no GitHub é um exemplo de qual pilar do CAMS em ação?","options":["Automation","Sharing (Compartilhamento)","Measurement"],"correct":1},
+      {"q":"O que combina as mudanças de uma branch em outra?","options":["Merge","Clone","Fork"],"correct":0},
+      {"q":"GitHub se integra com qual prática pra rodar testes automáticos a cada novo código?","options":["Staging Area","Integração Contínua","IAM"],"correct":1}
+    ]'>
+      <div class="game-head">
+        <div class="game-title"><img class="om om-sm" src="../assets/icons/content/hourglass.svg" alt=""> Contra o Relógio</div>
+        <div class="game-stats tq-status">1/5 · pontos: 0</div>
+      </div>
+      <p style="font-size:.82rem;color:var(--text-dim);margin-bottom:14px;">Escolha rápido antes que o cronômetro zere!</p>
+      <div class="tq-timerbar"><div class="tq-timerfill"></div></div>
+      <div class="tq-question"></div>
+      <div class="tq-opts"></div>
+      <div class="game-win-msg"><img class="om om-sm" src="../assets/icons/content/confetti.svg" alt=""> Desafio contra o relógio concluído!</div>
+      <button class="game-reset-btn" onclick="resetTimedQuiz('tqGameDevops')">Jogar de novo</button>
+    </div>
+
+  </section>
+
+  <!-- ================= MODULE 04 ================= -->
+  <section class="content-section" id="sec-3" data-mod="4">
+    <div class="eyebrow">Módulo 04 / 11</div>
+    <h2>Infraestrutura como Código (IaC)</h2>
+    <p class="subtitle">Em vez de configurar servidor por servidor à mão, você escreve um mapa: e qualquer marinheiro consegue reconstruir o navio inteiro só de ler o mapa.</p>
+    <div class="hero-photo-wrap"><img class="hero-photo" src="https://images.unsplash.com/photo-1755690042574-49ff5c3bfe96?auto=format&fit=crop&w=1600&q=70" alt="Foto de ambientação"></div>
+    <p class="hero-credit">Foto: <a href="https://unsplash.com/@mineral_of_demon" target="_blank" rel="noopener">Nastia Petruk</a> em Unsplash</p>
+
+    <div class="char-wrap">
+      <img class="char-cameo" src="../assets/characters/baba-grogue.png" alt="Capitão Baba Grogue" style="width:170px;flex-shrink:0;">
+      <div class="char-bubble">
+        <div class="char-name">Capitão Baba Grogue</div>
+        <p>Um bom capitão nunca confia na memória pra reconstruir o navio. Ele escreve tudo num mapa (arquivo de configuração): e qualquer tripulante, em qualquer porto, consegue montar tudo de novo do zero, do mesmo jeitinho.</p>
+      </div>
+    </div>
+
+    <div class="wire"></div>
+
+
+    <div class="card">
+      <h3><span class="ic"><img class="om om-sm" src="../assets/icons/content/map.svg" alt=""></span> O que é Infraestrutura como Código</h3>
+      <p><strong>IaC (Infrastructure as Code)</strong> é a prática de definir e provisionar infraestrutura (servidores, redes, ambientes inteiros) através de arquivos de configuração versionáveis, em vez de configuração manual clique-a-clique. O resultado direto: ambientes <strong>reproduzíveis</strong>, documentados e fáceis de recriar em qualquer máquina ou qualquer nuvem.</p>
+    </div>
+
+    <div class="card">
+      <h3><span class="ic"><img class="om om-sm" src="../assets/icons/content/ship.svg" alt=""></span> Virtualização completa vs. isolamento de processos</h3>
+      <p>Existem duas grandes escolas de "empacotar" um ambiente:</p>
+      <table class="tbl">
+        <tr><th>Abordagem</th><th>Como funciona</th><th>Custo</th></tr>
+        <tr><td><strong>Máquinas Virtuais</strong> (ex: Vagrant)</td><td>Virtualização completa: cada VM roda seu próprio Sistema Operacional Convidado inteiro, sobre um hypervisor.</td><td>Alto: consome muita memória, disco e CPU.</td></tr>
+        <tr><td><strong>Containers</strong> (ex: Docker)</td><td>Isolamento de processos sobre o Kernel do sistema hospedeiro: sem carregar um SO inteiro por aplicação.</td><td>Baixo: leve, rápido pra iniciar, altamente eficiente.</td></tr>
+      </table>
+      <p>Essa diferença é a razão pela qual o mundo migrou de VMs pesadas pra containers ágeis nos últimos anos: mesma ideia de isolamento, com muito menos peso morto.</p>
+    </div>
+
+    <div class="card">
+      <h3><span class="ic"><img class="om om-sm" src="../assets/icons/content/clipboard.svg" alt=""></span> O modelo declarativo</h3>
+      <p>A grande virada de chave da IaC (e depois do Kubernetes, que você vai ver mais pra frente) é o <strong>modelo declarativo</strong>: você não dá ordens passo a passo ("suba esse servidor", "instale essa lib", "abra essa porta"). Você escreve, num arquivo, <strong>como deseja que o ambiente esteja</strong>: e a ferramenta se vira pra fazer acontecer, e pra manter esse estado com o tempo.</p>
+    </div>
+    <div class="quiz">
+      <div class="quiz-q"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm.9 14.9h-1.8v-1.8h1.8v1.8Zm1.86-6.9c-.4.5-.7.9-.9 1.4-.16.36-.24.7-.26 1.2h-1.7c.02-.7.16-1.24.44-1.76.28-.5.66-.96 1.14-1.42.34-.32.58-.6.74-.86.16-.28.24-.56.24-.9 0-.44-.14-.78-.42-1.04-.28-.26-.68-.4-1.18-.4-.5 0-.92.16-1.24.46-.32.3-.5.72-.54 1.24H7.4c.06-1.14.46-2.02 1.2-2.66.76-.64 1.72-.96 2.9-.96 1.24 0 2.22.32 2.94.96.72.62 1.08 1.44 1.08 2.44 0 .6-.14 1.1-.42 1.5-.24.36-.5.66-.84 1.02Z"/></svg> Quiz rápido: Qual a principal diferença entre uma VM (Vagrant) e um container (Docker)?</div>
+      <label class="quiz-opt"><input type="radio" name="q_dv4" value="a"> VMs são sempre mais rápidas que containers</label>
+      <label class="quiz-opt"><input type="radio" name="q_dv4" value="b"> Containers carregam um SO Guest completo, VMs não</label>
+      <label class="quiz-opt"><input type="radio" name="q_dv4" value="c"> VMs virtualizam o SO inteiro; containers isolam processos sobre o kernel do host</label>
+      <button class="quiz-btn" onclick="checkQuiz('q_dv4','c','fb-q-4')">Verificar</button>
+      <div class="quiz-fb" id="fb-q-4"></div>
+    </div>
+
+    <div class="quiz bughunt">
+      <div class="quiz-q"><img class="om om-md" src="../assets/icons/bug.svg" alt="bug"> Encontre o bug</div>
+      <pre><code># Time decide: "vamos rodar essa API em produção
+# usando uma Máquina Virtual completa, porque é
+# mais leve e rápida de subir que um container."</code></pre>
+      <p style="font-size:.85rem;margin:0 0 10px;">Essa afirmação sobre VM vs. container está correta?</p>
+      <label class="quiz-opt"><input type="radio" name="b_dv4" value="a"> Sim, VM é sempre mais leve</label>
+      <label class="quiz-opt"><input type="radio" name="b_dv4" value="b"> Não: é o container que é mais leve e rápido de subir, não a VM</label>
+      <label class="quiz-opt"><input type="radio" name="b_dv4" value="c"> Os dois têm exatamente o mesmo peso</label>
+      <button class="quiz-btn" onclick="checkQuiz('b_dv4','b','fb-b-4')">Verificar</button>
+      <div class="quiz-fb" id="fb-b-4"></div>
+    </div>
+
+    <div class="checklist">
+      <div class="checklist-title"><img class="om" src="../assets/icons/code-editor.svg" alt="">Mão na massa</div>
+      <div class="c-item"><input type="checkbox" id="chk-10" data-mod="4" onchange="onCheck(this)"><label for="chk-10">Consigo explicar a diferença entre virtualização completa e isolamento de processos.</label></div>
+      <div class="c-item"><input type="checkbox" id="chk-11" data-mod="4" onchange="onCheck(this)"><label for="chk-11">Entendo o que significa 'modelo declarativo' de infraestrutura.</label></div>
+      <div class="c-item"><input type="checkbox" id="chk-12" data-mod="4" onchange="onCheck(this)"><label for="chk-12">Sei por que containers ficaram mais populares que VMs pesadas para microsserviços.</label></div>
+    </div>
+
+  </section>
+
+  <!-- ================= MODULE 05 ================= -->
+  <section class="content-section" id="sec-4" data-mod="5">
+    <div class="eyebrow">Módulo 05 / 11</div>
+    <h2>Docker: Imagens &amp; Containers</h2>
+    <p class="subtitle">Contêineres de verdade carregam caixas. Contêineres Docker carregam aplicações inteiras: isoladas, leves e idênticas em qualquer porto onde atracarem.</p>
+    <div class="hero-photo-wrap"><img class="hero-photo" src="https://images.unsplash.com/photo-1759144897143-991d650b1668?auto=format&fit=crop&w=1600&q=70" alt="Foto de ambientação"></div>
+    <p class="hero-credit">Foto: <a href="https://unsplash.com/@sorasagano" target="_blank" rel="noopener">Sora Sagano</a> em Unsplash</p>
+
+    <div class="char-wrap">
+      <img class="char-cameo" src="../assets/characters/baba-grogue.png" alt="Capitão Baba Grogue" style="width:170px;flex-shrink:0;">
+      <div class="char-bubble">
+        <div class="char-name">Capitão Baba Grogue</div>
+        <p>Ahoy! Esse aqui é o meu terreno favorito. O Docker é o que transformou minha frota de um punhado de barcos artesanais numa operação de containers padronizados: cada aplicação no seu próprio compartimento, sem bagunçar o vizinho.</p>
+      </div>
+    </div>
+
+    <div class="wire"></div>
+
+
+    <div class="card">
+      <h3><span class="ic"><img class="om om-sm" src="../assets/icons/content/box.svg" alt=""></span> O que é o Docker</h3>
+      <p>O <strong>Docker</strong> é uma plataforma open source que permite empacotar, executar, testar e implantar aplicações em ambientes isolados chamados <strong>containers</strong>. Ele garante que sua aplicação funcione de forma <strong>idêntica e consistente</strong>, não importa em qual computador ou servidor esteja rodando: resolvendo pra sempre o clássico "na minha máquina funciona".</p>
+    </div>
+
+    <div class="card">
+      <h3><span class="ic"><img class="om om-sm" src="../assets/icons/content/puzzle.svg" alt=""></span> O trio fundamental</h3>
+      <p>Pra dominar o fluxo de trabalho do Docker, você precisa entender três conceitos que se encaixam como peças de engrenagem:</p>
+      <ul>
+        <li><strong>Dockerfile</strong>: o "livro de receitas". Um script de texto com instruções linha a linha de como construir a imagem: qual sistema operacional base usar, quais pacotes instalar, quais portas expor.</li>
+        <li><strong>Imagem</strong>: o "molde" imutável e somente-leitura, gerado a partir do Dockerfile. Contém código, runtimes, bibliotecas e dependências, tudo empacotado.</li>
+        <li><strong>Container</strong>: a instância ativa e em execução de uma imagem. Analogia de programação: se a imagem é a <strong>classe</strong>, o container é o <strong>objeto</strong>: a instância viva dessa classe.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3><span class="ic"><img class="om om-sm" src="../assets/icons/content/gear.svg" alt=""></span> A arquitetura Cliente-Servidor do Docker</h3>
+      <table class="tbl">
+        <tr><th>Peça</th><th>Função</th></tr>
+        <tr><td><strong>Client (Docker CLI)</strong></td><td>A linha de comando onde você digita as instruções (<code>docker run</code>, <code>docker build</code>...).</td></tr>
+        <tr><td><strong>REST API</strong></td><td>A ponte de comunicação entre o Client e o Daemon.</td></tr>
+        <tr><td><strong>Server (Docker Daemon)</strong></td><td>O serviço em segundo plano que faz o trabalho pesado: cria, roda e gerencia containers e recursos.</td></tr>
+        <tr><td><strong>Docker Registry</strong> (ex: Docker Hub)</td><td>Repositório centralizado onde imagens são publicadas, armazenadas e baixadas.</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3><span class="ic"><img class="om om-sm" src="../assets/icons/content/keyboard.svg" alt=""></span> Comandos essenciais do dia a dia</h3>
+      <table class="tbl">
+        <tr><th>Comando</th><th>Descrição</th></tr>
+        <tr><td><code>docker pull &lt;imagem&gt;</code></td><td>Baixa uma imagem do Docker Hub.</td></tr>
+        <tr><td><code>docker run -d -p 8080:80 --name &lt;nome&gt; &lt;imagem&gt;</code></td><td>Cria e inicia um container em segundo plano, mapeando portas.</td></tr>
+        <tr><td><code>docker container ls</code> (ou <code>docker ps</code>)</td><td>Lista containers ativos. Some <code>-a</code> pra ver os parados também.</td></tr>
+        <tr><td><code>docker stop &lt;container&gt;</code></td><td>Para o container de forma gentil.</td></tr>
+        <tr><td><code>docker kill &lt;container&gt;</code></td><td>Força a parada imediata.</td></tr>
+        <tr><td><code>docker rm &lt;container&gt;</code></td><td>Remove um container (<code>-f</code> força se estiver rodando).</td></tr>
+        <tr><td><code>docker images</code></td><td>Lista todas as imagens locais.</td></tr>
+        <tr><td><code>docker rmi &lt;imagem&gt;</code></td><td>Remove uma imagem local.</td></tr>
+        <tr><td><code>docker exec -it &lt;container&gt; /bin/bash</code></td><td>Abre um terminal interativo dentro de um container ativo.</td></tr>
+        <tr><td><code>docker logs -f &lt;container&gt;</code></td><td>Mostra os logs do container em tempo real.</td></tr>
+        <tr><td><code>docker build -t &lt;nome_imagem&gt; .</code></td><td>Constrói uma imagem a partir de um Dockerfile no diretório atual.</td></tr>
+      </table>
+    </div>
+    <div class="quiz">
+      <div class="quiz-q"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm.9 14.9h-1.8v-1.8h1.8v1.8Zm1.86-6.9c-.4.5-.7.9-.9 1.4-.16.36-.24.7-.26 1.2h-1.7c.02-.7.16-1.24.44-1.76.28-.5.66-.96 1.14-1.42.34-.32.58-.6.74-.86.16-.28.24-.56.24-.9 0-.44-.14-.78-.42-1.04-.28-.26-.68-.4-1.18-.4-.5 0-.92.16-1.24.46-.32.3-.5.72-.54 1.24H7.4c.06-1.14.46-2.02 1.2-2.66.76-.64 1.72-.96 2.9-.96 1.24 0 2.22.32 2.94.96.72.62 1.08 1.44 1.08 2.44 0 .6-.14 1.1-.42 1.5-.24.36-.5.66-.84 1.02Z"/></svg> Quiz rápido: Na analogia de programação do material, se a Imagem Docker é a classe, o que é o Container?</div>
+      <label class="quiz-opt"><input type="radio" name="q_dv5" value="a"> O objeto/instância dessa classe</label>
+      <label class="quiz-opt"><input type="radio" name="q_dv5" value="b"> Outra classe, filha da primeira</label>
+      <label class="quiz-opt"><input type="radio" name="q_dv5" value="c"> Um método dentro da classe</label>
+      <button class="quiz-btn" onclick="checkQuiz('q_dv5','a','fb-q-5')">Verificar</button>
+      <div class="quiz-fb" id="fb-q-5"></div>
+    </div>
+
+    <div class="quiz bughunt">
+      <div class="quiz-q"><img class="om om-md" src="../assets/icons/bug.svg" alt="bug"> Encontre o bug</div>
+      <pre><code>FROM node:20-alpine
+EXPOSE 3000
+WORKDIR /app
+COPY package.json .
+CMD ["node", "server.js"]
+RUN npm install</code></pre>
+      <p style="font-size:.85rem;margin:0 0 10px;">Esse Dockerfile tem um problema de ordem: qual instrução está fora de lugar e vai causar erro na build?</p>
+      <label class="quiz-opt"><input type="radio" name="b_dv5" value="a"> EXPOSE deveria vir por último</label>
+      <label class="quiz-opt"><input type="radio" name="b_dv5" value="b"> RUN npm install deveria vir antes do CMD, não depois</label>
+      <label class="quiz-opt"><input type="radio" name="b_dv5" value="c"> Não tem nenhum problema</label>
+      <button class="quiz-btn" onclick="checkQuiz('b_dv5','b','fb-b-5')">Verificar</button>
+      <div class="quiz-fb" id="fb-b-5"></div>
+    </div>
+
+    <div class="checklist">
+      <div class="checklist-title"><img class="om" src="../assets/icons/code-editor.svg" alt="">Mão na massa</div>
+      <div class="c-item"><input type="checkbox" id="chk-13" data-mod="5" onchange="onCheck(this)"><label for="chk-13">Sei explicar o trio Dockerfile → Imagem → Container.</label></div>
+      <div class="c-item"><input type="checkbox" id="chk-14" data-mod="5" onchange="onCheck(this)"><label for="chk-14">Consigo listar os 4 componentes da arquitetura Cliente-Servidor do Docker.</label></div>
+      <div class="c-item"><input type="checkbox" id="chk-15" data-mod="5" onchange="onCheck(this)"><label for="chk-15">Sei os comandos básicos: pull, run, ps, stop, rm, images, build.</label></div>
+    </div>
+
+  </section>
+
+  <!-- ================= MODULE 06 ================= -->
+  <section class="content-section" id="sec-5" data-mod="6">
+    <div class="eyebrow">Módulo 06 / 11</div>
+    <h2>Dockerfile na Prática &amp; Docker Compose</h2>
+    <p class="subtitle">Uma imagem sozinha é um marujo solitário. Compose é como formar a tripulação inteira: vários containers remando juntos com um único comando.</p>
+    <div class="hero-photo-wrap"><img class="hero-photo" src="https://images.unsplash.com/photo-1760479099643-b37a52e7c094?auto=format&fit=crop&w=1600&q=70" alt="Foto de ambientação"></div>
+    <p class="hero-credit">Foto: <a href="https://unsplash.com/@visualsbying" target="_blank" rel="noopener">Ingmar</a> em Unsplash</p>
+
+    <div class="char-wrap">
+      <img class="char-cameo" src="../assets/characters/baba-grogue.png" alt="Capitão Baba Grogue" style="width:170px;flex-shrink:0;">
+      <div class="char-bubble">
+        <div class="char-name">Capitão Baba Grogue</div>
+        <p>Escrever um Dockerfile é escrever a receita do seu próprio marujo. E quando você tem vários marujos que precisam trabalhar juntos (um banco de dados, uma API, um cache) é hora de içar o Docker Compose.</p>
+      </div>
+    </div>
+
+    <div class="wire"></div>
+
+
+    <div class="card">
+      <h3><span class="ic"><img class="om om-sm" src="../assets/icons/content/memo.svg" alt=""></span> Anatomia de um Dockerfile</h3>
+      <p>Um Dockerfile é lido de cima pra baixo, e cada linha vira uma "camada" da imagem final. Um exemplo simples de uma aplicação Node.js:</p>
+      <pre><code>FROM node:20-alpine
+WORKDIR /app
+COPY package.json .
+RUN npm install
+COPY . .
+EXPOSE 3000
+CMD ["node", "server.js"]</code></pre>
+      <p><code>FROM</code> define a imagem base. <code>WORKDIR</code> define a pasta de trabalho dentro do container. <code>COPY</code> traz arquivos do seu computador pra dentro da imagem. <code>RUN</code> executa comandos durante a <em>construção</em> da imagem (uma vez só). <code>EXPOSE</code> documenta qual porta a aplicação usa. <code>CMD</code> é o comando executado quando o container <em>inicia</em>: a diferença entre RUN e CMD é a pegadinha mais comum de prova.</p>
+    </div>
+
+    <div class="card">
+      <h3><span class="ic"><img class="om om-sm" src="../assets/icons/content/puzzle.svg" alt=""></span> Docker Compose: orquestrando vários containers</h3>
+      <p>Quando sua aplicação precisa de mais de um container conversando entre si (por exemplo, uma API e um banco de dados) escrever <code>docker run</code> repetidas vezes, à mão, fica insustentável. O <strong>Docker Compose</strong> resolve isso com um único arquivo declarativo, o <code>docker-compose.yml</code>:</p>
+      <pre><code>version: "3.9"
+services:
+  api:
+    build: .
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_PASSWORD: exemplo
+    volumes:
+      - dados_db:/var/lib/postgresql/data
+volumes:
+  dados_db:</code></pre>
+      <p>Com <code>docker compose up</code>, os dois containers sobem juntos, já conectados na mesma rede interna: a API consegue enxergar o banco pelo nome do serviço (<code>db</code>), sem precisar descobrir nenhum IP manualmente.</p>
+    </div>
+
+    <div class="card">
+      <h3><span class="ic"><img class="om om-sm" src="../assets/icons/content/floppy-disk.svg" alt=""></span> Volumes: dados que sobrevivem ao container</h3>
+      <p>Containers são, por natureza, <strong>descartáveis</strong>: pare um, suba outro, tanto faz. Mas dados de banco de dados <em>não podem</em> sumir junto. Um <strong>volume</strong> é um espaço de armazenamento gerenciado pelo Docker, fora do ciclo de vida do container, que persiste mesmo se você remover e recriar o container inteiro.</p>
+    </div>
+    <div class="quiz">
+      <div class="quiz-q"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm.9 14.9h-1.8v-1.8h1.8v1.8Zm1.86-6.9c-.4.5-.7.9-.9 1.4-.16.36-.24.7-.26 1.2h-1.7c.02-.7.16-1.24.44-1.76.28-.5.66-.96 1.14-1.42.34-.32.58-.6.74-.86.16-.28.24-.56.24-.9 0-.44-.14-.78-.42-1.04-.28-.26-.68-.4-1.18-.4-.5 0-.92.16-1.24.46-.32.3-.5.72-.54 1.24H7.4c.06-1.14.46-2.02 1.2-2.66.76-.64 1.72-.96 2.9-.96 1.24 0 2.22.32 2.94.96.72.62 1.08 1.44 1.08 2.44 0 .6-.14 1.1-.42 1.5-.24.36-.5.66-.84 1.02Z"/></svg> Quiz rápido: Num Dockerfile, qual a diferença essencial entre RUN e CMD?</div>
+      <label class="quiz-opt"><input type="radio" name="q_dv6" value="a"> São exatamente a mesma coisa</label>
+      <label class="quiz-opt"><input type="radio" name="q_dv6" value="b"> RUN executa durante a construção da imagem; CMD executa quando o container inicia</label>
+      <label class="quiz-opt"><input type="radio" name="q_dv6" value="c"> CMD só funciona com Python, RUN só com Node</label>
+      <button class="quiz-btn" onclick="checkQuiz('q_dv6','b','fb-q-6')">Verificar</button>
+      <div class="quiz-fb" id="fb-q-6"></div>
+    </div>
+
+    <div class="quiz bughunt">
+      <div class="quiz-q"><img class="om om-md" src="../assets/icons/bug.svg" alt="bug"> Encontre o bug</div>
+      <pre><code>services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_PASSWORD: exemplo
+  api:
+    build: .
+    ports:
+      - "3000:3000"</code></pre>
+      <p style="font-size:.85rem;margin:0 0 10px;">Falta um detalhe importante nesse docker-compose.yml pra garantir que os dados do banco não se percam ao recriar o container. O que é?</p>
+      <label class="quiz-opt"><input type="radio" name="b_dv6" value="a"> Um volume persistente pro serviço db</label>
+      <label class="quiz-opt"><input type="radio" name="b_dv6" value="b"> Trocar 'services' por 'containers'</label>
+      <label class="quiz-opt"><input type="radio" name="b_dv6" value="c"> Nada, está tudo correto</label>
+      <button class="quiz-btn" onclick="checkQuiz('b_dv6','a','fb-b-6')">Verificar</button>
+      <div class="quiz-fb" id="fb-b-6"></div>
+    </div>
+
+    <div class="checklist">
+      <div class="checklist-title"><img class="om" src="../assets/icons/code-editor.svg" alt="">Mão na massa</div>
+      <div class="c-item"><input type="checkbox" id="chk-16" data-mod="6" onchange="onCheck(this)"><label for="chk-16">Sei escrever um Dockerfile simples do zero.</label></div>
+      <div class="c-item"><input type="checkbox" id="chk-17" data-mod="6" onchange="onCheck(this)"><label for="chk-17">Entendo pra que serve um docker-compose.yml com múltiplos serviços.</label></div>
+      <div class="c-item"><input type="checkbox" id="chk-18" data-mod="6" onchange="onCheck(this)"><label for="chk-18">Sei por que um volume é necessário pra persistir dados de banco.</label></div>
+    </div>
+
+  </section>
+
+  <!-- ================= MODULE 07 ================= -->
+  <section class="content-section" id="sec-6" data-mod="7">
+    <div class="eyebrow">Módulo 07 / 11</div>
+    <h2>Kubernetes: Pods, ReplicaSets &amp; Deployments</h2>
+    <p class="subtitle">Kubernetes significa "Timoneiro" em grego. Se o Docker constrói os marujos, o Kubernetes é quem comanda a frota inteira sem que você precise gritar ordem por ordem.</p>
+    <div class="hero-photo-wrap"><img class="hero-photo" src="https://images.unsplash.com/photo-1716847214624-1e8787d98b6c?auto=format&fit=crop&w=1600&q=70" alt="Foto de ambientação"></div>
+    <p class="hero-credit">Foto: <a href="https://unsplash.com/@visualsbying" target="_blank" rel="noopener">Peter Thomas</a> em Unsplash</p>
+
+    <div class="char-wrap">
+      <img class="char-cameo" src="../assets/characters/baba-grogue.png" alt="Capitão Baba Grogue" style="width:170px;flex-shrink:0;">
+      <div class="char-bubble">
+        <div class="char-name">Capitão Baba Grogue</div>
+        <p>Um container sozinho no meio do oceano é frágil: se ele cair na água, não sabe voltar sozinho. Por isso todo bom capitão precisa de uma hierarquia de comando. Deixa eu te apresentar minha equipe.</p>
+      </div>
+    </div>
+
+    <div class="wire"></div>
+
+
+    <div class="card">
+      <h3><span class="ic"><img class="om om-sm" src="../assets/icons/content/compass.svg" alt=""></span> Kubernetes: o Timoneiro dos containers</h3>
+      <p><strong>Kubernetes</strong> (também chamado K8S) é um orquestrador de containers de código aberto. A palavra vem do grego e significa "Timoneiro" ou "Piloto": é o mestre de uma embarcação gigante carregada de caixas (containers), decidindo onde cada uma vai, quantas cópias existem e o que fazer quando algo cai no mar.</p>
+    </div>
+
+    <div class="card">
+      <h3><span class="ic"><img class="om om-sm" src="../assets/icons/content/people.svg" alt=""></span> Conhecendo a hierarquia de comando</h3>
+      <table class="tbl">
+        <tr><th>Papel</th><th>Analogia</th><th>Função real</th></tr>
+        <tr><td><strong>Pod</strong></td><td>O Marujo</td><td>A menor unidade do Kubernetes. Uma "cabine" onde mora um (ou mais) container. Sozinho, é frágil: se cair, não volta sozinho.</td></tr>
+        <tr><td><strong>ReplicaSet</strong></td><td>O Guarda</td><td>Sua única missão é contar os marujos. Se você pediu 3 Pods e um sumiu, ele imediatamente "clona" outro pra manter o número exato.</td></tr>
+        <tr><td><strong>Deployment</strong></td><td>O Imediato</td><td>Gerencia o plano de navegação inteiro. Diz ao ReplicaSet quantas réplicas criar e como atualizar a aplicação sem parar de navegar (Rolling Updates).</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3><span class="ic"><img class="om om-sm" src="../assets/icons/content/map.svg" alt=""></span> O manifesto YAML: seu mapa do tesouro</h3>
+      <p>Assim como na IaC, o Kubernetes não recebe ordens passo a passo. Você escreve num arquivo <strong>YAML</strong> como deseja que o navio esteja, e o Kubernetes se vira pra fazer acontecer. Esse é um manifesto de Deployment típico:</p>
+      <pre><code>apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: meu-app
+  template:
+    metadata:
+      labels:
+        app: meu-app
+    spec:
+      containers:
+        - name: nginx-marujo
+          image: nginx:latest
+          ports:
+            - containerPort: 80</code></pre>
+      <p><code>replicas: 3</code> diz "eu sempre quero 3 marujos vivos". <code>selector</code> e <code>labels</code> são a "etiqueta" que conecta o Deployment aos Pods certos. O resto descreve o container que vai rodar dentro de cada Pod.</p>
+    </div>
+
+    <div class="card">
+      <h3><span class="ic"><img class="om om-sm" src="../assets/icons/content/repeat.svg" alt=""></span> O Laço de Reconciliação</h3>
+      <p>A parte mais bonita do Kubernetes: se você matar um Pod na mão, o Kubernetes percebe que o <strong>estado real</strong> (2 marujos) está diferente do <strong>estado desejado</strong> (3 marujos) e age sozinho pra consertar: sem ninguém pedir. Esse ciclo automático de "observar e corrigir" se chama <strong>Laço de Reconciliação</strong>, e é o coração de tudo que o Kubernetes faz.</p>
+    </div>
+    <div class="quiz">
+      <div class="quiz-q"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm.9 14.9h-1.8v-1.8h1.8v1.8Zm1.86-6.9c-.4.5-.7.9-.9 1.4-.16.36-.24.7-.26 1.2h-1.7c.02-.7.16-1.24.44-1.76.28-.5.66-.96 1.14-1.42.34-.32.58-.6.74-.86.16-.28.24-.56.24-.9 0-.44-.14-.78-.42-1.04-.28-.26-.68-.4-1.18-.4-.5 0-.92.16-1.24.46-.32.3-.5.72-.54 1.24H7.4c.06-1.14.46-2.02 1.2-2.66.76-.64 1.72-.96 2.9-.96 1.24 0 2.22.32 2.94.96.72.62 1.08 1.44 1.08 2.44 0 .6-.14 1.1-.42 1.5-.24.36-.5.66-.84 1.02Z"/></svg> Quiz rápido: No Kubernetes, quem garante que o número de Pods definido continua sempre correto?</div>
+      <label class="quiz-opt"><input type="radio" name="q_dv7" value="a"> O Deployment sozinho, sem ajuda</label>
+      <label class="quiz-opt"><input type="radio" name="q_dv7" value="b"> O ReplicaSet</label>
+      <label class="quiz-opt"><input type="radio" name="q_dv7" value="c"> O próprio Docker Daemon</label>
+      <button class="quiz-btn" onclick="checkQuiz('q_dv7','b','fb-q-7')">Verificar</button>
+      <div class="quiz-fb" id="fb-q-7"></div>
+    </div>
+
+    <div class="quiz bughunt">
+      <div class="quiz-q"><img class="om om-md" src="../assets/icons/bug.svg" alt="bug"> Encontre o bug</div>
+      <pre><code>apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+spec:
+  replicas: three
+  ...</code></pre>
+      <p style="font-size:.85rem;margin:0 0 10px;">Tem um erro nesse manifesto YAML. Qual é?</p>
+      <label class="quiz-opt"><input type="radio" name="b_dv7" value="a"> 'replicas' deveria ser um número (ex: 3), não a palavra 'three'</label>
+      <label class="quiz-opt"><input type="radio" name="b_dv7" value="b"> 'kind: Deployment' está errado, deveria ser 'kind: Pod'</label>
+      <label class="quiz-opt"><input type="radio" name="b_dv7" value="c"> Não existe erro, YAML aceita texto em replicas</label>
+      <button class="quiz-btn" onclick="checkQuiz('b_dv7','a','fb-b-7')">Verificar</button>
+      <div class="quiz-fb" id="fb-b-7"></div>
+    </div>
+
+    <div class="checklist">
+      <div class="checklist-title"><img class="om" src="../assets/icons/code-editor.svg" alt="">Mão na massa</div>
+      <div class="c-item"><input type="checkbox" id="chk-19" data-mod="7" onchange="onCheck(this)"><label for="chk-19">Sei explicar a hierarquia Pod → ReplicaSet → Deployment com a analogia da tripulação.</label></div>
+      <div class="c-item"><input type="checkbox" id="chk-20" data-mod="7" onchange="onCheck(this)"><label for="chk-20">Consigo identificar 'replicas', 'selector' e 'labels' num manifesto YAML.</label></div>
+      <div class="c-item"><input type="checkbox" id="chk-21" data-mod="7" onchange="onCheck(this)"><label for="chk-21">Entendo o que é o Laço de Reconciliação e por que ele é automático.</label></div>
+    </div>
+
+  </section>
+
+  <!-- ================= MODULE 08 ================= -->
+  <section class="content-section" id="sec-7" data-mod="8">
+    <div class="eyebrow">Módulo 08 / 11</div>
+    <h2>Kubernetes na Prática: kubectl</h2>
+    <p class="subtitle">Chega de teoria: pegue o talkie-walkie. É hora de dar ordens de verdade pro seu cluster.</p>
+    <div class="hero-photo-wrap"><img class="hero-photo" src="https://images.unsplash.com/photo-1746937807433-05748b80caf4?auto=format&fit=crop&w=1600&q=70" alt="Foto de ambientação"></div>
+    <p class="hero-credit">Foto: <a href="https://unsplash.com/@mineral_of_demon" target="_blank" rel="noopener">Nastia Petruk</a> em Unsplash</p>
+
+    <div class="char-wrap">
+      <img class="char-cameo" src="../assets/characters/baba-grogue.png" alt="Capitão Baba Grogue" style="width:170px;flex-shrink:0;">
+      <div class="char-bubble">
+        <div class="char-name">Capitão Baba Grogue</div>
+        <p>A ferramenta kubectl é o meio pelo qual você dá ordens ao navio. Sem ela, você só tem um mapa bonito guardado na gaveta. Bora navegar de verdade.</p>
+      </div>
+    </div>
+
+    <div class="wire"></div>
+
+
+    <div class="card">
+      <h3><span class="ic"><img class="om om-sm" src="../assets/icons/content/desktop.svg" alt=""></span> Habilitando o cluster local</h3>
+      <p>No Docker Desktop, é possível habilitar um <strong>cluster de nó único</strong> direto na sua máquina: abra <strong>Settings</strong> → seção <strong>Kubernetes</strong> → marque <strong>Enable Kubernetes</strong> → aplique e aguarde o status ficar "Running". Isso cria um cluster local pra testes e aulas: em produção você teria vários nós (marinheiros), mas aqui você é o capitão e o único marinheiro ao mesmo tempo.</p>
+    </div>
+
+    <div class="card">
+      <h3><span class="ic"><img class="om om-sm" src="../assets/icons/content/magnifying-glass.svg" alt=""></span> Verificando o navio</h3>
+      <table class="tbl">
+        <tr><th>Comando</th><th>O que faz</th></tr>
+        <tr><td><code>kubectl config current-context</code></td><td>Mostra qual cluster o kubectl está usando agora. Confirma que você está apontando pro cluster certo.</td></tr>
+        <tr><td><code>kubectl get nodes</code></td><td>Lista os nós (máquinas) do cluster. No Docker Desktop, normalmente aparece um único nó.</td></tr>
+        <tr><td><code>kubectl cluster-info</code></td><td>Exibe informações básicas do cluster, como o endereço da API: confirma que o cluster está acessível.</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3><span class="ic"><img class="om om-sm" src="../assets/icons/content/rocket.svg" alt=""></span> Lançando seu plano ao mar</h3>
+      <table class="tbl">
+        <tr><th>Comando</th><th>O que faz</th></tr>
+        <tr><td><code>kubectl apply -f meu-navio.yaml</code></td><td>Envia sua declaração YAML pro "cérebro" do Kubernetes.</td></tr>
+        <tr><td><code>kubectl get pods</code></td><td>Lista os Pods no namespace atual, com nome, status e reinícios.</td></tr>
+        <tr><td><code>kubectl get rs</code></td><td>Mostra o ReplicaSet garantindo que a quantidade de Pods está correta.</td></tr>
+        <tr><td><code>kubectl describe pod &lt;nome&gt;</code></td><td>Mostra detalhes completos do Pod: imagem, portas, eventos. Ótimo pra diagnosticar problemas.</td></tr>
+        <tr><td><code>kubectl delete pod &lt;nome&gt;</code></td><td>Mata um Pod manualmente: pra ver a mágica da reconciliação acontecer.</td></tr>
+        <tr><td><code>kubectl delete -f meu-navio.yaml</code></td><td>Recolhe o navio inteiro: remove tudo que o manifesto criou.</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3><span class="ic"><img class="om om-sm" src="../assets/icons/content/test-tube.svg" alt=""></span> O Desafio do Capitão: teste de resiliência</h3>
+      <p>Quer ver por que o Kubernetes é incrível? Depois de aplicar um Deployment com 3 réplicas, mate um dos Pods com <code>kubectl delete pod &lt;nome&gt;</code> e digite rapidamente <code>kubectl get pods</code>. Você vai ver que, enquanto um Pod está sendo jogado fora, outro já nasceu instantaneamente no lugar dele: o Laço de Reconciliação percebeu a diferença entre estado real e desejado e agiu sozinho pra consertar.</p>
+    </div>
+    <div class="quiz">
+      <div class="quiz-q"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm.9 14.9h-1.8v-1.8h1.8v1.8Zm1.86-6.9c-.4.5-.7.9-.9 1.4-.16.36-.24.7-.26 1.2h-1.7c.02-.7.16-1.24.44-1.76.28-.5.66-.96 1.14-1.42.34-.32.58-.6.74-.86.16-.28.24-.56.24-.9 0-.44-.14-.78-.42-1.04-.28-.26-.68-.4-1.18-.4-.5 0-.92.16-1.24.46-.32.3-.5.72-.54 1.24H7.4c.06-1.14.46-2.02 1.2-2.66.76-.64 1.72-.96 2.9-.96 1.24 0 2.22.32 2.94.96.72.62 1.08 1.44 1.08 2.44 0 .6-.14 1.1-.42 1.5-.24.36-.5.66-.84 1.02Z"/></svg> Quiz rápido: Qual comando mostra detalhes completos de um Pod, útil pra diagnosticar problemas?</div>
+      <label class="quiz-opt"><input type="radio" name="q_dv8" value="a"> kubectl get pods</label>
+      <label class="quiz-opt"><input type="radio" name="q_dv8" value="b"> kubectl describe pod &lt;nome&gt;</label>
+      <label class="quiz-opt"><input type="radio" name="q_dv8" value="c"> kubectl cluster-info</label>
+      <button class="quiz-btn" onclick="checkQuiz('q_dv8','b','fb-q-8')">Verificar</button>
+      <div class="quiz-fb" id="fb-q-8"></div>
+    </div>
+
+    <div class="quiz bughunt">
+      <div class="quiz-q"><img class="om om-md" src="../assets/icons/bug.svg" alt="bug"> Encontre o bug</div>
+      <pre><code># Você quer inspecionar por que um Pod está travado
+# em "Pending" e roda:
+kubectl get nodes</code></pre>
+      <p style="font-size:.85rem;margin:0 0 10px;">Esse comando ajuda a diagnosticar por que um Pod específico está com problema?</p>
+      <label class="quiz-opt"><input type="radio" name="b_dv8" value="a"> Sim, é o comando certo</label>
+      <label class="quiz-opt"><input type="radio" name="b_dv8" value="b"> Não: pra diagnosticar um Pod específico, o certo é 'kubectl describe pod &lt;nome&gt;'</label>
+      <label class="quiz-opt"><input type="radio" name="b_dv8" value="c"> Sim, mas só funciona em cluster de nó único</label>
+      <button class="quiz-btn" onclick="checkQuiz('b_dv8','b','fb-b-8')">Verificar</button>
+      <div class="quiz-fb" id="fb-b-8"></div>
+    </div>
+
+    <div class="checklist">
+      <div class="checklist-title"><img class="om" src="../assets/icons/code-editor.svg" alt="">Mão na massa</div>
+      <div class="c-item"><input type="checkbox" id="chk-22" data-mod="8" onchange="onCheck(this)"><label for="chk-22">Sei habilitar o Kubernetes local no Docker Desktop.</label></div>
+      <div class="c-item"><input type="checkbox" id="chk-23" data-mod="8" onchange="onCheck(this)"><label for="chk-23">Consigo rodar kubectl get nodes, get pods e describe pod sem consultar nada.</label></div>
+      <div class="c-item"><input type="checkbox" id="chk-24" data-mod="8" onchange="onCheck(this)"><label for="chk-24">Já testei matar um Pod na mão e observei a reconciliação acontecer.</label></div>
+    </div>
+
+    <div class="game-card memory-game" id="memGameDevops" data-pairs='[
+      {"term":"Pod","def":"O marujo: menor unidade do Kubernetes"},
+      {"term":"Dockerfile","def":"A receita de como construir a imagem"},
+      {"term":"Commit","def":"A âncora lançada no histórico do Git"},
+      {"term":"Pull Request","def":"Pedido de aprovação de código no GitHub"},
+      {"term":"IAM","def":"Controla quem pode acessar o quê na AWS"},
+      {"term":"ReplicaSet","def":"O guarda que conta os marujos vivos"}
+    ]'>
+      <div class="game-head">
+        <div class="game-title"><img class="om om-sm" src="../assets/icons/content/brain.svg" alt=""> Jogo da memória: Termos DevOps</div>
+        <div class="game-stats">Tentativas: <span class="js-mem-attempts">0</span></div>
+      </div>
+      <div class="memory-grid"></div>
+      <div class="game-win-msg"><img class="om om-sm" src="../assets/icons/content/confetti.svg" alt=""> Todos os pares encontrados! Sua memória de bordo tá afiada.</div>
+      <button class="game-reset-btn" onclick="initMemoryGame('memGameDevops')">Embaralhar de novo</button>
+    </div>
+  </section>
+
+  <!-- ================= MODULE 09 ================= -->
+  <section class="content-section" id="sec-8" data-mod="9">
+    <div class="eyebrow">Módulo 09 / 11</div>
+    <h2>AWS: Fundamentos de Computação em Nuvem</h2>
+    <p class="subtitle">Se o Kubernetes comanda a frota, a AWS é o próprio oceano: a infraestrutura infinita onde tudo isso realmente navega.</p>
+    <div class="hero-photo-wrap"><img class="hero-photo" src="https://images.unsplash.com/photo-1755643842005-460e3a030102?auto=format&fit=crop&w=1600&q=70" alt="Foto de ambientação"></div>
+    <p class="hero-credit">Foto: <a href="https://unsplash.com/@emmakphoto" target="_blank" rel="noopener">Emma Swoboda</a> em Unsplash</p>
+
+    <div class="char-wrap">
+      <img class="char-cameo" src="../assets/characters/ama-zz-on.png" alt="Ama-zz-on" style="width:190px;flex-shrink:0;">
+      <div class="char-bubble">
+        <div class="char-name">Ama-zz-on</div>
+        <p>Olá, navegante das estrelas! <img class="om om-sm" src="../assets/icons/content/robot.svg" alt=""> Enquanto o Capitão cuida dos containers, eu cuido da nuvem que sustenta tudo: servidores, armazenamento, bancos de dados e muito mais, sem você precisar comprar um único cabo de rede.</p>
+      </div>
+    </div>
+
+    <div class="wire"></div>
+
+
+    <div class="card">
+      <h3><span class="ic"><img class="om om-sm" src="../assets/icons/content/cloud.svg" alt=""></span> O que é computação em nuvem</h3>
+      <p><strong>Cloud computing</strong> é o fornecimento de recursos de TI (servidores, armazenamento, banco de dados, redes) sob demanda, pela internet, com pagamento conforme o uso (<em>pay-as-you-go</em>). Em vez de comprar e manter servidores físicos num data center próprio, você "aluga" capacidade computacional de um provedor como a <strong>AWS (Amazon Web Services)</strong> e escala pra cima ou pra baixo conforme a necessidade real.</p>
+    </div>
+
+    <div class="card">
+      <h3><span class="ic"><img class="om om-sm" src="../assets/icons/content/bricks.svg" alt=""></span> Os serviços fundamentais da AWS</h3>
+      <table class="tbl">
+        <tr><th>Serviço</th><th>Categoria</th><th>Pra que serve</th></tr>
+        <tr><td><strong>EC2</strong> (Elastic Compute Cloud)</td><td>Computação</td><td>Servidores virtuais sob demanda: a "máquina" onde sua aplicação roda.</td></tr>
+        <tr><td><strong>S3</strong> (Simple Storage Service)</td><td>Armazenamento</td><td>Armazenamento de objetos (arquivos, imagens, backups) altamente durável.</td></tr>
+        <tr><td><strong>IAM</strong> (Identity and Access Management)</td><td>Segurança</td><td>Controla quem pode acessar o quê: usuários, papéis (roles) e permissões.</td></tr>
+        <tr><td><strong>Lambda</strong></td><td>Serverless</td><td>Executa código sob demanda, sem você gerenciar nenhum servidor: paga só pelo tempo de execução.</td></tr>
+        <tr><td><strong>RDS</strong> (Relational Database Service)</td><td>Banco de dados</td><td>Bancos relacionais gerenciados (PostgreSQL, MySQL...), com backups automáticos.</td></tr>
+        <tr><td><strong>VPC</strong> (Virtual Private Cloud)</td><td>Rede</td><td>Sua própria rede isolada dentro da nuvem da AWS, com sub-redes e regras de firewall.</td></tr>
+        <tr><td><strong>EKS</strong> (Elastic Kubernetes Service)</td><td>Orquestração</td><td>Kubernetes gerenciado pela AWS: o mesmo Kubernetes que você aprendeu, só que rodando na escala de um provedor de nuvem.</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3><span class="ic"><img class="om om-sm" src="../assets/icons/content/locked-key.svg" alt=""></span> IAM: o guarda-costas da conta</h3>
+      <p>O <strong>princípio do menor privilégio</strong> é a regra de ouro em qualquer conta de nuvem: cada usuário ou serviço deve ter <strong>apenas</strong> as permissões estritamente necessárias pro seu trabalho: nunca mais que isso. Dar permissão de administrador total "porque é mais fácil" é uma das causas mais comuns de incidentes de segurança em nuvem. No IAM, você define <em>roles</em> (papéis) com políticas específicas, em vez de compartilhar credenciais poderosas por aí.</p>
+    </div>
+
+    <div class="card">
+      <h3><span class="ic"><img class="om om-sm" src="../assets/icons/content/money-bag.svg" alt=""></span> Elasticidade e o modelo de custo</h3>
+      <p>A grande promessa da nuvem é a <strong>elasticidade</strong>: seus recursos crescem quando a demanda cresce (mais visitantes, mais processamento) e encolhem quando ela cai: automaticamente, sem alguém correndo pra comprar um servidor novo às 3 da manhã. Isso exige, em troca, disciplina de monitoramento: recursos esquecidos ligados custam dinheiro real, todo mês, mesmo sem uso.</p>
+    </div>
+    <div class="quiz">
+      <div class="quiz-q"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm.9 14.9h-1.8v-1.8h1.8v1.8Zm1.86-6.9c-.4.5-.7.9-.9 1.4-.16.36-.24.7-.26 1.2h-1.7c.02-.7.16-1.24.44-1.76.28-.5.66-.96 1.14-1.42.34-.32.58-.6.74-.86.16-.28.24-.56.24-.9 0-.44-.14-.78-.42-1.04-.28-.26-.68-.4-1.18-.4-.5 0-.92.16-1.24.46-.32.3-.5.72-.54 1.24H7.4c.06-1.14.46-2.02 1.2-2.66.76-.64 1.72-.96 2.9-.96 1.24 0 2.22.32 2.94.96.72.62 1.08 1.44 1.08 2.44 0 .6-.14 1.1-.42 1.5-.24.36-.5.66-.84 1.02Z"/></svg> Quiz rápido: Qual serviço da AWS é serverless: você paga só pelo tempo de execução, sem gerenciar servidor?</div>
+      <label class="quiz-opt"><input type="radio" name="q_dv9" value="a"> EC2</label>
+      <label class="quiz-opt"><input type="radio" name="q_dv9" value="b"> Lambda</label>
+      <label class="quiz-opt"><input type="radio" name="q_dv9" value="c"> VPC</label>
+      <button class="quiz-btn" onclick="checkQuiz('q_dv9','b','fb-q-9')">Verificar</button>
+      <div class="quiz-fb" id="fb-q-9"></div>
+    </div>
+
+    <div class="quiz bughunt">
+      <div class="quiz-q"><img class="om om-md" src="../assets/icons/bug.svg" alt="bug"> Encontre o bug</div>
+      <pre><code># Pra facilitar, o time decide dar
+# permissão de Administrador total (root)
+# pra todo mundo no IAM, "porque é mais rápido".</code></pre>
+      <p style="font-size:.85rem;margin:0 0 10px;">Essa prática segue o princípio do menor privilégio?</p>
+      <label class="quiz-opt"><input type="radio" name="b_dv9" value="a"> Sim, quanto mais acesso, melhor</label>
+      <label class="quiz-opt"><input type="radio" name="b_dv9" value="b"> Não: cada usuário deveria ter só as permissões estritamente necessárias</label>
+      <label class="quiz-opt"><input type="radio" name="b_dv9" value="c"> Só é um problema se a empresa for grande</label>
+      <button class="quiz-btn" onclick="checkQuiz('b_dv9','b','fb-b-9')">Verificar</button>
+      <div class="quiz-fb" id="fb-b-9"></div>
+    </div>
+
+    <div class="checklist">
+      <div class="checklist-title"><img class="om" src="../assets/icons/code-editor.svg" alt="">Mão na massa</div>
+      <div class="c-item"><input type="checkbox" id="chk-25" data-mod="9" onchange="onCheck(this)"><label for="chk-25">Consigo citar pelo menos 5 serviços fundamentais da AWS e pra que servem.</label></div>
+      <div class="c-item"><input type="checkbox" id="chk-26" data-mod="9" onchange="onCheck(this)"><label for="chk-26">Sei explicar o princípio do menor privilégio no IAM.</label></div>
+      <div class="c-item"><input type="checkbox" id="chk-27" data-mod="9" onchange="onCheck(this)"><label for="chk-27">Entendo o que significa 'elasticidade' numa nuvem.</label></div>
+    </div>
+
+  </section>
+
+  <!-- ================= MODULE 10 ================= -->
+  <section class="content-section" id="sec-9" data-mod="10">
+    <div class="eyebrow">Módulo 10 / 11</div>
+    <h2>CI/CD &amp; Projeto Prático</h2>
+    <p class="subtitle">A última peça do quebra-cabeça: conectar tudo que você aprendeu num fluxo automático, do commit até a produção.</p>
+    <div class="hero-photo-wrap"><img class="hero-photo" src="https://images.unsplash.com/photo-1755690042574-49ff5c3bfe96?auto=format&fit=crop&w=1600&q=70" alt="Foto de ambientação"></div>
+    <p class="hero-credit">Foto: <a href="https://unsplash.com/@mineral_of_demon" target="_blank" rel="noopener">Nastia Petruk</a> em Unsplash</p>
+
+    <div class="char-wrap">
+      <img class="char-cameo" src="../assets/characters/baba-grogue.png" alt="Capitão Baba Grogue" style="width:170px;flex-shrink:0;">
+      <div class="char-bubble">
+        <div class="char-name">Capitão Baba Grogue</div>
+        <p>Aqui a frota inteira trabalha em conjunto: código sobe, testes rodam sozinhos, imagem é construída, container sobe no cluster. É a diferença entre remar cada trecho na mão e ter um motor automático cuidando da rota.</p>
+      </div>
+    </div>
+
+    <div class="wire"></div>
+
+
+    <div class="card">
+      <h3><span class="ic"><img class="om om-sm" src="../assets/icons/content/repeat.svg" alt=""></span> CI/CD: o fluxo automático</h3>
+      <p><strong>Integração Contínua (CI)</strong> é a prática de integrar código de vários desenvolvedores num repositório compartilhado, várias vezes ao dia, com testes automáticos rodando a cada integração pra pegar erros cedo. <strong>Entrega/Implantação Contínua (CD)</strong> vai além: garante que esse código validado esteja sempre pronto (ou já publicado) pra produção, de forma automática e segura.</p>
+    </div>
+
+    <div class="card">
+      <h3><span class="ic"><img class="om om-sm" src="../assets/icons/content/puzzle.svg" alt=""></span> Um pipeline típico, de ponta a ponta</h3>
+      <ol style="margin-left:20px;line-height:1.9;">
+        <li><strong>Push</strong>: o desenvolvedor sobe código numa branch e abre um Pull Request no GitHub.</li>
+        <li><strong>Build &amp; Test</strong>: uma pipeline de CI roda automaticamente: instala dependências, roda testes automatizados.</li>
+        <li><strong>Code Review</strong>: colegas revisam o PR, comentam, pedem ajustes.</li>
+        <li><strong>Merge</strong>: aprovado, o código entra na branch principal.</li>
+        <li><strong>Build da imagem</strong>: um <code>docker build</code> gera uma nova imagem versionada e publica no registry.</li>
+        <li><strong>Deploy</strong>: o Kubernetes aplica o novo manifesto (<code>kubectl apply</code>), fazendo um Rolling Update sem downtime.</li>
+        <li><strong>Monitoramento</strong>: métricas e logs confirmam que tudo subiu bem (o "M" do CAMS, de novo).</li>
+      </ol>
+    </div>
+
+    <div class="project-card">
+      <div class="eyebrow">Projeto sugerido</div>
+      <h3 style="margin-top:6px;"><span class="ic"><img class="om om-sm" src="../assets/icons/content/trophy.svg" alt=""></span> Sua primeira frota completa</h3>
+      <p>Construa e suba, do zero, uma aplicação simples (uma API "Hello DevOps" em Node, Python ou o que preferir) seguindo a rota inteira: (1) crie o repositório e faça o primeiro commit; (2) escreva um Dockerfile e construa a imagem; (3) escreva um <code>docker-compose.yml</code> conectando sua API a um banco de dados; (4) escreva um manifesto de Deployment do Kubernetes com <code>replicas: 3</code> e aplique no cluster local do Docker Desktop; (5) mate um Pod na mão e documente (com print) o Laço de Reconciliação em ação. Bônus: escreva no README quais permissões IAM mínimas essa aplicação precisaria numa AWS de verdade.</p>
+    </div>
+    <div class="quiz">
+      <div class="quiz-q"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm.9 14.9h-1.8v-1.8h1.8v1.8Zm1.86-6.9c-.4.5-.7.9-.9 1.4-.16.36-.24.7-.26 1.2h-1.7c.02-.7.16-1.24.44-1.76.28-.5.66-.96 1.14-1.42.34-.32.58-.6.74-.86.16-.28.24-.56.24-.9 0-.44-.14-.78-.42-1.04-.28-.26-.68-.4-1.18-.4-.5 0-.92.16-1.24.46-.32.3-.5.72-.54 1.24H7.4c.06-1.14.46-2.02 1.2-2.66.76-.64 1.72-.96 2.9-.96 1.24 0 2.22.32 2.94.96.72.62 1.08 1.44 1.08 2.44 0 .6-.14 1.1-.42 1.5-.24.36-.5.66-.84 1.02Z"/></svg> Quiz rápido: Qual a diferença entre Integração Contínua (CI) e Entrega Contínua (CD)?</div>
+      <label class="quiz-opt"><input type="radio" name="q_dv10" value="a"> São sinônimos, sem diferença prática</label>
+      <label class="quiz-opt"><input type="radio" name="q_dv10" value="b"> CI valida o código com testes frequentes; CD garante que ele fique pronto/publicado em produção</label>
+      <label class="quiz-opt"><input type="radio" name="q_dv10" value="c"> CD acontece antes do CI no pipeline</label>
+      <button class="quiz-btn" onclick="checkQuiz('q_dv10','b','fb-q-10')">Verificar</button>
+      <div class="quiz-fb" id="fb-q-10"></div>
+    </div>
+
+    <div class="checklist">
+      <div class="checklist-title"><img class="om" src="../assets/icons/code-editor.svg" alt="">Mão na massa</div>
+      <div class="c-item"><input type="checkbox" id="chk-28" data-mod="10" onchange="onCheck(this)"><label for="chk-28">Sei descrever um pipeline de CI/CD do commit até o deploy, passo a passo.</label></div>
+      <div class="c-item"><input type="checkbox" id="chk-29" data-mod="10" onchange="onCheck(this)"><label for="chk-29">Entendo a diferença prática entre Integração Contínua e Entrega Contínua.</label></div>
+      <div class="c-item"><input type="checkbox" id="chk-30" data-mod="10" onchange="onCheck(this)"><label for="chk-30">Comecei (ou terminei) o projeto da frota completa.</label></div>
+    </div>
+
+    <div class="game-card sequence-game" id="seqGameDevops" data-steps='["Commit &amp; Push","Build &amp; Test (CI)","Code Review &amp; Merge","Build da imagem Docker","Deploy no Kubernetes"]'>
+      <div class="game-head">
+        <div class="game-title"><img class="om om-sm" src="../assets/icons/content/numbers.svg" alt=""> Ordene o pipeline de CI/CD</div>
+        <div class="game-stats"><span class="js-seq-status">0/5</span></div>
+      </div>
+      <p style="font-size:.82rem;color:var(--text-dim);margin-bottom:14px;">Coloque as etapas do pipeline na ordem certa, do commit ao deploy.</p>
+      <div class="seq-answer"></div>
+      <div class="seq-pool"></div>
+      <div class="game-win-msg"><img class="om om-sm" src="../assets/icons/content/confetti.svg" alt=""> Sequência perfeita! Você entende o pipeline de ponta a ponta.</div>
+      <button class="game-reset-btn" onclick="initSequenceGame('seqGameDevops')">Embaralhar de novo</button>
+    </div>
+  </section>
+
+  <!-- ================= MODULE 11 ================= -->
+  <section class="content-section" id="sec-10" data-mod="11">
+    <div class="eyebrow">Módulo 11 / 11</div>
+    <h2>Revisão Geral: Bem-vindo à Tripulação</h2>
+    <p class="subtitle">Parabéns, Capitão! Você acaba de realizar sua primeira navegação completa em águas nativas de nuvem.</p>
+    <div class="hero-photo-wrap"><img class="hero-photo" src="https://images.unsplash.com/photo-1759144897143-991d650b1668?auto=format&fit=crop&w=1600&q=70" alt="Foto de ambientação"></div>
+    <p class="hero-credit">Foto: <a href="https://unsplash.com/@sorasagano" target="_blank" rel="noopener">Sora Sagano</a> em Unsplash</p>
+
+    <div class="char-wrap">
+      <img class="char-cameo" src="../assets/characters/baba-grogue.png" alt="Capitão Baba Grogue" style="width:170px;flex-shrink:0;">
+      <div class="char-bubble">
+        <div class="char-name">Capitão Baba Grogue</div>
+        <p>Olha só o quanto você navegou: cultura, Git, GitHub, IaC, Docker, Kubernetes, AWS. Agora é hora de revisar tudo, colecionar suas conquistas e, principalmente, continuar praticando. Nenhum capitão bom para de aprender no primeiro porto.</p>
+      </div>
+    </div>
+
+    <div class="wire"></div>
+
+
+    <div class="card">
+      <h3><span class="ic"><img class="om om-sm" src="../assets/icons/content/card-index.svg" alt=""></span> O mapa completo da viagem</h3>
+      <table class="tbl">
+        <tr><th>Módulo</th><th>O que você levou pra casa</th></tr>
+        <tr><td>01: Cultura &amp; CAMS</td><td>DevOps é cultura, não ferramenta. Culture, Automation, Measurement, Sharing.</td></tr>
+        <tr><td>02: Git</td><td>Repositório, staging area, commits, branches e merges.</td></tr>
+        <tr><td>03: GitHub</td><td>Pull Requests, code review, colaboração em equipe.</td></tr>
+        <tr><td>04: IaC</td><td>Infraestrutura declarativa, VMs vs. containers.</td></tr>
+        <tr><td>05: Docker</td><td>Dockerfile, imagem, container: a arquitetura cliente-servidor.</td></tr>
+        <tr><td>06: Compose</td><td>Múltiplos containers, volumes persistentes, redes internas.</td></tr>
+        <tr><td>07: Kubernetes (conceitos)</td><td>Pod, ReplicaSet, Deployment, manifesto YAML, Laço de Reconciliação.</td></tr>
+        <tr><td>08: kubectl na prática</td><td>Comandos reais pra rodar, inspecionar e derrubar um cluster local.</td></tr>
+        <tr><td>09: AWS</td><td>EC2, S3, IAM, Lambda, RDS, VPC, EKS: o oceano onde tudo isso navega de verdade.</td></tr>
+        <tr><td>10: CI/CD</td><td>O pipeline inteiro, do commit ao deploy automático em produção.</td></tr>
+      </table>
+    </div>
+
+    <h3 style="margin-top:30px;">Conquistas</h3>
+    <p style="font-size:.85rem;color:var(--text-dim);margin-bottom:4px;">Desbloqueadas conforme você avança.</p>
+    <div class="badges-grid" id="badgesGrid">
+      <div class="badge-tile" data-badge="first_step"><div class="b-icon"><img class="om om-sm" src="../assets/icons/content/seedling.svg" alt=""></div><div class="b-name">Primeiro Passo</div><div class="b-desc">Marque sua primeira tarefa.</div></div>
+      <div class="badge-tile" data-badge="module1_master"><div class="b-icon"><img class="om om-sm" src="../assets/icons/content/compass.svg" alt=""></div><div class="b-name">CAMS Entendido</div><div class="b-desc">Complete o módulo de Cultura DevOps.</div></div>
+      <div class="badge-tile" data-badge="module2_master"><div class="b-icon"><img class="om om-sm" src="../assets/icons/content/herb.svg" alt=""></div><div class="b-name">Marinheiro do Git</div><div class="b-desc">Complete o módulo de Git.</div></div>
+      <div class="badge-tile" data-badge="module3_master"><div class="b-icon"><img class="om om-sm" src="../assets/icons/content/handshake.svg" alt=""></div><div class="b-name">Diplomata de PR</div><div class="b-desc">Complete o módulo de GitHub.</div></div>
+      <div class="badge-tile" data-badge="module4_master"><div class="b-icon"><img class="om om-sm" src="../assets/icons/content/crane.svg" alt=""></div><div class="b-name">Arquiteto de Infra</div><div class="b-desc">Complete o módulo de IaC.</div></div>
+      <div class="badge-tile" data-badge="module5_master"><div class="b-icon"><img class="om om-sm" src="../assets/icons/content/box.svg" alt=""></div><div class="b-name">Estivador de Containers</div><div class="b-desc">Complete o módulo de Docker.</div></div>
+      <div class="badge-tile" data-badge="module6_master"><div class="b-icon"><img class="om om-sm" src="../assets/icons/content/puzzle.svg" alt=""></div><div class="b-name">Mestre do Compose</div><div class="b-desc">Complete o módulo de Compose.</div></div>
+      <div class="badge-tile" data-badge="module7_master"><div class="b-icon"><img class="om om-sm" src="../assets/icons/content/anchor.svg" alt=""></div><div class="b-name">Capitão de Pods</div><div class="b-desc">Complete o módulo de conceitos de Kubernetes.</div></div>
+      <div class="badge-tile" data-badge="module8_master"><div class="b-icon"><img class="om om-sm" src="../assets/icons/content/satellite.svg" alt=""></div><div class="b-name">Comandante kubectl</div><div class="b-desc">Complete o módulo de Kubernetes na prática.</div></div>
+      <div class="badge-tile" data-badge="module9_master"><div class="b-icon"><img class="om om-sm" src="../assets/icons/content/cloud.svg" alt=""></div><div class="b-name">Navegador AWS</div><div class="b-desc">Complete o módulo de AWS.</div></div>
+      <div class="badge-tile" data-badge="module10_master"><div class="b-icon"><img class="om om-sm" src="../assets/icons/content/repeat.svg" alt=""></div><div class="b-name">Engenheiro de Pipeline</div><div class="b-desc">Complete o módulo de CI/CD.</div></div>
+      <div class="badge-tile" data-badge="module11_master"><div class="b-icon"><img class="om om-sm" src="../assets/icons/content/checkered-flag.svg" alt=""></div><div class="b-name">Revisão Completa</div><div class="b-desc">Complete o módulo de Revisão.</div></div>
+      <div class="badge-tile" data-badge="quiz_perfect"><div class="b-icon"><img class="om om-sm" src="../assets/icons/content/target.svg" alt=""></div><div class="b-name">Quiz Perfeito</div><div class="b-desc">Acerte todos os quizzes e desafios do curso.</div></div>
+      <div class="badge-tile" data-badge="streak_3"><div class="b-icon"><svg class="ic-mono" viewBox="0 0 24 24" fill="currentColor"><path d="M12.75 2.25c.2 2.9-.62 5-2.3 6.86-.55.6-1.15 1.14-1.72 1.75-1.9 2-2.98 4.36-2.23 7.2A7.5 7.5 0 0 0 19.5 15c0-3.86-2.55-6.1-4.53-8.35-1-1.13-1.9-2.5-2.22-4.4Zm.4 14.9a2.65 2.65 0 0 1-3.53-.4c-.8-.98-.68-2.16-.02-3.07.28.55.68 1 1.2 1.3.02-1.1.42-1.98 1.15-2.75.28 1.5 1.05 2.4 2.02 3.28.6.55.9 1.3.7 2.05a2.2 2.2 0 0 1-1.52 1.6Z"/></svg></div><div class="b-name">Maratonista</div><div class="b-desc">3 dias seguidos de estudo.</div></div>
+      <div class="badge-tile" data-badge="focus_1"><div class="b-icon"><img class="om om-sm" src="../assets/icons/content/stopwatch.svg" alt=""></div><div class="b-name">Foco Total</div><div class="b-desc">Complete 1 sessão de foco.</div></div>
+      <div class="badge-tile" data-badge="dialogue_master"><div class="b-icon"><img class="om om-sm" src="../assets/icons/content/speech-bubble.svg" alt=""></div><div class="b-name">Bate-papo Concluído</div><div class="b-desc">Termine o debate entre Baba Grogue e Octocat.</div></div>
+      <div class="badge-tile" data-badge="completionist"><div class="b-icon"><img class="om om-sm" src="../assets/icons/content/crown.svg" alt=""></div><div class="b-name">Capitão DevOps</div><div class="b-desc">100% do curso concluído.</div></div>
+    </div>
+
+
+
+    <div class="game-card dialogue-game" id="dlgGameDevops" data-dialogue='{
+      "charA": {"name":"Capitão Baba Grogue", "img":"../assets/characters/baba-grogue.png"},
+      "charB": {"name":"Octocat", "img":"../assets/characters/octocat.png"},
+      "rounds": [
+        {
+          "setup": "Depois de um dia inteiro codando, os dois discutem no convés.",
+          "lineA": "Beleza, dei commit no código. Já subiu pro GitHub, então, certo? Bora pra próxima.",
+          "lineB": "Errado, capitão! Commit só grava localmente. Sem um push, ninguém no mundo vê essa mudança.",
+          "question": "Quem entendeu certo o fluxo do Git?",
+          "correct": "B",
+          "reactionCorrect": "Viu? Commit é o diário de bordo local. Push é o que manda esse diário pro GitHub, pra tripulação inteira ver."
+        },
+        {
+          "lineA": "Imagem, container... é tudo a mesma caixa de rum, só nome bonito.",
+          "lineB": "Não é não! Imagem é a receita congelada, só leitura. Container é a receita sendo cozinhada agora, rodando de verdade.",
+          "question": "Qual explicação captura a diferença real?",
+          "correct": "B",
+          "reactionCorrect": "Isso! Quando você roda docker run, nasce um container: uma instância viva daquele molde read-only."
+        },
+        {
+          "setup": "Kubernetes é o terreno do capitão. Dessa vez é o gato espacial que tropeça.",
+          "lineA": "Fácil: Pod é a máquina física do cluster, e Node é o container rodando dentro dela.",
+          "lineB": "Errado, gatinho espacial. Node é a máquina (ou VM) que faz parte do cluster. Pod é a menor unidade que o Kubernetes gerencia: um ou mais containers rodando juntos, dentro de um Node.",
+          "question": "Dessa vez, quem acertou a definição?",
+          "correct": "B",
+          "reactionCorrect": "Rá! Essa eu sei de cor, grumete. Um Node aguenta vários Pods. Confundir os dois é o primeiro tropeço de todo iniciante."
+        },
+        {
+          "lineA": "Ah, escrever arquivo de Terraform pra criar servidor? Só clico direto no console da AWS e pronto, economizo trabalho.",
+          "lineB": "Só que não, capitão! Clicar no console não fica registrado em lugar nenhum. Se o servidor cair, ninguém recria igual. Com IaC, o arquivo é a verdade: versionado, revisável, repetível.",
+          "question": "No fim das contas, qual abordagem é mais segura pro time?",
+          "correct": "B",
+          "reactionCorrect": "Exato! Preguiça de curto prazo vira dor de cabeça de longo prazo. IaC é a receita salva, não só o prato pronto."
+        }
+      ]
+    }'>
+      <div class="game-head">
+        <div class="game-title"><img class="om om-sm" src="../assets/icons/content/speech-bubble.svg" alt=""> Quem explicou certo?</div>
+        <div class="game-stats"><span class="js-dlg-status">1/4</span></div>
+      </div>
+      <p style="font-size:.82rem;color:var(--text-dim);margin-bottom:14px;">O Capitão Baba Grogue e o Octocat discutem DevOps no convés. Escolha quem está certo.</p>
+      <div class="dlg-stage"></div>
+      <div class="game-win-msg"><img class="om om-sm" src="../assets/icons/content/confetti.svg" alt=""> Debate concluído! Você distinguiu Git, Docker, Kubernetes e IaC na prática.</div>
+    </div>
+
+    <div class="checklist">
+      <div class="checklist-title"><img class="om" src="../assets/icons/code-editor.svg" alt="">Autoavaliação final</div>
+      <div class="c-item"><input type="checkbox" id="chk-45" data-mod="11" onchange="onCheck(this)"><label for="chk-45">Consigo explicar o CAMS sem consultar nada.</label></div>
+      <div class="c-item"><input type="checkbox" id="chk-46" data-mod="11" onchange="onCheck(this)"><label for="chk-46">Sei a diferença entre Dockerfile, imagem e container.</label></div>
+      <div class="c-item"><input type="checkbox" id="chk-47" data-mod="11" onchange="onCheck(this)"><label for="chk-47">Entendo a hierarquia Pod → ReplicaSet → Deployment.</label></div>
+      <div class="c-item"><input type="checkbox" id="chk-48" data-mod="11" onchange="onCheck(this)"><label for="chk-48">Consigo citar pelo menos 5 serviços fundamentais da AWS.</label></div>
+      <div class="c-item"><input type="checkbox" id="chk-49" data-mod="11" onchange="onCheck(this)"><label for="chk-49">Construí (ou comecei) o projeto da frota completa.</label></div>
+    </div>
+
+    <footer class="credits">
+      Conteúdo baseado na síntese técnica "A Engenharia por trás do DevOps", no material de aula "LAB (DevOps) K8S" e nos slides de Kubernetes do Instituto J&amp;F.
+    </footer>
+
+  </section>
+
+</main>
+
+<div class="toast-container" id="toastContainer"></div>
+
+<div class="levelup-overlay" id="levelupOverlay">
+  <div class="levelup-card">
+    <img class="char-cameo" src="../assets/characters/baba-grogue.png" alt="Capitão Baba Grogue comemorando" style="width:130px;margin-bottom:6px;">
+    <div class="lv-eyebrow"><img class="om om-md" src="../assets/icons/confetti.svg" alt=""> VOCÊ SUBIU DE PATENTE</div>
+    <div class="lv-big" id="levelupNum">Nv. 2</div>
+    <div class="lv-sub" id="levelupTitle">Marinheiro de Repositório</div>
+    <p>Sua frota está mais forte. Continue no seu ritmo: cada tarefa marcada é uma milha náutica a mais.</p>
+    <button onclick="closeLevelUp()">Obrigado, Capitão, bora continuar</button>
+  </div>
+</div>
+
+<div class="mascot-wrap">
+  <div class="mascot-bubble" id="mascotBubble"></div>
+  <svg class="mascot-bot" id="mascotBot" viewBox="0 0 64 70" onclick="mascotTip(true)" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="32" cy="66" rx="16" ry="3" fill="#4A4232" opacity=".12"/>
+    <path d="M19 46 L45 46 L41 65 L23 65 Z" fill="#C97B4A" stroke="#A85F38" stroke-width="1.5"/>
+    <rect x="16" y="41" width="32" height="8" rx="4" fill="#D9946A" stroke="#A85F38" stroke-width="1"/>
+    <ellipse cx="32" cy="42.5" rx="13" ry="3" fill="#5C4A35"/>
+    <text id="mascotStageEmoji" x="32" y="32" font-size="27" text-anchor="middle" dominant-baseline="middle"><img class="om om-sm" src="../assets/icons/content/seedling.svg" alt=""></text>
+  </svg>
+</div>
+
+<script>
+  window.COURSE = {
+    prefix: 'curso_devops',
+    totalModules: 11,
+    nodeOrder: [1,2,3,4,5,6,7,8,9,10,11],
+    totalQuizzes: 18,
+    levelTitles: [
+      'Grumete de Convés','Marinheiro de Repositório','Timoneiro de Pull Requests',
+      'Engenheiro de Infraestrutura','Estivador de Containers','Almirante de Cluster','Capitão DevOps'
+    ],
+    completionistName: 'Capitão DevOps',
+    mascotTips: [
+      'Sem pressa, marujo: cada tarefa marcada já é +10 XP. <img class="om om-sm" src="../assets/icons/content/anchor.svg" alt="">',
+      'DevOps não é ferramenta, é cultura. Guarda essa frase.',
+      'Commit pequeno e frequente > commit gigante uma vez por semana.',
+      'Todo Pull Request merece uma descrição decente. Seu eu do futuro agradece.',
+      'Container leve, VM pesada: não esquece essa diferença na prova.',
+      'RUN constrói a imagem. CMD roda o container. Não troca essa ordem!',
+      'Se um Pod sumir, o ReplicaSet já está clonando outro. Confia no processo.',
+      'IAM: menor privilégio sempre. Nunca dá admin total "pra facilitar".',
+      'Uma sessão de foco de 25min rende XP bônus: e um respiro de verdade.',
+      'Dá uma olhada nas suas conquistas lá no módulo 11.',
+      'Progresso pequeno todo dia ainda é progresso. Isso vale em código e no mar. <img class="om om-sm" src="../assets/icons/content/wave.svg" alt="">'
+    ],
+    achModules: [
+      {mod:1, id:'module1_master', name:'CAMS Entendido', icon:'<img class="om om-sm" src="../assets/icons/content/compass.svg" alt="">'},
+      {mod:2, id:'module2_master', name:'Marinheiro do Git', icon:'<img class="om om-sm" src="../assets/icons/content/herb.svg" alt="">'},
+      {mod:3, id:'module3_master', name:'Diplomata de PR', icon:'<img class="om om-sm" src="../assets/icons/content/handshake.svg" alt="">'},
+      {mod:4, id:'module4_master', name:'Arquiteto de Infra', icon:'<img class="om om-sm" src="../assets/icons/content/crane.svg" alt="">'},
+      {mod:5, id:'module5_master', name:'Estivador de Containers', icon:'<img class="om om-sm" src="../assets/icons/content/box.svg" alt="">'},
+      {mod:6, id:'module6_master', name:'Mestre do Compose', icon:'<img class="om om-sm" src="../assets/icons/content/puzzle.svg" alt="">'},
+      {mod:7, id:'module7_master', name:'Capitão de Pods', icon:'<img class="om om-sm" src="../assets/icons/content/anchor.svg" alt="">'},
+      {mod:8, id:'module8_master', name:'Comandante kubectl', icon:'<img class="om om-sm" src="../assets/icons/content/satellite.svg" alt="">'},
+      {mod:9, id:'module9_master', name:'Navegador AWS', icon:'<img class="om om-sm" src="../assets/icons/content/cloud.svg" alt="">'},
+      {mod:10, id:'module10_master', name:'Engenheiro de Pipeline', icon:'<img class="om om-sm" src="../assets/icons/content/repeat.svg" alt="">'},
+      {mod:11, id:'module11_master', name:'Revisão Completa', icon:'<img class="om om-sm" src="../assets/icons/content/checkered-flag.svg" alt="">'}
+    ],
+    lightningChallenges: [
+      {id:'lc1', q:'DevOps é fundamentalmente...', options:['Uma ferramenta específica','Uma cultura apoiada por práticas e ferramentas','Um produto que substitui o Ops'], correct:1, explain:'CAMS resume essa cultura: Culture, Automation, Measurement, Sharing.'},
+      {id:'lc2', q:'A Staging Area do Git é...', options:['Onde o código roda em produção','A área intermediária antes do commit','O histórico de commits já feitos'], correct:1, explain:'É o "convés" onde a mudança fica organizada antes do commit.'},
+      {id:'lc3', q:'Um Pull Request é...', options:['Um simples push de código','Um pedido de aprovação com revisão de pares','Um comando de terminal'], correct:1, explain:'PR é uma narrativa das mudanças, esperando revisão antes de integrar.'},
+      {id:'lc4', q:'Containers, comparado a VMs pesadas, oferecem...', options:['Isolamento de processos mais leve','Um sistema operacional completo por unidade','Mais lentidão de boot'], correct:0, explain:'Containers compartilham o kernel do host: são muito mais leves que VMs completas.'},
+      {id:'lc5', q:'Um Dockerfile é...', options:['A imagem já pronta','A receita de como construir a imagem','Um container rodando'], correct:1, explain:'Dockerfile → Imagem → Container: essa é a ordem.'},
+      {id:'lc6', q:'Um volume no Docker serve pra...', options:['Aumentar a velocidade da CPU','Persistir dados além do ciclo de vida do container','Compactar a imagem'], correct:1, explain:'Sem volume, dados de banco somem quando o container é removido.'},
+      {id:'lc7', q:'No Kubernetes, quem garante que o número certo de Pods está sempre rodando?', options:['O Dockerfile','O ReplicaSet','O IAM'], correct:1, explain:'O ReplicaSet monitora e recria Pods automaticamente: é o Laço de Reconciliação.'},
+      {id:'lc8', q:'No IAM da AWS, qual é o princípio recomendado?', options:['Dar admin total pra facilitar', 'Menor privilégio necessário','Sem controle de acesso'], correct:1, explain:'Conceda só o acesso mínimo necessário pra cada função.'},
+      {id:'lc9', q:'Qual é a ordem correta de um pipeline básico de CI/CD?', options:['Deploy → Build → Commit','Commit → Build/Test → Deploy','Test → Commit → Build'], correct:1, explain:'Do commit ao deploy, passando por build e testes automatizados.'},
+      {id:'lc10', q:'"Elasticidade" na nuvem significa...', options:['Preço fixo sempre','Escalar recursos automaticamente conforme a demanda','Um tipo de banco de dados'], correct:1, explain:'A infraestrutura cresce ou encolhe de acordo com a carga real.'}
+    ]
+  };
+</script>
+<script src="../assets/js/theme-fx.js"></script>
+<script src="../assets/js/engine.js"></script>
+<script src="../assets/js/games.js"></script>
+    <script src="../assets/js/chrome-widgets.js"></script>
+    <script src="../assets/js/theme-picker.js"></script>
+<script src="../assets/js/accessibility.js"></script>
+
+<script>
+  // Close mobile sidebar when a module is clicked
+  document.querySelectorAll('.path-node').forEach(node => {
+    node.addEventListener('click', () => {
+      const aside = document.querySelector('aside');
+      if (aside && aside.classList.contains('open')) {
+        aside.classList.remove('open');
+      }
+    });
+  });
+</script>
+</body>
+</html>
+

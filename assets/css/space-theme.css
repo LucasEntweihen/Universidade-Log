@@ -1,0 +1,235 @@
+/* =====================================================================
+   TEMA ESPACIAL — pacote de efeitos cósmicos
+   =====================================================================
+   Arquivo carregado em TODAS as páginas (custo é zero quando o tema
+   não está ativo: tudo aqui é escondido por trás do seletor de
+   atributo [data-theme="space"], então sem esse atributo no <html>
+   nenhuma regra deste arquivo é sequer pintada pelo navegador).
+
+   O que tem aqui, e por quê cada parte existe:
+
+   1. CAMPO DE ESTRELAS — 45 pontinhos brancos com posição e opacidade
+      geradas uma única vez (seed fixa) e "cravadas" no CSS como
+      camadas de radial-gradient em body::before. Isso evita gerar o
+      céu estrelado via JavaScript (mais rápido, funciona mesmo se o
+      JS falhar, e não recalcula em cada resize). Um leve pulso de
+      opacidade dá a sensação de "cintilar" sem animar 45 elementos
+      individualmente — muito mais barato pra a placa de vídeo.
+
+   2. PLANETAS — só aparecem nas páginas de curso (body[class^="course-"]),
+      pra não competir com o conteúdo mais denso da landing page.
+      São gradientes (nenhuma imagem baixada), posicionados fixos nos
+      cantos, bem grandes e desfocados — decoração de fundo, nunca
+      tapam texto (pointer-events:none, z-index atrás do conteúdo).
+
+   3. FOTO REAL DO UNSPLASH — um elemento .space-planet-photo (inserido
+      no HTML das páginas de curso) usa uma fotografia real de
+      galáxia/nebulosa como uma das "luas" flutuantes, pra dar um
+      toque de foto de verdade no meio dos gradientes desenhados.
+      As imagens (licença Unsplash — uso livre, sem exigir crédito,
+      mas os créditos ficam aqui documentados por transparência):
+        - Distant Galaxy, por Javier Miranda (@nuvaproductions)
+          https://unsplash.com/photos/3yQY9GPM8Mg
+        - Nebula in galaxy ("Natures fireworks"), por Alexander Andrews
+          (@alex_andrews) — https://unsplash.com/photos/eNoeWZkO7Zc
+        - Earth Planet, por Javier Miranda (@nuvaproductions)
+          https://unsplash.com/photos/Jn2EaLLYZfY
+      Carregadas direto do CDN da Unsplash (images.unsplash.com), já
+      liberado no img-src do Content-Security-Policy de cada página.
+
+   4. ESTRELA CADENTE — uma risca de luz que cruza a tela periodicamente
+      (body::after), com atraso pra não repetir toda hora. Puramente
+      decorativo, pointer-events:none.
+
+   5. FOGUETE CONTEXTUAL — não é decoração solta: o foguete só aparece
+      quando faz sentido (".space-rocket-launch", disparado pelo
+      confettiBurst() de engine.js nas comemorações reais do site —
+      resposta certa em sequência, módulo concluído, conquista
+      desbloqueada) e, na landing page, um foguete pequeno flutua ao
+      lado do botão "Começar por DevOps" — o gatilho de começar a
+      jornada. Ver assets/js/space-effects.js e o confettiBurst()
+      atualizado em assets/js/engine.js.
+
+   6. prefers-reduced-motion — todas as animações daqui (pulso das
+      estrelas, estrela cadente, flutuação do foguete) são desligadas
+      pra quem pediu menos movimento no sistema operacional; os
+      elementos continuam visíveis, só param de se mexer.
+   ===================================================================== */
+
+/* ---------- 1. campo de estrelas + pulso sutil ---------- */
+[data-theme="space"] body::before{
+  content:'';
+  position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:
+radial-gradient(1.2px 1.2px at 63.4% 4.4%, rgba(255,255,255,0.48), transparent 100%),
+    radial-gradient(2.0px 2.0px at 72.7% 67.0%, rgba(255,255,255,0.4), transparent 100%),
+    radial-gradient(1.1px 1.1px at 42.5% 4.9%, rgba(255,255,255,0.65), transparent 100%),
+    radial-gradient(1.7px 1.7px at 4.5% 21.1%, rgba(255,255,255,0.68), transparent 100%),
+    radial-gradient(1.9px 1.9px at 23.2% 58.6%, rgba(255,255,255,0.35), transparent 100%),
+    radial-gradient(1.3px 1.3px at 79.4% 69.0%, rgba(255,255,255,0.44), transparent 100%),
+    radial-gradient(0.9px 0.9px at 93.9% 34.3%, rgba(255,255,255,0.41), transparent 100%),
+    radial-gradient(1.9px 1.9px at 83.4% 60.0%, rgba(255,255,255,0.79), transparent 100%),
+    radial-gradient(1.3px 1.3px at 53.5% 95.4%, rgba(255,255,255,0.68), transparent 100%),
+    radial-gradient(2.0px 2.0px at 81.6% 61.4%, rgba(255,255,255,0.7), transparent 100%),
+    radial-gradient(1.1px 1.1px at 69.6% 6.4%, rgba(255,255,255,0.52), transparent 100%),
+    radial-gradient(0.9px 0.9px at 9.7% 24.3%, rgba(255,255,255,0.52), transparent 100%),
+    radial-gradient(1.3px 1.3px at 63.0% 37.0%, rgba(255,255,255,0.48), transparent 100%),
+    radial-gradient(1.7px 1.7px at 27.6% 91.9%, rgba(255,255,255,0.72), transparent 100%),
+    radial-gradient(1.0px 1.0px at 18.4% 72.0%, rgba(255,255,255,0.58), transparent 100%),
+    radial-gradient(1.6px 1.6px at 97.0% 63.4%, rgba(255,255,255,0.76), transparent 100%),
+    radial-gradient(1.1px 1.1px at 82.9% 76.5%, rgba(255,255,255,0.37), transparent 100%),
+    radial-gradient(1.1px 1.1px at 32.3% 27.7%, rgba(255,255,255,0.92), transparent 100%),
+    radial-gradient(1.7px 1.7px at 86.1% 32.2%, rgba(255,255,255,0.59), transparent 100%),
+    radial-gradient(1.2px 1.2px at 89.8% 46.0%, rgba(255,255,255,0.5), transparent 100%),
+    radial-gradient(1.6px 1.6px at 55.9% 27.2%, rgba(255,255,255,0.89), transparent 100%),
+    radial-gradient(2.2px 2.2px at 40.3% 23.1%, rgba(255,255,255,0.66), transparent 100%),
+    radial-gradient(1.0px 1.0px at 10.7% 6.5%, rgba(255,255,255,0.73), transparent 100%),
+    radial-gradient(0.9px 0.9px at 78.0% 42.5%, rgba(255,255,255,0.58), transparent 100%),
+    radial-gradient(2.2px 2.2px at 97.6% 52.8%, rgba(255,255,255,0.87), transparent 100%),
+    radial-gradient(1.8px 1.8px at 3.1% 71.2%, rgba(255,255,255,0.67), transparent 100%),
+    radial-gradient(1.0px 1.0px at 27.6% 63.5%, rgba(255,255,255,0.61), transparent 100%),
+    radial-gradient(2.0px 2.0px at 45.6% 93.6%, rgba(255,255,255,0.51), transparent 100%),
+    radial-gradient(2.1px 2.1px at 50.1% 19.2%, rgba(255,255,255,0.87), transparent 100%),
+    radial-gradient(1.7px 1.7px at 30.7% 63.3%, rgba(255,255,255,0.44), transparent 100%),
+    radial-gradient(1.9px 1.9px at 75.2% 53.8%, rgba(255,255,255,0.67), transparent 100%),
+    radial-gradient(0.8px 0.8px at 2.1% 33.1%, rgba(255,255,255,0.91), transparent 100%),
+    radial-gradient(1.2px 1.2px at 86.4% 81.8%, rgba(255,255,255,0.38), transparent 100%),
+    radial-gradient(0.9px 0.9px at 86.3% 92.9%, rgba(255,255,255,0.64), transparent 100%),
+    radial-gradient(1.9px 1.9px at 8.6% 75.0%, rgba(255,255,255,0.43), transparent 100%),
+    radial-gradient(1.2px 1.2px at 47.6% 54.8%, rgba(255,255,255,0.87), transparent 100%),
+    radial-gradient(1.6px 1.6px at 42.6% 22.3%, rgba(255,255,255,0.79), transparent 100%),
+    radial-gradient(2.2px 2.2px at 21.3% 31.9%, rgba(255,255,255,0.74), transparent 100%),
+    radial-gradient(1.0px 1.0px at 44.1% 51.7%, rgba(255,255,255,0.48), transparent 100%),
+    radial-gradient(1.1px 1.1px at 34.5% 58.5%, rgba(255,255,255,0.48), transparent 100%),
+    radial-gradient(1.1px 1.1px at 8.8% 62.6%, rgba(255,255,255,0.89), transparent 100%),
+    radial-gradient(1.1px 1.1px at 84.5% 8.8%, rgba(255,255,255,0.75), transparent 100%),
+    radial-gradient(2.1px 2.1px at 22.6% 14.7%, rgba(255,255,255,0.69), transparent 100%),
+    radial-gradient(1.9px 1.9px at 47.4% 77.3%, rgba(255,255,255,0.46), transparent 100%),
+    radial-gradient(1.4px 1.4px at 11.3% 43.4%, rgba(255,255,255,0.63), transparent 100%);
+  animation:space-twinkle 5s ease-in-out infinite;
+}
+@keyframes space-twinkle{
+  0%,100%{opacity:1;}
+  50%{opacity:.72;}
+}
+
+/* ---------- 2. planetas (só em páginas de curso) ---------- */
+[data-theme="space"] body[class^="course-"]::before{
+  background-image:
+    /* planeta 1 — canto superior direito, tom violeta com "atmosfera" */
+    radial-gradient(circle at 88% 8%, rgba(123,108,255,.55) 0%, rgba(123,108,255,.28) 34%, transparent 62%),
+    radial-gradient(circle at 88% 8%, transparent 40%, rgba(233,110,199,.18) 46%, transparent 52%),
+    /* planeta 2 — canto inferior esquerdo, tom âmbar com anel */
+    radial-gradient(circle at 3% 92%, rgba(255,209,102,.4) 0%, rgba(255,209,102,.16) 30%, transparent 58%),
+radial-gradient(1.2px 1.2px at 63.4% 4.4%, rgba(255,255,255,0.48), transparent 100%),
+    radial-gradient(2.0px 2.0px at 72.7% 67.0%, rgba(255,255,255,0.4), transparent 100%),
+    radial-gradient(1.1px 1.1px at 42.5% 4.9%, rgba(255,255,255,0.65), transparent 100%),
+    radial-gradient(1.7px 1.7px at 4.5% 21.1%, rgba(255,255,255,0.68), transparent 100%),
+    radial-gradient(1.9px 1.9px at 23.2% 58.6%, rgba(255,255,255,0.35), transparent 100%),
+    radial-gradient(1.3px 1.3px at 79.4% 69.0%, rgba(255,255,255,0.44), transparent 100%),
+    radial-gradient(0.9px 0.9px at 93.9% 34.3%, rgba(255,255,255,0.41), transparent 100%),
+    radial-gradient(1.9px 1.9px at 83.4% 60.0%, rgba(255,255,255,0.79), transparent 100%),
+    radial-gradient(1.3px 1.3px at 53.5% 95.4%, rgba(255,255,255,0.68), transparent 100%),
+    radial-gradient(2.0px 2.0px at 81.6% 61.4%, rgba(255,255,255,0.7), transparent 100%),
+    radial-gradient(1.1px 1.1px at 69.6% 6.4%, rgba(255,255,255,0.52), transparent 100%),
+    radial-gradient(0.9px 0.9px at 9.7% 24.3%, rgba(255,255,255,0.52), transparent 100%),
+    radial-gradient(1.3px 1.3px at 63.0% 37.0%, rgba(255,255,255,0.48), transparent 100%),
+    radial-gradient(1.7px 1.7px at 27.6% 91.9%, rgba(255,255,255,0.72), transparent 100%),
+    radial-gradient(1.0px 1.0px at 18.4% 72.0%, rgba(255,255,255,0.58), transparent 100%),
+    radial-gradient(1.6px 1.6px at 97.0% 63.4%, rgba(255,255,255,0.76), transparent 100%),
+    radial-gradient(1.1px 1.1px at 82.9% 76.5%, rgba(255,255,255,0.37), transparent 100%),
+    radial-gradient(1.1px 1.1px at 32.3% 27.7%, rgba(255,255,255,0.92), transparent 100%),
+    radial-gradient(1.7px 1.7px at 86.1% 32.2%, rgba(255,255,255,0.59), transparent 100%),
+    radial-gradient(1.2px 1.2px at 89.8% 46.0%, rgba(255,255,255,0.5), transparent 100%),
+    radial-gradient(1.6px 1.6px at 55.9% 27.2%, rgba(255,255,255,0.89), transparent 100%),
+    radial-gradient(2.2px 2.2px at 40.3% 23.1%, rgba(255,255,255,0.66), transparent 100%),
+    radial-gradient(1.0px 1.0px at 10.7% 6.5%, rgba(255,255,255,0.73), transparent 100%),
+    radial-gradient(0.9px 0.9px at 78.0% 42.5%, rgba(255,255,255,0.58), transparent 100%),
+    radial-gradient(2.2px 2.2px at 97.6% 52.8%, rgba(255,255,255,0.87), transparent 100%),
+    radial-gradient(1.8px 1.8px at 3.1% 71.2%, rgba(255,255,255,0.67), transparent 100%),
+    radial-gradient(1.0px 1.0px at 27.6% 63.5%, rgba(255,255,255,0.61), transparent 100%),
+    radial-gradient(2.0px 2.0px at 45.6% 93.6%, rgba(255,255,255,0.51), transparent 100%),
+    radial-gradient(2.1px 2.1px at 50.1% 19.2%, rgba(255,255,255,0.87), transparent 100%),
+    radial-gradient(1.7px 1.7px at 30.7% 63.3%, rgba(255,255,255,0.44), transparent 100%),
+    radial-gradient(1.9px 1.9px at 75.2% 53.8%, rgba(255,255,255,0.67), transparent 100%),
+    radial-gradient(0.8px 0.8px at 2.1% 33.1%, rgba(255,255,255,0.91), transparent 100%),
+    radial-gradient(1.2px 1.2px at 86.4% 81.8%, rgba(255,255,255,0.38), transparent 100%),
+    radial-gradient(0.9px 0.9px at 86.3% 92.9%, rgba(255,255,255,0.64), transparent 100%),
+    radial-gradient(1.9px 1.9px at 8.6% 75.0%, rgba(255,255,255,0.43), transparent 100%),
+    radial-gradient(1.2px 1.2px at 47.6% 54.8%, rgba(255,255,255,0.87), transparent 100%),
+    radial-gradient(1.6px 1.6px at 42.6% 22.3%, rgba(255,255,255,0.79), transparent 100%),
+    radial-gradient(2.2px 2.2px at 21.3% 31.9%, rgba(255,255,255,0.74), transparent 100%),
+    radial-gradient(1.0px 1.0px at 44.1% 51.7%, rgba(255,255,255,0.48), transparent 100%),
+    radial-gradient(1.1px 1.1px at 34.5% 58.5%, rgba(255,255,255,0.48), transparent 100%),
+    radial-gradient(1.1px 1.1px at 8.8% 62.6%, rgba(255,255,255,0.89), transparent 100%),
+    radial-gradient(1.1px 1.1px at 84.5% 8.8%, rgba(255,255,255,0.75), transparent 100%),
+    radial-gradient(2.1px 2.1px at 22.6% 14.7%, rgba(255,255,255,0.69), transparent 100%),
+    radial-gradient(1.9px 1.9px at 47.4% 77.3%, rgba(255,255,255,0.46), transparent 100%),
+    radial-gradient(1.4px 1.4px at 11.3% 43.4%, rgba(255,255,255,0.63), transparent 100%);
+}
+
+/* ---------- 3. foto real da Unsplash flutuando entre os planetas ---------- */
+.space-planet-photo{display:none;}
+[data-theme="space"] .space-planet-photo{
+  display:block;position:fixed;z-index:0;pointer-events:none;
+  top:14%;right:6%;width:96px;height:96px;border-radius:50%;
+  background-image:url('https://images.unsplash.com/photo-1677638252372-bc53025387c1?q=60&w=300&auto=format&fit=crop');
+  background-size:cover;background-position:center;
+  box-shadow:0 0 0 3px rgba(233,233,255,.12),0 0 40px 6px rgba(123,108,255,.35);
+  opacity:.85;
+  animation:space-drift 14s ease-in-out infinite;
+}
+@keyframes space-drift{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(18px);}
+}
+@media(max-width:860px){
+  .space-planet-photo{width:60px;height:60px;top:8%;right:4%;}
+}
+
+/* ---------- 4. estrela cadente periódica ---------- */
+[data-theme="space"] body::after{
+  content:'';
+  position:fixed;top:8%;left:-10%;z-index:0;pointer-events:none;
+  width:120px;height:2px;
+  background:linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,.9) 60%, rgba(255,255,255,0));
+  transform:rotate(18deg);
+  animation:space-shooting-star 7s linear infinite;
+  animation-delay:2s;
+}
+@keyframes space-shooting-star{
+  0%{left:-10%;top:8%;opacity:0;}
+  4%{opacity:1;}
+  16%{opacity:0;}
+  100%{left:110%;top:38%;opacity:0;}
+}
+
+/* ---------- 5. foguete contextual (celebrações + CTA da hero) ---------- */
+.space-rocket-launch{
+  position:fixed;left:50%;bottom:-40px;z-index:200;font-size:28px;
+  pointer-events:none;
+  animation:space-rocket-launch 1.7s cubic-bezier(.3,.6,.35,1) forwards;
+}
+@keyframes space-rocket-launch{
+  0%{transform:translate(-50%,0) rotate(-45deg);opacity:0;}
+  12%{opacity:1;}
+  100%{transform:translate(-50%,-110vh) rotate(-45deg);opacity:0;}
+}
+.space-hero-rocket{display:none;}
+[data-theme="space"] .space-hero-rocket{
+  display:inline-block;margin-left:8px;font-size:1.05em;
+  animation:space-hero-rocket-bob 2.4s ease-in-out infinite;
+}
+@keyframes space-hero-rocket-bob{
+  0%,100%{transform:translateY(0) rotate(-6deg);}
+  50%{transform:translateY(-4px) rotate(2deg);}
+}
+
+/* ---------- 6. respeita "menos movimento" do sistema ---------- */
+@media(prefers-reduced-motion:reduce){
+  [data-theme="space"] body::before{animation:none;}
+  [data-theme="space"] body::after{animation:none;opacity:0;}
+  .space-planet-photo{animation:none;}
+  .space-rocket-launch{animation:none;opacity:0;}
+  .space-hero-rocket{animation:none;}
+}

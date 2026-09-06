@@ -1,0 +1,494 @@
+/* ============================================================
+   theme.css - design tokens shared by every page in the system.
+   12 temas em 6 famílias, cada uma com par claro/escuro:
+   neutro (light/dark), azul (blue/blue-dark), verde (green/green-dark),
+   roxo (purple/purple-dark), âmbar (amber/amber-dark), rosa (rose/rose-dark).
+   Toggle via [data-theme] no <html>.
+   ============================================================ */
+
+:root{
+  /* --font-display: títulos e UI. --font-body: texto corrido.
+     --font-quote: anotações de bordo, falas de personagem, citações.
+     --font-mono: código, comandos, carimbos de curso (nome.log). */
+  --font-display:'Comic Relief', system-ui, sans-serif;
+  --font-body:'Comic Relief', system-ui, sans-serif;
+  --font-quote:'Playwrite US Modern', cursive;
+  --font-mono:'Lilex', 'JetBrains Mono', monospace;
+
+  /* claro - elementos claros, texto escuro (default, no attribute needed) */
+  --bg:#F7F9F7;
+  --panel:#FFFFFF;
+  --panel-2:#EFF5EE;
+  --line:#E0E6DF;
+  --line-soft:#EAF0E9;
+  --text:#2B2E2A;
+  --text-dim:#6B7469;
+  --mint:#3FA34D;
+  --mint-dim:#2E7D39;
+  --amber:#FFA916;
+  --amber-dim:#DB8E00;
+  --violet:#A76FD1;
+  --violet-dim:#8551AC;
+  --danger:#F1495C;
+  --danger-dim:#C6293B;
+  --mint-btn:#33853F;
+  --violet-btn:#9957C9;
+  --danger-btn:#E8122A;
+  --heading:#21252A;
+  --on-accent:#FFFFFF;
+  --radius:20px;
+  --shadow-soft:0 8px 20px rgba(43,46,42,.08);
+  --bg-glow-1:rgba(255,169,22,.07);
+  --bg-glow-2:rgba(63,163,77,.08);
+}
+
+/* escuro - elementos escuros, texto claro */
+[data-theme="dark"]{
+  --bg:#131F24;
+  --panel:#1F2D33;
+  --panel-2:#263943;
+  --line:#2E4048;
+  --line-soft:#26363D;
+  --text:#E8EDEE;
+  --text-dim:#8FA3AA;
+  --mint:#4FCB5C;
+  --mint-dim:#358F3F;
+  --amber:#FFC93C;
+  --amber-dim:#D9A324;
+  --violet:#C08CE8;
+  --violet-dim:#9A66C2;
+  --danger:#FF6B7A;
+  --danger-dim:#D6485A;
+  --mint-btn:#4FCB5C;
+  --violet-btn:#C08CE8;
+  --danger-btn:#FF6B7A;
+  --heading:#F3F6F6;
+  --on-accent:#0E1518;
+  --shadow-soft:0 8px 20px rgba(0,0,0,.35);
+  --bg-glow-1:rgba(255,201,60,.06);
+  --bg-glow-2:rgba(79,203,92,.08);
+}
+
+/* azul - tons de céu/tecnologia, base clara */
+[data-theme="blue"]{
+  --bg:#EFF5FB;
+  --panel:#FFFFFF;
+  --panel-2:#E1EDF9;
+  --line:#CBDCF0;
+  --line-soft:#DCE9F7;
+  --text:#16273B;
+  --text-dim:#59718D;
+  --mint:#2F86D6;
+  --mint-dim:#1F62A8;
+  --amber:#F0A93C;
+  --amber-dim:#C98620;
+  --violet:#7C6FE0;
+  --violet-dim:#5D4FC0;
+  --danger:#E0495C;
+  --danger-dim:#B72C3E;
+  --mint-btn:#2678C3;
+  --violet-btn:#7264DE;
+  --danger-btn:#DC3146;
+  --heading:#12233A;
+  --on-accent:#FFFFFF;
+  --shadow-soft:0 8px 20px rgba(22,39,59,.09);
+  --bg-glow-1:rgba(47,134,214,.09);
+  --bg-glow-2:rgba(124,111,224,.08);
+}
+
+/* verde - tons de floresta/crescimento, base clara */
+[data-theme="green"]{
+  --bg:#EFFAF1;
+  --panel:#FFFFFF;
+  --panel-2:#E0F3E4;
+  --line:#C9E8CF;
+  --line-soft:#DCF0E0;
+  --text:#163420;
+  --text-dim:#557860;
+  --mint:#2E9A54;
+  --mint-dim:#1F6E3B;
+  --amber:#E8A23C;
+  --amber-dim:#C0801E;
+  --violet:#6FA6E0;
+  --violet-dim:#4E85C0;
+  --danger:#E0495C;
+  --danger-dim:#B72C3E;
+  --mint-btn:#288549;
+  --violet-btn:#2B77C7;
+  --danger-btn:#DC3146;
+  --heading:#0F281A;
+  --on-accent:#FFFFFF;
+  --shadow-soft:0 8px 20px rgba(22,52,32,.09);
+  --bg-glow-1:rgba(232,162,60,.08);
+  --bg-glow-2:rgba(46,154,84,.10);
+}
+
+/* roxo - tons de crepúsculo/criatividade, base clara */
+[data-theme="purple"]{
+  --bg:#F6F0FB;
+  --panel:#FFFFFF;
+  --panel-2:#ECE1F7;
+  --line:#DCC9F0;
+  --line-soft:#EBDFF6;
+  --text:#291B3D;
+  --text-dim:#7A6592;
+  --mint:#8B5CE0;
+  --mint-dim:#6A3FB8;
+  --amber:#E88A3C;
+  --amber-dim:#C06B1E;
+  --violet:#C572D6;
+  --violet-dim:#A052B5;
+  --danger:#E0495C;
+  --danger-dim:#B72C3E;
+  --mint-btn:#8959DF;
+  --violet-btn:#B244C9;
+  --danger-btn:#DC3146;
+  --heading:#20132F;
+  --on-accent:#FFFFFF;
+  --shadow-soft:0 8px 20px rgba(41,27,61,.10);
+  --bg-glow-1:rgba(232,138,60,.07);
+  --bg-glow-2:rgba(139,92,224,.10);
+}
+
+/* azul-noite - azul mais profundo, base escura */
+[data-theme="blue-dark"]{
+  --bg:#0A1826;
+  --panel:#122539;
+  --panel-2:#193049;
+  --line:#254060;
+  --line-soft:#1D3752;
+  --text:#DCE9FA;
+  --text-dim:#7C99BC;
+  --mint:#4FA3F5;
+  --mint-dim:#2E7BC7;
+  --amber:#FFC862;
+  --amber-dim:#DBA53E;
+  --violet:#B79BF0;
+  --violet-dim:#9576D4;
+  --danger:#FF7B87;
+  --danger-dim:#DB5563;
+  --mint-btn:#4FA3F5;
+  --violet-btn:#B79BF0;
+  --danger-btn:#FF7B87;
+  --heading:#EEF4FC;
+  --on-accent:#08131F;
+  --shadow-soft:0 8px 20px rgba(0,0,0,.4);
+  --bg-glow-1:rgba(79,163,245,.10);
+  --bg-glow-2:rgba(183,155,240,.08);
+}
+
+/* verde-noite - floresta à noite, base escura */
+[data-theme="green-dark"]{
+  --bg:#0B1B12;
+  --panel:#132A1B;
+  --panel-2:#1A3524;
+  --line:#264A31;
+  --line-soft:#1F3E29;
+  --text:#DCF3E3;
+  --text-dim:#7FA88F;
+  --mint:#4FCB6E;
+  --mint-dim:#33A150;
+  --amber:#FFCB5E;
+  --amber-dim:#D9A53B;
+  --violet:#9ED3A8;
+  --violet-dim:#78B586;
+  --danger:#FF7B87;
+  --danger-dim:#DB5563;
+  --mint-btn:#4FCB6E;
+  --violet-btn:#9ED3A8;
+  --danger-btn:#FF7B87;
+  --heading:#EBFAEF;
+  --on-accent:#07160D;
+  --shadow-soft:0 8px 20px rgba(0,0,0,.4);
+  --bg-glow-1:rgba(255,203,94,.07);
+  --bg-glow-2:rgba(79,203,110,.10);
+}
+
+/* roxo-noite - crepúsculo profundo, base escura */
+[data-theme="purple-dark"]{
+  --bg:#160E22;
+  --panel:#211433;
+  --panel-2:#2B1C42;
+  --line:#402A5E;
+  --line-soft:#35234E;
+  --text:#EAE0F7;
+  --text-dim:#A88FC4;
+  --mint:#B27FEE;
+  --mint-dim:#9058CE;
+  --amber:#F5A75C;
+  --amber-dim:#D08638;
+  --violet:#E28CDE;
+  --violet-dim:#C168BC;
+  --danger:#FF7B87;
+  --danger-dim:#DB5563;
+  --mint-btn:#B27FEE;
+  --violet-btn:#E28CDE;
+  --danger-btn:#FF7B87;
+  --heading:#F5EEFC;
+  --on-accent:#0F0819;
+  --shadow-soft:0 8px 20px rgba(0,0,0,.42);
+  --bg-glow-1:rgba(245,167,92,.07);
+  --bg-glow-2:rgba(178,127,238,.12);
+}
+
+/* âmbar - tons de pôr do sol / grogue de capitão, base clara */
+[data-theme="amber"]{
+  --bg:#FBF3E7;
+  --panel:#FFFFFF;
+  --panel-2:#F5E7D2;
+  --line:#EAD3AC;
+  --line-soft:#F1DFC0;
+  --text:#3B2A15;
+  --text-dim:#836B49;
+  --mint:#D97E2C;
+  --mint-dim:#B0611A;
+  --amber:#E0A93C;
+  --amber-dim:#B98620;
+  --violet:#C1685A;
+  --violet-dim:#A04B3F;
+  --danger:#D2483F;
+  --danger-dim:#AC2E27;
+  --mint-btn:#AD621F;
+  --violet-btn:#BA5748;
+  --danger-btn:#D1433A;
+  --heading:#2E2010;
+  --on-accent:#FFFFFF;
+  --shadow-soft:0 8px 20px rgba(59,42,21,.10);
+  --bg-glow-1:rgba(217,126,44,.09);
+  --bg-glow-2:rgba(193,104,90,.08);
+}
+
+/* âmbar-noite - taverna de madeira à noite, base escura */
+[data-theme="amber-dark"]{
+  --bg:#211407;
+  --panel:#2E1D0E;
+  --panel-2:#3A2614;
+  --line:#573A1E;
+  --line-soft:#472F19;
+  --text:#F4E4CB;
+  --text-dim:#B99968;
+  --mint:#F0A94E;
+  --mint-dim:#CC8830;
+  --amber:#FFCE6E;
+  --amber-dim:#DBA845;
+  --violet:#E08A72;
+  --violet-dim:#C06A54;
+  --danger:#FF7A66;
+  --danger-dim:#D9563F;
+  --mint-btn:#F0A94E;
+  --violet-btn:#E08A72;
+  --danger-btn:#FF7A66;
+  --heading:#FCF0DC;
+  --on-accent:#1B1006;
+  --shadow-soft:0 8px 20px rgba(0,0,0,.42);
+  --bg-glow-1:rgba(240,169,78,.10);
+  --bg-glow-2:rgba(224,138,114,.09);
+}
+
+/* rosa - quartzo suave, base clara */
+[data-theme="rose"]{
+  --bg:#FBF0F3;
+  --panel:#FFFFFF;
+  --panel-2:#F7E3E9;
+  --line:#EFCBD7;
+  --line-soft:#F5DDE4;
+  --text:#3A1F28;
+  --text-dim:#8C6274;
+  --mint:#D6567F;
+  --mint-dim:#B13A61;
+  --amber:#E39A4E;
+  --amber-dim:#BD7A2E;
+  --violet:#9D6FD6;
+  --violet-dim:#7C50B5;
+  --danger:#D2483F;
+  --danger-dim:#AC2E27;
+  --mint-btn:#D03D6C;
+  --violet-btn:#8F5BD0;
+  --danger-btn:#D1433A;
+  --heading:#331A22;
+  --on-accent:#FFFFFF;
+  --shadow-soft:0 8px 20px rgba(58,31,40,.09);
+  --bg-glow-1:rgba(214,86,127,.08);
+  --bg-glow-2:rgba(157,111,214,.08);
+}
+
+/* rosa-noite - vinho/ameixa, base escura */
+[data-theme="rose-dark"]{
+  --bg:#210D16;
+  --panel:#301321;
+  --panel-2:#3D1A2A;
+  --line:#5C2740;
+  --line-soft:#4A2035;
+  --text:#F6E0EA;
+  --text-dim:#C08BA2;
+  --mint:#F0759E;
+  --mint-dim:#D14D79;
+  --amber:#F5B168;
+  --amber-dim:#D08F42;
+  --violet:#CB94EC;
+  --violet-dim:#AB6FD0;
+  --danger:#FF7B87;
+  --danger-dim:#DB5563;
+  --mint-btn:#F0759E;
+  --violet-btn:#CB94EC;
+  --danger-btn:#FF7B87;
+  --heading:#FBEBF2;
+  --on-accent:#1A0810;
+  --shadow-soft:0 8px 20px rgba(0,0,0,.42);
+  --bg-glow-1:rgba(240,117,158,.09);
+  --bg-glow-2:rgba(203,148,236,.10);
+}
+
+/* espacial — tema único (sem par claro/noite: espaço sideral já
+   nasce escuro por natureza). Usado em conjunto com o pacote de
+   efeitos cósmicos (planetas, estrelas cadentes, foguetes) descrito
+   em assets/css/space-theme.css e assets/js/space-effects.js. */
+/* Space theme limited to IA course */
+.course-ia [data-theme="space"] {
+  --bg:#0A0B1E;
+  --panel:#12132E;
+  --panel-2:#1B1D45;
+  --line:#33366E;
+  --line-soft:#282A5C;
+  --text:#E9E9FF;
+  --text-dim:#9598C9;
+  --mint:#7B6CFF;
+  --mint-dim:#5F52D6;
+  --amber:#FFD166;
+  --amber-dim:#E0AF45;
+  --violet:#FF6EC7;
+  --violet-dim:#D950A6;
+  --danger:#FF5D5D;
+  --danger-dim:#DB4444;
+  --mint-btn:#7B6CFF;
+  --violet-btn:#FF6EC7;
+  --danger-btn:#FF5D5D;
+  --heading:#F5F5FF;
+  --on-accent:#0A0B1E;
+  --shadow-soft:0 8px 24px rgba(0,0,4,.55);
+  --bg-glow-1:rgba(123,108,255,.18);
+  --bg-glow-2:rgba(255,110,199,.12);
+}
+
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;scrollbar-width:thin;scrollbar-color:var(--mint-dim) transparent;overflow-x:clip;}
+html::-webkit-scrollbar{width:8px;}
+html::-webkit-scrollbar-track{background:transparent;}
+html::-webkit-scrollbar-thumb{background-color:var(--mint-dim);border-radius:20px;border:2px solid var(--bg);background-clip:padding-box;}
+html::-webkit-scrollbar-thumb:hover{background-color:var(--mint);}
+
+body{
+  background:
+    radial-gradient(ellipse 900px 500px at 8% -8%, var(--bg-glow-1), transparent),
+    radial-gradient(ellipse 800px 600px at 100% 15%, var(--bg-glow-2), transparent),
+    var(--bg);
+  background-attachment:fixed;
+  color:var(--text);
+  font-family:var(--font-body);
+  line-height:1.6;
+  transition:background-color .35s ease,color .35s ease;
+  overflow-x:clip;
+}
+/* nas páginas de curso, a coluna de conteúdo é propositalmente
+   estreita (900px) pra manter a leitura confortável — mas em telas
+   largas isso deixa uma faixa vazia à direita da sidebar. Essa
+   textura sutil (mesma linguagem visual da landing) preenche esse
+   espaço sem tocar na largura do conteúdo. */
+body[class^="course-"]{
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px),
+    radial-gradient(ellipse 900px 500px at 8% -8%, var(--bg-glow-1), transparent),
+    radial-gradient(ellipse 800px 600px at 100% 15%, var(--bg-glow-2), transparent);
+  background-size:34px 34px, 34px 34px, auto, auto;
+  background-position:0 0, 0 0, 0 0, 0 0;
+}
+@media(prefers-reduced-motion:no-preference){
+  body[class^="course-"]{ background-attachment:fixed, fixed, scroll, scroll; }
+}
+body,aside,.card,.checklist,.quiz,.project-card,pre,.badge-tile,.toast,.levelup-card,.game-card{
+  transition:background-color .35s ease,border-color .35s ease,color .35s ease,box-shadow .35s ease;
+}
+::selection{background:var(--mint-btn);color:var(--on-accent);}
+a{color:var(--mint-dim);}
+img{max-width:100%;}
+
+/* ================= foco visível, global =================
+   Nenhum outline:none existe no projeto — todo elemento interativo
+   já é focável via teclado. Esta regra só troca o azul padrão do
+   navegador pela cor do tema ativo, de forma consistente em
+   qualquer botão, link, input, <summary> etc., em qualquer página. */
+a:focus-visible, button:focus-visible, input:focus-visible,
+select:focus-visible, textarea:focus-visible, summary:focus-visible,
+[tabindex]:focus-visible{
+  outline:2px solid var(--mint-dim);outline-offset:2px;border-radius:6px;
+}
+
+/* Skip-link: primeiro elemento focável de toda página. Fica fora da
+   tela até ganhar foco via teclado (Tab) — aí aparece no canto
+   superior esquerdo, permitindo pular a sidebar/topbar e ir direto
+   pro <main id="main-content">. Sem isso, quem navega por teclado ou
+   leitor de tela precisa passar por todo o menu em toda página. */
+.skip-link{
+  position:absolute;top:-100px;left:8px;z-index:999;
+  background:var(--panel);color:var(--text);
+  padding:10px 18px;border-radius:0 0 10px 10px;
+  border:2px solid var(--mint-dim);border-top:none;
+  font-family:var(--font-display);font-weight:600;font-size:.88rem;
+  text-decoration:none;transition:top .15s ease;
+}
+.skip-link:focus{ top:0; }
+
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;}
+}
+
+
+/* --- Modo Daltonismo (High Contrast / Accessible Palette) ---
+   Substitui as cores base por uma paleta de alto contraste. */
+[data-cvd="on"]{
+  --bg:#000000;
+  --panel:#111111;
+  --panel-2:#222222;
+  --line:#444444;
+  --line-soft:#333333;
+  --text:#FFFFFF;
+  --text-dim:#DDDDDD;
+  --mint:#FFFF00; /* Amarelo brilhante para alto contraste */
+  --mint-dim:#E6E600;
+  --amber:#FF00FF; /* Magenta brilhante */
+  --amber-dim:#CC00CC;
+  --violet:#00FFFF; /* Ciano brilhante */
+  --violet-dim:#00E6E6;
+  --danger:#FF3333;
+  --danger-dim:#CC2929;
+  --mint-btn:#FFFF00;
+  --violet-btn:#00FFFF;
+  --danger-btn:#FF3333;
+  --heading:#FFFFFF;
+  --on-accent:#000000;
+}
+
+/* ============================================================
+   Animações Globais
+   ============================================================ */
+body {
+  animation: pageFadeIn 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+@keyframes pageFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Efeito de respiração suave para botões principais */
+@keyframes softPulse {
+  0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--mint) 40%, transparent); }
+  50% { box-shadow: 0 0 0 8px color-mix(in srgb, var(--mint) 0%, transparent); }
+}
+.primary {
+  animation: softPulse 3s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body, .primary { animation: none !important; transform: none !important; }
+}

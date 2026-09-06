@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<link href="../assets/icons/brand/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../assets/icons/brand/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="../assets/icons/brand/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="../manifest.json" rel="manifest"/>
+<meta content="#9D25FF" name="theme-color"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="default-src 'self'; img-src 'self' data: https://images.unsplash.com; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests" http-equiv="Content-Security-Policy"/>
+<meta content="strict-origin-when-cross-origin" name="referrer">
+<title>Glossário: agente.log</title>
+<meta name="description" content="Glossário ilustrado do curso de IA Generativa, em formato de livro: termos explicados de forma simples, com exemplos." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://universidadelog.com.br/glossario/ia.html" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:url" content="https://universidadelog.com.br/glossario/ia.html" />
+<meta property="og:site_name" content="Universidade Log" />
+<meta property="og:title" content="Glossário: ia.log" />
+<meta property="og:description" content="Glossário ilustrado do curso de IA Generativa, em formato de livro: termos explicados de forma simples, com exemplos." />
+<meta property="og:image" content="https://universidadelog.com.br/assets/characters/fly.png" />
+<meta property="og:image:alt" content="Fly, o cientista de dados, mascote do curso de IA Generativa" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Glossário: ia.log" />
+<meta name="twitter:description" content="Glossário ilustrado do curso de IA Generativa, em formato de livro: termos explicados de forma simples, com exemplos." />
+<meta name="twitter:image" content="https://universidadelog.com.br/assets/characters/fly.png" />
+<script>(function(){try{var t=localStorage.getItem('studyhub_theme_v1');if(t && t!=='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&amp;family=Playwrite+US+Modern:wght@100..400&amp;family=Lilex:wght@400;500;600;700&amp;family=Playfair+Display:wght@600;700&amp;family=Lora:ital@0;1&amp;display=swap" rel="stylesheet"/>
+<link href="../assets/css/theme.css" rel="stylesheet"/>
+<link href="../assets/css/space-theme.css" rel="stylesheet"/>
+<link href="../assets/css/icons.css" rel="stylesheet"/>
+<link href="../assets/css/flipbook.css" rel="stylesheet">
+<link href="../assets/css/games.css" rel="stylesheet"/>
+</link></meta></meta></head>
+<body class="course-ia"><a href="#main-content" class="skip-link">Pular para o conteúdo</a><div aria-hidden="true" class="space-planet-photo"></div>
+<div class="fb-topbar">
+<div class="brand-mini"><img alt="" class="om om-sm" src="../assets/icons/content/brain.svg"/> <span>agente.log</span></div>
+<div class="fb-topnav">
+<a href="../index.html"><svg class="ic-mono" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3 3 10.5V21h5.5v-6h7v6H21V10.5L12 3Z"></path></svg> universidade log</a>
+<a href="../cursos/ia.html">↩ voltar pro curso</a>
+<div data-chrome-widget="theme"></div><div data-chrome-widget="a11y"></div>
+</div></div>
+<main class="fb-stage" id="main-content">
+<div class="fb-heading">
+<div class="fb-eyebrow">glossário interativo</div>
+<h1>agente.log</h1>
+<p>Todo termo novo que você aprendeu em prompt, arquitetura de agentes e segurança de IA, catalogado como um dicionário de verdade.</p>
+</div>
+<div class="fb-cover" id="fbCover" onclick="__fbOpen()" style="--cover-a:#3B2A5C;--cover-b:#1C1533;">
+<div class="fb-spine"></div>
+<img alt="Fly" class="fb-cover-mascot" src="../assets/characters/fly.png"/>
+<h2>Glossário de IA Generativa</h2>
+<p>54 termos, organizados como um dicionário de verdade: capa, sumário e páginas que viram.</p>
+<button class="fb-open-btn"><svg class="ic-mono" fill="currentColor" viewBox="0 0 24 24"><path d="M3 5.6c2.4-1 5.3-1 8 .5v13.3c-2.7-1.5-5.6-1.5-8-.5V5.6Z" opacity=".55"></path><path d="M21 5.6c-2.4-1-5.3-1-8 .5v13.3c2.7-1.5 5.6-1.5 8-.5V5.6Z"></path><rect height="1.1" opacity=".8" rx=".55" width="4.8" x="4.6" y="8"></rect><rect height="1.1" opacity=".8" rx=".55" width="4.8" x="4.6" y="10.6"></rect></svg> Abrir o livro</button>
+</div>
+<div class="fb-book-wrap" id="fbRoot">
+<div class="fb-book">
+<div class="fb-page fb-page-left"><div class="fb-page-content"></div><div class="fb-page-number"></div></div>
+<div class="fb-spine-shadow"></div>
+<div class="fb-page fb-page-right"><div class="fb-page-content"></div><div class="fb-page-number"></div></div>
+</div>
+<div class="fb-controls">
+<button class="fb-nav-btn" id="fbPrevBtn" onclick="__fbPrev()">← Página anterior</button>
+<span class="fb-progress" id="fbProgress"></span>
+<button class="fb-nav-btn" id="fbNextBtn" onclick="__fbNext()">Próxima página →</button>
+</div>
+<div class="fb-search-row">
+<input class="fb-search" onkeydown="if(event.key==='Enter')__fbSearch(this.value)" placeholder="Buscar um termo... (ex: Temperature)"/>
+<button class="fb-close-btn" onclick="document.getElementById('fbCover').style.display='flex';document.querySelector('.fb-book-wrap').classList.remove('open');"><img alt="" class="om om-sm" src="../assets/icons/content/x-mark.svg"/> Fechar livro</button>
+</div>
+</div>
+<div class="fb-mascot-note">
+<img alt="Fly" src="../assets/characters/fly.png"/>
+<div>
+<div class="m-name">Fly</div>
+<p>Prompt engineering tem vocabulário próprio, e é fácil confundir Guardrail com Juiz. Esse glossário existe pra isso não acontecer.</p>
+</div>
+</div>
+<div class="fb-game-section">
+<div class="fb-game-heading"><img alt="" class="om om-sm" src="../assets/icons/content/game-controller.svg"/> Pratique o que acabou de ler</div>
+<p class="fb-game-sub">O mesmo jogo da memória que aparece no curso, só que aqui com termos direto do glossário.</p>
+<div class="game-card memory-game" data-pairs='[{"term": "Alucinação", "def": "Quando um modelo de IA gera informação incorreta ou inventada com aparência de confiança: um dos principais riscos a mitigar em produção."}, {"term": "Checkpointer", "def": "Mecanismo do LangGraph que salva o estado da execução de um agente, permitindo retomar ou persistir contexto entre chamadas."}, {"term": "Grounding", "def": "Ancorar a resposta de um modelo em dado real e verificável, em vez de deixá-lo responder apenas com base em ‘parecer razoável’."}, {"term": "Juiz (LLM Judge)", "def": "Um segundo modelo usado pra avaliar se a resposta do primeiro parece correta, completa ou alucinada: camada de defesa probabilística."}, {"term": "MongoDB", "def": "Banco de dados orientado a documentos usado pra persistir memória de longo prazo de um agente, como resumos de sessão."}, {"term": "Temperature", "def": "Parâmetro que reescala a distribuição de probabilidade da próxima palavra: baixo é quase determinístico, alto é mais variado."}, {"term": "Cérebro vs Mãos", "def": "O LLM (cérebro) só decide; as tools (mãos) executam. O LLM nunca deveria tocar um dado real diretamente."}, {"term": "Ferramenta (Tool)", "def": "Função de contrato bem definido que um agente chama pra agir sobre dado real: consultar, registrar, calcular."}, {"term": "RAG (Retrieval-Augmented Generation)", "def": "Buscar trechos relevantes numa base de conhecimento antes de gerar a resposta, ancorando o modelo em dado real."}, {"term": "Permissão por Ação", "def": "Classifica cada tool em permitir, perguntar ou bloquear. Vive no código da tool, não só no prompt."}]' id="fbMemGame">
+<div class="game-title"><img alt="" class="om om-sm" src="../assets/icons/content/brain.svg"/> Jogo da memória: IA Generativa</div>
+<div class="memory-grid"></div>
+<button class="game-reset-btn" onclick="initMemoryGame('fbMemGame')">Embaralhar de novo</button>
+</div>
+</div>
+</main>
+<script>
+  window.GLOSSARY = {
+    courseTitle: "agente.log",
+    courseIcon: '<img class="om om-sm" src="../assets/icons/content/brain.svg" alt="">',
+    terms: [
+  {
+    "term": "Agente (Agent)",
+    "mod": "mód. 01",
+    "def": "Sistema que percebe um input, raciocina sobre ele e age de forma autônoma (dentro de limites definidos), em vez de só responder uma pergunta isolada."
+  },
+  {
+    "term": "Alucinação",
+    "mod": "mód. 06",
+    "def": "Quando um modelo de IA gera informação incorreta ou inventada com aparência de confiança: um dos principais riscos a mitigar em produção."
+  },
+  {
+    "term": "Anonimização",
+    "mod": "mód. 06",
+    "def": "Remover de forma irreversível a identidade de um dado pessoal (ex: hash com Argon2), pra que ele não possa mais ser associado a uma pessoa específica."
+  },
+  {
+    "term": "Apoio Informativo",
+    "mod": "mód. 01",
+    "def": "Papel de um agente de IA que organiza, sugere e sintetiza, mas não substitui o julgamento final de um profissional humano."
+  },
+  {
+    "term": "Auditoria (Log de Execução)",
+    "mod": "mód. 04",
+    "def": "Registro de cada chamada de tool feita por um agente: quem pediu, qual ação rodou, com quais parâmetros. Essencial pra rastrear o que um agente realmente fez."
+  },
+  {
+    "term": "Chain-of-Thought (Thinking)",
+    "mod": "mód. 03",
+    "def": "Técnica de prompting em que o modelo é incentivado a 'raciocinar em voz alta', passo a passo, antes de dar a resposta final."
+  },
+  {
+    "term": "Checkpointer",
+    "mod": "mód. 04",
+    "def": "Mecanismo do LangGraph que salva o estado da execução de um agente, permitindo retomar ou persistir contexto entre chamadas."
+  },
+  {
+    "term": "Context Window (Janela de Contexto)",
+    "mod": "mód. 05",
+    "def": "Quantidade máxima de tokens (histórico + prompt) que um modelo consegue processar de uma vez. Passou disso, informação antiga começa a sair da janela."
+  },
+  {
+    "term": "Criar vs Gerar",
+    "mod": "mód. 01",
+    "def": "Distinção conceitual: Criar envolve intencionalidade humana genuína; Gerar é recombinação probabilística de padrões aprendidos: o que um LLM faz."
+  },
+  {
+    "term": "Cérebro vs Mãos",
+    "mod": "mód. 04",
+    "def": "Separação de responsabilidades num agente: o LLM (cérebro) só decide; as tools (mãos) executam. O LLM nunca deveria tocar um dado real diretamente."
+  },
+  {
+    "term": "Determinismo",
+    "mod": "mód. 02",
+    "def": "Propriedade de uma chamada sempre produzir a mesma saída pra mesma entrada. Em agentes, é obtido com temperature 0.0: essencial em roteamento e cálculo."
+  },
+  {
+    "term": "Embedding",
+    "mod": "mód. 05",
+    "def": "Representação numérica (vetor) do significado de um texto. Textos com significados parecidos geram vetores próximos entre si, mesmo com palavras diferentes."
+  },
+  {
+    "term": "Especialista (Agente Especialista)",
+    "mod": "mód. 04",
+    "def": "Agente downstream que recebe a mensagem já classificada por um roteador e trata só daquele domínio específico (ex: financeiro, agenda, faq)."
+  },
+  {
+    "term": "Fallback (Plano B)",
+    "mod": "mód. 04",
+    "def": "Alternativa acionada quando o caminho principal falha: um segundo provedor de LLM, um modelo local, ou uma resposta padrão de erro. O agente nunca deveria simplesmente parar."
+  },
+  {
+    "term": "Ferramenta (Tool)",
+    "mod": "mód. 04",
+    "def": "Função de contrato bem definido (entrada e saída tipadas) que um agente chama pra agir sobre dado real: consultar, registrar, calcular. Sem tools, o LLM só conversa."
+  },
+  {
+    "term": "Few-shot Prompting",
+    "mod": "mód. 03",
+    "def": "Técnica de mostrar exemplos de Input→Output dentro do prompt, ajudando o modelo a seguir um formato ou padrão específico."
+  },
+  {
+    "term": "Fine-tuning",
+    "mod": "mód. 01",
+    "def": "Reajustar os pesos de um modelo já treinado com dados específicos de um domínio. Mais caro e demorado que prompting: só compensa em casos bem específicos."
+  },
+  {
+    "term": "Function Calling (Tool Calling)",
+    "mod": "mód. 04",
+    "def": "Capacidade de um modelo decidir, durante a geração, que precisa chamar uma função externa (tool) e com quais argumentos, em vez de só responder em texto."
+  },
+  {
+    "term": "Grounding",
+    "mod": "mód. 06",
+    "def": "Ancorar a resposta de um modelo em dado real e verificável, em vez de deixá-lo responder apenas com base em 'parecer razoável'."
+  },
+  {
+    "term": "Guardrail",
+    "mod": "mód. 06",
+    "def": "Regra fixa e determinística (filtro, validação de schema) que roda antes ou depois da geração, sem depender de julgamento do modelo."
+  },
+  {
+    "term": "Human-in-the-loop",
+    "mod": "mód. 06",
+    "def": "Padrão de design em que uma ação sensível só é executada depois de confirmação explícita de uma pessoa: a base da política 'perguntar' no controle de permissões."
+  },
+  {
+    "term": "IA Fraca (Weak AI)",
+    "mod": "mód. 01",
+    "def": "Paradigma sob o qual todo LLM atual opera: reconhece e recombina padrões muito bem, mas não 'entende' o domínio como um humano entende."
+  },
+  {
+    "term": "Juiz (LLM Judge)",
+    "mod": "mód. 06",
+    "def": "Um segundo modelo usado pra avaliar se a resposta do primeiro parece correta, completa ou alucinada: camada de defesa probabilística."
+  },
+  {
+    "term": "LangChain",
+    "mod": "mód. 04",
+    "def": "Framework que integra LLMs em aplicações, oferecendo chains, tools e integrações prontas."
+  },
+  {
+    "term": "LangGraph",
+    "mod": "mód. 04",
+    "def": "Runtime de orquestração que modela agentes como um grafo de estados, permitindo decisões, loops e ramificações complexas."
+  },
+  {
+    "term": "Latência",
+    "mod": "mód. 04",
+    "def": "Tempo entre a chamada a um modelo (ou tool) e a resposta chegar. Cadeias de fallback e chamadas em série aumentam a latência total percebida pelo usuário."
+  },
+  {
+    "term": "LGPD",
+    "mod": "mód. 06",
+    "def": "Lei Geral de Proteção de Dados brasileira: define princípios como o da finalidade, base legal de guardrails de privacidade."
+  },
+  {
+    "term": "LLM (Large Language Model)",
+    "mod": "mód. 01",
+    "def": "Modelo de linguagem treinado em grandes volumes de texto pra prever a próxima palavra mais provável. É o 'cérebro' que decide, dentro de um agente."
+  },
+  {
+    "term": "Memória de Preferência",
+    "mod": "mód. 05",
+    "def": "Categoria de dado persistido sobre hábitos e categorias recorrentes do usuário. Só vale a pena guardar se for revisável e apagável pelo próprio usuário."
+  },
+  {
+    "term": "Memória de Sessão",
+    "mod": "mód. 05",
+    "def": "Histórico da conversa atual entre usuário e agente: descartável por natureza, existe só enquanto a sessão dura."
+  },
+  {
+    "term": "Memória de Transação",
+    "mod": "mód. 05",
+    "def": "O dado real de negócio (ex: um lançamento financeiro no Postgres). Nunca deveria existir só dentro da conversa: precisa sobreviver além dela."
+  },
+  {
+    "term": "Model Provider (Provedor de Modelo)",
+    "mod": "mód. 04",
+    "def": "Empresa ou serviço que expõe um LLM via API (ex: Google Gemini, Groq/Llama). Um agente robusto não depende de um único provedor."
+  },
+  {
+    "term": "MongoDB",
+    "mod": "mód. 05",
+    "def": "Banco de dados orientado a documentos usado pra persistir memória de longo prazo de um agente, como resumos de sessão."
+  },
+  {
+    "term": "Multi-agente (Multi-agent System)",
+    "mod": "mód. 04",
+    "def": "Arquitetura com vários agentes especialistas coordenados por um roteador, cada um responsável por um domínio, em vez de um único agente genérico fazendo tudo."
+  },
+  {
+    "term": "Mínimo Necessário (Princípio)",
+    "mod": "mód. 06",
+    "def": "Princípio de LGPD: colete e guarde só o dado estritamente necessário pra função combinada, nunca mais que isso."
+  },
+  {
+    "term": "Orquestração",
+    "mod": "mód. 04",
+    "def": "Coordenação de várias peças (roteador, especialistas, tools, memória) pra que funcionem como um sistema único e coerente, não partes soltas."
+  },
+  {
+    "term": "Permissão por Ação",
+    "mod": "mód. 06",
+    "def": "Política que classifica cada tool de um agente em permitir (executa sozinha), perguntar (exige confirmação) ou bloquear (recusa sempre). Vive no código da tool, não só no prompt."
+  },
+  {
+    "term": "Persona",
+    "mod": "mód. 03",
+    "def": "O 'papel' que o System Prompt define pro agente assumir: como ele se apresenta, em que tom, e dentro de que identidade consistente."
+  },
+  {
+    "term": "Prompt Injection",
+    "mod": "mód. 06",
+    "def": "Tentativa de manipular um agente através do próprio texto de entrada, fazendo-o ignorar instruções anteriores ou agir fora do escopo definido."
+  },
+  {
+    "term": "Provider Manager",
+    "mod": "mód. 04",
+    "def": "Componente que gerencia uma cadeia de fallback entre provedores de LLM: tenta o principal, cai pro secundário, e no limite mantém um modelo local."
+  },
+  {
+    "term": "Pseudonimização",
+    "mod": "mód. 06",
+    "def": "Substituir um dado identificável por um identificador reversível (diferente de anonimização): útil quando o dado original ainda precisa ser recuperado sob controle."
+  },
+  {
+    "term": "RAG (Retrieval-Augmented Generation)",
+    "mod": "mód. 05",
+    "def": "Técnica de buscar trechos relevantes numa base de conhecimento antes de gerar a resposta, ancorando o modelo em dado real em vez de só na memória do treinamento."
+  },
+  {
+    "term": "Rate Limit",
+    "mod": "mód. 04",
+    "def": "Limite de quantas chamadas um provedor de API aceita num intervalo de tempo. Estourar o limite é um dos motivos mais comuns pra um fallback entrar em ação."
+  },
+  {
+    "term": "Roteamento (Router)",
+    "mod": "mód. 04",
+    "def": "Padrão em que um classificador decide qual agente especialista deve tratar uma mensagem, com base na intenção detectada."
+  },
+  {
+    "term": "Streaming",
+    "mod": "mód. 02",
+    "def": "Entregar a resposta do modelo token a token, conforme é gerada, em vez de esperar o texto inteiro ficar pronto pra exibir."
+  },
+  {
+    "term": "Structured Output (Saída Estruturada)",
+    "mod": "mód. 03",
+    "def": "Forçar o modelo a responder num formato fixo e parseável (JSON, ou um protocolo como ROUTE=X), em vez de texto livre."
+  },
+  {
+    "term": "System Prompt",
+    "mod": "mód. 03",
+    "def": "Instrução inicial que define persona, escopo, guardrails e formato de saída de um agente: tratado como contrato de engenharia."
+  },
+  {
+    "term": "Temperature",
+    "mod": "mód. 02",
+    "def": "Parâmetro que reescala a distribuição de probabilidade da próxima palavra: baixo é quase determinístico, alto é mais variado."
+  },
+  {
+    "term": "thread_id",
+    "mod": "mód. 04",
+    "def": "Identificador único de sessão que permite ao agente lembrar do contexto entre diferentes turnos de conversa."
+  },
+  {
+    "term": "Token",
+    "mod": "mód. 02",
+    "def": "Unidade mínima de texto que um modelo processa: pode ser uma palavra, parte dela ou um caractere. Custo e limite de contexto são medidos em tokens."
+  },
+  {
+    "term": "Top-k / Top-p (Nucleus Sampling)",
+    "mod": "mód. 02",
+    "def": "Estratégias de amostragem: Top-k corta num número fixo de candidatos; Top-p corta pela soma acumulada de probabilidade, adaptando-se ao contexto."
+  },
+  {
+    "term": "User Prompt",
+    "mod": "mód. 03",
+    "def": "A mensagem enviada pelo usuário: o input que o agente processa à luz do System Prompt já definido."
+  },
+  {
+    "term": "Vector Database (Banco Vetorial)",
+    "mod": "mód. 05",
+    "def": "Banco especializado em armazenar embeddings e buscar por similaridade de significado, não por correspondência exata de texto (diferente de um regex)."
+  },
+  {
+    "term": "Zero-shot Prompting",
+    "mod": "mód. 03",
+    "def": "Pedir uma tarefa ao modelo sem fornecer nenhum exemplo prévio de Input→Output, contando só com a instrução em si."
+  }
+]
+  };
+</script>
+<script src="../assets/js/flipbook.js"></script>
+<script src="../assets/js/games.js"></script>
+<script src="../assets/js/chrome-widgets.js"></script>
+<script src="../assets/js/theme-picker.js"></script>
+<script src="../assets/js/accessibility.js"></script>
+</body>
+</html>

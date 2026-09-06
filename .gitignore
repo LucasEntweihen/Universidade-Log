@@ -1,0 +1,13 @@
+# Dependências do passo de build opcional (npm install) — regeneráveis,
+# não precisam ser versionadas nem enviadas em zips do projeto.
+node_modules/
+
+# Saída do build de produção (npm run build) — também regenerável a
+# partir do código-fonte em assets/, sempre que precisar. O site
+# funciona normalmente sem essa pasta; ela só existe pra quem quiser
+# publicar a versão minificada em vez da raiz do projeto.
+dist/
+
+# Arquivos de sistema comuns
+.DS_Store
+Thumbs.db

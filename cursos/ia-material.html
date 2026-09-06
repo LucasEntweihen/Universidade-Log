@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<link href="../assets/icons/brand/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../assets/icons/brand/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="../assets/icons/brand/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="../manifest.json" rel="manifest"/>
+<meta content="#9D25FF" name="theme-color"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="default-src 'self'; img-src 'self' data: https://images.unsplash.com; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests" http-equiv="Content-Security-Policy"/>
+<meta content="strict-origin-when-cross-origin" name="referrer">
+<title>Aprofundamento: agente.log</title>
+<meta name="description" content="Aprofundamento por módulo do curso de IA Generativa: leituras extras de cada tópico da trilha." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://universidadelog.com.br/cursos/ia-material.html" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:url" content="https://universidadelog.com.br/cursos/ia-material.html" />
+<meta property="og:site_name" content="Universidade Log" />
+<meta property="og:title" content="Aprofundamento: ia.log" />
+<meta property="og:description" content="Aprofundamento por módulo do curso de IA Generativa: leituras extras de cada tópico da trilha." />
+<meta property="og:image" content="https://universidadelog.com.br/assets/characters/fly.png" />
+<meta property="og:image:alt" content="Fly, o cientista de dados, mascote do curso de IA Generativa" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Aprofundamento: ia.log" />
+<meta name="twitter:description" content="Aprofundamento por módulo do curso de IA Generativa: leituras extras de cada tópico da trilha." />
+<meta name="twitter:image" content="https://universidadelog.com.br/assets/characters/fly.png" />
+<script>(function(){try{var t=localStorage.getItem('studyhub_theme_v1');if(t && t!=='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&amp;family=Playwrite+US+Modern:wght@100..400&amp;family=Lilex:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="../assets/css/theme.css" rel="stylesheet"/>
+<link href="../assets/css/space-theme.css" rel="stylesheet"/>
+<link href="../assets/css/icons.css" rel="stylesheet"/>
+<link rel="stylesheet" href="../assets/css/theme-fx.css" />
+<style>
+
+
+  [data-theme="dark"] .hero-photo,[data-theme="dark"] .mod-photo{filter:saturate(.92) brightness(.82);}
+  [data-theme="dark"] code{background:rgba(147,181,137,.12);color:#E8C99A;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:radial-gradient(ellipse 900px 500px at 8% -8%, rgba(255,169,22,.10), transparent),
+      radial-gradient(ellipse 800px 600px at 100% 15%, rgba(63,163,77,.08), transparent), var(--bg);
+    color:var(--text); font-family:var(--font-body); line-height:1.68;
+    transition:background-color .35s ease,color .35s ease;
+    padding-bottom:60px;
+  }
+  a{color:var(--mint-dim);}
+  html{
+    scrollbar-width:thin;
+    scrollbar-color:var(--mint-dim) transparent;
+  }
+  html::-webkit-scrollbar{width:8px;}
+  html::-webkit-scrollbar-track{background:transparent;}
+  html::-webkit-scrollbar-thumb{
+    background-color:var(--mint-dim);border-radius:20px;border:2px solid var(--bg);background-clip:padding-box;
+  }
+  html::-webkit-scrollbar-thumb:hover{background-color:var(--mint);}
+  .topbar{
+    display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;
+    padding:20px 6vw;border-bottom:1px solid var(--line);background:var(--panel);
+    transition:background-color .35s ease,border-color .35s ease;
+  }
+  .brand-mini{display:flex;align-items:center;gap:10px;}
+  .brand-mini .logo{font-family:var(--font-display);font-weight:700;font-size:1.1rem;color:#21252A;}
+  .topnav{display:flex;gap:10px;align-items:center;flex-wrap:wrap;}
+  .topnav a{
+    font-size:.8rem;text-decoration:none;color:var(--text-dim);background:var(--panel-2);
+    border:1px solid var(--line);border-radius:20px;padding:7px 14px;transition:all .15s ease;
+  }
+  .topnav a:hover{border-color:var(--mint);color:var(--mint-dim);}
+
+
+
+  main{max-width:760px;width:100%;margin:0 auto;padding:0 6vw;}
+  .hero-photo{
+    width:100%;height:230px;object-fit:cover;border-radius:var(--radius);
+    margin:28px 0 6px;box-shadow:var(--shadow-soft);border:1px solid var(--line);display:block;
+  }
+  .hero-credit{font-size:.68rem;color:var(--text-dim);text-align:right;margin-bottom:10px;}
+  .char-cameo{display:block;filter:drop-shadow(0 10px 14px rgba(43,46,42,.18));animation:charFloat 4.5s ease-in-out infinite;}
+  @keyframes charFloat{0%,100%{transform:translateY(0) rotate(0);}50%{transform:translateY(-11px) rotate(-1.5deg);}}
+  .char-wrap{display:flex;align-items:flex-end;gap:18px;margin:22px 0;}
+  .char-wrap .char-bubble{
+    flex:1;background:var(--panel);border:2px solid var(--line);border-bottom-width:4px;border-radius:16px;
+    padding:16px 20px;position:relative;box-shadow:var(--shadow-soft);
+  }
+  .char-wrap .char-bubble .char-name{font-family:var(--font-display);font-weight:700;color:var(--mint-dim);font-size:.8rem;margin-bottom:4px;}
+  .char-wrap .char-bubble p{margin:0;font-size:.88rem;}
+  @media(max-width:700px){.char-wrap{flex-direction:column;align-items:center;text-align:center;}
+    .char-wrap .char-bubble::after,.char-wrap .char-bubble::before{display:none;}
+    .char-wrap img.char-cameo{width:100px !important;}}
+  @media(prefers-reduced-motion:reduce){.char-cameo{animation:none;}}
+  @media(max-width:640px){
+    h1{font-size:1.5rem;}
+    .subtitle{font-size:.88rem;}
+    main{padding-left:5vw;padding-right:5vw;}
+    .hero-photo-wrap{height:220px;}
+    .mod-photo-wrap{height:240px;}
+    .topbar{padding:14px 5vw;}
+  }
+
+  h1{font-family:var(--font-display);font-size:2rem;color:#21252A;font-weight:700;margin-top:22px;}
+  .subtitle{color:var(--text-dim);max-width:60ch;margin-top:8px;font-size:1rem;}
+
+  .toc{
+    display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 6px;
+  }
+  .toc a{
+    font-size:.76rem;text-decoration:none;color:var(--mint-dim);background:var(--panel-2);
+    border:1px solid var(--line);border-radius:20px;padding:6px 12px;
+  }
+
+  .wire{
+    height:14px;margin:30px 0 24px;opacity:.8;animation:wireflow 5s linear infinite;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='14' viewBox='0 0 24 14'><path d='M0 7 Q 6 0 12 7 T 24 7' stroke='%237C9473' stroke-opacity='0.55' stroke-width='1.4' fill='none' stroke-dasharray='2 3'/></svg>");
+    background-repeat:repeat-x;background-size:24px 14px;
+  }
+  @keyframes wireflow{from{background-position:0 0;}to{background-position:48px 0;}}
+
+  article.module{margin-bottom:44px;scroll-margin-top:24px;}
+  .mod-eyebrow{font-family:var(--font-mono);font-size:.7rem;color:var(--mint-dim);letter-spacing:.05em;margin-bottom:6px;}
+  h2.mod-title{font-family:var(--font-display);font-size:1.5rem;color:#21252A;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:10px;}
+  h2.mod-title svg{width:26px;height:26px;color:var(--mint);flex-shrink:0;}
+  .mod-photo-wrap{
+    position:relative;width:100%;height:420px;overflow:hidden;border-radius:12px;margin:14px 0 6px;
+    box-shadow:var(--shadow-soft);border:1px solid var(--line);
+  }
+  .mod-photo-wrap::after{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,0,0,.2) 100%);}
+  .mod-photo{
+    position:absolute;top:-16%;left:0;width:100%;height:132%;object-fit:cover;
+    margin:0;border-radius:0;box-shadow:none;border:none;display:block;will-change:transform;
+  }
+  .mod-photo-credit{font-size:.66rem;color:var(--text-dim);text-align:right;margin-bottom:16px;}
+
+  article.module p{font-size:.95rem;margin-bottom:14px;}
+  article.module strong{color:#21252A;}
+  code{font-family:var(--font-mono);font-size:.85em;color:#8A5A34;background:rgba(63,163,77,.12);padding:2px 6px;border-radius:5px;}
+
+  .callout{
+    background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--mint);
+    border-radius:10px;padding:14px 18px;margin:18px 0;box-shadow:var(--shadow-soft);
+  }
+  .callout.warn{border-left-color:var(--amber);}
+  .callout .c-label{font-family:var(--font-display);font-weight:700;font-size:.8rem;color:#21252A;margin-bottom:4px;}
+  .callout p{font-size:.86rem;margin-bottom:0;}
+
+  .sources{font-size:.78rem;color:var(--text-dim);margin-top:12px;}
+  .sources a{display:inline-block;margin-right:12px;}
+
+  footer{
+    max-width:760px;margin:40px auto 0;padding:20px 6vw 0;border-top:1px solid var(--line-soft);
+    font-size:.74rem;color:var(--text-dim);
+  }
+  .theme-picker-inline{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;max-width:184px;}
+  .theme-swatch{
+    width:20px;height:20px;border-radius:50%;cursor:pointer;border:2px solid var(--line);
+    transition:transform .15s ease;
+  }
+  .theme-swatch:hover{transform:scale(1.18);}
+  .theme-swatch.active{border-color:var(--text);}
+  .swatch-light{background:linear-gradient(135deg,#FFFFFF 50%,#9D25FF 50%);}
+  .swatch-dark{background:linear-gradient(135deg,#131F24 50%,#4FCB5C 50%);}
+  .swatch-blue{background:linear-gradient(135deg,#EFF5FB 50%,#2F86D6 50%);}
+  .swatch-blue-dark{background:linear-gradient(135deg,#0A1826 50%,#4FA3F5 50%);}
+  .swatch-green{background:linear-gradient(135deg,#EFFAF1 50%,#2E9A54 50%);}
+  .swatch-green-dark{background:linear-gradient(135deg,#0B1B12 50%,#4FCB6E 50%);}
+  .swatch-purple{background:linear-gradient(135deg,#F6F0FB 50%,#8B5CE0 50%);}
+  .swatch-purple-dark{background:linear-gradient(135deg,#160E22 50%,#B27FEE 50%);}
+  .swatch-amber{background:linear-gradient(135deg,#FBF3E7 50%,#D97E2C 50%);}
+  .swatch-amber-dark{background:linear-gradient(135deg,#211407 50%,#F0A94E 50%);}
+  .swatch-rose{background:linear-gradient(135deg,#FBF0F3 50%,#D6567F 50%);}
+  .swatch-rose-dark{background:linear-gradient(135deg,#210D16 50%,#F0759E 50%);}
+
+  .mobile-menu-btn {
+    display: none; background: transparent; border: none; color: var(--text); cursor: pointer; padding: 8px; border-radius: 8px;
+  }
+  .mobile-menu-btn:hover { background: var(--panel-2); }
+  @media (max-width: 860px) {
+    .topbar {
+      grid-template-columns: auto auto auto !important;
+      display: grid !important;
+      padding: 12px 16px !important;
+    }
+    .mobile-menu-btn { display: flex; align-items: center; justify-content: center; }
+    .topbar .topnav {
+      display: none;
+      grid-column: 1 / -1;
+      grid-row: 2;
+      justify-self: center;
+      margin-top: 14px;
+      flex-direction: column;
+      align-items: stretch;
+      width: 100%;
+      background: var(--panel);
+      border-radius: 16px;
+      padding: 8px;
+      border: 1px solid var(--line);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.1);
+      animation: menuDrop 0.25s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    }
+    .topbar .topnav.open {
+      display: flex;
+    }
+    .topbar .topnav a { justify-content: center; padding: 12px; }
+  }
+  @keyframes menuDrop {
+    from { opacity: 0; transform: translateY(-10px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+</style>
+<link href="../assets/css/course-themes.css" rel="stylesheet">
+</link></meta></meta></head>
+<body class="course-ia"><a href="#main-content" class="skip-link">Pular para o conteúdo</a><div aria-hidden="true" class="space-planet-photo"></div>
+<div class="topbar">
+<div class="brand-mini"><img alt="" class="om om-sm" src="../assets/icons/content/brain.svg"/> <span class="logo">agente.log</span></div>
+<div class="topnav">
+<a href="../index.html"><svg class="ic-mono" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3 3 10.5V21h5.5v-6h7v6H21V10.5L12 3Z"></path></svg> universidade log</a>
+<a href="../glossario/ia.html"><svg class="ic-mono" fill="currentColor" viewBox="0 0 24 24"><path d="M5.5 3h11A1.5 1.5 0 0 1 18 4.5v16.2a.5.5 0 0 1-.74.44L12 18.5l-5.26 2.64a.5.5 0 0 1-.74-.44V4.5A1.5 1.5 0 0 1 5.5 3Z"></path><rect fill="#fff" height="1.3" opacity=".7" rx=".65" width="6.5" x="8" y="7"></rect><rect fill="#fff" height="1.3" opacity=".7" rx=".65" width="6.5" x="8" y="10"></rect></svg> glossário</a>
+<a href="ia.html"><svg class="ic-mono" fill="currentColor" viewBox="0 0 24 24"><path d="M3 5.6c2.4-1 5.3-1 8 .5v13.3c-2.7-1.5-5.6-1.5-8-.5V5.6Z" opacity=".55"></path><path d="M21 5.6c-2.4-1-5.3-1-8 .5v13.3c2.7-1.5 5.6-1.5 8-.5V5.6Z"></path><rect height="1.1" opacity=".8" rx=".55" width="4.8" x="4.6" y="8"></rect><rect height="1.1" opacity=".8" rx=".55" width="4.8" x="4.6" y="10.6"></rect></svg> guia de estudo</a>
+<a href="ia-referencias.html"><svg class="ic-mono" fill="currentColor" viewBox="0 0 24 24"><path d="M9.17 14.83a1 1 0 0 1 0-1.41l4.24-4.25a1 1 0 1 1 1.41 1.42l-4.24 4.24a1 1 0 0 1-1.41 0Z"></path><path d="M11 6.4l1.6-1.6a4.5 4.5 0 1 1 6.37 6.36l-2.1 2.1a1 1 0 0 1-1.42-1.41l2.1-2.1a2.5 2.5 0 1 0-3.54-3.54L12.4 7.8A1 1 0 1 1 11 6.4Z"></path><path d="M13 17.6l-1.6 1.6a4.5 4.5 0 1 1-6.37-6.36l2.1-2.1a1 1 0 0 1 1.42 1.41l-2.1 2.1a2.5 2.5 0 1 0 3.54 3.54l1.6-1.6a1 1 0 1 1 1.4 1.41Z"></path></svg> referências</a>
+<a href="ia-projeto.html"><svg class="ic-mono" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.2c2.6 1.7 4.2 4.6 4.2 8.3 0 2-.5 3.9-1.4 5.6h-5.6c-.9-1.7-1.4-3.6-1.4-5.6 0-3.7 1.6-6.6 4.2-8.3Z"></path><circle cx="12" cy="9.6" fill="#fff" opacity=".85" r="1.7"></circle><path d="M8.2 15.3 5 17.4l.9-3.9 2.3-.6v1.8Z" opacity=".6"></path><path d="M15.8 15.3l3.2 2.1-.9-3.9-2.3-.6v1.8Z" opacity=".6"></path><path d="M10 17.1h4l-.7 3.1a1.6 1.6 0 0 1-2.6 0L10 17.1Z"></path></svg> projeto prático</a>
+<div data-chrome-widget="theme"></div><div data-chrome-widget="a11y"></div>
+</div></div>
+<main id="main-content">
+<h1><svg class="ic-mono" fill="currentColor" viewBox="0 0 24 24"><path d="M3 5.6c2.4-1 5.3-1 8 .5v13.3c-2.7-1.5-5.6-1.5-8-.5V5.6Z" opacity=".55"></path><path d="M21 5.6c-2.4-1-5.3-1-8 .5v13.3c2.7-1.5 5.6-1.5 8-.5V5.6Z"></path><rect height="1.1" opacity=".8" rx=".55" width="4.8" x="4.6" y="8"></rect><rect height="1.1" opacity=".8" rx=".55" width="4.8" x="4.6" y="10.6"></rect></svg> Aprofundamento por módulo</h1>
+<p class="subtitle">Leituras um pouco mais longas sobre engenharia de prompt, arquitetura de agentes e segurança: pra quem já passou pelos microtutoriais e quer entender o "porquê".</p>
+<div class="char-wrap">
+<img alt="Fly, o cientista de dados" class="char-cameo" src="../assets/characters/fly.png" style="width:120px;flex-shrink:0;"/>
+<div class="char-bubble">
+<div class="char-name">Fly</div>
+<p>Todo agente é só estatística com um bom traje. Entender os parâmetros por trás separa quem ajusta prompt no escuro de quem sabe exatamente por que funcionou.</p>
+</div>
+</div>
+<div class="toc">
+<a href="#mod1">01 Escopo &amp; LGPD</a>
+<a href="#mod2">02 Amostragem</a>
+<a href="#mod3">03 Prompt</a>
+<a href="#mod4">04 Arquitetura</a>
+<a href="#mod5">05 Memória</a>
+<a href="#mod6">06 Segurança</a>
+</div>
+<div class="wire"></div>
+<article class="module" id="mod1">
+<div class="mod-eyebrow">MÓDULO 01</div>
+<h2 class="mod-title">Por que um agente financeiro devia recusar tanta coisa</h2>
+<div class="mod-photo-wrap"><img alt="Trilha na floresta com luz atravessando a névoa" class="mod-photo" src="https://images.unsplash.com/photo-1760479099643-b37a52e7c094?auto=format&amp;fit=crop&amp;w=1200&amp;q=68"/></div>
+<p class="mod-photo-credit">Foto: Ingmar em Unsplash</p>
+<p>A tentação ao construir um assistente é ir adicionando funcionalidades até ele "fazer tudo". O Assessor.IA vai na direção oposta: define primeiro uma lista explícita do que é <strong>proibido</strong> (excluir lançamentos já inseridos, pagar contas, editar calendários externos, processar imagens) e só depois desenha o que é permitido dentro dessas bordas. Escopo restrito não é limitação técnica, é a decisão de produto que faz o sistema ser auditável: dá pra provar o que ele nunca vai fazer.</p>
+<p>Isso conecta direto com a LGPD. O princípio da <strong>finalidade</strong> diz que dados só podem ser usados para o propósito combinado com o titular: não é genérico, é específico. Um agente que "só organiza finanças e agenda" tem uma finalidade fácil de declarar e fácil de auditar; um agente que "ajuda com tudo" não tem.</p>
+<div class="callout">
+<div class="c-label"><img alt="" class="om om-sm" src="../assets/icons/content/herb.svg"/> Apoio informativo não é eufemismo</div>
+<p>A frase "o Assessor.IA não substitui um contador" tem peso legal real: ela define a expectativa de responsabilidade. O sistema pode errar uma categorização; o usuário é quem decide se aquilo vira uma decisão financeira real.</p>
+</div>
+<p class="sources">Fontes: <a href="http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm" rel="noopener" target="_blank">Lei nº 13.709/2018 (LGPD)</a></p>
+</article>
+<div class="wire"></div>
+<article class="module" id="mod2">
+<div class="mod-eyebrow">MÓDULO 02</div>
+<h2 class="mod-title">Temperature não é "criatividade": é forma da distribuição</h2>
+<div class="mod-photo-wrap"><img alt="Prado com flores silvestres ao amanhecer" class="mod-photo" src="https://images.unsplash.com/photo-1755690042574-49ff5c3bfe96?auto=format&amp;fit=crop&amp;w=1200&amp;q=68"/></div>
+<p class="mod-photo-credit">Foto: Nastia Petruk em Unsplash</p>
+<p>Por trás de cada token gerado existe uma distribuição de probabilidade sobre todo o vocabulário do modelo. <strong>Temperature</strong> reescala essa distribuição antes da amostragem: valores baixos (perto de 0) achatam a curva a favor da opção mais provável (o modelo fica quase determinístico. Valores altos suavizam a distribuição, dando chance real a palavras menos óbvias) mais variedade, mais risco de divagar.</p>
+<p><strong>Top-k</strong> corta a cauda da distribuição num número fixo de candidatos antes de amostrar: simples, mas não se adapta ao contexto (às vezes 40 candidatos é pouco, às vezes é demais). <strong>Top-p</strong> resolve isso cortando pela soma acumulada de probabilidade: em contextos previsíveis, poucos candidatos já somam 95%; em contextos ambíguos, o corte naturalmente inclui mais opções. É por isso que a maioria dos guias de produção recomenda Top-p sobre Top-k como padrão.</p>
+<div class="callout">
+<div class="c-label"><img alt="" class="om om-sm" src="../assets/icons/content/herb.svg"/> Onde isso quebra na prática</div>
+<p>Um roteador com temperature alta pode classificar a mesma frase de forma diferente em execuções diferentes: um bug quase impossível de reproduzir, porque o "bug" é estatístico, não lógico. Por isso todo protocolo de classificação estrita usa temperature 0.0.</p>
+</div>
+<p class="sources">Fontes: <a href="https://ai.google.dev/gemini-api/docs/prompting-strategies" rel="noopener" target="_blank">Prompting strategies: Gemini API</a></p>
+</article>
+<div class="wire"></div>
+<article class="module" id="mod3">
+<div class="mod-eyebrow">MÓDULO 03</div>
+<h2 class="mod-title">O System Prompt é um contrato, não uma instrução</h2>
+<div class="mod-photo-wrap"><img alt="Reflexo das montanhas em lago calmo ao nascer do sol" class="mod-photo" src="https://images.unsplash.com/photo-1755643842005-460e3a030102?auto=format&amp;fit=crop&amp;w=1200&amp;q=68"/></div>
+<p class="mod-photo-credit">Foto: Emma Swoboda em Unsplash</p>
+<p>Vale tratar o System Prompt como uma peça de engenharia, não um parágrafo de instrução casual. Ele carrega pelo menos quatro responsabilidades ao mesmo tempo: define a <strong>persona</strong> (tom, idioma), estabelece o <strong>escopo</strong> (o que responder), declara os <strong>guardrails</strong> (o que recusar) e às vezes especifica o <strong>formato</strong> de saída esperado. Um System Prompt que só diz "você é um assistente financeiro" cobre a persona e nada mais: as outras três responsabilidades ficam abertas, e é aí que o modelo improvisa da forma errada.</p>
+<p>Few-shot prompting entra como reforço: em vez de descrever o formato de saída em prosa, você mostra 3-5 exemplos reais de Input→Output. Modelos seguem padrão demonstrado com mais consistência do que seguem regra descrita: é uma diferença prática grande quando a saída precisa ser um formato estruturado, tipo <code>ROUTE=financeiro</code>.</p>
+<p class="sources">Fontes: <a href="https://ai.google.dev/gemini-api/docs/prompting-strategies" rel="noopener" target="_blank">Prompting strategies: Gemini API</a></p>
+</article>
+<div class="wire"></div>
+<article class="module" id="mod4">
+<div class="mod-eyebrow">MÓDULO 04</div>
+<h2 class="mod-title">LangGraph existe porque agentes não são uma linha reta</h2>
+<div class="mod-photo-wrap"><img alt="Pequena cabana aconchegante em meio à floresta" class="mod-photo" src="https://images.unsplash.com/photo-1716847214624-1e8787d98b6c?auto=format&amp;fit=crop&amp;w=1200&amp;q=68"/></div>
+<p class="mod-photo-credit">Foto: Peter Thomas em Unsplash</p>
+<p>Uma chain simples do LangChain (prompt → modelo → parser) já resolve tarefas lineares. O problema aparece quando a tarefa exige decisão: "essa mensagem é sobre finanças ou agenda?", "preciso chamar uma tool antes de responder?", "esse é o mesmo assunto da mensagem anterior?". LangGraph modela isso como um grafo de estados: cada nó é um passo (um agente especialista, uma tool, um roteador), e as arestas decidem o próximo passo com base no estado atual. É a diferença entre escrever uma receita e escrever um fluxograma.</p>
+<p>A escolha entre Checkpointer no Roteador e Checkpointer no Grafo não é só técnica, é uma escolha de trade-off: menos tokens e mais controle manual, ou mais tokens e propagação automática. Times pequenos tendem a preferir o checkpointer no grafo justamente para não ter que lembrar de encaminhar contexto manualmente a cada novo agente especialista adicionado.</p>
+<div class="callout">
+<div class="c-label"><img alt="" class="om om-sm" src="../assets/icons/content/herb.svg"/> Tools são o que separa "chatbot" de "agente"</div>
+<p>Sem <code>search_transactions</code>, <code>saldo_total</code> e <code>saldo_diario</code>, o LLM só sabe "conversar sobre" finanças: não consegue calcular nada real. Tools são a ponte entre linguagem natural e efeito no mundo real (ou pelo menos no banco de dados).</p>
+</div>
+<p class="sources">Fontes: <a href="https://github.com/langchain-ai/langchain" rel="noopener" target="_blank">LangChain</a><a href="https://docs.langchain.com/oss/python/langgraph/overview" rel="noopener" target="_blank">LangGraph overview</a></p>
+</article>
+<div class="wire"></div>
+<article class="module" id="mod5">
+<div class="mod-eyebrow">MÓDULO 05</div>
+<h2 class="mod-title">Por que resumir a conversa em vez de guardar tudo</h2>
+<div class="mod-photo-wrap"><img alt="Colinas envoltas em névoa dourada ao amanhecer" class="mod-photo" src="https://images.unsplash.com/photo-1746937807433-05748b80caf4?auto=format&amp;fit=crop&amp;w=1200&amp;q=68"/></div>
+<p class="mod-photo-credit">Foto: Zetong Li em Unsplash</p>
+<p>Guardar cada mensagem trocada, palavra por palavra, parece a solução mais simples de memória: até a conversa passar de algumas dezenas de turnos e o histórico completo virar um consumo de tokens que cresce sem limite a cada nova chamada. A solução usada no Assessor.IA é gerar um <strong>resumo</strong> via um modelo auxiliar mais leve (como Llama-3) e persistir esse resumo (não a transcrição inteira) no documento MongoDB da sessão.</p>
+<p>Isso cria uma arquitetura de duas velocidades: Redis guarda o contexto "quente" (últimas 24h, acesso rápido, descartável), MongoDB guarda o que precisa sobreviver além da sessão. É basicamente o mesmo princípio de cache L1/L2 aplicado a memória conversacional.</p>
+<p class="sources">Fontes: <a href="https://www.mongodb.com/docs/manual/" rel="noopener" target="_blank">MongoDB Manual</a></p>
+</article>
+<div class="wire"></div>
+<article class="module" id="mod6">
+<div class="mod-eyebrow">MÓDULO 06</div>
+<h2 class="mod-title">Guardrail é regra. Juiz é opinião de outro modelo.</h2>
+<div class="mod-photo-wrap"><img alt="Cabana iluminada sob céu estrelado" class="mod-photo" src="https://images.unsplash.com/photo-1759144897143-991d650b1668?auto=format&amp;fit=crop&amp;w=1200&amp;q=68"/></div>
+<p class="mod-photo-credit">Foto: Sora Sagano em Unsplash</p>
+<p>Vale separar bem essas duas camadas de defesa. Um <strong>guardrail</strong> é determinístico: uma regra fixa (filtro de palavras, validação de schema com Pydantic, checagem de padrão) que roda antes ou depois da geração, sem depender de "julgamento". Um <strong>Juiz</strong> é probabilístico: um segundo LLM avaliando se a resposta do primeiro parece correta, completa ou alucinada. Guardrails são rápidos e previsíveis mas rígidos; Juízes são flexíveis mas custam uma chamada extra de modelo e podem errar também.</p>
+<p>Segundo o OWASP Top 10 for LLM Applications, prompt injection continua sendo um dos riscos mais críticos e mais difíceis de eliminar por completo: a defesa realista é em camadas: guardrail de entrada, instruções explícitas de System Prompt sobre não obedecer instruções embutidas no conteúdo do usuário, e um Juiz revisando saídas sensíveis antes de chegarem ao usuário final.</p>
+<p class="sources">Fontes: <a href="https://owasp.org/www-project-top-10-for-large-language-model-applications/" rel="noopener" target="_blank">OWASP Top 10 for LLM Applications</a></p>
+</article>
+<footer>
+
+    Conteúdo escrito com base nas fontes citadas em cada seção: não é tradução nem cópia da documentação original, apenas uma leitura organizada dela. Para o texto oficial completo, sempre vale abrir o link.
+  </footer>
+</main>
+<script>
+</script>
+<script src="../assets/js/chrome-widgets.js"></script>
+<script src="../assets/js/theme-picker.js"></script>
+<script src="../assets/js/accessibility.js"></script>
+<script src="../assets/js/theme-fx.js"></script>
+</body>
+</html>
