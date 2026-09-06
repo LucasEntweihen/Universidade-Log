@@ -116,14 +116,15 @@
         <div class="lp-loader-mark">
           <img src="assets/characters/byte.png" alt="" width="72" height="78" />
         </div>
-        <div class="lp-loader-bar"><div class="lp-loader-fill"></div></div>
-        <div class="lp-loader-text">iniciando o sistema...</div>
+        <div class="lp-loader-details">
+          <div class="lp-loader-bar"><div class="lp-loader-fill"></div></div>
+          <div class="lp-loader-text">iniciando o sistema...</div>
+        </div>
       </div>
     </div>
     <script>
-      // Tela de carregamento: some assim que a página carregar de
-      // verdade, ou depois de no máximo 1.2s — o que vier primeiro.
-      // Nunca deve travar a navegação, mesmo se uma imagem falhar.
+      // Tela de carregamento: agora com delay proposital para exibição
+      // da barra de progresso (mínimo de ~2.8s antes de sumir).
       (function () {
         var loader = document.getElementById("lp-loader");
         if (!loader) return;
@@ -134,18 +135,30 @@
           loader.classList.add("lp-loader--hide");
           setTimeout(function () {
             if (loader.parentNode) loader.parentNode.removeChild(loader);
-          }, 400);
+          }, 500);
         }
-        var ready = false;
+        
+        var loadFired = false;
+        var minTimePassed = false;
+        
+        function checkDone() {
+          if (loadFired && minTimePassed) hide();
+        }
+        
+        setTimeout(function() {
+            minTimePassed = true;
+            checkDone();
+        }, 2800);
+        
         function onReady() {
-          if (ready) return;
-          ready = true;
-          // segura um mínimo de ~250ms pra não parecer um "pisca" na tela
-          setTimeout(hide, 250);
+          loadFired = true;
+          checkDone();
         }
+        
         if (document.readyState === "complete") onReady();
         else window.addEventListener("load", onReady);
-        setTimeout(hide, 1200); // rede de segurança: nunca trava
+        
+        setTimeout(hide, 8000); // rede de segurança
       })();
     </script>
 
