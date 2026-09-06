@@ -1,183 +1,402 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Central de Apps · Desenvolvimento Android</title>
-<meta name="description" content="Central de apps do curso de Android (Kotlin): acesse rapidamente qualquer módulo da trilha." />
-<meta name="robots" content="index, follow, max-image-preview:large" />
-<link rel="canonical" href="https://universidadelog.com.br/cursos/android-apps.html" />
-<meta property="og:type" content="website" />
-<meta property="og:locale" content="pt_BR" />
-<meta property="og:url" content="https://universidadelog.com.br/cursos/android-apps.html" />
-<meta property="og:site_name" content="Universidade Log" />
-<meta property="og:title" content="Central de Apps: android.log" />
-<meta property="og:description" content="Central de apps do curso de Android (Kotlin): acesse rapidamente qualquer módulo da trilha." />
-<meta property="og:image" content="https://universidadelog.com.br/assets/characters/byte.png" />
-<meta property="og:image:alt" content="Byte, o mascote do curso de Android" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Central de Apps: android.log" />
-<meta name="twitter:description" content="Central de apps do curso de Android (Kotlin): acesse rapidamente qualquer módulo da trilha." />
-<meta name="twitter:image" content="https://universidadelog.com.br/assets/characters/byte.png" />
-<script>(function(){try{var t=localStorage.getItem('studyhub_theme_v1');if(t && t!=='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://images.unsplash.com; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests" />
-<meta name="referrer" content="strict-origin-when-cross-origin" />
-<link rel="icon" type="image/svg+xml" href="../assets/icons/brand/favicon.svg" />
-<link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/brand/favicon-32.png" />
-<link rel="apple-touch-icon" href="../assets/icons/brand/apple-touch-icon.png" />
-<link rel="manifest" href="../manifest.json" />
-<meta name="theme-color" content="#9D25FF" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&family=Playwrite+US+Modern:wght@100..400&family=Lilex:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/theme.css">
-<link rel="stylesheet" href="../assets/css/space-theme.css">
-<link rel="stylesheet" href="../assets/css/icons.css" />
-<style>
-*{box-sizing:border-box;}
-body{
-  margin:0; min-height:100vh; font-family:var(--font-body); background:#0b0f12; color:#e7ecef;
-  display:flex; align-items:flex-start; justify-content:center; padding:34px 16px 70px;
-}
-.phone{
-  width:100%; max-width:400px; background:linear-gradient(180deg,#12181c,#0b0f12);
-  border-radius:38px; border:10px solid #05070a; box-shadow:0 30px 70px rgba(0,0,0,.5), 0 0 0 2px #1c2429;
-  overflow:hidden; position:relative;
-}
-.statusbar{
-  display:flex; align-items:center; justify-content:space-between; padding:10px 22px 4px;
-  font-family:var(--font-mono); font-size:.7rem; color:#c7d0d6;
-}
-.statusbar .notch{
-  position:absolute; top:0; left:50%; transform:translateX(-50%); width:110px; height:20px;
-  background:#05070a; border-radius:0 0 14px 14px;
-}
-.home-head{ padding:8px 22px 4px; text-align:center; }
-.home-head .back{
-  display:inline-flex; align-items:center; gap:6px; color:#8fe3af; text-decoration:none;
-  font-family:var(--font-display); font-weight:700; font-size:.78rem; margin-bottom:10px;
-}
-.home-head h1{ font-family:var(--font-display); font-size:1.15rem; margin:0 0 2px; color:#f2f6f4; }
-.home-head p{ font-size:.74rem; color:#9aa7ac; margin:0 0 14px; }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Central de Apps · Desenvolvimento Android</title>
+    <meta
+      name="description"
+      content="Central de apps do curso de Android (Kotlin): acesse rapidamente qualquer módulo da trilha."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link
+      rel="canonical"
+      href="https://universidade-log.vercel.app/cursos/android-apps.html"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta
+      property="og:url"
+      content="https://universidade-log.vercel.app/cursos/android-apps.html"
+    />
+    <meta property="og:site_name" content="Universidade Log" />
+    <meta property="og:title" content="Central de Apps: android.log" />
+    <meta
+      property="og:description"
+      content="Central de apps do curso de Android (Kotlin): acesse rapidamente qualquer módulo da trilha."
+    />
+    <meta
+      property="og:image"
+      content="https://universidade-log.vercel.app/assets/characters/byte.png"
+    />
+    <meta
+      property="og:image:alt"
+      content="Byte, o mascote do curso de Android"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Central de Apps: android.log" />
+    <meta
+      name="twitter:description"
+      content="Central de apps do curso de Android (Kotlin): acesse rapidamente qualquer módulo da trilha."
+    />
+    <meta
+      name="twitter:image"
+      content="https://universidade-log.vercel.app/assets/characters/byte.png"
+    />
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("studyhub_theme_v1");
+          if (t && t !== "light")
+            document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {}
+      })();
+    </script>
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; img-src 'self' data: https://images.unsplash.com; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests"
+    />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="../assets/icons/brand/favicon.svg"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../assets/icons/brand/favicon-32.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="../assets/icons/brand/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="../manifest.json" />
+    <meta name="theme-color" content="#9D25FF" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&family=Playwrite+US+Modern:wght@100..400&family=Lilex:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/theme.css" />
+    <link rel="stylesheet" href="../assets/css/space-theme.css" />
+    <link rel="stylesheet" href="../assets/css/icons.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: var(--font-body);
+        background: #0b0f12;
+        color: #e7ecef;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 34px 16px 70px;
+      }
+      .phone {
+        width: 100%;
+        max-width: 400px;
+        background: linear-gradient(180deg, #12181c, #0b0f12);
+        border-radius: 38px;
+        border: 10px solid #05070a;
+        box-shadow:
+          0 30px 70px rgba(0, 0, 0, 0.5),
+          0 0 0 2px #1c2429;
+        overflow: hidden;
+        position: relative;
+      }
+      .statusbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 22px 4px;
+        font-family: var(--font-mono);
+        font-size: 0.7rem;
+        color: #c7d0d6;
+      }
+      .statusbar .notch {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 110px;
+        height: 20px;
+        background: #05070a;
+        border-radius: 0 0 14px 14px;
+      }
+      .home-head {
+        padding: 8px 22px 4px;
+        text-align: center;
+      }
+      .home-head .back {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        color: #8fe3af;
+        text-decoration: none;
+        font-family: var(--font-display);
+        font-weight: 700;
+        font-size: 0.78rem;
+        margin-bottom: 10px;
+      }
+      .home-head h1 {
+        font-family: var(--font-display);
+        font-size: 1.15rem;
+        margin: 0 0 2px;
+        color: #f2f6f4;
+      }
+      .home-head p {
+        font-size: 0.74rem;
+        color: #9aa7ac;
+        margin: 0 0 14px;
+      }
 
-.app-grid{
-  display:grid; grid-template-columns:repeat(3,1fr); gap:20px 12px; padding:6px 22px 20px;
-}
-.app-tile{ display:flex; flex-direction:column; align-items:center; gap:7px; text-decoration:none; cursor:pointer; border:none; background:none; padding:0; }
-.app-icon{
-  width:58px; height:58px; border-radius:16px; display:flex; align-items:center; justify-content:center;
-  font-size:1.5rem; box-shadow:0 6px 14px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.12);
-  transition:transform .12s ease;
-}
-.app-tile:active .app-icon{ transform:scale(.9); }
-.app-tile:hover .app-icon{ transform:translateY(-3px); }
-.app-tile .lbl{ font-size:.62rem; color:#dfe6e8; text-align:center; line-height:1.15; max-width:76px; }
+      .app-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px 12px;
+        padding: 6px 22px 20px;
+      }
+      .app-tile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 7px;
+        text-decoration: none;
+        cursor: pointer;
+        border: none;
+        background: none;
+        padding: 0;
+      }
+      .app-icon {
+        width: 58px;
+        height: 58px;
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        box-shadow:
+          0 6px 14px rgba(0, 0, 0, 0.35),
+          inset 0 1px 0 rgba(255, 255, 255, 0.12);
+        transition: transform 0.12s ease;
+      }
+      .app-tile:active .app-icon {
+        transform: scale(0.9);
+      }
+      .app-tile:hover .app-icon {
+        transform: translateY(-3px);
+      }
+      .app-tile .lbl {
+        font-size: 0.62rem;
+        color: #dfe6e8;
+        text-align: center;
+        line-height: 1.15;
+        max-width: 76px;
+      }
 
-.dock{
-  margin:0 14px 18px; padding:12px 10px; border-radius:22px; background:rgba(255,255,255,.06);
-  display:flex; justify-content:space-around; -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px);
-}
-.dock a{ display:flex; flex-direction:column; align-items:center; gap:4px; text-decoration:none; }
-.dock .app-icon{ width:46px; height:46px; border-radius:13px; font-size:1.15rem; }
-.dock span{ font-size:.58rem; color:#c7d0d6; }
+      .dock {
+        margin: 0 14px 18px;
+        padding: 12px 10px;
+        border-radius: 22px;
+        background: rgba(255, 255, 255, 0.06);
+        display: flex;
+        justify-content: space-around;
+        -webkit-backdrop-filter: blur(6px);
+        backdrop-filter: blur(6px);
+      }
+      .dock a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        text-decoration: none;
+      }
+      .dock .app-icon {
+        width: 46px;
+        height: 46px;
+        border-radius: 13px;
+        font-size: 1.15rem;
+      }
+      .dock span {
+        font-size: 0.58rem;
+        color: #c7d0d6;
+      }
 
-.home-bar{ margin:6px auto 14px; width:110px; height:4px; border-radius:4px; background:#3a4750; }
+      .home-bar {
+        margin: 6px auto 14px;
+        width: 110px;
+        height: 4px;
+        border-radius: 4px;
+        background: #3a4750;
+      }
 
-footer.hint{ max-width:400px; text-align:center; color:#6c7a80; font-size:.72rem; margin-top:16px; padding:0 12px; }
-footer.hint a{ color:#8fe3af; }
+      footer.hint {
+        max-width: 400px;
+        text-align: center;
+        color: #6c7a80;
+        font-size: 0.72rem;
+        margin-top: 16px;
+        padding: 0 12px;
+      }
+      footer.hint a {
+        color: #8fe3af;
+      }
 
-  .mobile-menu-btn {
-    display: none; background: transparent; border: none; color: var(--text); cursor: pointer; padding: 8px; border-radius: 8px;
-  }
-  .mobile-menu-btn:hover { background: var(--panel-2); }
-  @media (max-width: 860px) {
-    .topbar {
-      grid-template-columns: auto auto auto !important;
-      display: grid !important;
-      padding: 12px 16px !important;
-    }
-    .mobile-menu-btn { display: flex; align-items: center; justify-content: center; }
-    .topbar .topnav {
-      display: none;
-      grid-column: 1 / -1;
-      grid-row: 2;
-      justify-self: center;
-      margin-top: 14px;
-      flex-direction: column;
-      align-items: stretch;
-      width: 100%;
-      background: var(--panel);
-      border-radius: 16px;
-      padding: 8px;
-      border: 1px solid var(--line);
-      box-shadow: 0 10px 24px rgba(0,0,0,0.1);
-      animation: menuDrop 0.25s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-    }
-    .topbar .topnav.open {
-      display: flex;
-    }
-    .topbar .topnav a { justify-content: center; padding: 12px; }
-  }
-  @keyframes menuDrop {
-    from { opacity: 0; transform: translateY(-10px) scale(0.98); }
-    to { opacity: 1; transform: translateY(0) scale(1); }
-  }
-</style>
-</head>
-<body><a href="#main-content" class="skip-link">Pular para o conteúdo</a>
-<main id="main-content">
-<div class="phone">
-  <div class="statusbar"><div class="notch"></div><span>9:41</span><span>Android.log</span></div>
-  <div class="home-head">
-    <a class="back" href="android.html">← Voltar pro curso</a>
-    <h1>Central de Apps</h1>
-    <p>Toque num módulo pra abrir direto nele</p>
-  </div>
-  <div class="app-grid" id="appGrid"></div>
-  <div class="home-bar"></div>
-  <div class="dock">
-    <a href="android.html"><span class="app-icon" style="background:linear-gradient(145deg,#3DDC84,#1F8F55);">🏠</span><span>Curso</span></a>
-    <a href="../glossario/android.html"><span class="app-icon" style="background:linear-gradient(145deg,#5AD1FF,#2E86C1);">📘</span><span>Glossário</span></a>
-    <a href="android-material.html"><span class="app-icon" style="background:linear-gradient(145deg,#E9C46A,#C9902F);">📄</span><span>Material</span></a>
-    <a href="android-projeto.html"><span class="app-icon" style="background:linear-gradient(145deg,#A76FD1,#6B3F94);">🚀</span><span>Projeto</span></a>
-  </div>
-</div>
-</main>
-<footer class="hint">Toque em qualquer app pra abrir o curso direto naquele módulo.</footer>
+      .mobile-menu-btn {
+        display: none;
+        background: transparent;
+        border: none;
+        color: var(--text);
+        cursor: pointer;
+        padding: 8px;
+        border-radius: 8px;
+      }
+      .mobile-menu-btn:hover {
+        background: var(--panel-2);
+      }
+      @media (max-width: 860px) {
+        .topbar {
+          grid-template-columns: auto auto auto !important;
+          display: grid !important;
+          padding: 12px 16px !important;
+        }
+        .mobile-menu-btn {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .topbar .topnav {
+          display: none;
+          grid-column: 1 / -1;
+          grid-row: 2;
+          justify-self: center;
+          margin-top: 14px;
+          flex-direction: column;
+          align-items: stretch;
+          width: 100%;
+          background: var(--panel);
+          border-radius: 16px;
+          padding: 8px;
+          border: 1px solid var(--line);
+          box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+          animation: menuDrop 0.25s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+        }
+        .topbar .topnav.open {
+          display: flex;
+        }
+        .topbar .topnav a {
+          justify-content: center;
+          padding: 12px;
+        }
+      }
+      @keyframes menuDrop {
+        from {
+          opacity: 0;
+          transform: translateY(-10px) scale(0.98);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Pular para o conteúdo</a>
+    <main id="main-content">
+      <div class="phone">
+        <div class="statusbar">
+          <div class="notch"></div>
+          <span>9:41</span><span>Android.log</span>
+        </div>
+        <div class="home-head">
+          <a class="back" href="android.html">← Voltar pro curso</a>
+          <h1>Central de Apps</h1>
+          <p>Toque num módulo pra abrir direto nele</p>
+        </div>
+        <div class="app-grid" id="appGrid"></div>
+        <div class="home-bar"></div>
+        <div class="dock">
+          <a href="android.html"
+            ><span
+              class="app-icon"
+              style="background: linear-gradient(145deg, #3ddc84, #1f8f55)"
+              >🏠</span
+            ><span>Curso</span></a
+          >
+          <a href="../glossario/android.html"
+            ><span
+              class="app-icon"
+              style="background: linear-gradient(145deg, #5ad1ff, #2e86c1)"
+              >📘</span
+            ><span>Glossário</span></a
+          >
+          <a href="android-material.html"
+            ><span
+              class="app-icon"
+              style="background: linear-gradient(145deg, #e9c46a, #c9902f)"
+              >📄</span
+            ><span>Material</span></a
+          >
+          <a href="android-projeto.html"
+            ><span
+              class="app-icon"
+              style="background: linear-gradient(145deg, #a76fd1, #6b3f94)"
+              >🚀</span
+            ><span>Projeto</span></a
+          >
+        </div>
+      </div>
+    </main>
+    <footer class="hint">
+      Toque em qualquer app pra abrir o curso direto naquele módulo.
+    </footer>
 
-<script>
-const MODULES = [
-  {i:0, name:'Fundamentos', icon:'🧭', color:'#3DDC84,#1F8F55'},
-  {i:1, name:'UI & Binding', icon:'🧩', color:'#5AD1FF,#2E86C1'},
-  {i:2, name:'Layouts', icon:'📐', color:'#F2A65A,#C9772F'},
-  {i:3, name:'Temas', icon:'🎨', color:'#A76FD1,#6B3F94'},
-  {i:4, name:'RecyclerView', icon:'📜', color:'#E9C46A,#C9902F'},
-  {i:5, name:'MVVM & API', icon:'🌐', color:'#5AD1FF,#2E86C1'},
-  {i:6, name:'Fragments', icon:'🧱', color:'#3DDC84,#1F8F55'},
-  {i:7, name:'Segurança', icon:'🔒', color:'#EF5D60,#A8383A'},
-  {i:8, name:'Ferramentas', icon:'🛠️', color:'#F2A65A,#C9772F'},
-  {i:9, name:'Projeto', icon:'🚀', color:'#A76FD1,#6B3F94'},
-  {i:10, name:'Revisão', icon:'🏁', color:'#E9C46A,#C9902F'},
-];
-const TAB_KEY = 'android_log_tab_v1';
-let doneCount = 0;
-try{
-  const data = JSON.parse(localStorage.getItem('android_log_progress_v1') || '{}');
-  doneCount = Object.values(data).filter(Boolean).length;
-}catch(e){}
-if(doneCount > 0){
-  const p = document.createElement('p');
-  p.style.cssText = 'text-align:center;font-family:var(--font-mono);font-size:.68rem;color:#8fe3af;margin:-6px 0 10px;';
-  p.textContent = doneCount + ' itens concluídos até agora';
-  document.querySelector('.home-head').appendChild(p);
-}
-const grid = document.getElementById('appGrid');
-MODULES.forEach(m => {
-  const btn = document.createElement('button');
-  btn.className = 'app-tile';
-  btn.innerHTML = `<span class="app-icon" style="background:linear-gradient(145deg,${m.color});">${m.icon}</span><span class="lbl">${m.name}</span>`;
-  btn.onclick = () => { localStorage.setItem(TAB_KEY, m.i); window.location.href = 'android.html'; };
-  grid.appendChild(btn);
-});
-</script>
-</body>
+    <script>
+      const MODULES = [
+        { i: 0, name: "Fundamentos", icon: "🧭", color: "#3DDC84,#1F8F55" },
+        { i: 1, name: "UI & Binding", icon: "🧩", color: "#5AD1FF,#2E86C1" },
+        { i: 2, name: "Layouts", icon: "📐", color: "#F2A65A,#C9772F" },
+        { i: 3, name: "Temas", icon: "🎨", color: "#A76FD1,#6B3F94" },
+        { i: 4, name: "RecyclerView", icon: "📜", color: "#E9C46A,#C9902F" },
+        { i: 5, name: "MVVM & API", icon: "🌐", color: "#5AD1FF,#2E86C1" },
+        { i: 6, name: "Fragments", icon: "🧱", color: "#3DDC84,#1F8F55" },
+        { i: 7, name: "Segurança", icon: "🔒", color: "#EF5D60,#A8383A" },
+        { i: 8, name: "Ferramentas", icon: "🛠️", color: "#F2A65A,#C9772F" },
+        { i: 9, name: "Projeto", icon: "🚀", color: "#A76FD1,#6B3F94" },
+        { i: 10, name: "Revisão", icon: "🏁", color: "#E9C46A,#C9902F" },
+      ];
+      const TAB_KEY = "android_log_tab_v1";
+      let doneCount = 0;
+      try {
+        const data = JSON.parse(
+          localStorage.getItem("android_log_progress_v1") || "{}",
+        );
+        doneCount = Object.values(data).filter(Boolean).length;
+      } catch (e) {}
+      if (doneCount > 0) {
+        const p = document.createElement("p");
+        p.style.cssText =
+          "text-align:center;font-family:var(--font-mono);font-size:.68rem;color:#8fe3af;margin:-6px 0 10px;";
+        p.textContent = doneCount + " itens concluídos até agora";
+        document.querySelector(".home-head").appendChild(p);
+      }
+      const grid = document.getElementById("appGrid");
+      MODULES.forEach((m) => {
+        const btn = document.createElement("button");
+        btn.className = "app-tile";
+        btn.innerHTML = `<span class="app-icon" style="background:linear-gradient(145deg,${m.color});">${m.icon}</span><span class="lbl">${m.name}</span>`;
+        btn.onclick = () => {
+          localStorage.setItem(TAB_KEY, m.i);
+          window.location.href = "android.html";
+        };
+        grid.appendChild(btn);
+      });
+    </script>
+  </body>
 </html>

@@ -34,10 +34,11 @@ marcado como limitação honesta.
 ## Limitações honestas (isso NÃO tem solução técnica real)
 
 ### "Esconder" o código-fonte
+
 Não existe. Um navegador só consegue exibir a página porque baixou o
 HTML/CSS/JS inteiro — `Ver código-fonte` sempre vai mostrar algo, em
 qualquer site do mundo, não só neste. Minificação (já existe via
-`npm run build`) dificulta a *leitura*, não impede o *acesso*. Se
+`npm run build`) dificulta a _leitura_, não impede o _acesso_. Se
 algum dia alguém sugerir "desabilitar botão direito" ou bloquear F12:
 não recomendo — é trivialmente contornável (a pessoa abre o DevTools
 pelo menu, ou só digita `view-source:` na barra de endereço) e
@@ -46,6 +47,7 @@ personaliza a página por acessibilidade. Isso é considerado má
 prática pela comunidade de segurança, não uma proteção.
 
 ### `'unsafe-inline'` no `script-src` da CSP
+
 A CSP atual permite scripts inline (`'unsafe-inline'`) porque o site
 inteiro depende de `onclick="..."` direto no HTML (centenas de
 ocorrências) e de blocos `<script>` inline no `<head>` de cada
@@ -58,6 +60,7 @@ confirmar com você antes: quer que eu avalie esse trabalho
 separadamente?
 
 ### Subresource Integrity (SRI) nas fontes do Google
+
 Pesquisei antes de tentar implementar: **não dá pra usar SRI com
 Google Fonts**. O Google retorna um CSS diferente pra cada
 navegador (formatos de fonte distintos por user-agent), então o

@@ -12,8 +12,12 @@
  * leitor de tela) e some inteiramente com prefers-reduced-motion.
  * ===================================================================== */
 
-.fx-layer{
-  position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;
+.fx-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
 }
 
 /* ================= IA — camadas extras de estrelas =================
@@ -23,71 +27,116 @@
  * profundidade real: a camada existente funciona como o fundo mais
  * distante (velocidade zero) e estas duas se movem por cima dela em
  * velocidades diferentes ao rolar a página. */
-.fx-star{
-  position:absolute;border-radius:50%;
-  background:color-mix(in srgb, var(--ia-glow,#5AD1FF) 80%, white);
-  animation:fx-twinkle var(--fx-dur,4s) ease-in-out infinite;
-  animation-delay:var(--fx-delay,0s);
+.fx-star {
+  position: absolute;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--ia-glow, #5ad1ff) 80%, white);
+  animation: fx-twinkle var(--fx-dur, 4s) ease-in-out infinite;
+  animation-delay: var(--fx-delay, 0s);
 }
-.fx-star.is-nebula{ background:color-mix(in srgb, var(--ia-nebula,#8B5CF6) 80%, white); }
-@keyframes fx-twinkle{
-  0%,100%{opacity:var(--fx-op-min,.2);}
-  50%{opacity:var(--fx-op-max,.85);}
+.fx-star.is-nebula {
+  background: color-mix(in srgb, var(--ia-nebula, #8b5cf6) 80%, white);
+}
+@keyframes fx-twinkle {
+  0%,
+  100% {
+    opacity: var(--fx-op-min, 0.2);
+  }
+  50% {
+    opacity: var(--fx-op-max, 0.85);
+  }
 }
 
 /* ícones de foguete/satélite/nuvem flutuam devagar, sempre — não
  * depende de scroll, é o "leve flutuar contínuo" pedido. */
 body.course-ia img[src*="rocket.svg"],
 body.course-ia img[src*="satellite.svg"],
-body.course-ia img[src*="cloud.svg"]{
-  display:inline-block;animation:fx-float 6s ease-in-out infinite;
+body.course-ia img[src*="cloud.svg"] {
+  display: inline-block;
+  animation: fx-float 6s ease-in-out infinite;
 }
-@keyframes fx-float{
-  0%,100%{transform:translateY(0);}
-  50%{transform:translateY(-5px);}
+@keyframes fx-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
 }
 
 /* ================= DevOps — ondas ================= */
-.fx-wave-svg{
-  position:absolute;left:0;bottom:calc(-1px);width:220%;
-  animation:fx-wave-drift linear infinite;
+.fx-wave-svg {
+  position: absolute;
+  left: 0;
+  bottom: calc(-1px);
+  width: 220%;
+  animation: fx-wave-drift linear infinite;
 }
-@keyframes fx-wave-drift{
-  from{transform:translateX(0);}
-  to{transform:translateX(-50%);}
+@keyframes fx-wave-drift {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 /* navio, baleia e âncora balançam devagar via CSS puro, sem JS e sem
  * depender do scroll — é ambiente, não parallax. */
 body.course-devops img[src*="ship.svg"],
 body.course-devops img[src*="whale.svg"],
-body.course-devops img[src*="anchor.svg"]{
-  display:inline-block;animation:fx-sway 5s ease-in-out infinite;
-  transform-origin:50% 88%;
+body.course-devops img[src*="anchor.svg"] {
+  display: inline-block;
+  animation: fx-sway 5s ease-in-out infinite;
+  transform-origin: 50% 88%;
 }
-@keyframes fx-sway{
-  0%,100%{transform:rotate(-3.5deg);}
-  50%{transform:rotate(3.5deg);}
+@keyframes fx-sway {
+  0%,
+  100% {
+    transform: rotate(-3.5deg);
+  }
+  50% {
+    transform: rotate(3.5deg);
+  }
 }
 
 /* ================= Trigomante — profundidade de masmorra ================= */
-.fx-dungeon-walls{
-  position:absolute;inset:-10% -10%;
-  background-image:repeating-linear-gradient(
+.fx-dungeon-walls {
+  position: absolute;
+  inset: -10% -10%;
+  background-image: repeating-linear-gradient(
     90deg,
-    color-mix(in srgb, var(--amber,#DB8E00) 14%, transparent) 0 3px,
+    color-mix(in srgb, var(--amber, #db8e00) 14%, transparent) 0 3px,
     transparent 3px 96px
   );
 }
-.fx-torch{
-  position:absolute;width:30px;height:30px;border-radius:50%;
-  background:radial-gradient(circle, color-mix(in srgb, var(--amber,#DB8E00) 65%, transparent), transparent 70%);
-  animation:fx-flicker 2.4s ease-in-out infinite;
-  filter:blur(1px);
+.fx-torch {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--amber, #db8e00) 65%, transparent),
+    transparent 70%
+  );
+  animation: fx-flicker 2.4s ease-in-out infinite;
+  filter: blur(1px);
 }
-@keyframes fx-flicker{
-  0%,100%{opacity:.5;transform:scale(1);}
-  40%{opacity:.85;transform:scale(1.15);}
-  65%{opacity:.4;transform:scale(.92);}
+@keyframes fx-flicker {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  40% {
+    opacity: 0.85;
+    transform: scale(1.15);
+  }
+  65% {
+    opacity: 0.4;
+    transform: scale(0.92);
+  }
 }
 
 /* ================= Android — swipe no lugar do parallax vertical =================
@@ -95,8 +144,8 @@ body.course-devops img[src*="anchor.svg"]{
  * por frame de scroll); aqui só garantimos que nada no CSS force uma
  * transição concorrente que brigue com esse transform por frame. */
 body.course-android .hero-photo,
-body.course-android .mod-photo{
-  transition:none;
+body.course-android .mod-photo {
+  transition: none;
 }
 
 /* ================= Reduced motion: desliga tudo, sem exceção =================
@@ -107,15 +156,21 @@ body.course-android .mod-photo{
  * como uma segunda trava explícita e documentada — se um dia a regra
  * global de theme.css mudar por outro motivo, o motion sensitivo
  * continua garantido aqui, sem depender de mais nada. */
-@media(prefers-reduced-motion:reduce){
-  .fx-layer{ display:none !important; }
-  .fx-star,.fx-wave-svg,.fx-torch{ animation:none !important; }
+@media (prefers-reduced-motion: reduce) {
+  .fx-layer {
+    display: none !important;
+  }
+  .fx-star,
+  .fx-wave-svg,
+  .fx-torch {
+    animation: none !important;
+  }
   body.course-ia img[src*="rocket.svg"],
   body.course-ia img[src*="satellite.svg"],
   body.course-ia img[src*="cloud.svg"],
   body.course-devops img[src*="ship.svg"],
   body.course-devops img[src*="whale.svg"],
-  body.course-devops img[src*="anchor.svg"]{
-    animation:none !important;
+  body.course-devops img[src*="anchor.svg"] {
+    animation: none !important;
   }
 }

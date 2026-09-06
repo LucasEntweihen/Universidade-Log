@@ -1,75 +1,128 @@
-# Universidade Log
+<div align="center">
+  <img src="assets/icons/brand/logo-lockup.svg" alt="Universidade Log Logo" width="300" />
 
-Plataforma de estudo gamificada, 100% estática (HTML/CSS/JS puro, sem
-framework, sem backend) — cursos de IA Generativa, Android (Kotlin),
-DevOps e Trigonometria, cada um com trilha visual, XP, conquistas,
-minigames e glossário. Todo o progresso é salvo no `localStorage` do
-navegador; não há conta, servidor nem banco de dados.
+  # Universidade Log
 
-## Rodando localmente
+  **Plataforma de estudo 100% gratuita, gamificada e sem servidor.** <br/>
+  *Aprenda IA Generativa, Android (Kotlin), DevOps e Trigonometria no seu ritmo.*
 
-Como é só HTML/CSS/JS estático, basta servir a pasta com qualquer
-servidor local — não pode ser aberto com `file://` direto no navegador
-porque o `fetch`/`localStorage` e os módulos JS exigem um servidor
-(`http://`). Duas opções simples:
+  [![Status](https://img.shields.io/badge/Status-Online-success?style=for-the-badge&logo=vercel)](https://universidade-log.vercel.app/)
+  [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](#)
+  [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](#)
+  [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](#)
+  [![License](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](#)
 
-```bash
-# Python (já vem instalado na maioria dos sistemas)
-python3 -m http.server 8080
+  [Acesse o Projeto Online](https://universidade-log.vercel.app/) • [Relatar um Bug](.github/ISSUE_TEMPLATE/bug_report.md) • [Solicitar Funcionalidade](.github/ISSUE_TEMPLATE/feature_request.md)
+</div>
 
-# ou, com Node instalado
-npx serve .
-```
+<br/>
 
-Depois abra `http://localhost:8080`.
+## 📖 Sobre o Projeto
 
-## Estrutura do projeto
+**Universidade Log** é uma plataforma educacional inovadora que opera de forma totalmente estática. Sem a necessidade de banco de dados, servidores ou criação de contas, a plataforma oferece uma experiência de aprendizado gamificada e rica em conteúdo diretamente no navegador. 
 
-```
-index.html            → landing page
-cursos.html           → página com os 4 cursos
-cursos/               → hub de cada curso (aside com trilha de módulos)
-  <curso>.html         → página-sede do curso (ex.: android.html)
-  <curso>-material.html      → aprofundamento por módulo
-  <curso>-projeto.html       → projeto prático
-  <curso>-referencias.html   → referências
-  <curso>-diario.html        → diário (DevOps)
-glossario/<curso>.html → glossário-livro (flipbook) de cada curso
-404.html, 403.html, 500.html, offline.html → páginas de erro/estado
-assets/
-  css/     → folhas de estilo (theme.css tem as variáveis de cor/fonte
-             dos 13 temas; icons.css tem os popovers e ícones; as
-             demais são por funcionalidade — games, flipbook, etc.)
-  js/      → engine.js (XP/streak/conquistas), games.js (minigames),
-             chrome-widgets.js (seletor de tema + painel de
-             acessibilidade — fonte única usada por toda página),
-             theme-picker.js, accessibility.js, calculator.js,
-             flipbook.js
-  icons/   → ui/ (ícones funcionais simples) e content/ (ilustrações
-             coloridas estilo OpenMoji, uso decorativo)
-  characters/ → arte + description.json dos personagens
-CHANGELOG.md → histórico detalhado de cada versão
-```
+Todo o seu progresso, XP e conquistas são salvos localmente utilizando o `localStorage`, garantindo total privacidade e uma experiência fluida.
 
-## Build de produção (opcional)
+### ✨ Principais Funcionalidades
 
-O site funciona perfeitamente sem build — é só abrir/publicar os
-arquivos como estão. Existe um passo de build **opcional** que gera
-uma cópia minificada (CSS/JS/HTML) em `dist/`, útil só se quiser
-economizar banda em produção:
+- 🎮 **Gamificação Completa**: Ganhe XP, desbloqueie conquistas e mantenha seu *streak* diário.
+- 📚 **Cursos Profundos**: Trilhas visuais para IA Generativa, Android (Kotlin), DevOps (Docker/K8s) e Trigonometria.
+- 🧩 **Minigames Educativos**: Reforce seu conhecimento jogando diretamente no site.
+- 📖 **Glossários Dinâmicos**: Material de apoio em formato de "flipbook" 3D para cada disciplina.
+- 🎨 **Alta Customização**: 13 temas de cores incríveis para personalizar sua área de estudo.
+- ♿ **Acessibilidade de Primeira**: Modos para daltonismo, aumento de fonte nativo e navegação 100% via teclado.
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+Este projeto desafia a tendência moderna de frameworks pesados, optando por um ecossistema **100% Vanilla**:
+
+*   **HTML5** Semântico
+*   **CSS3** (Variáveis nativas, Flexbox, Grid, Animações Avançadas)
+*   **JavaScript Puro (Vanilla JS)**
+*   Armazenamento: `localStorage` e `sessionStorage`
+*   Hospedagem Recomendada: [Vercel](https://vercel.com)
+
+---
+
+## 🚀 Como Executar Localmente
+
+Sendo uma aplicação puramente estática baseada na web moderna, tudo o que você precisa é de um servidor HTTP simples para evitar bloqueios de CORS ao importar módulos locais (o protocolo `file://` não suporta algumas APIs web usadas no projeto).
+
+### Pré-requisitos
+Qualquer servidor HTTP servirá. Exemplos: Python, Node.js, PHP, etc.
+
+### Passos
+1. Clone este repositório:
+   ```bash
+   git clone https://github.com/LucasEntweihen/Universidade-Log.git
+   cd Universidade-Log
+   ```
+2. Inicie o servidor local:
+   ```bash
+   # Usando Python (já instalado no Mac/Linux e maioria do Windows)
+   python -m http.server 8080
+
+   # OU Usando Node.js / npx
+   npx serve .
+   ```
+3. Abra seu navegador em: `http://localhost:8080`
+
+---
+
+## 📦 Build de Produção (Opcional)
+
+A plataforma roda direto do código-fonte. No entanto, para produção (hospedagem), você pode optar por gerar uma build minificada que reduz o tamanho dos arquivos e acelera o carregamento.
 
 ```bash
 npm install
 npm run build
 ```
+O código otimizado será gerado na pasta `/dist`. Basta apontar sua hospedagem (Vercel, Netlify, GitHub Pages) para publicar esta pasta.
 
-Isso não muda nome de nenhum arquivo (então nenhum link quebra) e não
-remove nenhuma funcionalidade — só espaços em branco, comentários e
-formatação. `dist/` não é versionado (está no `.gitignore`); gere de
-novo sempre que precisar, a partir do código-fonte normal.
+---
 
-## Documentação
+## 📁 Estrutura de Diretórios
 
-Todo o histórico de mudanças, decisões e correções fica em
-[`CHANGELOG.md`](./CHANGELOG.md), incluindo a causa raiz de bugs
-corrigidos — vale a leitura antes de mexer em algo que já existe.
+O projeto é organizado de forma modular e lógica:
+
+```text
+├── index.html                 # Landing page e entrada principal
+├── cursos.html                # Hub com todos os cursos disponíveis
+├── cursos/                    # Páginas e trilhas específicas por matéria
+├── glossario/                 # Dicionários interativos de termos
+├── assets/
+│   ├── css/                   # Folhas de estilo modulares (temas, UI, fx)
+│   ├── js/                    # Lógica da engine, games, acessibilidade
+│   ├── icons/                 # Ícones SVGs e OpenMoji da interface
+│   └── characters/            # Arte de personagens (.png) + meta dados (.json)
+├── .github/                   # Templates para Issues e Pull Requests
+├── build.js                   # Script de minificação e deploy de produção
+└── package.json               # Dependências de desenvolvimento (Build/Format)
+```
+
+---
+
+## 🤝 Como Contribuir
+
+Contribuições tornam a comunidade de código aberto um lugar incrível para aprender, inspirar e criar. Qualquer contribuição que você fizer será **muito apreciada**.
+
+1. Faça um Fork do projeto
+2. Crie sua Feature Branch (`git checkout -b feature/NovaFeature`)
+3. Faça o Commit de suas mudanças (`git commit -m 'Add: Nova feature incrível'`)
+4. Faça o Push para a Branch (`git push origin feature/NovaFeature`)
+5. Abra um Pull Request utilizando o nosso [Template padrão](.github/PULL_REQUEST_TEMPLATE.md)
+
+Leia nossos guias de contribuição nas [Issues Abertas](https://github.com/LucasEntweihen/Universidade-Log/issues) para entender como relatar bugs ou sugerir ideias.
+
+---
+
+## 📄 Licença
+
+Distribuído sob licença própria. Veja o arquivo `LICENSE` para mais informações.
+
+<div align="center">
+  <br/>
+  Feito com ❤️ pela Universidade Log
+</div>

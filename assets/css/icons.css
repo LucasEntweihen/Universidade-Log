@@ -5,82 +5,217 @@
    Ver ICON-GUIDELINES.md na raiz do projeto pra critérios de quando
    usar cada família e a regra de simplicidade dos ícones .om. */
 
-:root{
+:root {
   /* Tokens de cor pros ícones .ic-mono — mapeados nas variáveis de
      tema já existentes (theme.css), então já se adaptam sozinhos aos
      13 temas em vez de precisar de uma cor fixa por ícone. */
-  --icon-primary:var(--text);
-  --icon-secondary:var(--text-dim);
-  --icon-muted:var(--line);
-  --icon-accent:var(--mint-dim);
+  --icon-primary: var(--text);
+  --icon-secondary: var(--text-dim);
+  --icon-muted: var(--line);
+  --icon-accent: var(--mint-dim);
 }
 
-.ic-mono.ic-muted{color:var(--icon-muted);}
-.ic-mono.ic-secondary{color:var(--icon-secondary);}
-.ic-mono.ic-accent{color:var(--icon-accent);}
+.ic-mono.ic-muted {
+  color: var(--icon-muted);
+}
+.ic-mono.ic-secondary {
+  color: var(--icon-secondary);
+}
+.ic-mono.ic-accent {
+  color: var(--icon-accent);
+}
 
-.om{display:inline-block;vertical-align:-3px;width:1.1em;height:1.1em;flex-shrink:0;}
-.om-xs{width:14px;height:14px;}
-.om-sm{width:17px;height:17px;}
-.om-md{width:22px;height:22px;}
-.om-lg{width:32px;height:32px;}
-.om-xl{width:44px;height:44px;}
+.om {
+  display: inline-block;
+  vertical-align: -3px;
+  width: 1.1em;
+  height: 1.1em;
+  flex-shrink: 0;
+}
+.om-xs {
+  width: 14px;
+  height: 14px;
+}
+.om-sm {
+  width: 17px;
+  height: 17px;
+}
+.om-md {
+  width: 22px;
+  height: 22px;
+}
+.om-lg {
+  width: 32px;
+  height: 32px;
+}
+.om-xl {
+  width: 44px;
+  height: 44px;
+}
 
-.ic-mono{display:inline-block;vertical-align:-4px;width:18px;height:18px;flex-shrink:0;}
-.ic-mono.sm{width:14px;height:14px;vertical-align:-2px;}
-.ic-mono.lg{width:24px;height:24px;vertical-align:-6px;}
+.ic-mono {
+  display: inline-block;
+  vertical-align: -4px;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+.ic-mono.sm {
+  width: 14px;
+  height: 14px;
+  vertical-align: -2px;
+}
+.ic-mono.lg {
+  width: 24px;
+  height: 24px;
+  vertical-align: -6px;
+}
 
 /* ================= compact theme popover =================
    Fonte única de verdade pro seletor de tema em todas as páginas
    (antes havia uma segunda definição em landing.css, só pra
    index.html, com especificidade mais fraca — nunca vencia a
    cascata e o tamanho maior não era aplicado de fato). */
-.theme-popover{position:relative;display:inline-block;}
-.theme-popover-trigger{
-  display:inline-flex;align-items:center;gap:7px;font-size:.82rem;font-weight:600;
-  color:var(--text-dim);background:var(--panel-2);border:1px solid var(--line);
-  border-radius:20px;padding:0 14px;height:44px;cursor:pointer;transition:all .15s ease;
-  font-family:inherit;
+.theme-popover {
+  position: relative;
+  display: inline-block;
 }
-.theme-popover-trigger:hover{border-color:var(--mint);color:var(--mint-dim);}
-.theme-popover-trigger:focus-visible{outline:2px solid var(--mint-dim);outline-offset:2px;}
-.theme-popover .tp-dot{width:13px;height:13px;border-radius:50%;border:1px solid var(--line);flex-shrink:0;}
+.theme-popover-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-dim);
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 0 14px;
+  height: 44px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: inherit;
+}
+.theme-popover-trigger:hover {
+  border-color: var(--mint);
+  color: var(--mint-dim);
+}
+.theme-popover-trigger:focus-visible {
+  outline: 2px solid var(--mint-dim);
+  outline-offset: 2px;
+}
+.theme-popover .tp-dot {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  flex-shrink: 0;
+}
 /* botão real (era <div onclick>): foco, teclado e leitor de tela
    funcionam; 44px é a área de toque mínima recomendada (WCAG 2.5.5) */
-.theme-popover .theme-swatch{
-  position:relative;appearance:none;-webkit-appearance:none;padding:0;font:inherit;
-  width:44px;height:44px;border-radius:50%;cursor:pointer;
-  border:2px solid var(--line);transition:transform .15s ease,border-color .15s ease;
+.theme-popover .theme-swatch {
+  position: relative;
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 0;
+  font: inherit;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid var(--line);
+  transition:
+    transform 0.15s ease,
+    border-color 0.15s ease;
 }
-.theme-popover .theme-swatch:hover{transform:scale(1.08);}
-.theme-popover .theme-swatch.active{border-color:var(--text);transform:scale(1.06);}
-.theme-popover .theme-swatch.active::after{
-  content:'';position:absolute;inset:-1px;border-radius:50%;
-  border:2px solid var(--panel);pointer-events:none;
+.theme-popover .theme-swatch:hover {
+  transform: scale(1.08);
 }
-.theme-popover .theme-swatch:focus-visible{outline:2px solid var(--mint-dim);outline-offset:3px;}
-.theme-popover-panel{
-  display:none;position:absolute;top:calc(100% + 8px);right:0;z-index:60;
-  background:var(--panel);border:1px solid var(--line);border-radius:16px;
-  padding:16px;box-shadow:var(--shadow-soft);width:270px;
-  animation:tp-panel-in .15s ease;
+.theme-popover .theme-swatch.active {
+  border-color: var(--text);
+  transform: scale(1.06);
 }
-@keyframes tp-panel-in{from{opacity:0;transform:translateY(-4px);}to{opacity:1;transform:translateY(0);}}
-.theme-popover.open .theme-popover-panel{display:block;}
-.tp-panel-title{
-  font-family:var(--font-display);font-weight:700;font-size:.82rem;
-  margin:0 0 12px;color:var(--text);
+.theme-popover .theme-swatch.active::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 50%;
+  border: 2px solid var(--panel);
+  pointer-events: none;
 }
-.tp-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px 8px;}
-.tp-family{display:flex;flex-direction:column;align-items:center;gap:7px;}
-.tp-family-name{
-  font-size:.66rem;font-weight:700;color:var(--text-dim);text-transform:uppercase;
-  letter-spacing:.03em;text-align:center;
+.theme-popover .theme-swatch:focus-visible {
+  outline: 2px solid var(--mint-dim);
+  outline-offset: 3px;
 }
-.tp-family-name small{font-weight:600;text-transform:none;letter-spacing:0;opacity:.75;}
-.tp-family-swatches{display:flex;gap:8px;}
-.tp-family-space { display: none !important; }
-.course-ia .tp-family-space { display: block !important; }
+.theme-popover-panel {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 60;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: var(--shadow-soft);
+  width: 270px;
+  animation: tp-panel-in 0.15s ease;
+}
+@keyframes tp-panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.theme-popover.open .theme-popover-panel {
+  display: block;
+}
+.tp-panel-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.82rem;
+  margin: 0 0 12px;
+  color: var(--text);
+}
+.tp-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 8px;
+}
+.tp-family {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+}
+.tp-family-name {
+  font-size: 0.66rem;
+  font-weight: 700;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  text-align: center;
+}
+.tp-family-name small {
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0;
+  opacity: 0.75;
+}
+.tp-family-swatches {
+  display: flex;
+  gap: 8px;
+}
+.tp-family-space {
+  display: none !important;
+}
+.course-ia .tp-family-space {
+  display: block !important;
+}
 
 /* Os dois popovers agora também aparecem dentro da sidebar de 272px
    das páginas-sede de curso (.theme-toggle), não só em topbars largas.
@@ -90,15 +225,25 @@
    caber, tanto no desktop (aside fixo em 272px) quanto no mobile
    (aside vira 100% da tela, sempre mais largo que isso). */
 .theme-toggle .theme-popover-panel,
-.theme-toggle .a11y-popover-panel{
-  left:0;right:auto;width:224px;
+.theme-toggle .a11y-popover-panel {
+  left: 0;
+  right: auto;
+  width: 224px;
 }
-@media(max-width:480px){
-  .theme-popover-panel{right:auto;left:0;width:250px;}
+@media (max-width: 480px) {
+  .theme-popover-panel {
+    right: auto;
+    left: 0;
+    width: 250px;
+  }
   /* .a11y-popover-panel tinha essa mesma necessidade (ficava cortado
      do lado direito em telas pequenas) mas nunca tinha ganhado a
      regra — só o seletor de tema tinha sido corrigido. */
-  .a11y-popover-panel{right:auto;left:0;width:min(290px,calc(100vw - 32px));}
+  .a11y-popover-panel {
+    right: auto;
+    left: 0;
+    width: min(290px, calc(100vw - 32px));
+  }
 }
 
 /* =====================================================================
@@ -108,56 +253,166 @@
    completa de cada recurso (tamanho de fonte, daltonismo, leitura
    em voz alta).
    ===================================================================== */
-.a11y-popover{position:relative;display:inline-block;}
-.a11y-trigger{
-  display:inline-flex;align-items:center;gap:7px;height:44px;padding:0 14px;
-  border-radius:999px;border:1px solid var(--line);background:var(--panel);
-  color:var(--text);font-family:var(--font-display);font-weight:600;font-size:.82rem;
-  cursor:pointer;transition:border-color .15s ease,color .15s ease;
+.a11y-popover {
+  position: relative;
+  display: inline-block;
 }
-.a11y-trigger:hover{border-color:var(--mint);color:var(--mint-dim);}
-.a11y-trigger:focus-visible{outline:2px solid var(--mint-dim);outline-offset:2px;}
-.a11y-trigger svg{width:18px;height:18px;flex-shrink:0;}
-.a11y-popover-panel{
-  display:none;position:absolute;top:calc(100% + 8px);right:0;z-index:60;
-  background:var(--panel);border:1px solid var(--line);border-radius:16px;
-  padding:16px;box-shadow:var(--shadow-soft);width:290px;
-  animation:tp-panel-in .15s ease;
+.a11y-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  height: 44px;
+  padding: 0 14px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--text);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition:
+    border-color 0.15s ease,
+    color 0.15s ease;
 }
-.a11y-popover.open .a11y-popover-panel{display:block;}
-.a11y-group{margin-bottom:16px;}
-.a11y-group:last-child{margin-bottom:0;}
-.a11y-group-label{
-  display:block;font-size:.72rem;font-weight:700;color:var(--text-dim);
-  text-transform:uppercase;letter-spacing:.03em;margin-bottom:8px;
+.a11y-trigger:hover {
+  border-color: var(--mint);
+  color: var(--mint-dim);
 }
-.a11y-font-buttons{display:flex;gap:8px;}
-.a11y-font-buttons button{
-  flex:1;height:40px;border-radius:10px;border:1px solid var(--line);
-  background:var(--panel-2);color:var(--text);font-family:var(--font-display);
-  font-weight:700;cursor:pointer;transition:all .15s ease;
+.a11y-trigger:focus-visible {
+  outline: 2px solid var(--mint-dim);
+  outline-offset: 2px;
 }
-.a11y-font-buttons button:nth-child(2){font-size:1.08em;}
-.a11y-font-buttons button:nth-child(3){font-size:1.18em;}
-.a11y-font-buttons button:hover{border-color:var(--mint);}
-.a11y-font-buttons button.active{background:var(--mint-dim);color:var(--on-accent);border-color:var(--mint-dim);}
-.a11y-toggle{display:flex;align-items:center;gap:10px;cursor:pointer;font-size:.85rem;color:var(--text);}
-.a11y-toggle input{width:38px;height:22px;flex-shrink:0;appearance:none;-webkit-appearance:none;
-  background:var(--line);border-radius:999px;position:relative;cursor:pointer;transition:background .15s ease;}
-.a11y-toggle input::before{
-  content:'';position:absolute;top:2px;left:2px;width:18px;height:18px;border-radius:50%;
-  background:var(--panel);transition:transform .15s ease;box-shadow:0 1px 3px rgba(0,0,0,.3);
+.a11y-trigger svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
 }
-.a11y-toggle input:checked{background:var(--mint-dim);}
-.a11y-toggle input:checked::before{transform:translateX(16px);}
-.a11y-toggle input:focus-visible{outline:2px solid var(--mint-dim);outline-offset:2px;}
-.a11y-hint{font-size:.72rem;color:var(--text-dim);margin:6px 0 0;line-height:1.4;}
-.a11y-stop-btn{
-  margin-top:8px;width:100%;padding:8px;border-radius:8px;border:1px solid var(--line);
-  background:var(--panel-2);color:var(--text-dim);font-size:.76rem;cursor:pointer;
+.a11y-popover-panel {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 60;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: var(--shadow-soft);
+  width: 290px;
+  animation: tp-panel-in 0.15s ease;
 }
-.a11y-stop-btn:hover{border-color:var(--danger);color:var(--danger);}
-
+.a11y-popover.open .a11y-popover-panel {
+  display: block;
+}
+.a11y-group {
+  margin-bottom: 16px;
+}
+.a11y-group:last-child {
+  margin-bottom: 0;
+}
+.a11y-group-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 8px;
+}
+.a11y-font-buttons {
+  display: flex;
+  gap: 8px;
+}
+.a11y-font-buttons button {
+  flex: 1;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--panel-2);
+  color: var(--text);
+  font-family: var(--font-display);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.a11y-font-buttons button:nth-child(2) {
+  font-size: 1.08em;
+}
+.a11y-font-buttons button:nth-child(3) {
+  font-size: 1.18em;
+}
+.a11y-font-buttons button:hover {
+  border-color: var(--mint);
+}
+.a11y-font-buttons button.active {
+  background: var(--mint-dim);
+  color: var(--on-accent);
+  border-color: var(--mint-dim);
+}
+.a11y-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: var(--text);
+}
+.a11y-toggle input {
+  width: 38px;
+  height: 22px;
+  flex-shrink: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  background: var(--line);
+  border-radius: 999px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+.a11y-toggle input::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--panel);
+  transition: transform 0.15s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+.a11y-toggle input:checked {
+  background: var(--mint-dim);
+}
+.a11y-toggle input:checked::before {
+  transform: translateX(16px);
+}
+.a11y-toggle input:focus-visible {
+  outline: 2px solid var(--mint-dim);
+  outline-offset: 2px;
+}
+.a11y-hint {
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  margin: 6px 0 0;
+  line-height: 1.4;
+}
+.a11y-stop-btn {
+  margin-top: 8px;
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: var(--panel-2);
+  color: var(--text-dim);
+  font-size: 0.76rem;
+  cursor: pointer;
+}
+.a11y-stop-btn:hover {
+  border-color: var(--danger);
+  color: var(--danger);
+}
 
 /* Estilização melhorada para o select de daltonismo */
 #a11yCvd {
@@ -178,15 +433,38 @@
    que NÃO promete ser. */
 
 /* filtros CVD (Color Vision Deficiency) via SVG overlay */
-.cvd-protanopia { filter: url('../accessibility/cvd-filters.svg#protanopia'); }
-.cvd-deuteranopia { filter: url('../accessibility/cvd-filters.svg#deuteranopia'); }
-.cvd-tritanopia { filter: url('../accessibility/cvd-filters.svg#tritanopia'); }
-.cvd-protanomalia { filter: url('../accessibility/cvd-filters.svg#protanomalia'); }
-.cvd-deuteranomalia { filter: url('../accessibility/cvd-filters.svg#deuteranomalia'); }
-.cvd-tritanomalia { filter: url('../accessibility/cvd-filters.svg#tritanomalia'); }
-.cvd-achromatopsia { filter: url('../accessibility/cvd-filters.svg#achromatopsia'); }
+.cvd-protanopia {
+  filter: url("../accessibility/cvd-filters.svg#protanopia");
+}
+.cvd-deuteranopia {
+  filter: url("../accessibility/cvd-filters.svg#deuteranopia");
+}
+.cvd-tritanopia {
+  filter: url("../accessibility/cvd-filters.svg#tritanopia");
+}
+.cvd-protanomalia {
+  filter: url("../accessibility/cvd-filters.svg#protanomalia");
+}
+.cvd-deuteranomalia {
+  filter: url("../accessibility/cvd-filters.svg#deuteranomalia");
+}
+.cvd-tritanomalia {
+  filter: url("../accessibility/cvd-filters.svg#tritanomalia");
+}
+.cvd-achromatopsia {
+  filter: url("../accessibility/cvd-filters.svg#achromatopsia");
+}
 
 /* leitura em voz alta: realce temporário do trecho sendo lido */
-.a11y-reading-now{outline:2px solid var(--mint-dim);outline-offset:3px;border-radius:4px;}
-html[data-read-aloud="on"] h1,html[data-read-aloud="on"] h2,html[data-read-aloud="on"] h3,
-html[data-read-aloud="on"] p,html[data-read-aloud="on"] li{cursor:pointer;}
+.a11y-reading-now {
+  outline: 2px solid var(--mint-dim);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+html[data-read-aloud="on"] h1,
+html[data-read-aloud="on"] h2,
+html[data-read-aloud="on"] h3,
+html[data-read-aloud="on"] p,
+html[data-read-aloud="on"] li {
+  cursor: pointer;
+}

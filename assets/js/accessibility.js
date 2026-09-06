@@ -64,10 +64,18 @@
   }
 
   function applyCvdFilter(type) {
-  var wrapper = document.body;
-    wrapper.classList.remove('cvd-protanopia', 'cvd-deuteranopia', 'cvd-tritanopia', 'cvd-protanomalia', 'cvd-deuteranomalia', 'cvd-tritanomalia', 'cvd-achromatopsia');
-    if (type !== 'none') {
-      wrapper.classList.add('cvd-' + type);
+    var wrapper = document.body;
+    wrapper.classList.remove(
+      "cvd-protanopia",
+      "cvd-deuteranopia",
+      "cvd-tritanopia",
+      "cvd-protanomalia",
+      "cvd-deuteranomalia",
+      "cvd-tritanomalia",
+      "cvd-achromatopsia",
+    );
+    if (type !== "none") {
+      wrapper.classList.add("cvd-" + type);
     }
   }
 
@@ -103,7 +111,9 @@
     if (on) {
       document.addEventListener("click", readAloudClickHandler, true);
       var h1 = document.querySelector("h1");
-      var lead = document.querySelector("h1 + p, .lp-hero-text p, .section-sub");
+      var lead = document.querySelector(
+        "h1 + p, .lp-hero-text p, .section-sub",
+      );
       var introText = [
         document.title,
         h1 ? h1.innerText : "",
@@ -149,7 +159,7 @@
 
     var cvdSelect = panel.querySelector("#a11yCvd");
     if (cvdSelect) {
-      cvdSelect.value = prefs.cvdType || 'none';
+      cvdSelect.value = prefs.cvdType || "none";
       applyCvdFilter(cvdSelect.value);
       cvdSelect.addEventListener("change", function () {
         applyCvdFilter(cvdSelect.value);

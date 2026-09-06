@@ -9,6 +9,7 @@ não ser consistente dentro dela mesma. É isso que este guia fixa.
 ## As duas famílias
 
 ### 1. `.om` — ilustrações decorativas (estilo OpenMoji)
+
 - **72×72**, multi-path, multi-cor.
 - Uso: conteúdo, texto corrido, cards de personagem, celebração de
   conquista — lugares onde a ilustração É o conteúdo, não um rótulo
@@ -23,6 +24,7 @@ não ser consistente dentro dela mesma. É isso que este guia fixa.
   provavelmente está detalhado demais pro tamanho em que é usado.
 
 ### 2. `.ic-mono` — ícones funcionais (botões, navegação, status)
+
 - **24×24**, `fill="currentColor"` (herda a cor do texto ao redor),
   path sólido — é o estilo dominante hoje: **315 ocorrências** inline
   no HTML contra **3** ícones de traço/contorno (`stroke`) e **0**
