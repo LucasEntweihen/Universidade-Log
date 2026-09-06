@@ -586,3 +586,9 @@ Ponto de partida: site já existente, enviado pelo usuário em formato `.zip`, c
   - Implementada a classe `<body class="is-loading">` diretamente no HTML.
   - Adicionado travamento de nível raiz via CSS (`position: fixed !important`, `overflow: hidden`, `touch-action: none`) para `body.is-loading`, impedindo qualquer motor de renderização de calcular área de rolagem antes da liberação.
   - Liberação do scroll feita via Javascript de forma síncrona com o _fade out_ do loader.
+
+### Added
+- **UI/Animação:** Efeito de Parallax global dinâmico implementado para imagens de cenário e composição (ignora automaticamente personagens e SVGs de UI). 
+  - Desenvolvido no `theme-fx.js` utilizando um motor de `requestAnimationFrame` atrelado ao scroll (modo `passive`) para altíssima performance visual.
+  - A lógica injeta dinamicamente um contêiner com `overflow: hidden` caso a imagem alvo não possua, garantindo que as bordas esticadas (usando `scale(1.15)`) nunca vazem no layout.
+  - O cálculo matemático interpola a altura visível (do momento que a imagem entra pela base até sair pelo topo) e mapeia esse vetor em um `translateY` de `-7.5%` a `+7.5%`, criando profundidade espacial instantânea.

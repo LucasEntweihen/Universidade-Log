@@ -280,3 +280,70 @@
         init();
     }
 })();
+// --- PARALLAX GLOBAL EFFECT ---
+// Adiciona efeito de parallax em todas as imagens que não são personagens nem ícones
+document.addEventListener("DOMContentLoaded", function() {
+    const images = document.querySelectorAll('img:not([src*="characters"]):not(.om):not(.lp-logo-lockup):not(.brand-mark)');
+    
+    // Preparação
+    images.forEach(function(img) {
+        // Envolve a imagem se o pai não tiver overflow hidden
+        let parent = img.parentElement;
+        const parentStyle = window.getComputedStyle(parent);
+        
+        if (parentStyle.overflow !== 'hidden' && parent.tagName.toLowerCase() !== 'picture') {
+            const wrapper = document.createElement('div');
+            wrapper.style.overflow = 'hidden';
+            wrapper.style.borderRadius = parentStyle.borderRadius !== '0px' ? parentStyle.borderRadius : window.getComputedStyle(img).borderRadius;
+            wrapper.style.display = 'block';
+            wrapper.style.width = '100%';
+            wrapper.style.height = '100%';
+            wrapper.style.position = 'relative';
+            
+            parent.insertBefore(wrapper, img);
+            wrapper.appendChild(img);
+            parent = wrapper;
+        }
+
+        img.style.willChange = 'transform';
+        img.style.transformOrigin = 'center center';
+        img.style.transition = 'transform 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+    });
+
+    let ticking = false;
+
+    function updateParallax() {
+        const windowHeight = window.innerHeight;
+        
+        images.forEach(function(img) {
+            const rect = img.parentElement.getBoundingClientRect();
+            
+            // Verifica se está na tela
+            if (rect.top <= windowHeight && rect.bottom >= 0) {
+                const totalScrollAmount = windowHeight + rect.height;
+                const scrolledAmount = windowHeight - rect.top;
+                
+                let percentage = scrolledAmount / totalScrollAmount;
+                percentage = Math.max(0, Math.min(1, percentage));
+                
+                // Mapeia 0->1 para -7% -> +7% (comporta no scale de 1.15)
+                const moveY = (percentage - 0.5) * 14; 
+                
+                img.style.transform = 'scale(1.15) translateY(' + moveY.toFixed(2) + '%)';
+            }
+        });
+    }
+
+    window.addEventListener('scroll', function() {
+        if (!ticking) {
+            window.requestAnimationFrame(function() {
+                updateParallax();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    }, { passive: true });
+    
+    // Chamada inicial
+    window.requestAnimationFrame(updateParallax);
+});
