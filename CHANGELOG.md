@@ -580,3 +580,9 @@ Ponto de partida: site já existente, enviado pelo usuário em formato `.zip`, c
 
 ### Fixed
 - **UI:** Tela de carregamento totalmente reformulada para ocupar exatamente 100% da tela (sem bordas extras) e com trava explícita de rolagem (scroll) para evitar quebras visuais em telas menores ou dispositivos móveis.
+
+### Changed
+- **UI/Arquitetura:** Refatoração profunda na trava da tela de carregamento (Loading). Para garantir que a tela seja **FIXA** e **impossível de scrollar** (evitando a percepção de uma tela renderizada por baixo e os "scroll bounces" nativos de navegadores mobile), a estratégia de JS inline foi substituída por um bloqueio estrutural.
+  - Implementada a classe `<body class="is-loading">` diretamente no HTML.
+  - Adicionado travamento de nível raiz via CSS (`position: fixed !important`, `overflow: hidden`, `touch-action: none`) para `body.is-loading`, impedindo qualquer motor de renderização de calcular área de rolagem antes da liberação.
+  - Liberação do scroll feita via Javascript de forma síncrona com o _fade out_ do loader.

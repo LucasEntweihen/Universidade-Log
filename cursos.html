@@ -110,7 +110,7 @@
     <link rel="stylesheet" href="assets/css/landing.css" />
 </head>
 
-<body>
+<body class="is-loading">
     <a href="#main-content" class="skip-link">Pular para o conteúdo</a>
     <div id="lp-loader" class="lp-loader" role="status" aria-label="Carregando Universidade Log">
     <div class="lp-loader-mark">
@@ -128,13 +128,14 @@
             var loader = document.getElementById("lp-loader");
             if (!loader) return;
             var hidden = false;
-            document.body.style.overflow = 'hidden';
+            
 
             function hide() {
                 if (hidden) return;
                 hidden = true;
-                loader.classList.add("lp-loader--hide");
-                    document.body.style.overflow = "";
+                document.body.classList.remove('is-loading');
+                    loader.classList.add('lp-loader--hide');
+                    
                 setTimeout(function() {
                     if (loader.parentNode) loader.parentNode.removeChild(loader);
                 }, 500);

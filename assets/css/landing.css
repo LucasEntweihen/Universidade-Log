@@ -375,6 +375,15 @@ body {
 
 /* .content-wrapper { filter: none; } -- removido pois impedia a aplicação do filtro de daltonismo */
 
+/* Bloqueio absoluto de scroll durante o carregamento */
+body.is-loading {
+    overflow: hidden !important;
+    position: fixed !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    touch-action: none !important;
+}
+
 /* ---------- tela de carregamento inicial ---------- */
 .lp-loader {
     position: fixed;
