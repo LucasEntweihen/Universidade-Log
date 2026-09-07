@@ -12,8 +12,39 @@
     <script>
         window.COURSE = {
             totalModules: 11,
+
             prefix: 'devops'
         };
+    </script>
+    <div id="lp-loader" class="lp-loader" role="status" aria-label="Carregando Universidade Log">
+        <div class="lp-loader-mark">
+            <img src="../assets/characters/baba-grogue.png" alt="" width="72" height="78" loading="eager" />
+        </div>
+        <div class="lp-loader-bar">
+            <div class="lp-loader-fill"></div>
+        </div>
+        <div class="lp-loader-text">iniciando o sistema...</div>
+    </div>
+    <style>
+        .lp-loader { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: var(--bg-1); display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 9999; transition: opacity 0.4s ease, visibility 0.4s; }
+        .lp-loader-mark img { width: 80px; height: auto; object-fit: contain; }
+        .lp-loader-bar { width: 200px; height: 4px; border-radius: 4px; background: var(--panel-2); margin-top: 20px; overflow: hidden; }
+        .lp-loader-fill { width: 0%; height: 100%; border-radius: 4px; background: var(--mint); animation: loaderProgress 2s ease-in-out infinite; }
+        .lp-loader-text { font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-dim); margin-top: 10px; }
+        .lp-loader.lp-loader--hide { opacity: 0; pointer-events: none; visibility: hidden; }
+        @keyframes loaderProgress { 0% { width: 0%; } 50% { width: 70%; } 100% { width: 100%; } }
+    </style>
+    <script>
+        (function() {
+            var loader = document.getElementById("lp-loader");
+            if (!loader) return;
+            document.body.classList.add('is-loading');
+            window.addEventListener('load', function() {
+                document.body.classList.remove('is-loading');
+                loader.classList.add('lp-loader--hide');
+                setTimeout(function() { if (loader.parentNode) loader.parentNode.removeChild(loader); }, 400);
+            });
+        })();
     </script>
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://images.unsplash.com; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />

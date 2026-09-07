@@ -598,6 +598,7 @@ Ponto de partida: site já existente, enviado pelo usuário em formato `.zip`, c
   - Adicionado travamento de nível raiz via CSS (`position: fixed !important`, `overflow: hidden`, `touch-action: none`) para `body.is-loading`, impedindo qualquer motor de renderização de calcular área de rolagem antes da liberação.
   - Liberação do scroll feita via Javascript de forma síncrona com o _fade out_ do loader.
 
+- **Tela de Carregamento Dinâmica**: Agora, cada curso possui uma tela de carregamento personalizada com seu personagem principal (IA: Fly, Android: Gnomo, DevOps: Baba Grogue, Trigomante: Mago), garantindo identidade visual desde o primeiro momento.
 ### Added
 - **UI/Animação:** Efeito de Parallax global dinâmico implementado para imagens de cenário e composição (ignora automaticamente personagens e SVGs de UI). 
   - Desenvolvido no `theme-fx.js` utilizando um motor de `requestAnimationFrame` atrelado ao scroll (modo `passive`) para altíssima performance visual.
