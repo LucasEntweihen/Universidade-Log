@@ -35,7 +35,6 @@
  * ===================================================================== */
 (function() {
     "use strict";
-
     var THEME_POPOVER_HTML =
         '<div class="theme-popover">' +
         '<button type="button" class="theme-popover-trigger" onclick="toggleThemePopover(this)" aria-haspopup="true" aria-label="Escolher tema de cores">' +
@@ -68,6 +67,14 @@
         '<div class="tp-family"><span class="tp-family-name">Rosa</span><div class="tp-family-swatches">' +
         '<button type="button" class="theme-swatch swatch-rose" data-theme="rose" onclick="setTheme(\'rose\')" title="Rosa claro" aria-label="Tema rosa claro" aria-pressed="false"></button>' +
         '<button type="button" class="theme-swatch swatch-rose-dark" data-theme="rose-dark" onclick="setTheme(\'rose-dark\')" title="Rosa noite" aria-label="Tema rosa noite" aria-pressed="false"></button>' +
+        "</div></div>" +
+        '<div class="tp-family"><span class="tp-family-name">Ciano</span><div class="tp-family-swatches">' +
+        '<button type="button" class="theme-swatch swatch-cyan" data-theme="cyan" onclick="setTheme(\'cyan\')" title="Ciano claro" aria-label="Tema ciano claro" aria-pressed="false"></button>' +
+        '<button type="button" class="theme-swatch swatch-cyan-dark" data-theme="cyan-dark" onclick="setTheme(\'cyan-dark\')" title="Ciano noite" aria-label="Tema ciano noite" aria-pressed="false"></button>' +
+        "</div></div>" +
+        '<div class="tp-family"><span class="tp-family-name">Coral</span><div class="tp-family-swatches">' +
+        '<button type="button" class="theme-swatch swatch-coral" data-theme="coral" onclick="setTheme(\'coral\')" title="Coral claro" aria-label="Tema coral claro" aria-pressed="false"></button>' +
+        '<button type="button" class="theme-swatch swatch-coral-dark" data-theme="coral-dark" onclick="setTheme(\'coral-dark\')" title="Coral noite" aria-label="Tema coral noite" aria-pressed="false"></button>' +
         "</div></div>" +
         '<div class="tp-family tp-family-space"><span class="tp-family-name">✦ Espacial <small>(novo)</small></span><div class="tp-family-swatches">' +
         '<button type="button" class="theme-swatch swatch-space" data-theme="space" onclick="setTheme(\'space\')" title="Espacial" aria-label="Tema espacial" aria-pressed="false"></button>' +

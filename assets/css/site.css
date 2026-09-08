@@ -2198,6 +2198,25 @@ footer.credits a {
     background: linear-gradient(135deg, #210d16 50%, #f0759e 50%);
 }
 
+.swatch-cyan {
+    background: linear-gradient(135deg, #eef9f9 50%, #0d9488 50%);
+}
+
+.swatch-cyan-dark {
+    background: linear-gradient(135deg, #081a1e 50%, #2dd4bf 50%);
+}
+
+.swatch-coral {
+    background: linear-gradient(135deg, #fdf4f0 50%, #e05338 50%);
+}
+
+.swatch-coral-dark {
+    background: linear-gradient(135deg, #200f0b 50%, #ff6f54 50%);
+}
+
+.swatch-space {
+    background: radial-gradient(circle at 30% 30%, #7b6cff 0%, #0a0b1e 65%);
+}
 @media (max-width: 640px) {
     .theme-picker {
         max-width: none;

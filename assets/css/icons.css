@@ -166,6 +166,74 @@
     outline-offset: 3px;
 }
 
+.swatch-light {
+    background: linear-gradient(135deg, #ffffff 50%, #3fa34d 50%);
+}
+
+.swatch-dark {
+    background: linear-gradient(135deg, #131f24 50%, #4fcb5c 50%);
+}
+
+.swatch-blue {
+    background: linear-gradient(135deg, #eff5fb 50%, #2f86d6 50%);
+}
+
+.swatch-blue-dark {
+    background: linear-gradient(135deg, #0a1826 50%, #4fa3f5 50%);
+}
+
+.swatch-green {
+    background: linear-gradient(135deg, #effaf1 50%, #2e9a54 50%);
+}
+
+.swatch-green-dark {
+    background: linear-gradient(135deg, #0b1b12 50%, #4fcb6e 50%);
+}
+
+.swatch-purple {
+    background: linear-gradient(135deg, #f6f0fb 50%, #8b5ce0 50%);
+}
+
+.swatch-purple-dark {
+    background: linear-gradient(135deg, #160e22 50%, #b27fee 50%);
+}
+
+.swatch-amber {
+    background: linear-gradient(135deg, #fbf3e7 50%, #d97e2c 50%);
+}
+
+.swatch-amber-dark {
+    background: linear-gradient(135deg, #211407 50%, #f0a94e 50%);
+}
+
+.swatch-rose {
+    background: linear-gradient(135deg, #fbf0f3 50%, #d6567f 50%);
+}
+
+.swatch-rose-dark {
+    background: linear-gradient(135deg, #210d16 50%, #f0759e 50%);
+}
+
+.swatch-cyan {
+    background: linear-gradient(135deg, #eef9f9 50%, #0d9488 50%);
+}
+
+.swatch-cyan-dark {
+    background: linear-gradient(135deg, #081a1e 50%, #2dd4bf 50%);
+}
+
+.swatch-coral {
+    background: linear-gradient(135deg, #fdf4f0 50%, #e05338 50%);
+}
+
+.swatch-coral-dark {
+    background: linear-gradient(135deg, #200f0b 50%, #ff6f54 50%);
+}
+
+.swatch-space {
+    background: radial-gradient(circle at 30% 30%, #7b6cff 0%, #0a0b1e 65%);
+}
+
 .theme-popover-panel {
     display: none;
     position: absolute;

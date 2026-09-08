@@ -1,8 +1,9 @@
 /* ============================================================
    theme.css - design tokens shared by every page in the system.
-   12 temas em 6 famílias, cada uma com par claro/escuro:
+   16 temas em 8 famílias, cada uma com par claro/escuro:
    neutro (light/dark), azul (blue/blue-dark), verde (green/green-dark),
-   roxo (purple/purple-dark), âmbar (amber/amber-dark), rosa (rose/rose-dark).
+   roxo (purple/purple-dark), âmbar (amber/amber-dark), rosa (rose/rose-dark),
+   ciano (cyan/cyan-dark), coral (coral/coral-dark).
    Toggle via [data-theme] no <html>.
    ============================================================ */
 
@@ -338,13 +339,119 @@
     --bg-glow-1: rgba(240, 117, 158, 0.09);
     --bg-glow-2: rgba(203, 148, 236, 0.1);
 }
+/* ciano - tons de oceano tropical / turquesa, base clara */
+[data-theme="cyan"] {
+    --bg: #eef9f9;
+    --panel: #ffffff;
+    --panel-2: #def2f3;
+    --line: #bfe5e7;
+    --line-soft: #d2eff1;
+    --text: #103238;
+    --text-dim: #4e767c;
+    --mint: #0d9488;
+    --mint-dim: #0f766e;
+    --amber: #e89736;
+    --amber-dim: #c27822;
+    --violet: #3b82f6;
+    --violet-dim: #2563eb;
+    --danger: #e0495c;
+    --danger-dim: #b72c3e;
+    --mint-btn: #0f766e;
+    --violet-btn: #2563eb;
+    --danger-btn: #dc3146;
+    --heading: #0b272c;
+    --on-accent: #ffffff;
+    --shadow-soft: 0 8px 20px rgba(16, 50, 56, 0.09);
+    --bg-glow-1: rgba(13, 148, 136, 0.09);
+    --bg-glow-2: rgba(59, 130, 246, 0.08);
+}
+
+/* ciano-noite - abismo oceânico, base escura */
+[data-theme="cyan-dark"] {
+    --bg: #081a1e;
+    --panel: #0f262c;
+    --panel-2: #16323a;
+    --line: #234c56;
+    --line-soft: #1a3d46;
+    --text: #ddf5f7;
+    --text-dim: #7faeb6;
+    --mint: #2dd4bf;
+    --mint-dim: #14b8a6;
+    --amber: #fbbf24;
+    --amber-dim: #d97706;
+    --violet: #60a5fa;
+    --violet-dim: #3b82f6;
+    --danger: #ff7b87;
+    --danger-dim: #db5563;
+    --mint-btn: #2dd4bf;
+    --violet-btn: #60a5fa;
+    --danger-btn: #ff7b87;
+    --heading: #edfbfd;
+    --on-accent: #061518;
+    --shadow-soft: 0 8px 20px rgba(0, 0, 0, 0.4);
+    --bg-glow-1: rgba(45, 212, 191, 0.1);
+    --bg-glow-2: rgba(96, 165, 250, 0.08);
+}
+
+/* coral - recife de coral / pôr do sol quente, base clara */
+[data-theme="coral"] {
+    --bg: #fdf4f0;
+    --panel: #ffffff;
+    --panel-2: #fae5dd;
+    --line: #f4ccbf;
+    --line-soft: #fadad0;
+    --text: #3c2018;
+    --text-dim: #865b50;
+    --mint: #e05338;
+    --mint-dim: #b83a22;
+    --amber: #ea8c2a;
+    --amber-dim: #c26d18;
+    --violet: #d946ef;
+    --violet-dim: #b328c7;
+    --danger: #d2483f;
+    --danger-dim: #ac2e27;
+    --mint-btn: #d14328;
+    --violet-btn: #c026d3;
+    --danger-btn: #d1433a;
+    --heading: #30160f;
+    --on-accent: #ffffff;
+    --shadow-soft: 0 8px 20px rgba(60, 32, 24, 0.09);
+    --bg-glow-1: rgba(224, 83, 56, 0.09);
+    --bg-glow-2: rgba(234, 140, 42, 0.08);
+}
+
+/* coral-noite - magma / brasa vulcânica, base escura */
+[data-theme="coral-dark"] {
+    --bg: #200f0b;
+    --panel: #2d1712;
+    --panel-2: #3b1f19;
+    --line: #593127;
+    --line-soft: #47261e;
+    --text: #fae5e0;
+    --text-dim: #c2978d;
+    --mint: #ff6f54;
+    --mint-dim: #e65135;
+    --amber: #fbb040;
+    --amber-dim: #d98f24;
+    --violet: #f472b6;
+    --violet-dim: #db2777;
+    --danger: #ff7b87;
+    --danger-dim: #db5563;
+    --mint-btn: #ff6f54;
+    --violet-btn: #f472b6;
+    --danger-btn: #ff7b87;
+    --heading: #fff0ec;
+    --on-accent: #180805;
+    --shadow-soft: 0 8px 20px rgba(0, 0, 0, 0.42);
+    --bg-glow-1: rgba(255, 111, 84, 0.1);
+    --bg-glow-2: rgba(244, 114, 182, 0.09);
+}
 
 /* espacial — tema único (sem par claro/noite: espaço sideral já
    nasce escuro por natureza). Usado em conjunto com o pacote de
    efeitos cósmicos (planetas, estrelas cadentes, foguetes) descrito
    em assets/css/space-theme.css e assets/js/space-effects.js. */
-/* Space theme limited to IA course */
-.course-ia [data-theme="space"] {
+[data-theme="space"] {
     --bg: #0a0b1e;
     --panel: #12132e;
     --panel-2: #1b1d45;

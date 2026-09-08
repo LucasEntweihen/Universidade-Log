@@ -1,7 +1,6 @@
 /* ================= shared theme popover ================= */
 (function() {
     var STORAGE_KEY = "studyhub_theme_v1";
-
     var SWATCH_COLORS = {
         light: "#EDEAE2",
         dark: "#2B2620",
@@ -15,6 +14,10 @@
         "amber-dark": "#2E2013",
         rose: "#FBE2EA",
         "rose-dark": "#301621",
+        cyan: "#DEF2F3",
+        "cyan-dark": "#16323A",
+        coral: "#FAE5DD",
+        "coral-dark": "#3B1F19",
         space: "#7B6CFF",
     };
 

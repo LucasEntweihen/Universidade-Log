@@ -165,6 +165,25 @@ body {
     background: linear-gradient(135deg, #210d16 50%, #f0759e 50%);
 }
 
+.swatch-cyan {
+    background: linear-gradient(135deg, #eef9f9 50%, #0d9488 50%);
+}
+
+.swatch-cyan-dark {
+    background: linear-gradient(135deg, #081a1e 50%, #2dd4bf 50%);
+}
+
+.swatch-coral {
+    background: linear-gradient(135deg, #fdf4f0 50%, #e05338 50%);
+}
+
+.swatch-coral-dark {
+    background: linear-gradient(135deg, #200f0b 50%, #ff6f54 50%);
+}
+
+.swatch-space {
+    background: radial-gradient(circle at 30% 30%, #7b6cff 0%, #0a0b1e 65%);
+}
 /* ---------- stage ---------- */
 .fb-stage {
     width: 100%;
@@ -458,7 +477,9 @@ body {
 [data-theme="green-dark"] .fb-page,
 [data-theme="purple-dark"] .fb-page,
 [data-theme="amber-dark"] .fb-page,
-[data-theme="rose-dark"] .fb-page {
+[data-theme="rose-dark"] .fb-page,
+[data-theme="cyan-dark"] .fb-page,
+[data-theme="coral-dark"] .fb-page {
     background-color: #efe4c8;
 }
 
@@ -467,7 +488,9 @@ body {
 [data-theme="green-dark"] .fb-term .t-name,
 [data-theme="purple-dark"] .fb-term .t-name,
 [data-theme="amber-dark"] .fb-term .t-name,
-[data-theme="rose-dark"] .fb-term .t-name {
+[data-theme="rose-dark"] .fb-term .t-name,
+[data-theme="cyan-dark"] .fb-term .t-name,
+[data-theme="coral-dark"] .fb-term .t-name {
     color: #2e2410;
 }
 
@@ -476,7 +499,9 @@ body {
 [data-theme="green-dark"] .fb-term .t-def,
 [data-theme="purple-dark"] .fb-term .t-def,
 [data-theme="amber-dark"] .fb-term .t-def,
-[data-theme="rose-dark"] .fb-term .t-def {
+[data-theme="rose-dark"] .fb-term .t-def,
+[data-theme="cyan-dark"] .fb-term .t-def,
+[data-theme="coral-dark"] .fb-term .t-def {
     color: #4a3f28;
 }
 

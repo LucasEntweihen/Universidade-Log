@@ -3,6 +3,31 @@
 Histórico de criação, atualização e desenvolvimento da plataforma. Cada versão documenta o que foi entregue, decisões tomadas e problemas encontrados (e corrigidos) no processo.
 
 ---
+## [v7.8] — Expansão da Paleta de Cores: Novos Temas Ciano e Coral
+
+Adição de duas novas famílias completas de temas de cores (Ciano/Turquesa e Coral/Terracota), expandindo o catálogo do sistema de 12 para 16 temas principais (8 famílias com par claro e escuro, além do tema espacial), com propagação completa em todos os módulos de CSS, JavaScript e templates HTML.
+
+### Novas Paletas e Tokens de Design
+
+- **Família Ciano / Turquesa (`cyan` / `cyan-dark`)**:
+  - **Ciano Claro (`[data-theme="cyan"]`)**: Fundo frio e límpido em tom oceânico (`--bg: #eef9f9`), superfícies em branco puro (`--panel: #ffffff`) e ciano suave (`--panel-2: #def2f3`), bordas turquesa delicadas (`--line: #bfe5e7`), tipografia de alto contraste em azul-petróleo escuro (`--text: #103238`), acento primário em verde-azulado profundo (`--mint: #0d9488` / `--mint-dim: #0f766e`), acento secundário em azul oceano (`--violet: #3b82f6`) e toques âmbar dourados.
+  - **Ciano Noite (`[data-theme="cyan-dark"]`)**: Base escura abissal (`--bg: #081a1e`), painéis contrastantes (`--panel: #0f262c`, `--panel-2: #16323a`), linhas sutis (`--line: #234c56`), tipografia clara em ciano gelo (`--text: #ddf5f7`), com destaques luminosos em turquesa elétrico fluorescente (`--mint: #2dd4bf` / `--mint-dim: #14b8a6`) e azul celestial (`--violet: #60a5fa`).
+
+- **Família Coral / Terracota (`coral` / `coral-dark`)**:
+  - **Coral Claro (`[data-theme="coral"]`)**: Fundo aconchegante em tom pêssego/coral suave (`--bg: #fdf4f0`), painéis em branco e areia rosada (`--panel: #ffffff`, `--panel-2: #fae5dd`), linhas em terracota suave (`--line: #f4ccbf`), tipografia marrom-terra aquecida (`--text: #3c2018`), acento primário em coral avermelhado vivo (`--mint: #e05338` / `--mint-dim: #b83a22`), acento secundário em fúcsia/pôr do sol (`--violet: #d946ef`).
+  - **Coral Noite (`[data-theme="coral-dark"]`)**: Base escura em tom de magma vulcânico (`--bg: #200f0b`), painéis em marrom-brasa profundo (`--panel: #2d1712`, `--panel-2: #3b1f19`), linhas em ferrugem escuro (`--line: #593127`), tipografia quente clara (`--text: #fae5e0`), com realces vibrantes em coral ardente (`--mint: #ff6f54` / `--mint-dim: #e65135`), âmbar brilhante (`--amber: #fbb040`) e rosa-orquídea (`--violet: #f472b6`).
+
+### Integração Estrutural e Componentes
+
+- **`assets/css/theme.css`**: Injeção das definições de variáveis dos 4 novos modos de cores (`cyan`, `cyan-dark`, `coral`, `coral-dark`) e ajuste no cabeçalho de documentação dos tokens do sistema.
+- **`assets/js/chrome-widgets.js`**: Atualização do template HTML de injeção global do widget de tema (`.theme-popover`), adicionando os blocos de família com botões de swatch `.swatch-cyan`, `.swatch-cyan-dark`, `.swatch-coral` e `.swatch-coral-dark`.
+- **`assets/js/theme-picker.js` & `assets/js/engine.js`**: Registro das chaves de tema nos arrays de validação e mapeamento dos pontos de cor do indicador (`SWATCH_COLORS`).
+- **`assets/css/icons.css`, `assets/css/site.css`, `assets/css/landing.css`, `assets/css/flipbook.css`**: Estilização dos gradientes 50/50 em 135 graus dos novos swatches, classes de visualização de paleta (`.pf-cyan`, `.pf-coral`), regras de escurecimento de imagens em modo escuro (`img.dim-in-dark`) e suporte no leitor tipo livro (flipbook).
+- **`index.html`**: Seção `#paleta` atualizada com os novos cards de Ciano (ícone de onda `wave.svg`) e Coral (ícone de chama `flame.svg`), grade responsiva rebalanceada para 4 colunas no desktop (`repeat(4, 1fr)`) e contador de métricas elevado para 16 temas.
+- **Subpáginas de Cursos (`cursos/*.html`)**: Classes e estilos inline de swatch sincronizados nas 9 páginas de aprofundamento, projeto e referências.
+
+---
+
 
 ## [v7.7] — Auditoria e Limpeza de Repositório
 

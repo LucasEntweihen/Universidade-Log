@@ -24,6 +24,11 @@
         "amber-dark",
         "rose",
         "rose-dark",
+        "cyan",
+        "cyan-dark",
+        "coral",
+        "coral-dark",
+        "space",
     ];
 
     function applyTheme(theme) {
