@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://universidadelog.com.br/sitemap.xml
+Sitemap: https://universidade-log.vercel.app/sitemap.xml

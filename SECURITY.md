@@ -7,13 +7,13 @@ marcado como limitação honesta.
 
 ## O que está em vigor
 
-- **Cabeçalhos de segurança** (`netlify.toml`/`vercel.json`):
+- **Cabeçalhos de segurança** (`vercel.json`):
   `X-Content-Type-Options`, `X-Frame-Options: DENY`, `Referrer-Policy`,
   `Permissions-Policy` restritiva (sem câmera/microfone/geolocalização).
-- **HSTS**: não declarado manualmente de propósito — Netlify e Vercel
-  já adicionam esse cabeçalho automaticamente, e declará-lo nos dois
-  gera cabeçalho duplicado (inválido, e quebra elegibilidade pra lista
-  de preload do HSTS). Ver comentários em cada arquivo de config.
+- **HSTS**: não declarado manualmente de propósito — a Vercel
+  já adiciona esse cabeçalho automaticamente, e declará-lo manualmente
+  gera cabeçalho duplicado (inválido pela RFC 7230, e quebra elegibilidade pra lista
+  de preload do HSTS).
 - **Content-Security-Policy**, aplicada via `<meta>` em toda página:
   `default-src 'self'` mais só o necessário liberado (fontes do
   Google Fonts, imagens do Unsplash), e agora também
@@ -76,6 +76,6 @@ excluem Google Fonts da lista por padrão.
   lugar só — funciona, mas se precisar mudar a política um dia, é
   editar 29 arquivos (ou rodar um script, como fiz aqui pra reforçar
   a política desta vez). Centralizar isso só é possível de verdade
-  via cabeçalho HTTP real do host (`netlify.toml`/`vercel.json`), não
+  via cabeçalho HTTP real do host (`vercel.json`), não
   via `<meta>` — migrar pra lá removeria a duplicação, mas muda onde
   a política "mora" e vale confirmar com você antes.

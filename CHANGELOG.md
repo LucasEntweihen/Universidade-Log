@@ -3,6 +3,19 @@
 Histórico de criação, atualização e desenvolvimento da plataforma. Cada versão documenta o que foi entregue, decisões tomadas e problemas encontrados (e corrigidos) no processo.
 
 ---
+## [v7.9] — Migração de Domínio Canônico para Vercel e Limpeza de Metadados
+
+Revisão completa e sincronização de todos os protocolos e arquivos de roteamento e indexação (Sitemap XML, Robots.txt, Security.txt e Humans.txt) para o domínio canônico oficial da plataforma na Vercel (`https://universidade-log.vercel.app/`), eliminando qualquer dependência ou referência a domínios inexistentes (`universidadelog.com.br`).
+
+### Sincronização de Indexação e Descoberta
+
+- **`sitemap.xml`**: Atualização integral das 25 URLs indexáveis da plataforma (Landing page, Catálogo de Cursos, trilhas de IA Generativa, Android, DevOps e Trigomante, além de materiais complementares, glossários, termos e política de privacidade) para a base `https://universidade-log.vercel.app/`, atualizando a data de modificação (`<lastmod>2026-09-09</lastmod>`).
+- **`robots.txt`**: Declaração da diretiva `Sitemap` apontando para `https://universidade-log.vercel.app/sitemap.xml`.
+- **`.well-known/security.txt`**: Ajuste da URL canônica para `https://universidade-log.vercel.app/.well-known/security.txt` e direcionamento do campo `Contact` para o canal de issues oficial do repositório no GitHub (`https://github.com/LucasEntweihen/Universidade-Log/issues`).
+- **`humans.txt`**: Atualização do campo `Site` para `https://universidade-log.vercel.app` e carimbo de atualização para `2026-09-09`.
+- **`SECURITY.md`**: Adequação da documentação de segurança para refletir o cabeçalho configurado exclusivamente via `vercel.json` (removidas menções a hosts obsoletos).
+
+---
 ## [v7.8] — Expansão da Paleta de Cores: Novos Temas Ciano e Coral
 
 Adição de duas novas famílias completas de temas de cores (Ciano/Turquesa e Coral/Terracota), expandindo o catálogo do sistema de 12 para 16 temas principais (8 famílias com par claro e escuro, além do tema espacial), com propagação completa em todos os módulos de CSS, JavaScript e templates HTML.
