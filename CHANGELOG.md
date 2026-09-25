@@ -27,11 +27,11 @@ Refatoração pedagógica, técnica e didática profunda da trilha de IA Generat
 - **Expansão de Referências e Glossário (`cursos/ia-referencias.html` e `glossario/ia.html`)**:
   - Inclusão dos links e documentações oficiais de LangGraph, Qdrant HNSW, Groq LPU, CVM Resolução 19, LGPD e OWASP Top 10 LLM.
   - Adição dos termos técnicos avançados em `glossario/ia.html`: Attention Bleed, Autômato Finito Estendido, Cosseno de Similaridade, Distância Cosseno, HNSW, Persistência Poliglota, Resolução CVM 19 e Time-to-First-Token (TTFT).
+- **Atualização Estrutural do `.gitignore`**:
+  - Configuração abrangente de regras de ignoramento para proteger variáveis de ambiente e segredos (`.env`, `*.env`), artefatos de build do Node e Vercel (`dist/`, `build/`, `.vercel/`), caches e ambientes virtuais do Python (`__pycache__/`, `.venv/`, `*.pyc`), logs de depuração e arquivos temporários de sistema e editores (`.DS_Store`, `Thumbs.db`, `.vscode/`, `.idea/`).
 
 ---
 ## [v7.9] — Migração de Domínio Canônico para Vercel e Limpeza de Metadados
-### Integração Estrutural e Componentes
-
 - **`assets/css/theme.css`**: Injeção das definições de variáveis dos 4 novos modos de cores (`cyan`, `cyan-dark`, `coral`, `coral-dark`) e ajuste no cabeçalho de documentação dos tokens do sistema.
 - **`assets/js/chrome-widgets.js`**: Atualização do template HTML de injeção global do widget de tema (`.theme-popover`), adicionando os blocos de família com botões de swatch `.swatch-cyan`, `.swatch-cyan-dark`, `.swatch-coral` e `.swatch-coral-dark`.
 - **`assets/js/theme-picker.js` & `assets/js/engine.js`**: Registro das chaves de tema nos arrays de validação e mapeamento dos pontos de cor do indicador (`SWATCH_COLORS`).
