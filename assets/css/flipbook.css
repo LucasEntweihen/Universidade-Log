@@ -516,7 +516,14 @@ body {
 .fb-toc-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 6px 10px;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+@media (max-width: 400px) {
+    .fb-toc-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 .fb-toc-letter {
