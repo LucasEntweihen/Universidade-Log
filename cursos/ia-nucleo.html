@@ -4,21 +4,21 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Núcleo · IA Generativa Aplicada</title>
-    <meta name="description" content="Núcleo de módulos do curso de IA Generativa: acesse rapidamente qualquer tópico da trilha." />
+    <title>Núcleo &amp; Simulador de Grafo · IA Generativa Aplicada</title>
+    <meta name="description" content="Núcleo interativo do curso de IA Generativa: acompanhe a montagem do seu agente e simule a Máquina de Estados em LangGraph em tempo real." />
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <link rel="canonical" href="https://universidade-log.vercel.app/cursos/ia-nucleo.html" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="pt_BR" />
     <meta property="og:url" content="https://universidade-log.vercel.app/cursos/ia-nucleo.html" />
     <meta property="og:site_name" content="Universidade Log" />
-    <meta property="og:title" content="Núcleo: ia.log" />
-    <meta property="og:description" content="Núcleo de módulos do curso de IA Generativa: acesse rapidamente qualquer tópico da trilha." />
+    <meta property="og:title" content="Núcleo: ia.log · Simulador de Agentes" />
+    <meta property="og:description" content="Acompanhe os componentes do seu agente e execute o Simulador de Grafo de Estados (LangGraph, Qdrant HNSW, Guardrails CVM)." />
     <meta property="og:image" content="https://universidade-log.vercel.app/assets/characters/fly.png" />
     <meta property="og:image:alt" content="Fly, o cientista de dados, mascote do curso de IA Generativa" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Núcleo: ia.log" />
-    <meta name="twitter:description" content="Núcleo de módulos do curso de IA Generativa: acesse rapidamente qualquer tópico da trilha." />
+    <meta name="twitter:title" content="Núcleo: ia.log · Simulador de Agentes" />
+    <meta name="twitter:description" content="Acompanhe os componentes do seu agente e execute o Simulador de Grafo de Estados (LangGraph, Qdrant HNSW, Guardrails CVM)." />
     <meta name="twitter:image" content="https://universidade-log.vercel.app/assets/characters/fly.png" />
     <script>
         (function() {
@@ -147,15 +147,8 @@
         }
 
         @keyframes blink {
-
-            0%,
-            100% {
-                opacity: 1;
-            }
-
-            50% {
-                opacity: 0.3;
-            }
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
         }
 
         .panel p {
@@ -163,6 +156,113 @@
             line-height: 1.55;
             color: #c3d3dd;
             margin: 0;
+        }
+
+        /* Simulator Styles */
+        .sim-box {
+            background: rgba(10, 14, 22, 0.8);
+            border: 1px solid rgba(90, 209, 255, 0.25);
+            border-radius: 14px;
+            padding: 18px;
+            margin-top: 20px;
+        }
+        .sim-input-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 14px;
+        }
+        .sim-input {
+            flex: 1;
+            background: #090d16;
+            border: 1px solid #1f2a3a;
+            border-radius: 8px;
+            padding: 10px 14px;
+            color: #f2f7fb;
+            font-family: var(--font-body);
+            font-size: 0.88rem;
+        }
+        .sim-btn {
+            background: linear-gradient(135deg, #5ad1ff, #8b5cf6);
+            border: none;
+            border-radius: 8px;
+            color: #080b12;
+            font-family: var(--font-mono);
+            font-weight: 700;
+            font-size: 0.82rem;
+            padding: 0 16px;
+            cursor: pointer;
+            transition: opacity 0.2s ease;
+        }
+        .sim-btn:hover {
+            opacity: 0.9;
+        }
+        .sim-preset-btns {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
+        }
+        .sim-preset {
+            background: rgba(90, 209, 255, 0.1);
+            border: 1px solid rgba(90, 209, 255, 0.2);
+            border-radius: 6px;
+            color: #8ea6b5;
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            padding: 4px 10px;
+            cursor: pointer;
+        }
+        .sim-preset:hover {
+            color: #5ad1ff;
+            border-color: #5ad1ff;
+        }
+        .sim-nodes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 10px;
+            margin: 16px 0;
+        }
+        .sim-node {
+            background: #090d16;
+            border: 1px solid #1f2a3a;
+            border-radius: 10px;
+            padding: 12px;
+            text-align: center;
+            font-family: var(--font-mono);
+            font-size: 0.74rem;
+            color: #7fa6bb;
+            transition: all 0.3s ease;
+        }
+        .sim-node.active {
+            border-color: #5ad1ff;
+            box-shadow: 0 0 14px rgba(90, 209, 255, 0.4);
+            color: #5ad1ff;
+            background: rgba(90, 209, 255, 0.1);
+        }
+        .sim-node.blocked {
+            border-color: #ef4444;
+            box-shadow: 0 0 14px rgba(239, 68, 68, 0.4);
+            color: #ef4444;
+            background: rgba(239, 68, 68, 0.1);
+        }
+        .sim-node.success {
+            border-color: #10b981;
+            box-shadow: 0 0 14px rgba(16, 185, 129, 0.4);
+            color: #10b981;
+            background: rgba(16, 185, 129, 0.1);
+        }
+        .sim-log {
+            background: #05080e;
+            border: 1px solid #1a2332;
+            border-radius: 8px;
+            padding: 14px;
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            color: #bce7ff;
+            min-height: 110px;
+            max-height: 220px;
+            overflow-y: auto;
+            line-height: 1.5;
         }
 
         /* build status: your agent, assembling as modules are completed */
@@ -252,10 +352,7 @@
             border-radius: 14px;
             padding: 16px 18px;
             position: relative;
-            transition:
-                border-color 0.25s ease,
-                opacity 0.25s ease,
-                box-shadow 0.25s ease;
+            transition: border-color 0.25s ease, opacity 0.25s ease, box-shadow 0.25s ease;
         }
 
         .comp-card .comp-head {
@@ -295,39 +392,16 @@
             gap: 5px;
         }
 
-        .comp-card.is-locked {
-            opacity: 0.5;
-        }
-
-        .comp-card.is-locked .comp-state {
-            color: #6b7d8a;
-        }
-
-        .comp-card.is-locked .comp-icon {
-            filter: grayscale(1);
-        }
+        .comp-card.is-locked { opacity: 0.5; }
+        .comp-card.is-locked .comp-state { color: #6b7d8a; }
+        .comp-card.is-locked .comp-icon { filter: grayscale(1); }
 
         .comp-card.is-done {
             border-color: rgba(90, 209, 255, 0.65);
-            box-shadow:
-                0 0 0 1px rgba(90, 209, 255, 0.12),
-                0 0 22px -6px rgba(90, 209, 255, 0.5);
+            box-shadow: 0 0 0 1px rgba(90, 209, 255, 0.12), 0 0 22px -6px rgba(90, 209, 255, 0.5);
         }
 
-        .comp-card.is-done .comp-state {
-            color: #5ad1ff;
-        }
-
-        .comp-card.is-done::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, #8b5cf6, transparent);
-            animation: sweep 4s linear infinite;
-        }
+        .comp-card.is-done .comp-state { color: #5ad1ff; }
 
         .pipeline {
             display: flex;
@@ -366,9 +440,7 @@
             border-radius: 14px;
             padding: 16px;
             cursor: pointer;
-            transition:
-                border-color 0.15s ease,
-                transform 0.15s ease;
+            transition: border-color 0.15s ease, transform 0.15s ease;
         }
 
         .mod-card:hover {
@@ -403,72 +475,6 @@
             font-size: 0.74rem;
             margin-top: 30px;
         }
-
-        .mobile-menu-btn {
-            display: none;
-            background: transparent;
-            border: none;
-            color: var(--text);
-            cursor: pointer;
-            padding: 8px;
-            border-radius: 8px;
-        }
-
-        .mobile-menu-btn:hover {
-            background: var(--panel-2);
-        }
-
-        @media (max-width: 860px) {
-            .topbar {
-                grid-template-columns: auto auto auto !important;
-                display: grid !important;
-                padding: 12px 16px !important;
-            }
-
-            .mobile-menu-btn {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-
-            .topbar .topnav {
-                display: none;
-                grid-column: 1 / -1;
-                grid-row: 2;
-                justify-self: center;
-                margin-top: 14px;
-                flex-direction: column;
-                align-items: stretch;
-                width: 100%;
-                background: var(--panel);
-                border-radius: 16px;
-                padding: 8px;
-                border: 1px solid var(--line);
-                box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
-                animation: menuDrop 0.25s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-            }
-
-            .topbar .topnav.open {
-                display: flex;
-            }
-
-            .topbar .topnav a {
-                justify-content: center;
-                padding: 12px;
-            }
-        }
-
-        @keyframes menuDrop {
-            from {
-                opacity: 0;
-                transform: translateY(-10px) scale(0.98);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
     </style>
 </head>
 
@@ -477,9 +483,9 @@
     <main id="main-content">
         <div class="wrap">
             <a class="back" href="ia.html">&larr; VOLTAR_AO_CURSO</a>
-            <h1>Núcleo</h1>
+            <h1>Núcleo &amp; Simulador de Grafo</h1>
             <div class="sub">
-                seu agente, sendo montado peça por peça · agente.log
+                seu agente sendo montado e executado em tempo real · agente.log
             </div>
 
             <div class="build-status" id="buildStatus">
@@ -498,8 +504,7 @@
                 </div>
                 <div class="bs-text">
                     <strong id="bsTitle">Seu agente ainda não começou a existir</strong>
-                    <span id="bsSub">Complete módulos no curso pra montar as peças abaixo, uma por
-                        uma</span>
+                    <span id="bsSub">Complete módulos no curso pra montar as peças abaixo, uma por uma</span>
                 </div>
             </div>
 
@@ -507,22 +512,48 @@
 
             <div class="panel" style="margin-bottom: 34px">
                 <h3>
-                    <span class="dot"></span> Pipeline de um prompt bem construído
+                    <span class="dot"></span> Simulador da Máquina de Estados LangGraph (Assessor.AI)
                 </h3>
-                <div class="pipeline">
-                    <span class="pipe-step">System Prompt</span><span class="pipe-arrow">→</span>
-                    <span class="pipe-step">Contexto / Grounding</span><span class="pipe-arrow">→</span>
-                    <span class="pipe-step">Few-shot (se precisar)</span><span class="pipe-arrow">→</span>
-                    <span class="pipe-step">Guardrails</span><span class="pipe-arrow">→</span>
-                    <span class="pipe-step">Resposta</span>
+                <p>Teste como uma mensagem trafega pela topologia multiagente com anonimização de PII, roteamento e guardrails CVM:</p>
+                
+                <div class="sim-box">
+                    <div class="sim-preset-btns">
+                        <button class="sim-preset" onclick="setSimInput('Gastei R$ 120 no restaurante com amigos hoje à noite')">Ex 1: Lançamento Financeiro</button>
+                        <button class="sim-preset" onclick="setSimInput('Marcar reunião com meu advogado amanhã às 15h')">Ex 2: Evento na Agenda</button>
+                        <button class="sim-preset" onclick="setSimInput('Qual é a política de privacidade e termos do sistema?')">Ex 3: Dúvida FAQ RAG</button>
+                        <button class="sim-preset" onclick="setSimInput('Compre 10.000 ações da Petrobras com garantia de 30% de lucro!')">Ex 4: Violação CVM 19 (Bloqueio)</button>
+                    </div>
+                    <div class="sim-input-group">
+                        <input type="text" id="simInput" class="sim-input" value="Gastei R$ 120 no restaurante com amigos hoje à noite" placeholder="Digite uma mensagem pro agente..." />
+                        <button class="sim-btn" onclick="runGraphSimulation()">EXECUTAR GRAFO</button>
+                    </div>
+                    
+                    <div class="sim-nodes">
+                        <div class="sim-node" id="sn-gIn">1. Guardrail Entrada</div>
+                        <div class="sim-node" id="sn-router">2. Roteador</div>
+                        <div class="sim-node" id="sn-spec">3. Especialista</div>
+                        <div class="sim-node" id="sn-orch">4. Orquestrador</div>
+                        <div class="sim-node" id="sn-gOut">5. Guardrail Saída</div>
+                    </div>
+
+                    <div class="sim-log" id="simLog">Aguardando execução do Grafo... Escolha um exemplo ou digite uma mensagem acima e clique em EXECUTAR GRAFO.</div>
                 </div>
             </div>
 
-            <h3 style="
-            font-family: var(--font-display);
-            color: #9fe0ff;
-            margin-bottom: 14px;
-          ">
+            <div class="panel" style="margin-bottom: 34px">
+                <h3>
+                    <span class="dot"></span> Pipeline do Grafo Multiagente
+                </h3>
+                <div class="pipeline">
+                    <span class="pipe-step">Guardrail Entrada (PII/Injection)</span><span class="pipe-arrow">→</span>
+                    <span class="pipe-step">Roteador (ROUTE=...)</span><span class="pipe-arrow">→</span>
+                    <span class="pipe-step">Especialista (JSON Contract)</span><span class="pipe-arrow">→</span>
+                    <span class="pipe-step">Orquestrador (3 Tópicos)</span><span class="pipe-arrow">→</span>
+                    <span class="pipe-step">Guardrail Saída (CVM 19)</span>
+                </div>
+            </div>
+
+            <h3 style="font-family: var(--font-display); color: #9fe0ff; margin-bottom: 14px;">
                 Módulos do curso
             </h3>
             <div class="modules" id="modGrid"></div>
@@ -533,99 +564,35 @@
     </footer>
 
     <script>
-        const COMPONENTS = [{
-                mod: 1,
-                chks: ["chk-1", "chk-2", "chk-3"],
-                name: "Escopo",
-                icon: "compass",
-                desc: "O que o agente pode e o que ele nunca vai fazer.",
-            },
-            {
-                mod: 2,
-                chks: ["chk-4", "chk-5", "chk-6"],
-                name: "Parâmetros",
-                icon: "sliders",
-                desc: "Temperature, top-k e top-p calibrados pro caso de uso.",
-            },
-            {
-                mod: 3,
-                chks: ["chk-7", "chk-8", "chk-9"],
-                name: "Prompt",
-                icon: "speech-bubble",
-                desc: "O contrato: persona, formato de saída e limites.",
-            },
-            {
-                mod: 4,
-                chks: ["chk-10", "chk-11", "chk-12", "chk-24", "chk-25"],
-                name: "Cérebro + Mãos",
-                icon: "brain",
-                desc: "Raciocínio (LLM) separado da execução (tools).",
-            },
-            {
-                mod: 5,
-                chks: ["chk-13", "chk-14", "chk-15", "chk-26"],
-                name: "Memória",
-                icon: "file-cabinet",
-                desc: "Sessão, transação e preferência: cada uma no seu lugar.",
-            },
-            {
-                mod: 6,
-                chks: ["chk-16", "chk-17", "chk-18", "chk-27"],
-                name: "Guardrails",
-                icon: "locked-key",
-                desc: "Permissões por ação, grounding e mitigação de alucinação.",
-            },
+        const COMPONENTS = [
+            { mod: 1, chks: ["chk-m1-1", "chk-m1-2"], name: "Escopo & Roteador", icon: "compass", desc: "Monolitização combatida com arquitetura Router-Specialist." },
+            { mod: 2, chks: ["chk-4", "chk-5"], name: "Amostragem Softmax", icon: "sliders", desc: "Temperatura 0.0 determinística para SQL/JSON vs 0.7." },
+            { mod: 3, chks: ["chk-7", "chk-8"], name: "Autômato & Vetores 768d", icon: "triangle-ruler", desc: "Similaridade Cosseno e busca HNSW O(log N) no Qdrant." },
+            { mod: 4, chks: ["chk-10", "chk-11"], name: "Persistência Poliglota", icon: "file-cabinet", desc: "PostgreSQL ACID + MongoDB Sessões + Qdrant Vetorial." },
+            { mod: 5, chks: ["chk-13", "chk-14"], name: "LangGraph Engine", icon: "code-editor", desc: "Estado Global MessagesState e Contratos JSON isolados." },
+            { mod: 6, chks: ["chk-16", "chk-17"], name: "Defense-in-Depth CVM", icon: "locked-key", desc: "Guardrails duplos, PII tokenização e conformidade CVM 19." }
         ];
-        const MODULES = [{
-                i: 0,
-                name: "Fundamentos & Escopo",
-                desc: "O que é um agente e seus limites",
-            },
-            {
-                i: 1,
-                name: "Parâmetros de Geração",
-                desc: "Temperature, top-k, top-p",
-            },
-            {
-                i: 2,
-                name: "Engenharia de Prompt",
-                desc: "System, few-shot, CARE"
-            },
-            {
-                i: 3,
-                name: "Arquitetura de Agentes",
-                desc: "Cérebro, mãos e roteamento",
-            },
-            {
-                i: 4,
-                name: "Memória & Persistência",
-                desc: "Threads, histórico, contexto",
-            },
-            {
-                i: 5,
-                name: "Segurança & Guardrails",
-                desc: "Permissões, prompt injection, limites",
-            },
-            {
-                i: 6,
-                name: "Revisão Geral",
-                desc: "Minijogos e desafio final"
-            },
+
+        const MODULES = [
+            { i: 0, name: "01. Escopo & Monolitização", desc: "Attention Bleed, TTFT e Arquitetura Multiagente" },
+            { i: 1, name: "02. Amostragem Probabilística", desc: "Softmax, Temperatura 0.0 vs 0.7 e Top-p" },
+            { i: 2, name: "03. Matemática & Espaço Vetorial", desc: "Autômato Finito Estendido, Cosseno e HNSW" },
+            { i: 3, name: "04. Persistência Poliglota", desc: "PostgreSQL, MongoDB e Qdrant Cloud" },
+            { i: 4, name: "05. LangGraph & Contratos JSON", desc: "MessagesState, Reducers e Nó Orquestrador" },
+            { i: 5, name: "06. Security & Compliance CVM", desc: "Guardrails de 2 Estágios e Resolução CVM 19" },
+            { i: 6, name: "07. API FastAPI & Auditoria Bugs", desc: "Endpoints REST e Correção dos 8 erros" }
         ];
+
         const TAB_KEY = "curso_ia_tab_v1";
         const CHECK_KEY = "curso_ia_progress_v1";
         const ICO = "../assets/icons/content/";
 
         function getChecks() {
-            try {
-                return JSON.parse(localStorage.getItem(CHECK_KEY) || "{}");
-            } catch (e) {
-                return {};
-            }
+            try { return JSON.parse(localStorage.getItem(CHECK_KEY) || "{}"); } catch (e) { return {}; }
         }
 
         function compDone(c, checks) {
-            return c.chks.every((id) => checks[id]);
+            return c.chks.some((id) => checks[id]);
         }
 
         function renderComponents() {
@@ -638,16 +605,15 @@
                 if (done) doneCount++;
                 const card = document.createElement("button");
                 card.className = "comp-card " + (done ? "is-done" : "is-locked");
-                card.style.cssText =
-                    "text-align:left;border:none;font:inherit;cursor:pointer;width:100%;";
+                card.style.cssText = "text-align:left;border:none;font:inherit;cursor:pointer;width:100%;";
                 card.innerHTML = `
-      <div class="comp-head">
-        <img class="comp-icon" src="${ICO}${c.icon}.svg" alt="">
-        <span class="comp-name">${c.name}</span>
-      </div>
-      <div class="comp-desc">${c.desc}</div>
-      <div class="comp-state">${done ? "✓ MONTADO" : "🔒 desbloqueia no módulo 0" + c.mod}</div>
-    `;
+                  <div class="comp-head">
+                    <img class="comp-icon" src="${ICO}${c.icon}.svg" alt="">
+                    <span class="comp-name">${c.name}</span>
+                  </div>
+                  <div class="comp-desc">${c.desc}</div>
+                  <div class="comp-state">${done ? "✓ MONTADO" : "🔒 desbloqueia no módulo 0" + c.mod}</div>
+                `;
                 card.onclick = () => {
                     localStorage.setItem(TAB_KEY, c.mod - 1);
                     window.location.href = "ia.html";
@@ -658,9 +624,7 @@
             const total = COMPONENTS.length;
             const pct = doneCount / total;
             const CIRC = 138.2;
-            document.getElementById("bsFill").style.strokeDashoffset = String(
-                CIRC * (1 - pct),
-            );
+            document.getElementById("bsFill").style.strokeDashoffset = String(CIRC * (1 - pct));
             document.getElementById("bsNum").textContent = doneCount + "/" + total;
             const bs = document.getElementById("buildStatus");
             const title = document.getElementById("bsTitle");
@@ -668,19 +632,13 @@
             bs.classList.toggle("bs-complete", doneCount === total);
             if (doneCount === 0) {
                 title.textContent = "Seu agente ainda não começou a existir";
-                sub.textContent =
-                    "Complete módulos no curso pra montar as peças abaixo, uma por uma";
+                sub.textContent = "Complete módulos no curso pra montar as peças abaixo, uma por uma";
             } else if (doneCount === total) {
-                title.textContent = "Seu agente está de pé";
-                sub.textContent =
-                    "As 6 peças estão montadas — falta só o módulo de Revisão pra fechar o curso";
+                title.textContent = "Seu agente está 100% de pé!";
+                sub.textContent = "As 6 peças estão montadas e a Máquina de Estados LangGraph está pronta!";
             } else {
                 title.textContent = "Seu agente está sendo montado";
-                sub.textContent =
-                    doneCount +
-                    " de " +
-                    total +
-                    " componentes prontos — continue completando módulos pra destravar o resto";
+                sub.textContent = doneCount + " de " + total + " componentes prontos — continue completando módulos pra destravar o resto";
             }
         }
         renderComponents();
@@ -692,8 +650,7 @@
             const done = comp ? compDone(comp, checks) : null;
             const a = document.createElement("button");
             a.className = "mod-card";
-            a.style.cssText =
-                "width:100%;text-align:left;border:1px solid rgba(90,209,255,.2);font:inherit;";
+            a.style.cssText = "width:100%;text-align:left;border:1px solid rgba(90,209,255,.2);font:inherit;";
             a.innerHTML = `<div class="num">MÓDULO 0${m.i + 1}${done ? " · ✓" : ""}</div><div class="name">${m.name}</div><div class="desc">${m.desc}</div>`;
             a.onclick = () => {
                 localStorage.setItem(TAB_KEY, m.i);
@@ -701,6 +658,90 @@
             };
             grid.appendChild(a);
         });
+
+        // SIMULATOR LOGIC
+        function setSimInput(text) {
+            document.getElementById('simInput').value = text;
+        }
+
+        function resetSimNodes() {
+            ['sn-gIn', 'sn-router', 'sn-spec', 'sn-orch', 'sn-gOut'].forEach(id => {
+                const el = document.getElementById(id);
+                el.className = 'sim-node';
+            });
+        }
+
+        function runGraphSimulation() {
+            const text = document.getElementById('simInput').value.trim();
+            const log = document.getElementById('simLog');
+            resetSimNodes();
+            if(!text) {
+                log.textContent = "Digite uma mensagem válida para simular.";
+                return;
+            }
+
+            log.innerHTML = `[0.00s] &gt; Iniciando Máquina de Estados LangGraph...\n[0.05s] Estado Inicial: s_0 = guardrail_entrada`;
+
+            // Step 1: Guardrail Entrada
+            setTimeout(() => {
+                document.getElementById('sn-gIn').className = 'sim-node active';
+                if(text.toLowerCase().includes('garantia') || text.toLowerCase().includes('petrobras') || text.toLowerCase().includes('lucro')) {
+                    document.getElementById('sn-gIn').className = 'sim-node active';
+                    log.innerHTML += `\n[0.12s] [guardrail_entrd] Anonimizando PIIs... Regex Match ok.\n[0.20s] [guardrail_entrd] Classificação Semântica: INDICACAO_INVEST\n[0.25s] ⚠️ VETO DE SEGURANÇA! Resolução CVM 19 acionada. Estado.bloqueado = True.\n[0.30s] Transição para s_end. Fluxo encerrado com resposta de compliance.`;
+                    document.getElementById('sn-gIn').className = 'sim-node blocked';
+                    return;
+                }
+                log.innerHTML += `\n[0.15s] [guardrail_entrd] PII Check: Aprovado. Prompt Injection Check: Aprovado.\n[0.22s] Transição: guardrail_entrada -&gt; roteador (delta(s_guard, Gamma) = s_router)`;
+            }, 400);
+
+            // Step 2: Router
+            setTimeout(() => {
+                if(text.toLowerCase().includes('garantia') || text.toLowerCase().includes('petrobras')) return;
+                document.getElementById('sn-gIn').className = 'sim-node success';
+                document.getElementById('sn-router').className = 'sim-node active';
+                
+                let rota = 'faq';
+                if(text.toLowerCase().includes('reais') || text.toLowerCase().includes('gastei') || text.toLowerCase().includes('restaurante')) rota = 'financeiro';
+                else if(text.toLowerCase().includes('reunião') || text.toLowerCase().includes('marcar') || text.toLowerCase().includes('agenda')) rota = 'agenda';
+
+                log.innerHTML += `\n[0.45s] [roteador] Modelo LPU (T=0.0). Rota classificada: ROUTE=${rota}\n[0.50s] Protocolo emitido: ROUTE=${rota}\\nPERGUNTA_ORIGINAL=${text}`;
+            }, 1000);
+
+            // Step 3: Specialist
+            setTimeout(() => {
+                if(text.toLowerCase().includes('garantia') || text.toLowerCase().includes('petrobras')) return;
+                document.getElementById('sn-router').className = 'sim-node success';
+                document.getElementById('sn-spec').className = 'sim-node active';
+
+                let jsonSpec = '';
+                if(text.toLowerCase().includes('gastei')) {
+                    jsonSpec = '{"dominio":"financeiro","intencao":"inserir","resposta":"Lancei R$ 120,00 em comida."}';
+                } else if(text.toLowerCase().includes('reunião')) {
+                    jsonSpec = '{"dominio":"agenda","intencao":"criar","resposta":"Agendado para amanhã 15h."}';
+                } else {
+                    jsonSpec = '{"dominio":"faq","intencao":"consultar","resposta":"Documentos oficiais RAG Qdrant."}';
+                }
+
+                log.innerHTML += `\n[0.85s] [especialista] Executando ferramentas do nó...\n[0.90s] Emissão de Contrato JSON: ${jsonSpec}`;
+            }, 1600);
+
+            // Step 4: Orchestrator
+            setTimeout(() => {
+                if(text.toLowerCase().includes('garantia') || text.toLowerCase().includes('petrobras')) return;
+                document.getElementById('sn-spec').className = 'sim-node success';
+                document.getElementById('sn-orch').className = 'sim-node active';
+                log.innerHTML += `\n[1.20s] [orquestrador] Compilando JSON em 3 tópicos (Diagnóstico, Recomendação, Acompanhamento)...`;
+            }, 2200);
+
+            // Step 5: Guardrail Saida
+            setTimeout(() => {
+                if(text.toLowerCase().includes('garantia') || text.toLowerCase().includes('petrobras')) return;
+                document.getElementById('sn-orch').className = 'sim-node success';
+                document.getElementById('sn-gOut').className = 'sim-node active';
+                log.innerHTML += `\n[1.50s] [guardrail_saida] Auditoria CVM Res 19 ok. Desanonimização realizada.\n[1.55s] ✅ RESPOSTA ENTREGUE AO CLIENTE COM SUCESSO!`;
+                setTimeout(() => { document.getElementById('sn-gOut').className = 'sim-node success'; }, 400);
+            }, 2800);
+        }
     </script>
 </body>
 

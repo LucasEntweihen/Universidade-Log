@@ -17,12 +17,12 @@ Refatoração pedagógica, técnica e didática profunda da trilha de IA Generat
   - **Módulo 05 (LangGraph Engine & Contratos JSON)**: Especificação da classe `Estado(MessagesState)` com reducers acumulativos, protocolo de encaminhamento `ROUTE=financeiro`, contrato JSON dos especialistas e nó Orquestrador compilando a resposta final em 3 tópicos (Diagnóstico, Recomendação e Acompanhamento). Diálogo entre **Laura e Gnomo**.
   - **Módulo 06 (Defense-in-Depth & Compliance CVM)**: Sistema de segurança em 2 estágios (Entrada e Saída), tokenização de PII (LGPD Lei 13.709/2018), 6 rótulos de classificação semântica e conformidade estrita com a Resolução CVM nº 19/2021 (vedação de recomendação imperativa de ativos automatizada sem CNPI). Diálogo de segurança entre **Laura e Chud**.
   - **Módulo 07 (API REST FastAPI & Auditoria de Bugs)**: Matriz de endpoints REST (`/chat`, `/sessions/{id}/encerrar`, `/perfil`), topologia ASGI com Uvicorn, pipeline offline de RAG (RecursiveCharacterTextSplitter 700/150, batch 50) e inventário dos 8 bugs reais do Assessor.AI auditados com correções linha a linha. Reunião de tripulação DevOps entre **Capitão Baba Grogue, Ama-zz-on e Octocat**.
+- **Simulador Interativo da Máquina de Estados em `cursos/ia-nucleo.html`**:
+  - Injeção do **Simulador Dinâmico de Grafo Multiagente em LangGraph**, permitindo aos estudantes executar mensagens de teste em tempo real com rastreamento visual de nós (`guardrail_entrd` -> `roteador` -> `especialista` -> `orquestrador` -> `guardrail_saida`), exibição de logs de PII, protocolo `ROUTE=...` e vetos automáticos de compliance com a Resolução CVM 19.
+  - Reestruturação do rastreador de montagem do agente com 6 componentes alinhados aos 7 módulos do curso.
 
 ---
 ## [v7.9] — Migração de Domínio Canônico para Vercel e Limpeza de Metadados
-### Novas Paletas e Tokens de Design
-
-- **Família Ciano / Turquesa (`cyan` / `cyan-dark`)**:
   - **Ciano Claro (`[data-theme="cyan"]`)**: Fundo frio e límpido em tom oceânico (`--bg: #eef9f9`), superfícies em branco puro (`--panel: #ffffff`) e ciano suave (`--panel-2: #def2f3`), bordas turquesa delicadas (`--line: #bfe5e7`), tipografia de alto contraste em azul-petróleo escuro (`--text: #103238`), acento primário em verde-azulado profundo (`--mint: #0d9488` / `--mint-dim: #0f766e`), acento secundário em azul oceano (`--violet: #3b82f6`) e toques âmbar dourados.
   - **Ciano Noite (`[data-theme="cyan-dark"]`)**: Base escura abissal (`--bg: #081a1e`), painéis contrastantes (`--panel: #0f262c`, `--panel-2: #16323a`), linhas sutis (`--line: #234c56`), tipografia clara em ciano gelo (`--text: #ddf5f7`), com destaques luminosos em turquesa elétrico fluorescente (`--mint: #2dd4bf` / `--mint-dim: #14b8a6`) e azul celestial (`--violet: #60a5fa`).
 
