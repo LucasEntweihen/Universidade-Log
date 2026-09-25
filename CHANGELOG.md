@@ -20,11 +20,11 @@ Refatoração pedagógica, técnica e didática profunda da trilha de IA Generat
 - **Simulador Interativo da Máquina de Estados em `cursos/ia-nucleo.html`**:
   - Injeção do **Simulador Dinâmico de Grafo Multiagente em LangGraph**, permitindo aos estudantes executar mensagens de teste em tempo real com rastreamento visual de nós (`guardrail_entrd` -> `roteador` -> `especialista` -> `orquestrador` -> `guardrail_saida`), exibição de logs de PII, protocolo `ROUTE=...` e vetos automáticos de compliance com a Resolução CVM 19.
   - Reestruturação do rastreador de montagem do agente com 6 componentes alinhados aos 7 módulos do curso.
+- **Material de Aprofundamento Técnico em `cursos/ia-material.html`**:
+  - Expansão para 7 artigos com especificações completas de autômatos, equações de amostragem Softmax $P(w_i)$, cálculo de similaridade vetorial $Sim_{\cos}(u,v)$ e distância Cosseno $D_{\cos}(u,v)$, DDLs SQL do PostgreSQL com fuso SP, schemas NoSQL do MongoDB, coleções vetoriais do Qdrant Cloud, código Python do LangGraph e o guia de correção linha a linha dos 8 bugs do Assessor.AI.
 
 ---
 ## [v7.9] — Migração de Domínio Canônico para Vercel e Limpeza de Metadados
-  - **Ciano Claro (`[data-theme="cyan"]`)**: Fundo frio e límpido em tom oceânico (`--bg: #eef9f9`), superfícies em branco puro (`--panel: #ffffff`) e ciano suave (`--panel-2: #def2f3`), bordas turquesa delicadas (`--line: #bfe5e7`), tipografia de alto contraste em azul-petróleo escuro (`--text: #103238`), acento primário em verde-azulado profundo (`--mint: #0d9488` / `--mint-dim: #0f766e`), acento secundário em azul oceano (`--violet: #3b82f6`) e toques âmbar dourados.
-  - **Ciano Noite (`[data-theme="cyan-dark"]`)**: Base escura abissal (`--bg: #081a1e`), painéis contrastantes (`--panel: #0f262c`, `--panel-2: #16323a`), linhas sutis (`--line: #234c56`), tipografia clara em ciano gelo (`--text: #ddf5f7`), com destaques luminosos em turquesa elétrico fluorescente (`--mint: #2dd4bf` / `--mint-dim: #14b8a6`) e azul celestial (`--violet: #60a5fa`).
 
 - **Família Coral / Terracota (`coral` / `coral-dark`)**:
   - **Coral Claro (`[data-theme="coral"]`)**: Fundo aconchegante em tom pêssego/coral suave (`--bg: #fdf4f0`), painéis em branco e areia rosada (`--panel: #ffffff`, `--panel-2: #fae5dd`), linhas em terracota suave (`--line: #f4ccbf`), tipografia marrom-terra aquecida (`--text: #3c2018`), acento primário em coral avermelhado vivo (`--mint: #e05338` / `--mint-dim: #b83a22`), acento secundário em fúcsia/pôr do sol (`--violet: #d946ef`).
