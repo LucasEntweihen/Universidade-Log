@@ -381,6 +381,7 @@ body.is-loading {
     position: fixed !important;
     width: 100vw !important;
     height: 100vh !important;
+    height: 100dvh !important;
     touch-action: none !important;
 }
 
@@ -391,6 +392,7 @@ body.is-loading {
     left: 0;
     width: 100vw;
     height: 100vh;
+    height: 100dvh;
     background: var(--bg);
     z-index: 99999;
     display: flex;

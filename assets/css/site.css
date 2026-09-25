@@ -1185,6 +1185,7 @@ footer.credits a {
         width: 85%;
         max-width: 360px;
         height: 100vh;
+        height: 100dvh;
         z-index: 55;
         background: var(--panel);
         overflow-y: auto;
@@ -2416,6 +2417,7 @@ body.course-android,
 body.course-trigomante {
     display: flex;
     height: 100vh;
+    height: 100dvh;
     margin: 0;
     overflow: hidden;
 }
