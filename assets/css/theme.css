@@ -42,7 +42,9 @@
     --bg-glow-1: rgba(255, 169, 22, 0.07);
     --bg-glow-2: rgba(63, 163, 77, 0.08);
 }
-
+/* Referência de Breakpoints:
+   480 / 640 / 768 / 900 / 1100px
+   (Consolidar novos componentes nestes valores quando possível) */
 /* escuro - elementos escuros, texto claro */
 [data-theme="dark"] {
     --bg: #131f24;
