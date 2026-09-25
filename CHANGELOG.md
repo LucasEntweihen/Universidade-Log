@@ -2,6 +2,12 @@
 
 Histórico de criação, atualização e desenvolvimento da plataforma. Cada versão documenta o que foi entregue, decisões tomadas e problemas encontrados (e corrigidos) no processo.
 
+## [v8.1] — Refinamentos de Responsividade Ultrathink
+
+- **Correção de 100vh para 100dvh**: Substituído o uso rígido de `100vh` por `100dvh` (com fallback para `100vh`) em quatro pontos críticos (`site.css` e `landing.css`) para garantir comportamento consistente em navegadores mobile que ajustam a barra de navegação.
+
+---
+
 ---
 ## [v8.0] — Ultra-Aprimoramento 500x do Curso de IA Generativa & Arquitetura Multiagente
 
