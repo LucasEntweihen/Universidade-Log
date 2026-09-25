@@ -1154,6 +1154,12 @@ footer.credits a {
         z-index: 60;
     }
 
+    @media (orientation: landscape) {
+        .mobile-course-topbar {
+            height: 40px;
+        }
+    }
+
     .mobile-course-topbar .mct-brand {
         display: flex;
         align-items: center;
