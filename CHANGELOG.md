@@ -24,12 +24,12 @@ Refatoração pedagógica, técnica e didática profunda da trilha de IA Generat
   - Expansão para 7 artigos com especificações completas de autômatos, equações de amostragem Softmax $P(w_i)$, cálculo de similaridade vetorial $Sim_{\cos}(u,v)$ e distância Cosseno $D_{\cos}(u,v)$, DDLs SQL do PostgreSQL com fuso SP, schemas NoSQL do MongoDB, coleções vetoriais do Qdrant Cloud, código Python do LangGraph e o guia de correção linha a linha dos 8 bugs do Assessor.AI.
 - **Guia de Projeto Prático em `cursos/ia-projeto.html`**:
   - Reestruturação em 7 passos de implementação prática do Assessor.AI (Ambiente & Validação, Persistência Poliglota, Guardrails PII, Agentes Especialistas Corrigidos, Grafo LangGraph, API FastAPI REST e Suíte de Testes Pytest).
+- **Expansão de Referências e Glossário (`cursos/ia-referencias.html` e `glossario/ia.html`)**:
+  - Inclusão dos links e documentações oficiais de LangGraph, Qdrant HNSW, Groq LPU, CVM Resolução 19, LGPD e OWASP Top 10 LLM.
+  - Adição dos termos técnicos avançados em `glossario/ia.html`: Attention Bleed, Autômato Finito Estendido, Cosseno de Similaridade, Distância Cosseno, HNSW, Persistência Poliglota, Resolução CVM 19 e Time-to-First-Token (TTFT).
 
 ---
 ## [v7.9] — Migração de Domínio Canônico para Vercel e Limpeza de Metadados
-  - **Coral Claro (`[data-theme="coral"]`)**: Fundo aconchegante em tom pêssego/coral suave (`--bg: #fdf4f0`), painéis em branco e areia rosada (`--panel: #ffffff`, `--panel-2: #fae5dd`), linhas em terracota suave (`--line: #f4ccbf`), tipografia marrom-terra aquecida (`--text: #3c2018`), acento primário em coral avermelhado vivo (`--mint: #e05338` / `--mint-dim: #b83a22`), acento secundário em fúcsia/pôr do sol (`--violet: #d946ef`).
-  - **Coral Noite (`[data-theme="coral-dark"]`)**: Base escura em tom de magma vulcânico (`--bg: #200f0b`), painéis em marrom-brasa profundo (`--panel: #2d1712`, `--panel-2: #3b1f19`), linhas em ferrugem escuro (`--line: #593127`), tipografia quente clara (`--text: #fae5e0`), com realces vibrantes em coral ardente (`--mint: #ff6f54` / `--mint-dim: #e65135`), âmbar brilhante (`--amber: #fbb040`) e rosa-orquídea (`--violet: #f472b6`).
-
 ### Integração Estrutural e Componentes
 
 - **`assets/css/theme.css`**: Injeção das definições de variáveis dos 4 novos modos de cores (`cyan`, `cyan-dark`, `coral`, `coral-dark`) e ajuste no cabeçalho de documentação dos tokens do sistema.

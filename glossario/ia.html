@@ -143,44 +143,44 @@
                     "def": "Papel de um agente de IA que organiza, sugere e sintetiza, mas não substitui o julgamento final de um profissional humano."
                 },
                 {
-                    "term": "Auditoria (Log de Execução)",
-                    "mod": "mód. 04",
-                    "def": "Registro de cada chamada de tool feita por um agente: quem pediu, qual ação rodou, com quais parâmetros. Essencial pra rastrear o que um agente realmente fez."
-                },
-                {
-                    "term": "Chain-of-Thought (Thinking)",
-                    "mod": "mód. 03",
-                    "def": "Técnica de prompting em que o modelo é incentivado a 'raciocinar em voz alta', passo a passo, antes de dar a resposta final."
-                },
-                {
-                    "term": "Checkpointer",
-                    "mod": "mód. 04",
-                    "def": "Mecanismo do LangGraph que salva o estado da execução de um agente, permitindo retomar ou persistir contexto entre chamadas."
-                },
-                {
-                    "term": "Context Window (Janela de Contexto)",
-                    "mod": "mód. 05",
-                    "def": "Quantidade máxima de tokens (histórico + prompt) que um modelo consegue processar de uma vez. Passou disso, informação antiga começa a sair da janela."
-                },
-                {
-                    "term": "Criar vs Gerar",
+                    "term": "Attention Bleed (Poluição de Atenção)",
                     "mod": "mód. 01",
-                    "def": "Distinção conceitual: Criar envolve intencionalidade humana genuína; Gerar é recombinação probabilística de padrões aprendidos: o que um LLM faz."
+                    "def": "Fenômeno em que a capacidade de atenção da LLM degrada ao ser sobrecarregada com dezenas de ferramentas heterogêneas num único prompt monolítico, provocando alucinação na escolha da ferramenta."
                 },
                 {
-                    "term": "Cérebro vs Mãos",
+                    "term": "Autômato Finito Estendido",
+                    "mod": "mód. 03",
+                    "def": "Formalização matemática de um Grafo em LangGraph como uma sêxtupla <S, Σ, Γ, δ, s0, F>, definindo nós de estado, alfabeto de entrada, espaço de memória compartilhada e transições determinísticas."
+                },
+                {
+                    "term": "Cosseno de Similaridade",
+                    "mod": "mód. 03",
+                    "def": "Métrica de álgebra linear em R768 que mede o cosseno do ângulo entre dois vetores de embeddings u e v: Sim_cos = <u,v> / (||u|| ||v||)."
+                },
+                {
+                    "term": "Distância Cosseno",
+                    "mod": "mód. 03",
+                    "def": "Métrica convexa no Qdrant dada por D_cos(u,v) = 1 - Sim_cos(u,v), variando no intervalo [0, 2] para proximidade topológica."
+                },
+                {
+                    "term": "HNSW (Hierarchical Navigable Small World)",
+                    "mod": "mód. 03",
+                    "def": "Algoritmo de indexação em grafos hierárquicos multicamadas usado pelo Qdrant para busca aproximada de vizinhos mais próximos (ANN) com complexidade assintótica O(log N)."
+                },
+                {
+                    "term": "Persistência Poliglota (Polyglot Persistence)",
                     "mod": "mód. 04",
-                    "def": "Separação de responsabilidades num agente: o LLM (cérebro) só decide; as tools (mãos) executam. O LLM nunca deveria tocar um dado real diretamente."
+                    "def": "Arquitetura cooperativa de armazenamento que utiliza PostgreSQL (Relacional ACID), MongoDB (NoSQL documental para sessões) e Qdrant Cloud (Vetorial denso) de forma otimizada."
                 },
                 {
-                    "term": "Determinismo",
-                    "mod": "mód. 02",
-                    "def": "Propriedade de uma chamada sempre produzir a mesma saída pra mesma entrada. Em agentes, é obtido com temperature 0.0: essencial em roteamento e cálculo."
+                    "term": "Resolução CVM nº 19/2021",
+                    "mod": "mód. 06",
+                    "def": "Norma da Comissão de Valores Mobiliários que veda a consultoria ou recomendação individualizada de investimentos por sistemas automatizados desprovidos de autorização CNPI."
                 },
                 {
-                    "term": "Embedding",
-                    "mod": "mód. 05",
-                    "def": "Representação numérica (vetor) do significado de um texto. Textos com significados parecidos geram vetores próximos entre si, mesmo com palavras diferentes."
+                    "term": "Time-to-First-Token (TTFT)",
+                    "mod": "mód. 01",
+                    "def": "Tempo de latência percebido pelo cliente desde o envio da requisição até a emissão do primeiro token gerado pelo modelo."
                 },
                 {
                     "term": "Especialista (Agente Especialista)",
