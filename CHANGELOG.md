@@ -3,23 +3,23 @@
 Histórico de criação, atualização e desenvolvimento da plataforma. Cada versão documenta o que foi entregue, decisões tomadas e problemas encontrados (e corrigidos) no processo.
 
 ---
-## [v7.9] — Migração de Domínio Canônico para Vercel e Limpeza de Metadados
+## [v8.0] — Ultra-Aprimoramento 500x do Curso de IA Generativa & Arquitetura Multiagente
 
-Revisão completa e sincronização de todos os protocolos e arquivos de roteamento e indexação (Sitemap XML, Robots.txt, Security.txt e Humans.txt) para o domínio canônico oficial da plataforma na Vercel (`https://universidade-log.vercel.app/`), eliminando qualquer dependência ou referência a domínios inexistentes (`universidadelog.com.br`).
+Refatoração pedagógica, técnica e didática profunda da trilha de IA Generativa baseada na especificação arquitetural do sistema **Assessor.AI** (`spec-de-IA-curso.md`), trazendo fundamentos matemáticos rigorosos, autômatos finitos, espaços vetoriais 768d, busca HNSW, persistência poliglota, LangGraph, guardrails de 2 estágios, conformidade CVM 19 / LGPD, FastAPI REST e auditoria completa de código.
 
-### Sincronização de Indexação e Descoberta
+### Principais Aprimoramentos Integrados
 
-- **`sitemap.xml`**: Atualização integral das 25 URLs indexáveis da plataforma (Landing page, Catálogo de Cursos, trilhas de IA Generativa, Android, DevOps e Trigomante, além de materiais complementares, glossários, termos e política de privacidade) para a base `https://universidade-log.vercel.app/`, atualizando a data de modificação (`<lastmod>2026-09-09</lastmod>`).
-- **`robots.txt`**: Declaração da diretiva `Sitemap` apontando para `https://universidade-log.vercel.app/sitemap.xml`.
-- **`.well-known/security.txt`**: Ajuste da URL canônica para `https://universidade-log.vercel.app/.well-known/security.txt` e direcionamento do campo `Contact` para o canal de issues oficial do repositório no GitHub (`https://github.com/LucasEntweihen/Universidade-Log/issues`).
-- **`humans.txt`**: Atualização do campo `Site` para `https://universidade-log.vercel.app` e carimbo de atualização para `2026-09-09`.
-- **`SECURITY.md`**: Adequação da documentação de segurança para refletir o cabeçalho configurado exclusivamente via `vercel.json` (removidas menções a hosts obsoletos).
+- **Refatoração de `cursos/ia.html`**:
+  - **Módulo 01 (Fundamentos & Monolitização)**: Formalização do problema de monolitização em LLMs, Attention Bleed, latência TTFT, explosão de custo e arquitetura hierárquica Router-Specialist-Orchestrator. Debate interativo entre **Fly e Chud**.
+  - **Módulo 02 (Parâmetros de Geração & Amostragem Probabilística)**: Equação formal do Softmax com Temperatura $T$, diferenciação determinística ($T=0.0$ para SQL/JSON/Guardrails) vs conversacional ($T=0.7$), Top-k vs Top-p (Nucleus Sampling) e Thinking vs CoT. Debate entre **Byte e Fly**.
+  - **Módulo 03 (Matemática & Autômatos Finitos)**: Formalização do Grafo como Autômato Finito Estendido $\mathcal{M} = \langle \mathcal{S}, \Sigma, \Gamma, \delta, s_0, \mathcal{F} \rangle$, Álgebra Linear em $\mathbb{R}^{768}$, Cosseno de Similaridade $\text{Sim}_{\cos}(u,v)$ e Distância Cosseno $D_{\cos}(u,v)$, Grafos HNSW no Qdrant $O(\log N)$ e Criptografia/Isomorfismo de PII. Batalha vetorial entre **Byte e Byte Morto** supervisionada por **Uruk**.
+  - **Módulo 04 (Persistência Poliglota)**: Arquitetura cooperativa de dados entre PostgreSQL 16 (Relacional ACID para transações/agenda com fuso horário SP), MongoDB (NoSQL Documental para `perfis` e `sessoes`) e Qdrant Cloud (Vetorial Denso para `perfil_preferencias`, `memoria_resumos` e `faq_chunks`). Bate-papo entre **Moss e Fly**.
+  - **Módulo 05 (LangGraph Engine & Contratos JSON)**: Especificação da classe `Estado(MessagesState)` com reducers acumulativos, protocolo de encaminhamento `ROUTE=financeiro`, contrato JSON dos especialistas e nó Orquestrador compilando a resposta final em 3 tópicos (Diagnóstico, Recomendação e Acompanhamento). Diálogo entre **Laura e Gnomo**.
+  - **Módulo 06 (Defense-in-Depth & Compliance CVM)**: Sistema de segurança em 2 estágios (Entrada e Saída), tokenização de PII (LGPD Lei 13.709/2018), 6 rótulos de classificação semântica e conformidade estrita com a Resolução CVM nº 19/2021 (vedação de recomendação imperativa de ativos automatizada sem CNPI). Diálogo de segurança entre **Laura e Chud**.
+  - **Módulo 07 (API REST FastAPI & Auditoria de Bugs)**: Matriz de endpoints REST (`/chat`, `/sessions/{id}/encerrar`, `/perfil`), topologia ASGI com Uvicorn, pipeline offline de RAG (RecursiveCharacterTextSplitter 700/150, batch 50) e inventário dos 8 bugs reais do Assessor.AI auditados com correções linha a linha. Reunião de tripulação DevOps entre **Capitão Baba Grogue, Ama-zz-on e Octocat**.
 
 ---
-## [v7.8] — Expansão da Paleta de Cores: Novos Temas Ciano e Coral
-
-Adição de duas novas famílias completas de temas de cores (Ciano/Turquesa e Coral/Terracota), expandindo o catálogo do sistema de 12 para 16 temas principais (8 famílias com par claro e escuro, além do tema espacial), com propagação completa em todos os módulos de CSS, JavaScript e templates HTML.
-
+## [v7.9] — Migração de Domínio Canônico para Vercel e Limpeza de Metadados
 ### Novas Paletas e Tokens de Design
 
 - **Família Ciano / Turquesa (`cyan` / `cyan-dark`)**:
