@@ -2,13 +2,13 @@
 
 Histórico de criação, atualização e desenvolvimento da plataforma. Cada versão documenta o que foi entregue, decisões tomadas e problemas encontrados (e corrigidos) no processo.
 
+## [v8.2] — Correções de Responsividade e Layout
+
+- **Implementação de `100dvh` (H1)**: Adicionado suporte a `100dvh` (com fallback para `100vh`) em todos os arquivos CSS e páginas HTML que utilizavam `100vh` fixo, corrigindo o problema de corte de conteúdo em dispositivos móveis.
+
+---
+
 ## [v8.1] — Refinamentos de Responsividade Ultrathink
-
-- **Correção de 100vh para 100dvh**: Substituído o uso rígido de `100vh` por `100dvh` (com fallback para `100vh`) em quatro pontos críticos (`site.css` e `landing.css`) para garantir comportamento consistente em navegadores mobile que ajustam a barra de navegação.
-
----
-
----
 ## [v8.0] — Ultra-Aprimoramento 500x do Curso de IA Generativa & Arquitetura Multiagente
 
 Refatoração pedagógica, técnica e didática profunda da trilha de IA Generativa baseada na especificação arquitetural do sistema **Assessor.AI** (`spec-de-IA-curso.md`), trazendo fundamentos matemáticos rigorosos, autômatos finitos, espaços vetoriais 768d, busca HNSW, persistência poliglota, LangGraph, guardrails de 2 estágios, conformidade CVM 19 / LGPD, FastAPI REST e auditoria completa de código.
