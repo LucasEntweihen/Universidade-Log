@@ -5,7 +5,7 @@ Histórico de criação, atualização e desenvolvimento da plataforma. Cada ver
 ## [v8.2] — Correções de Responsividade e Layout
 
 - **Implementação de `100dvh` (H1)**: Adicionado suporte a `100dvh` (com fallback para `100vh`) em todos os arquivos CSS e páginas HTML que utilizavam `100vh` fixo, corrigindo o problema de corte de conteúdo em dispositivos móveis.
-
+- **Refinamento M3**: Aumentado o alvo de toque do botão `.mobile-menu-btn` para 44x44px (padding: 12px) nas páginas de curso para garantir melhor usabilidade mobile.
 ---
 
 ## [v8.1] — Refinamentos de Responsividade Ultrathink
