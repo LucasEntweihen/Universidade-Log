@@ -40,7 +40,7 @@ const ROOT = __dirname;
 const OUT = path.join(ROOT, "dist");
 
 const SKIP_DIRS = new Set(["dist", "node_modules", ".git", "scripts"]);
-const SKIP_FILES = new Set(["build.js", "package.json", "package-lock.json"]);
+const SKIP_FILES = new Set(["build.js", "test.js", "package.json", "package-lock.json"]);
 
 let totals = {
     before: 0,

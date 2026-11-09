@@ -1,0 +1,76 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+# Evita execuções concorrentes na mesma branch/PR
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+# Permissões necessárias para publicar no GitHub Pages com OIDC
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  # =========================================================================
+  # 1. ETAPA DE INTEGRAÇÃO CONTÍNUA (CI)
+  # Executa em push na main e em qualquer pull request direcionado para a main
+  # =========================================================================
+  ci:
+    name: "CI - Testes, Validação e Build"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js (v20 LTS)
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "npm"
+
+      - name: Instalar dependências
+        run: npm install
+
+      - name: Executar testes automatizados e integridade
+        run: npm test
+
+      - name: Executar build de produção (minificação HTML/CSS/JS)
+        run: npm run build
+
+      - name: Validar integridade dos artefatos em dist/
+        run: node test.js
+
+      - name: Upload do artefato para o GitHub Pages
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+
+  # =========================================================================
+  # 2. ETAPA DE DEPLOYMENT CONTÍNUO (CD)
+  # Executa estritamente após o sucesso da CI e apenas em push na branch main
+  # =========================================================================
+  cd:
+    name: "CD - Deployment no GitHub Pages"
+    runs-on: ubuntu-latest
+    needs: [ci]
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy para GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
